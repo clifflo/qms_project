@@ -4,6 +4,7 @@ import {
   increment,
   selectCount
 } from './sabaLotSlice'
+import '../../App.css';
 
 export function SabaLot(){
   const count = useSelector(selectCount)
@@ -13,11 +14,13 @@ export function SabaLot(){
     <div className="App">
       <button
         aria-label="Increment value"
+        className="Count"
         onClick={() => dispatch(increment())}>
           +
       </button>
-      <span>{count}</span>
+      <span className="Count">{count}</span>
       <button
+        className="Count"
         aria-label="Decrement value"
         onClick={() => dispatch(decrement())}>
         -

@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 export const trunkContext = {
   '甲': 'Beta',
   '乙': 'Gamma',
@@ -11,7 +13,15 @@ export const trunkContext = {
   '癸': 'Lamda'
 }
 
+export const elementOrder = '水木火土金';
+
 export const trunkOrder = '甲乙丙丁戊己庚辛壬癸';
+
+export function getElementOfTrunk(trunk){
+
+
+  return R.find(R.equals(trunk))(R.split('', trunkOrder));
+}
 
 export const branchContext = {
   '子': 'Psi',
@@ -29,6 +39,10 @@ export const branchContext = {
 }
 
 export const branchOrder = '子丑寅卯辰巳午未申酉戌亥';
+
+export function getBranchFromEnglish(branchEnglish) {
+  return R.invert(branchContext)[branchEnglish][0];
+}
 
 export const elementalContext = [
   '子丑合土',
@@ -59,10 +73,10 @@ export const elementalContext = [
   '亥卯未合木',
   '寅午戌合火',
   '巳酉丑合金',
-  '寅卯辰為東方木',
-  '巳午未為南方火',
-  '申酉戌為西方金',
-  '亥子丑為北方水',
+  '寅卯辰會東方木',
+  '巳午未會南方火',
+  '申酉戌會西方金',
+  '亥子丑會北方水',
   '寅巳申為無恩之刑',
   '丑戌未為持勢之刑',
   '子卯為無禮之刑',
