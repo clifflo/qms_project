@@ -5,8 +5,7 @@ import { SabaLot } from './features/sabaLot/SabaLot';
 import {
   getBranchFromEnglish,
   getElementOfTrunk,
-  getCyclicArrestment,
-  trunkCompounds }
+  getSelfArrestment }
   from './features/sabaLot/plastics';
 
 
@@ -18,7 +17,7 @@ function App() {
       <div className="Saba">
         Branch: Psi is { getBranchFromEnglish('Psi')}
         Element: Beta is { getElementOfTrunk('甲')}
-        Cyclic Arrestment : {getCyclicArrestment() }
+        Self arrestment : {getSelfArrestment()}
       </div>
     </div>
   );

@@ -54,7 +54,7 @@ export function getBranchFromEnglish(branchEnglish) {
   return R.invert(branchContext)[branchEnglish][0];
 }
 
-export const reactionSentences = [
+export const plasticReactionSentences = [
   '子丑合土',
   '寅亥合木',
   '卯戌合火',
@@ -93,11 +93,15 @@ export const reactionSentences = [
   '辰午酉亥為自刑'
 ]
 
+export function plasticReactionFilter(filterFn) {
+  return R.filter(filterFn, plasticReactionSentences);
+}
+
 export function getTrunkCompounds() {
 
-  const trunkCompoundSentences = R.filter(
-    sentence => sentence[2] == '合',
-    reactionSentences);
+  const trunkCompoundSentences =
+    plasticReactionFilter(
+    sentence => sentence[2] == '合');
 
   const mapFn = sentence => {
     return {
@@ -114,16 +118,15 @@ export function getTrunkCompounds() {
 
 export const trunkCompounds = getTrunkCompounds()
 
-export function reactionFilter(filterFn) {
-  return R.filter(filterFn, reactionSentences);
-}
+
 
 export function getCollisions(){
 
-  const collisionSentences = reactionFilter(
-    sentence => sentence.length == 3);
+  const collisionSentences =
+    plasticReactionFilter(
+      sentence => sentence.length == 3);
 
-  const getCollisionTypeEnglish = collision => {
+  const getCollisionType = collision => {
     switch(collision){
       case '沖':
         return 1;
@@ -138,10 +141,12 @@ export function getCollisions(){
 
   const mapFn = sentence => {
     return {
-      branch: [sentence[0], sentence[1]],
-      collisionType: sentence[2],
-      collisionTypeEnglish:
-        getCollisionTypeEnglish(sentence[2]),
+      tank: sentence[0],
+      victim: sentence[1],
+      collisionType:
+        getCollisionType(sentence[2]),
+      collisionStyle:
+        sentence[2]
     }
   }
 
@@ -157,9 +162,9 @@ export const collisions = getCollisions();
 export function getCyclicArrestment(){
 
   const cycleArrestmentSentences =
-    reactionFilter(sentence => sentence.length == 8);
+    plasticReactionFilter(sentence => sentence.length == 8);
 
-  const getTypedList = branch => {
+  const getInitalList = branch => {
 
     const sentence =
       R.find(sentence => sentence[0] == branch,
@@ -168,38 +173,91 @@ export function getCyclicArrestment(){
     const sliceSentence =
       R.slice(0, 3, sentence)
 
-    const list =
+    const initialList =
       R.split('', sliceSentence);
 
-    return list;
+    return initialList;
   }
 
-  const typeOneList =
-    getTypedList('寅');
+  const getFinalList =
+    (branch, arrestmentType, arrestmentStyle) => {
 
-  const typeTwoList =
-    getTypedList('丑');
+    const initialList = getInitalList(branch);
 
-  const builder = (typedList, type) => {
-
-    let arrestmentList = [];
+    let finalList = [];
 
     for(let i = 0; i < 3; i++){
-      const police = item(typedList, i);
-      const suspect = item(typedList, i+1);
-      arrestmentList.push({
+      const police = item(initialList, i);
+      const suspect = item(initialList, i+1);
+      finalList.push({
         police,
         suspect,
-        type
+        arrestmentType,
+        arrestmentStyle
       });
     }
 
-    return arrestmentList;
+    return finalList;
   }
 
-  console.log(builder(typeOneList, 1));
+  const typeOneArrestment =
+    getFinalList('寅', 1, '無恩之刑');
 
-  return 'A';
+  const typeTwoArrestment =
+    getFinalList('丑', 1, '持勢之刑');
+
+  const fullList =
+    R.concat(typeOneArrestment, typeTwoArrestment);
+
+  return fullList;
+
+}
+
+export const cyclicArrestment = getCyclicArrestment();
+
+export const impoliteArrestment = [
+  {
+    police: '子',
+    suspect: '卯',
+    arrestmentType: 3,
+    arrestmentStyle: '無禮之刑'
+  },
+  {
+    police: '卯',
+    suspect: '子',
+    arrestmentType: 3,
+    arrestmentStyle: '無禮之刑'
+  }
+]
+
+export function getSelfArrestment(){
+  const selfArrestmentSentence =
+    plasticReactionFilter(sentence =>
+      R.takeLast(2, sentence) == '自刑')[0];
+
+  const splitFn = sentence =>
+    R.split('', sentence);
+
+  const takeFn = sentence =>
+    R.take(4, sentence);
+
+  const mapFn = branch => {
+    return {
+      police: branch,
+      suspect: branch,
+      arrestmentType: 4,
+      arrestmentStyle: '自刑'
+    }
+  }
+
+  const fullMapFn = sentence => R.map(mapFn, sentence);
+
+  const branches =
+    R.compose(fullMapFn, takeFn, splitFn)(selfArrestmentSentence);
+
+  console.log(branches);
+
+  return 'A'
 
 }
 
