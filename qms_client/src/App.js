@@ -4,8 +4,10 @@ import { useSelector, useDispatch } from 'react-redux'
 import { SabaLot } from './features/sabaLot/SabaLot';
 import {
   getBranchFromEnglish,
-  getElementOfTrunk }
-  from './features/sabaLot/plasticReactions';
+  getElementOfTrunk,
+  trunkCompounds }
+  from './features/sabaLot/plastics';
+
 
 function App() {
 
@@ -15,6 +17,7 @@ function App() {
       <div className="Saba">
         Branch: Psi is { getBranchFromEnglish('Psi')}
         Element: Beta is { getElementOfTrunk('甲')}
+        Trunk Compounds : { JSON.stringify(trunkCompounds)}
       </div>
     </div>
   );

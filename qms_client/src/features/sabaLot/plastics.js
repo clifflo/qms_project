@@ -44,7 +44,7 @@ export function getBranchFromEnglish(branchEnglish) {
   return R.invert(branchContext)[branchEnglish][0];
 }
 
-export const elementalContext = [
+export const reactionSentences = [
   '子丑合土',
   '寅亥合木',
   '卯戌合火',
@@ -82,3 +82,57 @@ export const elementalContext = [
   '子卯為無禮之刑',
   '辰午酉亥為自刑'
 ]
+
+export function getTrunkCompounds() {
+
+  const trunkCompoundSentences = R.filter(
+    sentence => sentence[2] == '合',
+    reactionSentences);
+
+  const mapFn = sentence => {
+    return {
+      trunks: [sentence[0], sentence[1]],
+      element: sentence[3]
+    }
+  }
+
+  const _trunkCompounds =
+    R.map(mapFn, trunkCompoundSentences);
+
+  return _trunkCompounds;
+}
+
+export const trunkCompounds = getTrunkCompounds()
+
+export function getCollisions(){
+
+  const collisionSentences = R.filter(
+    sentence => sentence.length == 3);
+
+  const getCollisionTypeEnglish = collision => {
+    switch(collision){
+      case '沖':
+        return 'Onion';
+      case '害':
+        return 'Clam';
+      case '破':
+        return 'Pineapple';
+      default:
+        throw 'Wrong collision Chinese.';
+    }
+  }
+
+  const mapFn = sentence => {
+    return {
+      branch: [sentence[0], sentence[1]],
+      collisionType: sentence[2],
+      collisionTypeEnglish:
+        getCollisionTypeEnglish(sentence[2]),
+    }
+  }
+
+  const _collisions =
+    R.map(mapFn, collisionSentences);
+
+
+}
