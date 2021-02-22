@@ -18,7 +18,7 @@ function App() {
       <div className="Saba">
         Branch: Psi is { getBranchFromEnglish('Psi')}
         Element: Beta is { getElementOfTrunk('甲')}
-        Cyclic Arrestment : { JSON.stringify(getCyclicArrestment()) }
+        Cyclic Arrestment : {getCyclicArrestment() }
       </div>
     </div>
   );

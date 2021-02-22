@@ -1,5 +1,17 @@
 import * as R from 'ramda';
 
+export function item(array, index){
+  if(index >= array.length){
+    return array[index - array.length];
+  }
+  else if(index < 0){
+    return array[index +  array.length];
+  }
+  else {
+    return array[index]
+  }
+}
+
 export const trunkContext = {
   '甲': 'Beta',
   '乙': 'Gamma',
@@ -18,9 +30,7 @@ export const elementOrder = '水木火土金';
 export const trunkOrder = '甲乙丙丁戊己庚辛壬癸';
 
 export function getElementOfTrunk(trunk){
-
-
-  return R.find(R.equals(trunk))(R.split('', trunkOrder));
+  return R.find(R.equals(trunk),R.split('', trunkOrder));
 }
 
 export const branchContext = {
@@ -113,16 +123,14 @@ export function getCollisions(){
   const collisionSentences = reactionFilter(
     sentence => sentence.length == 3);
 
-  console.log('a', collisionSentences);
-
   const getCollisionTypeEnglish = collision => {
     switch(collision){
       case '沖':
-        return 'Onion';
+        return 1;
       case '害':
-        return 'Clam';
+        return 2;
       case '破':
-        return 'Pineapple';
+        return 3;
       default:
         throw 'Wrong collision Chinese.';
     }
@@ -140,8 +148,6 @@ export function getCollisions(){
   const _collisions =
     R.map(mapFn, collisionSentences);
 
-  console.log(_collisions);
-
   return _collisions;
 
 }
@@ -153,6 +159,53 @@ export function getCyclicArrestment(){
   const cycleArrestmentSentences =
     reactionFilter(sentence => sentence.length == 8);
 
-  return cycleArrestmentSentences;
+  const getTypedList = branch => {
+
+    const sentence =
+      R.find(sentence => sentence[0] == branch,
+        cycleArrestmentSentences);
+
+    const sliceSentence =
+      R.slice(0, 3, sentence)
+
+    const list =
+      R.split('', sliceSentence);
+
+    return list;
+  }
+
+  const typeOneList =
+    getTypedList('寅');
+
+  const typeTwoList =
+    getTypedList('丑');
+
+  const builder = (typedList, type) => {
+
+    let arrestmentList = [];
+
+    for(let i = 0; i < 3; i++){
+      const police = item(typedList, i);
+      const suspect = item(typedList, i+1);
+      arrestmentList.push({
+        police,
+        suspect,
+        type
+      });
+    }
+
+    return arrestmentList;
+  }
+
+  console.log(builder(typeOneList, 1));
+
+  return 'A';
 
 }
+
+export const crabFarmSentences = [
+  '甲祿在寅',
+  '丙戊祿在巳',
+  '庚祿在申',
+  '壬祿在亥'
+]
