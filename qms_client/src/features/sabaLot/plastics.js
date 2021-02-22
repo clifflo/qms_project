@@ -12,6 +12,12 @@ export function item(array, index){
   }
 }
 
+export const concatAll = (...array) => {
+  const appender = (a, b) => { return R.concat(a, b) };
+  const result = R.reduce(appender, [], array);
+  return result;
+};
+
 export const trunkContext = {
   '甲': 'Beta',
   '乙': 'Gamma',
@@ -25,12 +31,12 @@ export const trunkContext = {
   '癸': 'Lamda'
 }
 
-export const elementOrder = '水木火土金';
+const elementOrder = '水木火土金';
 
-export const trunkOrder = '甲乙丙丁戊己庚辛壬癸';
+const trunkOrder = '甲乙丙丁戊己庚辛壬癸';
 
-export function getElementOfTrunk(trunk){
-  return R.find(R.equals(trunk),R.split('', trunkOrder));
+export function getIndexFromSentence(character, order){
+  return R.findIndex(R.equals(character),R.split('', trunkOrder));
 }
 
 export const branchContext = {
@@ -49,6 +55,23 @@ export const branchContext = {
 }
 
 export const branchOrder = '子丑寅卯辰巳午未申酉戌亥';
+
+export function getIndexOfTrunk(trunk){
+  return getIndexFromSentence(trunk, trunkOrder);
+}
+
+export function getIndexOfBranch(branch){
+  return getIndexFromSentence(branch, branchOrder);
+}
+
+export function isTrunk(plastic) {
+  if (getIndexOfTrunk(plastic) != -1)
+    return true;
+  else if (getIndexOfBranch != -1)
+    return false;
+  else
+    throw 'Wrong plastic.';
+}
 
 export function getBranchFromEnglish(branchEnglish) {
   return R.invert(branchContext)[branchEnglish][0];
@@ -83,42 +106,98 @@ export const plasticReactionSentences = [
   '亥卯未合木',
   '寅午戌合火',
   '巳酉丑合金',
-  '寅卯辰會東方木',
-  '巳午未會南方火',
-  '申酉戌會西方金',
-  '亥子丑會北方水',
+  '寅卯辰會木',
+  '巳午未會火',
+  '申酉戌會金',
+  '亥子丑會水',
   '寅巳申為無恩之刑',
   '丑戌未為持勢之刑',
   '子卯為無禮之刑',
-  '辰午酉亥為自刑'
+  '辰午酉亥為自刑',
+  '甲己合土',
+  '乙庚合金',
+  '丙辛合水',
+  '丁壬合木',
+  '戊癸合火',
 ]
 
 export function plasticReactionFilter(filterFn) {
   return R.filter(filterFn, plasticReactionSentences);
 }
 
-export function getTrunkCompounds() {
+export function getCompounds() {
 
-  const trunkCompoundSentences =
-    plasticReactionFilter(
-    sentence => sentence[2] == '合');
+  const filterFn = sentence => {
+    const reactionChar = item(sentence, -2);
+    return reactionChar == '合' || reactionChar == '會'
+  }
 
-  const mapFn = sentence => {
-    return {
-      trunks: [sentence[0], sentence[1]],
-      element: sentence[3]
+  const compoundSentences =
+    plasticReactionFilter(filterFn);
+
+  const sliceFn = sentence =>
+    R.slice(0, sentence.length - 2, sentence);
+
+  const splitFn = sentence => R.split('', sentence);
+
+  const compoundTypeFn = sentence => {
+    if(sentence.length == 4){
+      if(isTrunk(sentence[0])){
+        return 1;
+      }
+      else {
+        return 2;
+      }
+    }
+    else {
+      if(item(sentence, -2) == '合'){
+        return 3;
+      }
+      else {
+        return 4;
+      }
     }
   }
 
-  const _trunkCompounds =
-    R.map(mapFn, trunkCompoundSentences);
+  const sentenceFn = R.compose(splitFn, sliceFn);
 
-  return _trunkCompounds;
+  const firstMapFn = sentence => {
+    return {
+      plastics: sentenceFn(sentence),
+      element: item(sentence, -1),
+      compoundType: compoundTypeFn(sentence),
+      isTrunk: isTrunk(sentence[0])
+    }
+  }
+
+  const mapper = [
+    '天干五小合',
+    '地支六小合',
+    '地支三大合',
+    '地支三會'
+  ]
+
+  const secondMapFn = rawCompound =>{
+    return {
+      ...rawCompound,
+      compoundStyle: mapper[rawCompound.compoundType - 1]
+    }
+  }
+
+
+  const buildFn =　R.compose(
+    secondMapFn,
+    firstMapFn);
+
+  const _compounds =
+    R.map(buildFn, compoundSentences);
+
+  console.log(_compounds);
+
+  return _compounds;
 }
 
-export const trunkCompounds = getTrunkCompounds()
-
-
+export const compounds = getCompounds();
 
 export function getCollisions(){
 
@@ -159,7 +238,7 @@ export function getCollisions(){
 
 export const collisions = getCollisions();
 
-export function getCyclicArrestment(){
+export function getCyclicArrestments(){
 
   const cycleArrestmentSentences =
     plasticReactionFilter(sentence => sentence.length == 8);
@@ -213,9 +292,9 @@ export function getCyclicArrestment(){
 
 }
 
-export const cyclicArrestment = getCyclicArrestment();
+export const cyclicArrestments = getCyclicArrestments();
 
-export const impoliteArrestment = [
+export const impoliteArrestments = [
   {
     police: '子',
     suspect: '卯',
@@ -230,7 +309,7 @@ export const impoliteArrestment = [
   }
 ]
 
-export function getSelfArrestment(){
+export function getSelfArrestments(){
   const selfArrestmentSentence =
     plasticReactionFilter(sentence =>
       R.takeLast(2, sentence) == '自刑')[0];
@@ -252,14 +331,22 @@ export function getSelfArrestment(){
 
   const fullMapFn = sentence => R.map(mapFn, sentence);
 
-  const branches =
+  const arrestments =
     R.compose(fullMapFn, takeFn, splitFn)(selfArrestmentSentence);
 
-  console.log(branches);
-
-  return 'A'
+  return arrestments;
 
 }
+
+export const selfArrestments = getSelfArrestments();
+
+export const allArrestments = concatAll(
+  cyclicArrestments,
+  impoliteArrestments,
+  selfArrestments)
+
+
+
 
 export const crabFarmSentences = [
   '甲祿在寅',
