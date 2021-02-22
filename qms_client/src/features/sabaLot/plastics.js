@@ -104,10 +104,16 @@ export function getTrunkCompounds() {
 
 export const trunkCompounds = getTrunkCompounds()
 
+export function reactionFilter(filterFn) {
+  return R.filter(filterFn, reactionSentences);
+}
+
 export function getCollisions(){
 
-  const collisionSentences = R.filter(
+  const collisionSentences = reactionFilter(
     sentence => sentence.length == 3);
+
+  console.log('a', collisionSentences);
 
   const getCollisionTypeEnglish = collision => {
     switch(collision){
@@ -134,5 +140,19 @@ export function getCollisions(){
   const _collisions =
     R.map(mapFn, collisionSentences);
 
+  console.log(_collisions);
+
+  return _collisions;
+
+}
+
+export const collisions = getCollisions();
+
+export function getCyclicArrestment(){
+
+  const cycleArrestmentSentences =
+    reactionFilter(sentence => sentence.length == 8);
+
+  return cycleArrestmentSentences;
 
 }
