@@ -1,21 +1,36 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct'
 
-export function item(array, index){
+export const adjust = (index, distance) => {
 
-  const positiveIndex = index % array.length;
+  const positiveIndex = index % distance;
+  const negativeIndex = (index % distance) + distance;
 
-  const negativeIndex = (index % array.length) + array.length;
-
-  if(index > 0){
-    return array[positiveIndex]
+  if(index >= 0){
+    return positiveIndex
   }
   else if (index < 0){
-    return array[negativeIndex]
+    return negativeIndex
   }
   else {
     return 'Index is not a number.'
   }
+}
+
+export const item = (array, index) => {
+
+  const firstArgValid =
+    RA.isString(array) || RA.isArray(array);
+
+  if(!firstArgValid){
+    throw 'Not an array or string for the first argument.'
+  }
+
+  if(!RA.isNumber(index)){
+    throw 'Not a number for the second argument.'
+  }
+
+  return array[adjust(index, array.length)]
 }
 
 export const concatAll = (...array) => {
@@ -72,6 +87,14 @@ export function getIndexOfTrunk(trunk){
 
 export function getIndexOfBranch(branch){
   return getIndexFromSentence(branch, branchOrder, 'branch')
+}
+
+export function getTrunkFromIndex(index){
+  return item(trunkOrder, index);
+}
+
+export function getBranchFromIndex(index){
+  return item(branchOrder, index);
 }
 
 export function getIndexOfElement(element){
@@ -376,6 +399,8 @@ export const getCrabFarm = () => {
   return R.map(mapFn, crabFarmSentences);
 }
 
+export const crabFarm = getCrabFarm();
+
 const chosenSentence =
   '長生,沐浴,冠帶,臨官,帝旺,衰,病,長死,墓,絕,胎,養';
 
@@ -415,12 +440,11 @@ export const buildTwoSentence =
       contextType: contextType,
       [firstSentenceName]: character,
       [secondSentenceName]: secondSentence[index],
-      order: index
+      order: index + 1
     }
   }
 
   const result = RA.mapIndexed(sentenceFn, firstSentence);
-  console.log(result);
   return result;
 }
 
@@ -432,5 +456,71 @@ export const chosenTypeTwoContext =
     'branch',
     'chosen_type_two');
 
+export const getTwigSeries = (trunk, branch) => {
 
-export const crabFarm = getCrabFarm();
+  const vector = getIndexOfBranch(branch) - getIndexOfTrunk(trunk);
+
+  if(vector % 2 == 0){
+    const twigSeriesBranch = getBranchFromIndex(vector);
+    const adjustedVector = adjust(vector, 12);
+    const branchNumber = (12 - adjustedVector) / 2;
+    const trunkNumber = getIndexOfTrunk(trunk);
+    const twigPosition = (branchNumber * 10 + trunkNumber);
+    const twigSeriesOrder = branchNumber;
+    const twigSeriesVoid =
+      R.map(getBranchFromIndex, [adjustedVector - 1, adjustedVector - 2]);
+    return {
+      inputTrunk: trunk,
+      inputBranch: branch,
+      twigPosition,
+      twigSeries: `甲${twigSeriesBranch}旬`,
+      twigSeriesVoid,
+      twigSeriesOrder
+    }
+  }
+  else {
+    throw 'Wrong plastic for twig.';
+  }
+}
+
+export const rawMetroSet = {
+  '甲戊庚': '丑未',
+  '乙己': '子申',
+  '丙丁': '亥酉',
+  '壬癸': '巳卯',
+  '辛': '午寅',
+}
+
+export const getMetroSet = () => {
+
+  const mapFn1 = (rawMetro) => {
+    return {
+      metroDayTrunks: rawMetro[0],
+      metroMorningStart: rawMetro[1][0],
+      metroEveningStart: rawMetro[1][1]
+    }
+  }
+
+  const mapFn2 = (metro) => {
+
+    const trunks = R.split('', metro.metroDayTrunks);
+
+    const mapFn3 = (trunk) => {
+      return {
+        metroDayTrunk: trunk,
+        metroMorningStart: metro.metroMorningStart,
+        metroEveningStart: metro.metroEveningStart
+      }
+    }
+
+    return R.map(mapFn3, trunks);
+  }
+
+  const context1 = R.map(mapFn1, R.toPairs(rawMetroSet));
+  const context2 = R.map(mapFn2, context1);
+  const context3 = RA.concatAll(context2);
+  console.log(context3);
+  return context3;
+}
+
+export const metroSet = getMetroSet();
