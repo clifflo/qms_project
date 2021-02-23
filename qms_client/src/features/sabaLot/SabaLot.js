@@ -1,9 +1,9 @@
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 import {
   decrement,
   increment,
   selectCount
-} from './sabaLotSlice'
+} from './sabaLotSlice';
 import '../../App.css';
 
 export function SabaLot(){

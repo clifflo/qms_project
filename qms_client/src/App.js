@@ -3,8 +3,7 @@ import './App.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { SabaLot } from './features/sabaLot/SabaLot';
 import { metroSet }
-  from './features/sabaLot/plastics';
-
+  from './features/sabaLot/calculations/kappas';
 
 function App() {
 

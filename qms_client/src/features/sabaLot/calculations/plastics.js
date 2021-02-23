@@ -1,43 +1,10 @@
 import * as R from 'ramda';
-import * as RA from 'ramda-adjunct'
+import * as RA from 'ramda-adjunct';
+import {
+  adjust,
+  item
+} from './utils';
 
-export const adjust = (index, distance) => {
-
-  const positiveIndex = index % distance;
-  const negativeIndex = (index % distance) + distance;
-
-  if(index >= 0){
-    return positiveIndex
-  }
-  else if (index < 0){
-    return negativeIndex
-  }
-  else {
-    return 'Index is not a number.'
-  }
-}
-
-export const item = (array, index) => {
-
-  const firstArgValid =
-    RA.isString(array) || RA.isArray(array);
-
-  if(!firstArgValid){
-    throw 'Not an array or string for the first argument.'
-  }
-
-  if(!RA.isNumber(index)){
-    throw 'Not a number for the second argument.'
-  }
-
-  return array[adjust(index, array.length)]
-}
-
-export const concatAll = (...array) => {
-  const appender = (a, b) => { return R.concat(a, b) };
-  const result = R.reduce(appender, [], array);
-  return result;
-};
 
 export const trunkContext = {
   '甲': 'Beta',
@@ -60,7 +27,7 @@ export function getIndexFromSentence(character, order, orderType){
   return R.findIndex(R.equals(character),R.split('', order));
 }
 
-export const branchContext = {
+const branchContext = {
   '子': 'Psi',
   '丑': 'Chi',
   '寅': 'Phi',
@@ -75,11 +42,11 @@ export const branchContext = {
   '亥': 'Mu',
 }
 
-export const branchOrder = '子丑寅卯辰巳午未申酉戌亥';
+const branchOrder = '子丑寅卯辰巳午未申酉戌亥';
 
-export const branchElementOrder = '水土木木土火火土金金土水';
+const branchElementOrder = '水土木木土火火土金金土水';
 
-export const trunkElementOrder = '木木火火土土金金水水';
+const trunkElementOrder = '木木火火土土金金水水';
 
 export function getIndexOfTrunk(trunk){
   return getIndexFromSentence(trunk, trunkOrder, 'trunk')
@@ -326,9 +293,9 @@ export function getCyclicArrestments(){
 
 }
 
-export const cyclicArrestments = getCyclicArrestments();
+const cyclicArrestments = getCyclicArrestments();
 
-export const impoliteArrestments = [
+const impoliteArrestments = [
   {
     police: '子',
     suspect: '卯',
@@ -374,32 +341,10 @@ export function getSelfArrestments(){
 
 export const selfArrestments = getSelfArrestments();
 
-export const allArrestments = concatAll(
-  cyclicArrestments,
+export const allArrestments = RA.concatAll(
+  [cyclicArrestments,
   impoliteArrestments,
-  selfArrestments)
-
-export const crabFarmSentences = [
-  '甲祿在寅',
-  '丙祿在巳',
-  '戊祿在巳',
-  '庚祿在申',
-  '壬祿在亥'
-];
-
-export const getCrabFarm = () => {
-
-  const mapFn = sentence => {
-    return {
-      crabBody: sentence[0],
-      crabShell: sentence[3]
-    }
-  }
-
-  return R.map(mapFn, crabFarmSentences);
-}
-
-export const crabFarm = getCrabFarm();
+  selfArrestments]);
 
 const chosenSentence =
   '長生,沐浴,冠帶,臨官,帝旺,衰,病,長死,墓,絕,胎,養';
@@ -482,45 +427,3 @@ export const getTwigSeries = (trunk, branch) => {
     throw 'Wrong plastic for twig.';
   }
 }
-
-export const rawMetroSet = {
-  '甲戊庚': '丑未',
-  '乙己': '子申',
-  '丙丁': '亥酉',
-  '壬癸': '巳卯',
-  '辛': '午寅',
-}
-
-export const getMetroSet = () => {
-
-  const mapFn1 = (rawMetro) => {
-    return {
-      metroDayTrunks: rawMetro[0],
-      metroMorningStart: rawMetro[1][0],
-      metroEveningStart: rawMetro[1][1]
-    }
-  }
-
-  const mapFn2 = (metro) => {
-
-    const trunks = R.split('', metro.metroDayTrunks);
-
-    const mapFn3 = (trunk) => {
-      return {
-        metroDayTrunk: trunk,
-        metroMorningStart: metro.metroMorningStart,
-        metroEveningStart: metro.metroEveningStart
-      }
-    }
-
-    return R.map(mapFn3, trunks);
-  }
-
-  const context1 = R.map(mapFn1, R.toPairs(rawMetroSet));
-  const context2 = R.map(mapFn2, context1);
-  const context3 = RA.concatAll(context2);
-  console.log(context3);
-  return context3;
-}
-
-export const metroSet = getMetroSet();
