@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { SabaLot } from './features/sabaLot/SabaLot';
-import { getChosen }
+import { chosenTypeTwoContext }
   from './features/sabaLot/plastics';
 
 
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        { getChosen('火','亥')}
+        { JSON.stringify(chosenTypeTwoContext) }
       </div>
     </div>
   );

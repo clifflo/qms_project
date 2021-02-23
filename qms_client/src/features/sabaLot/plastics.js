@@ -1,4 +1,5 @@
 import * as R from 'ramda';
+import * as RA from 'ramda-adjunct'
 
 export function item(array, index){
 
@@ -60,6 +61,10 @@ export const branchContext = {
 }
 
 export const branchOrder = '子丑寅卯辰巳午未申酉戌亥';
+
+export const branchElementOrder = '水土木木土火火土金金土水';
+
+export const trunkElementOrder = '木木火火土土金金水水';
 
 export function getIndexOfTrunk(trunk){
   return getIndexFromSentence(trunk, trunkOrder, 'trunk')
@@ -384,7 +389,7 @@ export function getChosenIndex(chosen) {
 const elementStatusOne =
   '旺,相,休,囚,死';
 
-export const getChosen = (element, branch) => {
+export const getChosenTypeOne = (element, branch) => {
 
   const elementIndex = getIndexOfElement(element);
   const adjustedElementIndex = elementIndex == 4 ? 3 : elementIndex;
@@ -392,8 +397,40 @@ export const getChosen = (element, branch) => {
   const chosenIndex = -(adjustedElementIndex * 3) - 5 + branchIndex;
   const chosen = item(chosenOrder, chosenIndex);
   return chosen;
-
 }
+
+// 在１０３頁提及的十天干生旺死絕表天干和地支的關係
+export const chosenTypeTwoOrder =　
+  '亥午寅酉寅酉巳子申卯';
+
+export const buildTwoSentence =
+  (firstSentence,
+  secondSentence,
+  firstSentenceName,
+  secondSentenceName,
+  contextType) => {
+
+  const sentenceFn = (character, index, list) => {
+    return {
+      contextType: contextType,
+      [firstSentenceName]: character,
+      [secondSentenceName]: secondSentence[index],
+      order: index
+    }
+  }
+
+  const result = RA.mapIndexed(sentenceFn, firstSentence);
+  console.log(result);
+  return result;
+}
+
+export const chosenTypeTwoContext =
+  buildTwoSentence(
+    trunkOrder,
+    chosenTypeTwoOrder,
+    'trunk',
+    'branch',
+    'chosen_type_two');
 
 
 export const crabFarm = getCrabFarm();
