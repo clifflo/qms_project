@@ -2,10 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { SabaLot } from './features/sabaLot/SabaLot';
-import {
-  getBranchFromEnglish,
-  getElementOfTrunk,
-  allArrestments }
+import { getChosen }
   from './features/sabaLot/plastics';
 
 
@@ -15,7 +12,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        Branch: Phi is { getBranchFromEnglish('Phi')}
+        { getChosen('火','亥')}
       </div>
     </div>
   );

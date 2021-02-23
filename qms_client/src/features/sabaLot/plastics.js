@@ -1,14 +1,19 @@
 import * as R from 'ramda';
 
 export function item(array, index){
-  if(index >= array.length){
-    return array[index - array.length];
+
+  const positiveIndex = index % array.length;
+
+  const negativeIndex = (index % array.length) + array.length;
+
+  if(index > 0){
+    return array[positiveIndex]
   }
-  else if(index < 0){
-    return array[index +  array.length];
+  else if (index < 0){
+    return array[negativeIndex]
   }
   else {
-    return array[index]
+    return 'Index is not a number.'
   }
 }
 
@@ -31,12 +36,12 @@ export const trunkContext = {
   '癸': 'Lamda'
 }
 
-const elementOrder = '水木火土金';
+const elementOrder = '金水木火土';
 
 const trunkOrder = '甲乙丙丁戊己庚辛壬癸';
 
-export function getIndexFromSentence(character, order){
-  return R.findIndex(R.equals(character),R.split('', trunkOrder));
+export function getIndexFromSentence(character, order, orderType){
+  return R.findIndex(R.equals(character),R.split('', order));
 }
 
 export const branchContext = {
@@ -57,11 +62,15 @@ export const branchContext = {
 export const branchOrder = '子丑寅卯辰巳午未申酉戌亥';
 
 export function getIndexOfTrunk(trunk){
-  return getIndexFromSentence(trunk, trunkOrder);
+  return getIndexFromSentence(trunk, trunkOrder, 'trunk')
 }
 
 export function getIndexOfBranch(branch){
-  return getIndexFromSentence(branch, branchOrder);
+  return getIndexFromSentence(branch, branchOrder, 'branch')
+}
+
+export function getIndexOfElement(element){
+  return getIndexFromSentence(element, elementOrder, 'element')
 }
 
 export function isTrunk(plastic) {
@@ -191,9 +200,6 @@ export function getCompounds() {
 
   const _compounds =
     R.map(buildFn, compoundSentences);
-
-  console.log(_compounds);
-
   return _compounds;
 }
 
@@ -345,12 +351,49 @@ export const allArrestments = concatAll(
   impoliteArrestments,
   selfArrestments)
 
-
-
-
 export const crabFarmSentences = [
   '甲祿在寅',
-  '丙戊祿在巳',
+  '丙祿在巳',
+  '戊祿在巳',
   '庚祿在申',
   '壬祿在亥'
-]
+];
+
+export const getCrabFarm = () => {
+
+  const mapFn = sentence => {
+    return {
+      crabBody: sentence[0],
+      crabShell: sentence[3]
+    }
+  }
+
+  return R.map(mapFn, crabFarmSentences);
+}
+
+const chosenSentence =
+  '長生,沐浴,冠帶,臨官,帝旺,衰,病,長死,墓,絕,胎,養';
+
+export const chosenOrder =
+  R.split(',', chosenSentence);
+
+export function getChosenIndex(chosen) {
+  return getIndexFromSentence(chosen, chosenOrder)
+}
+
+const elementStatusOne =
+  '旺,相,休,囚,死';
+
+export const getChosen = (element, branch) => {
+
+  const elementIndex = getIndexOfElement(element);
+  const adjustedElementIndex = elementIndex == 4 ? 3 : elementIndex;
+  const branchIndex = getIndexOfBranch(branch);
+  const chosenIndex = -(adjustedElementIndex * 3) - 5 + branchIndex;
+  const chosen = item(chosenOrder, chosenIndex);
+  return chosen;
+
+}
+
+
+export const crabFarm = getCrabFarm();
