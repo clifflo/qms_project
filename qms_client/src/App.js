@@ -2,8 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { SabaLot } from './features/sabaLot/SabaLot';
-import { metroSet }
+import { chiefGuardSet }
   from './features/sabaLot/calculations/kappas';
+import JSONTree from 'react-json-tree'
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        { JSON.stringify(metroSet) }
+        <JSONTree data={chiefGuardSet} />
       </div>
     </div>
   );

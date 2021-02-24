@@ -5,7 +5,8 @@ import {
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
-export const rawMetroSet = {
+
+export const rawChiefGuardSet = {
   '甲戊庚': '丑未',
   '乙己': '子申',
   '丙丁': '亥酉',
@@ -13,25 +14,25 @@ export const rawMetroSet = {
   '辛': '午寅',
 }
 
-export const getMetroSet = () => {
+export const getChiefGuardSet = () => {
 
-  const mapFn1 = (rawMetro) => {
+  const mapFn1 = (rawChiefGuard) => {
     return {
-      metroDayTrunks: rawMetro[0],
-      metroMorningStart: rawMetro[1][0],
-      metroEveningStart: rawMetro[1][1]
+      dayTrunks: rawChiefGuard[0],
+      morningStart: rawChiefGuard[1][0],
+      eveningStart: rawChiefGuard[1][1]
     }
   }
 
-  const mapFn2 = (metro) => {
+  const mapFn2 = (chiefGuard) => {
 
-    const trunks = R.split('', metro.metroDayTrunks);
+    const trunks = R.split('', chiefGuard.dayTrunks);
 
     const mapFn3 = (trunk) => {
       return {
-        metroDayTrunk: trunk,
-        metroMorningStart: metro.metroMorningStart,
-        metroEveningStart: metro.metroEveningStart
+        dayTrunk: trunk,
+        morningStart: chiefGuard.morningStart,
+        eveningStart: chiefGuard.eveningStart
       }
     }
 
@@ -44,12 +45,12 @@ export const getMetroSet = () => {
     R.map(mapFn1),
     R.toPairs);
 
-  const result = fullMapFn(rawMetroSet);
+  const result = fullMapFn(rawChiefGuardSet);
   console.log(result);
   return result;
 }
 
-export const metroSet = getMetroSet();
+export const chiefGuardSet = getChiefGuardSet();
 
 export const crabFarmSentences = [
   '甲祿在寅',

@@ -403,17 +403,18 @@ export const chosenTypeTwoContext =
 
 export const getTwigSeries = (trunk, branch) => {
 
-  const vector = getIndexOfBranch(branch) - getIndexOfTrunk(trunk);
+  const difference = getIndexOfBranch(branch) - getIndexOfTrunk(trunk);
 
-  if(vector % 2 == 0){
-    const twigSeriesBranch = getBranchFromIndex(vector);
-    const adjustedVector = adjust(vector, 12);
-    const branchNumber = (12 - adjustedVector) / 2;
+  if(difference % 2 == 0){
+    const twigSeriesBranch = getBranchFromIndex(difference);
+    const adjustedDifference = adjust(difference, 12);
+    const branchNumber = (12 - adjustedDifference) / 2;
     const trunkNumber = getIndexOfTrunk(trunk);
     const twigPosition = (branchNumber * 10 + trunkNumber);
     const twigSeriesOrder = branchNumber;
     const twigSeriesVoid =
-      R.map(getBranchFromIndex, [adjustedVector - 1, adjustedVector - 2]);
+      R.map(getBranchFromIndex,
+        [adjustedDifference - 1, adjustedDifference - 2]);
     return {
       inputTrunk: trunk,
       inputBranch: branch,
