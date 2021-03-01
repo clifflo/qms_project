@@ -69,6 +69,13 @@ export function getElementalOfPlastic(plastic){
   }
 }
 
+export function comparePlastic(source, target){
+  const sourceElemental = getElementalOfPlastic(source);
+  const targetElemental = getElementalOfPlastic(target);
+  const result = getElementalReaction(sourceElemental, targetElemental)
+  return result;
+}
+
 
 export function getTrunkFromIndex(index){
   return item(trunkOrder, index);

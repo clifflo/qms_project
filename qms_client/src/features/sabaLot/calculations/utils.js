@@ -48,6 +48,9 @@ export function compare(source, target, sentenceOne, sentenceTwo){
   if(targetIndex == -1)
     throw 'Wrong target.';
 
+  if(!sentenceTwo)
+    sentenceTwo = sentenceOne;
+
   const difference = targetIndex - sourceIndex;
   const result = item(sentenceTwo, difference);
   return result;

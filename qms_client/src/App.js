@@ -2,8 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { SabaLot } from './features/sabaLot/SabaLot';
-import { getElementalReaction }
-  from './features/sabaLot/calculations/plastics';
+import { checker }
+  from './features/sabaLot/calculations/kappas';
 import JSONTree from 'react-json-tree'
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        <JSONTree data={getElementalReaction('金','木')} />
+        <JSONTree data={checker('丙戌日巳時申將')} />
       </div>
     </div>
   );
