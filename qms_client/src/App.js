@@ -3,7 +3,7 @@ import './App.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { SabaLot } from './features/sabaLot/SabaLot';
 import { checker }
-  from './features/sabaLot/calculations/kappas';
+  from './features/sabaLot/calculations/kappas/kappaTwo';
 import JSONTree from 'react-json-tree'
 
 function App() {

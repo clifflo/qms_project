@@ -55,7 +55,6 @@ export function getIndexOfBranch(branch){
 }
 
 export function getElementalOfPlastic(plastic){
-
   if(isValidTrunk(plastic)){
     const trunk = plastic;
     return trunkElementalOrder[getIndexOfTrunk(trunk)];
