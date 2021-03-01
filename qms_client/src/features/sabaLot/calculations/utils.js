@@ -32,3 +32,28 @@ export const item = (array, index) => {
 
   return array[adjust(index, array.length)]
 }
+
+export function getIndexFromSentence(
+  character, sentence){
+  return R.findIndex(R.equals(character),R.split('', sentence));
+}
+
+export function compare(source, target, sentenceOne, sentenceTwo){
+  const sourceIndex = getIndexFromSentence(source, sentenceOne);
+  const targetIndex = getIndexFromSentence(target, sentenceOne);
+
+  if(sourceIndex == -1)
+    throw 'Wrong source.';
+
+  if(targetIndex == -1)
+    throw 'Wrong target.';
+
+  const difference = targetIndex - sourceIndex;
+  const result = item(sentenceTwo, difference);
+  return result;
+}
+
+export function getIndexFromList(
+  word, wordList){
+  return R.findIndex(R.equals(word), wordList);
+}

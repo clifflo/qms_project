@@ -2,13 +2,15 @@ import {
   getTrunkFromIndex,
   getBranchFromIndex,
   getIndexOfBranch,
-  getIndexOfTrunk
+  getIndexOfTrunk,
+  getIndexFromList,
+  isValidBranch
 } from './plastics';
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
 
-export const rawChiefGuardSet = {
+export const rawChiefPaladinSet = {
   '甲戊庚': '丑未',
   '乙己': '子申',
   '丙丁': '亥酉',
@@ -16,25 +18,25 @@ export const rawChiefGuardSet = {
   '辛': '午寅',
 }
 
-export const getChiefGuardSet = () => {
+export const getChiefPaladinSet = () => {
 
-  const mapFn1 = (rawChiefGuard) => {
+  const mapFn1 = (rawChiefPaladin) => {
     return {
-      dayTrunks: rawChiefGuard[0],
-      morningStart: rawChiefGuard[1][0],
-      eveningStart: rawChiefGuard[1][1]
+      dayTrunks: rawChiefPaladin[0],
+      morningStart: rawChiefPaladin[1][0],
+      eveningStart: rawChiefPaladin[1][1]
     }
   }
 
-  const mapFn2 = (chiefGuard) => {
+  const mapFn2 = (chiefPaladin) => {
 
-    const trunks = R.split('', chiefGuard.dayTrunks);
+    const trunks = R.split('', chiefPaladin.dayTrunks);
 
     const mapFn3 = (trunk) => {
       return {
         dayTrunk: trunk,
-        morningStart: chiefGuard.morningStart,
-        eveningStart: chiefGuard.eveningStart
+        morningStart: chiefPaladin.morningStart,
+        eveningStart: chiefPaladin.eveningStart
       }
     }
 
@@ -47,11 +49,35 @@ export const getChiefGuardSet = () => {
     R.map(mapFn1),
     R.toPairs);
 
-  const result = fullMapFn(rawChiefGuardSet);
+  const result = fullMapFn(rawChiefPaladinSet);
   return result;
 }
 
-export const chiefGuardSet = getChiefGuardSet();
+export const chiefPaladinSet = getChiefPaladinSet();
+
+export const isMorningPaladinHour = (branch) => {
+  const morningPaladinHours = '卯辰巳午未申';
+  if(!isValidBranch(branch))
+    throw 'Wrong branch for hour.';
+
+  return R.includes(morningPaladinHours, branch);
+}
+
+export const getChiefPaladinContext = (dayTrunk, hourBranch) => {
+
+  const morningPaladinHour = isMorningPaladinHour(hourBranch)
+  const startProp = morningPaladinHour ? 'morningStart': 'eveningStart';
+
+  const chiefPaladinStart = R.find(
+    R.propEq('dayTrunk', dayTrunk))[startProp];
+
+  return {
+    morningPaladinHour,
+    chiefPaladinStart
+  }
+}
+
+export const isClockwisePaladinHour = (branch) => {}
 
 export const crabFarmSentences = [
   '甲祿在寅',
@@ -97,10 +123,10 @@ export const parseKappaSentence = kappaSentence => {
   const dayTrunk = kappaSentence[0];
   const dayBranch = kappaSentence[1];
   const daySay = kappaSentence[2];
-  const timeBranch = kappaSentence[3];
-  const timeSay = kappaSentence[4];
-  const admiralBranch = kappaSentence[5];
-  const admiralSay = kappaSentence[6];
+  const hourBranch = kappaSentence[3];
+  const hourSay = kappaSentence[4];
+  const rangerBranch = kappaSentence[5];
+  const rangerSay = kappaSentence[6];
 
   const dayTrunkIndex = getIndexOfTrunk(dayTrunk);
   if (dayTrunkIndex == -1)
@@ -113,39 +139,39 @@ export const parseKappaSentence = kappaSentence => {
   if (daySay != '日')
     throw 'Wrong day say.';
 
-  const timeBranchIndex = getIndexOfBranch(timeBranch);
+  const hourBranchIndex = getIndexOfBranch(hourBranch);
 
-  if (timeBranchIndex == -1)
-    throw 'Wrong time branch.';
+  if (hourBranchIndex == -1)
+    throw 'Wrong hour branch.';
 
-  if (timeSay != '時')
-    throw 'Wrong time say.';
+  if (hourSay != '時')
+    throw 'Wrong hour say.';
 
-  const admiralBranchIndex = getIndexOfBranch(admiralBranch);
+  const rangerBranchIndex = getIndexOfBranch(rangerBranch);
 
-  if (admiralBranchIndex == -1)
-    throw 'Wrong admiral branch.';
+  if (rangerBranchIndex == -1)
+    throw 'Wrong ranger branch.';
 
-  if (admiralSay != '將')
-    throw 'Wrong admiral say.';
+  if (rangerSay != '將')
+    throw 'Wrong ranger say.';
 
   return {
     dayTrunk,
     dayTrunkIndex,
     dayBranch,
     dayBranchIndex,
-    timeBranch,
-    timeBranchIndex,
-    admiralBranch,
-    admiralBranchIndex
+    hourBranch,
+    hourBranchIndex,
+    rangerBranch,
+    rangerBranchIndex
   }
 
 }
 
 export const buildKappaTable = (kappaInput) => {
 
-  const distance = kappaInput.admiralBranchIndex -
-    kappaInput.timeBranchIndex;
+  const distance = kappaInput.rangerBranchIndex -
+    kappaInput.hourBranchIndex;
 
   const moveForward = (source) => source + distance;
   const moveBackward = (source) => source - distance;
@@ -171,7 +197,13 @@ export const buildKappaTable = (kappaInput) => {
   }
 }
 
-export function check(kappaSentence){
+export const paladinSentence =
+  '貴人,青龍,六合,勾陳,騰蛇,朱雀,'
+  + '太常,白虎,太陰,天空,玄武,天后';
 
-  return buildKappaTable(parseKappaSentence(kappaSentence));
+export const paladinList = R.split(',', paladinSentence);
+
+export const buildCephalopod = (kappaTable) => {
+
+  
 }

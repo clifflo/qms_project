@@ -2,7 +2,9 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   adjust,
-  item
+  item,
+  getIndexFromSentence,
+  compare
 } from './utils';
 
 
@@ -19,13 +21,9 @@ export const trunkContext = {
   '癸': 'Lamda'
 }
 
-const elementOrder = '金水木火土';
+const elementalOrder = '金水木火土';
 
 const trunkOrder = '甲乙丙丁戊己庚辛壬癸';
-
-export function getIndexFromSentence(character, order, orderType){
-  return R.findIndex(R.equals(character),R.split('', order));
-}
 
 const branchContext = {
   '子': 'Psi',
@@ -44,17 +42,33 @@ const branchContext = {
 
 const branchOrder = '子丑寅卯辰巳午未申酉戌亥';
 
-const branchElementOrder = '水土木木土火火土金金土水';
+const branchElementalOrder = '水土木木土火火土金金土水';
 
-const trunkElementOrder = '木木火火土土金金水水';
+const trunkElementalOrder = '木木火火土土金金水水';
 
 export function getIndexOfTrunk(trunk){
-  return getIndexFromSentence(trunk, trunkOrder, 'trunk')
+  return getIndexFromSentence(trunk, trunkOrder)
 }
 
 export function getIndexOfBranch(branch){
-  return getIndexFromSentence(branch, branchOrder, 'branch')
+  return getIndexFromSentence(branch, branchOrder)
 }
+
+export function getElementalOfPlastic(plastic){
+
+  if(isValidTrunk(plastic)){
+    const trunk = plastic;
+    return trunkElementalOrder[getIndexOfTrunk(trunk)];
+  }
+  else if(isValidBranch(plastic)){
+    const branch = plastic;
+    return branchElementalOrder[getIndexOfBranch(branch)];
+  }
+  else {
+    throw 'Wrong plastic.'
+  }
+}
+
 
 export function getTrunkFromIndex(index){
   return item(trunkOrder, index);
@@ -64,8 +78,39 @@ export function getBranchFromIndex(index){
   return item(branchOrder, index);
 }
 
-export function getIndexOfElement(element){
-  return getIndexFromSentence(element, elementOrder, 'element')
+export function isValidBranch(branch){
+  return R.includes(branch, branchOrder);
+}
+
+export function isValidTrunk(trunk){
+  return R.includes(trunk, trunkOrder);
+}
+
+export function isValidElemental(elemental){
+  return R.includes(elemental, elementalOrder);
+}
+
+export function getIndexOfElemental(elemental){
+  return getIndexFromSentence(elemental, elementalOrder)
+}
+
+export const elementalRelations = [
+  'Draw',
+  'Fruit',
+  'Bank',
+  'Hacker',
+  'Root'
+];
+
+export function getElementalReaction(source, target){
+
+  const result = compare(
+    source, target, elementalOrder, elementalRelations);
+  return {
+    source,
+    target,
+    relation: result
+  }
 }
 
 export function isTrunk(plastic) {
@@ -168,7 +213,7 @@ export function getCompounds() {
   const firstMapFn = sentence => {
     return {
       plastics: sentenceFn(sentence),
-      element: item(sentence, -1),
+      elemental: item(sentence, -1),
       compoundType: compoundTypeFn(sentence),
       isTrunk: isTrunk(sentence[0])
     }
@@ -356,15 +401,15 @@ export function getChosenIndex(chosen) {
   return getIndexFromSentence(chosen, chosenOrder)
 }
 
-const elementStatusOne =
+const elementalStatusOne =
   '旺,相,休,囚,死';
 
-export const getChosenTypeOne = (element, branch) => {
+export const getChosenTypeOne = (elemental, branch) => {
 
-  const elementIndex = getIndexOfElement(element);
-  const adjustedElementIndex = elementIndex == 4 ? 3 : elementIndex;
+  const elementalIndex = getIndexOfElemental(elemental);
+  const adjustedElementalIndex = elementalIndex == 4 ? 3 : elementalIndex;
   const branchIndex = getIndexOfBranch(branch);
-  const chosenIndex = -(adjustedElementIndex * 3) - 5 + branchIndex;
+  const chosenIndex = -(adjustedElementalIndex * 3) - 5 + branchIndex;
   const chosen = item(chosenOrder, chosenIndex);
   return chosen;
 }
