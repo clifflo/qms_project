@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        <JSONTree data={checker('丙戌日巳時申將')} />
+        <JSONTree data={checker('丁丑日子時申將')} />
       </div>
     </div>
   );

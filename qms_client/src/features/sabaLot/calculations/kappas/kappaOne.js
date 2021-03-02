@@ -81,11 +81,16 @@ export const getChiefPaladinContext = (dayTrunk, hourBranch) => {
 export const isClockwisePaladinHour = (branch) => {}
 
 export const crabFarmSentences = [
-  '甲祿在寅',
-  '丙祿在巳',
-  '戊祿在巳',
-  '庚祿在申',
-  '壬祿在亥'
+  '甲寄寅',
+  '乙寄辰',
+  '丙寄巳',
+  '丁寄未',
+  '戊寄巳',
+  '己寄未',
+  '庚寄申',
+  '辛寄戌',
+  '壬寄亥',
+  '癸寄丑'
 ];
 
 export const getCrabFarm = () => {
@@ -93,7 +98,7 @@ export const getCrabFarm = () => {
   const mapFn = sentence => {
     return {
       crabBody: sentence[0],
-      crabShell: sentence[3]
+      crabShell: sentence[2]
     }
   }
 
@@ -164,7 +169,8 @@ export const parseKappaSentence = kappaSentence => {
     hourBranch,
     hourBranchIndex,
     rangerBranch,
-    rangerBranchIndex
+    rangerBranchIndex,
+    kappaSentence
   }
 
 }
