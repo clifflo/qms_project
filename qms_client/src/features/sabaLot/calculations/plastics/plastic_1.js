@@ -81,6 +81,9 @@ export function getIndexOfBranch(branch){
 }
 
 export function getElementalOfPlastic(plastic){
+  if(R.isNil(plastic)){
+    throw 'The input is nil for plastic.'
+  }
   if(isValidTrunk(plastic)){
     const trunk = plastic;
     return trunkElementalOrder[getIndexOfTrunk(trunk)];
@@ -90,15 +93,16 @@ export function getElementalOfPlastic(plastic){
     return branchElementalOrder[getIndexOfBranch(branch)];
   }
   else {
-    throw 'Wrong plastic.'
+    throw `'${plastic}' is not plastic.`
   }
 }
 
 export function comparePlastic(source, target){
   const sourceElemental = getElementalOfPlastic(source);
   const targetElemental = getElementalOfPlastic(target);
-  const result = getElementalReaction(sourceElemental, targetElemental)
-  return result;
+  const relation = getElementalRelation(
+    sourceElemental, targetElemental)
+  return relation;
 }
 
 export function getTrunkFromIndex(index){
@@ -133,13 +137,9 @@ export const elementalRelations = [
   'Root'
 ];
 
-export function getElementalReaction(source, target){
+export function getElementalRelation(source, target){
 
-  const result = compare(
+  const relation = compare(
     source, target, elementalOrder, elementalRelations);
-  return {
-    source,
-    target,
-    relation: result
-  }
+  return relation;
 }
