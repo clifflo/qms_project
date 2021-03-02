@@ -14,6 +14,15 @@ export const buildKappaSeries = (kappaTable) => {
   }
 }
 
+export const addCheckedLesson =
+  (kappaSeries, lessonNumber, lessonName) => {
+
+  kappaSeries.checkedLesson.push({
+    lessonNumber,
+    lessonName
+  });
+}
+
 
 export const buildCephalopodContext_1 = (kappaSeries) => {
 
@@ -69,34 +78,36 @@ export const buildCephalopodContext_2 = (kappaSeries) => {
 
   const squidCount = getCephalopodCount('Squid');
   const octopusCount = getCephalopodCount('Octopus');
-  let lessonFinalized = false;
+  let lesson;
 
-  const lesson_01 = squidCount == 1 && octopusCount == 0;
-  // 始入課
+  const isLesson01 = squidCount == 1 && octopusCount == 0
+  const isLesson02 = squidCount == 1 && octopusCount > 0
+  const isLesson03 = octopusCount == 1 && squidCount == 0
 
-  const lesson_02 = squidCount == 1 && octopusCount > 0
-  // 重審課
-
-  const lesson_03 = octopusCount == 1 && squidCount == 0
-  // 元首課
+  if(isLesson01){
+    lesson = '始入課';
+  }
+  else if(isLesson02){
+    lesson = '重審課';
+  }
+  else if(isLesson03){
+    lesson = '元首課';
+  }
+  else {
+    lesson = '比用法';
+  }
 
   const cephalopodContext_2 = {
     squidCount,
-    octopusCount
+    octopusCount,
+    lesson
   }
 
   return {
     ...kappaSeries,
-    cephalopodContext_2,
-    lessons: {
-      lesson_01,
-      lesson_02,
-      lesson_03
-    }
+    cephalopodContext_2
   }
 }
-
-export const buildCephalopod_3 = null;
 
 
 export function checker(kappaSentence){
