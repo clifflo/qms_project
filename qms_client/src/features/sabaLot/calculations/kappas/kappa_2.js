@@ -8,14 +8,14 @@ import {
   comparePlastic
 } from '../plastics/plastic_1';
 
-export const buildKappaContext = (kappaTable) => {
+export const buildKappaSeries = (kappaTable) => {
   return {
     kappaTable
   }
 }
 
 
-export const buildCephalopodContent_1 = (kappaContext) => {
+export const buildCephalopodContext_1 = (kappaSeries) => {
 
   const applyFn = (func, kappaTable) => {
 
@@ -50,25 +50,25 @@ export const buildCephalopodContent_1 = (kappaContext) => {
     }
   }
 
-  const cephalopod_1 = applyFn(
+  const cephalopodContext_1 = applyFn(
     compareFn, kappaTable);
   const lessonsChecked = [];
 
   return {
     kappaTable,
-    cephalopod_1,
+    cephalopodContext_1,
     lessonsChecked
   };
 }
 
-export const buildCephalopodContent_2 = (kappaContext) => {
+export const buildCephalopodContext_2 = (kappaSeries) => {
 
-  const getCephalopodTypeCount = cephalopod =>
+  const getCephalopodCount = cephalopod =>
     R.filter(R.propEq('cephalopod', cephalopod),
-    kappaContext.cephalodContent_1).length;
+    kappaSeries.cephalodContext_1).length;
 
-  const squidCount = getRelationCount('Bank');
-  const octopusCount = getRelationCount('Hacker');
+  const squidCount = getCephalopodCount('Squid');
+  const octopusCount = getCephalopodCount('Octopus');
   let lessonFinalized = false;
 
   const lesson_01 = squidCount == 1 && octopusCount == 0;
@@ -80,14 +80,14 @@ export const buildCephalopodContent_2 = (kappaContext) => {
   const lesson_03 = octopusCount == 1 && squidCount == 0
   // 元首課
 
-  const cephalopod_2 = {
+  const cephalopodContext_2 = {
     squidCount,
     octopusCount
   }
 
   return {
-    ...kappaContext,
-    cephalopod_2,
+    ...kappaSeries,
+    cephalopodContext_2,
     lessons: {
       lesson_01,
       lesson_02,
