@@ -50,6 +50,32 @@ export function getIndexOfTrunk(trunk){
   return getIndexFromSentence(trunk, trunkOrder)
 }
 
+function getTrunkLiturgy(trunk) {
+  return (getIndexOfTrunk(trunk) % 2) == 0 ?
+    'Alpha': 'Omega';
+}
+
+function getBranchLiturgy(branch){
+  return (getIndexOfBranch(branch) % 2) == 0 ?
+    'Alpha': 'Omega';
+}
+
+export function getPlasticLiturgy(plastic){
+
+  if(isValidTrunk(plastic)){
+    const trunk = plastic;
+    return getTrunkLiturgy(trunk);
+  }
+  else if(isValidBranch(plastic)){
+    const branch = plastic;
+    return getBranchLiturgy(branch);
+  }
+  else {
+    throw 'Wrong plastic for liturgy.';
+  }
+}
+
+
 export function getIndexOfBranch(branch){
   return getIndexFromSentence(branch, branchOrder)
 }

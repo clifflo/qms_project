@@ -6,7 +6,7 @@ import {
   getIndexFromList,
   isValidBranch,
   comparePlastic
-} from '../plastics/plasticOne';
+} from '../plastics/plastic_1';
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
