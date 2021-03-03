@@ -135,12 +135,16 @@ export const parseKappaSentence = kappaSentence => {
   const rangerSay = kappaSentence[6];
 
   const dayTrunkIndex = getIndexOfTrunk(dayTrunk);
-  if (dayTrunkIndex == -1)
-    throw 'Wrong day trunk.';
+  if (dayTrunkIndex == -1){
+    throw `'${dayTrunk}' is not a valid trunk.`;
+  }
+
 
   const dayBranchIndex = getIndexOfBranch(dayBranch);
-  if (dayBranchIndex == -1)
-    throw 'Wrong day branch.';
+  if (dayBranchIndex == -1){
+    throw `'${dayBranch}' is not a valid branch.`;
+  }
+
 
   if (daySay != '日')
     throw 'Wrong day say.';

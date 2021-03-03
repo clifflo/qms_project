@@ -5,28 +5,26 @@ import {
   parseKappaSentence
 } from './kappa_1';
 import {
-  comparePlastic,
+  comparePlasticElemental,
   getElementalOfPlastic
 } from '../plastics/plastic_1';
 
 export function buildPalmDoor_1(kappaTable) {
 
-  console.log(kappaTable);
-
-  function applyFn(fn){
+  const applyFn = (fn) => {
     return [
-      fn(1, kappaTable.dayTrunk, kappaTable.trunkAlpha),
-      fn(2, kappaTable.trunkAlpha, kappaTable.trunkOmega),
-      fn(3, kappaTable.dayBranch, kappaTable.branchAlpha),
-      fn(4, kappaTable.branchAlpha, kappaTable.branchOmega)
+      fn(0, kappaTable.dayTrunk, kappaTable.trunkAlpha),
+      fn(1, kappaTable.trunkAlpha, kappaTable.trunkOmega),
+      fn(2, kappaTable.dayBranch, kappaTable.branchAlpha),
+      fn(3, kappaTable.branchAlpha, kappaTable.branchOmega)
     ]
   }
 
-  function compareFn(column, lowerCell, upperCell){
-    try{
+  const compareFn = (column, lowerCell, upperCell) => {
 
-      const relation = comparePlastic(lowerCell, upperCell);
-      console.log(relation);
+    try {
+      const relation = comparePlasticElemental(
+        lowerCell, upperCell);
       const getCephalopod = relation => {
         switch (relation) {
           case 'Bank':
@@ -51,26 +49,15 @@ export function buildPalmDoor_1(kappaTable) {
       }
     }
     catch(err){
-      throw 'Cannot build palm door 1 because of ' + err;
+      throw 'Cannot build palm door 1 due to -> ' + err;
     }
 
   }
 
   const palmDoor_1 = applyFn(compareFn);
 
-
-
   return {
     ...kappaTable,
     palmDoor_1
   }
-}
-
-
-export function checker(kappaSentence){
-  const kappaTable = R.compose(
-    buildPalmDoor_1,
-    buildKappaTable,
-    parseKappaSentence)(kappaSentence);
-  return kappaTable;
 }

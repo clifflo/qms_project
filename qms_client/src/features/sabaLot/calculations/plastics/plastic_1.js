@@ -97,12 +97,43 @@ export function getElementalOfPlastic(plastic){
   }
 }
 
-export function comparePlastic(source, target){
-  const sourceElemental = getElementalOfPlastic(source);
-  const targetElemental = getElementalOfPlastic(target);
-  const relation = getElementalRelation(
-    sourceElemental, targetElemental)
-  return relation;
+export function comparePlasticElemental(source, target){
+  try {
+    const sourceElemental = getElementalOfPlastic(source);
+    const targetElemental = getElementalOfPlastic(target);
+    const relation = getElementalRelation(
+      sourceElemental, targetElemental)
+    return relation;
+  }
+  catch(err){
+    throw 'Cannot compare plastic elemental due to -> ' + err;
+  }
+
+}
+
+export function comparePlasticLiturgy(source, target){
+  try {
+    if(R.isNil(source)){
+      throw 'Source is nil for plastic liturgy.'
+    }
+
+    if(R.isNil(target)){
+      throw 'Target is nil for plastic liturgy.'
+    }
+
+    const sourceLiturgy = getPlasticLiturgy(source);
+    const targetLiturgy = getPlasticLiturgy(target);
+    const comparison = sourceLiturgy == targetLiturgy ?
+      'Same': 'Different';
+    return {
+      comparison,
+      sourceLiturgy,
+      targetLiturgy
+    }
+  }
+  catch(err){
+    throw 'Cannot get plastic liturgy due to: ' + err;
+  }
 }
 
 export function getTrunkFromIndex(index){

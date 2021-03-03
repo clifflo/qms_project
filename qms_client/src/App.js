@@ -2,8 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { SabaLot } from './features/sabaLot/SabaLot';
-import { checker }
-  from './features/sabaLot/calculations/kappas/kappa_2';
+import kappaContext
+  from './features/sabaLot/calculations/kappas/kappaContext';
 import JSONTree from 'react-json-tree'
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        <JSONTree data={checker('丁丑日子時申將')} />
+        <JSONTree data={kappaContext('戊寅日子時巳將')} />
       </div>
     </div>
   );
