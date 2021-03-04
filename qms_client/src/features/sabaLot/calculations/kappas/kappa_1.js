@@ -118,7 +118,6 @@ export const getCrabShell = (crabBody) => {
     R.find(crab => crab.crabBody == crabBody, crabFarm).crabShell;
 
   return crabShell;
-
 }
 
 export const parseKappaSentence = kappaSentence => {
@@ -179,7 +178,7 @@ export const parseKappaSentence = kappaSentence => {
 
 }
 
-export const buildKappaTable = (kappaInput) => {
+export const initializeKappaTable = (kappaInput) => {
 
   const distance = kappaInput.rangerBranchIndex -
     kappaInput.hourBranchIndex;

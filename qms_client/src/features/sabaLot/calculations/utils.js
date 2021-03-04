@@ -37,11 +37,10 @@ export function getIndexFromList(wordLike, listLike){
   if(RA.isString(listLike)){
     const sentence = listLike;
     const character = wordLike;
-    console.log(character);
-
     if(wordLike.length != 1){
-      throw 'The first argument must be just a single character '
-      + 'if the second argument is a string.';
+      throw new Error(
+        'The first argument must be just a single '
+        + 'character if the second argument is a string.');
     }
 
     return R.findIndex(
@@ -112,8 +111,7 @@ export const slider = (listLike, wordLike, distance) => {
       return sliderForList();
     }
     catch(err){
-      throw 'Slider for list failed because of '
-        + err;
+      throw new Error('Slider for list failed.');
     }
   }
   else {

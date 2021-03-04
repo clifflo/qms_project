@@ -175,11 +175,13 @@ export function getElementalRelation(source, target){
   const targetIndex = getIndexFromList(target, elementalSentence);
 
   if(sourceIndex == -1){
-    throw `'${source}' is not a valid source elemental.`;
+    throw new Error(
+      `'${source}' is not a valid source elemental.`);
   }
 
   if(targetIndex == -1){
-    throw `'${target}' is not a valid target elemental.`;
+    throw new Error(
+      `'${target}' is not a valid target elemental.`);
   }
 
   const difference = targetIndex - sourceIndex;

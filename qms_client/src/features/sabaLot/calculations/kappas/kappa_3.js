@@ -1,22 +1,13 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  applyToKappaTable
-} from './kappa_2'
-import {
   comparePlasticLiturgy
 } from '../plastics/plastic_1';
+import {
+  kappaApplyPartial
+} from './kappa_2';
 
 export function buildPalmDoor_2(kappaTable){
-
-  const applyFn = (fn) => {
-    return RA.mapIndexed(
-      fn,
-      [kappaTable.trunkAlpha,
-      kappaTable.trunkOmega,
-      kappaTable.branchAlpha,
-      kappaTable.branchOmega]);
-  }
 
   const compareFn = (source, columnIndex) => {
     try {
@@ -39,7 +30,9 @@ export function buildPalmDoor_2(kappaTable){
     }
   }
 
-  const palmDoor_2 = applyFn(compareFn);
+  const palmDoor_2 = kappaApplyPartial(
+    compareFn, kappaTable);
+    
   return {
     ...kappaTable,
     palmDoor_2

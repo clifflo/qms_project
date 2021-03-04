@@ -14,7 +14,7 @@ export const branchSlider = (branch, distance) =>{
     throw new Error(`${branch} is not a valid branch.`);
   }
   try{
-    return slider(1, branch, distance);
+    return slider(branchSentence, branch, distance);
   }
   catch(err){
     console.error(err);

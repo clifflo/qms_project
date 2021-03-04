@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  buildKappaTable,
+  initializeKappaTable,
   parseKappaSentence
 } from './kappa_1';
 import {
@@ -9,19 +9,29 @@ import {
   getElementalOfPlastic
 } from '../plastics/plastic_1';
 
-export function buildPalmDoor_1(kappaTable) {
+export const kappaApplyFull = (fn, kappaTable) => {
+  return RA.mapIndexed(
+    fn,
+    [
+      [kappaTable.dayTrunk, kappaTable.trunkAlpha],
+      [kappaTable.trunkAlpha, kappaTable.trunkOmega],
+      [kappaTable.dayBranch, kappaTable.branchAlpha],
+      [kappaTable.branchAlpha, kappaTable.branchOmega]
+    ]
+  )
+}
 
-  const applyFn = (fn) => {
-    return RA.mapIndexed(
-      fn,
-      [
-        [kappaTable.dayTrunk, kappaTable.trunkAlpha],
-        [kappaTable.trunkAlpha, kappaTable.trunkOmega],
-        [kappaTable.dayBranch, kappaTable.branchAlpha],
-        [kappaTable.branchAlpha, kappaTable.branchOmega]
-      ]
-    )
-  }
+export const kappaApplyPartial = (fn, kappaTable) => {
+  return RA.mapIndexed(
+    fn,
+    [kappaTable.trunkAlpha,
+    kappaTable.trunkOmega,
+    kappaTable.branchAlpha,
+    kappaTable.branchOmega]);
+}
+
+
+export function buildPalmDoor_1(kappaTable) {
 
   const compareFn = (cells, columnIndex) => {
 
@@ -56,12 +66,13 @@ export function buildPalmDoor_1(kappaTable) {
       }
     }
     catch(err){
-      throw 'Cannot build palm door 1 due to -> ' + err;
+      throw new Error('Cannot build palm door 1.');
     }
 
   }
 
-  const palmDoor_1 = applyFn(compareFn);
+  const palmDoor_1 = kappaApplyFull(
+    compareFn, kappaTable);
 
   return {
     ...kappaTable,

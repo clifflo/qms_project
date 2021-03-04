@@ -2,11 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { SabaLot } from './features/sabaLot/SabaLot';
-import kappaContext
-  from './features/sabaLot/calculations/kappas/kappaContext';
+import buildKappaTable
+  from './features/sabaLot/calculations/kappas/kappaTable';
 import JSONTree from 'react-json-tree';
-import { branchSlider }
-  from './features/sabaLot/calculations/plastics/plastic_3';
+import { check }
+  from './features/sabaLot/calculations/kappas/kappa_4';
 
 function App() {
 
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        <JSONTree data={branchSlider('卯', 6)} />
+        <JSONTree data={check()} />
       </div>
     </div>
   );
