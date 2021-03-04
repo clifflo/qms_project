@@ -17,12 +17,12 @@ export const adjust = (index, distance) => {
   }
 }
 
-export const item = (array, index) => {
+export const item = (listLike, index) => {
 
-  const firstArgValid =
-    RA.isString(array) || RA.isArray(array);
+  const listLikeValid =
+    RA.isString(listLike) || RA.isArray(listLike);
 
-  if(!firstArgValid){
+  if(!listLikeValid){
     throw 'Not an array or string for the first argument.'
   }
 
@@ -33,30 +33,84 @@ export const item = (array, index) => {
   return array[adjust(index, array.length)]
 }
 
-export function getIndexFromSentence(
-  character, sentence){
-  return R.findIndex(R.equals(character),R.split('', sentence));
+export function getIndexFromList(wordLike, listLike){
+  if(RA.isString(listLike)){
+    const sentence = listLike;
+    const character = wordLike;
+
+    if(wordLike.length != 1){
+      throw 'The first argument must be just a single character'
+      + 'if the second argument is a string.';
+    }
+
+    return R.findIndex(
+      R.equals(character),R.split('', sentence));
+  }
+  else if(RA.isArray(listLike)){
+    const word = wordLike;
+    const wordList = listLike;
+    R.findIndex(R.equals(word), wordList);
+  }
+  else {
+    throw 'The second argument must be string or array.';
+  }
+
 }
 
-export function compare(source, target, sentenceOne, sentenceTwo){
-  const sourceIndex = getIndexFromSentence(source, sentenceOne);
-  const targetIndex = getIndexFromSentence(target, sentenceOne);
+export const slider = (wordLike, listLike, distance) => {
 
-  if(sourceIndex == -1)
-    throw 'Wrong source.';
+  const sliderForSentence = () => {
 
-  if(targetIndex == -1)
-    throw 'Wrong target.';
+    const character = wordLike;
+    const sentence = listLike;
+    const doubleSentence = sentence + sentence;
+    const startPosition = getIndexFromList(
+      character, doubleSentence);
+    const result = R.slice(
+      startPosition,
+      startPosition + distance,
+      doubleSentence);
 
-  if(!sentenceTwo)
-    sentenceTwo = sentenceOne;
+    return result;
+  }
 
-  const difference = targetIndex - sourceIndex;
-  const result = item(sentenceTwo, difference);
-  return result;
-}
+  const sliderForList = () => {
+    const word = wordLike;
+    const list = listLike;
+    const doubleList = R.concat(likeLike, likeLike);
+    const result = R.slice(
+      startPosition,
+      startPosition + sentence,
+      doubleList
+    );
+    return result;
+  }
 
-export function getIndexFromList(
-  word, wordList){
-  return R.findIndex(R.equals(word), wordList);
+  if(distance < 0){
+    throw 'Distance should be a positive number';
+  }
+
+  if(RA.isString(listLike)){
+    try {
+      return sliderForSentence;
+    }
+    catch(err){
+      throw 'Slider for sentence failed because of '
+      + err;
+    }
+
+  }
+  else if(RA.isArray(listLike)){
+    try{
+      return sliderForList;
+    }
+    catch(err){
+      throw 'Slider for list failed because of '
+      + err;
+    }
+  }
+  else {
+    throw 'Slider does not work. The list like argument'
+    + 'is actually type of ' + R.type(listlike);
+  }
 }

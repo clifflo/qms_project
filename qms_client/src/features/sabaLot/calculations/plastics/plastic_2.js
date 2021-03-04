@@ -3,12 +3,8 @@ import * as RA from 'ramda-adjunct';
 import {
   adjust,
   item,
-  getIndexFromSentence,
-  compare
+  getIndexFromList
 } from '../utils';
-import {
-
-}
 
 export const plasticReactionSentences = [
   '子丑合土',
@@ -282,7 +278,7 @@ export const chosenOrder =
   R.split(',', chosenSentence);
 
 export function getChosenIndex(chosen) {
-  return getIndexFromSentence(chosen, chosenOrder)
+  return getIndex(chosen, chosenOrder)
 }
 
 const elementalStatusOne =

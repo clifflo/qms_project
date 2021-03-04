@@ -204,7 +204,8 @@ export const buildKappaTable = (kappaInput) => {
     trunkAlpha,
     trunkOmega,
     branchAlpha,
-    branchOmega
+    branchOmega,
+    distance
   }
 }
 

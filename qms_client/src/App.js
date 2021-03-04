@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        <JSONTree data={kappaContext('戊寅日子時巳將')} />
+        <JSONTree data={kappaContext('甲辰日卯時亥將')} />
       </div>
     </div>
   );

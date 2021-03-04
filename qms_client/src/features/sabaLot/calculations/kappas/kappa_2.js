@@ -12,18 +12,23 @@ import {
 export function buildPalmDoor_1(kappaTable) {
 
   const applyFn = (fn) => {
-    return [
-      fn(0, kappaTable.dayTrunk, kappaTable.trunkAlpha),
-      fn(1, kappaTable.trunkAlpha, kappaTable.trunkOmega),
-      fn(2, kappaTable.dayBranch, kappaTable.branchAlpha),
-      fn(3, kappaTable.branchAlpha, kappaTable.branchOmega)
-    ]
+    return RA.mapIndexed(
+      fn,
+      [
+        [kappaTable.dayTrunk, kappaTable.trunkAlpha],
+        [kappaTable.trunkAlpha, kappaTable.trunkOmega],
+        [kappaTable.dayBranch, kappaTable.branchAlpha],
+        [kappaTable.branchAlpha, kappaTable.branchOmega]
+      ]
+    )
   }
 
-  const compareFn = (column, lowerCell, upperCell) => {
+  const compareFn = (cells, columnIndex) => {
 
     try {
-      const relation = comparePlasticElemental(
+      const lowerCell = cells[0];
+      const upperCell = cells[1];
+      const comparison = comparePlasticElemental(
         lowerCell, upperCell);
       const getCephalopod = relation => {
         switch (relation) {
@@ -41,11 +46,13 @@ export function buildPalmDoor_1(kappaTable) {
       }
 
       return {
-        column,
+        columnIndex,
         lowerCell,
         upperCell,
-        relation,
-        cephalopod: getCephalopod(relation)
+        relation: comparison.relation,
+        lowerCellElemental: comparison.sourceElemental,
+        upperCellElemental: comparison.targetElemental,
+        cephalopod: getCephalopod(comparison.relation)
       }
     }
     catch(err){

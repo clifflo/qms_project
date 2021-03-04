@@ -3,8 +3,7 @@ import * as RA from 'ramda-adjunct';
 import {
   adjust,
   item,
-  getIndexFromSentence,
-  compare
+  getIndexFromList
 } from '../utils';
 
 
@@ -47,7 +46,7 @@ const branchElementalOrder = '水土木木土火火土金金土水';
 const trunkElementalOrder = '木木火火土土金金水水';
 
 export function getIndexOfTrunk(trunk){
-  return getIndexFromSentence(trunk, trunkOrder)
+  return getIndexFromList(trunk, trunkOrder)
 }
 
 function getTrunkLiturgy(trunk) {
@@ -75,9 +74,8 @@ export function getPlasticLiturgy(plastic){
   }
 }
 
-
 export function getIndexOfBranch(branch){
-  return getIndexFromSentence(branch, branchOrder)
+  return getIndexFromList(branch, branchOrder)
 }
 
 export function getElementalOfPlastic(plastic){
@@ -103,7 +101,11 @@ export function comparePlasticElemental(source, target){
     const targetElemental = getElementalOfPlastic(target);
     const relation = getElementalRelation(
       sourceElemental, targetElemental)
-    return relation;
+    return {
+      relation,
+      sourceElemental,
+      targetElemental
+    }
   }
   catch(err){
     throw 'Cannot compare plastic elemental due to -> ' + err;
@@ -123,10 +125,9 @@ export function comparePlasticLiturgy(source, target){
 
     const sourceLiturgy = getPlasticLiturgy(source);
     const targetLiturgy = getPlasticLiturgy(target);
-    const comparison = sourceLiturgy == targetLiturgy ?
-      'Same': 'Different';
+    const isSameLiturgy = sourceLiturgy == targetLiturgy;
     return {
-      comparison,
+      isSameLiturgy,
       sourceLiturgy,
       targetLiturgy
     }
@@ -157,7 +158,7 @@ export function isValidElemental(elemental){
 }
 
 export function getIndexOfElemental(elemental){
-  return getIndexFromSentence(elemental, elementalOrder)
+  return getIndexFromList(elemental, elementalOrder)
 }
 
 export const elementalRelations = [
@@ -170,7 +171,18 @@ export const elementalRelations = [
 
 export function getElementalRelation(source, target){
 
-  const relation = compare(
-    source, target, elementalOrder, elementalRelations);
+  const sourceIndex = getIndexFromList(source, elementalOrder);
+  const targetIndex = getIndexFromList(target, elementalOrder);
+
+  if(sourceIndex == -1){
+    throw `'${source}' is not a valid source elemental.`;
+  }
+
+  if(targetIndex == -1){
+    throw `'${target}' is not a valid target elemental.`;
+  }
+
+  const difference = targetIndex - sourceIndex;
+  const relation = item(elementalRelations, difference);
   return relation;
 }

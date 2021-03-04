@@ -10,28 +10,28 @@ import {
 export function buildPalmDoor_2(kappaTable){
 
   const applyFn = (fn) => {
-    return [
-      fn(0, kappaTable.trunkAlpha),
-      fn(1, kappaTable.trunkOmega),
-      fn(2, kappaTable.branchAlpha),
-      fn(3, kappaTable.branchOmega)
-    ]
+    return RA.mapIndexed(
+      fn,
+      [kappaTable.trunkAlpha,
+      kappaTable.trunkOmega,
+      kappaTable.branchAlpha,
+      kappaTable.branchOmega]);
   }
 
-  const compareFn = (column, source) => {
+  const compareFn = (source, columnIndex) => {
     try {
-      const result = comparePlasticLiturgy(
+      const comparison = comparePlasticLiturgy(
         source, kappaTable.dayTrunk);
-      const nectarWorker = result.comparison == 'Same' ?
+      const nectarWorker = comparison.isSameLiturgy ?
         'Bee' : 'Butterfly';
       return {
-        column,
+        columnIndex,
         upperCell: source,
         dayTrunk: kappaTable.dayTrunk,
         nectarWorker,
-        comparison: result.comparison,
-        upperCellLiturgy: result.sourceLiturgy,
-        dayTrunkLiturgy: result.targetLiturgy
+        isSameLiturgy: comparison.isSameLiturgy,
+        upperCellLiturgy:  comparison.sourceLiturgy,
+        dayTrunkLiturgy:  comparison.targetLiturgy
       }
     }
     catch(err){
