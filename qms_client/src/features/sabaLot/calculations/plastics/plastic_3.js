@@ -9,16 +9,27 @@ import {
   slider
 } from '../utils';
 
-export const branchSlider = (branch, distance) =>{
-  if(!isValidBranch(branch)){
-    throw new Error(`${branch} is not a valid branch.`);
+export const branchSlider = (sourceBranch, targetBranch) =>{
+  if(!isValidBranch(sourceBranch)){
+    throw new Error(
+      `${sourceBranch} is not a valid source branch.`);
   }
+
+  if(!isValidBranch(targetBranch)){
+    throw new Error(
+      `${targetBranch} is not a valid target branch.`)
+  }
+
   try{
-    return slider(branchSentence, branch, distance);
+    return slider(
+      branchSentence,
+      sourceBranch,
+      targetBranch);
   }
   catch(err){
     console.error(err);
-    throw new Error('Branch silder failed. See internal expection');
+    throw new Error(
+      'Branch silder failed.');
   }
 
 }

@@ -57,46 +57,61 @@ export function getIndexFromList(wordLike, listLike){
 
 }
 
-export const slider = (listLike, wordLike, distance) => {
+export const slider = (
+  listLike,
+  sourceWordLike,
+  targetWordLike) => {
 
   const sliderForSentence = () => {
 
-    const character = wordLike;
+    const sourceCharacter = sourceWordLike;
+    const targetCharacter = targetWordLike;
     const sentence = listLike;
     const doubleSentence = sentence + sentence;
+
     const startPosition = getIndexFromList(
-      character, doubleSentence);
+      sourceCharacter, doubleSentence);
+
+    const rawEndPosition = getIndexFromList(
+      targetCharacter, doubleSentence);
+
+    const finalEndPosition =
+      startPosition > rawEndPosition ?
+        rawEndPosition + sentence.length : rawEndPosition;
+
     const result = R.slice(
       startPosition,
-      startPosition + distance,
+      finalEndPosition,
       doubleSentence);
 
     return result;
   }
 
   const sliderForList = () => {
-    const word = wordLike;
+
+    const sourceWord = sourceWordLike;
+    const targetWord = targetWordLike;
     const list = listLike;
     const doubleList = R.concat(list, list);
+
     const startPosition = getIndexFromList(
-      word, doubleList);
+      sourceWord, doubleList);
+
+    const rawEndPosition = getIndexFromList(
+      targetWord, doubleList);
+
+    const finalEndPosition =
+      startPosition > rawEndPosition ?
+        rawEndPosition + list.length : rawEndPosition
+
     const result = R.slice(
       startPosition,
-      startPosition + distance,
+      finalEndPosition,
       doubleList
     );
     return result;
   }
 
-  if(!RA.isNumber(distance)){
-    throw new Error(
-      'Distance should be of type number');
-  }
-
-  if(distance < 0){
-    throw new Error(
-      'Distance should be a positive number');
-  }
 
   if(RA.isString(listLike)){
     try {

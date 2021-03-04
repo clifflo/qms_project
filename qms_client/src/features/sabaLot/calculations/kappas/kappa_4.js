@@ -8,87 +8,69 @@ import {
   getElementalOfPlastic,
   getElementalRelation
 } from '../plastics/plastic_1';
+import {
+  branchSlider
+} from '../plastics/plastic_3';
 
-const buildMagnet = (magnet, hive) => {
+const buildIronCrab = (magnet, crabShell) => {
 
-  const magnetElemental = getElementalOfPlastic(magnet);
-
-  const mapFn_1 = (crab) => {
-    try{
+  const mapFn = (target) => {
+    try {
+      const targetElemental = getElementalOfPlastic(target);
+      const magnetElemental = getElementalOfPlastic(magnet);
+      const relation = getElementalRelation(
+        magnetElemental, targetElemental);
+      const isIron = relation == 'Hacker';
       return {
-        ...crab,
         magnet,
         magnetElemental,
-        plastics: [
-          crab.crabBody,
-          crab.crabShell
-        ]
-      }
-    }
-    catch(err){
-      throw new Error('Map function 1 of build magnet is error.')
-    }
-
-  }
-
-  const mapFn_2 = (crab) => {
-
-    try{
-      const elementals =
-        R.map(getElementalOfPlastic, crab.plastics)
-
-      return {
-        ...crab,
-        elementals
-      };
-    }
-    catch(err){
-      console.error(err);
-      throw new Error('Map function 2 of build magnet is error.')
-    }
-  }
-
-  const identifyIron = (crabElemental) => {
-    try{
-      const relation = getElementalRelation(
-        magnetElemental, crabElemental);
-      return relation == 'Hacker';
-    }
-    catch(err){
-      console.error(err);
-      throw new Error('Cannot identify iron.');
-    }
-
-  }
-
-  const mapFn_3 = (crab) => {
-
-    try{
-      const ironCount = R.filter(
-        identifyIron, crab.elementals).length
-      return {
-        ...crab,
-        ironCount
+        target,
+        targetElemental,
+        relation,
+        isIron,
+        crabShell
       }
     }
     catch(err){
       console.error(err);
-      throw new Error('Map function 3 of build magnet is error.');
+      throw new Error('Map function of build iron crab failed.');
     }
   }
-
-  const fullMapFn = R.compose(mapFn_3, mapFn_2, mapFn_1);
 
   const crabs = R.filter(
-    R.propEq('crabShell', hive), crabFarm);
+    R.propEq('crabShell', crabShell), crabFarm);
 
-  const result = R.map(fullMapFn, crabs);
+  const crabBodys = R.map(crab => crab.crabBody, crabs);
+  const rawCrabPlastics = R.join('',R.append(crabShell, crabBodys));
+  const builtCrabPlastics = R.map(
+    mapFn,
+    rawCrabPlastics);
 
-  return result;
+  const ironCount = R.filter(
+    R.prop('isIron'), builtCrabPlastics).length;
+
+  return {
+    magnet,
+    crabShell,
+    rawCrabPlastics,
+    builtCrabPlastics,
+    ironCount
+  }
+}
+
+const buildIronCrabPath = (magnetStart, magnetEnd) => {
+
+  const rawIronPath = branchSlider(magnetStart, magnetEnd);
+  const mapFn = (crabShell) => buildIronCrab(magnetEnd, crabShell);
+
+  const processedIronPath =
+    R.map(mapFn, rawIronPath);
+
+  return processedIronPath;
 }
 
 export function check(){
-  return buildMagnet('巳', '亥')
+  return buildIronCrabPath('未','亥')
 }
 
 export function buildPalmDoor_3(kappaTable){
