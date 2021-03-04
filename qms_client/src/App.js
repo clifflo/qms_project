@@ -4,7 +4,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { SabaLot } from './features/sabaLot/SabaLot';
 import kappaContext
   from './features/sabaLot/calculations/kappas/kappaContext';
-import JSONTree from 'react-json-tree'
+import JSONTree from 'react-json-tree';
+import { branchSlider }
+  from './features/sabaLot/calculations/plastics/plastic_3';
 
 function App() {
 
@@ -12,7 +14,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        <JSONTree data={kappaContext('甲辰日卯時亥將')} />
+        <JSONTree data={branchSlider('卯', 6)} />
       </div>
     </div>
   );

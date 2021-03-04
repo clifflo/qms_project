@@ -30,16 +30,17 @@ export const item = (listLike, index) => {
     throw 'Not a number for the second argument.'
   }
 
-  return array[adjust(index, array.length)]
+  return listLike[adjust(index, listLike.length)]
 }
 
 export function getIndexFromList(wordLike, listLike){
   if(RA.isString(listLike)){
     const sentence = listLike;
     const character = wordLike;
+    console.log(character);
 
     if(wordLike.length != 1){
-      throw 'The first argument must be just a single character'
+      throw 'The first argument must be just a single character '
       + 'if the second argument is a string.';
     }
 
@@ -57,7 +58,7 @@ export function getIndexFromList(wordLike, listLike){
 
 }
 
-export const slider = (wordLike, listLike, distance) => {
+export const slider = (listLike, wordLike, distance) => {
 
   const sliderForSentence = () => {
 
@@ -77,40 +78,48 @@ export const slider = (wordLike, listLike, distance) => {
   const sliderForList = () => {
     const word = wordLike;
     const list = listLike;
-    const doubleList = R.concat(likeLike, likeLike);
+    const doubleList = R.concat(list, list);
+    const startPosition = getIndexFromList(
+      word, doubleList);
     const result = R.slice(
       startPosition,
-      startPosition + sentence,
+      startPosition + distance,
       doubleList
     );
     return result;
   }
 
+  if(!RA.isNumber(distance)){
+    throw new Error(
+      'Distance should be of type number');
+  }
+
   if(distance < 0){
-    throw 'Distance should be a positive number';
+    throw new Error(
+      'Distance should be a positive number');
   }
 
   if(RA.isString(listLike)){
     try {
-      return sliderForSentence;
+      return sliderForSentence();
     }
     catch(err){
-      throw 'Slider for sentence failed because of '
-      + err;
+      throw new Error('Slider for sentence failed.');
     }
-
   }
   else if(RA.isArray(listLike)){
     try{
-      return sliderForList;
+      return sliderForList();
     }
     catch(err){
       throw 'Slider for list failed because of '
-      + err;
+        + err;
     }
   }
   else {
-    throw 'Slider does not work. The list like argument'
-    + 'is actually type of ' + R.type(listlike);
+    throw new Error(
+      'Slider does not work. The list like argument '
+      + 'is actually type of '
+      + R.type(listLike));
   }
 }

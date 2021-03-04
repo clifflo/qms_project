@@ -20,9 +20,9 @@ export const trunkContext = {
   '癸': 'Lamda'
 }
 
-const elementalOrder = '金水木火土';
+export const elementalSentence = '金水木火土';
 
-const trunkOrder = '甲乙丙丁戊己庚辛壬癸';
+export const trunkSentence = '甲乙丙丁戊己庚辛壬癸';
 
 const branchContext = {
   '子': 'Psi',
@@ -39,14 +39,14 @@ const branchContext = {
   '亥': 'Mu',
 }
 
-const branchOrder = '子丑寅卯辰巳午未申酉戌亥';
+export const branchSentence = '子丑寅卯辰巳午未申酉戌亥';
 
-const branchElementalOrder = '水土木木土火火土金金土水';
+export const branchElementalSentence = '水土木木土火火土金金土水';
 
-const trunkElementalOrder = '木木火火土土金金水水';
+export const trunkElementalSentence = '木木火火土土金金水水';
 
 export function getIndexOfTrunk(trunk){
-  return getIndexFromList(trunk, trunkOrder)
+  return getIndexFromList(trunk, trunkSentence)
 }
 
 function getTrunkLiturgy(trunk) {
@@ -75,7 +75,7 @@ export function getPlasticLiturgy(plastic){
 }
 
 export function getIndexOfBranch(branch){
-  return getIndexFromList(branch, branchOrder)
+  return getIndexFromList(branch, branchSentence)
 }
 
 export function getElementalOfPlastic(plastic){
@@ -84,11 +84,11 @@ export function getElementalOfPlastic(plastic){
   }
   if(isValidTrunk(plastic)){
     const trunk = plastic;
-    return trunkElementalOrder[getIndexOfTrunk(trunk)];
+    return trunkElementalSentence[getIndexOfTrunk(trunk)];
   }
   else if(isValidBranch(plastic)){
     const branch = plastic;
-    return branchElementalOrder[getIndexOfBranch(branch)];
+    return branchElementalSentence[getIndexOfBranch(branch)];
   }
   else {
     throw `'${plastic}' is not plastic.`
@@ -138,27 +138,27 @@ export function comparePlasticLiturgy(source, target){
 }
 
 export function getTrunkFromIndex(index){
-  return item(trunkOrder, index);
+  return item(trunkSentence, index);
 }
 
 export function getBranchFromIndex(index){
-  return item(branchOrder, index);
+  return item(branchSentence, index);
 }
 
 export function isValidBranch(branch){
-  return R.includes(branch, branchOrder);
+  return R.includes(branch, branchSentence);
 }
 
 export function isValidTrunk(trunk){
-  return R.includes(trunk, trunkOrder);
+  return R.includes(trunk, trunkSentence);
 }
 
 export function isValidElemental(elemental){
-  return R.includes(elemental, elementalOrder);
+  return R.includes(elemental, elementalSentence);
 }
 
 export function getIndexOfElemental(elemental){
-  return getIndexFromList(elemental, elementalOrder)
+  return getIndexFromList(elemental, elementalSentence)
 }
 
 export const elementalRelations = [
@@ -171,8 +171,8 @@ export const elementalRelations = [
 
 export function getElementalRelation(source, target){
 
-  const sourceIndex = getIndexFromList(source, elementalOrder);
-  const targetIndex = getIndexFromList(target, elementalOrder);
+  const sourceIndex = getIndexFromList(source, elementalSentence);
+  const targetIndex = getIndexFromList(target, elementalSentence);
 
   if(sourceIndex == -1){
     throw `'${source}' is not a valid source elemental.`;
