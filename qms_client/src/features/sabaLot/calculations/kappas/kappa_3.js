@@ -26,13 +26,14 @@ export function buildPalmDoor_2(kappaTable){
       }
     }
     catch(err){
-      throw 'Cannot get nectar worker due to -> ' + err;
+      console.error(err);
+      throw new Error('Cannot get nectar worker.');
     }
   }
 
   const palmDoor_2 = kappaApplyPartial(
     compareFn, kappaTable);
-    
+
   return {
     ...kappaTable,
     palmDoor_2

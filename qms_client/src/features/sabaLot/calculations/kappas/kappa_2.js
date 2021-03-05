@@ -74,6 +74,14 @@ export function buildPalmDoor_1(kappaTable) {
   const palmDoor_1 = kappaApplyFull(
     compareFn, kappaTable);
 
+  const squidCount = R.filter(
+    R.propEq('cephalopod', 'Squid'),
+    palmDoor_1)
+
+  const octopusCount = R.filter(
+    R.propEq('cephalopod', 'Octopus'),
+    palmDoor_1)
+
   return {
     ...kappaTable,
     palmDoor_1

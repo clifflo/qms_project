@@ -136,3 +136,31 @@ export const slider = (
       + R.type(listLike));
   }
 }
+
+export const move(listLike, sourceWordLike, distance, direction){
+
+  const moveForSentence = () => {
+
+    const sourceCharacter = sourceWordLike;
+    const sentence = listLike;
+    const sourceIndex = getIndexFromList(sentence);
+    const movement = direction == 'Forward' ?
+      distance ? (-distance);
+    const targetIndex = sourceIndex + movement;
+    const targetCharacter = item(targetIndex, sentence);
+    return targetCharacter;
+  }
+
+  const moveForList = () => {
+
+    const sourceWord = sourceWordLike;
+    const list = listLike;
+    const sourceIndex = getIndexFromList(list);
+    const movement = direction == 'Forward' ?
+      distance ? (-distance);
+    const targetIndex = sourceIndex + movement;
+    const targetWord = item(targetIndex, list);
+    return targetWord;
+  }
+
+}

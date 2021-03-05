@@ -205,6 +205,7 @@ export const parseKappaSentence = kappaSentence => {
 
 }
 
+
 export const initializeKappaTable = (kappaInput) => {
 
   const distance = kappaInput.rangerBranchIndex -

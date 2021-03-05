@@ -86,7 +86,7 @@ const buildMagnetPath = (rawMagnetStart, magnetEnd) => {
 }
 
 export function check(){
-  return buildMagnetPath('甲','戌')
+  return buildMagnetPath('辰','子')
 }
 
 export function buildPalmDoor_3(kappaTable){

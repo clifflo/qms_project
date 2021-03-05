@@ -10,18 +10,16 @@ import {
   buildPalmDoor_2
 } from './kappa_3'
 
-export default function buildKappaTable(kappaSentence){
+export function getPalmDoor_1(kappaSentence){
   try{
-    const kappaTable = R.compose(
-      buildPalmDoor_2,
+    const palmDoor_1 = R.compose(
       buildPalmDoor_1,
-      buildKappaTable,
+      initializeKappaTable,
       parseKappaSentence)(kappaSentence);
-    return kappaTable;
+    return palmDoor_1;
   }
   catch(err){
     console.error(err);
     throw new Error('Cannot build kappa table.')
   }
-
 }
