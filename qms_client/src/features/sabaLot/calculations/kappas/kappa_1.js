@@ -109,21 +109,47 @@ export const crabFarm = getCrabFarm();
 
 export const getCrabShell = (crabBody) => {
 
-  const crabBodyIndex = getIndexOfTrunk(crabBody);
+  try{
+    const crab = R.find(
+      R.propEq('crabBody', crabBody), crabFarm);
 
-  if(crabBodyIndex == -1)
-    throw 'Wrong crab body due to wrong day trunk.';
+    if (!crab){
+      throw new Error(
+        `${crabBody} is not a valid crab body.`);
+    }
 
-  const crabShell =
-    R.find(crab => crab.crabBody == crabBody, crabFarm).crabShell;
+    return crab.crabShell;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get crab shell.');
+  }
+}
 
-  return crabShell;
+export const getCrabBody = (crabShell) => {
+
+  try{
+    const crab = R.find(
+      R.propEq('crabShell', crabShell), crabFarm);
+
+    if (!crab){
+      throw new Error(
+        `${crabShell} is not a valid crab shell.`);
+    }
+
+    return crab.crabBody;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get crab body.');
+  }
 }
 
 export const parseKappaSentence = kappaSentence => {
 
-  if (kappaSentence.length != 7)
-    throw 'Wrong Kappa sentence length';
+  if (kappaSentence.length != 7){
+    throw new Error('Wrong Kappa sentence length');
+  }
 
   const dayTrunk = kappaSentence[0];
   const dayBranch = kappaSentence[1];
@@ -135,34 +161,35 @@ export const parseKappaSentence = kappaSentence => {
 
   const dayTrunkIndex = getIndexOfTrunk(dayTrunk);
   if (dayTrunkIndex == -1){
-    throw `'${dayTrunk}' is not a valid trunk.`;
+    throw new Error(`'${dayTrunk}' is not a valid trunk.`);
   }
-
 
   const dayBranchIndex = getIndexOfBranch(dayBranch);
   if (dayBranchIndex == -1){
-    throw `'${dayBranch}' is not a valid branch.`;
+    throw new Error(`'${dayBranch}' is not a valid branch.`);
   }
 
-
   if (daySay != '日')
-    throw 'Wrong day say.';
+    throw new Error('Wrong day say.');
 
   const hourBranchIndex = getIndexOfBranch(hourBranch);
 
-  if (hourBranchIndex == -1)
-    throw 'Wrong hour branch.';
+  if (hourBranchIndex == -1){
+    throw new Error('Wrong hour branch.');
+  }
 
-  if (hourSay != '時')
-    throw 'Wrong hour say.';
+  if (hourSay != '時'){
+    throw new Error('Wrong hour say.')
+  }
 
   const rangerBranchIndex = getIndexOfBranch(rangerBranch);
 
-  if (rangerBranchIndex == -1)
-    throw 'Wrong ranger branch.';
+  if (rangerBranchIndex == -1){
+    throw new Error('Wrong ranger branch.');
+  }
 
   if (rangerSay != '將')
-    throw 'Wrong ranger say.';
+    throw new Error('Wrong ranger say.');
 
   return {
     dayTrunk,

@@ -2,17 +2,19 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   kappaApplyPartial,
-  crabFarm
+  crabFarm,
+  getCrabShell
 } from './kappa_1';
 import {
   getElementalOfPlastic,
-  getElementalRelation
+  getElementalRelation,
+  isValidBranch
 } from '../plastics/plastic_1';
 import {
   branchSlider
 } from '../plastics/plastic_3';
 
-const buildIronCrab = (magnet, crabShell) => {
+const buildMagnet = (magnet, crabShell) => {
 
   const mapFn = (target) => {
     try {
@@ -58,19 +60,33 @@ const buildIronCrab = (magnet, crabShell) => {
   }
 }
 
-const buildIronCrabPath = (magnetStart, magnetEnd) => {
+const buildMagnetPath = (rawMagnetStart, magnetEnd) => {
 
-  const rawIronPath = branchSlider(magnetStart, magnetEnd);
-  const mapFn = (crabShell) => buildIronCrab(magnetEnd, crabShell);
+  const finalMagnetStart = isValidBranch(rawMagnetStart) ?
+    rawMagnetStart : getCrabShell(rawMagnetStart);
+
+  const rawIronPath = branchSlider(finalMagnetStart, magnetEnd);
+  const mapFn = (crabShell) => buildMagnet(magnetEnd, crabShell);
 
   const processedIronPath =
     R.map(mapFn, rawIronPath);
 
-  return processedIronPath;
+  const totalIronCount =
+    R.compose(
+      R.reduce(R.add, 0),
+      R.map(R.prop('ironCount')))
+    (processedIronPath)
+
+  return {
+    rawIronPath,
+    ironPathLength: rawIronPath.length,
+    processedIronPath,
+    totalIronCount
+  }
 }
 
 export function check(){
-  return buildIronCrabPath('未','亥')
+  return buildMagnetPath('甲','戌')
 }
 
 export function buildPalmDoor_3(kappaTable){
