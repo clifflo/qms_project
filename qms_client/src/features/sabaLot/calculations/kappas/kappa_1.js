@@ -205,22 +205,17 @@ export const parseKappaSentence = kappaSentence => {
 
 }
 
-
 export const initializeKappaTable = (kappaInput) => {
 
-  const distance = kappaInput.rangerBranchIndex -
+  const gap = kappaInput.rangerBranchIndex -
     kappaInput.hourBranchIndex;
 
-  const moveForward = (source) => source + distance;
-  const moveBackward = (source) => source - distance;
-
-  const columnFn = R.compose(
-    getBranchFromIndex,
-    moveForward,
-    getIndexOfBranch);
+  const columnFn = (branch) =>{
+    return moveBranch(branch, gap, 'Forward');
+  }
 
   const trunkAlphaFn = R.compose(columnFn, getCrabShell);
-  const trunkAlpha = trunkAlphaFn (kappaInput.dayTrunk);
+  const trunkAlpha = trunkAlphaFn(kappaInput.dayTrunk);
   const trunkOmega = columnFn(trunkAlpha);
 
   const branchAlpha = columnFn(kappaInput.dayBranch);
@@ -241,3 +236,11 @@ export const paladinSentence =
   + '太常,白虎,太陰,天空,玄武,天后';
 
 export const paladinList = R.split(',', paladinSentence);
+
+export const moveStandardForward = (kappaTable, branch) => {
+  return moveBranch(branch, kappaTable.gap, 'Forward');
+}
+
+export const moveStandardBackward = (kappaTable, branch) => {
+  return moveBranch(branch, kappaTable.gap, 'Backward');
+}

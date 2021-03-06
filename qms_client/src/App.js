@@ -5,7 +5,7 @@ import { SabaLot } from './features/sabaLot/SabaLot';
 import buildKappaTable
   from './features/sabaLot/calculations/kappas/kappaTable';
 import JSONTree from 'react-json-tree';
-import { getPalmDoor_1 }
+import { checkPalmDoor_1 }
   from './features/sabaLot/calculations/kappas/kappaTable';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        <JSONTree data={getPalmDoor_1('丙戌日巳時申將')} />
+        <JSONTree data={checkPalmDoor_1()} />
       </div>
     </div>
   );

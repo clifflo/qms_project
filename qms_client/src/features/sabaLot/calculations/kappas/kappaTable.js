@@ -23,3 +23,7 @@ export function getPalmDoor_1(kappaSentence){
     throw new Error('Cannot build kappa table.')
   }
 }
+
+export function checkPalmDoor_1(){
+  return getPalmDoor_1('丙戌日巳時申將');
+}

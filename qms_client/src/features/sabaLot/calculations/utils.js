@@ -137,15 +137,26 @@ export const slider = (
   }
 }
 
-export const move(listLike, sourceWordLike, distance, direction){
+export const move =
+  (listLike, sourceWordLike, distance, direction) => {
+
+  const movement = () => {
+    if(direction == 'Forward'){
+      return distance;
+    }
+    else if (direction == 'Backward'){
+      return (-distance);
+    }
+    else {
+      throw `'${direction}' is not a valid direction.`;
+    }
+  }
 
   const moveForSentence = () => {
 
     const sourceCharacter = sourceWordLike;
     const sentence = listLike;
     const sourceIndex = getIndexFromList(sentence);
-    const movement = direction == 'Forward' ?
-      distance ? (-distance);
     const targetIndex = sourceIndex + movement;
     const targetCharacter = item(targetIndex, sentence);
     return targetCharacter;
@@ -156,11 +167,20 @@ export const move(listLike, sourceWordLike, distance, direction){
     const sourceWord = sourceWordLike;
     const list = listLike;
     const sourceIndex = getIndexFromList(list);
-    const movement = direction == 'Forward' ?
-      distance ? (-distance);
     const targetIndex = sourceIndex + movement;
     const targetWord = item(targetIndex, list);
     return targetWord;
+  }
+
+  if(RA.isString(listLike)){
+    return moveForSentence();
+  }
+  else if(RA.isArray(listLike)){
+    return moveForList();
+  }
+  else {
+    throw new Error(
+      'The first argument is neither a list nor a string.');
   }
 
 }

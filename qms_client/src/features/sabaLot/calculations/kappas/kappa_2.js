@@ -2,7 +2,9 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   initializeKappaTable,
-  parseKappaSentence
+  parseKappaSentence,
+  moveStandardForward,
+  moveStandardBackward
 } from './kappa_1';
 import {
   comparePlasticElemental,
@@ -71,16 +73,30 @@ export function buildPalmDoor_1(kappaTable) {
 
   }
 
-  const palmDoor_1 = kappaApplyFull(
+  const columns = kappaApplyFull(
     compareFn, kappaTable);
 
   const squidCount = R.filter(
     R.propEq('cephalopod', 'Squid'),
-    palmDoor_1)
+    columns).length;
 
   const octopusCount = R.filter(
     R.propEq('cephalopod', 'Octopus'),
-    palmDoor_1)
+    columns).length;
+
+  const palmDoor_1 = {
+    squidCount,
+    octopusCount,
+    columns
+  }
+
+  const isBox_10 = squidCount == 1 && octopusCount == 0;
+  const box_10 = {
+    boxName: '始入課',
+    boxDescription: '只有一課下賊上而沒有上克下',
+    referredPage: 119,
+    palmDoor: 1
+  }
 
   return {
     ...kappaTable,

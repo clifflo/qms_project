@@ -33,3 +33,13 @@ export const branchSlider = (sourceBranch, targetBranch) =>{
   }
 
 }
+
+export const moveBranch =
+  (branch, distance, direction) => {
+
+  if(!isValidBranch(branch)){
+    throw new Error(`${branch} is not a valid branch.`);
+  }
+
+  return move(branchSentence, branch, distance, direction);
+}
