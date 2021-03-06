@@ -93,13 +93,42 @@ export function buildPalmDoor_1(kappaTable) {
   const isBox_10 = squidCount == 1 && octopusCount == 0;
   const box_10 = {
     boxName: '始入課',
+    boxCode: 10,
     boxDescription: '只有一課下賊上而沒有上克下',
-    referredPage: 119,
-    palmDoor: 1
+    referredPage: 119
+  }
+
+  const isBox_11 = squidCount == 1 && octopusCount > 0;
+  const box_11 = {
+    boxName: '重審課',
+    boxCode: 11,
+    boxDescription: '只有一課下賊上而同時亦有上克下',
+    referredPage: 119
+  }
+
+  const isBox_12 = squidCount == 0 && octopusCount == 1;
+  const box_12 = {
+    boxName: '元首課',
+    boxCode: 12,
+    boxDescription: '只有一課上克下而無下賊上',
+    referredPage: 119
+  }
+
+  let box;
+  
+  if(isBox_10){
+    box = box_10;
+  }
+  else if(isBox_11){
+    box = box_11;
+  }
+  else if(isBox_12){
+    box = box_12
   }
 
   return {
     ...kappaTable,
-    palmDoor_1
+    palmDoor_1,
+    box
   }
 }

@@ -6,7 +6,8 @@ import {
   isValidBranch
 } from './plastic_1';
 import {
-  slider
+  slider,
+  move
 } from '../utils';
 
 export const branchSlider = (sourceBranch, targetBranch) =>{

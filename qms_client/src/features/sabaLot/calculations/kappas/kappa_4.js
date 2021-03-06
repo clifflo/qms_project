@@ -91,6 +91,6 @@ export function check(){
 
 export function buildPalmDoor_3(kappaTable){
 
-
+  
 
 }

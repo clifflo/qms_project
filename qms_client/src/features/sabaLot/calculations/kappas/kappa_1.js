@@ -7,9 +7,11 @@ import {
   isValidBranch,
   comparePlastic
 } from '../plastics/plastic_1';
+import {
+  moveBranch
+} from '../plastics/plastic_3';
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
-
 
 export const rawChiefPaladinSet = {
   '甲戊庚': '丑未',
@@ -227,7 +229,7 @@ export const initializeKappaTable = (kappaInput) => {
     trunkOmega,
     branchAlpha,
     branchOmega,
-    distance
+    gap
   }
 }
 

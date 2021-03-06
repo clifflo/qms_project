@@ -23,17 +23,20 @@ export const item = (listLike, index) => {
     RA.isString(listLike) || RA.isArray(listLike);
 
   if(!listLikeValid){
-    throw 'Not an array or string for the first argument.'
+    throw new Error(
+      'Not an array or string for the first argument.')
   }
 
   if(!RA.isNumber(index)){
-    throw 'Not a number for the second argument.'
+    throw new Error(
+      'Not a number for the second argument.')
   }
 
   return listLike[adjust(index, listLike.length)]
 }
 
 export function getIndexFromList(wordLike, listLike){
+
   if(RA.isString(listLike)){
     const sentence = listLike;
     const character = wordLike;
@@ -52,7 +55,8 @@ export function getIndexFromList(wordLike, listLike){
     R.findIndex(R.equals(word), wordList);
   }
   else {
-    throw 'The second argument must be string or array.';
+    throw new Error(
+      'The second argument must be string or array.');
   }
 
 }
@@ -140,7 +144,7 @@ export const slider = (
 export const move =
   (listLike, sourceWordLike, distance, direction) => {
 
-  const movement = () => {
+  const getMovement = () => {
     if(direction == 'Forward'){
       return distance;
     }
@@ -152,13 +156,16 @@ export const move =
     }
   }
 
+  const movement = getMovement();
+
   const moveForSentence = () => {
 
     const sourceCharacter = sourceWordLike;
     const sentence = listLike;
-    const sourceIndex = getIndexFromList(sentence);
+    const sourceIndex = getIndexFromList(
+      sourceCharacter, sentence);
     const targetIndex = sourceIndex + movement;
-    const targetCharacter = item(targetIndex, sentence);
+    const targetCharacter = item(sentence, targetIndex);
     return targetCharacter;
   }
 
@@ -166,9 +173,10 @@ export const move =
 
     const sourceWord = sourceWordLike;
     const list = listLike;
-    const sourceIndex = getIndexFromList(list);
+    const sourceIndex = getIndexFromList(
+      sourceWord, list);
     const targetIndex = sourceIndex + movement;
-    const targetWord = item(targetIndex, list);
+    const targetWord = item(list, targetIndex);
     return targetWord;
   }
 
