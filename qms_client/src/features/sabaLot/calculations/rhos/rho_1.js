@@ -3,38 +3,69 @@ import {
   item,
   getIndexFromList
 } from '../utils/util_1';
+import {
+  getBranchFromIndex,
+  getIndexOfBranch
+} from '../plastics/plastic_1';
 
-const natoParagraph =
-  '乾金甲子壬,坎水戊寅也,艮土丙辰也，震木庚子也,' +
-  '巽木辛丑也,离火己卯也,坤土乙未癸，兑金丁巳也';
+const nattoParagraph =
+  '乾金甲子壬順佈,坎水戊寅戊順佈,艮土丙辰丙順佈,震木庚子庚順佈,' +
+  '巽木辛丑辛逆佈,离火己卯己逆佈,坤土乙未癸逆佈,兑金丁巳丁逆佈';
 
-const getNatos = () => {
+const getFullSaltSeries =
+  (startSalt, saltSeriesIsClockwise) => {
+  let fullSaltSeries = '';
+  const saltIndex = getIndexOfBranch(startSalt);
+
+  for(let i = 0; i < 6; i++){
+    const rawAdjustment = i * 2;
+    const finalAdjustment = saltSeriesIsClockwise ?
+      rawAdjustment : (-rawAdjustment);
+    fullSaltSeries += getBranchFromIndex(
+      saltIndex + finalAdjustment);
+  }
+
+  return fullSaltSeries;
+}
+
+const getNattos = () => {
 
   const mapFn = (sentence) => {
-    const longHook = sentence[0];
-    const longHookElemental = sentence[1];
-    const externalHookTrunk = sentence[2];
-    const salt = sentence[3];
-    const internalHookTrunk = sentence[4] == '也' ?
-      externalHookTrunk : sentence[4];
+    const shortHook = sentence[0];
+    const shortHookElemental = sentence[1];
+    const trunkAtUpperSide = sentence[2];
+    const trunkAtLowerSide = sentence[4];
+    const startSalt = sentence[3];
+    const saltSeriesIsClockwise = sentence[5] == '順';
+    const fullSaltSeries = getFullSaltSeries(
+      startSalt, saltSeriesIsClockwise);
+    const upperSaltSeries =
+      R.reverse(R.take(3, fullSaltSeries));
+    const lowerSaltSeries =
+      R.reverse(R.takeLast(3, fullSaltSeries));
+
     return {
-      longHook,
-      longHookElemental,
-      externalHookTrunk,
-      salt,
-      internalHookTrunk
+      shortHook,
+      shortHookElemental,
+      trunkAtUpperSide,
+      trunkAtLowerSide,
+      startSalt,
+      upperSaltSeries,
+      lowerSaltSeries
     };
   }
 
   return R.compose(
     R.map(mapFn),
     R.split(','))
-    (natoParagraph);
+    (nattoParagraph);
 }
 
-export const natos = getNatos();
+export const nattos = getNattos();
 
-const shortHookSentence = '地雷水澤山火風天';
+const shortHookAlternateSentence = '地雷水澤山火風天';
+
+const shortHookOriginalSentence = '坤震坎兌艮離巽乾';
 
 const longHookParagraph =
   '乾為天,天風姤,天山遁,天地否,風地觀,山地剝,火地晉,火天大有,' +
@@ -46,41 +77,57 @@ const longHookParagraph =
   '坤為地,地雷覆,地澤臨,地天泰,雷天大壯,澤天夬,水天需,水地比,' +
   '兌為澤,澤水困,澤地萃,澤山鹹,水山蹇,地山謙,雷山小過,雷澤歸妹';
 
-const getShortHookNumber = (shortHook) => {
-  return getIndexFromList(shortHook, shortHookSentence);
+const getShortHookNumberAlternate =
+  (shortHookAlternate) => {
+  return getIndexFromList(
+    shortHookAlternate,
+    shortHookAlternateSentence);
 }
 
-const getLongHooks = () => {
+const getLongHooks_1 = () => {
 
   const mapFn = (sentence) => {
 
-    let externalHook;
-    let internalHook;
+    let upperShortHookAlternate;
+    let lowerShortHookAlternate;
     let longHookName;
 
     if(sentence[1] == '為'){
-      externalHook = sentence[2];
-      internalHook = sentence[2];
+      upperShortHookAlternate = sentence[2];
+      lowerShortHookAlternate = sentence[2];
       longHookName = '純' + sentence[0];
     }
     else {
-      externalHook = sentence[0];
-      internalHook = sentence[1];
+      upperShortHookAlternate = sentence[0];
+      lowerShortHookAlternate = sentence[1];
       longHookName = R.drop(2, sentence);
     }
 
-    const externalHookNumber =
-      getShortHookNumber(externalHook);
+    const upperShortHookNumber =
+      getShortHookNumberAlternate(upperShortHookAlternate);
 
-    const internalHookNumber =
-      getShortHookNumber(internalHook);
+    const lowerShortHookNumber =
+      getShortHookNumberAlternate(lowerShortHookAlternate);
+
+    const upperShortHookOriginal =
+      shortHookOriginalSentence[upperShortHookNumber];
+
+    const lowerShortHookOriginal =
+      shortHookOriginalSentence[lowerShortHookNumber];
+
+    const longHookNumber =
+      (upperShortHookNumber * 8) +
+      lowerShortHookNumber;
 
     return {
-      externalHook,
-      internalHook,
+      upperShortHookAlternate,
+      lowerShortHookAlternate,
+      upperShortHookOriginal,
+      lowerShortHookOriginal,
       longHookName,
-      externalHookNumber,
-      internalHookNumber
+      upperShortHookNumber,
+      lowerShortHookNumber,
+      longHookNumber
     }
   }
 
@@ -92,4 +139,4 @@ const getLongHooks = () => {
 
 }
 
-export const longHooks = getLongHooks();
+export const longHooks_1 = getLongHooks_1();
