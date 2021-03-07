@@ -5,7 +5,7 @@ import { SabaLot } from './features/sabaLot/SabaLot';
 import buildKappaTable
   from './features/sabaLot/calculations/kappas/kappaTable';
 import JSONTree from 'react-json-tree';
-import { natos }
+import { longHooks }
   from './features/sabaLot/calculations/rhos/rho_1';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        <JSONTree data={natos} />
+        <JSONTree data={longHooks} />
       </div>
     </div>
   );
