@@ -34,22 +34,22 @@ const getNattos = () => {
   const mapFn = (sentence) => {
     const shortHook = sentence[0];
     const shortHookElemental = sentence[1];
-    const trunkAtUpperSide = sentence[2];
-    const trunkAtLowerSide = sentence[4];
+    const upperSoyBean = sentence[4];
+    const lowerSoyBean = sentence[2];
     const startMustard = sentence[3];
     const mustardSeriesIsClockwise = sentence[5] == '順';
     const fullMustardSeries = getFullMustardSeries(
       startMustard, mustardSeriesIsClockwise);
     const upperMustardSeries =
-      R.reverse(R.take(3, fullMustardSeries));
-    const lowerMustardSeries =
       R.reverse(R.takeLast(3, fullMustardSeries));
+    const lowerMustardSeries =
+      R.reverse(R.take(3, fullMustardSeries));
 
     return {
       shortHook,
       shortHookElemental,
-      trunkAtUpperSide,
-      trunkAtLowerSide,
+      upperSoyBean,
+      lowerSoyBean,
       startMustard,
       upperMustardSeries,
       lowerMustardSeries

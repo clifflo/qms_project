@@ -6,7 +6,7 @@ import {
   nattos
 } from './rho_1';
 
-const buildMustardSeries =
+const getTruncatedNatto =
   (shortHook, isUpperShortTrunk) => {
 
   const natto = R.find(
@@ -17,21 +17,40 @@ const buildMustardSeries =
   }
 
   if(isUpperShortTrunk){
-    return natto.upperMustardSeries;
+    return {
+      soyBean: natto.upperSoyBean,
+      mustardSeries: natto.upperMustardSeries
+    }
   }
   else {
-    return natto.lowerMustardSeries;
+    return {
+      soyBean: natto.lowerSoyBean,
+      mustardSeries: natto.lowerMustardSeries
+    }
   }
 
 }
 
-const buildCrosses =
-  (fullMustardSeries, crossSign, downwardIndex, list) => {
+const buildCrosses = (
+  fullMustardSeries,
+  upperSoyBean,
+  lowerSoyBean,
+  crossSign,
+  downwardIndex,
+  list) => {
+
+  const crossTrunk = downwardIndex <= 2 ?
+    upperSoyBean : lowerSoyBean;
+
+  const crossBranch = fullMustardSeries[downwardIndex];
+
   return {
     downwardIndex,
     upwardIndex: 5 - downwardIndex,
-    mustard: R.drop(1, fullMustardSeries)[downwardIndex],
-    crossSign
+    crossBranch,
+    crossTrunk,
+    crossSign,
+    crossTwig: crossTrunk + crossBranch
   }
 
 }
@@ -47,14 +66,21 @@ export const getLongHooks_2 = (longHooks) => {
       longHook.lowerShortHookNumber, 3);
 
     let upperMustardSeries;
+    let upperSoyBean;
     let lowerMustardSeries;
+    let lowerSoyBean;
 
     try{
-      upperMustardSeries = buildMustardSeries(
+      const upperTruncatedNatto = getTruncatedNatto(
         longHook.upperShortHookOriginal, true);
 
-      lowerMustardSeries = buildMustardSeries(
+      const lowerTruncatedNatto = getTruncatedNatto(
         longHook.lowerShortHookOriginal, false);
+
+      upperMustardSeries = upperTruncatedNatto.mustardSeries;
+      upperSoyBean = upperTruncatedNatto.soyBean;
+      lowerMustardSeries = lowerTruncatedNatto.mustardSeries;
+      lowerSoyBean = lowerTruncatedNatto.soyBean;
     }
     catch(err){
       console.error(err);
@@ -66,7 +92,10 @@ export const getLongHooks_2 = (longHooks) => {
 
     const longHookBinary = decimalToBinary(longHook.longHookNumber);
 
-    const mapFn = R.curry(buildCrosses)(fullMustardSeries);
+    const mapFn = R.curry(buildCrosses)
+      (fullMustardSeries)
+      (upperSoyBean)
+      (lowerSoyBean);
 
     const crosses = RA.mapIndexed(
       mapFn,
@@ -80,7 +109,9 @@ export const getLongHooks_2 = (longHooks) => {
       lowerMustardSeries,
       longHookBinary,
       crosses,
-      fullMustardSeries
+      fullMustardSeries,
+      upperSoyBean,
+      lowerSoyBean
     }
   }
 
