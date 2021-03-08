@@ -25,6 +25,17 @@ const buildMustardSeries =
 
 }
 
+const buildCrosses =
+  (fullMustardSeries, crossSign, downwardIndex, list) => {
+  return {
+    downwardIndex,
+    upwardIndex: 5 - downwardIndex,
+    mustard: R.drop(1, fullMustardSeries)[downwardIndex],
+    crossSign
+  }
+
+}
+
 export const getLongHooks_2 = (longHooks) => {
 
   const mapFn = (longHook) => {
@@ -50,16 +61,35 @@ export const getLongHooks_2 = (longHooks) => {
       throw new Error('Cannot build mustard series.');
     }
 
+    const fullMustardSeries =
+      upperMustardSeries + lowerMustardSeries;
+
+    const longHookBinary = decimalToBinary(longHook.longHookNumber);
+
+    const mapFn = R.curry(buildCrosses)(fullMustardSeries);
+
+    const crosses = RA.mapIndexed(
+      mapFn,
+      R.drop(1, longHookBinary));
+
     return {
       ...longHook,
       upperShortHookBinary,
       lowerShortHookBinary,
       upperMustardSeries,
-      lowerMustardSeries
+      lowerMustardSeries,
+      longHookBinary,
+      crosses,
+      fullMustardSeries
     }
   }
 
   return R.map(mapFn, longHooks)
+}
+
+export const getLongHooks_3 = (longHooks) => {
+
+
 }
 
 export const longHooks_2 = getLongHooks_2(longHooks_1);
