@@ -16,7 +16,7 @@ const baseHookSeriesSentence =
 const baseHookSeries =
   R.split(',', baseHookSeriesSentence);
 
-export const getLongHookContextByName = (longHookName) => {
+const getLongHookContextByName = (longHookName) => {
 
   const longHookContext = R.find(
     R.propEq('longHookName', longHookName),
@@ -29,7 +29,7 @@ export const getLongHookContextByName = (longHookName) => {
   return longHookContext;
 }
 
-export const getLongHookContextByNumber = (longHookNumber) => {
+const getLongHookContextByNumber = (longHookNumber) => {
 
   const longHookContext = R.find(
     R.propEq('longHookNumber', longHookNumber),
@@ -51,7 +51,7 @@ export const getLongHookContextByNumber = (longHookNumber) => {
   return longHookContext;
 }
 
-export const getHookGapBinarySet = () => {
+const getHookGapBinarySet = () => {
 
   const sourceLongHookNumber = 63;
 
@@ -78,9 +78,9 @@ export const getHookGapBinarySet = () => {
 
 }
 
-export const hookGapBinarySet = getHookGapBinarySet();
+const hookGapBinarySet = getHookGapBinarySet();
 
-export const getHookSeries = () => {
+const getHookPalaces_1 = () => {
 
   const mapFn_1 = (shortHookName, gapBinary, index) => {
 
@@ -102,7 +102,6 @@ export const getHookSeries = () => {
       throw new Error('Error in getting hook series.')
     }
   }
-
   const mapFn_1_curried = R.curry(mapFn_1);
 
   const mapFn_2 = (shortHookName) => {
@@ -116,12 +115,61 @@ export const getHookSeries = () => {
     const seriesSentence = R.join(',', finalSeries);
 
     return {
-      shortHookName,
+      headHook: shortHookName,
       seriesSentence
     }
   }
 
   const result = R.map(mapFn_2, shortHookOriginalSentence);
-
   return result;
 }
+
+const hookPalaces_1 = getHookPalaces_1();
+
+const getHookPalaces_2 = () => {
+
+  const mapFn_1 = (
+    hookPalace,
+    longHookName,
+    jackIndex) => {
+
+    try{
+      return {
+        longHookName,
+        headHook: hookPalace.headHook,
+        jackIndex
+      }
+    }
+    catch(err){
+      console.error(err);
+      throw new Error(
+        'Map function 2 error for get hook palace set 2.');
+    }
+
+  }
+
+  const mapFn_1_curried = R.curry(mapFn_1);
+
+  const mapFn_2 = (hookPalace) => {
+
+    try {
+      const series = R.split(',', hookPalace.seriesSentence);
+      const result = RA.mapIndexed(
+        mapFn_1_curried(hookPalace),
+        series);
+      return result;
+    }
+    catch(err){
+      console.error(err);
+      throw new Error(
+        'Map function 2 error for get hook palace set 2.')
+    }
+
+  }
+
+  const nestedList = R.map(mapFn_2, hookPalaces_1);
+  const flatList = R.flatten(nestedList);
+  return flatList;
+}
+
+export const hookPalaces_2 = getHookPalaces_2();
