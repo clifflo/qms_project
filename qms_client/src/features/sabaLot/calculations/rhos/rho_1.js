@@ -69,7 +69,7 @@ const shortHookAlternateSentence = '地雷水澤山火風天';
 const shortHookOriginalSentence = '坤震坎兌艮離巽乾';
 
 const longHookParagraph = RA.concatAll([
-  '乾為天,天風姤,天山遁,天地否,風地觀,山地剝,火地晉,火天大有,',
+  '乾為天,天風姤,天山遯,天地否,風地觀,山地剝,火地晉,火天大有,',
   '坎為水,水澤節,水雷屯,水火既濟,澤火革,雷火豐,地火明夷,地水師,',
   '艮為山,山火賁,山天大畜,山澤損,火澤睽,天澤履,風澤中孚,風山漸,',
   '震為雷,雷地豫,雷水解,雷風恒,地風升,水風井,澤風大過,澤雷隨,',
@@ -86,7 +86,7 @@ const getShortHookNumberAlternate =
     shortHookAlternateSentence);
 }
 
-export const getLongHooks_1 = () => {
+export const getLongHookContexts_1 = () => {
 
   const mapFn = (sentence) => {
 
@@ -141,4 +141,4 @@ export const getLongHooks_1 = () => {
 
 }
 
-export const longHooks_1 = getLongHooks_1();
+export const longHookContexts_1 = getLongHookContexts_1();

@@ -5,8 +5,8 @@ import { SabaLot } from './features/sabaLot/SabaLot';
 import buildKappaTable
   from './features/sabaLot/calculations/kappas/kappaTable';
 import JSONTree from 'react-json-tree';
-import { longHooks_2 }
-  from './features/sabaLot/calculations/rhos/rho_2';
+import { getBaseHookGapSeries }
+  from './features/sabaLot/calculations/rhos/rho_3';
 
 function App() {
 
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        <JSONTree data={longHooks_2} />
+        <JSONTree data={getBaseHookGapSeries()} />
       </div>
     </div>
   );

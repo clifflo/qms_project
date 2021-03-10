@@ -3,8 +3,17 @@ import * as R from 'ramda';
 
 export const decimalToBinary =
   (decimalNumber, numberOfDigits) => {
+
+  if(R.isNil(numberOfDigits)){
+    throw new Error('Need to enter number of digits');
+  }
+
+  if(!RA.isNumber(numberOfDigits)){
+    throw new Error('Number of digits has to be a number of course.');
+  }
+
   const rawBinary = decimalNumber.toString(2);
-  console.log(rawBinary);
+
   const addedZeroLength = numberOfDigits - rawBinary.length;
   let addedZeroes = ''
 
@@ -26,4 +35,14 @@ export const binaryToDecimal = (binaryNumber) => {
   }
 
   return parseInt(R.drop(1, binaryNumber)).toString(10);
+}
+
+export const getIndexedList = (list) => {
+  const mapFn = (value, index) => {
+    return {
+      index,
+      value
+    }
+  }
+  return R.map(mapFn, list);
 }
