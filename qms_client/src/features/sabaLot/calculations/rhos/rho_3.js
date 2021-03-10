@@ -1,6 +1,8 @@
 import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 import {
-  longHooks_1
+  longHookContexts_1,
+  shortHookOriginalSentence
 } from './rho_1';
 import {
   decimalToBinary,
@@ -11,23 +13,42 @@ import {
 const baseHookSeriesSentence =
   '姤,遯,否,觀,剝,晉,大有';
 
-const baseHookSeriesRaw =
+const baseHookSeries =
   R.split(',', baseHookSeriesSentence);
 
-const baseHookSeriesIndexed =
-  getIndexedList(baseHookSeriesRaw);
-
-export const getLongHookNumber = (longHookName) => {
+export const getLongHookContextByName = (longHookName) => {
 
   const longHookContext = R.find(
-    R.propEq('longHookName', targetLongHookName),
-    longHooks_1);
+    R.propEq('longHookName', longHookName),
+    longHookContexts_1);
 
   if(R.isNil(longHookContext)){
     throw new Error(`${longHookName} is not a valid long hook.`);
   }
 
-  return longHookContext.longHookNumber;
+  return longHookContext;
+}
+
+export const getLongHookContextByNumber = (longHookNumber) => {
+
+  const longHookContext = R.find(
+    R.propEq('longHookNumber', longHookNumber),
+    longHookContexts_1);
+
+  if(R.isNil(longHookNumber)){
+    throw new Error('Long hook number should not be nil.');
+  }
+
+  if(!RA.isNumber(longHookNumber)){
+    throw new Error(`Long hook number must be a number.`);
+  }
+
+  if(R.isNil(longHookContext)){
+    throw new Error(
+      `${longHookNumber} is not a valid long hook number.`);
+  }
+
+  return longHookContext;
 }
 
 export const getHookGapBinarySet = () => {
@@ -37,10 +58,8 @@ export const getHookGapBinarySet = () => {
   const mapFn = (targetLongHookName) => {
 
     const targetLongHookNumber =
-      R.find(
-        R.propEq('longHookName', targetLongHookName),
-        longHooks_1)
-        .longHookNumber;
+      getLongHookContextByName(targetLongHookName)
+      .longHookNumber;
 
     const gapBinary = decimalToBinary(
       sourceLongHookNumber ^ targetLongHookNumber,
@@ -49,32 +68,60 @@ export const getHookGapBinarySet = () => {
     return gapBinary;
   }
 
-  const baseHookSeries
+  try{
+    return R.map(mapFn, baseHookSeries);
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get hook gap binary set.');
+  }
 
-  return R.map(mapFn, baseHookSeries);
 }
 
-export const hookGapSeries = getHookGapSeries();
+export const hookGapBinarySet = getHookGapBinarySet();
 
 export const getHookSeries = () => {
 
-  const numberFn = (shortHookName) => {
+  const mapFn_1 = (shortHookName, gapBinary, index) => {
+
     try{
+      const gapDecimal = binaryToDecimal(gapBinary);
       const pureHookName = '純' + shortHookName;
-      const pureHookNumber = getLongHookNumber(pureHookName);
-      return pureHookNumber;
+      const pureHookNumber =
+        getLongHookContextByName(pureHookName)
+        .longHookNumber;
+      const pureHookBinary = decimalToBinary(pureHookNumber, 6);
+      const resultHookNumber = gapDecimal ^ pureHookNumber;
+      const resultHookContext =
+        getLongHookContextByNumber(resultHookNumber);
+
+      return resultHookContext.longHookName;
     }
     catch(err){
-      console.log(err);
-      throw new Error('Cannot get pure hook number.');
+      console.error(err);
+      throw new Error('Error in getting hook series.')
     }
   }
 
-  const mapFn = (longHookNumber, gapBinary) => {
+  const mapFn_1_curried = R.curry(mapFn_1);
 
-    const gapDecimal = binaryToDecimal(gapBinary);
+  const mapFn_2 = (shortHookName) => {
 
+    const rawSeries = RA.mapIndexed(
+      mapFn_1_curried(shortHookName), hookGapBinarySet);
+
+    const finalSeries = R.prepend(
+      '純' + shortHookName, rawSeries);
+
+    const seriesSentence = R.join(',', finalSeries);
+
+    return {
+      shortHookName,
+      seriesSentence
+    }
   }
 
+  const result = R.map(mapFn_2, shortHookOriginalSentence);
 
+  return result;
 }

@@ -64,9 +64,9 @@ const getNattos = () => {
 
 export const nattos = getNattos();
 
-const shortHookAlternateSentence = '地雷水澤山火風天';
+export const shortHookAlternateSentence = '地雷水澤山火風天';
 
-const shortHookOriginalSentence = '坤震坎兌艮離巽乾';
+export const shortHookOriginalSentence = '坤震坎兌艮離巽乾';
 
 const longHookParagraph = RA.concatAll([
   '乾為天,天風姤,天山遯,天地否,風地觀,山地剝,火地晉,火天大有,',
@@ -75,11 +75,11 @@ const longHookParagraph = RA.concatAll([
   '震為雷,雷地豫,雷水解,雷風恒,地風升,水風井,澤風大過,澤雷隨,',
   '巽為風,風天小畜,風火家人,風雷益,天雷無妄,火雷噬嗑,山雷頤,山風蠱,',
   '離為火,火山旅,火風鼎,火水未濟,山水蒙,風水渙,天水訟,天火同人,',
-  '坤為地,地雷覆,地澤臨,地天泰,雷天大壯,澤天夬,水天需,水地比,',
-  '兌為澤,澤水困,澤地萃,澤山鹹,水山蹇,地山謙,雷山小過,雷澤歸妹'
+  '坤為地,地雷復,地澤臨,地天泰,雷天大壯,澤天夬,水天需,水地比,',
+  '兌為澤,澤水困,澤地萃,澤山咸,水山蹇,地山謙,雷山小過,雷澤歸妹'
 ]);
 
-const getShortHookNumberAlternate =
+const getShortHookNumberAlternateIndex =
   (shortHookAlternate) => {
   return getIndexFromList(
     shortHookAlternate,
@@ -106,10 +106,10 @@ export const getLongHookContexts_1 = () => {
     }
 
     const upperShortHookNumber =
-      getShortHookNumberAlternate(upperShortHookAlternate);
+      getShortHookNumberAlternateIndex(upperShortHookAlternate);
 
     const lowerShortHookNumber =
-      getShortHookNumberAlternate(lowerShortHookAlternate);
+      getShortHookNumberAlternateIndex(lowerShortHookAlternate);
 
     const upperShortHookOriginal =
       shortHookOriginalSentence[upperShortHookNumber];

@@ -26,15 +26,17 @@ export const decimalToBinary =
 }
 
 export const binaryToDecimal = (binaryNumber) => {
-  if(RA.isString(binaryNumber)){
+
+  if(!RA.isString(binaryNumber)){
     throw new Error('Binary number must be of string type.');
   }
 
   if(R.take(1, binaryNumber) != 'b'){
+
     throw new Error('Binary number must start with b');
   }
 
-  return parseInt(R.drop(1, binaryNumber)).toString(10);
+  return parseInt(R.drop(1, binaryNumber), 2).toString(10);
 }
 
 export const getIndexedList = (list) => {
