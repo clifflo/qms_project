@@ -118,9 +118,4 @@ export const getLongHooks_2 = (longHooks) => {
   return R.map(mapFn, longHooks)
 }
 
-export const getLongHooks_3 = (longHooks) => {
-
-
-}
-
 export const longHooks_2 = getLongHooks_2(longHooks_1);
