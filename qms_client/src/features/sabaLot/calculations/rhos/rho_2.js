@@ -6,14 +6,16 @@ import {
   nattos
 } from './rho_1';
 
-const getTruncatedNatto =
-  (shortHook, isUpperShortTrunk) => {
+const getTruncatedNatto = (
+  shortHookOriginal,
+  isUpperShortTrunk) => {
 
   const natto = R.find(
-    R.propEq('shortHook', shortHook), nattos);
+    R.propEq('shortHookOriginal', shortHookOriginal), nattos);
 
   if(!natto){
-    throw new Error(`Cannot find natto. ${shortHook} is not valid.`);
+    throw new Error(
+      `Cannot find natto. ${shortHookOriginal} is not valid.`);
   }
 
   if(isUpperShortTrunk){
@@ -45,10 +47,6 @@ const buildCrosses = (
   const crossBranch = fullMustardSeries[downwardIndex];
 
   return {
-    downwardIndex,
-    upwardIndex: 5 - downwardIndex,
-    crossBranch,
-    crossTrunk,
     crossSign,
     crossTwig: crossTrunk + crossBranch
   }
@@ -90,7 +88,9 @@ export const getLongHookContexts_2 = (longHooks) => {
     const fullMustardSeries =
       upperMustardSeries + lowerMustardSeries;
 
-    const longHookBinary = decimalToBinary(longHook.longHookNumber);
+    const longHookBinary = decimalToBinary(
+      longHook.longHookNumber,
+      6);
 
     const mapFn = R.curry(buildCrosses)
       (fullMustardSeries)
@@ -102,16 +102,8 @@ export const getLongHookContexts_2 = (longHooks) => {
       R.drop(1, longHookBinary));
 
     return {
-      ...longHook,
-      upperShortHookBinary,
-      lowerShortHookBinary,
-      upperMustardSeries,
-      lowerMustardSeries,
-      longHookBinary,
-      crosses,
-      fullMustardSeries,
-      upperSoyBean,
-      lowerSoyBean
+      longHookName: longHook.longHookName,
+      crosses
     }
   }
 

@@ -32,7 +32,7 @@ const getFullMustardSeries =
 const getNattos = () => {
 
   const mapFn = (sentence) => {
-    const shortHook = sentence[0];
+    const shortHookOriginal = sentence[0];
     const shortHookElemental = sentence[1];
     const upperSoyBean = sentence[4];
     const lowerSoyBean = sentence[2];
@@ -46,7 +46,7 @@ const getNattos = () => {
       R.reverse(R.take(3, fullMustardSeries));
 
     return {
-      shortHook,
+      shortHookOriginal,
       shortHookElemental,
       upperSoyBean,
       lowerSoyBean,
