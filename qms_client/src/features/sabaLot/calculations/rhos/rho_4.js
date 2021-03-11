@@ -54,25 +54,30 @@ const getLhContexts_4 = () => {
 
   const mapFn = (context_3) => {
     const context_2 = R.find(
-      R.propEq('longHookName', context_3.longHookName),
+      R.propEq('lhName', context_3.lhName),
       lhContexts_2);
 
-    const headHookIndex = getHeadHookIndex(context_3.headHook);
-    const globalPalaceIndex = (headHookIndex * 8) + headHookIndex;
-    const headHookElemental = headHookElementalOrder[headHookIndex];
+    const lpIndex = context_3.lpIndex;
+
+    // Head Hook Index
+    const hhIndex = getHeadHookIndex(context_3.headHook);
+
+    // Global Palace Index
+    const gpIndex = (hhIndex * 8) + lpIndex;
+    const headHookElemental = headHookElementalOrder[hhIndex]
 
     return {
       ...context_2,
       ...context_3,
-      globalPalaceIndex,
-      headHookElemental
+      gpIndex
     }
   }
 
   try{
+
     const rawContexts = R.map(mapFn, lhContexts_3);
     const sortedContexts = R.sortBy(
-      R.prop('globalPalaceIndex'), rawContexts);
+      R.prop('gpIndex'), rawContexts);
     return sortedContexts;
   }
   catch(err){

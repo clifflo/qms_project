@@ -16,36 +16,36 @@ const baseHookSeriesSentence =
 const baseHookSeries =
   R.split(',', baseHookSeriesSentence);
 
-const getLhContextByName = (longHookName) => {
+const getLhContextByName = (lhName) => {
 
   const lhContext = R.find(
-    R.propEq('longHookName', longHookName),
+    R.propEq('lhName', lhName),
     lhContexts_1);
 
   if(R.isNil(lhContext)){
-    throw new Error(`${longHookName} is not a valid long hook.`);
+    throw new Error(`${lhName} is not a valid long hook.`);
   }
 
   return lhContext;
 }
 
-const getLhContextByNumber = (longHookNumber) => {
+const getLhContextByNumber = (lhNumber) => {
 
   const lhContext = R.find(
-    R.propEq('longHookNumber', longHookNumber),
+    R.propEq('lhNumber', lhNumber),
     lhContexts_1);
 
-  if(R.isNil(longHookNumber)){
+  if(R.isNil(lhNumber)){
     throw new Error('Long hook number should not be nil.');
   }
 
-  if(!RA.isNumber(longHookNumber)){
+  if(!RA.isNumber(lhNumber)){
     throw new Error(`Long hook number must be a number.`);
   }
 
   if(R.isNil(lhContext)){
     throw new Error(
-      `${longHookNumber} is not a valid long hook number.`);
+      `${lhNumber} is not a valid long hook number.`);
   }
 
   return lhContext;
@@ -53,16 +53,21 @@ const getLhContextByNumber = (longHookNumber) => {
 
 const getHookGapBinarySet = () => {
 
-  const sourceLongHookNumber = 63;
+  const sourceLhNumber = 63;
 
-  const mapFn = (targetLongHookName) => {
+  const mapFn = (targetLhName) => {
 
-    const targetLongHookNumber =
-      getLhContextByName(targetLongHookName)
-      .longHookNumber;
+    const targetLhNumber =
+      getLhContextByName(targetLhName)
+      .lhNumber;
+
+    if(R.isNil(targetLhNumber)){
+      throw new Error(
+        'Target long hook number should not be nil.');
+    }
 
     const gapBinary = decimalToBinary(
-      sourceLongHookNumber ^ targetLongHookNumber,
+      sourceLhNumber ^ targetLhNumber,
       6);
 
     return gapBinary;
@@ -89,13 +94,18 @@ const getHookPalaces = () => {
       const pureHookName = '純' + shortHookName;
       const pureHookNumber =
         getLhContextByName(pureHookName)
-        .longHookNumber;
+        .lhNumber;
+      if(R.isNil(pureHookNumber)){
+        throw new Error(
+          'Pure hook number should not be nil.');
+      }
+
       const pureHookBinary = decimalToBinary(pureHookNumber, 6);
       const resultHookNumber = gapDecimal ^ pureHookNumber;
       const resultHookContext =
         getLhContextByNumber(resultHookNumber);
 
-      return resultHookContext.longHookName;
+      return resultHookContext.lhName;
     }
     catch(err){
       console.error(err);
@@ -126,7 +136,7 @@ const getHookPalaces = () => {
 
 const hookPalaces = getHookPalaces();
 
-const buildJackIndex = (localPalaceIndex) => {
+const buildJackIndex = (lpIndex) => {
 
   const mapper = {
     0: 5,
@@ -139,27 +149,28 @@ const buildJackIndex = (localPalaceIndex) => {
     7: 2
   }
 
-  const upwardIndex = mapper[localPalaceIndex];
+  const upwardIndex = mapper[lpIndex];
   const downwardIndex = 5 - upwardIndex;
   return downwardIndex;
 }
 
 const getLhContexts_3 = () => {
 
+
   const mapFn_1 = (
     hookPalace,
-    longHookName,
-    localPalaceIndex) => {
+    lhName,
+    lpIndex) => {
 
     try{
 
-      const jackIndex = buildJackIndex(localPalaceIndex);
+      const jackIndex = buildJackIndex(lpIndex);
       const kingIndex = (jackIndex + 3) % 6;
 
       return {
-        longHookName,
+        lhName,
         headHook: hookPalace.headHook,
-        localPalaceIndex,
+        lpIndex,
         jackIndex,
         kingIndex
       }
@@ -192,6 +203,7 @@ const getLhContexts_3 = () => {
   }
 
   const nestedList = R.map(mapFn_2, hookPalaces);
+
   const flatList = R.flatten(nestedList);
   return flatList;
 }

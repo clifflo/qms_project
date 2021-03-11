@@ -13,6 +13,11 @@ const getTruncatedNatto = (
   const natto = R.find(
     R.propEq('shOri', shOri), nattos);
 
+  if(R.isNil(shOri)){
+    throw new Error(
+      'Short hook original should not be nil.');
+  }
+
   if(!natto){
     throw new Error(
       `Cannot find natto. ${shOri} is not valid.`);
@@ -71,23 +76,25 @@ export const getLhContexts_2 = (longHooks) => {
       let ims; // Internal Mustard Series
       let isb; // Internal Soy Bean
 
-      const upperTruncatedNatto = getTruncatedNatto(
-        longHook.eshOriginal, true);
+      // External truncated natto
+      const etn = getTruncatedNatto(
+        longHook.eshOri, true);
 
-      const lowerTruncatedNatto = getTruncatedNatto(
-        longHook.ishOriginal, false);
+      // Internal truncated Natto
+      const itn = getTruncatedNatto(
+        longHook.ishOri, false);
 
-      ems = upperTruncatedNatto.mustardSeries;
-      esb = upperTruncatedNatto.soyBean;
-      ims = lowerTruncatedNatto.mustardSeries;
-      isb = lowerTruncatedNatto.soyBean;
+      ems = etn.mustardSeries;
+      esb = etn.soyBean;
+      ims = itn.mustardSeries;
+      isb = itn.soyBean;
 
 
       // Full Mustard Series
       const fms = ems + ims;
 
       const longHookBinary = decimalToBinary(
-        longHook.longHookNumber,
+        longHook.lhNumber,
         6);
 
       const mapFn = R.curry(buildCrosses)
@@ -100,7 +107,7 @@ export const getLhContexts_2 = (longHooks) => {
         R.drop(1, longHookBinary));
 
       return {
-        longHookName: longHook.longHookName,
+        lhName: longHook.lhName,
         crosses
       }
     }

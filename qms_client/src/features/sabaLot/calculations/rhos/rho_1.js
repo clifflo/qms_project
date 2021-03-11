@@ -34,8 +34,8 @@ const getNattos = () => {
   const mapFn = (sentence) => {
     const shOri = sentence[0];
     const shEle = sentence[1];
-    const upperSoyBean = sentence[4];
-    const lowerSoyBean = sentence[2];
+    const esb = sentence[4];
+    const isb = sentence[2];
     const startMustard = sentence[3];
     const mustardSeriesIsClockwise = sentence[5] == '順';
     const fullMustardSeries = getFullMustardSeries(
@@ -48,8 +48,8 @@ const getNattos = () => {
     return {
       shOri,
       shEle,
-      upperSoyBean,
-      lowerSoyBean,
+      esb,
+      isb,
       startMustard,
       ems,
       lms
@@ -67,7 +67,7 @@ export const nattos = getNattos();
 // Short Hook Alternative
 export const shAltSentence = '地雷水澤山火風天';
 
-// Short Hook Original
+// Short Hook Ori
 export const shOriSentence = '坤震坎兌艮離巽乾';
 
 const longHookParagraph = RA.concatAll([
@@ -81,7 +81,8 @@ const longHookParagraph = RA.concatAll([
   '兌為澤,澤水困,澤地萃,澤山咸,水山蹇,地山謙,雷山小過,雷澤歸妹'
 ]);
 
-const getShortHookNumberAlternateIndex =
+// Get Short Hook Number Alt Index
+const getShNumAltIndex =
   (shAlt) => {
   return getIndexFromList(
     shAlt,
@@ -92,46 +93,46 @@ export const getLhContexts_1 = () => {
 
   const mapFn = (sentence) => {
 
-    let eshAlternate;
-    let ishAlternate;
-    let longHookName;
+    let eshAlt;
+    let ishAlt;
+    let lhName;
 
     if(sentence[1] == '為'){
-      eshAlternate = sentence[2];
-      ishAlternate = sentence[2];
-      longHookName = '純' + sentence[0];
+      eshAlt = sentence[2];
+      ishAlt = sentence[2];
+      lhName = '純' + sentence[0];
     }
     else {
-      eshAlternate = sentence[0];
-      ishAlternate = sentence[1];
-      longHookName = R.drop(2, sentence);
+      eshAlt = sentence[0];
+      ishAlt = sentence[1];
+      lhName = R.drop(2, sentence);
     }
 
     const eshNumber =
-      getShortHookNumberAlternateIndex(eshAlternate);
+      getShNumAltIndex(eshAlt);
 
     const ishNumber =
-      getShortHookNumberAlternateIndex(ishAlternate);
+      getShNumAltIndex(ishAlt);
 
-    const eshOriginal =
+    const eshOri =
       shOriSentence[eshNumber];
 
-    const ishOriginal =
+    const ishOri =
       shOriSentence[ishNumber];
 
-    const longHookNumber =
+    const lhNumber =
       (eshNumber * 8) +
       ishNumber;
 
     return {
-      eshAlternate,
-      ishAlternate,
-      eshOriginal,
-      ishOriginal,
-      longHookName,
+      eshAlt,
+      ishAlt,
+      eshOri,
+      ishOri,
+      lhName,
       eshNumber,
       ishNumber,
-      longHookNumber
+      lhNumber
     }
   }
 
