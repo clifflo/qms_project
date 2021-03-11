@@ -6,7 +6,8 @@ import {
   getIndexFromList
 } from '../utils';
 
-export const plasticReactionSentences = [
+// Plastic Reaction
+export const plrSentences = [
   '子丑合土',
   '寅亥合木',
   '卯戌合火',
@@ -39,237 +40,23 @@ export const plasticReactionSentences = [
   '巳午未會火',
   '申酉戌會金',
   '亥子丑會水',
-  '寅巳申為無恩之刑',
-  '丑戌未為持勢之刑',
-  '子卯為無禮之刑',
-  '辰午酉亥為自刑',
   '甲己合土',
   '乙庚合金',
   '丙辛合水',
   '丁壬合木',
   '戊癸合火',
+  '寅巳申為無恩之刑',
+  '丑戌未為持勢之刑',
+  '子卯為無禮之刑',
+  '辰午酉亥為自刑',
 ]
 
-export function plasticReactionFilter(filterFn) {
-  return R.filter(filterFn, plasticReactionSentences);
+export function plrFilter(filterFn) {
+  return R.filter(filterFn, plrSentences);
 }
 
-export function getCompounds() {
-
-  const filterFn = sentence => {
-    const reactionChar = item(sentence, -2);
-    return reactionChar == '合' || reactionChar == '會'
-  }
-
-  const compoundSentences =
-    plasticReactionFilter(filterFn);
-
-  const sliceFn = sentence =>
-    R.slice(0, sentence.length - 2, sentence);
-
-  const splitFn = sentence => R.split('', sentence);
-
-  const compoundTypeFn = sentence => {
-    if(sentence.length == 4){
-      if(isValidTrunk(sentence[0])){
-        return 1;
-      }
-      else {
-        return 2;
-      }
-    }
-    else {
-      if(item(sentence, -2) == '合'){
-        return 3;
-      }
-      else {
-        return 4;
-      }
-    }
-  }
-
-  const sentenceFn = R.compose(splitFn, sliceFn);
-
-  const firstMapFn = sentence => {
-    return {
-      plastics: sentenceFn(sentence),
-      elemental: item(sentence, -1),
-      compoundType: compoundTypeFn(sentence),
-      isTrunk: isTrunk(sentence[0])
-    }
-  }
-
-  const mapper = [
-    '天干五小合',
-    '地支六小合',
-    '地支三大合',
-    '地支三會'
-  ]
-
-  const secondMapFn = rawCompound =>{
-    return {
-      ...rawCompound,
-      compoundStyle: mapper[rawCompound.compoundType - 1]
-    }
-  }
 
 
-  const buildFn =　R.compose(
-    secondMapFn,
-    firstMapFn);
-
-  const _compounds =
-    R.map(buildFn, compoundSentences);
-  return _compounds;
-}
-
-export const compounds = getCompounds();
-
-export function getCollisions(){
-
-  const collisionSentences =
-    plasticReactionFilter(
-      sentence => sentence.length == 3);
-
-  const getCollisionType = collision => {
-    switch(collision){
-      case '沖':
-        return 1;
-      case '害':
-        return 2;
-      case '破':
-        return 3;
-      default:
-        throw 'Wrong collision Chinese.';
-    }
-  }
-
-  const mapFn = sentence => {
-    return {
-      tank: sentence[0],
-      victim: sentence[1],
-      collisionType:
-        getCollisionType(sentence[2]),
-      collisionStyle:
-        sentence[2]
-    }
-  }
-
-  const _collisions =
-    R.map(mapFn, collisionSentences);
-
-  return _collisions;
-
-}
-
-export const collisions = getCollisions();
-
-export function getCyclicArrestments(){
-
-  const cycleArrestmentSentences =
-    plasticReactionFilter(sentence => sentence.length == 8);
-
-  const getInitalList = branch => {
-
-    const sentence =
-      R.find(sentence => sentence[0] == branch,
-        cycleArrestmentSentences);
-
-    const sliceSentence =
-      R.slice(0, 3, sentence)
-
-    const initialList =
-      R.split('', sliceSentence);
-
-    return initialList;
-  }
-
-  const getFinalList =
-    (branch, arrestmentType, arrestmentStyle) => {
-
-    const initialList = getInitalList(branch);
-
-    let finalList = [];
-
-    for(let i = 0; i < 3; i++){
-      const police = item(initialList, i);
-      const suspect = item(initialList, i+1);
-      finalList.push({
-        police,
-        suspect,
-        arrestmentType,
-        arrestmentStyle
-      });
-    }
-
-    return finalList;
-  }
-
-  const typeOneArrestment =
-    getFinalList('寅', 1, '無恩之刑');
-
-  const typeTwoArrestment =
-    getFinalList('丑', 1, '持勢之刑');
-
-  const fullList =
-    R.concat(typeOneArrestment, typeTwoArrestment);
-
-  return fullList;
-
-}
-
-const cyclicArrestments = getCyclicArrestments();
-
-const impoliteArrestments = [
-  {
-    police: '子',
-    suspect: '卯',
-    arrestmentType: 3,
-    arrestmentStyle: '無禮之刑'
-  },
-  {
-    police: '卯',
-    suspect: '子',
-    arrestmentType: 3,
-    arrestmentStyle: '無禮之刑'
-  }
-]
-
-export function getSelfArrestments(){
-  const selfArrestmentSentence =
-    plasticReactionFilter(sentence =>
-      R.takeLast(2, sentence) == '自刑')[0];
-
-  const splitFn = sentence =>
-    R.split('', sentence);
-
-  const takeFn = sentence =>
-    R.take(4, sentence);
-
-  const mapFn = branch => {
-    return {
-      police: branch,
-      suspect: branch,
-      arrestmentType: 4,
-      arrestmentStyle: '自刑'
-    }
-  }
-
-  const fullMapFn = sentence => R.map(mapFn, sentence);
-
-  const arrestments =
-    R.compose(fullMapFn, takeFn, splitFn)(selfArrestmentSentence);
-
-  return arrestments;
-
-}
-
-export const selfArrestments = getSelfArrestments();
-
-export const allArrestments = RA.concatAll(
-  [cyclicArrestments,
-  impoliteArrestments,
-  selfArrestments]);
 
 const chosenSentence =
   '長生,沐浴,冠帶,臨官,帝旺,衰,病,長死,墓,絕,胎,養';
@@ -294,7 +81,7 @@ export const getChosenTypeOne = (elemental, branch) => {
   return chosen;
 }
 
-// 在１０３頁提及的十天干生旺死絕表天干和地支的關係
+// 在大六壬１０３頁提及的十天干生旺死絕表天干和地支的關係
 export const chosenTypeTwoOrder =　
   '亥午寅酉寅酉巳子申卯';
 
