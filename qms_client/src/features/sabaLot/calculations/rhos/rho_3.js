@@ -126,7 +126,7 @@ const getHookPalaces = () => {
 
 const hookPalaces = getHookPalaces();
 
-const buildJackIndex = (palaceIndex) => {
+const buildJackIndex = (localPalaceIndex) => {
 
   const mapper = {
     0: 5,
@@ -139,17 +139,9 @@ const buildJackIndex = (palaceIndex) => {
     7: 2
   }
 
-  const rawCrossPositions = '初二三四五六';
-  const upwardIndex = mapper[palaceIndex];
+  const upwardIndex = mapper[localPalaceIndex];
   const downwardIndex = 5 - upwardIndex;
-
-  const crossPosition =
-    rawCrossPositions[upwardIndex] + '爻';
-
-  return [
-    downwardIndex,
-    crossPosition
-  ];
+  return downwardIndex;
 }
 
 const getLhContexts_3 = () => {
@@ -157,19 +149,17 @@ const getLhContexts_3 = () => {
   const mapFn_1 = (
     hookPalace,
     longHookName,
-    palaceIndex) => {
+    localPalaceIndex) => {
 
     try{
 
-      const [jackIndex, jackPosition] =
-        buildJackIndex(palaceIndex);
+      const jackIndex = buildJackIndex(localPalaceIndex);
 
       return {
         longHookName,
         headHook: hookPalace.headHook,
-        palaceIndex,
-        jackIndex,
-        jackPosition
+        localPalaceIndex,
+        jackIndex
       }
     }
     catch(err){
