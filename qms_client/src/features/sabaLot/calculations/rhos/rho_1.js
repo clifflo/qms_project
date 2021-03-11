@@ -86,7 +86,7 @@ const getShortHookNumberAlternateIndex =
     shortHookAlternateSentence);
 }
 
-export const getLongHookContexts_1 = () => {
+export const getLhContexts_1 = () => {
 
   const mapFn = (sentence) => {
 
@@ -141,4 +141,4 @@ export const getLongHookContexts_1 = () => {
 
 }
 
-export const longHookContexts_1 = getLongHookContexts_1();
+export const lhContexts_1 = getLhContexts_1();

@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import { decimalToBinary } from '../utils/util_3';
 import {
-  longHookContexts_1,
+  lhContexts_1,
   nattos
 } from './rho_1';
 
@@ -53,7 +53,7 @@ const buildCrosses = (
 
 }
 
-export const getLongHookContexts_2 = (longHooks) => {
+export const getLhContexts_2 = (longHooks) => {
 
   const mapFn = (longHook) => {
 
@@ -110,5 +110,5 @@ export const getLongHookContexts_2 = (longHooks) => {
   return R.map(mapFn, longHooks)
 }
 
-export const longHookContexts_2 =
-  getLongHookContexts_2(longHookContexts_1);
+export const lhContexts_2 =
+  getLhContexts_2(lhContexts_1);

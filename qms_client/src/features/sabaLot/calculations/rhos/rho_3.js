@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  longHookContexts_1,
+  lhContexts_1,
   shortHookOriginalSentence
 } from './rho_1';
 import {
@@ -16,24 +16,24 @@ const baseHookSeriesSentence =
 const baseHookSeries =
   R.split(',', baseHookSeriesSentence);
 
-const getLongHookContextByName = (longHookName) => {
+const getLhContextByName = (longHookName) => {
 
-  const longHookContext = R.find(
+  const lhContext = R.find(
     R.propEq('longHookName', longHookName),
-    longHookContexts_1);
+    lhContexts_1);
 
-  if(R.isNil(longHookContext)){
+  if(R.isNil(lhContext)){
     throw new Error(`${longHookName} is not a valid long hook.`);
   }
 
-  return longHookContext;
+  return lhContext;
 }
 
-const getLongHookContextByNumber = (longHookNumber) => {
+const getLhContextByNumber = (longHookNumber) => {
 
-  const longHookContext = R.find(
+  const lhContext = R.find(
     R.propEq('longHookNumber', longHookNumber),
-    longHookContexts_1);
+    lhContexts_1);
 
   if(R.isNil(longHookNumber)){
     throw new Error('Long hook number should not be nil.');
@@ -43,12 +43,12 @@ const getLongHookContextByNumber = (longHookNumber) => {
     throw new Error(`Long hook number must be a number.`);
   }
 
-  if(R.isNil(longHookContext)){
+  if(R.isNil(lhContext)){
     throw new Error(
       `${longHookNumber} is not a valid long hook number.`);
   }
 
-  return longHookContext;
+  return lhContext;
 }
 
 const getHookGapBinarySet = () => {
@@ -58,7 +58,7 @@ const getHookGapBinarySet = () => {
   const mapFn = (targetLongHookName) => {
 
     const targetLongHookNumber =
-      getLongHookContextByName(targetLongHookName)
+      getLhContextByName(targetLongHookName)
       .longHookNumber;
 
     const gapBinary = decimalToBinary(
@@ -80,7 +80,7 @@ const getHookGapBinarySet = () => {
 
 const hookGapBinarySet = getHookGapBinarySet();
 
-const getHookPalaces_1 = () => {
+const getHookPalaces = () => {
 
   const mapFn_1 = (shortHookName, gapBinary, index) => {
 
@@ -88,12 +88,12 @@ const getHookPalaces_1 = () => {
       const gapDecimal = binaryToDecimal(gapBinary);
       const pureHookName = '純' + shortHookName;
       const pureHookNumber =
-        getLongHookContextByName(pureHookName)
+        getLhContextByName(pureHookName)
         .longHookNumber;
       const pureHookBinary = decimalToBinary(pureHookNumber, 6);
       const resultHookNumber = gapDecimal ^ pureHookNumber;
       const resultHookContext =
-        getLongHookContextByNumber(resultHookNumber);
+        getLhContextByNumber(resultHookNumber);
 
       return resultHookContext.longHookName;
     }
@@ -124,7 +124,7 @@ const getHookPalaces_1 = () => {
   return result;
 }
 
-const hookPalaces_1 = getHookPalaces_1();
+const hookPalaces = getHookPalaces();
 
 const buildJackIndex = (palaceIndex) => {
 
@@ -152,7 +152,7 @@ const buildJackIndex = (palaceIndex) => {
   ];
 }
 
-const getHookPalaces_2 = () => {
+const getLhContexts_3 = () => {
 
   const mapFn_1 = (
     hookPalace,
@@ -199,9 +199,10 @@ const getHookPalaces_2 = () => {
 
   }
 
-  const nestedList = R.map(mapFn_2, hookPalaces_1);
+  const nestedList = R.map(mapFn_2, hookPalaces);
   const flatList = R.flatten(nestedList);
   return flatList;
 }
 
-export const hookPalaces_2 = getHookPalaces_2();
+
+export const lhContexts_3 = getLhContexts_3();
