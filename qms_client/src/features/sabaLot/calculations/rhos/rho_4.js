@@ -20,3 +20,11 @@ const getShortHookElementalByOriginal =
 
   return natto.shortHookElemental;
 }
+
+export const getLongHookContexts_3 = () => {
+
+  const mapFn = (longHookContext) => {
+
+  }
+
+}

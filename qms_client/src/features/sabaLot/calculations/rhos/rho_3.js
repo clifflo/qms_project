@@ -126,18 +126,50 @@ const getHookPalaces_1 = () => {
 
 const hookPalaces_1 = getHookPalaces_1();
 
+const buildJackIndex = (palaceIndex) => {
+
+  const mapper = {
+    0: 5,
+    1: 0,
+    2: 1,
+    3: 2,
+    4: 3,
+    5: 4,
+    6: 3,
+    7: 2
+  }
+
+  const rawCrossPositions = '初二三四五六';
+  const upwardIndex = mapper[palaceIndex];
+  const downwardIndex = 5 - upwardIndex;
+
+  const crossPosition =
+    rawCrossPositions[upwardIndex] + '爻';
+
+  return [
+    downwardIndex,
+    crossPosition
+  ];
+}
+
 const getHookPalaces_2 = () => {
 
   const mapFn_1 = (
     hookPalace,
     longHookName,
-    jackIndex) => {
+    palaceIndex) => {
 
     try{
+
+      const [jackIndex, jackPosition] =
+        buildJackIndex(palaceIndex);
+
       return {
         longHookName,
         headHook: hookPalace.headHook,
-        jackIndex
+        palaceIndex,
+        jackIndex,
+        jackPosition
       }
     }
     catch(err){
