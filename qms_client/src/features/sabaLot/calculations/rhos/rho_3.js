@@ -154,12 +154,14 @@ const getLhContexts_3 = () => {
     try{
 
       const jackIndex = buildJackIndex(localPalaceIndex);
+      const kingIndex = (jackIndex + 3) % 6;
 
       return {
         longHookName,
         headHook: hookPalace.headHook,
         localPalaceIndex,
-        jackIndex
+        jackIndex,
+        kingIndex
       }
     }
     catch(err){
