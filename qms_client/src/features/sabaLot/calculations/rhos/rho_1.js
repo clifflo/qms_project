@@ -34,15 +34,23 @@ const getNattos = () => {
   const mapFn = (sentence) => {
     const shOri = sentence[0];
     const shEle = sentence[1];
+
+    // External Soy Bean
     const esb = sentence[4];
+
+    // Internal Soy Bean
     const isb = sentence[2];
     const startMustard = sentence[3];
     const mustardSeriesIsClockwise = sentence[5] == '順';
     const fullMustardSeries = getFullMustardSeries(
       startMustard, mustardSeriesIsClockwise);
+
+    // External Mustard Series
     const ems =
       R.reverse(R.takeLast(3, fullMustardSeries));
-    const lms =
+
+    // Internal Mustard Series
+    const ims =
       R.reverse(R.take(3, fullMustardSeries));
 
     return {
@@ -52,7 +60,7 @@ const getNattos = () => {
       isb,
       startMustard,
       ems,
-      lms
+      ims
     };
   }
 

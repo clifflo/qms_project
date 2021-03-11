@@ -24,15 +24,39 @@ const getTruncatedNatto = (
   }
 
   if(isUpperShortTrunk){
+
+    const soyBean = natto.esb;
+    const mustardSeries = natto.ems;
+
+    if(R.isNil(soyBean)){
+      throw new Error('External Soy bean should not be nil.')
+    }
+
+    if(R.isNil(mustardSeries)){
+      throw new Error('External Mustard Series should not be nil.');
+    }
+
     return {
-      soyBean: natto.upperSoyBean,
-      mustardSeries: natto.ems
+      soyBean,
+      mustardSeries
     }
   }
   else {
+
+    const soyBean = natto.isb;
+    const mustardSeries = natto.ims;
+
+    if(R.isNil(soyBean)){
+      throw new Error('Internal Soy bean should not be nil.')
+    }
+
+    if(R.isNil(mustardSeries)){
+      throw new Error('Internal Mustard Series should not be nil.');
+    }
+
     return {
-      soyBean: natto.lowerSoyBean,
-      mustardSeries: natto.ims
+      soyBean,
+      mustardSeries
     }
   }
 
@@ -88,6 +112,16 @@ export const getLhContexts_2 = (longHooks) => {
       esb = etn.soyBean;
       ims = itn.mustardSeries;
       isb = itn.soyBean;
+
+      if(R.isNil(esb)){
+        throw new Error(
+          'External Soy Bean should not be nil.')
+      }
+
+      if(R.isNil(isb)){
+        throw new Error(
+          'Internal Soy Bean should not be nil.')
+      }
 
 
       // Full Mustard Series
