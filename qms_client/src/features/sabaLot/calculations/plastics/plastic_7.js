@@ -3,7 +3,7 @@ import {
   plrFilter
 } from './plastic_2';
 
-export function getCompounds() {
+const getCompounds = () => {
 
   const filterFn = sentence => {
     const reactionChar = item(sentence, -2);

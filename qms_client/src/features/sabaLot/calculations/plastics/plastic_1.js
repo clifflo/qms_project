@@ -6,7 +6,6 @@ import {
   getIndexFromList
 } from '../utils';
 
-
 export const trunkContext = {
   '甲': 'Beta',
   '乙': 'Gamma',
@@ -24,7 +23,7 @@ export const elementalSentence = '金水木火土';
 
 export const trunkSentence = '甲乙丙丁戊己庚辛壬癸';
 
-const branchContext = {
+export const branchContext = {
   '子': 'Psi',
   '丑': 'Chi',
   '寅': 'Phi',
@@ -45,21 +44,21 @@ export const branchElementalSentence = '水土木木土火火土金金土水';
 
 export const trunkElementalSentence = '木木火火土土金金水水';
 
-export function getIndexOfTrunk(trunk){
+export const getIndexOfTrunk = (trunk) => {
   return getIndexFromList(trunk, trunkSentence)
 }
 
-function getTrunkLiturgy(trunk) {
+export const getTrunkLiturgy = (trunk) => {
   return (getIndexOfTrunk(trunk) % 2) == 0 ?
     'Alpha': 'Omega';
 }
 
-function getBranchLiturgy(branch){
+export const getBranchLiturgy = (branch) => {
   return (getIndexOfBranch(branch) % 2) == 0 ?
     'Alpha': 'Omega';
 }
 
-export function getPlasticLiturgy(plastic){
+export const getPlasticLiturgy = (plastic) => {
 
   if(isValidTrunk(plastic)){
     const trunk = plastic;
@@ -70,17 +69,18 @@ export function getPlasticLiturgy(plastic){
     return getBranchLiturgy(branch);
   }
   else {
-    throw 'Wrong plastic for liturgy.';
+    throw new Error(`${plastic} is not a valid plastic.`);
   }
 }
 
-export function getIndexOfBranch(branch){
+export const getIndexOfBranch = (branch) => {
   return getIndexFromList(branch, branchSentence)
 }
 
 export function getElementalOfPlastic(plastic){
   if(R.isNil(plastic)){
-    throw 'The input is nil for plastic.'
+    throw new Error(
+      'The input is nil for plastic.');
   }
   if(isValidTrunk(plastic)){
     const trunk = plastic;
@@ -91,7 +91,7 @@ export function getElementalOfPlastic(plastic){
     return branchElementalSentence[getIndexOfBranch(branch)];
   }
   else {
-    throw `'${plastic}' is not plastic.`
+    throw new Error(`'${plastic}' is not plastic.`);
   }
 }
 
@@ -108,7 +108,8 @@ export function comparePlasticElemental(source, target){
     }
   }
   catch(err){
-    throw 'Cannot compare plastic elemental due to -> ' + err;
+    console.error(err);
+    throw new Error('Cannot compare elemental.')
   }
 
 }

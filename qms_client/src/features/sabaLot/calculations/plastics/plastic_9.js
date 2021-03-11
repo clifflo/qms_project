@@ -3,7 +3,7 @@ import {
 } from './plastic_2';
 import * as R from 'ramda';
 
-export const getCyclicArrestments = () => {
+const getCyclicArrestments = () => {
 
   const cycleArrestmentSentences =
     plrFilter(sentence => sentence.length == 8);
@@ -103,7 +103,7 @@ const getSelfArrestments = () => {
 
 }
 
-export const selfArrestments = getSelfArrestments();
+const selfArrestments = getSelfArrestments();
 
 export const allArrestments = RA.concatAll(
   [cyclicArrestments,
