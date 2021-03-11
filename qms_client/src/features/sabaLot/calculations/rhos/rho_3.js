@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   lhContexts_1,
-  shortHookOriginalSentence
+  shOriSentence
 } from './rho_1';
 import {
   decimalToBinary,
@@ -120,7 +120,7 @@ const getHookPalaces = () => {
     }
   }
 
-  const result = R.map(mapFn_2, shortHookOriginalSentence);
+  const result = R.map(mapFn_2, shOriSentence);
   return result;
 }
 

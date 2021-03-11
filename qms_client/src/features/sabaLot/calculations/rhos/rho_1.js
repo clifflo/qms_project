@@ -32,27 +32,27 @@ const getFullMustardSeries =
 const getNattos = () => {
 
   const mapFn = (sentence) => {
-    const shortHookOriginal = sentence[0];
-    const shortHookElemental = sentence[1];
+    const shOri = sentence[0];
+    const shEle = sentence[1];
     const upperSoyBean = sentence[4];
     const lowerSoyBean = sentence[2];
     const startMustard = sentence[3];
     const mustardSeriesIsClockwise = sentence[5] == '順';
     const fullMustardSeries = getFullMustardSeries(
       startMustard, mustardSeriesIsClockwise);
-    const upperMustardSeries =
+    const ems =
       R.reverse(R.takeLast(3, fullMustardSeries));
-    const lowerMustardSeries =
+    const lms =
       R.reverse(R.take(3, fullMustardSeries));
 
     return {
-      shortHookOriginal,
-      shortHookElemental,
+      shOri,
+      shEle,
       upperSoyBean,
       lowerSoyBean,
       startMustard,
-      upperMustardSeries,
-      lowerMustardSeries
+      ems,
+      lms
     };
   }
 
@@ -64,9 +64,11 @@ const getNattos = () => {
 
 export const nattos = getNattos();
 
-export const shortHookAlternateSentence = '地雷水澤山火風天';
+// Short Hook Alternative
+export const shAltSentence = '地雷水澤山火風天';
 
-export const shortHookOriginalSentence = '坤震坎兌艮離巽乾';
+// Short Hook Original
+export const shOriSentence = '坤震坎兌艮離巽乾';
 
 const longHookParagraph = RA.concatAll([
   '乾為天,天風姤,天山遯,天地否,風地觀,山地剝,火地晉,火天大有,',
@@ -80,55 +82,55 @@ const longHookParagraph = RA.concatAll([
 ]);
 
 const getShortHookNumberAlternateIndex =
-  (shortHookAlternate) => {
+  (shAlt) => {
   return getIndexFromList(
-    shortHookAlternate,
-    shortHookAlternateSentence);
+    shAlt,
+    shAltSentence);
 }
 
 export const getLhContexts_1 = () => {
 
   const mapFn = (sentence) => {
 
-    let upperShortHookAlternate;
-    let lowerShortHookAlternate;
+    let eshAlternate;
+    let ishAlternate;
     let longHookName;
 
     if(sentence[1] == '為'){
-      upperShortHookAlternate = sentence[2];
-      lowerShortHookAlternate = sentence[2];
+      eshAlternate = sentence[2];
+      ishAlternate = sentence[2];
       longHookName = '純' + sentence[0];
     }
     else {
-      upperShortHookAlternate = sentence[0];
-      lowerShortHookAlternate = sentence[1];
+      eshAlternate = sentence[0];
+      ishAlternate = sentence[1];
       longHookName = R.drop(2, sentence);
     }
 
-    const upperShortHookNumber =
-      getShortHookNumberAlternateIndex(upperShortHookAlternate);
+    const eshNumber =
+      getShortHookNumberAlternateIndex(eshAlternate);
 
-    const lowerShortHookNumber =
-      getShortHookNumberAlternateIndex(lowerShortHookAlternate);
+    const ishNumber =
+      getShortHookNumberAlternateIndex(ishAlternate);
 
-    const upperShortHookOriginal =
-      shortHookOriginalSentence[upperShortHookNumber];
+    const eshOriginal =
+      shOriSentence[eshNumber];
 
-    const lowerShortHookOriginal =
-      shortHookOriginalSentence[lowerShortHookNumber];
+    const ishOriginal =
+      shOriSentence[ishNumber];
 
     const longHookNumber =
-      (upperShortHookNumber * 8) +
-      lowerShortHookNumber;
+      (eshNumber * 8) +
+      ishNumber;
 
     return {
-      upperShortHookAlternate,
-      lowerShortHookAlternate,
-      upperShortHookOriginal,
-      lowerShortHookOriginal,
+      eshAlternate,
+      ishAlternate,
+      eshOriginal,
+      ishOriginal,
       longHookName,
-      upperShortHookNumber,
-      lowerShortHookNumber,
+      eshNumber,
+      ishNumber,
       longHookNumber
     }
   }

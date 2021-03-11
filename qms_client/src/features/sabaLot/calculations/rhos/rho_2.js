@@ -7,27 +7,27 @@ import {
 } from './rho_1';
 
 const getTruncatedNatto = (
-  shortHookOriginal,
+  shOri,
   isUpperShortTrunk) => {
 
   const natto = R.find(
-    R.propEq('shortHookOriginal', shortHookOriginal), nattos);
+    R.propEq('shOri', shOri), nattos);
 
   if(!natto){
     throw new Error(
-      `Cannot find natto. ${shortHookOriginal} is not valid.`);
+      `Cannot find natto. ${shOri} is not valid.`);
   }
 
   if(isUpperShortTrunk){
     return {
       soyBean: natto.upperSoyBean,
-      mustardSeries: natto.upperMustardSeries
+      mustardSeries: natto.ems
     }
   }
   else {
     return {
       soyBean: natto.lowerSoyBean,
-      mustardSeries: natto.lowerMustardSeries
+      mustardSeries: natto.ims
     }
   }
 
@@ -57,54 +57,58 @@ export const getLhContexts_2 = (longHooks) => {
 
   const mapFn = (longHook) => {
 
-    const upperShortHookBinary = decimalToBinary(
-      longHook.upperShortHookNumber, 3);
+    try {
 
-    const lowerShortHookBinary = decimalToBinary(
-      longHook.lowerShortHookNumber, 3);
+      const eshBinary = decimalToBinary(
+        longHook.eshNumber, 3);
 
-    let upperMustardSeries;
-    let upperSoyBean;
-    let lowerMustardSeries;
-    let lowerSoyBean;
+      const ishBinary = decimalToBinary(
+        longHook.ishNumber, 3);
 
-    try{
+
+      let ems; // External Mustard Series
+      let esb; // External Soy Bean
+      let ims; // Internal Mustard Series
+      let isb; // Internal Soy Bean
+
       const upperTruncatedNatto = getTruncatedNatto(
-        longHook.upperShortHookOriginal, true);
+        longHook.eshOriginal, true);
 
       const lowerTruncatedNatto = getTruncatedNatto(
-        longHook.lowerShortHookOriginal, false);
+        longHook.ishOriginal, false);
 
-      upperMustardSeries = upperTruncatedNatto.mustardSeries;
-      upperSoyBean = upperTruncatedNatto.soyBean;
-      lowerMustardSeries = lowerTruncatedNatto.mustardSeries;
-      lowerSoyBean = lowerTruncatedNatto.soyBean;
+      ems = upperTruncatedNatto.mustardSeries;
+      esb = upperTruncatedNatto.soyBean;
+      ims = lowerTruncatedNatto.mustardSeries;
+      isb = lowerTruncatedNatto.soyBean;
+
+
+      // Full Mustard Series
+      const fms = ems + ims;
+
+      const longHookBinary = decimalToBinary(
+        longHook.longHookNumber,
+        6);
+
+      const mapFn = R.curry(buildCrosses)
+        (fms)
+        (esb)
+        (isb);
+
+      const crosses = RA.mapIndexed(
+        mapFn,
+        R.drop(1, longHookBinary));
+
+      return {
+        longHookName: longHook.longHookName,
+        crosses
+      }
     }
     catch(err){
       console.error(err);
       throw new Error('Cannot build mustard series.');
     }
 
-    const fullMustardSeries =
-      upperMustardSeries + lowerMustardSeries;
-
-    const longHookBinary = decimalToBinary(
-      longHook.longHookNumber,
-      6);
-
-    const mapFn = R.curry(buildCrosses)
-      (fullMustardSeries)
-      (upperSoyBean)
-      (lowerSoyBean);
-
-    const crosses = RA.mapIndexed(
-      mapFn,
-      R.drop(1, longHookBinary));
-
-    return {
-      longHookName: longHook.longHookName,
-      crosses
-    }
   }
 
   return R.map(mapFn, longHooks)
