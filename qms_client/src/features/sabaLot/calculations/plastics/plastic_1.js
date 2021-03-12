@@ -155,7 +155,7 @@ export function isValidElemental(elemental){
   return R.includes(elemental, elemOrder);
 }
 
-export function getIndexOfElem(elemental){
+export const getIndexOfElem = (elemental) => {
   return getIndexFromList(elemental, elemOrder)
 }
 
@@ -164,10 +164,10 @@ export const elemRels = [
   'Fruit',
   'Bank',
   'Hacker',
-  'Root'
+  'Seed'
 ];
 
-export function getElemRel(source, target){
+export const getElemRel = (source, target) => {
 
   if(!RA.isString(source)){
     throw new Error('Source elemental must be string.');

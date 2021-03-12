@@ -49,7 +49,7 @@ export function buildPalmDoor_1(kappaTable) {
           case 'Hacker':
             return 'Octopus';
           case 'Draw':
-          case 'Root':
+          case 'Seed':
           case 'Fruit':
             return 'Jellyfish';
           default:

@@ -68,15 +68,44 @@ export function getChosenIndex(chosen) {
 const elemStatusOne =
   '旺,相,休,囚,死';
 
-export const getChosenTypeOne = (elem, branch) => {
 
-  const elemIndex = getIndexOfElem(elem);
-  const adjustedElemIndex = elemIndex == 4 ? 3 : elemIndex;
+// Get Chosen Type 1 with Element and Branch
+export const getCho_1A = (elem, branch) => {
+
+  if(!isValidBranch(branch)){
+    throw new Error(`${branch} is not a valid branch.`);
+  }
+
+  if(!isValidElemental(elem)){
+    throw new Error(`${elem} is not a valid elemental.`);
+  }
+
+  const elemIndex_1 = getIndexOfElem(elem);
+  const elemIndex_2 = elemIndex_1 == 4 ? 3 : elemIndex;
   const branchIndex = getIndexOfBranch(branch);
-  const chosenIndex = -(adjustedElemIndex * 3) - 5 + branchIndex;
-  const chosen = item(chosenOrder, chosenIndex);
-  return chosen;
+  const choIndex = -(elemIndex_2 * 3) - 5 + branchIndex;
+  const cho = item(choOrder, choIndex);
+  return cho;
 }
+
+export const getCho_1B = (sBranch, tBranch) => {
+
+  if(!isValidBranch(sBranch)){
+    throw new Error(
+      `${source} is not a valid source branch.`);
+  }
+
+  if(!isValidBranch(tBranch)){
+    throw new Error(
+      `${target} is not a valid target branch.`)
+  }
+
+  const sElem = getElemOfPlastic(sBranch);
+  return getCho_1A(sElem, tBranch);
+
+}
+
+
 
 // 在大六壬１０３頁提及的十天干生旺死絕表天干和地支的關係
 export const chosenTypeTwoOrder =　
