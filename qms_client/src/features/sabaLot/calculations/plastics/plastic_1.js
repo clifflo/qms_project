@@ -3,7 +3,7 @@ import * as RA from 'ramda-adjunct';
 import {
   adjust,
   item,
-  getIndexFromList
+  idxTool
 } from '../utils';
 
 export const trunkContext = {
@@ -40,21 +40,23 @@ export const branchContext = {
 
 export const branchOrder = '子丑寅卯辰巳午未申酉戌亥';
 
-export const branchelemOrder = '水土木木土火火土金金土水';
+// Branch Elemental Order
+export const belemOrder = '水土木木土火火土金金土水';
 
-export const trunkelemOrder = '木木火火土土金金水水';
+// Trunk Elemental Order
+export const telemOrder = '木木火火土土金金水水';
 
-export const getIndexOfTrunk = (trunk) => {
-  return getIndexFromList(trunk, trunkOrder)
+export const idxOfTrunk = (trunk) => {
+  return idxTool(trunk, trunkOrder)
 }
 
 export const getTrunkLiturgy = (trunk) => {
-  return (getIndexOfTrunk(trunk) % 2) == 0 ?
+  return (idxOfTrunk(trunk) % 2) == 0 ?
     'Alpha': 'Omega';
 }
 
 export const getBranchLiturgy = (branch) => {
-  return (getIndexOfBranch(branch) % 2) == 0 ?
+  return (idxOfBranch(branch) % 2) == 0 ?
     'Alpha': 'Omega';
 }
 
@@ -73,8 +75,8 @@ export const getPlasticLiturgy = (plastic) => {
   }
 }
 
-export const getIndexOfBranch = (branch) => {
-  return getIndexFromList(branch, branchOrder)
+export const idxOfBranch = (branch) => {
+  return idxTool(branch, branchOrder)
 }
 
 export function getElemOfPlastic(plastic){
@@ -84,11 +86,11 @@ export function getElemOfPlastic(plastic){
   }
   if(isValidTrunk(plastic)){
     const trunk = plastic;
-    return trunkelemOrder[getIndexOfTrunk(trunk)];
+    return telemOrder[idxOfTrunk(trunk)];
   }
   else if(isValidBranch(plastic)){
     const branch = plastic;
-    return branchelemOrder[getIndexOfBranch(branch)];
+    return belemOrder[idxOfBranch(branch)];
   }
   else {
     throw new Error(`'${plastic}' is not plastic.`);
@@ -135,11 +137,11 @@ export function comparePlasticLiturgy(source, target){
   }
 }
 
-export function getTrunkFromIndex(index){
+export function getTrunk_I(index){
   return item(trunkOrder, index);
 }
 
-export function getBranchFromIndex(index){
+export function itemOfBranch(index){
   return item(branchOrder, index);
 }
 
@@ -156,7 +158,7 @@ export function isValidElemental(elemental){
 }
 
 export const getIndexOfElem = (elemental) => {
-  return getIndexFromList(elemental, elemOrder)
+  return idxTool(elemental, elemOrder)
 }
 
 export const elemRels = [
@@ -195,10 +197,10 @@ export const getElemRel = (source, target) => {
       `${target} is not a valid target elemental.`);
   }
 
-  const sourceIndex = getIndexFromList(
+  const sourceIndex = idxTool(
     source, elemOrder);
 
-  const targetIndex = getIndexFromList(
+  const targetIndex = idxTool(
     target, elemOrder);
 
   if(sourceIndex == -1){

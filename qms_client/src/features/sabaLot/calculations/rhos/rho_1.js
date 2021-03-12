@@ -2,11 +2,11 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   item,
-  getIndexFromList
+  idxTool
 } from '../utils/util_1';
 import {
-  getBranchFromIndex,
-  getIndexOfBranch
+  itemOfBranch,
+  idxOfBranch
 } from '../plastics/plastic_1';
 
 const nattoParagraph =
@@ -16,13 +16,13 @@ const nattoParagraph =
 const getFullMustardSeries =
   (startMustard, mustardSeriesIsClockwise) => {
   let fullMustardSeries = '';
-  const mustardIndex = getIndexOfBranch(startMustard);
+  const mustardIndex = idxOfBranch(startMustard);
 
   for(let i = 0; i < 6; i++){
     const rawAdjustment = i * 2;
     const finalAdjustment = mustardSeriesIsClockwise ?
       rawAdjustment : (-rawAdjustment);
-    fullMustardSeries += getBranchFromIndex(
+    fullMustardSeries += itemOfBranch(
       mustardIndex + finalAdjustment);
   }
 
@@ -92,7 +92,7 @@ const longHookParagraph = RA.concatAll([
 // Get Short Hook Number Alt Index
 const getShNumAltIndex =
   (shAlt) => {
-  return getIndexFromList(
+  return idxTool(
     shAlt,
     shAltSentence);
 }

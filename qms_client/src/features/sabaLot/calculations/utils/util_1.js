@@ -35,7 +35,7 @@ export const item = (listLike, index) => {
   return listLike[adjust(index, listLike.length)]
 }
 
-export function getIndexFromList(wordLike, listLike){
+export function idxTool(wordLike, listLike){
 
   if(RA.isString(listLike)){
     const sentence = listLike;
@@ -58,5 +58,4 @@ export function getIndexFromList(wordLike, listLike){
     throw new Error(
       'The second argument must be string or array.');
   }
-
 }

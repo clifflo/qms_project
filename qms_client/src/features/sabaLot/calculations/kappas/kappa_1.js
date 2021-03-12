@@ -1,9 +1,9 @@
 import {
-  getTrunkFromIndex,
-  getBranchFromIndex,
-  getIndexOfBranch,
-  getIndexOfTrunk,
-  getIndexFromList,
+  getTrunk_I,
+  itemOfBranch,
+  idxOfBranch,
+  idxOfTrunk,
+  idxTool,
   isValidBranch,
   comparePelem
 } from '../plastics/plastic_1';
@@ -161,12 +161,12 @@ export const parseKappaSentence = kappaSentence => {
   const rangerBranch = kappaSentence[5];
   const rangerSay = kappaSentence[6];
 
-  const dayTrunkIndex = getIndexOfTrunk(dayTrunk);
+  const dayTrunkIndex = idxOfTrunk(dayTrunk);
   if (dayTrunkIndex == -1){
     throw new Error(`'${dayTrunk}' is not a valid trunk.`);
   }
 
-  const dayBranchIndex = getIndexOfBranch(dayBranch);
+  const dayBranchIndex = idxOfBranch(dayBranch);
   if (dayBranchIndex == -1){
     throw new Error(`'${dayBranch}' is not a valid branch.`);
   }
@@ -174,7 +174,7 @@ export const parseKappaSentence = kappaSentence => {
   if (daySay != '日')
     throw new Error('Wrong day say.');
 
-  const hourBranchIndex = getIndexOfBranch(hourBranch);
+  const hourBranchIndex = idxOfBranch(hourBranch);
 
   if (hourBranchIndex == -1){
     throw new Error('Wrong hour branch.');
@@ -184,7 +184,7 @@ export const parseKappaSentence = kappaSentence => {
     throw new Error('Wrong hour say.')
   }
 
-  const rangerBranchIndex = getIndexOfBranch(rangerBranch);
+  const rangerBranchIndex = idxOfBranch(rangerBranch);
 
   if (rangerBranchIndex == -1){
     throw new Error('Wrong ranger branch.');

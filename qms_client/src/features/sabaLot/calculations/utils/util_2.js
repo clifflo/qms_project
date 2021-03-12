@@ -11,10 +11,10 @@ export const slider =
     const sentence = listLike;
     const doubleSentence = sentence + sentence;
 
-    const startPosition = getIndexFromList(
+    const startPosition = idxTool(
       sourceCharacter, doubleSentence);
 
-    const rawEndPosition = getIndexFromList(
+    const rawEndPosition = idxTool(
       targetCharacter, doubleSentence);
 
     const finalEndPosition =
@@ -36,10 +36,10 @@ export const slider =
     const list = listLike;
     const doubleList = R.concat(list, list);
 
-    const startPosition = getIndexFromList(
+    const startPosition = idxTool(
       sourceWord, doubleList);
 
-    const rawEndPosition = getIndexFromList(
+    const rawEndPosition = idxTool(
       targetWord, doubleList);
 
     const finalEndPosition =
@@ -100,7 +100,7 @@ export const move =
 
     const sourceCharacter = sourceWordLike;
     const sentence = listLike;
-    const sourceIndex = getIndexFromList(
+    const sourceIndex = idxTool(
       sourceCharacter, sentence);
     const targetIndex = sourceIndex + movement;
     const targetCharacter = item(sentence, targetIndex);
@@ -111,7 +111,7 @@ export const move =
 
     const sourceWord = sourceWordLike;
     const list = listLike;
-    const sourceIndex = getIndexFromList(
+    const sourceIndex = idxTool(
       sourceWord, list);
     const targetIndex = sourceIndex + movement;
     const targetWord = item(list, targetIndex);
