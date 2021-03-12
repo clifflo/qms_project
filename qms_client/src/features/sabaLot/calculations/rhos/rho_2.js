@@ -67,14 +67,14 @@ const getTruncatedNatto = (
 
 const buildCrosses = (
   fullMustardSeries,
-  upperSoyBean,
-  lowerSoyBean,
+  esb,
+  isb,
   crossSign,
   downwardIndex,
   list) => {
 
   const crossTrunk = downwardIndex <= 2 ?
-    upperSoyBean : lowerSoyBean;
+    esb : isb;
 
   const crossBranch = fullMustardSeries[downwardIndex];
   // Cross Branch Elemental

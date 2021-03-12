@@ -55,33 +55,33 @@ const getLhContexts_4 = () => {
   }
 
   const mapFn = (context_3) => {
+
     const context_2 = R.find(
       R.propEq('lhName', context_3.lhName),
       lhContexts_2);
 
-    const lpIndex = context_3.lpIndex;
+    const lpalIndex = context_3.lpalIndex;
 
     // Head Hook Index
     const hhIndex = getHeadHookIndex(context_3.headHook);
 
     // Global Palace Index
-    const gpIndex = (hhIndex * 8) + lpIndex;
+    const gpalIndex = (hhIndex * 8) + lpalIndex;
     const hhElem = hhElemOrder[hhIndex]
-    
 
     return {
       ...context_2,
       ...context_3,
-      gpIndex,
+      gpalIndex,
       hhElem
     }
   }
 
-  try{
+  try {
 
     const rawContexts = R.map(mapFn, lhContexts_3);
     const sortedContexts = R.sortBy(
-      R.prop('gpIndex'), rawContexts);
+      R.prop('gpalIndex'), rawContexts);
     return sortedContexts;
   }
   catch(err){

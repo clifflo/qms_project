@@ -136,7 +136,7 @@ const getHookPalaces = () => {
 
 const hookPalaces = getHookPalaces();
 
-const buildJackIndex = (lpIndex) => {
+const buildJackIndex = (lpalIndex) => {
 
   const mapper = {
     0: 5,
@@ -149,7 +149,7 @@ const buildJackIndex = (lpIndex) => {
     7: 2
   }
 
-  const upwardIndex = mapper[lpIndex];
+  const upwardIndex = mapper[lpalIndex];
   const downwardIndex = 5 - upwardIndex;
   return downwardIndex;
 }
@@ -159,17 +159,17 @@ const getLhContexts_3 = () => {
   const mapFn_1 = (
     hookPalace,
     lhName,
-    lpIndex) => {
+    lpalIndex) => {
 
     try{
 
-      const jackIndex = buildJackIndex(lpIndex);
+      const jackIndex = buildJackIndex(lpalIndex);
       const kingIndex = (jackIndex + 3) % 6;
 
       return {
         lhName,
         headHook: hookPalace.headHook,
-        lpIndex,
+        lpalIndex,
         jackIndex,
         kingIndex
       }

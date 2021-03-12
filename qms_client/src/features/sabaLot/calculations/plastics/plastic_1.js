@@ -19,7 +19,7 @@ export const trunkContext = {
   '癸': 'Lamda'
 }
 
-export const elementalSentence = '金水木火土';
+export const elemOrder = '金水木火土';
 
 export const trunkSentence = '甲乙丙丁戊己庚辛壬癸';
 
@@ -40,9 +40,9 @@ export const branchContext = {
 
 export const branchSentence = '子丑寅卯辰巳午未申酉戌亥';
 
-export const branchElementalSentence = '水土木木土火火土金金土水';
+export const branchelemOrder = '水土木木土火火土金金土水';
 
-export const trunkElementalSentence = '木木火火土土金金水水';
+export const trunkelemOrder = '木木火火土土金金水水';
 
 export const getIndexOfTrunk = (trunk) => {
   return getIndexFromList(trunk, trunkSentence)
@@ -84,11 +84,11 @@ export function getElemOfPlastic(plastic){
   }
   if(isValidTrunk(plastic)){
     const trunk = plastic;
-    return trunkElementalSentence[getIndexOfTrunk(trunk)];
+    return trunkelemOrder[getIndexOfTrunk(trunk)];
   }
   else if(isValidBranch(plastic)){
     const branch = plastic;
-    return branchElementalSentence[getIndexOfBranch(branch)];
+    return branchelemOrder[getIndexOfBranch(branch)];
   }
   else {
     throw new Error(`'${plastic}' is not plastic.`);
@@ -99,7 +99,8 @@ export const comparePelem = (source, target) => {
   try {
     const sourceElemental = getElemOfPlastic(source);
     const targetElemental = getElemOfPlastic(target);
-    const relation = getElementalRelation(
+
+    const relation = getElemRel(
       sourceElemental, targetElemental)
     return relation;
   }
@@ -151,14 +152,14 @@ export function isValidTrunk(trunk){
 }
 
 export function isValidElemental(elemental){
-  return R.includes(elemental, elementalSentence);
+  return R.includes(elemental, elemOrder);
 }
 
-export function getIndexOfElemental(elemental){
-  return getIndexFromList(elemental, elementalSentence)
+export function getIndexOfElem(elemental){
+  return getIndexFromList(elemental, elemOrder)
 }
 
-export const elementalRelations = [
+export const elemRels = [
   'Draw',
   'Fruit',
   'Bank',
@@ -166,10 +167,39 @@ export const elementalRelations = [
   'Root'
 ];
 
-export function getElementalRelation(source, target){
+export function getElemRel(source, target){
 
-  const sourceIndex = getIndexFromList(source, elementalSentence);
-  const targetIndex = getIndexFromList(target, elementalSentence);
+  if(!RA.isString(source)){
+    throw new Error('Source elemental must be string.');
+  }
+
+  if(!RA.isString(target)){
+    throw new Error('Target elemental must be string.');
+  }
+
+  if(R.isNil(source)){
+    throw new Error('Source elemental cannot be nil.');
+  }
+
+  if(R.isNil(target)){
+    throw new Error('Target elemental cannot be nil.');
+  }
+
+  if(!isValidElemental(source)){
+    throw new Error(
+      `${source} is not a valid source elemental.`);
+  }
+
+  if(!isValidElemental(target)){
+    throw new Error(
+      `${target} is not a valid target elemental.`);
+  }
+
+  const sourceIndex = getIndexFromList(
+    source, elemOrder);
+
+  const targetIndex = getIndexFromList(
+    target, elemOrder);
 
   if(sourceIndex == -1){
     throw new Error(
@@ -182,6 +212,6 @@ export function getElementalRelation(source, target){
   }
 
   const difference = targetIndex - sourceIndex;
-  const relation = item(elementalRelations, difference);
+  const relation = item(elemRels, difference);
   return relation;
 }
