@@ -1,14 +1,14 @@
 import {
-  itemOfTrk,
-  itemOfBrh,
-  idxOfBrh,
-  idxOfTrk,
+  itemOfTrunk,
+  itemOfBranch,
+  idxOfBranch,
+  idxOfTrunk,
   idxTool,
-  isValidBrh,
+  isValidBranch,
   comparePelem
 } from '../plastics/plastic_1';
 import {
-  moveBrh
+  moveBranch
 } from '../plastics/plastic_3';
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
@@ -25,7 +25,7 @@ export const getChiefPaladinSet = () => {
 
   const mapFn1 = (rawChiefPaladin) => {
     return {
-      dayTrks: rawChiefPaladin[0],
+      dayTrunks: rawChiefPaladin[0],
       morningStart: rawChiefPaladin[1][0],
       eveningStart: rawChiefPaladin[1][1]
     }
@@ -33,17 +33,17 @@ export const getChiefPaladinSet = () => {
 
   const mapFn2 = (chiefPaladin) => {
 
-    const trks = R.split('', chiefPaladin.dayTrks);
+    const trunks = R.split('', chiefPaladin.dayTrunks);
 
-    const mapFn3 = (trk) => {
+    const mapFn3 = (trunk) => {
       return {
-        dayTrk: trk,
+        dayTrunk: trunk,
         morningStart: chiefPaladin.morningStart,
         eveningStart: chiefPaladin.eveningStart
       }
     }
 
-    return R.map(mapFn3, trks);
+    return R.map(mapFn3, trunks);
   }
 
   const fullMapFn = R.compose(
@@ -58,21 +58,21 @@ export const getChiefPaladinSet = () => {
 
 export const chiefPaladinSet = getChiefPaladinSet();
 
-export const isMorningPaladinHour = (brh) => {
+export const isMorningPaladinHour = (branch) => {
   const morningPaladinHours = '卯辰巳午未申';
-  if(!isValidBrh(brh))
-    throw 'Wrong brh for hour.';
+  if(!isValidBranch(branch))
+    throw 'Wrong branch for hour.';
 
-  return R.includes(morningPaladinHours, brh);
+  return R.includes(morningPaladinHours, branch);
 }
 
-export const getChiefPaladinContext = (dayTrk, hourBrh) => {
+export const getChiefPaladinContext = (dayTrunk, hourBranch) => {
 
-  const morningPaladinHour = isMorningPaladinHour(hourBrh)
+  const morningPaladinHour = isMorningPaladinHour(hourBranch)
   const startProp = morningPaladinHour ? 'morningStart': 'eveningStart';
 
   const chiefPaladinStart = R.find(
-    R.propEq('dayTrk', dayTrk))[startProp];
+    R.propEq('dayTrunk', dayTrunk))[startProp];
 
   return {
     morningPaladinHour,
@@ -80,7 +80,7 @@ export const getChiefPaladinContext = (dayTrk, hourBrh) => {
   }
 }
 
-export const isClockwisePaladinHour = (brh) => {}
+export const isClockwisePaladinHour = (branch) => {}
 
 export const crabFarmSentences = [
   '甲寄寅',
@@ -153,55 +153,55 @@ export const parseKappaSentence = kappaSentence => {
     throw new Error('Wrong Kappa sentence length');
   }
 
-  const dayTrk = kappaSentence[0];
-  const dayBrh = kappaSentence[1];
+  const dayTrunk = kappaSentence[0];
+  const dayBranch = kappaSentence[1];
   const daySay = kappaSentence[2];
-  const hourBrh = kappaSentence[3];
+  const hourBranch = kappaSentence[3];
   const hourSay = kappaSentence[4];
-  const rangerBrh = kappaSentence[5];
+  const rangerBranch = kappaSentence[5];
   const rangerSay = kappaSentence[6];
 
-  const dayTrkIndex = idxOfTrk(dayTrk);
-  if (dayTrkIndex == -1){
-    throw new Error(`'${dayTrk}' is not a valid trk.`);
+  const dayTrunkIndex = idxOfTrunk(dayTrunk);
+  if (dayTrunkIndex == -1){
+    throw new Error(`'${dayTrunk}' is not a valid trunk.`);
   }
 
-  const dayBrhIndex = idxOfBrh(dayBrh);
-  if (dayBrhIndex == -1){
-    throw new Error(`'${dayBrh}' is not a valid brh.`);
+  const dayBranchIndex = idxOfBranch(dayBranch);
+  if (dayBranchIndex == -1){
+    throw new Error(`'${dayBranch}' is not a valid branch.`);
   }
 
   if (daySay != '日')
     throw new Error('Wrong day say.');
 
-  const hourBrhIndex = idxOfBrh(hourBrh);
+  const hourBranchIndex = idxOfBranch(hourBranch);
 
-  if (hourBrhIndex == -1){
-    throw new Error('Wrong hour brh.');
+  if (hourBranchIndex == -1){
+    throw new Error('Wrong hour branch.');
   }
 
   if (hourSay != '時'){
     throw new Error('Wrong hour say.')
   }
 
-  const rangerBrhIndex = idxOfBrh(rangerBrh);
+  const rangerBranchIndex = idxOfBranch(rangerBranch);
 
-  if (rangerBrhIndex == -1){
-    throw new Error('Wrong ranger brh.');
+  if (rangerBranchIndex == -1){
+    throw new Error('Wrong ranger branch.');
   }
 
   if (rangerSay != '將')
     throw new Error('Wrong ranger say.');
 
   return {
-    dayTrk,
-    dayTrkIndex,
-    dayBrh,
-    dayBrhIndex,
-    hourBrh,
-    hourBrhIndex,
-    rangerBrh,
-    rangerBrhIndex,
+    dayTrunk,
+    dayTrunkIndex,
+    dayBranch,
+    dayBranchIndex,
+    hourBranch,
+    hourBranchIndex,
+    rangerBranch,
+    rangerBranchIndex,
     kappaSentence
   }
 
@@ -209,26 +209,26 @@ export const parseKappaSentence = kappaSentence => {
 
 export const initializeKappaTable = (kappaInput) => {
 
-  const gap = kappaInput.rangerBrhIndex -
-    kappaInput.hourBrhIndex;
+  const gap = kappaInput.rangerBranchIndex -
+    kappaInput.hourBranchIndex;
 
-  const columnFn = (brh) =>{
-    return moveBrh(brh, gap, 'Forward');
+  const columnFn = (branch) =>{
+    return moveBranch(branch, gap, 'Forward');
   }
 
-  const trkAlphaFn = R.compose(columnFn, getCrabShell);
-  const trkAlpha = trkAlphaFn(kappaInput.dayTrk);
-  const trkOmega = columnFn(trkAlpha);
+  const trunkAlphaFn = R.compose(columnFn, getCrabShell);
+  const trunkAlpha = trunkAlphaFn(kappaInput.dayTrunk);
+  const trunkOmega = columnFn(trunkAlpha);
 
-  const brhAlpha = columnFn(kappaInput.dayBrh);
-  const brhOmega = columnFn(brhAlpha);
+  const branchAlpha = columnFn(kappaInput.dayBranch);
+  const branchOmega = columnFn(branchAlpha);
 
   return {
     ...kappaInput,
-    trkAlpha,
-    trkOmega,
-    brhAlpha,
-    brhOmega,
+    trunkAlpha,
+    trunkOmega,
+    branchAlpha,
+    branchOmega,
     gap
   }
 }
@@ -239,10 +239,10 @@ export const paladinSentence =
 
 export const paladinList = R.split(',', paladinSentence);
 
-export const moveStandardForward = (kappaTable, brh) => {
-  return moveBrh(brh, kappaTable.gap, 'Forward');
+export const moveStandardForward = (kappaTable, branch) => {
+  return moveBranch(branch, kappaTable.gap, 'Forward');
 }
 
-export const moveStandardBackward = (kappaTable, brh) => {
-  return moveBrh(brh, kappaTable.gap, 'Backward');
+export const moveStandardBackward = (kappaTable, branch) => {
+  return moveBranch(branch, kappaTable.gap, 'Backward');
 }

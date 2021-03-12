@@ -6,7 +6,7 @@ import {
   idxTool
 } from '../utils';
 
-export const trkContext = {
+export const trunkContext = {
   '甲': 'Beta',
   '乙': 'Gamma',
   '丙': 'Delta',
@@ -21,9 +21,9 @@ export const trkContext = {
 
 export const elemOrder = '金水木火土';
 
-export const trkOrder = '甲乙丙丁戊己庚辛壬癸';
+export const trunkOrder = '甲乙丙丁戊己庚辛壬癸';
 
-export const brhContext = {
+export const branchContext = {
   '子': 'Psi',
   '丑': 'Chi',
   '寅': 'Phi',
@@ -38,59 +38,59 @@ export const brhContext = {
   '亥': 'Mu',
 }
 
-export const brhOrder = '子丑寅卯辰巳午未申酉戌亥';
+export const branchOrder = '子丑寅卯辰巳午未申酉戌亥';
 
-// Brh Elemental Order
+// Branch Elemental Order
 export const belemOrder = '水土木木土火火土金金土水';
 
-// Trk Elemental Order
+// Trunk Elemental Order
 export const telemOrder = '木木火火土土金金水水';
 
-export const idxOfTrk = (trk) => {
-  return idxTool(trk, trkOrder)
+export const idxOfTrunk = (trunk) => {
+  return idxTool(trunk, trunkOrder)
 }
 
-export const getTrkLiturgy = (trk) => {
-  return (idxOfTrk(trk) % 2) == 0 ?
+export const getTrunkLiturgy = (trunk) => {
+  return (idxOfTrunk(trunk) % 2) == 0 ?
     'Alpha': 'Omega';
 }
 
-export const getBrhLiturgy = (brh) => {
-  return (idxOfBrh(brh) % 2) == 0 ?
+export const getBranchLiturgy = (branch) => {
+  return (idxOfBranch(branch) % 2) == 0 ?
     'Alpha': 'Omega';
 }
 
 export const getPlasticLiturgy = (plastic) => {
 
-  if(isValidTrk(plastic)){
-    const trk = plastic;
-    return getTrkLiturgy(trk);
+  if(isValidTrunk(plastic)){
+    const trunk = plastic;
+    return getTrunkLiturgy(trunk);
   }
-  else if(isValidBrh(plastic)){
-    const brh = plastic;
-    return getBrhLiturgy(brh);
+  else if(isValidBranch(plastic)){
+    const branch = plastic;
+    return getBranchLiturgy(branch);
   }
   else {
     throw new Error(`${plastic} is not a valid plastic.`);
   }
 }
 
-export const idxOfBrh = (brh) => {
-  return idxTool(brh, brhOrder)
+export const idxOfBranch = (branch) => {
+  return idxTool(branch, branchOrder)
 }
 
-export function getElemOfPlastic(plastic){
+export function elemOfPla(plastic){
   if(R.isNil(plastic)){
     throw new Error(
       'The input is nil for plastic.');
   }
-  if(isValidTrk(plastic)){
-    const trk = plastic;
-    return telemOrder[idxOfTrk(trk)];
+  if(isValidTrunk(plastic)){
+    const trunk = plastic;
+    return telemOrder[idxOfTrunk(trunk)];
   }
-  else if(isValidBrh(plastic)){
-    const brh = plastic;
-    return belemOrder[idxOfBrh(brh)];
+  else if(isValidBranch(plastic)){
+    const branch = plastic;
+    return belemOrder[idxOfBranch(branch)];
   }
   else {
     throw new Error(`'${plastic}' is not plastic.`);
@@ -99,8 +99,8 @@ export function getElemOfPlastic(plastic){
 
 export const comparePelem = (source, target) => {
   try {
-    const sElem = getElemOfPlastic(source);
-    const tElem = getElemOfPlastic(target);
+    const sElem = elemOfPla(source);
+    const tElem = elemOfPla(target);
 
     const relation = getEler(
       sElem, tElem)
@@ -137,24 +137,24 @@ export function comparePlasticLiturgy(source, target){
   }
 }
 
-export function itemOfTrk(index){
-  return item(trkOrder, index);
+export function itemOfTrunk(index){
+  return item(trunkOrder, index);
 }
 
-export function itemOfBrh(index){
-  return item(brhOrder, index);
+export function itemOfBranch(index){
+  return item(branchOrder, index);
 }
 
 export function itemOfElem(index){
   return item(elemOrder, index);
 }
 
-export function isValidBrh(brh){
-  return R.includes(brh, brhOrder);
+export function isValidBranch(branch){
+  return R.includes(branch, branchOrder);
 }
 
-export function isValidTrk(trk){
-  return R.includes(trk, trkOrder);
+export function isValidTrunk(trunk){
+  return R.includes(trunk, trunkOrder);
 }
 
 export function isValidElemental(elemental){

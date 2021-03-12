@@ -8,10 +8,10 @@ const getCyclicArrestments = () => {
   const cycleArrestmentSentences =
     plrFilter(sentence => sentence.length == 8);
 
-  const getInitalList = brh => {
+  const getInitalList = branch => {
 
     const sentence =
-      R.find(sentence => sentence[0] == brh,
+      R.find(sentence => sentence[0] == branch,
         cycleArrestmentSentences);
 
     const sliceSentence =
@@ -24,9 +24,9 @@ const getCyclicArrestments = () => {
   }
 
   const getFinalList =
-    (brh, arrestmentType, arrestmentStyle) => {
+    (branch, arrestmentType, arrestmentStyle) => {
 
-    const initialList = getInitalList(brh);
+    const initialList = getInitalList(branch);
 
     let finalList = [];
 
@@ -85,10 +85,10 @@ const getSelfArrestments = () => {
   const takeFn = sentence =>
     R.take(4, sentence);
 
-  const mapFn = brh => {
+  const mapFn = branch => {
     return {
-      police: brh,
-      suspect: brh,
+      police: branch,
+      suspect: branch,
       arrestmentType: 4,
       arrestmentStyle: '自刑'
     }

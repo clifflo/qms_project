@@ -1,44 +1,42 @@
 import {
-  isValidBrh,
-  idxOfBrh,
+  isValidBranch,
+  idxOfBranch,
   itemOfElem,
-  itemOfBrh
+  itemOfBranch,
+  elemOfPla,
+  idxOfElem
 } from './plastic_1';
+import * as R from 'ramda';
 
-// Brh Small Compound
-export const bscSet = () => {
+// Branch Small Compound
+const getBscSet = () => {
 
-  const mapFn = i => {
-    const fstBrh = itemOfBrh(i);
-    const sndBrhIdx =  (13 - i) % 12;
-    const sndBrh = itemOfBrh(brh_2_idx);
+  const mapFn = (i) => {
+    const sBranch = itemOfBranch(i);
+    const tBranchIdx =  (13 - i) % 12;
+    const tBranch = itemOfBranch(tBranchIdx);
 
-    // Second Brh Elemental
-    const sndBelem = getElemOfPlastic(sndBrh);
-    const adjList_1 = [0, 1, 4]
-    const adjList_2 = R.concat(adjList_1, adjLi_1);
-    const adjustment = adjList_2[i - 1];
+    const sBelem = elemOfPla(sBranch);
+    const sBelemIdx = idxOfElem(sBelem);
 
     // Compound Elemental
-    const celemIdx = adjustment + sndBelem;
-    const celem = itemOfElem(celemIdx);
-
+    const celemSet = '土木火金水火';
+    const celem = celemSet[i - 1];
     return {
-      brhes: [brh_1, brh_2],
+      branches: [sBranch, tBranch],
       celem
     }
   }
 
   try{
-    const result = R.map(mapFn, R.range(1, 6));
-    return result
+    const result = R.map(mapFn, R.range(1, 7));
+    return result;
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get Brh Compound Set.');
+      'Cannot get Branch Compound Set.');
   }
-
-
-
 }
+
+export const bscSet = getBscSet();

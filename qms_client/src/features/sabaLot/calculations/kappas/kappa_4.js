@@ -6,20 +6,20 @@ import {
   getCrabShell
 } from './kappa_1';
 import {
-  getElemOfPlastic,
+  elemOfPla,
   getElemRel,
-  isValidBrh
+  isValidBranch
 } from '../plastics/plastic_1';
 import {
-  brhSlider
+  branchSlider
 } from '../plastics/plastic_3';
 
 const buildMagnet = (magnet, crabShell) => {
 
   const mapFn = (target) => {
     try {
-      const targetElemental = getElemOfPlastic(target);
-      const magnetElemental = getElemOfPlastic(magnet);
+      const targetElemental = elemOfPla(target);
+      const magnetElemental = elemOfPla(magnet);
       const relation = getElemRel(
         magnetElemental, targetElemental);
       const isIron = relation == 'Hacker';
@@ -62,10 +62,10 @@ const buildMagnet = (magnet, crabShell) => {
 
 const buildMagnetPath = (rawMagnetStart, magnetEnd) => {
 
-  const finalMagnetStart = isValidBrh(rawMagnetStart) ?
+  const finalMagnetStart = isValidBranch(rawMagnetStart) ?
     rawMagnetStart : getCrabShell(rawMagnetStart);
 
-  const rawIronPath = brhSlider(finalMagnetStart, magnetEnd);
+  const rawIronPath = branchSlider(finalMagnetStart, magnetEnd);
   const mapFn = (crabShell) => buildMagnet(magnetEnd, crabShell);
 
   const processedIronPath =

@@ -8,17 +8,17 @@ import {
 } from './kappa_1';
 import {
   comparePelem,
-  getElemOfPlastic
+  elemOfPla
 } from '../plastics/plastic_1';
 
 export const kappaApplyFull = (fn, kappaTable) => {
   return RA.mapIndexed(
     fn,
     [
-      [kappaTable.dayTrk, kappaTable.trkAlpha],
-      [kappaTable.trkAlpha, kappaTable.trkOmega],
-      [kappaTable.dayBrh, kappaTable.brhAlpha],
-      [kappaTable.brhAlpha, kappaTable.brhOmega]
+      [kappaTable.dayTrunk, kappaTable.trunkAlpha],
+      [kappaTable.trunkAlpha, kappaTable.trunkOmega],
+      [kappaTable.dayBranch, kappaTable.branchAlpha],
+      [kappaTable.branchAlpha, kappaTable.branchOmega]
     ]
   )
 }
@@ -26,10 +26,10 @@ export const kappaApplyFull = (fn, kappaTable) => {
 export const kappaApplyPartial = (fn, kappaTable) => {
   return RA.mapIndexed(
     fn,
-    [kappaTable.trkAlpha,
-    kappaTable.trkOmega,
-    kappaTable.brhAlpha,
-    kappaTable.brhOmega]);
+    [kappaTable.trunkAlpha,
+    kappaTable.trunkOmega,
+    kappaTable.branchAlpha,
+    kappaTable.branchOmega]);
 }
 
 

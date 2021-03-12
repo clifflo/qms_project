@@ -20,11 +20,11 @@ const elemStatusOne =
   '旺,相,休,囚,死';
 
 
-// Get Chosen for Element with Element and Brh
-export const getChoe = (elem, brh) => {
+// Get Chosen for Element with Element and Branch
+export const getChoe = (elem, branch) => {
 
-  if(!isValidBrh(brh)){
-    throw new Error(`${brh} is not a valid brh.`);
+  if(!isValidBranch(branch)){
+    throw new Error(`${branch} is not a valid branch.`);
   }
 
   if(!isValidElemental(elem)){
@@ -33,35 +33,35 @@ export const getChoe = (elem, brh) => {
 
   const elemIndex_1 = idxOfElem(elem);
   const elemIndex_2 = elemIndex_1 == 4 ? 3 : elemIndex;
-  const brhIndex = idxOfBrh(brh);
-  const chosenIndex = -(elemIndex_2 * 3) - 5 + brhIndex;
+  const branchIndex = idxOfBranch(branch);
+  const chosenIndex = -(elemIndex_2 * 3) - 5 + branchIndex;
   const chosen = item(chosenOrder, chosenIndex);
   return chosen;
 }
 
-// Chosen for brh
+// Chosen for branch
 export const chobOrder =　
   '亥午寅酉寅酉巳子申卯';
 
-export const getTwigSeries = (trk, brh) => {
+export const getTwigSeries = (trunk, branch) => {
 
-  const difference = idxOfBrh(brh) - idxOfTrk(trk);
+  const difference = idxOfBranch(branch) - idxOfTrunk(trunk);
 
   if(difference % 2 == 0){
-    const twigSeriesBrh = itemOfBrh(difference);
+    const twigSeriesBranch = itemOfBranch(difference);
     const adjustedDifference = adjust(difference, 12);
-    const brhNumber = (12 - adjustedDifference) / 2;
-    const trkNumber = idxOfTrk(trk);
-    const twigPosition = (brhNumber * 10 + trkNumber);
-    const twigSeriesOrder = brhNumber;
+    const branchNumber = (12 - adjustedDifference) / 2;
+    const trunkNumber = idxOfTrunk(trunk);
+    const twigPosition = (branchNumber * 10 + trunkNumber);
+    const twigSeriesOrder = branchNumber;
     const twigSeriesVoid =
-      R.map(itemOfBrh,
+      R.map(itemOfBranch,
         [adjustedDifference - 1, adjustedDifference - 2]);
     return {
-      inputTrk: trk,
-      inputBrh: brh,
+      inputTrunk: trunk,
+      inputBranch: branch,
       twigPosition,
-      twigSeries: `甲${twigSeriesBrh}旬`,
+      twigSeries: `甲${twigSeriesBranch}旬`,
       twigSeriesVoid,
       twigSeriesOrder
     }

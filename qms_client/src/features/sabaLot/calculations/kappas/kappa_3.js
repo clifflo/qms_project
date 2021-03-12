@@ -12,17 +12,17 @@ export function buildPalmDoor_2(kappaTable){
   const compareFn = (source, columnIndex) => {
     try {
       const comparison = comparePlasticLiturgy(
-        source, kappaTable.dayTrk);
+        source, kappaTable.dayTrunk);
       const nectarWorker = comparison.isSameLiturgy ?
         'Bee' : 'Butterfly';
       return {
         columnIndex,
         upperCell: source,
-        dayTrk: kappaTable.dayTrk,
+        dayTrunk: kappaTable.dayTrunk,
         nectarWorker,
         isSameLiturgy: comparison.isSameLiturgy,
         upperCellLiturgy:  comparison.sourceLiturgy,
-        dayTrkLiturgy:  comparison.targetLiturgy
+        dayTrunkLiturgy:  comparison.targetLiturgy
       }
     }
     catch(err){
