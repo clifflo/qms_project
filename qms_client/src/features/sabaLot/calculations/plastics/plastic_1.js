@@ -21,7 +21,7 @@ export const trunkContext = {
 
 export const elemOrder = '金水木火土';
 
-export const trunkSentence = '甲乙丙丁戊己庚辛壬癸';
+export const trunkOrder = '甲乙丙丁戊己庚辛壬癸';
 
 export const branchContext = {
   '子': 'Psi',
@@ -38,14 +38,14 @@ export const branchContext = {
   '亥': 'Mu',
 }
 
-export const branchSentence = '子丑寅卯辰巳午未申酉戌亥';
+export const branchOrder = '子丑寅卯辰巳午未申酉戌亥';
 
 export const branchelemOrder = '水土木木土火火土金金土水';
 
 export const trunkelemOrder = '木木火火土土金金水水';
 
 export const getIndexOfTrunk = (trunk) => {
-  return getIndexFromList(trunk, trunkSentence)
+  return getIndexFromList(trunk, trunkOrder)
 }
 
 export const getTrunkLiturgy = (trunk) => {
@@ -74,7 +74,7 @@ export const getPlasticLiturgy = (plastic) => {
 }
 
 export const getIndexOfBranch = (branch) => {
-  return getIndexFromList(branch, branchSentence)
+  return getIndexFromList(branch, branchOrder)
 }
 
 export function getElemOfPlastic(plastic){
@@ -136,19 +136,19 @@ export function comparePlasticLiturgy(source, target){
 }
 
 export function getTrunkFromIndex(index){
-  return item(trunkSentence, index);
+  return item(trunkOrder, index);
 }
 
 export function getBranchFromIndex(index){
-  return item(branchSentence, index);
+  return item(branchOrder, index);
 }
 
 export function isValidBranch(branch){
-  return R.includes(branch, branchSentence);
+  return R.includes(branch, branchOrder);
 }
 
 export function isValidTrunk(trunk){
-  return R.includes(trunk, trunkSentence);
+  return R.includes(trunk, trunkOrder);
 }
 
 export function isValidElemental(elemental){

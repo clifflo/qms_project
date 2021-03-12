@@ -1,4 +1,10 @@
 import {
-  plrSentences,
-  plrFilter
-} from './plastic_2';
+  isValidBranch
+} from './plastic_1';
+
+
+// Branch Small Compound
+export const bsc = (source, target) => {
+
+
+}
