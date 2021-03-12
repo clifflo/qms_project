@@ -55,9 +55,6 @@ export function plrFilter(filterFn) {
   return R.filter(filterFn, plrSentences);
 }
 
-
-
-
 const chosenSentence =
   '長生,沐浴,冠帶,臨官,帝旺,衰,病,長死,墓,絕,胎,養';
 
@@ -68,15 +65,15 @@ export function getChosenIndex(chosen) {
   return getIndex(chosen, chosenOrder)
 }
 
-const elementalStatusOne =
+const elemStatusOne =
   '旺,相,休,囚,死';
 
-export const getChosenTypeOne = (elemental, branch) => {
+export const getChosenTypeOne = (elem, branch) => {
 
-  const elementalIndex = getIndexOfElemental(elemental);
-  const adjustedElementalIndex = elementalIndex == 4 ? 3 : elementalIndex;
+  const elemIndex = getIndexOfElem(elem);
+  const adjustedElemIndex = elemIndex == 4 ? 3 : elemIndex;
   const branchIndex = getIndexOfBranch(branch);
-  const chosenIndex = -(adjustedElementalIndex * 3) - 5 + branchIndex;
+  const chosenIndex = -(adjustedElemIndex * 3) - 5 + branchIndex;
   const chosen = item(chosenOrder, chosenIndex);
   return chosen;
 }

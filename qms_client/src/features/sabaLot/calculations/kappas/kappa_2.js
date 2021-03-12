@@ -7,8 +7,8 @@ import {
   moveStandardBackward
 } from './kappa_1';
 import {
-  comparePlasticElemental,
-  getElementalOfPlastic
+  comparePelem,
+  getElemOfPlastic
 } from '../plastics/plastic_1';
 
 export const kappaApplyFull = (fn, kappaTable) => {
@@ -40,7 +40,7 @@ export function buildPalmDoor_1(kappaTable) {
     try {
       const lowerCell = cells[0];
       const upperCell = cells[1];
-      const comparison = comparePlasticElemental(
+      const comparison = comparePelem(
         lowerCell, upperCell);
       const getCephalopod = relation => {
         switch (relation) {
@@ -115,7 +115,7 @@ export function buildPalmDoor_1(kappaTable) {
   }
 
   let box;
-  
+
   if(isBox_10){
     box = box_10;
   }

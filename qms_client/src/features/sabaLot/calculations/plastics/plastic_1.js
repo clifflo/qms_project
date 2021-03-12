@@ -77,7 +77,7 @@ export const getIndexOfBranch = (branch) => {
   return getIndexFromList(branch, branchSentence)
 }
 
-export function getElementalOfPlastic(plastic){
+export function getElemOfPlastic(plastic){
   if(R.isNil(plastic)){
     throw new Error(
       'The input is nil for plastic.');
@@ -95,17 +95,13 @@ export function getElementalOfPlastic(plastic){
   }
 }
 
-export function comparePlasticElemental(source, target){
+export const comparePelem = (source, target) => {
   try {
-    const sourceElemental = getElementalOfPlastic(source);
-    const targetElemental = getElementalOfPlastic(target);
+    const sourceElemental = getElemOfPlastic(source);
+    const targetElemental = getElemOfPlastic(target);
     const relation = getElementalRelation(
       sourceElemental, targetElemental)
-    return {
-      relation,
-      sourceElemental,
-      targetElemental
-    }
+    return relation;
   }
   catch(err){
     console.error(err);

@@ -3,8 +3,11 @@ import * as RA from 'ramda-adjunct';
 import { decimalToBinary } from '../utils/util_3';
 import {
   lhContexts_1,
-  nattos
+  nattos,
 } from './rho_1';
+import {
+  getElemOfPlastic
+} from '../plastics/plastic_1';
 
 const getTruncatedNatto = (
   shOri,
@@ -74,10 +77,14 @@ const buildCrosses = (
     upperSoyBean : lowerSoyBean;
 
   const crossBranch = fullMustardSeries[downwardIndex];
+  // Cross Branch Elemental
+  const crossBrelem = getElemOfPlastic(crossBranch);
 
   return {
     crossSign,
-    crossTwig: crossTrunk + crossBranch
+    crossTrunk,
+    crossBranch,
+    crossBrelem
   }
 
 }

@@ -5,7 +5,7 @@ import {
   getIndexOfTrunk,
   getIndexFromList,
   isValidBranch,
-  comparePlastic
+  comparePelem
 } from '../plastics/plastic_1';
 import {
   moveBranch

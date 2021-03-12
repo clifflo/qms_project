@@ -32,7 +32,7 @@ const getLhContexts_4 = () => {
   const headHookOrder = '乾坎艮震巽離坤兌';
 
   // Head Hook Elemental Order
-  const hhEleOrder = '金水土木木火土金';
+  const hhElemOrder = '金水土木木火土金';
 
   const getHeadHookIndex = (headHook) => {
 
@@ -66,13 +66,14 @@ const getLhContexts_4 = () => {
 
     // Global Palace Index
     const gpIndex = (hhIndex * 8) + lpIndex;
-    const hhEle = hhEleOrder[hhIndex]
+    const hhElem = hhElemOrder[hhIndex]
+    
 
     return {
       ...context_2,
       ...context_3,
       gpIndex,
-      hhEle
+      hhElem
     }
   }
 
