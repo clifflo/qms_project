@@ -19,7 +19,7 @@ const getCompounds = () => {
 
   const compoundTypeFn = sentence => {
     if(sentence.length == 4){
-      if(isValidTrunk(sentence[0])){
+      if(isValidTrk(sentence[0])){
         return 1;
       }
       else {
@@ -43,7 +43,7 @@ const getCompounds = () => {
       plastics: sentenceFn(sentence),
       elemental: item(sentence, -1),
       compoundType: compoundTypeFn(sentence),
-      isTrunk: isTrunk(sentence[0])
+      isTrk: isTrk(sentence[0])
     }
   }
 

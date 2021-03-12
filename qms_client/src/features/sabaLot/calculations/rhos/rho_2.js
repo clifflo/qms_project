@@ -11,7 +11,7 @@ import {
 
 const getTruncatedNatto = (
   shOri,
-  isUpperShortTrunk) => {
+  isUpperShortTrk) => {
 
   const natto = R.find(
     R.propEq('shOri', shOri), nattos);
@@ -26,7 +26,7 @@ const getTruncatedNatto = (
       `Cannot find natto. ${shOri} is not valid.`);
   }
 
-  if(isUpperShortTrunk){
+  if(isUpperShortTrk){
 
     const soyBean = natto.esb;
     const mustardSeries = natto.ems;
@@ -73,17 +73,17 @@ const buildCrosses = (
   downwardIndex,
   list) => {
 
-  const crossTrunk = downwardIndex <= 2 ?
+  const crossTrk = downwardIndex <= 2 ?
     esb : isb;
 
-  const crossBranch = fullMustardSeries[downwardIndex];
-  // Cross Branch Elemental
-  const crossBrelem = getElemOfPlastic(crossBranch);
+  const crossBrh = fullMustardSeries[downwardIndex];
+  // Cross Brh Elemental
+  const crossBrelem = getElemOfPlastic(crossBrh);
 
   return {
     crossSign,
-    crossTrunk,
-    crossBranch,
+    crossTrk,
+    crossBrh,
     crossBrelem
   }
 

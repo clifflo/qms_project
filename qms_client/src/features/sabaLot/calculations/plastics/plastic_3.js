@@ -1,46 +1,46 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  branchOrder,
-  trunkOrder,
-  isValidBranch
+  brhOrder,
+  trkOrder,
+  isValidBrh
 } from './plastic_1';
 import {
   slider,
   move
 } from '../utils';
 
-export const branchSlider = (sBranch, tBranch) =>{
-  if(!isValidBranch(sBranch)){
+export const brhSlider = (sBrh, tBrh) =>{
+  if(!isValidBrh(sBrh)){
     throw new Error(
-      `${sBranch} is not a valid source branch.`);
+      `${sBrh} is not a valid source brh.`);
   }
 
-  if(!isValidBranch(tBranch)){
+  if(!isValidBrh(tBrh)){
     throw new Error(
-      `${tBranch} is not a valid target branch.`)
+      `${tBrh} is not a valid target brh.`)
   }
 
   try{
     return slider(
-      branchOrder,
-      sBranch,
-      tBranch);
+      brhOrder,
+      sBrh,
+      tBrh);
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Branch silder failed.');
+      'Brh silder failed.');
   }
 
 }
 
-export const moveBranch =
-  (branch, distance, direction) => {
+export const moveBrh =
+  (brh, distance, direction) => {
 
-  if(!isValidBranch(branch)){
-    throw new Error(`${branch} is not a valid branch.`);
+  if(!isValidBrh(brh)){
+    throw new Error(`${brh} is not a valid brh.`);
   }
 
-  return move(branchOrder, branch, distance, direction);
+  return move(brhOrder, brh, distance, direction);
 }

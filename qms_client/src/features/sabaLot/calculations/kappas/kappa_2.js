@@ -15,10 +15,10 @@ export const kappaApplyFull = (fn, kappaTable) => {
   return RA.mapIndexed(
     fn,
     [
-      [kappaTable.dayTrunk, kappaTable.trunkAlpha],
-      [kappaTable.trunkAlpha, kappaTable.trunkOmega],
-      [kappaTable.dayBranch, kappaTable.branchAlpha],
-      [kappaTable.branchAlpha, kappaTable.branchOmega]
+      [kappaTable.dayTrk, kappaTable.trkAlpha],
+      [kappaTable.trkAlpha, kappaTable.trkOmega],
+      [kappaTable.dayBrh, kappaTable.brhAlpha],
+      [kappaTable.brhAlpha, kappaTable.brhOmega]
     ]
   )
 }
@@ -26,10 +26,10 @@ export const kappaApplyFull = (fn, kappaTable) => {
 export const kappaApplyPartial = (fn, kappaTable) => {
   return RA.mapIndexed(
     fn,
-    [kappaTable.trunkAlpha,
-    kappaTable.trunkOmega,
-    kappaTable.branchAlpha,
-    kappaTable.branchOmega]);
+    [kappaTable.trkAlpha,
+    kappaTable.trkOmega,
+    kappaTable.brhAlpha,
+    kappaTable.brhOmega]);
 }
 
 

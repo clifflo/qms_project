@@ -6,7 +6,7 @@ import {
   idxTool
 } from '../utils';
 
-export const trunkContext = {
+export const trkContext = {
   '甲': 'Beta',
   '乙': 'Gamma',
   '丙': 'Delta',
@@ -21,9 +21,9 @@ export const trunkContext = {
 
 export const elemOrder = '金水木火土';
 
-export const trunkOrder = '甲乙丙丁戊己庚辛壬癸';
+export const trkOrder = '甲乙丙丁戊己庚辛壬癸';
 
-export const branchContext = {
+export const brhContext = {
   '子': 'Psi',
   '丑': 'Chi',
   '寅': 'Phi',
@@ -38,45 +38,45 @@ export const branchContext = {
   '亥': 'Mu',
 }
 
-export const branchOrder = '子丑寅卯辰巳午未申酉戌亥';
+export const brhOrder = '子丑寅卯辰巳午未申酉戌亥';
 
-// Branch Elemental Order
+// Brh Elemental Order
 export const belemOrder = '水土木木土火火土金金土水';
 
-// Trunk Elemental Order
+// Trk Elemental Order
 export const telemOrder = '木木火火土土金金水水';
 
-export const idxOfTrunk = (trunk) => {
-  return idxTool(trunk, trunkOrder)
+export const idxOfTrk = (trk) => {
+  return idxTool(trk, trkOrder)
 }
 
-export const getTrunkLiturgy = (trunk) => {
-  return (idxOfTrunk(trunk) % 2) == 0 ?
+export const getTrkLiturgy = (trk) => {
+  return (idxOfTrk(trk) % 2) == 0 ?
     'Alpha': 'Omega';
 }
 
-export const getBranchLiturgy = (branch) => {
-  return (idxOfBranch(branch) % 2) == 0 ?
+export const getBrhLiturgy = (brh) => {
+  return (idxOfBrh(brh) % 2) == 0 ?
     'Alpha': 'Omega';
 }
 
 export const getPlasticLiturgy = (plastic) => {
 
-  if(isValidTrunk(plastic)){
-    const trunk = plastic;
-    return getTrunkLiturgy(trunk);
+  if(isValidTrk(plastic)){
+    const trk = plastic;
+    return getTrkLiturgy(trk);
   }
-  else if(isValidBranch(plastic)){
-    const branch = plastic;
-    return getBranchLiturgy(branch);
+  else if(isValidBrh(plastic)){
+    const brh = plastic;
+    return getBrhLiturgy(brh);
   }
   else {
     throw new Error(`${plastic} is not a valid plastic.`);
   }
 }
 
-export const idxOfBranch = (branch) => {
-  return idxTool(branch, branchOrder)
+export const idxOfBrh = (brh) => {
+  return idxTool(brh, brhOrder)
 }
 
 export function getElemOfPlastic(plastic){
@@ -84,13 +84,13 @@ export function getElemOfPlastic(plastic){
     throw new Error(
       'The input is nil for plastic.');
   }
-  if(isValidTrunk(plastic)){
-    const trunk = plastic;
-    return telemOrder[idxOfTrunk(trunk)];
+  if(isValidTrk(plastic)){
+    const trk = plastic;
+    return telemOrder[idxOfTrk(trk)];
   }
-  else if(isValidBranch(plastic)){
-    const branch = plastic;
-    return belemOrder[idxOfBranch(branch)];
+  else if(isValidBrh(plastic)){
+    const brh = plastic;
+    return belemOrder[idxOfBrh(brh)];
   }
   else {
     throw new Error(`'${plastic}' is not plastic.`);
@@ -99,11 +99,11 @@ export function getElemOfPlastic(plastic){
 
 export const comparePelem = (source, target) => {
   try {
-    const sourceElemental = getElemOfPlastic(source);
-    const targetElemental = getElemOfPlastic(target);
+    const sElem = getElemOfPlastic(source);
+    const tElem = getElemOfPlastic(target);
 
-    const relation = getElemRel(
-      sourceElemental, targetElemental)
+    const relation = getEler(
+      sElem, tElem)
     return relation;
   }
   catch(err){
@@ -137,31 +137,35 @@ export function comparePlasticLiturgy(source, target){
   }
 }
 
-export function getTrunk_I(index){
-  return item(trunkOrder, index);
+export function itemOfTrk(index){
+  return item(trkOrder, index);
 }
 
-export function itemOfBranch(index){
-  return item(branchOrder, index);
+export function itemOfBrh(index){
+  return item(brhOrder, index);
 }
 
-export function isValidBranch(branch){
-  return R.includes(branch, branchOrder);
+export function itemOfElem(index){
+  return item(elemOrder, index);
 }
 
-export function isValidTrunk(trunk){
-  return R.includes(trunk, trunkOrder);
+export function isValidBrh(brh){
+  return R.includes(brh, brhOrder);
+}
+
+export function isValidTrk(trk){
+  return R.includes(trk, trkOrder);
 }
 
 export function isValidElemental(elemental){
   return R.includes(elemental, elemOrder);
 }
 
-export const getIndexOfElem = (elemental) => {
+export const idxOfElem = (elemental) => {
   return idxTool(elemental, elemOrder)
 }
 
-export const elemRels = [
+export const elers = [
   'Draw',
   'Fruit',
   'Bank',
@@ -169,7 +173,7 @@ export const elemRels = [
   'Seed'
 ];
 
-export const getElemRel = (source, target) => {
+export const getEler = (source, target) => {
 
   if(!RA.isString(source)){
     throw new Error('Source elemental must be string.');
@@ -214,6 +218,6 @@ export const getElemRel = (source, target) => {
   }
 
   const difference = targetIndex - sourceIndex;
-  const relation = item(elemRels, difference);
+  const relation = item(elers, difference);
   return relation;
 }

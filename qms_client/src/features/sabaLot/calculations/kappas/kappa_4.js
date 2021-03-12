@@ -8,10 +8,10 @@ import {
 import {
   getElemOfPlastic,
   getElemRel,
-  isValidBranch
+  isValidBrh
 } from '../plastics/plastic_1';
 import {
-  branchSlider
+  brhSlider
 } from '../plastics/plastic_3';
 
 const buildMagnet = (magnet, crabShell) => {
@@ -62,10 +62,10 @@ const buildMagnet = (magnet, crabShell) => {
 
 const buildMagnetPath = (rawMagnetStart, magnetEnd) => {
 
-  const finalMagnetStart = isValidBranch(rawMagnetStart) ?
+  const finalMagnetStart = isValidBrh(rawMagnetStart) ?
     rawMagnetStart : getCrabShell(rawMagnetStart);
 
-  const rawIronPath = branchSlider(finalMagnetStart, magnetEnd);
+  const rawIronPath = brhSlider(finalMagnetStart, magnetEnd);
   const mapFn = (crabShell) => buildMagnet(magnetEnd, crabShell);
 
   const processedIronPath =

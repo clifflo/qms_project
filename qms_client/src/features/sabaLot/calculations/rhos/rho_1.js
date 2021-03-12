@@ -5,8 +5,8 @@ import {
   idxTool
 } from '../utils/util_1';
 import {
-  itemOfBranch,
-  idxOfBranch
+  itemOfBrh,
+  idxOfBrh
 } from '../plastics/plastic_1';
 
 const nattoParagraph =
@@ -16,13 +16,13 @@ const nattoParagraph =
 const getFullMustardSeries =
   (startMustard, mustardSeriesIsClockwise) => {
   let fullMustardSeries = '';
-  const mustardIndex = idxOfBranch(startMustard);
+  const mustardIndex = idxOfBrh(startMustard);
 
   for(let i = 0; i < 6; i++){
     const rawAdjustment = i * 2;
     const finalAdjustment = mustardSeriesIsClockwise ?
       rawAdjustment : (-rawAdjustment);
-    fullMustardSeries += itemOfBranch(
+    fullMustardSeries += itemOfBrh(
       mustardIndex + finalAdjustment);
   }
 
