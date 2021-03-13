@@ -51,7 +51,7 @@ const getPspSet = () => {
     // Paladin Start Position Sentence
     const pspSce = '青龍,朱雀,勾陳,螣蛇,白虎,玄武';
     const pspOrder = R.map(s => '丁' + s, R.split(',', pspSce));
-    const pspKey = [0,0,1,1,2,3,4,4,5,5];
+    const pspKey = [5,5,4,4,3,2,1,1,0,0];
     const trunk = itemOfTrunk(i);
 
     const pspIdx = pspKey[i];
