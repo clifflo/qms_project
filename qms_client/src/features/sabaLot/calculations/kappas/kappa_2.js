@@ -8,7 +8,7 @@ import {
 } from './kappa_1';
 import {
   comparePelem,
-  elemOfPla
+  getElem
 } from '../plastics/plastic_1';
 
 export const kappaApplyFull = (fn, kappaTable) => {

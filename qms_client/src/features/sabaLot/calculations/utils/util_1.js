@@ -35,7 +35,7 @@ export const item = (listLike, index) => {
   return listLike[adjust(index, listLike.length)]
 }
 
-export function idxTool(wordLike, listLike){
+export function getIdx(wordLike, listLike){
 
   if(RA.isString(listLike)){
     const sentence = listLike;

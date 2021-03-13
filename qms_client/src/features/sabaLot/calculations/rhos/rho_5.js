@@ -4,7 +4,9 @@ import {
   lhContexts_4
 } from './rho_4';
 import {
-  getElemRel
+  getElr,
+  idxOfTrunk,
+  itemOfTrunk
 } from '../plastics/plastic_1';
 
 const getLhContexts_5 = () => {
@@ -12,7 +14,7 @@ const getLhContexts_5 = () => {
   // Map Function 1 non-curried.
   const mapFn_1n = (hhElem, cross) => {
 
-    const focus = getElemRel(
+    const focus = getElr(
       hhElem,
       cross.crossBrelem);
 
@@ -42,3 +44,33 @@ const getLhContexts_5 = () => {
 }
 
 export const lhContexts_5 = getLhContexts_5();
+
+// Paladin Start Position
+const getPspSet = () => {
+  const mapFn = i => {
+    // Paladin Start Position Sentence
+    const pspSce = '青龍,朱雀,勾陳,螣蛇,白虎,玄武';
+    const pspOrder = R.map(s => '丁' + s, R.split(',', pspSce));
+    const pspKey = [0,0,1,1,2,3,4,4,5,5];
+    const trunk = itemOfTrunk(i);
+
+    const pspIdx = pspKey[i];
+    const psp = pspOrder[pspIdx];
+    return {
+      trunk,
+      psp
+    }
+  }
+
+  try{
+    return R.map(mapFn, R.range(0, 10));
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get Paladin Start Position Set.'
+    )
+  }
+}
+
+export const pspSet = getPspSet();

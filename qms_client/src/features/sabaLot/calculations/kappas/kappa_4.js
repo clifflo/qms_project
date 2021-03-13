@@ -6,7 +6,7 @@ import {
   getCrabShell
 } from './kappa_1';
 import {
-  elemOfPla,
+  getElem,
   getElemRel,
   isValidBranch
 } from '../plastics/plastic_1';
@@ -18,8 +18,8 @@ const buildMagnet = (magnet, crabShell) => {
 
   const mapFn = (target) => {
     try {
-      const targetElemental = elemOfPla(target);
-      const magnetElemental = elemOfPla(magnet);
+      const targetElemental = getElem(target);
+      const magnetElemental = getElem(magnet);
       const relation = getElemRel(
         magnetElemental, targetElemental);
       const isIron = relation == 'Hacker';

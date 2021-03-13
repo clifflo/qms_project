@@ -6,7 +6,7 @@ import {
   nattos,
 } from './rho_1';
 import {
-  elemOfPla
+  getElem
 } from '../plastics/plastic_1';
 
 const getTruncatedNatto = (
@@ -78,7 +78,7 @@ const buildCrosses = (
 
   const crossBranch = fullMustardSeries[downwardIndex];
   // Cross Branch Elemental
-  const crossBrelem = elemOfPla(crossBranch);
+  const crossBrelem = getElem(crossBranch);
 
   return {
     crossSign,

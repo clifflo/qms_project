@@ -3,7 +3,7 @@ import {
   itemOfBranch,
   idxOfBranch,
   idxOfTrunk,
-  idxTool,
+  getIdx,
   isValidBranch,
   comparePelem
 } from '../plastics/plastic_1';

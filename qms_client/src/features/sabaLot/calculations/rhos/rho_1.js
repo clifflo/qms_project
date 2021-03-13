@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   item,
-  idxTool
+  getIdx
 } from '../utils/util_1';
 import {
   itemOfBranch,
@@ -92,7 +92,7 @@ const longHookParagraph = RA.concatAll([
 // Get Short Hook Number Alt Index
 const getShNumAltIndex =
   (shAlt) => {
-  return idxTool(
+  return getIdx(
     shAlt,
     shAltSentence);
 }

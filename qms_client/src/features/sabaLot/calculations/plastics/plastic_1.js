@@ -3,7 +3,7 @@ import * as RA from 'ramda-adjunct';
 import {
   adjust,
   item,
-  idxTool
+  getIdx
 } from '../utils';
 
 export const trunkContext = {
@@ -47,7 +47,7 @@ export const belemOrder = '水土木木土火火土金金土水';
 export const telemOrder = '木木火火土土金金水水';
 
 export const idxOfTrunk = (trunk) => {
-  return idxTool(trunk, trunkOrder)
+  return getIdx(trunk, trunkOrder)
 }
 
 export const getTrunkLiturgy = (trunk) => {
@@ -76,10 +76,10 @@ export const getPlasticLiturgy = (plastic) => {
 }
 
 export const idxOfBranch = (branch) => {
-  return idxTool(branch, branchOrder)
+  return getIdx(branch, branchOrder)
 }
 
-export function elemOfPla(plastic){
+export function getElem(plastic){
   if(R.isNil(plastic)){
     throw new Error(
       'The input is nil for plastic.');
@@ -99,10 +99,10 @@ export function elemOfPla(plastic){
 
 export const comparePelem = (source, target) => {
   try {
-    const sElem = elemOfPla(source);
-    const tElem = elemOfPla(target);
+    const sElem = getElem(source);
+    const tElem = getElem(target);
 
-    const relation = getEler(
+    const relation = getElr(
       sElem, tElem)
     return relation;
   }
@@ -162,7 +162,7 @@ export function isValidElemental(elemental){
 }
 
 export const idxOfElem = (elemental) => {
-  return idxTool(elemental, elemOrder)
+  return getIdx(elemental, elemOrder)
 }
 
 export const elers = [
@@ -173,7 +173,7 @@ export const elers = [
   'Seed'
 ];
 
-export const getEler = (source, target) => {
+export const getElr = (source, target) => {
 
   if(!RA.isString(source)){
     throw new Error('Source elemental must be string.');
@@ -201,10 +201,10 @@ export const getEler = (source, target) => {
       `${target} is not a valid target elemental.`);
   }
 
-  const sourceIndex = idxTool(
+  const sourceIndex = getIdx(
     source, elemOrder);
 
-  const targetIndex = idxTool(
+  const targetIndex = getIdx(
     target, elemOrder);
 
   if(sourceIndex == -1){

@@ -10,7 +10,7 @@ import {
   lhContexts_3
 } from './rho_3';
 import {
-  idxTool
+  getIdx
 } from '../utils/util_1';
 
 const getShortHookElementalByOriginal =
@@ -38,7 +38,7 @@ const getLhContexts_4 = () => {
 
     try{
 
-      const result = idxTool(
+      const result = getIdx(
         headHook, headHookOrder);
 
       if(R.isNil(result)){

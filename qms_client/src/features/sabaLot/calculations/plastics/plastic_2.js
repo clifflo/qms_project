@@ -3,7 +3,7 @@ import * as RA from 'ramda-adjunct';
 import {
   adjust,
   item,
-  idxTool
+  getIdx
 } from '../utils';
 
 const chosenSentence =
