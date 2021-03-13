@@ -34,12 +34,52 @@ const getBlcSet = () => {
 
 export const blcSet = getBlcSet();
 
-const getMeetSet = () => {
+// Meeting Set
+const getMtgSet = () => {
 
   const mapFn = i => {
 
-    const branch_1 = itemOfBranch(i + 2);
-    const branch_2 = itemOfBranch(i + 3);
-    const branch_3 = itemOfBranch(i + 4);
+    // 'j' is the starting position with a step
+    // of three.
+
+    const j = i * 3;
+    const bri_1 = j + 2;
+    const bri_2 = j + 3;
+    const bri_3 = j + 4;
+    const bris = [bri_1, bri_2, bri_3];
+    const branches = R.map(itemOfBranch, bris);
+    const melem = getElem(branches[1]);
+
+    return {
+      branches,
+      melem
+    }
   }
+
+  try {
+    return R.map(mapFn, R.range(0, 4));
+  }
+  catch(err){
+    throw new Error(
+      'Cannot get Meeting Set.'
+    )
+  }
+}
+
+export const mtgSet = getMtgSet();
+
+// Arrestment Set
+export const arrtSet = {
+  '寅': '巳',
+  '巳': '申',
+  '申': '寅',
+  '丑': '戌',
+  '戌': '未',
+  '未': '丑',
+  '卯': '子',
+  '子': '卯',
+  '辰': '辰',
+  '午': '午',
+  '酉': '酉',
+  '亥': '亥'
 }
