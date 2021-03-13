@@ -32,11 +32,13 @@ const getTruncatedNatto = (
     const mustardSeries = natto.ems;
 
     if(R.isNil(soyBean)){
-      throw new Error('External Soy bean should not be nil.')
+      throw new Error(
+        'External Soy bean should not be nil.')
     }
 
     if(R.isNil(mustardSeries)){
-      throw new Error('External Mustard Series should not be nil.');
+      throw new Error(
+        'External Mustard Series should not be nil.');
     }
 
     return {
@@ -50,11 +52,13 @@ const getTruncatedNatto = (
     const mustardSeries = natto.ims;
 
     if(R.isNil(soyBean)){
-      throw new Error('Internal Soy bean should not be nil.')
+      throw new Error(
+        'Internal Soy Bean should not be nil.')
     }
 
     if(R.isNil(mustardSeries)){
-      throw new Error('Internal Mustard Series should not be nil.');
+      throw new Error(
+        'Internal Mustard Series should not be nil.');
     }
 
     return {
@@ -77,6 +81,7 @@ const buildCrosses = (
     esb : isb;
 
   const crossBranch = fullMustardSeries[downwardIndex];
+
   // Cross Branch Elemental
   const crossBrelem = getElem(crossBranch);
 
@@ -89,17 +94,17 @@ const buildCrosses = (
 
 }
 
-export const getLhContexts_2 = (longHooks) => {
+export const getLhContexts_2 = (lhs) => {
 
-  const mapFn = (longHook) => {
+  const mapFn = (lh) => {
 
     try {
 
       const eshBinary = decimalToBinary(
-        longHook.eshNumber, 3);
+        lh.eshNum, 3);
 
       const ishBinary = decimalToBinary(
-        longHook.ishNumber, 3);
+        lh.ishNum, 3);
 
 
       let ems; // External Mustard Series
@@ -109,11 +114,11 @@ export const getLhContexts_2 = (longHooks) => {
 
       // External truncated natto
       const etn = getTruncatedNatto(
-        longHook.eshOri, true);
+        lh.eshOri, true);
 
       // Internal truncated Natto
       const itn = getTruncatedNatto(
-        longHook.ishOri, false);
+        lh.ishOri, false);
 
       ems = etn.mustardSeries;
       esb = etn.soyBean;
@@ -130,12 +135,11 @@ export const getLhContexts_2 = (longHooks) => {
           'Internal Soy Bean should not be nil.')
       }
 
-
       // Full Mustard Series
       const fms = ems + ims;
 
-      const longHookBinary = decimalToBinary(
-        longHook.lhNumber,
+      const lhBinary = decimalToBinary(
+        lh.lhNum,
         6);
 
       const mapFn = R.curry(buildCrosses)
@@ -145,10 +149,10 @@ export const getLhContexts_2 = (longHooks) => {
 
       const crosses = RA.mapIndexed(
         mapFn,
-        R.drop(1, longHookBinary));
+        R.drop(1, lhBinary));
 
       return {
-        lhName: longHook.lhName,
+        lhName: lh.lhName,
         crosses
       }
     }
@@ -159,7 +163,7 @@ export const getLhContexts_2 = (longHooks) => {
 
   }
 
-  return R.map(mapFn, longHooks)
+  return R.map(mapFn, lhs)
 }
 
 export const lhContexts_2 =

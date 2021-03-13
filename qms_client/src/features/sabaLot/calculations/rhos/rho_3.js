@@ -29,23 +29,24 @@ const getLhContextByName = (lhName) => {
   return lhContext;
 }
 
-const getLhContextByNumber = (lhNumber) => {
+const getLhContextByNumber = (lhNum) => {
 
   const lhContext = R.find(
-    R.propEq('lhNumber', lhNumber),
+    R.propEq('lhNum', lhNum),
     lhContexts_1);
 
-  if(R.isNil(lhNumber)){
+  if(R.isNil(lhNum)){
     throw new Error('Long hook number should not be nil.');
   }
 
-  if(!RA.isNumber(lhNumber)){
-    throw new Error(`Long hook number must be a number.`);
+  if(!RA.isNumber(lhNum)){
+    throw new Error(
+      'Long hook number must be a number.');
   }
 
   if(R.isNil(lhContext)){
     throw new Error(
-      `${lhNumber} is not a valid long hook number.`);
+      `${lhNum} is not a valid long hook number.`);
   }
 
   return lhContext;
@@ -53,21 +54,21 @@ const getLhContextByNumber = (lhNumber) => {
 
 const getHookGapBinarySet = () => {
 
-  const sourceLhNumber = 63;
+  const sourceLhNum = 63;
 
   const mapFn = (targetLhName) => {
 
-    const targetLhNumber =
+    const targetLhNum =
       getLhContextByName(targetLhName)
-      .lhNumber;
+      .lhNum;
 
-    if(R.isNil(targetLhNumber)){
+    if(R.isNil(targetLhNum)){
       throw new Error(
         'Target long hook number should not be nil.');
     }
 
     const gapBinary = decimalToBinary(
-      sourceLhNumber ^ targetLhNumber,
+      sourceLhNum ^ targetLhNum,
       6);
 
     return gapBinary;
@@ -94,7 +95,7 @@ const getHookPalaces = () => {
       const pureHookName = '純' + shortHookName;
       const pureHookNumber =
         getLhContextByName(pureHookName)
-        .lhNumber;
+        .lhNum;
       if(R.isNil(pureHookNumber)){
         throw new Error(
           'Pure hook number should not be nil.');

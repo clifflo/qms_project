@@ -32,5 +32,14 @@ const getBlcSet = () => {
   }
 }
 
-
 export const blcSet = getBlcSet();
+
+const getMeetSet = () => {
+
+  const mapFn = i => {
+
+    const branch_1 = itemOfBranch(i + 2);
+    const branch_2 = itemOfBranch(i + 3);
+    const branch_3 = itemOfBranch(i + 4);
+  }
+}
