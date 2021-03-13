@@ -14,13 +14,13 @@ const nattoParagraph =
   '巽木辛丑辛逆佈,離火己卯己逆佈,坤土乙未癸逆佈,兌金丁巳丁逆佈';
 
 const getFullMustardSeries =
-  (startMustard, mustardSeriesIsClockwise) => {
+  (startMustard, mseIsCw) => {
   let fullMustardSeries = '';
   const mustardIndex = idxOfBranch(startMustard);
 
   for(let i = 0; i < 6; i++){
     const rawAdjustment = i * 2;
-    const finalAdjustment = mustardSeriesIsClockwise ?
+    const finalAdjustment = mseIsCw ?
       rawAdjustment : (-rawAdjustment);
     fullMustardSeries += itemOfBranch(
       mustardIndex + finalAdjustment);
@@ -41,9 +41,11 @@ const getNattos = () => {
     // Internal Soy Bean
     const isb = sentence[2];
     const startMustard = sentence[3];
-    const mustardSeriesIsClockwise = sentence[5] == '順';
+
+    // Mustard Series is Clockwise
+    const mseIsCw = sentence[5] == '順';
     const fullMustardSeries = getFullMustardSeries(
-      startMustard, mustardSeriesIsClockwise);
+      startMustard, mseIsCw);
 
     // External Mustard Series
     const ems =
@@ -78,7 +80,7 @@ export const shAltSentence = '地雷水澤山火風天';
 // Short Hook Ori
 export const shOriSentence = '坤震坎兌艮離巽乾';
 
-const longHookParagraph = RA.concatAll([
+const lhParagraph = RA.concatAll([
   '乾為天,天風姤,天山遯,天地否,風地觀,山地剝,火地晉,火天大有,',
   '坎為水,水澤節,水雷屯,水火既濟,澤火革,雷火豐,地火明夷,地水師,',
   '艮為山,山火賁,山天大畜,山澤損,火澤睽,天澤履,風澤中孚,風山漸,',
@@ -116,21 +118,21 @@ export const getLhContexts_1 = () => {
       lhName = R.drop(2, sentence);
     }
 
-    const eshNumber =
+    const eshNum =
       getShNumAltIndex(eshAlt);
 
-    const ishNumber =
+    const ishNum =
       getShNumAltIndex(ishAlt);
 
     const eshOri =
-      shOriSentence[eshNumber];
+      shOriSentence[eshNum];
 
     const ishOri =
-      shOriSentence[ishNumber];
+      shOriSentence[ishNum];
 
-    const lhNumber =
-      (eshNumber * 8) +
-      ishNumber;
+    const lhNum =
+      (eshNum * 8) +
+      ishNum;
 
     return {
       eshAlt,
@@ -138,9 +140,9 @@ export const getLhContexts_1 = () => {
       eshOri,
       ishOri,
       lhName,
-      eshNumber,
-      ishNumber,
-      lhNumber
+      eshNum,
+      ishNum,
+      lhNum
     }
   }
 
@@ -148,7 +150,7 @@ export const getLhContexts_1 = () => {
     R.map(mapFn),
     R.split(',')
   )
-  (longHookParagraph);
+  (lhParagraph);
 
 }
 
