@@ -4,7 +4,8 @@ import {
   itemOfElem,
   itemOfBranch,
   elemOfPla,
-  idxOfElem
+  idxOfElem,
+  itemOfTrunk
 } from './plastic_1';
 import * as R from 'ramda';
 
@@ -13,7 +14,7 @@ const getBscSet = () => {
 
   const mapFn = (i) => {
     const sBranch = itemOfBranch(i);
-    const tBranchIdx =  (13 - i) % 12;
+    const tBranchIdx =  13 - i;
     const tBranch = itemOfBranch(tBranchIdx);
 
     const sBelem = elemOfPla(sBranch);
@@ -40,3 +41,23 @@ const getBscSet = () => {
 }
 
 export const bscSet = getBscSet();
+
+// Trunk Small Compound
+const getTscSet = () => {
+
+  const mapFn = (i) => {
+    const celemIdx = i - 1;
+    const celem = itemOfElem(celemIdx);
+    const sTrunk = itemOfTrunk(i);
+    const tTrunk = itemOfTrunk(i + 5);
+
+    return {
+      trunks: [sTrunk, tTrunk],
+      celem
+    }
+  }
+
+  return R.map(mapFn, R.range(0, 5));
+}
+
+export const tscSet = getTscSet();

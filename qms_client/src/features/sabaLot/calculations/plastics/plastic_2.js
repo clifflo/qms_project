@@ -21,7 +21,7 @@ const elemStatusOne =
 
 
 // Get Chosen for Element with Element and Branch
-export const getChoe = (elem, branch) => {
+export const getChe = (elem, branch) => {
 
   if(!isValidBranch(branch)){
     throw new Error(`${branch} is not a valid branch.`);
@@ -40,33 +40,33 @@ export const getChoe = (elem, branch) => {
 }
 
 // Chosen for branch
-export const chobOrder =　
+export const chbOrder =　
   '亥午寅酉寅酉巳子申卯';
 
-export const getTwigSeries = (trunk, branch) => {
+export const getBetapsiSeries = (trunk, branch) => {
 
   const difference = idxOfBranch(branch) - idxOfTrunk(trunk);
 
   if(difference % 2 == 0){
-    const twigSeriesBranch = itemOfBranch(difference);
+    const betapsiSeriesBranch = itemOfBranch(difference);
     const adjustedDifference = adjust(difference, 12);
     const branchNumber = (12 - adjustedDifference) / 2;
     const trunkNumber = idxOfTrunk(trunk);
-    const twigPosition = (branchNumber * 10 + trunkNumber);
-    const twigSeriesOrder = branchNumber;
-    const twigSeriesVoid =
+    const betapsiPosition = (branchNumber * 10 + trunkNumber);
+    const betapsiSeriesOrder = branchNumber;
+    const betapsiSeriesVoid =
       R.map(itemOfBranch,
         [adjustedDifference - 1, adjustedDifference - 2]);
     return {
       inputTrunk: trunk,
       inputBranch: branch,
-      twigPosition,
-      twigSeries: `甲${twigSeriesBranch}旬`,
-      twigSeriesVoid,
-      twigSeriesOrder
+      betapsiPosition,
+      betapsiSeries: `甲${betapsiSeriesBranch}旬`,
+      betapsiSeriesVoid,
+      betapsiSeriesOrder
     }
   }
   else {
-    throw 'Wrong plastic for twig.';
+    throw 'Wrong plastic for betapsi.';
   }
 }
