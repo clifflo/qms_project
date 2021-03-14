@@ -5,8 +5,9 @@ import {
   getBpse
 } from '../plastics/plastic_2';
 import {
-  lhContexts_4
+  lhContexts_5
 } from '../rhos/rho_4';
+import * as R from 'ramda';
 
 // 'Rin' stands for Rho Input.
 export const parseRin = rin => {
@@ -22,7 +23,6 @@ export const parseRin = rin => {
       `${month} is not a valid month.`
     )
   }
-
   const day = cgr[2];
 
   // Long Hook Name A
@@ -32,33 +32,47 @@ export const parseRin = rin => {
   const lhnb = cgr[4];
 
   // Long Hook Context A
-  const lhca = R.filter(
+  const lhca = R.find(
     R.propEq('lhName', lhna),
-    lhContexts_4);
+    lhContexts_5);
 
   // Long Hook Context B
-  const lhcb = R.filter(
+  const lhcb = R.find(
     R.propEq('lhName', lhnb),
-    lhContexts_4);
+    lhContexts_5);
 
-  const strikeFn = (cross, idx) => {
-    const cr_1 = lhca.crosses[idx];
-    const cr_2 = lhcb.crosses[idx];
-    return cr_1 == cr_2
+  console.log(lhca);
+
+  const acdFn = idx => {
+    const csi_1 = lhca.crosses[idx].csi;
+    const csi_2 = lhcb.crosses[idx].csi;
+
+    // Is Activated
+    const isAcd = csi_1 != csi_2;
+    const cross = lhca.crosses[idx];
+
+    console.log(cross);
+
+    return {
+      ...cross,
+      isAcd
+    }
   }
 
   try{
     // Day Betapsi Series
     const dbse = getBpse(day);
-    const strikes = R.map(strikeFn, R.range(0, 6));
+    const crsa = R.map(acdFn, R.range(0, 6));
+    const crsb = lhcb.crosses;
 
     return {
       month,
       day,
-      lhca,
-      lhcb,
-      dbse,
-      strikes
+      lhna,
+      lhnb,
+      crsa,
+      crsb,
+      dbse
     }
   }
   catch(err){

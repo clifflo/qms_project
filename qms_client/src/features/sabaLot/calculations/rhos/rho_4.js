@@ -12,6 +12,9 @@ import {
 import {
   getIdx
 } from '../utils/util_1';
+import {
+  getElr
+} from '../plastics/plastic_1';
 
 const getLhContexts_4 = () => {
 
@@ -78,3 +81,60 @@ const getLhContexts_4 = () => {
 }
 
 export const lhContexts_4 = getLhContexts_4();
+
+const getLhContexts_5 = () => {
+
+  // Focus Chinese Name List
+  const ferl = {
+    'Draw': '丁兄弟',
+    'Fruit': '丁子孫',
+    'Bank': '丁妻財',
+    'Hacker': '丁官鬼',
+    'Seed': '丁父母',
+  }
+
+  // Map Function 1 non curried
+  const mapFn_1n = (hhElem, cross_1) => {
+
+    try{
+      const focus = getElr(hhElem, cross_1.cbe);
+      const fer = ferl[focus];
+      let cross_2 = Object.assign({}, cross_1);
+      cross_2.fer = fer;
+      return cross_2;
+    }
+    catch(err){
+      console.log(err);
+      throw new Error(
+        'Map function 1 is error.');
+    }
+  }
+
+  // Map Function 1 curried
+  const mapFn_1c = R.curry(mapFn_1n);
+
+  const mapFn_2 = lhc_4 => {
+
+    try {
+      const crosses = R.map(
+        mapFn_1c(lhc_4.hhElem),
+        lhc_4.crosses);
+
+      // Long Hook Context 5
+      let lhc_5 = Object.assign({}, lhc_4);
+      lhc_5.crosses = crosses;
+
+      return lhc_5;
+    }
+    catch(err){
+      console.error(err);
+      throw new Error(
+        'Map function 2 is error.');
+    }
+
+  }
+
+  return R.map(mapFn_2, lhContexts_4);
+}
+
+export const lhContexts_5 = getLhContexts_5();

@@ -70,10 +70,10 @@ const getTruncatedNatto = (
 }
 
 const buildCrosses = (
-  fullMustardSeries,
-  esb,
-  isb,
-  crl, // Cross Liturgy
+  fms, // Full Mustard Series
+  esb, // External Short Hook Branch
+  isb, // Internal Short Hook Branch
+  csi, // Cross sign
   downwardIndex,
   list) => {
 
@@ -82,16 +82,16 @@ const buildCrosses = (
     esb : isb;
 
   // Cross Branch
-  const crbh = fullMustardSeries[downwardIndex];
+  const crbh = fms[downwardIndex];
 
   // Cross Branch Elemental
-  const crbel = getElem(crbh);
+  const cbe = getElem(crbh);
 
   return {
-    crl,
+    csi,
     crtk,
     crbh,
-    crbel
+    cbe
   }
 
 }
