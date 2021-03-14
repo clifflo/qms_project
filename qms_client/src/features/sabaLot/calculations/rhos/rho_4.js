@@ -85,7 +85,7 @@ export const lhContexts_4 = getLhContexts_4();
 const getLhContexts_5 = () => {
 
   // Focus Chinese Name List
-  const ferl = {
+  const fcnl = {
     'Draw': '丁兄弟',
     'Fruit': '丁子孫',
     'Bank': '丁妻財',
@@ -98,9 +98,9 @@ const getLhContexts_5 = () => {
 
     try{
       const focus = getElr(hhElem, cross_1.cbe);
-      const fer = ferl[focus];
+      const fcn = fcnl[focus];
       let cross_2 = Object.assign({}, cross_1);
-      cross_2.fer = fer;
+      cross_2.fcn = fcn;
       return cross_2;
     }
     catch(err){

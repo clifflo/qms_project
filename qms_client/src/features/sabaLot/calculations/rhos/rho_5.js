@@ -16,7 +16,7 @@ const getLhContexts_5 = () => {
 
     const focus = getElr(
       hhElem,
-      cross.crossBrelem);
+      cross.cbe);
 
     return {
       ...cross,
@@ -45,22 +45,29 @@ const getLhContexts_5 = () => {
 
 export const lhContexts_5 = getLhContexts_5();
 
-// Paladin Start Position
-const getPspSet = () => {
-  const mapFn = i => {
-    // Paladin Start Position Sentence
-    const pspSce = '青龍,朱雀,勾陳,螣蛇,白虎,玄武';
-    const pspOrder = R.map(s => '丁' + s, R.split(',', pspSce));
+const rpalSce = '青龍,朱雀,勾陳,螣蛇,白虎,玄武';
 
-    // Reverse due to the direction is upward.
-    const pspKey = R.reverse([0,0,1,1,2,3,4,4,5,5]);
+export const rpalOrder =
+  R.compose(
+    R.reverse,
+    R.map(s => '丁' + s),
+    R.split(','))
+  (rpalSce);
+
+// Rho Paladin Start Position
+const getRpsSet = () => {
+
+  const mapFn = i => {
+
+    const rpsKey = R.reverse([0,0,1,1,2,3,4,4,5,5]);
     const trunk = itemOfTrunk(i);
 
-    const pspIdx = pspKey[i];
-    const psp = pspOrder[pspIdx];
+    const rpsIdx = rpsKey[i];
+    const rps = rpalOrder[rpsIdx];
     return {
       trunk,
-      psp
+      rpsIdx,
+      rps
     }
   }
 
@@ -75,4 +82,5 @@ const getPspSet = () => {
   }
 }
 
-export const pspSet = getPspSet();
+export const rpsSet = getRpsSet();
+console.log(rpsSet);

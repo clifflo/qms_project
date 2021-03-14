@@ -99,6 +99,7 @@ export function getElem(plastic){
 
 export const comparePelem = (source, target) => {
   try {
+
     const sElem = getElem(source);
     const tElem = getElem(target);
 
@@ -165,7 +166,7 @@ export function idxOfElem(elemental){
   return getIdx(elemental, elemOrder)
 }
 
-export const elers = [
+export const elrs = [
   'Draw',
   'Fruit',
   'Bank',
@@ -175,6 +176,14 @@ export const elers = [
 
 export const getElr = (source, target) => {
 
+  if(R.isNil(source)){
+    throw new Error('Source elemental cannot be nil.');
+  }
+
+  if(R.isNil(target)){
+    throw new Error('Target elemental cannot be nil.');
+  }
+
   if(!RA.isString(source)){
     throw new Error('Source elemental must be string.');
   }
@@ -183,13 +192,9 @@ export const getElr = (source, target) => {
     throw new Error('Target elemental must be string.');
   }
 
-  if(R.isNil(source)){
-    throw new Error('Source elemental cannot be nil.');
-  }
 
-  if(R.isNil(target)){
-    throw new Error('Target elemental cannot be nil.');
-  }
+
+
 
   if(!isValidElem(source)){
     throw new Error(
@@ -218,6 +223,6 @@ export const getElr = (source, target) => {
   }
 
   const difference = targetIndex - sourceIndex;
-  const relation = item(elers, difference);
+  const relation = item(elrs, difference);
   return relation;
 }

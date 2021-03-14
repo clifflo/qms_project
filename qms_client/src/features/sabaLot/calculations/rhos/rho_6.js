@@ -1,13 +1,10 @@
-import {
-  isValidBranch
-} from '../plastics/plastic_1';
-import {
-  getBpse
-} from '../plastics/plastic_2';
-import {
-  lhContexts_5
-} from '../rhos/rho_4';
+import { isValidBranch } from '../plastics/plastic_1';
+import { getBpse } from '../plastics/plastic_2';
+import { lhContexts_5 } from './rho_4';
+import { rpsSet, rpalOrder } from './rho_5';
+import { item } from '../utils/util_1';
 import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 
 // 'Rin' stands for Rho Input.
 export const parseRin = rin => {
@@ -16,6 +13,12 @@ export const parseRin = rin => {
 
   // Capturing group
   const cgr = rin.match(regex);
+
+  if(R.isNil(cgr)){
+    throw new Error(
+      'You have typed the rho input incorrectly.');
+  }
+
   const month = cgr[1];
 
   if(!isValidBranch(month)){
@@ -47,19 +50,32 @@ export const parseRin = rin => {
 
     // Is Activated
     const isAcd = csi_1 != csi_2;
-    const cross = lhca.crosses[idx];
-
-    return {
-      ...cross,
-      isAcd
-    }
+    return isAcd;
   }
+
+  const acdl = R.map(acdFn, R.range(0, 6));
+
+  const crossFn = (cross_1, idx, list) => {
+    let cross_2 = Object.assign({}, cross_1);
+    cross_2.cst = acdl[idx] ? 'Strike' : 'Silent';
+
+    // Rho Paladin Start Position
+    const rpsIdx = R.find(
+      R.propEq('trunk', day[0]), rpsSet).rpsIdx;
+
+    // Rho Paladin
+    const rpal = item(rpalOrder, rpsIdx + idx + 1);
+    cross_2.rpal = rpal;
+
+    return cross_2;
+  }
+
 
   try{
     // Day Betapsi Series
     const dbse = getBpse(day);
-    const crsa = R.map(acdFn, R.range(0, 6));
-    const crsb = lhcb.crosses;
+    const crsa = RA.mapIndexed(crossFn, lhca.crosses);
+    const crsb = RA.mapIndexed(crossFn, lhcb.crosses);
 
     return {
       month,
@@ -77,7 +93,4 @@ export const parseRin = rin => {
       'Cannot parse Rho Input.'
     );
   }
-
-
-
 }

@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        <JSONTree data={parseRin('申月乙未日同人之無妄卦')} />
+        <JSONTree data={parseRin('寅月庚申日困之大過卦')} />
       </div>
     </div>
   );
