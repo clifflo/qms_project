@@ -41,8 +41,6 @@ export const parseRin = rin => {
     R.propEq('lhName', lhnb),
     lhContexts_5);
 
-  console.log(lhca);
-
   const acdFn = idx => {
     const csi_1 = lhca.crosses[idx].csi;
     const csi_2 = lhcb.crosses[idx].csi;
@@ -50,8 +48,6 @@ export const parseRin = rin => {
     // Is Activated
     const isAcd = csi_1 != csi_2;
     const cross = lhca.crosses[idx];
-
-    console.log(cross);
 
     return {
       ...cross,
