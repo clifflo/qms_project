@@ -13,20 +13,6 @@ import {
   getIdx
 } from '../utils/util_1';
 
-const getShortHookElementalByOriginal =
-  (shortHookOriginal) => {
-  const natto = R.find(
-    R.propEq('shortHookOriginal', shortHookOriginal),
-    nattos);
-
-  if(R.isNil(natto)){
-    throw new Error(
-      `${shortHookOriginal} is not a valid short hook original.`);
-  }
-
-  return natto.shortHookElemental;
-}
-
 const getLhContexts_4 = () => {
 
   const headHookOrder = '乾坎艮震巽離坤兌';

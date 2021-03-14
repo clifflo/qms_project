@@ -73,23 +73,25 @@ const buildCrosses = (
   fullMustardSeries,
   esb,
   isb,
-  crossSign,
+  crl, // Cross Liturgy
   downwardIndex,
   list) => {
 
-  const crossTrunk = downwardIndex <= 2 ?
+  // Cross Trunk
+  const crtk = downwardIndex <= 2 ?
     esb : isb;
 
-  const crossBranch = fullMustardSeries[downwardIndex];
+  // Cross Branch
+  const crbh = fullMustardSeries[downwardIndex];
 
   // Cross Branch Elemental
-  const crossBrelem = getElem(crossBranch);
+  const crbel = getElem(crbh);
 
   return {
-    crossSign,
-    crossTrunk,
-    crossBranch,
-    crossBrelem
+    crl,
+    crtk,
+    crbh,
+    crbel
   }
 
 }

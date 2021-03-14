@@ -5,8 +5,8 @@ import { SabaLot } from './features/sabaLot/SabaLot';
 import buildKappaTable
   from './features/sabaLot/calculations/kappas/kappaTable';
 import JSONTree from 'react-json-tree';
-import { mtgSet }
-  from './features/sabaLot/calculations/plastics/plastic_5';
+import { lhContexts_4 } from
+  './features/sabaLot/calculations/rhos/rho_4';
 
 function App() {
 
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        <JSONTree data={mtgSet} />
+        <JSONTree data={lhContexts_4} />
       </div>
     </div>
   );

@@ -157,11 +157,11 @@ export function isValidTrunk(trunk){
   return R.includes(trunk, trunkOrder);
 }
 
-export function isValidElemental(elemental){
+export function isValidElem(elemental){
   return R.includes(elemental, elemOrder);
 }
 
-export const idxOfElem = (elemental) => {
+export function idxOfElem(elemental){
   return getIdx(elemental, elemOrder)
 }
 
@@ -191,12 +191,12 @@ export const getElr = (source, target) => {
     throw new Error('Target elemental cannot be nil.');
   }
 
-  if(!isValidElemental(source)){
+  if(!isValidElem(source)){
     throw new Error(
       `${source} is not a valid source elemental.`);
   }
 
-  if(!isValidElemental(target)){
+  if(!isValidElem(target)){
     throw new Error(
       `${target} is not a valid target elemental.`);
   }

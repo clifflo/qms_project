@@ -5,6 +5,15 @@ import {
   item,
   getIdx
 } from '../utils';
+import {
+  isValidBranch,
+  isValidTrunk,
+  isValidElem,
+  itemOfBranch,
+  idxOfElem,
+  idxOfBranch,
+  idxOfTrunk
+} from './plastic_1';
 
 const chosenSentence =
   '長生,沐浴,冠帶,臨官,帝旺,衰,病,長死,墓,絕,胎,養';
@@ -13,7 +22,7 @@ export const chosenOrder =
   R.split(',', chosenSentence);
 
 export function getChosenIndex(chosen) {
-  return getIndex(chosen, chosenOrder)
+  return getIdx(chosen, chosenOrder)
 }
 
 const elemStatusOne =
@@ -27,14 +36,16 @@ export const getChe = (elem, branch) => {
     throw new Error(`${branch} is not a valid branch.`);
   }
 
-  if(!isValidElemental(elem)){
+  if(!isValidElem(elem)){
     throw new Error(`${elem} is not a valid elemental.`);
   }
 
-  const elemIndex_1 = idxOfElem(elem);
-  const elemIndex_2 = elemIndex_1 == 4 ? 3 : elemIndex;
-  const branchIndex = idxOfBranch(branch);
-  const chosenIndex = -(elemIndex_2 * 3) - 5 + branchIndex;
+
+  // Elemental index 1
+  const eli_1 = idxOfElem(elem);
+  const eli_2 =  eli_1 == 4 ? 3 : eli_1;
+  const bri = idxOfBranch(branch);
+  const chosenIndex = -(eli_2 * 3) - 5 + bri;
   const chosen = item(chosenOrder, chosenIndex);
   return chosen;
 }
@@ -43,30 +54,49 @@ export const getChe = (elem, branch) => {
 export const chbOrder =　
   '亥午寅酉寅酉巳子申卯';
 
-export const getBetapsiSeries = (trunk, branch) => {
+
+// Get Betapsi Series
+export const getBpse = (betapsi) => {
+
+  const trunk = betapsi[0];
+  const branch = betapsi[1];
+
+  if(!isValidTrunk(trunk)){
+    throw new Error(
+      `${trunk} is not a valid trunk for betapsi.`);
+  }
+
+  if(!isValidBranch(branch)){
+    throw new Error(
+      `${branch} is not a valid branch for betapsi.`
+    )
+  }
 
   const difference = idxOfBranch(branch) - idxOfTrunk(trunk);
-
-  if(difference % 2 == 0){
-    const betapsiSeriesBranch = itemOfBranch(difference);
-    const adjustedDifference = adjust(difference, 12);
-    const branchNumber = (12 - adjustedDifference) / 2;
-    const trunkNumber = idxOfTrunk(trunk);
-    const betapsiPosition = (branchNumber * 10 + trunkNumber);
-    const betapsiSeriesOrder = branchNumber;
-    const betapsiSeriesVoid =
-      R.map(itemOfBranch,
-        [adjustedDifference - 1, adjustedDifference - 2]);
-    return {
-      inputTrunk: trunk,
-      inputBranch: branch,
-      betapsiPosition,
-      betapsiSeries: `甲${betapsiSeriesBranch}旬`,
-      betapsiSeriesVoid,
-      betapsiSeriesOrder
-    }
+  const isValidMatch = (difference % 2) == 0
+  if(!isValidMatch){
+    throw new Error(
+      'Betapsi not valid due to wrong match of trunk and branch.'
+    )
   }
-  else {
-    throw 'Wrong plastic for betapsi.';
+
+  // Betapsi Series Lead Branch
+  const bslb = itemOfBranch(difference);
+
+  // Betapsi Series Full Name
+  const bsfn = `甲${bslb}旬`;
+
+  // Betapsi Series Void A
+  const bsva = itemOfBranch(difference - 2);
+
+  // Betapsi Series Void B
+  const bsvb = itemOfBranch(difference - 1);
+
+  // Betapsi Series Void List
+  const bsvl = [bsva, bsvb];
+
+  return {
+    bsfn,
+    bsvl
   }
 }
