@@ -88,10 +88,10 @@ const buildCrosses = (
   const cbe = getElem(crbh);
 
   return {
-    csi,
-    crtk,
-    crbh,
-    cbe
+    csi, // Cross Sign
+    crtk, // Cross Trunk
+    crbh, // Cross Branch
+    cbe // Cross Branch Elemental
   }
 
 }

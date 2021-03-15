@@ -42,6 +42,19 @@ const getBscSet = () => {
 
 export const bscSet = getBscSet();
 
+export const matchBsc = (sBranch, tBranch) => {
+
+  const findFn = bsc => {
+    const intersect = R.intersection(
+      bsc.branches, [sBranch, tBranch]);
+    const valid = intersect.length == 2;
+    return valid;
+  }
+
+  const result = !R.isNil(R.find(findFn, bscSet));
+  return result;
+}
+
 // Trunk Small Compound
 const getTscSet = () => {
 

@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   lhContexts_1,
-  shOriSentence
+  shOriSce
 } from './rho_1';
 import {
   decimalToBinary,
@@ -10,11 +10,11 @@ import {
   getIndexedList
 } from '../utils/util_3';
 
-const baseHookSeriesSentence =
+const baseHookSeriesSce =
   '姤,遯,否,觀,剝,晉,大有';
 
 const baseHookSeries =
-  R.split(',', baseHookSeriesSentence);
+  R.split(',', baseHookSeriesSce);
 
 const getLhContextByName = (lhName) => {
 
@@ -92,17 +92,19 @@ const getHookPalaces = () => {
 
     try{
       const gapDecimal = binaryToDecimal(gapBinary);
-      const pureHookName = '純' + shortHookName;
-      const pureHookNumber =
-        getLhContextByName(pureHookName)
+
+      // Pure Hook Name
+      const puhName = '純' + shortHookName;
+      const puhNumber =
+        getLhContextByName(puhName)
         .lhNum;
-      if(R.isNil(pureHookNumber)){
+      if(R.isNil(puhNumber)){
         throw new Error(
           'Pure hook number should not be nil.');
       }
 
-      const pureHookBinary = decimalToBinary(pureHookNumber, 6);
-      const resultHookNumber = gapDecimal ^ pureHookNumber;
+      const puhBinary = decimalToBinary(puhNumber, 6);
+      const resultHookNumber = gapDecimal ^ puhNumber;
       const resultHookContext =
         getLhContextByNumber(resultHookNumber);
 
@@ -123,15 +125,15 @@ const getHookPalaces = () => {
     const finalSeries = R.prepend(
       '純' + shortHookName, rawSeries);
 
-    const seriesSentence = R.join(',', finalSeries);
+    const seriesSce = R.join(',', finalSeries);
 
     return {
       headHook: shortHookName,
-      seriesSentence
+      seriesSce
     }
   }
 
-  const result = R.map(mapFn_2, shOriSentence);
+  const result = R.map(mapFn_2, shOriSce);
   return result;
 }
 
@@ -188,7 +190,7 @@ const getLhContexts_3 = () => {
   const mapFn_2 = (hookPalace) => {
 
     try {
-      const series = R.split(',', hookPalace.seriesSentence);
+      const series = R.split(',', hookPalace.seriesSce);
       const result = RA.mapIndexed(
         mapFn_1_curried(hookPalace),
         series);

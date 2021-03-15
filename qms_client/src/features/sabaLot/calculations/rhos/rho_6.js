@@ -7,7 +7,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
 // 'Rin' stands for Rho Input.
-export const parseRin = rin => {
+export const getDelta_1 = rin => {
 
   const regex = /(.)月(..)日(.*)之(.*)卦/;
 
@@ -39,10 +39,18 @@ export const parseRin = rin => {
     R.propEq('lhName', lhna),
     lhContexts_5);
 
+  if(R.isNil(lhca)){
+    throw new Error('Long Hook A is wrong.');
+  }
+
   // Long Hook Context B
   const lhcb = R.find(
     R.propEq('lhName', lhnb),
     lhContexts_5);
+
+  if(R.isNil(lhcb)){
+    throw new Error('Long Hook B is wrong.');
+  }
 
   const acdFn = idx => {
     const csi_1 = lhca.crosses[idx].csi;

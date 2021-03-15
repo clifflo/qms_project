@@ -75,10 +75,10 @@ const getNattos = () => {
 export const nattos = getNattos();
 
 // Short Hook Alternative
-export const shAltSentence = '地雷水澤山火風天';
+export const shAltSce = '地雷水澤山火風天';
 
 // Short Hook Ori
-export const shOriSentence = '坤震坎兌艮離巽乾';
+export const shOriSce = '坤震坎兌艮離巽乾';
 
 const lhParagraph = RA.concatAll([
   '乾為天,天風姤,天山遯,天地否,風地觀,山地剝,火地晉,火天大有,',
@@ -96,7 +96,7 @@ const getShNumAltIndex =
   (shAlt) => {
   return getIdx(
     shAlt,
-    shAltSentence);
+    shAltSce);
 }
 
 export const getLhContexts_1 = () => {
@@ -125,10 +125,10 @@ export const getLhContexts_1 = () => {
       getShNumAltIndex(ishAlt);
 
     const eshOri =
-      shOriSentence[eshNum];
+      shOriSce[eshNum];
 
     const ishOri =
-      shOriSentence[ishNum];
+      shOriSce[ishNum];
 
     const lhNum =
       (eshNum * 8) +

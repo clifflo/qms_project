@@ -83,4 +83,3 @@ const getRpsSet = () => {
 }
 
 export const rpsSet = getRpsSet();
-console.log(rpsSet);
