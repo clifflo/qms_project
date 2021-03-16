@@ -5,8 +5,8 @@ import { SabaLot } from './features/sabaLot/SabaLot';
 import buildKappaTable
   from './features/sabaLot/calculations/kappas/kappaTable';
 import JSONTree from 'react-json-tree';
-import { getDelta_2 } from
-  './features/sabaLot/calculations/rhos/rho_7';
+import { getDelta_1 } from
+  './features/sabaLot/calculations/rhos/rho_6';
 
 function App() {
 
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <SabaLot />
       <div className="Saba">
-        <JSONTree data={getDelta_2('申月丙子日明夷之小過卦')} />
+        <JSONTree data={getDelta_1('申月丙子日明夷之小過卦')} />
       </div>
     </div>
   );

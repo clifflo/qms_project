@@ -192,10 +192,6 @@ export const getElr = (source, target) => {
     throw new Error('Target elemental must be string.');
   }
 
-
-
-
-
   if(!isValidElem(source)){
     throw new Error(
       `${source} is not a valid source elemental.`);
