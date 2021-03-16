@@ -9,7 +9,7 @@ import {
 } from '../plastics/plastic_1';
 import {
   moveBranch
-} from '../plastics/plastic_3';
+} from '../plastics/plastic_3a';
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 

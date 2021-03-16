@@ -12,7 +12,7 @@ import {
 } from '../plastics/plastic_1';
 import {
   branchSlider
-} from '../plastics/plastic_3';
+} from '../plastics/plastic_3a';
 
 const buildMagnet = (magnet, crabShell) => {
 

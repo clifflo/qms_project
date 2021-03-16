@@ -40,12 +40,6 @@ export const branchContext = {
 
 export const branchOrder = '子丑寅卯辰巳午未申酉戌亥';
 
-// Branch Elemental Order
-export const belemOrder = '水土木木土火火土金金土水';
-
-// Trunk Elemental Order
-export const telemOrder = '木木火火土土金金水水';
-
 export const idxOfTrunk = (trunk) => {
   return getIdx(trunk, trunkOrder)
 }
@@ -79,6 +73,31 @@ export const idxOfBranch = (branch) => {
   return getIdx(branch, branchOrder)
 }
 
+const getBelem = branch => {
+  const bri_1 = idxOfBranch(branch);
+  const bri_2 = (bri_1 + 1);
+  if (bri_2 % 3 == 2){
+    return '土';
+  }
+  else {
+    const elei_1 = Math.floor(bri_2 / 3);
+    let elei_2;
+    if(elei_1 > 2){
+      elei_2 = elei_1 + 1;
+    }
+    else {
+      elei_2 = elei_1;
+    }
+    return itemOfElem(elei_2 + 1)
+  }
+}
+
+const getTelem = trunk => {
+  const tki = idxOfTrunk(trunk);
+  const elei = Math.floor(tki / 2) + 2;
+  return itemOfElem(elei);
+}
+
 export function getElem(plastic){
   if(R.isNil(plastic)){
     throw new Error(
@@ -86,56 +105,19 @@ export function getElem(plastic){
   }
   if(isValidTrunk(plastic)){
     const trunk = plastic;
-    return telemOrder[idxOfTrunk(trunk)];
+    return getTelem(trunk);
   }
   else if(isValidBranch(plastic)){
     const branch = plastic;
-    return belemOrder[idxOfBranch(branch)];
+    return getBelem(branch);
   }
   else {
     throw new Error(`'${plastic}' is not plastic.`);
   }
 }
 
-export const comparePelem = (source, target) => {
-  try {
-
-    const sElem = getElem(source);
-    const tElem = getElem(target);
-
-    const relation = getElr(
-      sElem, tElem)
-    return relation;
-  }
-  catch(err){
-    console.error(err);
-    throw new Error('Cannot compare elemental.')
-  }
-
-}
-
-export function comparePlasticLiturgy(source, target){
-  try {
-    if(R.isNil(source)){
-      throw 'Source is nil for plastic liturgy.'
-    }
-
-    if(R.isNil(target)){
-      throw 'Target is nil for plastic liturgy.'
-    }
-
-    const sourceLiturgy = getPlasticLiturgy(source);
-    const targetLiturgy = getPlasticLiturgy(target);
-    const isSameLiturgy = sourceLiturgy == targetLiturgy;
-    return {
-      isSameLiturgy,
-      sourceLiturgy,
-      targetLiturgy
-    }
-  }
-  catch(err){
-    throw 'Cannot get plastic liturgy due to: ' + err;
-  }
+export const testTrunk = () => {
+  return R.map(getTelem, trunkOrder);
 }
 
 export function itemOfTrunk(index){

@@ -54,7 +54,6 @@ export const getChe = (elem, branch) => {
 export const chbOrder =　
   '亥午寅酉寅酉巳子申卯';
 
-
 // Get Betapsi Series
 export const getBpse = (betapsi) => {
 
