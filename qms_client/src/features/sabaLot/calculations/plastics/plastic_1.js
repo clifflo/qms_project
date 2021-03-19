@@ -116,10 +116,6 @@ export function getElem(plastic){
   }
 }
 
-export const testTrunk = () => {
-  return R.map(getTelem, trunkOrder);
-}
-
 export function itemOfTrunk(index){
   return item(trunkOrder, index);
 }

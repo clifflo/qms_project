@@ -118,21 +118,21 @@ export const getLhContexts_1 = () => {
       lhName = R.drop(2, sentence);
     }
 
-    const eshNum =
+    const eshIdx =
       getShNumAltIndex(eshAlt);
 
-    const ishNum =
+    const ishIdx =
       getShNumAltIndex(ishAlt);
 
     const eshOri =
-      shOriSce[eshNum];
+      shOriSce[eshIdx];
 
     const ishOri =
-      shOriSce[ishNum];
+      shOriSce[ishIdx];
 
-    const lhNum =
-      (eshNum * 8) +
-      ishNum;
+    const lhn =
+      (eshIdx * 8) +
+      ishIdx;
 
     return {
       eshAlt,
@@ -140,9 +140,9 @@ export const getLhContexts_1 = () => {
       eshOri,
       ishOri,
       lhName,
-      eshNum,
-      ishNum,
-      lhNum
+      eshIdx,
+      ishIdx,
+      lhn
     }
   }
 

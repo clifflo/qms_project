@@ -6,6 +6,7 @@ import {
   getDelta_1
 } from './rho_6';
 
+
 // Handle Rho's Day Construct.
 // Flush, Arrestment, Pause and Compound will be handled.
 // Hit will be ignored.

@@ -103,10 +103,10 @@ export const getLhContexts_2 = (lhs) => {
     try {
 
       const eshBinary = decimalToBinary(
-        lh.eshNum, 3);
+        lh.eshIdx, 3);
 
       const ishBinary = decimalToBinary(
-        lh.ishNum, 3);
+        lh.ishIdx, 3);
 
 
       let ems; // External Mustard Series
@@ -141,7 +141,7 @@ export const getLhContexts_2 = (lhs) => {
       const fms = ems + ims;
 
       const lhBinary = decimalToBinary(
-        lh.lhNum,
+        lh.lhn,
         6);
 
       const mapFn = R.curry(buildCrosses)
