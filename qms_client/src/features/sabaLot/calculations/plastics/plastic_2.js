@@ -4,7 +4,8 @@ import {
   adjust,
   item,
   getIdx
-} from '../utils';
+} from '../utils/util_1';
+
 import {
   isValidBranch,
   isValidTrunk,

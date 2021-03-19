@@ -1,18 +1,26 @@
 import {
+  idxOfBranch,
+  idxOfTrunk,
+  itemOfTrunk,
+  itemOfBranch
+} from './plastic_1';
+import {
   getBpse
 } from './plastic_2';
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 
 // Get Betapsi Index
 export const idxOfBtp = (betapsi) => {
 
   try{
     const bsfn = getBpse(betapsi).bsfn;
-    const brix = idxOfBranch(bsfn[1]);
-    const tkix = idxOfTrunk(betapsi[0]);
+    const bridx = idxOfBranch(bsfn[1]);
+    const tkidx = idxOfTrunk(betapsi[0]);
 
-    const bpseIdx = ((12 - branchIdx) % 12) / 2;
-    const bpix = (bpseIdx * 10) + tkix;
-    return bpix;
+    const bpseIdx = ((12 - bridx) % 12) / 2;
+    const bpidx = (bpseIdx * 10) + tkidx;
+    return bpidx;
   }
   catch(err){
     console.error(err);
@@ -34,15 +42,15 @@ export const itemOfBtp = idx => {
     );
   }
 
-  if(!idx > 59){
+  if(idx > 59){
     throw new Error(
-      'Betapsi index should not be bigger than 59.';
+      'Betapsi index should not be bigger than 59.'
     )
   }
 
-  if(!idx < 0){
+  if(idx < 0){
     throw new Error(
-      'Betapsi index should not be smaller than 0.';
+      'Betapsi index should not be smaller than 0.'
     )
   }
 
@@ -64,13 +72,9 @@ export const itemOfBtp = idx => {
     return trunk + branch;
   }
   catch(err){
-    console.log(error);
+    console.log(err);
     throw new Error('Cannot get Betapsi item.');
   }
 
-
-}
-
-export const testBpix = date => {
 
 }

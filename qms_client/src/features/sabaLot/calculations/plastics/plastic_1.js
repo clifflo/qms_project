@@ -4,7 +4,7 @@ import {
   adjust,
   item,
   getIdx
-} from '../utils';
+} from '../utils/util_1';
 
 export const trunkContext = {
   '甲': 'Beta',
