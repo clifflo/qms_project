@@ -9,8 +9,10 @@ import {
 // Get Long Hook Binaries A and B
 export const castRhoLots = (lhba, lhbb) => {
 
-  const lhnuma = binaryToDecimal('b' + lhba);
-  const lhnb = binaryToDecimal('b' + lhbb);
+  const lhia = binaryToDecimal('b' + lhba);
+  const lhib = binaryToDecimal('b' + lhbb);
 
-  const lhna = getLhcByIdx(lhia);
+  const lhna = getLhcByIdx(lhia).lhn;
+  const lhnb = getLhcByIdx(lhib).lhn;
+
 }

@@ -9,11 +9,11 @@ const getBlcSet = () => {
 
   const mapFn = i => {
 
-    const bri_2 = i * 3;
-    const bri_1 = bri_2 - 4;
-    const bri_3 = bri_2 + 4;
-    const bris = [bri_1, bri_2, bri_3];
-    const branches = R.map(itemOfBranch, bris);
+    const brix_2 = i * 3;
+    const brix_1 = brix_2 - 4;
+    const brix_3 = brix_2 + 4;
+    const brixs = [brix_1, brix_2, brix_3];
+    const branches = R.map(itemOfBranch, brixs);
     const celem = getElem(branches[1]);
     return {
       branches,
@@ -43,11 +43,11 @@ const getMtgSet = () => {
     // of three.
 
     const j = i * 3;
-    const bri_1 = j + 2;
-    const bri_2 = j + 3;
-    const bri_3 = j + 4;
-    const bris = [bri_1, bri_2, bri_3];
-    const branches = R.map(itemOfBranch, bris);
+    const brix_1 = j + 2;
+    const brix_2 = j + 3;
+    const brix_3 = j + 4;
+    const brixs = [brix_1, brix_2, brix_3];
+    const branches = R.map(itemOfBranch, brixs);
     const melem = getElem(branches[1]);
 
     return {

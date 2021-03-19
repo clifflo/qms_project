@@ -6,8 +6,7 @@ import {
 } from './rho_1';
 import {
   decimalToBinary,
-  binaryToDecimal,
-  getIndexedList
+  binaryToDecimal
 } from '../utils/util_3';
 
 const baseHookSeriesSce =

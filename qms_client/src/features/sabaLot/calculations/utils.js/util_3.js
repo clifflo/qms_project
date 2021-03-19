@@ -38,13 +38,3 @@ export const binaryToDecimal = (binaryNumber) => {
 
   return parseInt(R.drop(1, binaryNumber), 2).toString(10);
 }
-
-export const getIndexedList = (list) => {
-  const mapFn = (value, index) => {
-    return {
-      index,
-      value
-    }
-  }
-  return R.map(mapFn, list);
-}
