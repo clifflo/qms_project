@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
-import { decimalToBinary } from '../utils/util_3';
+import { decimalToBinary } from '../utils/util_2';
 import {
   lhContexts_1,
   nattos,

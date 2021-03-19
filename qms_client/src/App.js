@@ -3,8 +3,8 @@ import './App.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { SabaLot } from './features/sabaLot/SabaLot';
 import JSONTree from 'react-json-tree';
-import { itemOfBtp } from
-  './features/sabaLot/calculations/plastics/plastic_3';
+import { getDbp } from
+  './features/sabaLot/calculations/plastics/plastic_6';
 import * as R from 'ramda';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <SabaLot />
       <div className="Saba">
 
-        <JSONTree data={1} />
+        <JSONTree data={getDbp('2021-3-19')} />
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import {
 import {
   decimalToBinary,
   binaryToDecimal
-} from '../utils/util_3';
+} from '../utils/util_2';
 
 const baseHookSeriesSce =
   '姤,遯,否,觀,剝,晉,大有';

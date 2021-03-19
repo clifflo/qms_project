@@ -5,14 +5,16 @@ import {
 } from './plastic_1';
 
 // Branch Large Compound
+// 地支三合
 const getBlcSet = () => {
 
   const mapFn = i => {
 
-    const brix_2 = i * 3;
-    const brix_1 = brix_2 - 4;
-    const brix_3 = brix_2 + 4;
-    const brixs = [brix_1, brix_2, brix_3];
+    // Branch Index
+    const bridx_2 = i * 3;
+    const bridx_1 = bridx_2 - 4;
+    const bridx_3 = bridx_2 + 4;
+    const brixs = [bridx_1, bridx_2, bridx_3];
     const branches = R.map(itemOfBranch, brixs);
     const celem = getElem(branches[1]);
     return {
@@ -35,6 +37,7 @@ const getBlcSet = () => {
 export const blcSet = getBlcSet();
 
 // Meeting Set
+// 地支三會
 const getMtgSet = () => {
 
   const mapFn = i => {
@@ -43,10 +46,10 @@ const getMtgSet = () => {
     // of three.
 
     const j = i * 3;
-    const brix_1 = j + 2;
-    const brix_2 = j + 3;
-    const brix_3 = j + 4;
-    const brixs = [brix_1, brix_2, brix_3];
+    const bridx_1 = j + 2;
+    const bridx_2 = j + 3;
+    const bridx_3 = j + 4;
+    const brixs = [bridx_1, bridx_2, bridx_3];
     const branches = R.map(itemOfBranch, brixs);
     const melem = getElem(branches[1]);
 
@@ -69,6 +72,7 @@ const getMtgSet = () => {
 export const mtgSet = getMtgSet();
 
 // Arrestment Set
+// 地支相刑
 export const arrtSet = {
   '寅': '巳',
   '巳': '申',
