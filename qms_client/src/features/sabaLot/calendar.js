@@ -2,6 +2,8 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import { item } from './calculations/utils/util_1';
 import { itemOfBtp } from './calculations/plastics/plastic_3';
+import moment from 'moment';
+import { getDbp } from './calculations/plastics/plastic_6';
 
 const calr_1 =
 [
@@ -187,14 +189,14 @@ const calr_1 =
   }
 ]
 
-export const calr_2 = () => {
+const getCalr_2 = () => {
 
   const moNames_1 =
     '正,二,三,四,五,六,七,八,九,十,十一,十二';
 
   const moNames_2 = R.split(',', moNames_1);
 
-  const mapFn_1n = (yr_1, betapsi, mo_1, idx) => {
+  const mapFn_1n = (yr_1, ybp, mo_1, idx) => {
 
     const mo_2 = R.slice(0, 2, mo_1);
     let yr_2;
@@ -213,7 +215,7 @@ export const calr_2 = () => {
     const moName = item(moNames_2, idx);
     return {
       year: yr_1,
-      betapsi,
+      ybp,
       moName,
       moStart
     }
@@ -226,29 +228,140 @@ export const calr_2 = () => {
     // Months without leaps
     const mswl = R.dropLast(1, yrContext.months);
 
-    const leap = R.takeLast(1, yrContext.months)[0];
+    const leap_1 = R.takeLast(1, yrContext.months)[0];
 
     const year = parseInt(yrContext.year);
 
     // Betapsi Index
     const bpix = (year - 1984) % 60;
-    const betapsi = itemOfBtp(bpix);
+    const ybp = itemOfBtp(bpix);
 
     const months_1 = RA.mapIndexed(
-      mapFn_1c(yrContext.year)(betapsi),
+      mapFn_1c(yrContext.year)(ybp),
       mswl);
 
+    let months_2;
+    let leap_2;
 
-
+    if(leap_1 != '—'){
+      const leapSplit = R.split(':', leap_1);
+      leap_2 = year + '-' +
+        R.drop(1, R.take(6, leapSplit[1]));
+    }
+    else {
+      leap_2 = '---'
+    }
 
     return {
       year,
-      betapsi,
-      months_1,
-      leap
+      ybp,
+      months: months_1,
+      leap: leap_2
     }
   }
 
   return R.map(mapFn_2, calr_1);
 
+}
+
+export const calr_2 = getCalr_2();
+
+const getCalr_3 = () => {
+
+  const months_3 = RA.concatAll(
+    R.map(year => year.months, calr_2));
+
+  let months_4 = [];
+
+  for(var i = 0; i < months_3.length - 1; i++){
+    const moEnd = months_3[i+1].moStart;
+    months_4.push({
+      ...months_3[i],
+      moEnd
+    })
+  }
+
+  return months_4;
+}
+
+export const calr_3 = getCalr_3();
+
+const getCalr_4 = () => {
+
+  const mapFn = month => {
+
+    const yrContext = R.find(
+      R.propEq('year', parseInt(month.year)),
+      calr_2);
+
+    const leap = yrContext.leap;
+
+    if(leap == '---'){
+      return {
+        ...month,
+        yearHasLeap: false
+      }
+    }
+    else {
+
+      const isLeap = moment(leap)
+        .isBetween(month.moStart, month.moEnd);
+
+      if(!isLeap){
+        return {
+          ...month,
+          yearHasLeap: true,
+          isLeap: false
+        }
+      }
+      else {
+        return {
+          ...month,
+          yearHasLeap: true,
+          isLeap: true,
+          leap
+        }
+      }
+    }
+  }
+
+  return R.map(mapFn, calr_3);
+
+}
+
+export const calr_4 = getCalr_4();
+
+export const checkDay = date => {
+
+  const mapper = {
+    '正':'寅',
+    '二':'卯',
+    '三':'辰',
+    '四':'巳',
+    '五':'午',
+    '六':'未',
+    '七':'申',
+    '八':'酉',
+    '九':'戌',
+    '十':'亥',
+    '十一':'子',
+    '十二':'丑'
+  }
+
+
+  const findFn = _month => {
+    const result = moment(date)
+      .isBetween(_month.moStart, _month.moEnd);
+
+    return result;
+  }
+
+  const month = R.find(findFn, calr_4);
+  const dbp = getDbp(date);
+  return {
+    date,
+    ...month,
+    dbp,
+    branch: mapper[month.moName]
+  }
 }

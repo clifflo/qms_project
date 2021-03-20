@@ -6,7 +6,7 @@ import JSONTree from 'react-json-tree';
 import { getDbp } from
   './features/sabaLot/calculations/plastics/plastic_6';
 import * as R from 'ramda';
-import { calr_2 } from
+import { checkDay } from
   './features/sabaLot/calendar';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       <SabaLot />
       <div className="Saba">
 
-        <JSONTree data={calr_2()} />
+        <JSONTree data={checkDay('2021-3-21')} />
       </div>
     </div>
   );
