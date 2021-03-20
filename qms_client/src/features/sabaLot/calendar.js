@@ -4,6 +4,11 @@ import { item } from './calculations/utils/util_1';
 import { itemOfBtp } from './calculations/plastics/plastic_3';
 import moment from 'moment';
 import { getDbp } from './calculations/plastics/plastic_6';
+import {
+  idxOfTrunk,
+  itemOfTrunk,
+  itemOfBranch
+} from './calculations/plastics/plastic_1';
 
 const calr_1 =
 [
@@ -196,7 +201,7 @@ const getCalr_2 = () => {
 
   const moNames_2 = R.split(',', moNames_1);
 
-  const mapFn_1n = (yr_1, ybp, mo_1, idx) => {
+  const mapFn_1n = (yr_1, ybp, mo_1, midx) => {
 
     const mo_2 = R.slice(0, 2, mo_1);
     let yr_2;
@@ -212,12 +217,13 @@ const getCalr_2 = () => {
     }
 
     const moStart = `${yr_2}-${mo_3}-${day}`;
-    const moName = item(moNames_2, idx);
+    const moName = item(moNames_2, midx);
     return {
       year: yr_1,
       ybp,
       moName,
-      moStart
+      moStart,
+      midx
     }
   }
 
@@ -305,7 +311,11 @@ const getCalr_4 = () => {
     else {
 
       const isLeap = moment(leap)
-        .isBetween(month.moStart, month.moEnd);
+        .isBetween(
+          month.moStart,
+          month.moEnd,
+          undefined,
+          '[)');
 
       if(!isLeap){
         return {
@@ -333,35 +343,45 @@ export const calr_4 = getCalr_4();
 
 export const checkDay = date => {
 
-  const mapper = {
-    '正':'寅',
-    '二':'卯',
-    '三':'辰',
-    '四':'巳',
-    '五':'午',
-    '六':'未',
-    '七':'申',
-    '八':'酉',
-    '九':'戌',
-    '十':'亥',
-    '十一':'子',
-    '十二':'丑'
-  }
-
-
   const findFn = _month => {
     const result = moment(date)
-      .isBetween(_month.moStart, _month.moEnd);
+      .isBetween(
+        _month.moStart,
+        _month.moEnd,
+        undefined,
+        '[)');
 
     return result;
   }
 
   const month = R.find(findFn, calr_4);
   const dbp = getDbp(date);
+  const atLeap = moment(date)
+    .isBetween(month.leap, month.moEnd, undefined, '[)');
+
+  const ybp = month.ybp;
+
+  // Trunk of year
+  const tkyr = ybp[0];
+  const tkyi = idxOfTrunk(tkyr) % 5;
+
+  // Index of start trunk of year
+  const styi = (tkyi + 1) * 2;
+  const stoy = itemOfTrunk(styi);
+
+  console.log(stoy);
+  // Month's trunk index
+  const mtix = styi + month.midx;
+  const mtrk = itemOfTrunk(mtix);
+  const mbix = month.midx + 2;
+  const mbrh = itemOfBranch(mbix);
+  const mbp = mtrk + mbrh;
+
   return {
     date,
     ...month,
     dbp,
-    branch: mapper[month.moName]
+    mbp,
+    atLeap
   }
 }
