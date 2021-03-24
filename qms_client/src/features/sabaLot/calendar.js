@@ -341,10 +341,11 @@ const getCalr_4 = () => {
 
 export const calr_4 = getCalr_4();
 
-export const checkDay = date => {
+// Get Wan Nian Li Day
+const getWniDay = dateMoment => {
 
   const findFn = _month => {
-    const result = moment(date)
+    const result = dateMoment
       .isBetween(
         _month.moStart,
         _month.moEnd,
@@ -355,8 +356,8 @@ export const checkDay = date => {
   }
 
   const month = R.find(findFn, calr_4);
-  const dbp = getDbp(date);
-  const atLeap = moment(date)
+  const dbp = getDbp(dateMoment);
+  const atLeap = dateMoment
     .isBetween(month.leap, month.moEnd, undefined, '[)');
 
   const ybp = month.ybp;
@@ -369,7 +370,6 @@ export const checkDay = date => {
   const styi = (tkyi + 1) * 2;
   const stoy = itemOfTrunk(styi);
 
-  console.log(stoy);
   // Month's trunk index
   const mtix = styi + month.midx;
   const mtrk = itemOfTrunk(mtix);
@@ -378,10 +378,15 @@ export const checkDay = date => {
   const mbp = mtrk + mbrh;
 
   return {
-    date,
+    date: dateMoment.format('YYYY-MM-DD'),
     ...month,
     dbp,
     mbp,
     atLeap
   }
+}
+
+// Get Wan Nian Li Today
+export const getWToday = () => {
+  return getWniDay(moment());
 }

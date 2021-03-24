@@ -6,8 +6,9 @@ import JSONTree from 'react-json-tree';
 import { getDbp } from
   './features/sabaLot/calculations/twigs/twig_6';
 import * as R from 'ramda';
-import { checkDay } from
+import { getWToday } from
   './features/sabaLot/calendar';
+
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
       <SabaLot />
       <div className="Saba">
 
-        <JSONTree data={checkDay('2021-3-24')} />
+        <JSONTree data={getWToday()} />
       </div>
     </div>
   );
