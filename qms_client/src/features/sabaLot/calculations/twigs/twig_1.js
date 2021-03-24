@@ -54,18 +54,18 @@ export const getBranchLiturgy = (branch) => {
     'Alpha': 'Omega';
 }
 
-export const getPlasticLiturgy = (plastic) => {
+export const getTwigLiturgy = (twig) => {
 
-  if(isValidTrunk(plastic)){
-    const trunk = plastic;
+  if(isValidTrunk(twig)){
+    const trunk = twig;
     return getTrunkLiturgy(trunk);
   }
-  else if(isValidBranch(plastic)){
-    const branch = plastic;
+  else if(isValidBranch(twig)){
+    const branch = twig;
     return getBranchLiturgy(branch);
   }
   else {
-    throw new Error(`${plastic} is not a valid plastic.`);
+    throw new Error(`${twig} is not a valid twig.`);
   }
 }
 
@@ -98,21 +98,21 @@ const getTelem = trunk => {
   return itemOfElem(elei);
 }
 
-export function getElem(plastic){
-  if(R.isNil(plastic)){
+export function getElem(twig){
+  if(R.isNil(twig)){
     throw new Error(
-      'The input is nil for plastic.');
+      'The input is nil for twig.');
   }
-  if(isValidTrunk(plastic)){
-    const trunk = plastic;
+  if(isValidTrunk(twig)){
+    const trunk = twig;
     return getTelem(trunk);
   }
-  else if(isValidBranch(plastic)){
-    const branch = plastic;
+  else if(isValidBranch(twig)){
+    const branch = twig;
     return getBelem(branch);
   }
   else {
-    throw new Error(`'${plastic}' is not plastic.`);
+    throw new Error(`'${twig}' is not twig.`);
   }
 }
 

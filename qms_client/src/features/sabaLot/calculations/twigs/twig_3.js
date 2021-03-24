@@ -3,10 +3,10 @@ import {
   idxOfTrunk,
   itemOfTrunk,
   itemOfBranch
-} from './plastic_1';
+} from './twig_1';
 import {
   getBpse
-} from './plastic_2';
+} from './twig_2';
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 

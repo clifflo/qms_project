@@ -7,7 +7,7 @@ import {
 import {
   itemOfBranch,
   idxOfBranch
-} from '../plastics/plastic_1';
+} from '../twigs/twig_1';
 
 const nattoParagraph =
   '乾金甲子壬順佈,坎水戊寅戊順佈,艮土丙辰丙順佈,震木庚子庚順佈,' +

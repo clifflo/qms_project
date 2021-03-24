@@ -7,7 +7,7 @@ import {
   getElr,
   idxOfTrunk,
   itemOfTrunk
-} from '../plastics/plastic_1';
+} from '../twigs/twig_1';
 
 const getLhContexts_5 = () => {
 

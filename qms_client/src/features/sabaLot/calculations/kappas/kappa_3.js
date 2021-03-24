@@ -1,8 +1,8 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  comparePlasticLiturgy
-} from '../plastics/plastic_1';
+  compareTwigLiturgy
+} from '../twigs/twig_1';
 import {
   kappaApplyPartial
 } from './kappa_2';
@@ -11,7 +11,7 @@ export function buildPalmDoor_2(kappaTable){
 
   const compareFn = (source, columnIndex) => {
     try {
-      const comparison = comparePlasticLiturgy(
+      const comparison = compareTwigLiturgy(
         source, kappaTable.dayTrunk);
       const nectarWorker = comparison.isSameLiturgy ?
         'Bee' : 'Butterfly';

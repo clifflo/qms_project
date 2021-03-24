@@ -9,7 +9,7 @@ import {
 import {
   comparePelem,
   getElem
-} from '../plastics/plastic_1';
+} from '../twigs/twig_1';
 
 export const kappaApplyFull = (fn, kappaTable) => {
   return RA.mapIndexed(

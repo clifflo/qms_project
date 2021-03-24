@@ -14,7 +14,7 @@ import {
   idxOfElem,
   idxOfBranch,
   idxOfTrunk
-} from './plastic_1';
+} from './twig_1';
 
 const chosenSentence =
   '長生,沐浴,冠帶,臨官,帝旺,衰,病,長死,墓,絕,胎,養';

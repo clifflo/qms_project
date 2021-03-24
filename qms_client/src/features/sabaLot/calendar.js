@@ -1,14 +1,14 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import { item } from './calculations/utils/util_1';
-import { itemOfBtp } from './calculations/plastics/plastic_3';
+import { itemOfBtp } from './calculations/twigs/twig_3';
 import moment from 'moment';
-import { getDbp } from './calculations/plastics/plastic_6';
+import { getDbp } from './calculations/twigs/twig_6';
 import {
   idxOfTrunk,
   itemOfTrunk,
   itemOfBranch
-} from './calculations/plastics/plastic_1';
+} from './calculations/twigs/twig_1';
 
 const calr_1 =
 [

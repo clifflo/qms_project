@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { SabaLot } from './features/sabaLot/SabaLot';
 import JSONTree from 'react-json-tree';
 import { getDbp } from
-  './features/sabaLot/calculations/plastics/plastic_6';
+  './features/sabaLot/calculations/twigs/twig_6';
 import * as R from 'ramda';
 import { checkDay } from
   './features/sabaLot/calendar';
@@ -16,7 +16,7 @@ function App() {
       <SabaLot />
       <div className="Saba">
 
-        <JSONTree data={checkDay('2021-3-26')} />
+        <JSONTree data={checkDay('2021-3-24')} />
       </div>
     </div>
   );

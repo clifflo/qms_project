@@ -1,5 +1,5 @@
-import { isValidBranch } from '../plastics/plastic_1';
-import { getBpse } from '../plastics/plastic_2';
+import { isValidBranch } from '../twigs/twig_1';
+import { getBpse } from '../twigs/twig_2';
 import { lhContexts_5 } from './rho_4';
 import { rpsSet, rpalOrder } from './rho_5';
 import { item } from '../utils/util_1';

@@ -6,10 +6,10 @@ import {
   getIdx,
   isValidBranch,
   comparePelem
-} from '../plastics/plastic_1';
+} from '../twigs/twig_1';
 import {
   moveBranch
-} from '../plastics/plastic_3a';
+} from '../twigs/twig_3a';
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 

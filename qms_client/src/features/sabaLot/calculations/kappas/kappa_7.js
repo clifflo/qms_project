@@ -9,10 +9,10 @@ import {
   getElem,
   getElemRel,
   isValidBranch
-} from '../plastics/plastic_1';
+} from '../twigs/twig_1';
 import {
   branchSlider
-} from '../plastics/plastic_3a';
+} from '../twigs/twig_3a';
 
 const buildMagnet = (magnet, crabShell) => {
 
@@ -43,19 +43,19 @@ const buildMagnet = (magnet, crabShell) => {
     R.propEq('crabShell', crabShell), crabFarm);
 
   const crabBodys = R.map(crab => crab.crabBody, crabs);
-  const rawCrabPlastics = R.join('',R.append(crabShell, crabBodys));
-  const builtCrabPlastics = R.map(
+  const rawCrabTwigs = R.join('',R.append(crabShell, crabBodys));
+  const builtCrabTwigs = R.map(
     mapFn,
-    rawCrabPlastics);
+    rawCrabTwigs);
 
   const ironCount = R.filter(
-    R.prop('isIron'), builtCrabPlastics).length;
+    R.prop('isIron'), builtCrabTwigs).length;
 
   return {
     magnet,
     crabShell,
-    rawCrabPlastics,
-    builtCrabPlastics,
+    rawCrabTwigs,
+    builtCrabTwigs,
     ironCount
   }
 }

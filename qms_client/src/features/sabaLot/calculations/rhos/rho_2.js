@@ -7,7 +7,7 @@ import {
 } from './rho_1';
 import {
   getElem
-} from '../plastics/plastic_1';
+} from '../twigs/twig_1';
 
 const getTruncatedNatto = (
   shOri,
