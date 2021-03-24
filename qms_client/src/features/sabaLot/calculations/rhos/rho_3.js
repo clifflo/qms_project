@@ -28,24 +28,24 @@ export const getLhcByName = (lhName) => {
   return lhContext;
 }
 
-export const getLhcByIdx = (lhn) => {
+export const getLhcByIdx = lhIdx => {
 
   const lhContext = R.find(
-    R.propEq('lhn', lhn),
+    R.propEq('lhIdx', lhIdx),
     lhContexts_1);
 
-  if(R.isNil(lhn)){
+  if(R.isNil(lhIdx)){
     throw new Error('Long hook number should not be nil.');
   }
 
-  if(!RA.isNumber(lhn)){
+  if(!RA.isNumber(lhIdx)){
     throw new Error(
       'Long hook number must be a number.');
   }
 
   if(R.isNil(lhContext)){
     throw new Error(
-      `${lhn} is not a valid long hook number.`);
+      `${lhIdx} is not a valid long hook number.`);
   }
 
   return lhContext;
@@ -53,21 +53,26 @@ export const getLhcByIdx = (lhn) => {
 
 const getHookGapBinarySet = () => {
 
-  const sourceLhNum = 63;
+  const sourceLhIdx = 63;
 
   const mapFn = (targetLhName) => {
 
-    const targetLhNum =
+    const targetLhIdx =
       getLhcByName(targetLhName)
-      .lhn;
+      .lhIdx;
 
-    if(R.isNil(targetLhNum)){
+    if(R.isNil(targetLhIdx)){
       throw new Error(
         'Target long hook number should not be nil.');
     }
 
+    if(!RA.isNumber(targetLhIdx)){
+      throw new Error(
+        'How come the Long Hook Index becomes a string?');
+    }
+
     const gapBinary = decimalToBinary(
-      sourceLhNum ^ targetLhNum,
+      sourceLhIdx ^ targetLhIdx,
       6);
 
     return gapBinary;
@@ -85,6 +90,7 @@ const getHookGapBinarySet = () => {
 
 const hookGapBinarySet = getHookGapBinarySet();
 
+
 const getHookPalaces = () => {
 
   const mapFn_1 = (shortHookName, gapBinary, index) => {
@@ -96,7 +102,8 @@ const getHookPalaces = () => {
       const puhName = '純' + shortHookName;
       const puhNumber =
         getLhcByName(puhName)
-        .lhn;
+        .lhIdx;
+
       if(R.isNil(puhNumber)){
         throw new Error(
           'Pure hook number should not be nil.');

@@ -141,7 +141,7 @@ export const getLhContexts_2 = (lhs) => {
       const fms = ems + ims;
 
       const lhBinary = decimalToBinary(
-        lh.lhn,
+        lh.lhIdx,
         6);
 
       const mapFn = R.curry(buildCrosses)

@@ -130,7 +130,7 @@ export const getLhContexts_1 = () => {
     const ishOri =
       shOriSce[ishIdx];
 
-    const lhn =
+    const lhIdx =
       (eshIdx * 8) +
       ishIdx;
 
@@ -142,7 +142,7 @@ export const getLhContexts_1 = () => {
       lhName,
       eshIdx,
       ishIdx,
-      lhn
+      lhIdx
     }
   }
 
