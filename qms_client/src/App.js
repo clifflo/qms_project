@@ -17,7 +17,7 @@ function App() {
       <SabaLot />
       <div className="Saba">
 
-        <JSONTree data={efRhoLots_2('8721')} />
+        <JSONTree data={efRhoLots_2('7622')} />
       </div>
     </div>
   );

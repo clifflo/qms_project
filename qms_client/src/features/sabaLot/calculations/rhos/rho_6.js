@@ -8,123 +8,10 @@ import { item } from '../utils/util_1';
 import { getWToday } from '../calendar';
 import { getLhcByIdx } from './rho_3';
 import { idxOfBranch } from '../twigs/twig_1';
+import { getDelta_1, getDelta_2 }
+  from './rho_7';
 
 // 'Rin' stands for Rho Input.
-const getDelta_1 = rin => {
-
-  const regex = /(.)月(..)日(.*)之(.*)卦/;
-
-  // Capturing group
-  const cgr = rin.match(regex);
-
-  if(R.isNil(cgr)){
-    throw new Error(
-      'You have typed the rho input incorrectly.');
-  }
-
-  const month = cgr[1];
-
-  if(!isValidBranch(month)){
-    throw new Error(
-      `${month} is not a valid month.`
-    )
-  }
-  const day = cgr[2];
-
-  // Long Hook Name A
-  const lhna = cgr[3];
-
-  // Long Hook Name B
-  const lhnb = cgr[4];
-
-  // Long Hook Context A
-  const lhca = R.find(
-    R.propEq('lhName', lhna),
-    lhContexts_5);
-
-  if(R.isNil(lhca)){
-    throw new Error('Long Hook A is wrong.');
-  }
-
-  // Long Hook Context B
-  const lhcb = R.find(
-    R.propEq('lhName', lhnb),
-    lhContexts_5);
-
-  if(R.isNil(lhcb)){
-    throw new Error('Long Hook B is wrong.');
-  }
-
-  const acdFn = idx => {
-    const csi_1 = lhca.crosses[idx].csi;
-    const csi_2 = lhcb.crosses[idx].csi;
-
-    // Is Activated
-    const isAcd = csi_1 != csi_2;
-    return isAcd;
-  }
-
-  const acdl = R.map(acdFn, R.range(0, 6));
-
-  const crossFn = (cross_1, idx, list) => {
-    let cross_2 = Object.assign({}, cross_1);
-    cross_2.cst = acdl[idx] ? 'Strike' : 'Silent';
-
-    // Rho Paladin Start Position
-    const rpsIdx = R.find(
-      R.propEq('trunk', day[0]), rpsSet).rpsIdx;
-
-    // Rho Paladin
-    const rpal = item(rpalOrder, rpsIdx + idx + 1);
-    cross_2.rpal = rpal;
-
-    return cross_2;
-  }
-
-
-  try{
-    // Day Betapsi Series
-    const dbse = getBpse(day);
-    const crsa = RA.mapIndexed(crossFn, lhca.crosses);
-    const crsb = RA.mapIndexed(crossFn, lhcb.crosses);
-
-    // Jack Index for Long Hook A
-    const lhjia = lhca.rjackIdx;
-
-    // King Index for Long Hook A
-    const lhkia = lhca.rkingIdx;
-
-    const getLhqia = () => {
-
-      // Rho Jack's Cross Branch
-      const rjcbh = crsa[lhjia].crbh;
-      const rjcbi = idxOfBranch(rjcbh);
-      return 5 - (rjcbi % 6);
-    }
-
-    const lhqia = getLhqia();
-
-    return {
-      month,
-      day,
-      lhna,
-      lhnb,
-      crsa,
-      crsb,
-      dbse,
-      lhjia,
-      lhkia,
-      lhqia
-    }
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      'Cannot parse Rho Input.'
-    );
-  }
-}
-
 const castRhoLots = (lhia, lhib) => {
 
   const lhna = getLhcByIdx(lhia).lhName;
@@ -133,8 +20,8 @@ const castRhoLots = (lhia, lhib) => {
   const wToday = getWToday();
   const mBrh = wToday.mbp[1];
   const dbp = wToday.dbp;
-  const rin = `${mBrh}月${dbp}日${lhna}之${lhnb}卦`;
-  return getDelta_1(rin);
+  const delta_0 = `${mBrh}月${dbp}日${lhna}之${lhnb}卦`;
+  return R.compose(getDelta_2, getDelta_1)(delta_0);
 }
 
 // Cast eight faced rho lots
