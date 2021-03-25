@@ -5,5 +5,3 @@ import {
 import {
   getLhcByIdx
 } from './rho_3';
-
-// Get Long Hook Binaries A and B
