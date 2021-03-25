@@ -5,3 +5,9 @@ import {
 import {
   getLhcByIdx
 } from './rho_3';
+
+const handleDyco = delta_2 => {
+
+  
+
+}

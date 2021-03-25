@@ -1,12 +1,13 @@
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 import { isValidBranch } from '../twigs/twig_1';
 import { getBpse } from '../twigs/twig_2';
 import { lhContexts_5 } from './rho_4';
 import { rpsSet, rpalOrder } from './rho_5';
 import { item } from '../utils/util_1';
-import * as R from 'ramda';
-import * as RA from 'ramda-adjunct';
 import { getWToday } from '../calendar';
 import { getLhcByIdx } from './rho_3';
+import { idxOfBranch } from '../twigs/twig_1';
 
 // 'Rin' stands for Rho Input.
 const getDelta_1 = rin => {
@@ -87,6 +88,22 @@ const getDelta_1 = rin => {
     const crsa = RA.mapIndexed(crossFn, lhca.crosses);
     const crsb = RA.mapIndexed(crossFn, lhcb.crosses);
 
+    // Jack Index for Long Hook A
+    const lhjia = lhca.rjackIdx;
+
+    // King Index for Long Hook A
+    const lhkia = lhca.rkingIdx;
+
+    const getLhqia = () => {
+
+      // Rho Jack's Cross Branch
+      const rjcbh = crsa[lhjia].crbh;
+      const rjcbi = idxOfBranch(rjcbh);
+      return 5 - (rjcbi % 6);
+    }
+
+    const lhqia = getLhqia();
+
     return {
       month,
       day,
@@ -94,7 +111,10 @@ const getDelta_1 = rin => {
       lhnb,
       crsa,
       crsb,
-      dbse
+      dbse,
+      lhjia,
+      lhkia,
+      lhqia
     }
   }
   catch(err){
@@ -136,5 +156,4 @@ const efRhoLots_1 =
 export const efRhoLots_2 = (efdr) => {
 
   return efRhoLots_1(...R.split('', efdr));
-
 }

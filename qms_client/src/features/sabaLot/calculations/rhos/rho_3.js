@@ -81,13 +81,11 @@ const getHgbs = () => {
   try{
     // Hook Gap Binary Set
     const hgbs_1 = R.map(mapFn, baseHookSeries);
-    const hgbs_2 = R.uniqBy(
-      R.prop('lhName'),
-      hgbs_1);
+    const hgbs_2 = R.uniq(hgbs_1);
 
-    if(hgbs_2.length ! 8){
+    if(hgbs_2.length != 7){
       throw new Error(
-        `It must be eight hook gap binaries only but now `
+        `It must be seven hook gap binaries only but now `
         + `we have ${hgbs_2.length} of them, how come? `);
     }
 
@@ -156,7 +154,7 @@ const getHookPalaces = () => {
 
 const hookPalaces = getHookPalaces();
 
-const buildJackIndex = (lpalIndex) => {
+const buildRjackIdx = (lpalIndex) => {
 
   const mapper = {
     0: 5,
@@ -183,15 +181,15 @@ const getLhContexts_3 = () => {
 
     try{
 
-      const jackIndex = buildJackIndex(lpalIndex);
-      const kingIndex = (jackIndex + 3) % 6;
+      const rjackIdx = buildRjackIdx(lpalIndex);
+      const rkingIdx = (rjackIdx + 3) % 6;
 
       return {
         lhName,
         headHook: hookPalace.headHook,
         lpalIndex,
-        jackIndex,
-        kingIndex
+        rjackIdx,
+        rkingIdx
       }
     }
     catch(err){
