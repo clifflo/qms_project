@@ -1,13 +1,13 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import { binaryToDecimal } from '../utils/util_1';
-import { getLhcByIdx } from './rho_3';
+import { getLhcByIdx } from '../rhos/rho_3';
 import { isValidBranch } from '../twigs/twig_1';
 import { getBpse } from '../twigs/twig_2';
-import { lhContexts_5 } from './rho_4';
-import { rpsSet, rpalOrder } from './rho_5';
+import { lhContexts_5 } from '../rhos/rho_4';
+import { rpsSet, rpalOrder } from '../rhos/rho_5';
 import { item } from '../utils/util_1';
-import { getWToday } from '../calendar';
+import { getWTodeDay } from '../calendar';
 import { idxOfBranch } from '../twigs/twig_1';
 
 export const getDelta_1 = delta_0 => {
@@ -22,14 +22,14 @@ export const getDelta_1 = delta_0 => {
       'You have typed the rho input incorrectly.');
   }
 
-  const month = cgr[1];
+  const deMonth = cgr[1];
 
-  if(!isValidBranch(month)){
+  if(!isValidBranch(deMonth)){
     throw new Error(
-      `${month} is not a valid month.`
+      `${deMonth} is not a valid deMonth.`
     )
   }
-  const day = cgr[2];
+  const deDay = cgr[2];
 
   // Long Hook Name A
   const lhna = cgr[3];
@@ -68,11 +68,11 @@ export const getDelta_1 = delta_0 => {
 
   const crossFn = (cross_1, idx, list) => {
     let cross_2 = Object.assign({}, cross_1);
-    cross_2.cst = acdl[idx] ? 'Strike' : 'Silent';
+    cross_2.isStrike = acdl[idx];
 
     // Rho Paladin Start Position
     const rpsIdx = R.find(
-      R.propEq('trunk', day[0]), rpsSet).rpsIdx;
+      R.propEq('trunk', deDay[0]), rpsSet).rpsIdx;
 
     // Rho Paladin
     const rpal = item(rpalOrder, rpsIdx + idx + 1);
@@ -84,7 +84,7 @@ export const getDelta_1 = delta_0 => {
 
   try{
     // Day Betapsi Series
-    const dbse = getBpse(day);
+    const dbse = getBpse(deDay);
     const crsa = RA.mapIndexed(crossFn, lhca.crosses);
     const crsb = RA.mapIndexed(crossFn, lhcb.crosses);
 
@@ -105,8 +105,8 @@ export const getDelta_1 = delta_0 => {
     const lhqia = getLhqia();
 
     return {
-      month,
-      day,
+      deMonth,
+      deDay,
       lhna,
       lhnb,
       crsa,
@@ -123,39 +123,4 @@ export const getDelta_1 = delta_0 => {
       'Cannot parse Rho Input.'
     );
   }
-}
-
-export const getDelta_2 = delta_1 => {
-
-  const lhjia = delta_1.lhjia;
-  const lhqia = delta_1.lhqia;
-  const lhkia = delta_1.lhkia;
-
-  const mapFn = (cross_1, idx) => {
-
-    const cross_2 = Object.assign({}, cross_1);
-    let dcrStatus = [];
-
-    if(idx == lhkia){
-      dcrStatus.push('Delta King');
-    }
-
-    if(idx == lhjia){
-      dcrStatus.push('Delta Jack');
-    }
-
-    if(idx == lhqia){
-      dcrStatus.push('Delta Queen');
-    }
-
-    cross_2.dcrStatus = dcrStatus;
-
-    return cross_2;
-
-  }
-
-  const delta_2 = Object.assign({}, delta_1);
-  delta_2.crsa = RA.mapIndexed(mapFn, delta_1.crsa);
-
-  return delta_2;
 }

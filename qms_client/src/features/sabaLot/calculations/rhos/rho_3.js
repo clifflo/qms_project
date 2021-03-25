@@ -168,7 +168,8 @@ const buildRjackIdx = (lpalIndex) => {
   }
 
   const upwardIndex = mapper[lpalIndex];
-  return upwardIndex;
+  const downwardIndex = 5 - upwardIndex;
+  return downwardIndex;
 }
 
 const getLhContexts_3 = () => {

@@ -8,8 +8,8 @@ import { item } from '../utils/util_1';
 import { getWToday } from '../calendar';
 import { getLhcByIdx } from './rho_3';
 import { idxOfBranch } from '../twigs/twig_1';
-import { getDelta_1, getDelta_2 }
-  from './rho_7';
+import { getDelta_1 } from '../deltas/delta_1';
+import { getDelta_2 } from '../deltas/delta_2';
 
 // 'Rin' stands for Rho Input.
 const castRhoLots = (lhia, lhib) => {
