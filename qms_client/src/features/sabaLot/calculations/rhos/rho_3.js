@@ -51,7 +51,7 @@ export const getLhcByIdx = lhIdx => {
   return lhContext;
 }
 
-const getHookGapBinarySet = () => {
+const getHgbs = () => {
 
   const sourceLhIdx = 63;
 
@@ -79,6 +79,18 @@ const getHookGapBinarySet = () => {
   }
 
   try{
+    // Hook Gap Binary Set
+    const hgbs_1 = R.map(mapFn, baseHookSeries);
+    const hgbs_2 = R.uniqBy(
+      R.prop('lhName'),
+      hgbs_1);
+
+    if(hgbs_2.length ! 8){
+      throw new Error(
+        `It must be eight hook gap binaries only but now `
+        + `we have ${hgbs_2.length} of them, how come? `);
+    }
+
     return R.map(mapFn, baseHookSeries);
   }
   catch(err){
@@ -88,8 +100,7 @@ const getHookGapBinarySet = () => {
 
 }
 
-const hookGapBinarySet = getHookGapBinarySet();
-
+const hgbs = getHgbs();
 
 const getHookPalaces = () => {
 
@@ -126,7 +137,7 @@ const getHookPalaces = () => {
   const mapFn_2 = (shortHookName) => {
 
     const rawSeries = RA.mapIndexed(
-      mapFn_1_curried(shortHookName), hookGapBinarySet);
+      mapFn_1_curried(shortHookName), hgbs);
 
     const finalSeries = R.prepend(
       '純' + shortHookName, rawSeries);
