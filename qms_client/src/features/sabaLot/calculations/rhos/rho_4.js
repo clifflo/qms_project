@@ -86,11 +86,11 @@ const getLhContexts_5 = () => {
 
   // Focus Chinese Name List
   const fcnl = {
-    'Draw': '丁兄弟',
-    'Fruit': '丁子孫',
-    'Bank': '丁妻財',
-    'Hacker': '丁官鬼',
-    'Seed': '丁父母',
+    'Draw': '丙兄弟',
+    'Fruit': '丙子孫',
+    'Bank': '丙妻財',
+    'Hacker': '丙官鬼',
+    'Seed': '丙父母',
   }
 
   // Map Function 1 non curried

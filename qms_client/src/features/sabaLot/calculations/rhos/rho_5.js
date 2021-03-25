@@ -50,7 +50,7 @@ const rpalSce = '青龍,朱雀,勾陳,螣蛇,白虎,玄武';
 export const rpalOrder =
   R.compose(
     R.reverse,
-    R.map(s => '丁' + s),
+    R.map(s => '丙' + s),
     R.split(','))
   (rpalSce);
 
