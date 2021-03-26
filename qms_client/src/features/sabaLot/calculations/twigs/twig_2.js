@@ -14,7 +14,8 @@ import {
   idxOfBranch,
   idxOfTrunk,
   getElem,
-  elemOrder
+  elemOrder,
+  branchOrder
 } from './twig_1';
 
 const chosenSentence =
@@ -104,7 +105,7 @@ export const getChbt = (sElem, chosen) => {
 // The branch and elemental must be written together
 // for the source.
 // For this function I only get the branch elemental.
-export const getChbe = tBranch => {
+export const getChbs = tBranch => {
 
   const tBridx = idxOfBranch(tBranch);
   const moiFn = (movement, elem) => {
@@ -112,7 +113,7 @@ export const getChbe = tBranch => {
     try{
       const chsx = tBridx + movement;
       const chosen = itemOfChosen(chsx);
-      return chosen;
+      return chosen
     }
     catch(err){
       console.error(err);
@@ -135,7 +136,8 @@ export const getChbe = tBranch => {
 
 }
 
-// Chosen Of Branch as a table
+// Chosen Of Branch from source element
+// returning target branch as a table
 const buildCbtt = () => {
 
   try{
@@ -157,3 +159,28 @@ const buildCbtt = () => {
 }
 
 export const cbtt = buildCbtt();
+
+// Chosen Of Branch from target branch returning
+// source element as a table
+const buildCbst = () => {
+
+  const mapFn = tBranch => {
+    const chbs = getChbs(tBranch);
+    return {
+      tBranch,
+      chbs
+    }
+  }
+
+  try{
+    const result = R.map(mapFn, branchOrder);
+    return result;
+  }
+  catch(err){
+    throw new Error(
+      'Cannot build Chosen Of Branch '
+      + 'returning source element as a table.')
+  }
+}
+
+export const cbst = buildCbst();
