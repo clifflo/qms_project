@@ -2,11 +2,10 @@ import {
   idxOfBranch,
   idxOfTrunk,
   itemOfTrunk,
-  itemOfBranch
+  itemOfBranch,
+  isValidTrunk,
+  isValidBranch
 } from './twig_1';
-import {
-  getBpse
-} from './twig_2';
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 

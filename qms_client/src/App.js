@@ -6,8 +6,10 @@ import JSONTree from 'react-json-tree';
 import { getDbp } from
   './features/sabaLot/calculations/twigs/twig_6';
 import * as R from 'ramda';
-import { cbst } from
-  './features/sabaLot/calculations/twigs/twig_2';
+import { efRhoLots_2 } from
+  './features/sabaLot/calculations/rhos/rho_6';
+import { RhoGui } from
+  './features/sabaLot/gui/rhoGui';
 
 
 function App() {
@@ -17,7 +19,7 @@ function App() {
       <SabaLot />
       <div className="Saba">
 
-        <JSONTree data={cbst} />
+        <RhoGui rhoLots={efRhoLots_2('8425')} />
       </div>
     </div>
   );
