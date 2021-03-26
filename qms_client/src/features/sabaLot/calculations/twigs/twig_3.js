@@ -10,6 +10,51 @@ import {
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
+export const getBpse = (betapsi) => {
+
+  const trunk = betapsi[0];
+  const branch = betapsi[1];
+
+  if(!isValidTrunk(trunk)){
+    throw new Error(
+      `${trunk} is not a valid trunk for betapsi.`);
+  }
+
+  if(!isValidBranch(branch)){
+    throw new Error(
+      `${branch} is not a valid branch for betapsi.`
+    )
+  }
+
+  const difference = idxOfBranch(branch) - idxOfTrunk(trunk);
+  const isValidMatch = (difference % 2) == 0
+  if(!isValidMatch){
+    throw new Error(
+      'Betapsi not valid due to wrong match of trunk and branch.'
+    )
+  }
+
+  // Betapsi Series Lead Branch
+  const bslb = itemOfBranch(difference);
+
+  // Betapsi Series Full Name
+  const bsfn = `甲${bslb}旬`;
+
+  // Betapsi Series Void A
+  const bsva = itemOfBranch(difference - 2);
+
+  // Betapsi Series Void B
+  const bsvb = itemOfBranch(difference - 1);
+
+  // Betapsi Series Void List
+  const bsvl = [bsva, bsvb];
+
+  return {
+    bsfn,
+    bsvl
+  }
+}
+
 // Get Betapsi Index
 export const idxOfBtp = (betapsi) => {
 
@@ -72,7 +117,7 @@ export const itemOfBtp = idx => {
     return trunk + branch;
   }
   catch(err){
-    console.log(err);
+    console.error(err);
     throw new Error('Cannot get Betapsi item.');
   }
 

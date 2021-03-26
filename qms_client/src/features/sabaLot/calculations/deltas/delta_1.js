@@ -3,7 +3,7 @@ import * as RA from 'ramda-adjunct';
 import { binaryToDecimal } from '../utils/util_1';
 import { getLhcByIdx } from '../rhos/rho_3';
 import { isValidBranch } from '../twigs/twig_1';
-import { getBpse } from '../twigs/twig_2';
+import { getBpse } from '../twigs/twig_3';
 import { lhContexts_5 } from '../rhos/rho_4';
 import { rpsSet, rpalOrder } from '../rhos/rho_5';
 import { item } from '../utils/util_1';

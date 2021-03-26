@@ -22,81 +22,62 @@ const chosenSentence =
 export const chosenOrder =
   R.split(',', chosenSentence);
 
-export function getChosenIndex(chosen) {
-  return getIdx(chosen, chosenOrder)
+export const isValidChosen = R.includes(chosen, chosenOrder);
+
+export const getChosenIndex = chosen => {
+
+  if(R.isNil(chosen)){
+    throw new Error(
+      'Chosen should not be nil.');
+  }
+
+  if(!RA.isString(chosen)){
+    throw new Error(
+      'Chosen must be a string.');
+  }
+
+  if(!isValidChosen(chosen)){
+    throw new Error(
+      'The chosen is not valid.');
+  }
+
+  try{
+    return getIdx(chosen, chosenOrder);
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get chosen index.');
+  }
+
 }
 
-const elemStatusOne =
-  '旺,相,休,囚,死';
 
+// Use 圖解六壬大全 Page 106, define the column
+// as source, the row as the target.
+export const getChobt = (sBranch, chosen) => {
 
-// Get Chosen for Element with Element and Branch
-export const getChe = (elem, branch) => {
+  try{
 
-  if(!isValidBranch(branch)){
-    throw new Error(`${branch} is not a valid branch.`);
+    const sElem = getElem(sBranch);
+
+    // Chosen Index
+    const chsx = getChosenIndex(chosen);
+
+    const adjustment = {
+      '金': 7,
+      '水': 11,
+      '木': 9,
+      '火': 2,
+      '土': 2
+    };
+
+    const bridx = adjustment[sElem] + chsx;
+    const tBranch = itemOfBranch(bridx);
+    return tBranch;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get target branch for chosen.');
   }
 
-  if(!isValidElem(elem)){
-    throw new Error(`${elem} is not a valid elemental.`);
-  }
-
-
-  // Elemental index 1
-  const eli_1 = idxOfElem(elem);
-  const eli_2 =  eli_1 == 4 ? 3 : eli_1;
-  const bri = idxOfBranch(branch);
-  const chosenIndex = -(eli_2 * 3) - 5 + bri;
-  const chosen = item(chosenOrder, chosenIndex);
-  return chosen;
-}
-
-// Chosen for branch
-export const chbOrder =　
-  '亥午寅酉寅酉巳子申卯';
-
-// Get Betapsi Series
-export const getBpse = (betapsi) => {
-
-  const trunk = betapsi[0];
-  const branch = betapsi[1];
-
-  if(!isValidTrunk(trunk)){
-    throw new Error(
-      `${trunk} is not a valid trunk for betapsi.`);
-  }
-
-  if(!isValidBranch(branch)){
-    throw new Error(
-      `${branch} is not a valid branch for betapsi.`
-    )
-  }
-
-  const difference = idxOfBranch(branch) - idxOfTrunk(trunk);
-  const isValidMatch = (difference % 2) == 0
-  if(!isValidMatch){
-    throw new Error(
-      'Betapsi not valid due to wrong match of trunk and branch.'
-    )
-  }
-
-  // Betapsi Series Lead Branch
-  const bslb = itemOfBranch(difference);
-
-  // Betapsi Series Full Name
-  const bsfn = `甲${bslb}旬`;
-
-  // Betapsi Series Void A
-  const bsva = itemOfBranch(difference - 2);
-
-  // Betapsi Series Void B
-  const bsvb = itemOfBranch(difference - 1);
-
-  // Betapsi Series Void List
-  const bsvl = [bsva, bsvb];
-
-  return {
-    bsfn,
-    bsvl
-  }
 }

@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import { isValidBranch } from '../twigs/twig_1';
-import { getBpse } from '../twigs/twig_2';
+import { getBpse } from '../twigs/twig_3';
 import { lhContexts_5 } from './rho_4';
 import { rpsSet, rpalOrder } from './rho_5';
 import { item } from '../utils/util_1';
@@ -29,7 +29,7 @@ const castRhoLots = (lhia, lhib) => {
       getDelta_1)(delta_0);
   }
   catch(err){
-    console.log(err);
+    console.error(err);
     throw new Error('Cannot cast rho lots.');
   }
 
