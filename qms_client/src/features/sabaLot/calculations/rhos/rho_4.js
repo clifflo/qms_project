@@ -104,7 +104,7 @@ const getLhContexts_5 = () => {
       return cross_2;
     }
     catch(err){
-      console.log(err);
+      console.error(err);
       throw new Error(
         'Map function 1 is error.');
     }

@@ -46,7 +46,6 @@ export const getDelta_3 = delta_2 => {
     const changed_crsa = R.map(mapFn, delta_2.crsa);
     const delta_3 = produce(delta_2, draft_delta_3 => {
       draft_delta_3.crsa = changed_crsa;
-      // Day Branch Suspect
       draft_delta_3.dbsp = suspect;
     });
 

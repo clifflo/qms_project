@@ -125,6 +125,8 @@ const getPauseSet = () => {
 
 export const pauseSet = getPauseSet();
 
+
+
 const getHitSet = () => {
 
   const mapFn = i => {

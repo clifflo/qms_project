@@ -5,7 +5,6 @@ import {
   item,
   getIdx
 } from '../utils/util_1';
-
 import {
   isValidBranch,
   isValidTrunk,
@@ -13,7 +12,9 @@ import {
   itemOfBranch,
   idxOfElem,
   idxOfBranch,
-  idxOfTrunk
+  idxOfTrunk,
+  getElem,
+  elemOrder
 } from './twig_1';
 
 const chosenSentence =
@@ -22,9 +23,10 @@ const chosenSentence =
 export const chosenOrder =
   R.split(',', chosenSentence);
 
-export const isValidChosen = R.includes(chosen, chosenOrder);
+export const isValidChosen = chosen =>
+  R.includes(chosen, chosenOrder);
 
-export const getChosenIndex = chosen => {
+export const idxOfChosen = chosen => {
 
   if(R.isNil(chosen)){
     throw new Error(
@@ -42,7 +44,8 @@ export const getChosenIndex = chosen => {
   }
 
   try{
-    return getIdx(chosen, chosenOrder);
+    const chidx = getIdx(chosen, chosenOrder);
+    return chidx;
   }
   catch(err){
     console.error(err);
@@ -51,29 +54,42 @@ export const getChosenIndex = chosen => {
 
 }
 
+export const itemOfChosen = chsx => {
+  if(R.isNil(chsx)){
+    throw new Error(
+      'Chosen index should not be nil.');
+  }
+  return item(chosenOrder, chsx);
+}
 
-// Use 圖解六壬大全 Page 106, define the column
-// as source, the row as the target.
-export const getChobt = (sBranch, chosen) => {
+// Movement List for Chosen for branch
+const cbaml = {
+  '金': 7,
+  '木': 1,
+  '水': 4,
+  '火': 10,
+  '土': 10
+};
+
+// This is the chosen between branches.
+// Using 圖解六壬大全 Page 106, I would define
+// the column as source, the row as the target.
+// Chinese is 立生運.
+// Example: 申金立墓於丑。
+// The branch and elemental must be written together
+// for the source.
+export const getChbt = (sElem, chosen) => {
 
   try{
-
-    const sElem = getElem(sBranch);
-
-    // Chosen Index
-    const chsx = getChosenIndex(chosen);
-
-    const adjustment = {
-      '金': 7,
-      '水': 11,
-      '木': 9,
-      '火': 2,
-      '土': 2
-    };
-
-    const bridx = adjustment[sElem] + chsx;
-    const tBranch = itemOfBranch(bridx);
-    return tBranch;
+    const movement = cbaml[sElem];
+    const chsx = idxOfChosen(chosen);
+    const tBridx = chsx - cbaml[sElem];
+    const tBranch = itemOfBranch(tBridx);
+    return {
+      sElem,
+      chosen,
+      tBranch
+    }
   }
   catch(err){
     console.error(err);
@@ -81,3 +97,63 @@ export const getChobt = (sBranch, chosen) => {
   }
 
 }
+
+// This one is the query from row to column.
+// Chinese is 入生運.
+// Example: 丑入墓於申金。
+// The branch and elemental must be written together
+// for the source.
+// For this function I only get the branch elemental.
+export const getChbe = tBranch => {
+
+  const tBridx = idxOfBranch(tBranch);
+  const moiFn = (movement, elem) => {
+
+    try{
+      const chsx = tBridx + movement;
+      const chosen = itemOfChosen(chsx);
+      return chosen;
+    }
+    catch(err){
+      console.error(err);
+      throw new Error(
+        'Moi function of get the source branch of '
+        + 'Chosen of Branch is error.');
+    }
+  }
+
+  try{
+    const result = R.mapObjIndexed(moiFn, cbaml);
+    return result;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get the source branch of '
+      + 'Chosen of Branch.');
+  }
+
+}
+
+// Chosen Of Branch as a table
+const buildCbtt = () => {
+
+  try{
+
+    const getChbt_c = R.curry(getChbt);
+
+    const mapFn = elem => {
+      return R.map(getChbt_c(elem), chosenOrder);
+    }
+
+    const result = R.map(mapFn, elemOrder);
+    return result;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot build Chosen for '
+    + 'Branch as a table.');
+  }
+}
+
+export const cbtt = buildCbtt();

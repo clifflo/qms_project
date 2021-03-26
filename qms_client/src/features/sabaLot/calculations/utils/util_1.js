@@ -1,19 +1,27 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
-export const adjust = (index, distance) => {
+export const adjust = (index, cycleLength) => {
 
-  const positiveIndex = index % distance;
-  const negativeIndex = (index % distance) + distance;
+  if(R.isNil(cycleLength)){
+    throw new Error(
+      'Cycle length should not be nil.');
+  }
+
+  if(!RA.isNumber(cycleLength)){
+    throw new Error(
+      'Cycle length must be a number')
+  }
+
+  const positiveIndex = index % cycleLength;
+  const negativeIndex =
+    (index % cycleLength) + cycleLength;
 
   if(index >= 0){
-    return positiveIndex
-  }
-  else if (index < 0){
-    return negativeIndex
+    return positiveIndex;
   }
   else {
-    return 'Index is not a number.'
+    return negativeIndex;
   }
 }
 
@@ -52,7 +60,7 @@ export function getIdx(wordLike, listLike){
   else if(RA.isArray(listLike)){
     const word = wordLike;
     const wordList = listLike;
-    R.findIndex(R.equals(word), wordList);
+    return R.findIndex(R.equals(word), wordList);
   }
   else {
     throw new Error(
