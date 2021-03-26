@@ -60,8 +60,8 @@ export const getDelta_1 = delta_0 => {
     const csi_2 = lhcb.crosses[idx].csi;
 
     // Is Activated
-    const isAcd = csi_1 != csi_2;
-    return isAcd;
+    const isStrike = csi_1 != csi_2;
+    return isStrike;
   }
 
   const acdl = R.map(acdFn, R.range(0, 6));
