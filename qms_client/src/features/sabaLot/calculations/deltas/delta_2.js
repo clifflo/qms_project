@@ -17,16 +17,18 @@ export const getDelta_2 = delta_1 => {
     let dcrStatus = [];
 
     if(idx == lhkia){
-      cross_2.isDkg = true;
+      dcrStatus.push('Delta King');
     }
 
     if(idx == lhjia){
-      cross_2.isDjk = true;
+      dcrStatus.push('Delta Jack');
     }
 
     if(idx == lhqia){
-      cross_2.isDqn = true;
+      dcrStatus.push('Delta Queen');
     }
+
+    cross_2.dcrStatus = dcrStatus;
 
     return cross_2;
 

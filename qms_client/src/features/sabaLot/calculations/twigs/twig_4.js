@@ -10,6 +10,7 @@ import {
 import * as R from 'ramda';
 
 // Branch Small Compound
+// 地支六合
 const getBscSet = () => {
 
   const mapFn = i => {
@@ -56,6 +57,7 @@ export const matchBsc = (sBranch, tBranch) => {
 }
 
 // Trunk Small Compound
+// 天干五合
 const getTscSet = () => {
 
   const mapFn = i => {
@@ -75,6 +77,7 @@ const getTscSet = () => {
 
 export const tscSet = getTscSet();
 
+// 地支沖
 const getFlushSet = () => {
 
   const mapFn = (i) => {
@@ -88,7 +91,24 @@ const getFlushSet = () => {
   return R.map(mapFn, R.range(0, 6));
 }
 
+// For testing purpose
 export const flushSet = getFlushSet();
+
+export const checkFlushing = (sBranch, tBranch) => {
+
+  try{
+    const sBridx = idxOfBranch(sBranch);
+    const tBridx = idxOfBranch(tBranch);
+
+    const isFlush = Math.abs(sBridx - tBridx) == 6;
+    return isFlush;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot check flushing.');
+  }
+
+}
 
 const getPauseSet = () => {
 

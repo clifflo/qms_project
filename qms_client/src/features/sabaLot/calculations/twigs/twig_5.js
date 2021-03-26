@@ -73,7 +73,7 @@ export const mtgSet = getMtgSet();
 
 // Arrestment Set
 // 地支相刑
-export const arrtSet = {
+export const armtSet = {
   '寅': '巳',
   '巳': '申',
   '申': '寅',
