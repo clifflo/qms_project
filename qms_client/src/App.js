@@ -16,11 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <SabaLot />
-      <div className="Saba">
-
-        <RhoGui rhoLots={efRhoLots_2('1855')} />
-      </div>
+      <RhoGui rhoLots={efRhoLots_2('1855')} />
     </div>
   );
 }

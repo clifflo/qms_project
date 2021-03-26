@@ -14,21 +14,27 @@ export const getDelta_2 = delta_1 => {
   const mapFn = (cross_1, idx) => {
 
     const cross_2 = Object.assign({}, cross_1);
-    let dcrStatus = [];
 
     if(idx == lhkia){
-      dcrStatus.push('Delta King');
+      cross_2.isRkg = true;
+    }
+    else {
+      cross_2.isRkg = false;
     }
 
     if(idx == lhjia){
-      dcrStatus.push('Delta Jack');
+      cross_2.isRjk = true;
+    }
+    else {
+      cross_2.isRjk = false;
     }
 
     if(idx == lhqia){
-      dcrStatus.push('Delta Queen');
+      cross_2.isRqn = true;
     }
-
-    cross_2.dcrStatus = dcrStatus;
+    else {
+      cross_2.isRqn = false;
+    }
 
     return cross_2;
 
