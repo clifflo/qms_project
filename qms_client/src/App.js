@@ -19,7 +19,7 @@ function App() {
       <SabaLot />
       <div className="Saba">
 
-        <RhoGui rhoLots={efRhoLots_2('8425')} />
+        <JSONTree data={efRhoLots_2('1855')} />
       </div>
     </div>
   );
