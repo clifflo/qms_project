@@ -7,7 +7,7 @@ function showCross(isCrsa, cross) {
     if(isStrike && isCrsa){
       return (
         <span style={{ fontSize: 20 }}>
-          1
+          <FontAwesomeIcon icon={["fal", "times"]} />
         </span>
       )
     }
@@ -54,6 +54,7 @@ function showCross(isCrsa, cross) {
           fontSize: 20 }}>
             {renderRfc()}
         </div>
+        {strike(cross.isStrike)}
       </div>
     )
   }
@@ -90,6 +91,7 @@ function showCross(isCrsa, cross) {
           fontSize: 20}}>
             {renderRfc()}
         </div>
+        {strike(cross.isStrike)}
       </div>
     )
   }
