@@ -93,20 +93,11 @@ const buildFlushSet = () => {
 
 export const flushSet = buildFlushSet();
 
-export const checkFlushing = (sBranch, tBranch) => {
-
-  try{
-    const sBridx = idxOfBranch(sBranch);
-    const tBridx = idxOfBranch(tBranch);
-
-    const isFlush = Math.abs(sBridx - tBridx) == 6;
-    return isFlush;
-  }
-  catch(err){
-    console.error(err);
-    throw new Error('Cannot check flushing.');
-  }
-
+// Get Flush opponent
+export const getFlushOp = (sBranch) => {
+  const sBridx = idxOfBranch(sBranch);
+  const tBranch = itemOfBranch(sBridx + 6);
+  return tBranch;
 }
 
 const getPauseSet = () => {

@@ -11,12 +11,24 @@ import { efRhoLots_2 } from
 import { RhoGui } from
   './features/sabaLot/gui/rhoGui';
 
+function showEf(){
+  return (
+    <RhoGui rhoLots={efRhoLots_2('1845')} />
+  )
+}
+
+function showTree(){
+  return (
+    <JSONTree data={efRhoLots_2('1845')} />
+  )
+}
+
 
 function App() {
 
   return (
     <div className="App">
-      <RhoGui rhoLots={efRhoLots_2('1845')} />
+      {showTree()}
     </div>
   );
 }

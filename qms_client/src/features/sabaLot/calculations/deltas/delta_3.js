@@ -1,14 +1,14 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
-import { armtSet } from '../twigs/twig_5';
+import { arrmtSet } from '../twigs/twig_5';
 import produce from 'immer';
-import { checkFlushing } from '../twigs/twig_4';
+import { getFlushOp } from '../twigs/twig_4';
 
-export const getDelta_3 = delta_2 => {
+export const getDelta_3 = odelta_2 => {
 
   try{
     // Day Branch of Delta
-    const ddbr = delta_2.deDay[1];
+    const ddbr = odelta_2.deDay[1];
 
     if(!RA.isString(ddbr)){
       throw new Error(
@@ -27,24 +27,32 @@ export const getDelta_3 = delta_2 => {
         'Day Branch of Delta should not be nil.');
     }
 
+    // Day Branch Suspect
+    const dbsp = arrmtSet[ddbr];
+
+    // Day Branch Flush Opponent
+    const dbfo = getFlushOp(ddbr);
+
     const mapFn = cross => {
       const crbh = cross.crbh;
 
       // Is Day Branch Suspect?
-      const suspect = armtSet[ddbr];
-      const isDbsp = suspect == crbh;
-      const isDbfl = checkFlushing(ddbr, crbh);
+      const suspect = arrmtSet[ddbr];
+      const isDbsp = crbh == dbsp;
+      const isDbfo = crbh == dbfo;
 
       return {
         ...cross,
         isDbsp,
-        isDbfl
+        isDbfo
       }
     }
 
-    const changed_crsa = R.map(mapFn, delta_2.crsa);
-    const delta_3 = produce(delta_2, draft_delta_3 => {
-      draft_delta_3.crsa = changed_crsa;
+    const changed_crsa = R.map(mapFn, odelta_2.crsa);
+    const delta_3 = produce(odelta_2, ddelta_3 => {
+      ddelta_3.crsa = changed_crsa;
+      ddelta_3.dbfo = dbfo;
+      ddelta_3.dbsp = dbsp;
     });
 
     return delta_3;
