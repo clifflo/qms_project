@@ -99,7 +99,7 @@ const getShNumAltIndex =
     shAltSce);
 }
 
-export const getLhContexts_1 = () => {
+export const getLhcts_1 = () => {
 
   const mapFn = (sentence) => {
 
@@ -154,4 +154,4 @@ export const getLhContexts_1 = () => {
 
 }
 
-export const lhContexts_1 = getLhContexts_1();
+export const lhcts_1 = getLhcts_1();
