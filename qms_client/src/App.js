@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <RhoGui rhoLots={efRhoLots_2('1855')} />
+      <RhoGui rhoLots={efRhoLots_2('1845')} />
     </div>
   );
 }

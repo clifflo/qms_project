@@ -1,16 +1,18 @@
 import * as R from 'ramda';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight} from '@fortawesome/free-solid-svg-icons'
 function showCross(isCrsa, cross) {
   const csi = cross.csi;
 
   function strike(isStrike){
     if(isStrike && isCrsa){
       return (
-        <span style={{ fontSize: 20 }}>
-          <FontAwesomeIcon icon={["fal", "times"]} />
+        <span style={{ fontSize: 25 }}>
+          <FontAwesomeIcon  icon={faArrowRight} />
         </span>
       )
     }
+
   }
 
   const renderRjk = () => {
@@ -42,17 +44,17 @@ function showCross(isCrsa, cross) {
             {cross.crbh}{cross.fcn[1]}{cross.fcn[2]}
         </div>
         <div style={{
+          backgroundColor: 'white',
+          width: 40,
+          height: 30,
+          fontSize: 20 }}>
+            {renderRfc()}
+        </div>
+        <div style={{
           backgroundColor: 'black',
           width: 150,
           height: 30,
           marginRight: 20 }}>
-        </div>
-        <div style={{
-          backgroundColor: 'white',
-          width: 80,
-          height: 30,
-          fontSize: 20 }}>
-            {renderRfc()}
         </div>
         {strike(cross.isStrike)}
       </div>
@@ -69,6 +71,13 @@ function showCross(isCrsa, cross) {
             {cross.crbh}{cross.fcn[1]}{cross.fcn[2]}
         </div>
         <div style={{
+          backgroundColor: 'white',
+          width: 40,
+          height: 30,
+          fontSize: 20 }}>
+            {renderRfc()}
+        </div>
+        <div style={{
           backgroundColor: 'black',
           width: 50,
           height: 30 }}>
@@ -83,13 +92,6 @@ function showCross(isCrsa, cross) {
           width: 50,
           height: 30,
           marginRight: 20 }}>
-        </div>
-        <div style={{
-          backgroundColor: 'white',
-          width: 80,
-          height: 30,
-          fontSize: 20}}>
-            {renderRfc()}
         </div>
         {strike(cross.isStrike)}
       </div>
