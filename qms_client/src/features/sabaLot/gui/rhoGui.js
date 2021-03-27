@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight} from '@fortawesome/free-solid-svg-icons'
 function showCross(isCrsa, cross) {
-  const csi = cross.csi;
+  const crsi = cross.crsi;
 
   function strike(isStrike){
     if(isStrike && isCrsa){
@@ -32,7 +32,7 @@ function showCross(isCrsa, cross) {
     return renderRjk() + renderRkg() + renderRqn();
   }
 
-  if(csi == 1){
+  if(crsi == 1){
 
     return (
       <div style={{ display: 'flex', marginBottom: 20 }}>
@@ -60,7 +60,7 @@ function showCross(isCrsa, cross) {
       </div>
     )
   }
-  else if(csi == 0){
+  else if(crsi == 0){
     return (
       <div style={{ display: 'flex', marginBottom: 20 }}>
         <div style={{

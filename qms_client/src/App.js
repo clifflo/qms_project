@@ -10,6 +10,8 @@ import { efRhoLots_2 } from
   './features/sabaLot/calculations/rhos/rho_6';
 import { RhoGui } from
   './features/sabaLot/gui/rhoGui';
+import { lhcts_2 } from
+  './features/sabaLot/calculations/rhos/rho_2';
 
 function showEf(){
   return (
@@ -19,7 +21,7 @@ function showEf(){
 
 function showTree(){
   return (
-    <JSONTree data={efRhoLots_2('1845')} />
+    <JSONTree data={lhcts_2} />
   )
 }
 

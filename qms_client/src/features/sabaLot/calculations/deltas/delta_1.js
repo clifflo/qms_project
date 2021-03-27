@@ -56,11 +56,11 @@ export const getDelta_1 = delta_0 => {
   }
 
   const acdFn = idx => {
-    const csi_1 = lhca.crosses[idx].csi;
-    const csi_2 = lhcb.crosses[idx].csi;
+    const crsi_1 = lhca.crosses[idx].crsi;
+    const crsi_2 = lhcb.crosses[idx].crsi;
 
     // Is Activated
-    const isStrike = csi_1 != csi_2;
+    const isStrike = crsi_1 != crsi_2;
     return isStrike;
   }
 
