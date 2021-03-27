@@ -1,0 +1,17 @@
+-
+  fullName: 'Short Hook'
+  description: >
+    這裏解作三畫卦。
+-
+  shortName: 'shori',
+  fullName: 'Short Hook Original Name',
+  description: >
+    一個三畫卦的原本名字。例如天風姤卦中的天
+    則是乾卦。
+
+-
+  shortName: 'shalt',
+  fullName: 'Short Hook Alternate Name',
+  description: >
+    一個三畫卦的原本名字。例如天風姤卦中的天
+    則是乾卦。

@@ -10,35 +10,38 @@ import {
 } from '../twigs/twig_1';
 
 const getTruncatedNatto = (
-  shOri,
+  shori,
   isUpperShortTrunk) => {
 
   const natto = R.find(
-    R.propEq('shOri', shOri), nattos);
+    R.propEq('shori', shori), nattos);
 
-  if(R.isNil(shOri)){
+  if(R.isNil(shori)){
     throw new Error(
       'Short hook original should not be nil.');
   }
 
   if(!natto){
     throw new Error(
-      `Cannot find natto. ${shOri} is not valid.`);
+      `Cannot find natto. ${shori} is not valid.`);
   }
 
   if(isUpperShortTrunk){
 
-    const soyBean = natto.esb;
-    const mustardSeries = natto.ems;
+    // Local Short Hook Bean Trunk
+    const lshbt = natto.eshbt;
 
-    if(R.isNil(soyBean)){
+    // Local Bean Branch Series
+    const lbbrs = natto.ebbrs;
+
+    if(R.isNil(lshbt)){
       throw new Error(
-        'External Soy bean should not be nil.')
+        'LSHBT should not be nil.')
     }
 
-    if(R.isNil(mustardSeries)){
+    if(R.isNil(lbbrs)){
       throw new Error(
-        'External Mustard Series should not be nil.');
+        'LBBRS should not be nil.');
     }
 
     return {
@@ -110,17 +113,17 @@ export const getLhcts_2 = (lhs) => {
 
 
       let ems; // External Mustard Series
-      let esb; // External Soy Bean
+      let eshbt; // External Short Hook Bean Trunk
       let ims; // Internal Mustard Series
-      let isb; // Internal Soy Bean
+      let ishbt; // Internal Short Hook Bean Trunk
 
       // External truncated natto
       const etn = getTruncatedNatto(
-        lh.eshOri, true);
+        lh.eshori, true);
 
       // Internal truncated Natto
       const itn = getTruncatedNatto(
-        lh.ishOri, false);
+        lh.ishori, false);
 
       ems = etn.mustardSeries;
       esb = etn.soyBean;
@@ -155,8 +158,8 @@ export const getLhcts_2 = (lhs) => {
 
       return {
         lhName: lh.lhName,
-        eshOri: lh.eshOri,
-        ishOri: lh.ishOri,
+        eshori: lh.eshori,
+        ishori: lh.ishori,
         crosses
       }
     }

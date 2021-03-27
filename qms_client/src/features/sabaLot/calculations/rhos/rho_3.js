@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   lhcts_1,
-  shOriSce
+  shoriSce
 } from './rho_1';
 import {
   decimalToBinary,
@@ -148,7 +148,7 @@ const getHookPalaces = () => {
     }
   }
 
-  const result = R.map(mapFn_2, shOriSce);
+  const result = R.map(mapFn_2, shoriSce);
   return result;
 }
 

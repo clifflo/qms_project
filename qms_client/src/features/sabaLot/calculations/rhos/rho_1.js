@@ -13,20 +13,38 @@ const nattoParagraph =
   '乾金甲子壬順佈,坎水戊寅戊順佈,艮土丙辰丙順佈,震木庚子庚順佈,' +
   '巽木辛丑辛逆佈,離火己卯己逆佈,坤土乙未癸逆佈,兌金丁巳丁逆佈';
 
-const getFullMustardSeries =
-  (startMustard, mseIsCw) => {
-  let fullMustardSeries = '';
-  const mustardIndex = idxOfBranch(startMustard);
+// Bean Branch Series
+// For example, as of 乾, we will have the branches
+// starting from the bottom as 子寅辰午申戌
+// 'Bbssb' is Bean Branch Series Start Branch.
+const getBnbrs = (bbssb, mseIsCw) => {
 
-  for(let i = 0; i < 6; i++){
-    const rawAdjustment = i * 2;
-    const finalAdjustment = mseIsCw ?
-      rawAdjustment : (-rawAdjustment);
-    fullMustardSeries += itemOfBranch(
-      mustardIndex + finalAdjustment);
+  try{
+
+    if(R.isNil(bbssb)){
+      throw new Error('Bean Branch Series Start Branch '
+        'should not be nil.');
+    }
+
+    // 'Bbsbi' is Bean Branch Series Start Branch
+    const bbsbi = idxOfBranch(bbssb);
+
+    const mapFn = idx => {
+      const rawAdjustment = i * 2;
+      const finalAdjustment = mseIsCw ?
+        rawAdjustment : (-rawAdjustment);
+      return itemOfBranch(bbsbi + finalAdjustment);
+    }
+
+    const bnbrs = R.map(mapFn, R.range(0, 6))
+    return bnbrs;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get Bean Branch Series.');
   }
 
-  return fullMustardSeries;
 }
 
 const getNattos = () => {
@@ -35,34 +53,34 @@ const getNattos = () => {
     const shOri = sentence[0];
     const shEle = sentence[1];
 
-    // External Soy Bean
-    const esb = sentence[4];
+    // External Short Hook Bean Trunk
+    const eshbt = sentence[4];
 
-    // Internal Soy Bean
-    const isb = sentence[2];
-    const startMustard = sentence[3];
+    // Internal Short Hook Bean
+    const ishbt = sentence[2];
+    const bbssb = sentence[3];
 
     // Mustard Series is Clockwise
     const mseIsCw = sentence[5] == '順';
-    const fullMustardSeries = getFullMustardSeries(
-      startMustard, mseIsCw);
+    const bnbrs = getBnbrs(
+      bbssb, mseIsCw);
 
-    // External Mustard Series
-    const ems =
-      R.reverse(R.takeLast(3, fullMustardSeries));
+    // External Bean Branch Series
+    const ebbrs =
+      R.reverse(R.takeLast(3, bnbrs));
 
-    // Internal Mustard Series
-    const ims =
-      R.reverse(R.take(3, fullMustardSeries));
+    // Internal Bean Branch Series
+    const ibbrs =
+      R.reverse(R.take(3, bnbrs));
 
     return {
       shOri,
       shEle,
-      esb,
-      isb,
-      startMustard,
-      ems,
-      ims
+      eshbt,
+      ishbt,
+      bbssb,
+      ebbrs,
+      ibbrs
     };
   }
 
