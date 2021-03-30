@@ -96,8 +96,9 @@ const getLhcts_5 = () => {
   // Map Function 1 non curried
   const mapFn_1n = (hhElem, cross_1) => {
 
+
     try{
-      const focus = getElr(hhElem, cross_1.cbe);
+      const focus = getElr(hhElem, cross_1.cbel);
       const fcn = fcnl[focus];
       let cross_2 = Object.assign({}, cross_1);
       cross_2.fcn = fcn;

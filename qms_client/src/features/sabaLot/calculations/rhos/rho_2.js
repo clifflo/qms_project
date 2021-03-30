@@ -28,73 +28,67 @@ const getTruncatedNatto = (
 
   if(isUpperShortTrunk){
 
-    // Local Short Hook Bean Trunk
-    const lshbt = natto.eshbt;
-
-    // Local Bean Branch Series
-    const lbbrs = natto.ebbrs;
-
-    if(R.isNil(lshbt)){
+    if(R.isNil(natto.eshbt)){
       throw new Error(
-        'LSHBT should not be nil.')
+        'ESHBT should not be nil.')
     }
 
-    if(R.isNil(lbbrs)){
+    if(R.isNil(natto.ebbrs)){
       throw new Error(
-        'LBBRS should not be nil.');
+        'EBBRS should not be nil.');
     }
 
     return {
-      soyBean,
-      mustardSeries
+      lshbt: natto.eshbt,
+      lbbrs: natto.ebbrs
     }
   }
   else {
 
-    const soyBean = natto.isb;
-    const mustardSeries = natto.ims;
+    const lshbt = natto.ishbt;
+    const lbbrs = natto.ibbrs;
 
-    if(R.isNil(soyBean)){
+    if(R.isNil(lshbt)){
       throw new Error(
         'Internal Soy Bean should not be nil.')
     }
 
-    if(R.isNil(mustardSeries)){
+    if(R.isNil(lbbrs)){
       throw new Error(
         'Internal Mustard Series should not be nil.');
     }
 
     return {
-      soyBean,
-      mustardSeries
+      lshbt,
+      lbbrs
     }
   }
 
 }
 
 const buildCrosses = (
-  fms, // Full Mustard Series
-  esht, // External Short Hook Trunk
-  isht, // Internal Short Hook Trunk
+  fbbrs, // Full Bean Branch Series
+  eshbt, // External Short Hook Bean Trunk
+  ishbt, // Internal Short Hook Bean Trunk
   crsi, // Cross sign
   downwardIndex,
   list) => {
 
   // Cross Trunk
   const crtk = downwardIndex <= 2 ?
-    esht : isht;
+    eshbt : ishbt;
 
   // Cross Branch
-  const crbh = fms[downwardIndex];
+  const crbh = fbbrs[downwardIndex];
 
   // Cross Branch Elemental
-  const cbe = getElem(crbh);
+  const cbel = getElem(crbh);
 
   return {
     crsi, // Cross Sign
     crtk, // Cross Trunk
     crbh, // Cross Branch
-    cbe // Cross Branch Elemental
+    cbel // Cross Branch Elemental
   }
 
 }
@@ -112,9 +106,9 @@ export const getLhcts_2 = (lhs) => {
         lh.ishIdx, 3);
 
 
-      let ems; // External Mustard Series
+      let ebbrs; // External Bean Branch Series
       let eshbt; // External Short Hook Bean Trunk
-      let ims; // Internal Mustard Series
+      let ibbrs; // Internal Bean Branch Series
       let ishbt; // Internal Short Hook Bean Trunk
 
       // External truncated natto
@@ -125,32 +119,32 @@ export const getLhcts_2 = (lhs) => {
       const itn = getTruncatedNatto(
         lh.ishori, false);
 
-      ems = etn.mustardSeries;
-      esb = etn.soyBean;
-      ims = itn.mustardSeries;
-      isb = itn.soyBean;
+      ebbrs = etn.lbbrs;
+      eshbt = etn.lshbt;
+      ibbrs = itn.lbbrs;
+      ishbt = itn.lshbt;
 
-      if(R.isNil(esb)){
+      if(R.isNil(ebbrs)){
         throw new Error(
-          'External Soy Bean should not be nil.')
+          'External Bean Branch Series should not be nil.')
       }
 
-      if(R.isNil(isb)){
+      if(R.isNil(ibbrs)){
         throw new Error(
-          'Internal Soy Bean should not be nil.')
+          'Internal Bean Branch Series should not be nil.')
       }
 
-      // Full Mustard Series
-      const fms = ems + ims;
+      // Full Bean Branch Series
+      const fbbrs = R.concat(ebbrs, ibbrs);
 
       const lhBinary = decimalToBinary(
         lh.lhIdx,
         6);
 
       const mapFn = R.curry(buildCrosses)
-        (fms)
-        (esb)
-        (isb);
+        (fbbrs)
+        (eshbt)
+        (ishbt);
 
       const crosses = RA.mapIndexed(
         mapFn,

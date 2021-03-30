@@ -17,12 +17,13 @@ const nattoParagraph =
 // For example, as of 乾, we will have the branches
 // starting from the bottom as 子寅辰午申戌
 // 'Bbssb' is Bean Branch Series Start Branch.
-const getBnbrs = (bbssb, mseIsCw) => {
+const getFbbrs = (bbssb, mseIsCw) => {
 
   try{
 
     if(R.isNil(bbssb)){
-      throw new Error('Bean Branch Series Start Branch '
+      throw new Error(
+        'Bean Branch Series Start Branch ',
         'should not be nil.');
     }
 
@@ -30,14 +31,14 @@ const getBnbrs = (bbssb, mseIsCw) => {
     const bbsbi = idxOfBranch(bbssb);
 
     const mapFn = idx => {
-      const rawAdjustment = i * 2;
+      const rawAdjustment = idx * 2;
       const finalAdjustment = mseIsCw ?
         rawAdjustment : (-rawAdjustment);
       return itemOfBranch(bbsbi + finalAdjustment);
     }
 
-    const bnbrs = R.map(mapFn, R.range(0, 6))
-    return bnbrs;
+    const fbbrs = R.map(mapFn, R.range(0, 6))
+    return fbbrs;
   }
   catch(err){
     console.error(err);
@@ -50,32 +51,32 @@ const getBnbrs = (bbssb, mseIsCw) => {
 const getNattos = () => {
 
   const mapFn = (sentence) => {
-    const shOri = sentence[0];
-    const shEle = sentence[1];
+    const shori = sentence[0];
+    const shele = sentence[1];
 
     // External Short Hook Bean Trunk
     const eshbt = sentence[4];
 
-    // Internal Short Hook Bean
+    // Internal Short Hook Bean Trunk
     const ishbt = sentence[2];
     const bbssb = sentence[3];
 
     // Mustard Series is Clockwise
     const mseIsCw = sentence[5] == '順';
-    const bnbrs = getBnbrs(
+    const fbbrs = getFbbrs(
       bbssb, mseIsCw);
 
     // External Bean Branch Series
     const ebbrs =
-      R.reverse(R.takeLast(3, bnbrs));
+      R.reverse(R.takeLast(3, fbbrs));
 
     // Internal Bean Branch Series
     const ibbrs =
-      R.reverse(R.take(3, bnbrs));
+      R.reverse(R.take(3, fbbrs));
 
     return {
-      shOri,
-      shEle,
+      shori,
+      shele,
       eshbt,
       ishbt,
       bbssb,
@@ -93,10 +94,10 @@ const getNattos = () => {
 export const nattos = getNattos();
 
 // Short Hook Alternative
-export const shAltSce = '地雷水澤山火風天';
+export const shaltSce = '地雷水澤山火風天';
 
 // Short Hook Ori
-export const shOriSce = '坤震坎兌艮離巽乾';
+export const shoriSce = '坤震坎兌艮離巽乾';
 
 const lhParagraph = RA.concatAll([
   '乾為天,天風姤,天山遯,天地否,風地觀,山地剝,火地晉,火天大有,',
@@ -111,52 +112,52 @@ const lhParagraph = RA.concatAll([
 
 // Get Short Hook Number Alt Index
 const getShNumAltIndex =
-  (shAlt) => {
+  (shalt) => {
   return getIdx(
-    shAlt,
-    shAltSce);
+    shalt,
+    shaltSce);
 }
 
 export const getLhcts_1 = () => {
 
   const mapFn = (sentence) => {
 
-    let eshAlt;
-    let ishAlt;
+    let eshalt;
+    let ishalt;
     let lhName;
 
     if(sentence[1] == '為'){
-      eshAlt = sentence[2];
-      ishAlt = sentence[2];
+      eshalt = sentence[2];
+      ishalt = sentence[2];
       lhName = '純' + sentence[0];
     }
     else {
-      eshAlt = sentence[0];
-      ishAlt = sentence[1];
+      eshalt = sentence[0];
+      ishalt = sentence[1];
       lhName = R.drop(2, sentence);
     }
 
     const eshIdx =
-      getShNumAltIndex(eshAlt);
+      getShNumAltIndex(eshalt);
 
     const ishIdx =
-      getShNumAltIndex(ishAlt);
+      getShNumAltIndex(ishalt);
 
-    const eshOri =
-      shOriSce[eshIdx];
+    const eshori =
+      shoriSce[eshIdx];
 
-    const ishOri =
-      shOriSce[ishIdx];
+    const ishori =
+      shoriSce[ishIdx];
 
     const lhIdx =
       (eshIdx * 8) +
       ishIdx;
 
     return {
-      eshAlt,
-      ishAlt,
-      eshOri,
-      ishOri,
+      eshalt,
+      ishalt,
+      eshori,
+      ishori,
       lhName,
       eshIdx,
       ishIdx,

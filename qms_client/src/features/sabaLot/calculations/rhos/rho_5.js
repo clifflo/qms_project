@@ -16,7 +16,7 @@ const getLhcts_5 = () => {
 
     const focus = getElr(
       hhElem,
-      cross.cbe);
+      cross.cbel);
 
     return {
       ...cross,

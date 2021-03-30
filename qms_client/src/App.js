@@ -21,7 +21,7 @@ function showEf(){
 
 function showTree(){
   return (
-    <JSONTree data={lhcts_2} />
+    <JSONTree data={efRhoLots_2('1845')} />
   )
 }
 

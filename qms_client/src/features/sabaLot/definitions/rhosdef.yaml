@@ -1,17 +1,32 @@
 -
-  fullName: 'Short Hook'
+  fullName: Short Hook
   description: >
-    這裏解作三畫卦。
+    這裏解作三畫卦或短卦。
 -
-  shortName: 'shori',
-  fullName: 'Short Hook Original Name',
+  shortName: shori,
+  fullName: Short Hook Original Name,
   description: >
-    一個三畫卦的原本名字。例如天風姤卦中的天
+    短卦的原本名字。例如天風姤卦中的天
     則是乾卦。
-
 -
-  shortName: 'shalt',
-  fullName: 'Short Hook Alternate Name',
+  shortName: shalt,
+  fullName: Short Hook Alternate Name,
   description: >
-    一個三畫卦的原本名字。例如天風姤卦中的天
-    則是乾卦。
+    短卦的原本名字。例如天風姤卦中的天。
+-
+  shortName: shele
+  fullName: Short Hook Elemental
+  file: rho_1
+  description: >
+    短卦本身之五行。如乾卦屬金，坤卦屬土。
+-
+  fullName: natto
+  description: >
+    以納豆比喻納甲法也。而其中則有詳細的納音表
+    以定義不同午卦宮的爻相關天干和地支。
+-
+  shortName: fbbrs
+  fullName: Full Bean Branch Series
+  description: >
+    在納甲法中相關一個套入長卦中的六個地支，
+    之後會分拆為外短卦和內短卦的地支。
