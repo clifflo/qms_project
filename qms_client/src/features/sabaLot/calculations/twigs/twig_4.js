@@ -11,7 +11,7 @@ import * as R from 'ramda';
 
 // Branch Small Compound
 // 地支六合
-const getBscSet = () => {
+const getBrscSet = () => {
 
   const mapFn = i => {
     const sBranch = itemOfBranch(i);
@@ -41,18 +41,18 @@ const getBscSet = () => {
   }
 }
 
-export const bscSet = getBscSet();
+export const brscSet = getBrscSet();
 
-export const matchBsc = (sBranch, tBranch) => {
+export const matchBrsc = (sBranch, tBranch) => {
 
-  const findFn = bsc => {
+  const findFn = brsc => {
     const intersect = R.intersection(
-      bsc.branches, [sBranch, tBranch]);
+      brsc.branches, [sBranch, tBranch]);
     const valid = intersect.length == 2;
     return valid;
   }
 
-  const result = !R.isNil(R.find(findFn, bscSet));
+  const result = !R.isNil(R.find(findFn, brscSet));
   return result;
 }
 

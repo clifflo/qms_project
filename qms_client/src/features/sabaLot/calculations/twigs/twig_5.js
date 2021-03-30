@@ -6,7 +6,7 @@ import {
 
 // Branch Large Compound
 // 地支三合
-const getBlcSet = () => {
+const getBrlcSet = () => {
 
   const mapFn = i => {
 
@@ -16,10 +16,10 @@ const getBlcSet = () => {
     const bridx_3 = bridx_2 + 4;
     const brixs = [bridx_1, bridx_2, bridx_3];
     const branches = R.map(itemOfBranch, brixs);
-    const celem = getElem(branches[1]);
+    const blce = getElem(branches[1]);
     return {
       branches,
-      celem
+      blce
     }
   }
 
@@ -34,7 +34,7 @@ const getBlcSet = () => {
   }
 }
 
-export const blcSet = getBlcSet();
+export const brlcSet = getBrlcSet();
 
 // Meeting Set
 // 地支三會
