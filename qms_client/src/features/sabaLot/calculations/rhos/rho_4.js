@@ -18,21 +18,21 @@ import {
 
 const getLhcts_4 = () => {
 
-  const headHookOrder = '乾坎艮震巽離坤兌';
+  const rhHookOrder = '乾坎艮震巽離坤兌';
 
   // Head Hook Elemental Order
   const rhhElemOrder = '金水土木木火土金';
 
-  const getHeadHookIndex = (headHook) => {
+  const getHeadHookIndex = (rhHook) => {
 
     try{
 
       const result = getIdx(
-        headHook, headHookOrder);
+        rhHook, rhHookOrder);
 
       if(R.isNil(result)){
         throw new Error(
-          `${headHook} is not a valid head hook.`);
+          `${rhHook} is not a valid head hook.`);
       }
 
       return result;
@@ -52,7 +52,7 @@ const getLhcts_4 = () => {
     const lpalIndex = context_3.lpalIndex;
 
     // Head Hook Index
-    const hhIndex = getHeadHookIndex(context_3.headHook);
+    const hhIndex = getHeadHookIndex(context_3.rhHook);
 
     // Global Palace Index
     const gpalIndex = (hhIndex * 8) + lpalIndex;

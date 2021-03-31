@@ -4,11 +4,11 @@ import { arrmtSet } from '../twigs/twig_5';
 import produce from 'immer';
 import { getFlushOp } from '../twigs/twig_4';
 
-export const getDelta_3 = odelta_2 => {
+export const getDelta_3 = delta_2 => {
 
   try{
     // Day Branch of Delta
-    const ddbr = odelta_2.deDay[1];
+    const ddbr = delta_2.deDay[1];
 
     if(!RA.isString(ddbr)){
       throw new Error(
@@ -48,11 +48,11 @@ export const getDelta_3 = odelta_2 => {
       }
     }
 
-    const changed_crsa = R.map(mapFn, odelta_2.crsa);
-    const delta_3 = produce(odelta_2, ddelta_3 => {
-      ddelta_3.crsa = changed_crsa;
-      ddelta_3.dbfo = dbfo;
-      ddelta_3.dbsp = dbsp;
+    const changed_crsa = R.map(mapFn, delta_2.crsa);
+    const delta_3 = produce(delta_2, d_delta_3 => {
+      d_delta_3.crsa = changed_crsa;
+      d_delta_3.dbfo = dbfo;
+      d_delta_3.dbsp = dbsp;
     });
 
     return delta_3;

@@ -16,11 +16,23 @@ export const getLhcts_6 = () => {
 
     // Hidden Cross Focus Set
     const hcfcs = R.difference(elrs, ucfss);
+    let rhlh;
+
+    if(isLhhd){
+      // Rho Head Long Hook
+      rhlh = R.find(
+        R.propEq('lhName', '純' + lhook.rhHook),
+        lhcts_5);
+    }
+    else {
+      rhlh = null;
+    }
 
     return {
-      lhName: lhook.lhName,
+      ...lhook,
       isLhhd,
-      hcfcs
+      hcfcs,
+      rhlh
     }
   }
 

@@ -55,19 +55,19 @@ export const rpalOrder =
   (rpalSce);
 
 // Rho Paladin Start Position
-const getRpsSet = () => {
+const getRpldSet = () => {
 
   const mapFn = i => {
 
-    const rpsKey = R.reverse([0,0,1,1,2,3,4,4,5,5]);
+    const rpldKey = R.reverse([0,0,1,1,2,3,4,4,5,5]);
     const trunk = itemOfTrunk(i);
 
-    const rpsIdx = rpsKey[i];
-    const rps = rpalOrder[rpsIdx];
+    const rpdix = rpldKey[i];
+    const rpld = rpalOrder[rpdix];
     return {
       trunk,
-      rpsIdx,
-      rps
+      rpdix,
+      rpld
     }
   }
 
@@ -82,4 +82,4 @@ const getRpsSet = () => {
   }
 }
 
-export const rpsSet = getRpsSet();
+export const rpldSet = getRpldSet();

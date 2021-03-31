@@ -143,7 +143,7 @@ const getHookPalaces = () => {
     const seriesSce = R.join(',', finalSeries);
 
     return {
-      headHook: shortHookName,
+      rhHook: shortHookName,
       seriesSce
     }
   }
@@ -186,7 +186,7 @@ const getLhcts_3 = () => {
 
       return {
         lhName,
-        headHook: hookPalace.headHook,
+        rhHook: hookPalace.rhHook,
         lpalIndex,
         rjackIdx,
         rkingIdx

@@ -9,6 +9,7 @@ import { rpsSet, rpalOrder } from '../rhos/rho_5';
 import { item } from '../utils/util_1';
 import { getWTodeDay } from '../calendar';
 import { idxOfBranch } from '../twigs/twig_1';
+import produce from 'immer';
 
 export const getDelta_1 = delta_0 => {
 
@@ -67,18 +68,23 @@ export const getDelta_1 = delta_0 => {
   const acdl = R.map(acdFn, R.range(0, 6));
 
   const crossFn = (cross_1, idx, list) => {
-    let cross_2 = Object.assign({}, cross_1);
-    cross_2.isStrike = acdl[idx];
 
-    // Rho Paladin Start Position
-    const rpsIdx = R.find(
-      R.propEq('trunk', deDay[0]), rpsSet).rpsIdx;
+    const cross_2 = produce(cross_1, d_cross_2){
 
-    // Rho Paladin
-    const rpal = item(rpalOrder, rpsIdx + idx + 1);
-    cross_2.rpal = rpal;
+      cross_2.isStrike = acdl[idx];
 
-    return cross_2;
+      // Rho Paladin Start Position
+      const rpsIdx = R.find(
+        R.propEq('trunk', deDay[0]), rpsSet)
+        .rpsIdx;
+
+      // Rho Paladin
+      const rpal = item(rpalOrder, rpsIdx + idx + 1);
+      cross_2.rpal = rpal;
+
+      return cross_2;
+    }
+
   }
 
 
