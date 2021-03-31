@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  rhocxts_1,
+  rhocs_1,
   shoriSce
 } from './rho_1';
 import {
@@ -19,7 +19,7 @@ export const getLhcByName = (lhName) => {
 
   const lhContext = R.find(
     R.propEq('lhName', lhName),
-    rhocxts_1);
+    rhocs_1);
 
   if(R.isNil(lhContext)){
     throw new Error(`${lhName} is not a valid long hook.`);
@@ -32,7 +32,7 @@ export const getLhcByIdx = lhIdx => {
 
   const lhContext = R.find(
     R.propEq('lhIdx', lhIdx),
-    rhocxts_1);
+    rhocs_1);
 
   if(R.isNil(lhIdx)){
     throw new Error('Long hook number should not be nil.');
@@ -172,7 +172,7 @@ const buildRjackIdx = (lpalIndex) => {
   return downwardIndex;
 }
 
-const getRhocxts_3 = () => {
+const getRhocs_3 = () => {
 
   const mapFn_1 = (
     hookPalace,
@@ -226,4 +226,4 @@ const getRhocxts_3 = () => {
 }
 
 
-export const rhocxts_3 = getRhocxts_3();
+export const rhocs_3 = getRhocs_3();

@@ -1,8 +1,8 @@
 import * as R from 'ramda';
-import { rhocxts_5 } from './rho_5';
+import { rhocs_5 } from './rho_5';
 import { elrs } from '../twigs/twig_1';
 
-export const getRhocxts_6 = () => {
+export const getRhocs_6 = () => {
 
   const mapFn = lhook => {
     // Non unique Cross Focus Set
@@ -22,7 +22,7 @@ export const getRhocxts_6 = () => {
       // Rho Head Long Hook
       rhlh = R.find(
         R.propEq('lhName', '純' + lhook.rhHook),
-        rhocxts_5);
+        rhocs_5);
     }
     else {
       rhlh = null;
@@ -36,5 +36,5 @@ export const getRhocxts_6 = () => {
     }
   }
 
-  return R.map(mapFn, rhocxts_5)
+  return R.map(mapFn, rhocs_5)
 }

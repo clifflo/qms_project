@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import { decimalToBinary } from '../utils/util_2';
 import {
-  rhocxts_1,
+  rhocs_1,
   nattos,
 } from './rho_1';
 import {
@@ -93,7 +93,7 @@ const buildCrosses = (
 
 }
 
-export const getRhocxts_2 = (lhs) => {
+export const getRhocs_2 = (lhs) => {
 
   const mapFn = (lh) => {
 
@@ -167,5 +167,5 @@ export const getRhocxts_2 = (lhs) => {
   return R.map(mapFn, lhs)
 }
 
-export const rhocxts_2 =
-  getRhocxts_2(rhocxts_1);
+export const rhocs_2 =
+  getRhocs_2(rhocs_1);

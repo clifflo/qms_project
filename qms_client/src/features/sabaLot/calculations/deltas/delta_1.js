@@ -4,7 +4,7 @@ import { binaryToDecimal } from '../utils/util_1';
 import { getLhcByIdx } from '../rhos/rho_3';
 import { isValidBranch } from '../twigs/twig_1';
 import { getBpse } from '../twigs/twig_3';
-import { rhocxts_5 } from '../rhos/rho_4';
+import { rhocs_5 } from '../rhos/rho_4';
 import { rpsSet, rpalOrder } from '../rhos/rho_5';
 import { item } from '../utils/util_1';
 import { getWTodeDay } from '../calendar';
@@ -41,7 +41,7 @@ export const getDelta_1 = delta_0 => {
   // Long Hook Context A
   const lhca = R.find(
     R.propEq('lhName', lhna),
-    rhocxts_5);
+    rhocs_5);
 
   if(R.isNil(lhca)){
     throw new Error('Long Hook A is wrong.');
@@ -50,7 +50,7 @@ export const getDelta_1 = delta_0 => {
   // Long Hook Context B
   const lhcb = R.find(
     R.propEq('lhName', lhnb),
-    rhocxts_5);
+    rhocs_5);
 
   if(R.isNil(lhcb)){
     throw new Error('Long Hook B is wrong.');
@@ -69,7 +69,7 @@ export const getDelta_1 = delta_0 => {
 
   const crossFn = (cross_1, idx, list) => {
 
-    const cross_2 = produce(cross_1, d_cross_2){
+    const cross_3 = produce(cross_1, cross_2){
 
       cross_2.isStrike = acdl[idx];
 
@@ -77,6 +77,8 @@ export const getDelta_1 = delta_0 => {
       const rpsIdx = R.find(
         R.propEq('trunk', deDay[0]), rpsSet)
         .rpsIdx;
+
+      if()
 
       // Rho Paladin
       const rpal = item(rpalOrder, rpsIdx + idx + 1);

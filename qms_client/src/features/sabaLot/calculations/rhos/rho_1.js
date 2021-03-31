@@ -118,7 +118,7 @@ const getShNumAltIndex =
     shaltSce);
 }
 
-export const getRhocxts_1 = () => {
+export const getRhocs_1 = () => {
 
   const mapFn = (sentence) => {
 
@@ -173,4 +173,4 @@ export const getRhocxts_1 = () => {
 
 }
 
-export const rhocxts_1 = getRhocxts_1();
+export const rhocs_1 = getRhocs_1();
