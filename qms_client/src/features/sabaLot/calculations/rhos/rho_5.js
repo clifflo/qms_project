@@ -12,15 +12,15 @@ import {
 const getLhcts_5 = () => {
 
   // Map Function 1 non-curried.
-  const mapFn_1n = (hhElem, cross) => {
+  const mapFn_1n = (rhhElem, cross) => {
 
-    const focus = getElr(
-      hhElem,
+    const crfcs = getElr(
+      rhhElem,
       cross.cbel);
 
     return {
       ...cross,
-      focus
+      crfcs
     }
   }
 
@@ -30,7 +30,7 @@ const getLhcts_5 = () => {
   const mapFn_2 = (lhContext) => {
 
     const crosses = R.map(
-      mapFn_1c(lhContext.hhElem),
+      mapFn_1c(lhContext.rhhElem),
       lhContext.crosses);
 
     return {

@@ -21,7 +21,7 @@ const getLhcts_4 = () => {
   const headHookOrder = '乾坎艮震巽離坤兌';
 
   // Head Hook Elemental Order
-  const hhElemOrder = '金水土木木火土金';
+  const rhhElemOrder = '金水土木木火土金';
 
   const getHeadHookIndex = (headHook) => {
 
@@ -56,13 +56,13 @@ const getLhcts_4 = () => {
 
     // Global Palace Index
     const gpalIndex = (hhIndex * 8) + lpalIndex;
-    const hhElem = hhElemOrder[hhIndex]
+    const rhhElem = rhhElemOrder[hhIndex]
 
     return {
       ...context_2,
       ...context_3,
       gpalIndex,
-      hhElem
+      rhhElem
     }
   }
 
@@ -94,12 +94,12 @@ const getLhcts_5 = () => {
   }
 
   // Map Function 1 non curried
-  const mapFn_1n = (hhElem, cross_1) => {
+  const mapFn_1n = (rhhElem, cross_1) => {
 
 
     try{
-      const focus = getElr(hhElem, cross_1.cbel);
-      const fcn = fcnl[focus];
+      const crfcs = getElr(rhhElem, cross_1.cbel);
+      const fcn = fcnl[crfcs];
       let cross_2 = Object.assign({}, cross_1);
       cross_2.fcn = fcn;
       return cross_2;
@@ -118,7 +118,7 @@ const getLhcts_5 = () => {
 
     try {
       const crosses = R.map(
-        mapFn_1c(lhc_4.hhElem),
+        mapFn_1c(lhc_4.rhhElem),
         lhc_4.crosses);
 
       // Long Hook Context 5
