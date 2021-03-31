@@ -10,13 +10,13 @@ import { efRhoLots_2 } from
   './features/sabaLot/calculations/rhos/rho_6';
 import { RhoGui } from
   './features/sabaLot/gui/rhoGui';
-import { getLhcts_6 } from
+import { getRhocxts_6 } from
   './features/sabaLot/calculations/rhos/rho_6';
 
 
 function showTree(){
   return (
-    <JSONTree data={getLhcts_6()} />
+    <JSONTree data={getRhocxts_6()} />
   )
 }
 

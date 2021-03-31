@@ -6,7 +6,7 @@ import {
 import { getDelta_1 } from './delta_1';
 import produce from 'immer';
 
-export const getRhocxts_7 = delta_1 => {
+export const getDelta_2 = delta_1 => {
 
   const lhjia = delta_1.lhjia;
   const lhqia = delta_1.lhqia;

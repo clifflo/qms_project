@@ -1,13 +1,13 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  lhcts_2
+  rhocxts_2
 } from './rho_2';
 import {
   nattos
 } from './rho_1';
 import {
-  lhcts_3
+  rhocxts_3
 } from './rho_3';
 import {
   getIdx
@@ -16,7 +16,7 @@ import {
   getElr
 } from '../twigs/twig_1';
 
-const getLhcts_4 = () => {
+const getRhocxts_4 = () => {
 
   const rhHookOrder = '乾坎艮震巽離坤兌';
 
@@ -47,7 +47,7 @@ const getLhcts_4 = () => {
 
     const context_2 = R.find(
       R.propEq('lhName', context_3.lhName),
-      lhcts_2);
+      rhocxts_2);
 
     const lpalIndex = context_3.lpalIndex;
 
@@ -68,7 +68,7 @@ const getLhcts_4 = () => {
 
   try {
 
-    const rawContexts = R.map(mapFn, lhcts_3);
+    const rawContexts = R.map(mapFn, rhocxts_3);
     const sortedContexts = R.sortBy(
       R.prop('gpalIndex'), rawContexts);
     return sortedContexts;
@@ -80,9 +80,9 @@ const getLhcts_4 = () => {
   }
 }
 
-export const lhcts_4 = getLhcts_4();
+export const rhocxts_4 = getRhocxts_4();
 
-const getLhcts_5 = () => {
+const getRhocxts_5 = () => {
 
   // Focus Chinese Name List
   const fcnl = {
@@ -135,7 +135,7 @@ const getLhcts_5 = () => {
 
   }
 
-  return R.map(mapFn_2, lhcts_4);
+  return R.map(mapFn_2, rhocxts_4);
 }
 
-export const lhcts_5 = getLhcts_5();
+export const rhocxts_5 = getRhocxts_5();

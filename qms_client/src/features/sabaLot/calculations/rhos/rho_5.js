@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  lhcts_4
+  rhocxts_4
 } from './rho_4';
 import {
   getElr,
@@ -9,7 +9,7 @@ import {
   itemOfTrunk
 } from '../twigs/twig_1';
 
-const getLhcts_5 = () => {
+const getRhocxts_5 = () => {
 
   // Map Function 1 non-curried.
   const mapFn_1n = (rhhElem, cross) => {
@@ -39,11 +39,11 @@ const getLhcts_5 = () => {
     }
   }
 
-  const result = R.map(mapFn_2, lhcts_4);
+  const result = R.map(mapFn_2, rhocxts_4);
   return result;
 }
 
-export const lhcts_5 = getLhcts_5();
+export const rhocxts_5 = getRhocxts_5();
 
 const rpalSce = '青龍,朱雀,勾陳,螣蛇,白虎,玄武';
 

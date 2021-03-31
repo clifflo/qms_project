@@ -4,7 +4,7 @@ import { binaryToDecimal } from '../utils/util_1';
 import { getLhcByIdx } from '../rhos/rho_3';
 import { isValidBranch } from '../twigs/twig_1';
 import { getBpse } from '../twigs/twig_3';
-import { lhcts_5 } from '../rhos/rho_4';
+import { rhocxts_5 } from '../rhos/rho_4';
 import { rpsSet, rpalOrder } from '../rhos/rho_5';
 import { item } from '../utils/util_1';
 import { getWTodeDay } from '../calendar';
@@ -41,7 +41,7 @@ export const getDelta_1 = delta_0 => {
   // Long Hook Context A
   const lhca = R.find(
     R.propEq('lhName', lhna),
-    lhcts_5);
+    rhocxts_5);
 
   if(R.isNil(lhca)){
     throw new Error('Long Hook A is wrong.');
@@ -50,7 +50,7 @@ export const getDelta_1 = delta_0 => {
   // Long Hook Context B
   const lhcb = R.find(
     R.propEq('lhName', lhnb),
-    lhcts_5);
+    rhocxts_5);
 
   if(R.isNil(lhcb)){
     throw new Error('Long Hook B is wrong.');
