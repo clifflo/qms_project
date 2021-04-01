@@ -4,10 +4,10 @@ import { elrs } from '../twigs/twig_1';
 
 const getRhocs_6 = () => {
 
-  const mapFn = lhook => {
+  const mapFn = rhocxt => {
 
     // Non unique Cross Focus Set
-    const ncfss = R.map(R.prop('crfcs'), lhook.crosses);
+    const ncfss = R.map(R.prop('crfcs'), rhocxt.crosses);
 
     if(R.isNil(ncfss)){
       throw new Error(
@@ -29,13 +29,13 @@ const getRhocs_6 = () => {
 
       // Rho Head Long Hook
       const rhlhResult = R.find(
-        R.propEq('lhName', '純' + lhook.rhHook),
+        R.propEq('lhName', '純' + rhocxt.rhHook),
         rhocs_5);
 
       if(R.isNil(rhlhResult)){
         throw new Error(
           'Cannot find the Rho Head Long Hook. '
-          + `${lhook.rhHook} may not be a valid `
+          + `${rhocxt.rhHook} may not be a valid `
           + 'Rho Head Hook Name.')
       }
 
@@ -46,7 +46,7 @@ const getRhocs_6 = () => {
     }
 
     return {
-      ...lhook,
+      ...rhocxt,
       isLhhd,
       hcfcs,
       rhlh

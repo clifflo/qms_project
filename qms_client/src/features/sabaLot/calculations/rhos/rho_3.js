@@ -22,7 +22,8 @@ export const getLhcByName = (lhName) => {
     rhocs_1);
 
   if(R.isNil(lhContext)){
-    throw new Error(`${lhName} is not a valid long hook.`);
+    throw new Error(
+      `${lhName} is not a valid long hook.`);
   }
 
   return lhContext;
@@ -35,7 +36,8 @@ export const getLhcByIdx = lhIdx => {
     rhocs_1);
 
   if(R.isNil(lhIdx)){
-    throw new Error('Long hook number should not be nil.');
+    throw new Error(
+      'Long hook number should not be nil.');
   }
 
   if(!RA.isNumber(lhIdx)){
@@ -68,7 +70,8 @@ const getHgbs = () => {
 
     if(!RA.isNumber(targetLhIdx)){
       throw new Error(
-        'How come the Long Hook Index becomes a string?');
+        'How come the Long Hook '
+        + 'Index becomes a string?');
     }
 
     const gapBinary = decimalToBinary(
@@ -85,8 +88,10 @@ const getHgbs = () => {
 
     if(hgbs_2.length != 7){
       throw new Error(
-        `It must be seven hook gap binaries only but now `
-        + `we have ${hgbs_2.length} of them, how come? `);
+        'It must be seven hook gap binaries'
+        + 'only but now we have '
+        + hgbs_2.length
+        + 'of them, how come?');
     }
 
     return R.map(mapFn, baseHookSeries);
@@ -98,11 +103,13 @@ const getHgbs = () => {
 
 }
 
+// Hook Gap Binaries Set
 const hgbs = getHgbs();
 
-const getHookPalaces = () => {
+const getRhpals = () => {
 
-  const mapFn_1 = (shortHookName, gapBinary, index) => {
+  const mapFn_1 =
+    (shortHookName, gapBinary, index) => {
 
     try{
       const gapDecimal = binaryToDecimal(gapBinary);
@@ -127,7 +134,8 @@ const getHookPalaces = () => {
     }
     catch(err){
       console.error(err);
-      throw new Error('Error in getting hook series.')
+      throw new Error(
+        'Error in getting hook series.')
     }
   }
   const mapFn_1_curried = R.curry(mapFn_1);
@@ -152,7 +160,8 @@ const getHookPalaces = () => {
   return result;
 }
 
-const hookPalaces = getHookPalaces();
+// Rho Hook Palaces
+const rhpals = getRhpals();
 
 const buildRjackIdx = (lpalIndex) => {
 
@@ -175,51 +184,53 @@ const buildRjackIdx = (lpalIndex) => {
 const getRhocs_3 = () => {
 
   const mapFn_1 = (
-    hookPalace,
+    rhkpal,
     lhName,
     lpalIndex) => {
 
     try{
 
-      const rjackIdx = buildRjackIdx(lpalIndex);
-      const rkingIdx = (rjackIdx + 3) % 6;
+      const rhojkIdx = buildRjackIdx(lpalIndex);
+      const rhokgIdx = (rhojkIdx + 3) % 6;
 
       return {
         lhName,
-        rhHook: hookPalace.rhHook,
+        rhHook: rhkpal.rhHook,
         lpalIndex,
-        rjackIdx,
-        rkingIdx
+        rhojkIdx,
+        rhokgIdx
       }
     }
     catch(err){
       console.error(err);
       throw new Error(
-        'Map function 2 error for get hook palace set 2.');
+        'Map function 2 error for '
+        + 'get Hook Palace Set 2.');
     }
 
   }
 
   const mapFn_1_curried = R.curry(mapFn_1);
 
-  const mapFn_2 = (hookPalace) => {
+  const mapFn_2 = rhkpal => {
 
     try {
-      const series = R.split(',', hookPalace.seriesSce);
+      const series = R.split(',', rhkpal.seriesSce);
       const result = RA.mapIndexed(
-        mapFn_1_curried(hookPalace),
+        mapFn_1_curried(rhkpal),
         series);
       return result;
     }
     catch(err){
       console.error(err);
       throw new Error(
-        'Map function 2 error for get hook palace set 2.')
+        'Map function 2 error for get '
+        + 'Rho Hook Palace Set 2.')
     }
 
   }
 
-  const nestedList = R.map(mapFn_2, hookPalaces);
+  const nestedList = R.map(mapFn_2, rhpals);
 
   const flatList = R.flatten(nestedList);
   return flatList;
