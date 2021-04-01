@@ -39,7 +39,10 @@ const getRhocs_8 = () => {
         }
       }
       else {
-        return cross;
+        return {
+          ...cross,
+          isRrhcs
+        }
       }
     }
     catch(err){

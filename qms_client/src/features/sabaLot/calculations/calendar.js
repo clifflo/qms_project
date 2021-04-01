@@ -206,12 +206,12 @@ const calr_1 =
 
 const getCalr_2 = () => {
 
-  const moNames_1 =
+  const wmnames_1 =
     '正,二,三,四,五,六,七,八,九,十,十一,十二';
 
-  const moNames_2 = R.split(',', moNames_1);
+  const wmnames_2 = R.split(',', wmnames_1);
 
-  const mapFn_1n = (yr_1, ybp, mo_1, midx) => {
+  const mapFn_1n = (yr_1, wybp, mo_1, wmidx) => {
 
     const mo_2 = R.slice(0, 2, mo_1);
     let yr_2;
@@ -226,14 +226,14 @@ const getCalr_2 = () => {
       mo_3 = mo_2;
     }
 
-    const moStart = `${yr_2}-${mo_3}-${day}`;
-    const moName = item(moNames_2, midx);
+    const wmost = `${yr_2}-${mo_3}-${day}`;
+    const wmname = item(wmnames_2, wmidx);
     return {
       year: yr_1,
-      ybp,
-      moName,
-      moStart,
-      midx
+      wybp,
+      wmname,
+      wmost,
+      wmidx
     }
   }
 
@@ -250,10 +250,10 @@ const getCalr_2 = () => {
 
     // Betapsi Index
     const bpix = (year - 1984) % 60;
-    const ybp = itemOfBtp(bpix);
+    const wybp = itemOfBtp(bpix);
 
     const months_1 = RA.mapIndexed(
-      mapFn_1c(yrContext.year)(ybp),
+      mapFn_1c(yrContext.year)(wybp),
       mswl);
 
     let months_2;
@@ -270,7 +270,7 @@ const getCalr_2 = () => {
 
     return {
       year,
-      ybp,
+      wybp,
       months: months_1,
       leap: leap_2
     }
@@ -280,7 +280,7 @@ const getCalr_2 = () => {
 
 }
 
-export const calr_2 = getCalr_2();
+const calr_2 = getCalr_2();
 
 const getCalr_3 = () => {
 
@@ -290,17 +290,17 @@ const getCalr_3 = () => {
   let months_4 = [];
 
   for(var i = 0; i < months_3.length - 1; i++){
-    const moEnd = months_3[i+1].moStart;
+    const wmoend = months_3[i+1].wmost;
     months_4.push({
       ...months_3[i],
-      moEnd
+      wmoend
     })
   }
 
   return months_4;
 }
 
-export const calr_3 = getCalr_3();
+const calr_3 = getCalr_3();
 
 const getCalr_4 = () => {
 
@@ -315,29 +315,29 @@ const getCalr_4 = () => {
     if(leap == '---'){
       return {
         ...month,
-        yearHasLeap: false
+        wyrHasLeap: false
       }
     }
     else {
 
       const isLeap = moment(leap)
         .isBetween(
-          month.moStart,
-          month.moEnd,
+          month.wmost,
+          month.wmoend,
           undefined,
           '[)');
 
       if(!isLeap){
         return {
           ...month,
-          yearHasLeap: true,
+          wyrHasLeap: true,
           isLeap: false
         }
       }
       else {
         return {
           ...month,
-          yearHasLeap: true,
+          wyrHasLeap: true,
           isLeap: true,
           leap
         }
@@ -349,16 +349,16 @@ const getCalr_4 = () => {
 
 }
 
-export const calr_4 = getCalr_4();
+const calr_4 = getCalr_4();
 
 // Get Wan Nian Li Day
-const getWniDay = dateMoment => {
+const getWniday = dateMoment => {
 
   const findFn = _month => {
     const result = dateMoment
       .isBetween(
-        _month.moStart,
-        _month.moEnd,
+        _month.wmost,
+        _month.wmoend,
         undefined,
         '[)');
 
@@ -366,14 +366,14 @@ const getWniDay = dateMoment => {
   }
 
   const month = R.find(findFn, calr_4);
-  const dbp = getDbp(dateMoment);
+  const wdbp = getDbp(dateMoment);
   const atLeap = dateMoment
-    .isBetween(month.leap, month.moEnd, undefined, '[)');
+    .isBetween(month.leap, month.wmoend, undefined, '[)');
 
-  const ybp = month.ybp;
+  const wybp = month.wybp;
 
   // Trunk of year
-  const tkyr = ybp[0];
+  const tkyr = wybp[0];
   const tkyi = idxOfTrunk(tkyr) % 5;
 
   // Index of start trunk of year
@@ -381,22 +381,22 @@ const getWniDay = dateMoment => {
   const stoy = itemOfTrunk(styi);
 
   // Month's trunk index
-  const mtix = styi + month.midx;
+  const mtix = styi + month.wmidx;
   const mtrk = itemOfTrunk(mtix);
-  const mbix = month.midx + 2;
+  const mbix = month.wmidx + 2;
   const mbrh = itemOfBranch(mbix);
-  const mbp = mtrk + mbrh;
+  const wmbp = mtrk + mbrh;
 
   return {
     date: dateMoment.format('YYYY-MM-DD'),
     ...month,
-    dbp,
-    mbp,
+    wdbp,
+    wmbp,
     atLeap
   }
 }
 
 // Get Wan Nian Li Today
-export const getWToday = () => {
-  return getWniDay(moment());
+export const getWtoday = () => {
+  return getWniday(moment());
 }
