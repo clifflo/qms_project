@@ -39,7 +39,8 @@ export const branchContext = {
   '亥': 'Mu',
 }
 
-export const branchOrder = '子丑寅卯辰巳午未申酉戌亥';
+export const branchOrder =
+  '子丑寅卯辰巳午未申酉戌亥';
 
 export const idxOfTrunk = (trunk) => {
   return getIdx(trunk, trunkOrder)
@@ -75,22 +76,10 @@ export const idxOfBranch = (branch) => {
 }
 
 const getBelem = branch => {
-  const bri_1 = idxOfBranch(branch);
-  const bri_2 = (bri_1 + 1);
-  if (bri_2 % 3 == 2){
-    return '土';
-  }
-  else {
-    const elei_1 = Math.floor(bri_2 / 3);
-    let elei_2;
-    if(elei_1 > 2){
-      elei_2 = elei_1 + 1;
-    }
-    else {
-      elei_2 = elei_1;
-    }
-    return itemOfElem(elei_2 + 1)
-  }
+
+  const belemOrder = '水土木木土火火土金金土水';
+  const bridx = idxOfBranch(branch);
+  return belemOrder(bridx);
 }
 
 const getTelem = trunk => {
