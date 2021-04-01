@@ -73,7 +73,7 @@ export const luckyTgset = {
   '壬':'龍'
 }
 
-const getGivenBrake = () => {
+const getGivenKill = () => {
   const brhList = '巳寅亥申';
 
   const mapFn = idx => {
@@ -88,4 +88,4 @@ const getGivenBrake = () => {
   return R.map(mapFn, R.range(0, 12));
 }
 
-export const givenBrake = getGivenBrake();
+export const givenKill = getGivenKill();

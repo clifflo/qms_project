@@ -75,7 +75,6 @@ const getRhocs_8 = () => {
     else {
       return rhocxt_1;
     }
-
   }
 
   try{
