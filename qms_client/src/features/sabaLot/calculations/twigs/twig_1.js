@@ -21,7 +21,8 @@ export const trunkContext = {
 
 export const elemOrder = '金水木火土';
 
-export const trunkOrder = '甲乙丙丁戊己庚辛壬癸';
+export const trunkOrder
+  = '甲乙丙丁戊己庚辛壬癸';
 
 export const branchContext = {
   '子': 'Psi',

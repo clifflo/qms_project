@@ -21,35 +21,35 @@ const getRhocs_6 = () => {
     // Long Hook with hidden
     const isLhhd = ucfss.length < 5;
 
-    // Hidden Cross Focus Set
-    const hcfcs = R.difference(elrs, ucfss);
-    let rhlh;
+    // Rho Hidden Cross Focus Set
+    const rhhfs = R.difference(elrs, ucfss);
+    let rhces;
 
     if(isLhhd){
 
       // Rho Head Long Hook
-      const rhlhResult = R.find(
+      const rhcesResult = R.find(
         R.propEq('lhName', '純' + rhocxt.rhHook),
-        rhocs_5);
+        rhocs_5).crosses;
 
-      if(R.isNil(rhlhResult)){
+      if(R.isNil(rhcesResult)){
         throw new Error(
           'Cannot find the Rho Head Long Hook. '
           + `${rhocxt.rhHook} may not be a valid `
           + 'Rho Head Hook Name.')
       }
 
-      rhlh = rhlhResult;
+      rhces = rhcesResult;
     }
     else {
-      rhlh = null;
+      rhces = 'NO_RHCES';
     }
 
     return {
       ...rhocxt,
       isLhhd,
-      hcfcs,
-      rhlh
+      rhhfs,
+      rhces
     }
   }
 

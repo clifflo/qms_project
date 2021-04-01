@@ -59,10 +59,10 @@ export const gmsmTgrnSet = {
   '庚辛':'虎馬',
 }
 
-// Gamma Mu Tangerine Set
-// 乙亥貴人（六壬專用天乙貴人）
-export const gmmuTgrnSet = {
-  '甲戊庚': '牛羊',
+// Gamma Xi Tangerine Set
+// 乙酉貴人（六壬專用天乙貴人）
+export const gmxiTgrnSet = {
+  '甲戊庚':'牛羊',
   '乙己':'鼠猴',
   '丙丁':'豬雞',
   '壬癸':'兔蛇',
@@ -70,5 +70,14 @@ export const gmmuTgrnSet = {
 }
 
 export const luckyTgrnSet = {
-
+  '甲':'虎',
+  '乙':'豬牛',
+  '丙':'犬鼠',
+  '丁':'雞',
+  '戊':'𤠣',
+  '己':'羊',
+  '庚':'馬',
+  '辛':'蛇',
+  '癸':'兔',
+  '壬':'龍'
 }
