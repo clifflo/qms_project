@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import { brlcSet } from './twig_5';
+import { adjust } from '../utils/util_1';
 import {
   isValidBranch,
   branchOrder,
@@ -9,7 +10,7 @@ import {
 } from './twig_1';
 
 // Milo Tangerine is the 天元祿吉神
-export const miloTgrnSet = {
+export const miloTgset = {
   '甲':'寅',
   '乙':'卯',
   '丙戊':'巳',
@@ -21,37 +22,27 @@ export const miloTgrnSet = {
 }
 
 // Horse Tangerine is 驛馬吉神
-const getHorseTgrn = tBranch => {
+const getHorseTgset = () => {
 
-  if(!isValidBranch(tBranch)){
-    throw new Error(
-      `${tBranch} is not a valid branch `
-      + `for horse brake.`)
-  }
+  const brhList = '寅亥申巳';
 
-  try{
-    const findFn = _brlc => {
-      return R.includes(tBranch, _brlc.branches);
+  const mapFn = idx => {
+    const sBranch = itemOfBranch(idx);
+    const tBranch = item(brhList, idx);
+
+    return {
+      [sBranch]: tBranch
     }
+  }
 
-    const brlc = R.find(findFn, brlcSet);
-    const midBranch = brlc.branches[2];
-    const midBridx = idxOfBranch(midBranch);
-    const result = itemOfBranch(midBridx + 2);
-    return result;
-  }
-  catch(err){
-    console.error(err);
-    throw new Error('Cannot get horse brake.');
-  }
+  return R.map(mapFn, R.range(0, 12));
 }
 
-export const horseTgrnSet =
-  R.map(getHorseTgrn, branchOrder);
+export const horseTgset = getHorseTgset();
 
 // Gamma Sigma Tangerine Set
 // 乙巳貴人（火珠林專用天乙貴人）
-export const gmsmTgrnSet = {
+export const gmsmTgset = {
   '甲戊':'牛羊',
   '乙己':'鼠猴',
   '丙丁':'豬雞',
@@ -61,7 +52,7 @@ export const gmsmTgrnSet = {
 
 // Gamma Xi Tangerine Set
 // 乙酉貴人（六壬專用天乙貴人）
-export const gmxiTgrnSet = {
+export const gmxiTgset = {
   '甲戊庚':'牛羊',
   '乙己':'鼠猴',
   '丙丁':'豬雞',
@@ -69,7 +60,7 @@ export const gmxiTgrnSet = {
   '辛': '馬虎'
 }
 
-export const luckyTgrnSet = {
+export const luckyTgset = {
   '甲':'虎',
   '乙':'豬牛',
   '丙':'犬鼠',
@@ -81,3 +72,20 @@ export const luckyTgrnSet = {
   '癸':'兔',
   '壬':'龍'
 }
+
+const getGivenBrake = () => {
+  const brhList = '巳寅亥申';
+
+  const mapFn = idx => {
+    const sBranch = itemOfBranch(idx);
+    const tBranch = item(brhList, idx);
+
+    return {
+      [sBranch]: tBranch
+    }
+  }
+
+  return R.map(mapFn, R.range(0, 12));
+}
+
+export const givenBrake = getGivenBrake();
