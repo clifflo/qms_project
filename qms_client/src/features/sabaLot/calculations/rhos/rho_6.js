@@ -21,7 +21,7 @@ const getRhocs_6 = () => {
     // Long Hook with hidden
     const isLhhd = ucfss.length < 5;
 
-    // Rho Hidden Cross Focus Set
+    // Rho Hidden Hook Focus Set
     const rhhfs = R.difference(elrs, ucfss);
     let rhces;
 
@@ -51,8 +51,7 @@ const getRhocs_6 = () => {
     else {
       return {
         ...rhocxt,
-        isLhhd,
-        rhhfs
+        isLhhd
       }
     }
 
