@@ -40,17 +40,22 @@ const getRhocs_6 = () => {
       }
 
       rhces = rhcesResult;
+
+      return {
+        ...rhocxt,
+        isLhhd,
+        rhhfs,
+        rhces
+      }
     }
     else {
-      rhces = 'NO_RHCES';
+      return {
+        ...rhocxt,
+        isLhhd,
+        rhhfs
+      }
     }
 
-    return {
-      ...rhocxt,
-      isLhhd,
-      rhhfs,
-      rhces
-    }
   }
 
   return R.map(mapFn, rhocs_5)
