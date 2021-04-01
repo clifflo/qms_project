@@ -6,17 +6,13 @@ import JSONTree from 'react-json-tree';
 import { getDbp } from
   './features/sabaLot/calculations/twigs/twig_6';
 import * as R from 'ramda';
-import { efRhoLots_2 } from
-  './features/sabaLot/calculations/rhos/rho_6';
-import { RhoGui } from
-  './features/sabaLot/gui/rhoGui';
-import { getRhocs_6 } from
-  './features/sabaLot/calculations/rhos/rho_6';
+import { rhocs_7 } from
+  './features/sabaLot/calculations/rhos/rho_7';
 
 
 function showTree(){
   return (
-    <JSONTree data={getRhocs_6()} />
+    <JSONTree data={rhocs_7} />
   )
 }
 

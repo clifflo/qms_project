@@ -76,7 +76,7 @@ const getRhocs_4 = () => {
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get LH Contexts 4.');
+      'Cannot get Rho Contexts 4.');
   }
 }
 

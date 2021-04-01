@@ -78,8 +78,6 @@ export const getDelta_1 = delta_0 => {
         R.propEq('trunk', deDay[0]), rpsSet)
         .rpsIdx;
 
-      if()
-
       // Rho Paladin
       const rpal = item(rpalOrder, rpsIdx + idx + 1);
       cross_2.rpal = rpal;

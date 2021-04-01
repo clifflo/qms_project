@@ -3,51 +3,47 @@ import * as RA from 'ramda-adjunct';
 import {
   matchBsc
 } from '../twigs/twig_4';
-import { getDelta_1 } from './delta_1';
+import { rhocs_6 } from './rho_6';
 import produce from 'immer';
 
-export const getRhocs_7 = delta_1 => {
+const getRhocs_7 = () => {
 
-  const lhjia = delta_1.lhjia;
-  const lhqia = delta_1.lhqia;
-  const lhkia = delta_1.lhkia;
+  console.log(rhocs_6);
 
-  const mapFn = (cross_1, idx) => {
+  const lhjia = rhocs_6.lhjia;
+  const lhqia = rhocs_6.lhqia;
+  const lhkia = rhocs_6.lhkia;
 
-    const cross_3 = produce(cross_1, cross_2){
-      if(idx == lhkia){
-        cross_2.isRkg = true;
-      }
-      else {
-        cross_2.isRkg = false;
-      }
+  const mapFn = (cross, idx) => {
 
-      if(idx == lhjia){
-        cross_2.isRjk = true;
-      }
-      else {
-        cross_2.isRjk = false;
-      }
+    const isRkg = idx == lhkia;
+    const isRjk = idx == lhqia;
+    const isRqn = idx == lhkia;
 
-      if(idx == lhqia){
-        cross_2.isRqn = true;
-      }
-      else {
-        cross_2.isRqn = false;
-      }
-
-      return cross_2;
+    return {
+      ...rhocs_6,
+      isRkg,
+      isRjk,
+      isRqn
     }
-
-
-
   }
 
-  const rhocs_7 = produce()
-  delta_2.crsa = RA.mapIndexed(mapFn, delta_1.crsa);
-  delete delta_2.lhjia;
-  delete delta_2.lhkia;
-  delete delta_2.lhqia;
+  const rhocs_7b = produce(rhocs_6, rhocs_7a => {
 
-  return delta_2;
+    rhocs_7a.crsa =
+      RA.mapIndexed(mapFn, rhocs_7a.crosses);
+
+    rhocs_7a.hcsa =
+      RA.mapIndexed(mapFn, rhocs_7a.rhlh.crosses);
+
+    delete rhocs_7a.lhjia;
+    delete rhocs_7a.lhkia;
+    delete rhocs_7a.lhqia;
+
+    return rhocs_7a;
+  });
+
+  return rhocs_7b;
 }
+
+export const rhocs_7 = getRhocs_7();

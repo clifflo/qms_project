@@ -50,12 +50,14 @@ const getTruncatedNatto = (
 
     if(R.isNil(lshbt)){
       throw new Error(
-        'Internal Soy Bean should not be nil.')
+        'Internal Short Hook Bean Trunk '
+        + 'should not be nil.')
     }
 
     if(R.isNil(lbbrs)){
       throw new Error(
-        'Internal Mustard Series should not be nil.');
+        'Internal Bean Branch Series '
+        + 'should not be nil.');
     }
 
     return {
