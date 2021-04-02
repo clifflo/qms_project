@@ -1,4 +1,4 @@
-export const wnli_1 = [
+export default wnli_1 = [
   {
     'months': [
       '02-12',

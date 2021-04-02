@@ -1,3 +1,4 @@
+import wnli_1 from './wnli_1';
 
 const getWnli_2 = () => {
 
@@ -75,4 +76,4 @@ const getWnli_2 = () => {
 
 }
 
-const calr_2 = getCalr_2();
+export default wnli_2 = getWnli_2();

@@ -1,4 +1,6 @@
-const getCalr_4 = () => {
+import wnli_3 from './wnli_3';
+
+const getWnli_4 = () => {
 
   const mapFn = month => {
 
@@ -8,7 +10,7 @@ const getCalr_4 = () => {
 
     const leap = yrContext.leap;
 
-    if(leap == '---'){
+    if(leap == ''){
       return {
         ...month,
         wyrHasLeap: false
@@ -45,4 +47,4 @@ const getCalr_4 = () => {
 
 }
 
-const calr_4 = getCalr_4();
+export default wnli_4 = getWnli_4();

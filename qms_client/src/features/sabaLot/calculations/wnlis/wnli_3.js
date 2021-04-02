@@ -1,8 +1,9 @@
+import wnli_2 from './wnli_2';
 
-const getCalr_3 = () => {
+const getWnli_3 = () => {
 
   const months_3 = RA.concatAll(
-    R.map(year => year.months, calr_2));
+    R.map(year => year.months, wnli_2));
 
   let months_4 = [];
 
@@ -17,4 +18,4 @@ const getCalr_3 = () => {
   return months_4;
 }
 
-const calr_3 = getCalr_3();
+export default wnli_3 = getWnli_3();

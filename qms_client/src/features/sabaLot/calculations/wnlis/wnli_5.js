@@ -1,3 +1,4 @@
+import wnli_4 from './wnli_4';
 
 // Get Wan Nian Li Day
 const getWniday = dateMoment => {
