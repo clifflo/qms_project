@@ -1,21 +1,23 @@
 
-export const rpalOrder =
+const ropldOrder_1 = '青龍,朱雀,勾陳,螣蛇,白虎,玄武';
+
+const ropldOrder_2 =
   R.compose(
     R.reverse,
     R.map(s => '丙' + s),
     R.split(','))
-  (rpalSce);
+  (ropldOrder_1);
 
 // Rho Paladin Start Position
-const getRpldSet = () => {
+const getRpspSet = () => {
 
   const mapFn = i => {
 
     const rpldKey = R.reverse([0,0,1,1,2,3,4,4,5,5]);
     const trunk = itemOfTrunk(i);
 
-    const rpdix = rpldKey[i];
-    const rpld = rpalOrder[rpdix];
+    const rpdix = ropldKey[i];
+    const rpld = ropldOrder_2[rpdix];
     return {
       trunk,
       rpdix,
@@ -29,9 +31,10 @@ const getRpldSet = () => {
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get Paladin Start Position Set.'
+      'Cannot get Rho Paladin '
+      + 'Start Position Set.'
     )
   }
 }
 
-export const rpldSet = getRpldSet();
+const rpspSet = getRpspSet();

@@ -44,5 +44,3 @@ const getRhocs_5 = () => {
 }
 
 export const rhocs_5 = getRhocs_5();
-
-const rpalSce = '青龍,朱雀,勾陳,螣蛇,白虎,玄武';

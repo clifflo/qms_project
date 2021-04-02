@@ -5,11 +5,13 @@ export const decimalToBinary =
   (decimalNumber, numberOfDigits) => {
 
   if(R.isNil(numberOfDigits)){
-    throw new Error('Need to enter number of digits');
+    throw new Error(
+      'Need to enter number of digits');
   }
 
   if(!RA.isNumber(numberOfDigits)){
-    throw new Error('Number of digits has to be a number of course.');
+    throw new Error(
+      'Number of digits has to be a number.');
   }
 
   const rawBinary = decimalNumber.toString(2);
@@ -36,5 +38,7 @@ export const binaryToDecimal = (binaryNumber) => {
     throw new Error('Binary number must start with b');
   }
 
-  return parseInt(R.drop(1, binaryNumber), 2).toString(10);
+  return parseInt(
+    R.drop(1, binaryNumber), 2)
+    .toString(10);
 }
