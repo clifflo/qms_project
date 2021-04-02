@@ -27,18 +27,36 @@ export const decimalToBinary =
 
 }
 
-export const binaryToDecimal = (binaryNumber) => {
+export const binaryToDecimal = binaryNumber => {
 
   if(!RA.isString(binaryNumber)){
-    throw new Error('Binary number must be of string type.');
+    throw new Error(
+      'Binary number must be of string type.');
   }
 
   if(R.take(1, binaryNumber) != 'b'){
-
-    throw new Error('Binary number must start with b');
+    throw new Error(
+      "Binary number must start with 'b'");
   }
 
   return parseInt(
     R.drop(1, binaryNumber), 2)
+    .toString(10);
+}
+
+export const octalToDecimal = octalNumber => {
+
+  if(!RA.isString(octalNumber)){
+    throw new Error(
+      'Octal number must be of string type.');
+  }
+
+  if(R.take(1, octalNumber) != 'o'){
+    throw new Error(
+      "Binary number must start with 'o'");
+  }
+
+  return parseInt(
+    R.drop(1, octalNumber), 8)
     .toString(10);
 }

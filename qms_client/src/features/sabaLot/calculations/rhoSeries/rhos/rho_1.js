@@ -13,10 +13,6 @@ const nattoParagraph =
   '乾金甲子壬順佈,坎水戊寅戊順佈,艮土丙辰丙順佈,震木庚子庚順佈,' +
   '巽木辛丑辛逆佈,離火己卯己逆佈,坤土乙未癸逆佈,兌金丁巳丁逆佈';
 
-// Bean Branch Series
-// For example, as of 乾, we will have the branches
-// starting from the bottom as 子寅辰午申戌
-// 'Bbssb' is Bean Branch Series Start Branch.
 const getFbbrs = (bbssb, bbsIsCw) => {
 
   try{
@@ -116,49 +112,49 @@ const getShalidx =
     shkalOrder);
 }
 
-export const getRhocs_1 = () => {
+const getRhocs_1 = () => {
 
   const mapFn = (sentence) => {
 
     let eshkal;
     let ishkal;
-    let lhName;
+    let lhname;
 
     if(sentence[1] == '為'){
       eshkal = sentence[2];
       ishkal = sentence[2];
-      lhName = '純' + sentence[0];
+      lhname = '純' + sentence[0];
     }
     else {
       eshkal = sentence[0];
       ishkal = sentence[1];
-      lhName = R.drop(2, sentence);
+      lhname = R.drop(2, sentence);
     }
 
-    const eshIdx =
+    const eshidx =
       getShalidx(eshkal);
 
-    const ishIdx =
+    const ishidx =
       getShalidx(ishkal);
 
     const eshkor =
-      shkorOrder[eshIdx];
+      shkorOrder[eshidx];
 
     const ishkor =
-      shkorOrder[ishIdx];
+      shkorOrder[ishidx];
 
     const lhIdx =
-      (eshIdx * 8) +
-      ishIdx;
+      (eshidx * 8) +
+      ishidx;
 
     return {
       eshkal,
       ishkal,
       eshkor,
       ishkor,
-      lhName,
-      eshIdx,
-      ishIdx,
+      lhname,
+      eshidx,
+      ishidx,
       lhIdx
     }
   }

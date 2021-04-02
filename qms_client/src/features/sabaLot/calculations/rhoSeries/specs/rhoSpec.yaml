@@ -6,8 +6,24 @@
     As of 乾, we will have the branches
     starting from the bottom as 子寅辰午申戌.
     In this case, 子 is the BBSSB.
-  spoccur: Rho 1
+  spoccur: 1
 -
   spalias: bbssi
   spfname: >
     Index of bean branch series start branch
+  spoccur: 1
+-
+  spalias: eshbt
+  spfname: >
+    External short hook bean trunk
+  spdesn: >
+    In long hook 師, ESHBT is the trunk of the
+    external short hook, which is 癸.
+  spoccur: 1
+-
+  spalias: ishbt
+  spfname: >
+    Internal short hook bean trunk
+  spdesn: >
+    Refers to ESHBT.
+  spoccur: 1
