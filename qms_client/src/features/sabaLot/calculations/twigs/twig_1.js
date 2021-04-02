@@ -79,7 +79,7 @@ const getBelem = branch => {
 
   const belemOrder = '水土木木土火火土金金土水';
   const bridx = idxOfBranch(branch);
-  return belemOrder(bridx);
+  return belemOrder[bridx];
 }
 
 const getTelem = trunk => {

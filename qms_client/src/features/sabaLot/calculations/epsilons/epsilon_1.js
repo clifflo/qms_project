@@ -13,18 +13,18 @@ const isValidEcsts = ecrsType => {
   return R.includes(ecrsType, ecsts);
 }
 
-const epsiSpecs = {
-  eercrSpec: {
-    epsiDscn: '特色爻之間的五行關係',
-    epsiFname: 'Epsilon Source Target Relation',
-    epsiAname: 'DT-STRL',
-    epsiProps: {
+const eslSpecs = [
+  {
+    esldscn: '特色爻之間的五行關係',
+    eslfname: 'Epsilon Source Target Relation',
+    eslabn: 'DT-STRL',
+    eslprops: {
       esrcr: 'Epsilon Source Cross',
       ettcr: 'Epsilon Target Cross',
       ecrel: 'Epsilon Cross Relation'
     }
   }
-}
+]
 
 const checkEsrcr = rule => {
 
