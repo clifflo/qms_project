@@ -23,11 +23,9 @@ const getFbbrs = (bbssb, bbsIsCw) => {
 
     if(R.isNil(bbssb)){
       throw new Error(
-        'Bean Branch Series Start Branch ',
-        'should not be nil.');
+        'BBSSB should not be nil.');
     }
 
-    // 'Bbsbi' is Bean Branch Series Start Branch
     const bbsbi = idxOfBranch(bbssb);
 
     const mapFn = idx => {
