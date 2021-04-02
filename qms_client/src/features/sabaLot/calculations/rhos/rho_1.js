@@ -17,7 +17,7 @@ const nattoParagraph =
 // For example, as of 乾, we will have the branches
 // starting from the bottom as 子寅辰午申戌
 // 'Bbssb' is Bean Branch Series Start Branch.
-const getFbbrs = (bbssb, mseIsCw) => {
+const getFbbrs = (bbssb, bbsIsCw) => {
 
   try{
 
@@ -32,7 +32,7 @@ const getFbbrs = (bbssb, mseIsCw) => {
 
     const mapFn = idx => {
       const rawAdjustment = idx * 2;
-      const finalAdjustment = mseIsCw ?
+      const finalAdjustment = bbsIsCw ?
         rawAdjustment : (-rawAdjustment);
       return itemOfBranch(bbsbi + finalAdjustment);
     }
@@ -51,7 +51,7 @@ const getFbbrs = (bbssb, mseIsCw) => {
 const getNattos = () => {
 
   const mapFn = (sentence) => {
-    const shori = sentence[0];
+    const gshkor = sentence[0];
     const shele = sentence[1];
 
     // External Short Hook Bean Trunk
@@ -61,10 +61,10 @@ const getNattos = () => {
     const ishbt = sentence[2];
     const bbssb = sentence[3];
 
-    // Mustard Series is Clockwise
-    const mseIsCw = sentence[5] == '順';
+    // Bean Branch Series is Clockwise
+    const bbsIsCw = sentence[5] == '順';
     const fbbrs = getFbbrs(
-      bbssb, mseIsCw);
+      bbssb, bbsIsCw);
 
     // External Bean Branch Series
     const ebbrs =
@@ -75,7 +75,7 @@ const getNattos = () => {
       R.reverse(R.take(3, fbbrs));
 
     return {
-      shori,
+      gshkor,
       shele,
       eshbt,
       ishbt,
@@ -94,10 +94,10 @@ const getNattos = () => {
 export const nattos = getNattos();
 
 // Short Hook Alternative
-export const shaltSce = '地雷水澤山火風天';
+export const shkalOrder = '地雷水澤山火風天';
 
-// Short Hook Ori
-export const shoriSce = '坤震坎兌艮離巽乾';
+// Short Hook Original
+export const shkorOrder = '坤震坎兌艮離巽乾';
 
 const lhParagraph = RA.concatAll([
   '乾為天,天風姤,天山遯,天地否,風地觀,山地剝,火地晉,火天大有,',
@@ -111,53 +111,53 @@ const lhParagraph = RA.concatAll([
 ]);
 
 // Get Short Hook Number Alt Index
-const getShNumAltIndex =
-  (shalt) => {
+const getShalidx =
+  (shkal) => {
   return getIdx(
-    shalt,
-    shaltSce);
+    shkal,
+    shkalOrder);
 }
 
 export const getRhocs_1 = () => {
 
   const mapFn = (sentence) => {
 
-    let eshalt;
-    let ishalt;
+    let eshkal;
+    let ishkal;
     let lhName;
 
     if(sentence[1] == '為'){
-      eshalt = sentence[2];
-      ishalt = sentence[2];
+      eshkal = sentence[2];
+      ishkal = sentence[2];
       lhName = '純' + sentence[0];
     }
     else {
-      eshalt = sentence[0];
-      ishalt = sentence[1];
+      eshkal = sentence[0];
+      ishkal = sentence[1];
       lhName = R.drop(2, sentence);
     }
 
     const eshIdx =
-      getShNumAltIndex(eshalt);
+      getShalidx(eshkal);
 
     const ishIdx =
-      getShNumAltIndex(ishalt);
+      getShalidx(ishkal);
 
-    const eshori =
-      shoriSce[eshIdx];
+    const eshkor =
+      shkorOrder[eshIdx];
 
-    const ishori =
-      shoriSce[ishIdx];
+    const ishkor =
+      shkorOrder[ishIdx];
 
     const lhIdx =
       (eshIdx * 8) +
       ishIdx;
 
     return {
-      eshalt,
-      ishalt,
-      eshori,
-      ishori,
+      eshkal,
+      ishkal,
+      eshkor,
+      ishkor,
       lhName,
       eshIdx,
       ishIdx,

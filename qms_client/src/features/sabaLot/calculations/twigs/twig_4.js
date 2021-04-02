@@ -100,24 +100,22 @@ export const getFlushOp = (sBranch) => {
   return tBranch;
 }
 
-const getPauseSet = () => {
+const getClushSet = () => {
 
   const mapFn = (i) => {
     const sBranch = itemOfBranch(i);
     const tBranch = itemOfBranch(7 - i);
-    return [
-      sBranch, tBranch
-    ]
+    return {
+      [sBranch]: tBranch
+    }
   }
 
   return R.map(mapFn, R.range(0, 6));
 }
 
-export const pauseSet = getPauseSet();
+export const clushSet = getClushSet();
 
-
-
-const getHitSet = () => {
+const getArcherSet = () => {
 
   const mapFn = i => {
 
@@ -129,9 +127,9 @@ const getHitSet = () => {
 
     const sBranch = itemOfBranch(sBri);
     const tBranch = itemOfBranch(tBri);
-    return [
-      sBranch, tBranch
-    ]
+    return {
+      [sBranch]: tBranch
+    }
   }
 
   try{
@@ -140,10 +138,10 @@ const getHitSet = () => {
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get hit set.'
+      'Cannot get archer set.'
     )
   }
 
 }
 
-export const hitSet = getHitSet();
+export const archerSet = getArcherSet();

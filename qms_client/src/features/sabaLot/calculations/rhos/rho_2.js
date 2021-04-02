@@ -10,11 +10,11 @@ import {
 } from '../twigs/twig_1';
 
 const getTruncatedNatto = (
-  shori,
-  isUpperShortTrunk) => {
+  gshkor,
+  isExshk) => {
 
   const natto = R.find(
-    R.propEq('shori', shori), nattos);
+    R.propEq('gshkor', gshkor), nattos);
 
   if(R.isNil(shori)){
     throw new Error(
@@ -26,7 +26,8 @@ const getTruncatedNatto = (
       `Cannot find natto. ${shori} is not valid.`);
   }
 
-  if(isUpperShortTrunk){
+  // Is External Short Hook
+  if(isExshk){
 
     if(R.isNil(natto.eshbt)){
       throw new Error(
