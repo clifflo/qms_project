@@ -10,9 +10,9 @@
 // Rho Crosses Type
 
 import * as R from 'ramda';
+import { elrs } from '../twigs/twig_1';
 
-
-// Delta Cross Type Set
+// Epsilon Cross Type Set
 const dcsts = [
   'Jack',
   'Queen',
@@ -24,23 +24,38 @@ const isValidDcsts = dcrsType => {
   return R.includes(dcrsType, dcsts);
 }
 
+const epsiSpecs = {
+  eercrSpec: {
+    epsiDscn: '特色爻之間的五行關係',
+    epsiFname: 'Epsilon Source Target Relation',
+    epsiAname: 'DT-STRL',
+    epsiProps: {
+      esrcr: 'Epsilon Source Cross',
+      ettcr: 'Epsilon Target Cross',
+      ecrel: 'Epsilon Cross Relation'
+    }
+  }
+}
+
 const checkDsrcr = rule => {
 
   if(R.isNil(rule.dsrcr)){
     throw new Error(
-      'Delta Source Cross should not be nil.')
+      'Epsilon Source Cross should not be nil.')
   }
 
   if(R.isNil(rule.dttcr)){
     throw new Error(
-      'Delta Target Cross should not be nil.')
+      'Epsilon Target Cross should not be nil.')
   }
 
   if(!isValidDcsts(rule.dsrcr)){
     throw new Error(
-      `${rule.dsrcr} is not a valid Delta `
-      + 'Cross Type.' 
+      `${rule.dsrcr} is not a valid Epsilon `
+      + 'Cross Type.'
     )
   }
+
+  if(!isValid)
 
 }

@@ -102,7 +102,8 @@ export function getElem(twig){
     return getBelem(branch);
   }
   else {
-    throw new Error(`'${twig}' is not twig.`);
+    throw new Error(
+      `'${twig}' is not a valid twig.`);
   }
 }
 
@@ -189,4 +190,8 @@ export const getElr = (source, target) => {
   const difference = targetIndex - sourceIndex;
   const relation = item(elrs, difference);
   return relation;
+}
+
+export const isValidElrl = elrl => {
+  return R.includes(elrl, elrs);
 }
