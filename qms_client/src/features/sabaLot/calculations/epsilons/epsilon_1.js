@@ -23,6 +23,9 @@ const eslSpecs = [
       ettcr: 'Epsilon Target Cross',
       ecrel: 'Epsilon Cross Relation'
     }
+  },
+  {
+
   }
 ]
 
