@@ -3,11 +3,11 @@ import * as RA from 'ramda-adjunct';
 import {
   utItem,
   utGetIdx
-} from '../utils/util_1';
+} from '../../utils/util_1';
 import {
   itemOfBranch,
   idxOfBranch
-} from '../twigs/twig_1';
+} from '../../twigs/twig_1';
 
 const nattoParagraph =
   '乾金甲子壬順佈,坎水戊寅戊順佈,艮土丙辰丙順佈,震木庚子庚順佈,' +

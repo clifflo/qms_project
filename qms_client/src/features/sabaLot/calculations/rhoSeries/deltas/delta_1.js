@@ -1,15 +1,28 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
-import { rhocs_1 } from '../rhos/rhocs_1';
+import { rhocs_1 } from '../rhos/rho_1';
 import {
   binaryToDecimal,
   octalToDecimal
-} from '../../utils/util_1';
+} from '../../utils/util_2';
 
 const getLhnameByIdx = lhIdx => {
-  try{
+
+  try {
+
+    if(R.isNil(lhIdx)){
+      throw new Error(
+        'Long hook index should not be nil.');
+    }
+
+    if(RA.isNumber(lhIdx)){
+      throw new Error(
+        'Long hook index must be a string.');
+    }
+
     const rhocxt_1 = R.find(
-      R.propEq('lhIdx'), rhocs_1);
+      R.propEq('lhIdx', lhIdx))
+      (rhocs_1);
     return rhocxt_1.lhname;
   }
   catch(err){
@@ -18,10 +31,11 @@ const getLhnameByIdx = lhIdx => {
   }
 }
 
-const getLhnameFromBilot = bilot => {
+export const getLhnFromBilot = bilot => {
 
   try{
-    const lhname = getLhnameByIdx(bilot);
+    const lhidx = binaryToDecimal(bilot);
+    const lhname = getLhnameByIdx(lhidx);
 
     if(R.isNil(lhname)){
       throw new Error(
@@ -38,7 +52,7 @@ const getLhnameFromBilot = bilot => {
 
 }
 
-const getLhnameFromOclot = oclot => {
+export const getLhnFromOclot = oclot => {
 
   const lhidx = octalToDecimal(oclot);
   return getLhnameByIdx(lhidx);

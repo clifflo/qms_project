@@ -40,8 +40,7 @@ export const binaryToDecimal = binaryNumber => {
   }
 
   return parseInt(
-    R.drop(1, binaryNumber), 2)
-    .toString(10);
+    R.drop(1, binaryNumber), 2);
 }
 
 export const octalToDecimal = octalNumber => {

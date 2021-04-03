@@ -6,12 +6,12 @@
     As of 乾, we will have the branches
     starting from the bottom as 子寅辰午申戌.
     In this case, 子 is the BBSSB.
-  spoccur: 1
+  spoccur: Rho-1
 -
   spalias: bbssi
   spfname: >
     Index of bean branch series start branch
-  spoccur: 1
+  spoccur: Rho-1
 -
   spalias: eshbt
   spfname: >
@@ -19,11 +19,20 @@
   spdesn: >
     In long hook 師, ESHBT is the trunk of the
     external short hook, which is 癸.
-  spoccur: 1
+  spoccur: Rho-1
 -
   spalias: ishbt
   spfname: >
     Internal short hook bean trunk
   spdesn: >
     Refers to ESHBT.
-  spoccur: 1
+  spoccur: Rho-1
+-
+  spalias: gshkor
+  spfname: >
+    Generic short hook original
+  spdesn: >
+    The term 'generic' means that it defines the
+    short hook itself. It does not refers to any
+    internal or external short hook in a long hook.
+  spoccur: Rho-1
