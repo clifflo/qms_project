@@ -11,7 +11,7 @@ import {
 
 const getTruncatedNatto = (
   gshkor,
-  isExshk) => {
+  isShetp) => {
 
   if(R.isNil(gshkor)){
     throw new Error(
@@ -26,8 +26,8 @@ const getTruncatedNatto = (
       `Cannot find natto. ${gshkor} is not valid.`);
   }
 
-  // Is External Short Hook
-  if(isExshk){
+  // Is short hook external part
+  if(isShetp){
 
     if(R.isNil(natto.eshbt)){
       throw new Error(

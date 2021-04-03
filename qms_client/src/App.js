@@ -13,7 +13,7 @@ import { getLhnFromBilot } from
 
 function showTree(){
   return (
-    <JSONTree data={getLhnFromBilot('b000000')} />
+    <JSONTree data={getLhnFromBilot('b001100')} />
   )
 }
 

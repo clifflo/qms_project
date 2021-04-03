@@ -15,7 +15,7 @@ const baseHookSeriesSce =
 const baseHookSeries =
   R.split(',', baseHookSeriesSce);
 
-export const getLhcByName = (lhName) => {
+const getLhcByLhn = (lhName) => {
 
   const lhContext = R.find(
     R.propEq('lhName', lhName),
@@ -60,7 +60,7 @@ const getHgbs = () => {
   const mapFn = (targetLhName) => {
 
     const targetLhIdx =
-      getLhcByName(targetLhName)
+      getLhcByLhn(targetLhName)
       .lhIdx;
 
     if(R.isNil(targetLhIdx)){
@@ -117,7 +117,7 @@ const getRhpals = () => {
       // Pure Hook Name
       const puhName = '純' + shortHookName;
       const puhNumber =
-        getLhcByName(puhName)
+        getLhcByLhn(puhName)
         .lhIdx;
 
       if(R.isNil(puhNumber)){

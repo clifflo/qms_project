@@ -1,7 +1,6 @@
 -
   spalias: bbssb
-  spfname: >
-    Bean branch series start branch
+  spfname: Bean branch series start branch
   spdesn: >
     As of 乾, we will have the branches
     starting from the bottom as 子寅辰午申戌.
@@ -9,21 +8,18 @@
   spoccur: Rho-1
 -
   spalias: bbssi
-  spfname: >
-    Index of bean branch series start branch
+  spfname: Index of bean branch series start branch
   spoccur: Rho-1
 -
   spalias: eshbt
-  spfname: >
-    External short hook bean trunk
+  spfname: External short hook bean trunk
   spdesn: >
     In long hook 師, ESHBT is the trunk of the
     external short hook, which is 癸.
   spoccur: Rho-1
 -
   spalias: ishbt
-  spfname: >
-    Internal short hook bean trunk
+  spfname: Internal short hook bean trunk
   spdesn: >
     Refers to ESHBT.
   spoccur: Rho-1
@@ -36,3 +32,26 @@
     short hook itself. It does not refers to any
     internal or external short hook in a long hook.
   spoccur: Rho-1
+-
+  spalias: oclot
+  spfname: Octal Lot
+  spdesn: >
+    Casting the lot for long hook by using octal
+    number.
+  spoccur: Delta-1
+-
+  spalias: bilot
+  spfname: Binary Lot
+  spdesn: >
+    Casting the lot for long hook by using binary
+    number.
+  spoccur: Delta-1
+-
+  spalias: isShetp
+  spfname: Is short hook external part?
+  spdesn: >
+    So for a short hook it would have both internal
+    and external bean branch series and trunk. So we
+    would define ISSHEXT to define which part we
+    would like to get --- internal or external.
+  spoccur: Rho-2

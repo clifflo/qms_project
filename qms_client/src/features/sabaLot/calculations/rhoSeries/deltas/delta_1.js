@@ -5,37 +5,31 @@ import {
   binaryToDecimal,
   octalToDecimal
 } from '../../utils/util_2';
-
-const getLhnameByIdx = lhIdx => {
-
-  try {
-
-    if(R.isNil(lhIdx)){
-      throw new Error(
-        'Long hook index should not be nil.');
-    }
-
-    if(RA.isNumber(lhIdx)){
-      throw new Error(
-        'Long hook index must be a string.');
-    }
-
-    const rhocxt_1 = R.find(
-      R.propEq('lhIdx', lhIdx))
-      (rhocs_1);
-    return rhocxt_1.lhname;
-  }
-  catch(err){
-    throw new Error(
-      `${lhIdx} is not a valid Long Hook Index.`);
-  }
-}
+import {
+  getLhcByIdx
+} from '../rhos/rho_3';
 
 export const getLhnFromBilot = bilot => {
 
   try{
+
+    if(R.isNil(bilot)){
+      throw new Error(
+        'BILOT should not be nil.');
+    }
+
+    if(!RA.isString(bilot)){
+      throw new Error(
+        'BILOT must be a string.');
+    }
+
+    if(bilot.length != 7){
+      throw new Error(
+        'Length of BILOT must be 7.');
+    }
+
     const lhidx = binaryToDecimal(bilot);
-    const lhname = getLhnameByIdx(lhidx);
+    const lhname = getLhcByIdx(lhidx).lhname;
 
     if(R.isNil(lhname)){
       throw new Error(
@@ -54,6 +48,21 @@ export const getLhnFromBilot = bilot => {
 
 export const getLhnFromOclot = oclot => {
 
+  if(R.isNil(oclot)){
+    throw new Error(
+      'OCLOT should not be nil.');
+  }
+
+  if(!RA.isString(oclot)){
+    throw new Error(
+      'OCLOT must be a string.');
+  }
+
+  if(oclot.length != 5){
+    throw new Error(
+      'Length of OCLOT must be 5.');
+  }
+
   const lhidx = octalToDecimal(oclot);
-  return getLhnameByIdx(lhidx);
+  return getLhcByIdx(lhidx).lhname;
 }

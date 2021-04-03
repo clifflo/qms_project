@@ -52,10 +52,9 @@ export const octalToDecimal = octalNumber => {
 
   if(R.take(1, octalNumber) != 'o'){
     throw new Error(
-      "Binary number must start with 'o'");
+      "Octal number must start with 'o'");
   }
 
   return parseInt(
-    R.drop(1, octalNumber), 8)
-    .toString(10);
+    R.drop(1, octalNumber), 8);
 }
