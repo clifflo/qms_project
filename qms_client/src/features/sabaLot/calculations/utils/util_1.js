@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
-export const adjust = (index, cycleLength) => {
+export const adjust = (cycleLength, index) => {
 
   if(R.isNil(cycleLength)){
     throw new Error(
@@ -25,7 +25,7 @@ export const adjust = (index, cycleLength) => {
   }
 }
 
-export const item = (listLike, index) => {
+export const utItem = (listLike, index) => {
 
   const listLikeValid =
     RA.isString(listLike) || RA.isArray(listLike);

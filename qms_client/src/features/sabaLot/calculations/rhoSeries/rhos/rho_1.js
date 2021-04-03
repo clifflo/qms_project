@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  item,
+  utItem,
   getIdx
 } from '../utils/util_1';
 import {
@@ -45,8 +45,12 @@ const getFbbrs = (bbssb, bbsIsCw) => {
 const getNattos = () => {
 
   const mapFn = (sentence) => {
+
+    // Generic short hook original
     const gshkor = sentence[0];
-    const shele = sentence[1];
+
+    // Generic short hook elemental
+    const gshele = sentence[1];
 
     // External Short Hook Bean Trunk
     const eshbt = sentence[4];
@@ -70,7 +74,7 @@ const getNattos = () => {
 
     return {
       gshkor,
-      shele,
+      gshele,
       eshbt,
       ishbt,
       bbssb,

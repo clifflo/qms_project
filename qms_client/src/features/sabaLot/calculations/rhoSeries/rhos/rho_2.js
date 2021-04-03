@@ -13,17 +13,17 @@ const getTruncatedNatto = (
   gshkor,
   isExshk) => {
 
+  if(R.isNil(gshkor)){
+    throw new Error(
+      'GSHKOR should not be nil.');
+  }
+
   const natto = R.find(
     R.propEq('gshkor', gshkor), nattos);
 
-  if(R.isNil(shori)){
-    throw new Error(
-      'Short hook original should not be nil.');
-  }
-
   if(!natto){
     throw new Error(
-      `Cannot find natto. ${shori} is not valid.`);
+      `Cannot find natto. ${gshkor} is not valid.`);
   }
 
   // Is External Short Hook

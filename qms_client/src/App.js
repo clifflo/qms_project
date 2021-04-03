@@ -4,14 +4,12 @@ import { useSelector, useDispatch } from 'react-redux'
 import { SabaLot } from './features/sabaLot/SabaLot';
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
-import { rhocs_7 } from
-  './features/sabaLot/calculations/rhos/rho_8';
-import { getWtoday } from
-  './features/sabaLot/calculations/calendar';
+import { rpspm_2 } from
+  './features/sabaLot/calculations/rhoSeries/rhos/rho_9';
 
 function showTree(){
   return (
-    <JSONTree data={getWtoday()} />
+    <JSONTree data={rpspm_2} />
   )
 }
 

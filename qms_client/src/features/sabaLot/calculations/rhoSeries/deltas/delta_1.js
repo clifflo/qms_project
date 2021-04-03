@@ -41,4 +41,5 @@ const getLhnameFromBilot = bilot => {
 const getLhnameFromOclot = oclot => {
 
   const lhidx = octalToDecimal(oclot);
+  return getLhnameByIdx(lhidx);
 }

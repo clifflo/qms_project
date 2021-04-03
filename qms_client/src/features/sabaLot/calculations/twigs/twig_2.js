@@ -1,7 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  adjust,
   item,
   getIdx
 } from '../utils/util_1';
