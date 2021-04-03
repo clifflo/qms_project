@@ -41,10 +41,10 @@ export const utItem = (listLike, index) => {
   }
 
   return listLike[
-    adjust(listLike.length, index)]
+    utAdjust(listLike.length, index)]
 }
 
-export const getIdx = (wordLike, listLike) => {
+export const utGetIdx = (wordLike, listLike) => {
 
   if(RA.isString(listLike)){
     const sentence = listLike;

@@ -1,12 +1,12 @@
 import * as R from 'ramda';
 import { pflat } from '../../utils/util_4';
 import { utItem, utGetIdx } from '../../utils/util_1';
-import { branchOrder } from '../../twigs/twig_1';
+import { trunkOrder } from '../../twigs/twig_1';
 
 const ropldOrder =
   R.compose(
     R.reverse,
-    R.concat('丙'),
+    R.map(R.concat('丙')),
     R.split(','))
   ('青龍,朱雀,勾陳,螣蛇,白虎,玄武');
 
@@ -29,8 +29,7 @@ const getRpcsl = () => {
 
     // Rho paladin in cross
     const rpicr = utItem(
-      startIdx + distance,
-      ropldOrder);
+      ropldOrder, startIdx + distance);
 
     return rpicr;
   }
@@ -39,11 +38,23 @@ const getRpcsl = () => {
 
   const mapFn_2 = idx => {
 
-    const branch = utItem(idx, branchOrder);
-    const rpstp  = rpspm_2[branch];
+    // Rho paladin day trunk
+    const rpdtr = utItem(trunkOrder, idx);
+
+    if(R.isNil(rpdtr)){
+      throw new Error(
+        'RPDTR should not be nil.')
+    }
+
+    const rpstp  = rpspm_2[rpdtr];
 
     // Rho Paladin Index
-    const rpdix = utGetIdx(rpstp, rpspm_2);
+    const rpdix = utGetIdx(rpstp, ropldOrder) + 1;
+
+    if(R.isNil(rpdix)){
+      throw new Error(
+        'RPDIX should not be nil.');
+    }
 
     // Rho paladin cross set
     const rpcst = R.map(
@@ -51,16 +62,18 @@ const getRpcsl = () => {
       R.range(0, 6));
 
     return {
-      branch,
+      rpdtr,
       rpcst
     };
   }
 
   try {
-    return R.map(mapFn, R.range(0, 10));
+    return R.map(mapFn_2, R.range(0, 10));
   }
   catch(err){
     console.error(err);
     throw new Error('Cannot get RPCSL');
   }
 }
+
+export const rpcsl = getRpcsl();

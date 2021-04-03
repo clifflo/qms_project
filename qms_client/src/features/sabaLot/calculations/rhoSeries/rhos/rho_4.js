@@ -10,7 +10,7 @@ import {
   rhocs_3
 } from './rho_3';
 import {
-  getIdx
+  utGetIdx
 } from '../utils/util_1';
 import {
   getElr

@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   utItem,
-  getIdx
+  utGetIdx
 } from '../utils/util_1';
 
 export const trunkContext = {
@@ -107,15 +107,15 @@ export function getElem(twig){
 }
 
 export function itemOfTrunk(index){
-  return item(trunkOrder, index);
+  return utItem(trunkOrder, index);
 }
 
 export function itemOfBranch(index){
-  return item(branchOrder, index);
+  return utItem(branchOrder, index);
 }
 
 export function itemOfElem(index){
-  return item(elemOrder, index);
+  return utItem(elemOrder, index);
 }
 
 export function isValidBranch(branch){
@@ -187,7 +187,7 @@ export const getElr = (source, target) => {
   }
 
   const difference = targetIndex - sourceIndex;
-  const relation = item(elrs, difference);
+  const relation = utItem(elrs, difference);
   return relation;
 }
 

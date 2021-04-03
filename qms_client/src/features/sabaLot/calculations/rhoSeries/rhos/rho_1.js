@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   utItem,
-  getIdx
+  utGetIdx
 } from '../utils/util_1';
 import {
   itemOfBranch,
