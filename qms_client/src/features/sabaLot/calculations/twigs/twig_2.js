@@ -44,7 +44,7 @@ export const idxOfChosen = chosen => {
   }
 
   try{
-    const chidx = getIdx(chosen, chosenOrder);
+    const chidx = utGetIdx(chosen, chosenOrder);
     return chidx;
   }
   catch(err){

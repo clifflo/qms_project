@@ -111,7 +111,7 @@ const lhParagraph = RA.concatAll([
 // Get Short Hook Number Alt Index
 const getShalidx =
   (shkal) => {
-  return getIdx(
+  return utGetIdx(
     shkal,
     shkalOrder);
 }

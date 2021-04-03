@@ -42,7 +42,7 @@ export const branchOrder =
   '子丑寅卯辰巳午未申酉戌亥';
 
 export const idxOfTrunk = (trunk) => {
-  return getIdx(trunk, trunkOrder)
+  return utGetIdx(trunk, trunkOrder)
 }
 
 export const getTrunkLiturgy = (trunk) => {
@@ -71,7 +71,7 @@ export const getTwigLiturgy = (twig) => {
 }
 
 export const idxOfBranch = (branch) => {
-  return getIdx(branch, branchOrder)
+  return utGetIdx(branch, branchOrder)
 }
 
 const getBelem = branch => {
@@ -131,7 +131,7 @@ export function isValidElem(elemental){
 }
 
 export function idxOfElem(elemental){
-  return getIdx(elemental, elemOrder)
+  return utGetIdx(elemental, elemOrder)
 }
 
 export const elrs = [
@@ -170,10 +170,10 @@ export const getElr = (source, target) => {
       `${target} is not a valid target elemental.`);
   }
 
-  const sourceIndex = getIdx(
+  const sourceIndex = utGetIdx(
     source, elemOrder);
 
-  const targetIndex = getIdx(
+  const targetIndex = utGetIdx(
     target, elemOrder);
 
   if(sourceIndex == -1){

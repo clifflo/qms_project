@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import { pflat } from '../../utils/util_4';
-import { utItem } from '../../utils/util_1';
+import { utItem, utGetIdx } from '../../utils/util_1';
 import { branchOrder } from '../../twigs/twig_1';
 
 const ropldOrder =
@@ -22,16 +22,45 @@ const rpspm_1 = {
 
 export const rpspm_2 = pflat(rpspm_1);
 
-// Rho Paladin Cross List
-const getRpcl = () => {
-  const mapFn = idx => {
+// Rho Paladin Cross Set List
+const getRpcsl = () => {
+
+  const mapFn_1n = (startIdx, distance) => {
+
     // Rho paladin in cross
-    const rpicr = utItem(idx, ropldOrder);
+    const rpicr = utItem(
+      startIdx + distance,
+      ropldOrder);
+
     return rpicr;
   }
 
-  try {
+  const mapFn_1c = R.curry(mapFn_1n);
 
-    return R.map(mapFn, R.range(0, 6));
+  const mapFn_2 = idx => {
+
+    const branch = utItem(idx, branchOrder);
+    const rpstp  = rpspm_2[branch];
+
+    // Rho Paladin Index
+    const rpdix = utGetIdx(rpstp, rpspm_2);
+
+    // Rho paladin cross set
+    const rpcst = R.map(
+      mapFn_1c(rpdix),
+      R.range(0, 6));
+
+    return {
+      branch,
+      rpcst
+    };
+  }
+
+  try {
+    return R.map(mapFn, R.range(0, 10));
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get RPCSL');
   }
 }

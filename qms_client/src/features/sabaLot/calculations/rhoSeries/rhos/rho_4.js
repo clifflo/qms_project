@@ -27,7 +27,7 @@ const getRhocs_4 = () => {
 
     try{
 
-      const result = getIdx(
+      const result = utGetIdx(
         rhHook, rhHookOrder);
 
       if(R.isNil(result)){

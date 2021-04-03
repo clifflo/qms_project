@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
-export const adjust = (cycleLength, index) => {
+const utAdjust = (cycleLength, index) => {
 
   if(R.isNil(cycleLength)){
     throw new Error(
@@ -40,10 +40,11 @@ export const utItem = (listLike, index) => {
       'Not a number for the second argument.')
   }
 
-  return listLike[adjust(index, listLike.length)]
+  return listLike[
+    adjust(listLike.length, index)]
 }
 
-export function getIdx(wordLike, listLike){
+export const getIdx = (wordLike, listLike) => {
 
   if(RA.isString(listLike)){
     const sentence = listLike;
@@ -51,7 +52,8 @@ export function getIdx(wordLike, listLike){
     if(character.length != 1){
       throw new Error(
         'The first argument must be just a single '
-        + 'character if the second argument is a string.');
+        + 'character if the second argument '
+        + 'is a string.');
     }
 
     return R.findIndex(
@@ -60,7 +62,8 @@ export function getIdx(wordLike, listLike){
   else if(RA.isArray(listLike)){
     const word = wordLike;
     const wordList = listLike;
-    return R.findIndex(R.equals(word), wordList);
+    return R.findIndex(
+      R.equals(word), wordList);
   }
   else {
     throw new Error(

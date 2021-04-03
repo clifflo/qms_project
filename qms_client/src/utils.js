@@ -35,7 +35,7 @@ export const item = (listLike, index) => {
   return listLike[adjust(index, listLike.length)]
 }
 
-export function getIdx(wordLike, listLike){
+export function utGetIdx(wordLike, listLike){
 
   if(RA.isString(listLike)){
     const sentence = listLike;
@@ -73,10 +73,10 @@ export const slider = (
     const sentence = listLike;
     const doubleSentence = sentence + sentence;
 
-    const startPosition = getIdx(
+    const startPosition = utGetIdx(
       sourceCharacter, doubleSentence);
 
-    const rawEndPosition = getIdx(
+    const rawEndPosition = utGetIdx(
       targetCharacter, doubleSentence);
 
     const finalEndPosition =
@@ -98,10 +98,10 @@ export const slider = (
     const list = listLike;
     const doubleList = R.concat(list, list);
 
-    const startPosition = getIdx(
+    const startPosition = utGetIdx(
       sourceWord, doubleList);
 
-    const rawEndPosition = getIdx(
+    const rawEndPosition = utGetIdx(
       targetWord, doubleList);
 
     const finalEndPosition =
@@ -162,7 +162,7 @@ export const move =
 
     const sourceCharacter = sourceWordLike;
     const sentence = listLike;
-    const sourceIndex = getIdx(
+    const sourceIndex = utGetIdx(
       sourceCharacter, sentence);
     const targetIndex = sourceIndex + movement;
     const targetCharacter = item(sentence, targetIndex);
@@ -173,7 +173,7 @@ export const move =
 
     const sourceWord = sourceWordLike;
     const list = listLike;
-    const sourceIndex = getIdx(
+    const sourceIndex = utGetIdx(
       sourceWord, list);
     const targetIndex = sourceIndex + movement;
     const targetWord = item(list, targetIndex);
