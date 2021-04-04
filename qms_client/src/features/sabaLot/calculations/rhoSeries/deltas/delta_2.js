@@ -1,15 +1,15 @@
 import * as R from 'ramda';
 import {
-  rhocs_1,
-  getRcxt1ByLhn
-} from '../rhos/rho_1';
+  getRcxt2ByLhn
+} from '../rhos/rho_2';
+import {
+  decimalToBinary
+} from '../../utils/util_2';
 
-const buildCestm = (srclhn, tgtlhn) => {
+export const getCestm = (srclhn, tgtlhn) => {
 
-  const srocxt_1 = getRcxt1ByLhn(srclhn);
-  const tgtcxt_1 = getRcxt1ByLhn(tgtlhn);
-  const slhbns = decimalToBinary(
-    srocxt_1.lhidx, 6);
+  const srocxt_2 = getRcxt2ByLhn(srclhn);
+  const tgtcxt_2 = getRcxt2ByLhn(tgtlhn);
 
   const isZeroOrOne = crsi => {
     return (crsi == '0') || (crsi == '1');
@@ -17,8 +17,8 @@ const buildCestm = (srclhn, tgtlhn) => {
 
   // Cross Index
   const mapFn = cridx => {
-    const scrsi = srocxt_1.crosses[cridx].crsi;
-    const tcrsi = tgtcxt_1.crosses[cridx].crsi;
+    const scrsi = srocxt_2.crosses[cridx].crsi;
+    const tcrsi = tgtcxt_2.crosses[cridx].crsi;
 
     if(R.isNil(scrsi)){
       throw new Error(
@@ -40,9 +40,9 @@ const buildCestm = (srclhn, tgtlhn) => {
         'Target Cross Sign must be 1 or 0.');
     }
 
-
     return scrsi == tcrsi;
   }
 
+  return R.map(mapFn, R.range(0, 6));
 
 }

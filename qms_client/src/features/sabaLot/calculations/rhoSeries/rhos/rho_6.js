@@ -29,7 +29,7 @@ const getRhocs_6 = () => {
 
       // Rho Head Long Hook
       const rhcesResult = R.find(
-        R.propEq('lhName', '純' + rhocxt.rhHook),
+        R.propEq('lhname', '純' + rhocxt.rhHook),
         rhocs_5).crosses;
 
       if(R.isNil(rhcesResult)){

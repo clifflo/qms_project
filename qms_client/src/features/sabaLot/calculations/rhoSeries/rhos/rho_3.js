@@ -25,7 +25,7 @@ const getHgbs = () => {
 
     const targetLhIdx =
       getRcxt1ByLhn(targetLhName)
-      .lhIdx;
+      .lhidx;
 
     if(R.isNil(targetLhIdx)){
       throw new Error(
@@ -82,7 +82,7 @@ const getRhpals = () => {
       const puhName = '純' + shortHookName;
       const puhNumber =
         getRcxt1ByLhn(puhName)
-        .lhIdx;
+        .lhidx;
 
       if(R.isNil(puhNumber)){
         throw new Error(
@@ -94,7 +94,7 @@ const getRhpals = () => {
       const resultHookContext =
         getRcxt1ByLx(resultHookNumber);
 
-      return resultHookContext.lhName;
+      return resultHookContext.lhname;
     }
     catch(err){
       console.error(err);
@@ -149,7 +149,7 @@ const getRhocs_3 = () => {
 
   const mapFn_1 = (
     rhkpal,
-    lhName,
+    lhname,
     lpalIndex) => {
 
     try{
@@ -158,7 +158,7 @@ const getRhocs_3 = () => {
       const rhokgIdx = (rhojkIdx + 3) % 6;
 
       return {
-        lhName,
+        lhname,
         rhHook: rhkpal.rhHook,
         lpalIndex,
         rhojkIdx,

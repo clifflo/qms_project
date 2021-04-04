@@ -46,7 +46,7 @@ const getRhocs_4 = () => {
   const mapFn = (context_3) => {
 
     const context_2 = R.find(
-      R.propEq('lhName', context_3.lhName),
+      R.propEq('lhname', context_3.lhname),
       rhocs_2);
 
     const lpalIndex = context_3.lpalIndex;

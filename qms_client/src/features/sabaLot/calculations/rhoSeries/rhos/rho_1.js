@@ -147,7 +147,7 @@ const getRhocs_1 = () => {
     const ishkor =
       shkorOrder[ishidx];
 
-    const lhIdx =
+    const lhidx =
       (eshidx * 8) +
       ishidx;
 
@@ -159,7 +159,7 @@ const getRhocs_1 = () => {
       lhname,
       eshidx,
       ishidx,
-      lhIdx
+      lhidx
     }
   }
 
@@ -173,39 +173,39 @@ const getRhocs_1 = () => {
 
 export const rhocs_1 = getRhocs_1();
 
-export const getRcxt1ByLhn = (lhName) => {
+export const getRcxt1ByLhn = lhname => {
 
   const lhContext = R.find(
-    R.propEq('lhName', lhName),
+    R.propEq('lhname', lhname),
     rhocs_1);
 
   if(R.isNil(lhContext)){
     throw new Error(
-      `${lhName} is not a valid long hook.`);
+      `${lhname} is not a valid long hook.`);
   }
 
   return lhContext;
 }
 
-export const getRcxt1ByLx = lhIdx => {
+export const getRcxt1ByLx = lhidx => {
 
   const lhContext = R.find(
-    R.propEq('lhIdx', lhIdx),
+    R.propEq('lhidx', lhidx),
     rhocs_1);
 
-  if(R.isNil(lhIdx)){
+  if(R.isNil(lhidx)){
     throw new Error(
       'Long hook number should not be nil.');
   }
 
-  if(!RA.isNumber(lhIdx)){
+  if(!RA.isNumber(lhidx)){
     throw new Error(
       'Long hook number must be a number.');
   }
 
   if(R.isNil(lhContext)){
     throw new Error(
-      `${lhIdx} is not a valid long hook number.`);
+      `${lhidx} is not a valid long hook number.`);
   }
 
   return lhContext;

@@ -1,13 +1,15 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
-import { decimalToBinary } from '../utils/util_2';
+import {
+  decimalToBinary
+} from '../../utils/util_2';
 import {
   rhocs_1,
   nattos,
 } from './rho_1';
 import {
   getElem
-} from '../twigs/twig_1';
+} from '../../twigs/twig_1';
 
 const getTruncatedNatto = (
   gshkor,
@@ -103,10 +105,10 @@ export const getRhocs_2 = (lhs) => {
     try {
 
       const eshBinary = decimalToBinary(
-        lh.eshIdx, 3);
+        lh.eshidx, 3);
 
       const ishBinary = decimalToBinary(
-        lh.ishIdx, 3);
+        lh.ishidx, 3);
 
 
       let ebbrs; // External Bean Branch Series
@@ -116,11 +118,11 @@ export const getRhocs_2 = (lhs) => {
 
       // External truncated natto
       const etn = getTruncatedNatto(
-        lh.eshori, true);
+        lh.eshkor, true);
 
       // Internal truncated Natto
       const itn = getTruncatedNatto(
-        lh.ishori, false);
+        lh.ishkor, false);
 
       ebbrs = etn.lbbrs;
       eshbt = etn.lshbt;
@@ -141,7 +143,7 @@ export const getRhocs_2 = (lhs) => {
       const fbbrs = R.concat(ebbrs, ibbrs);
 
       const lhBinary = decimalToBinary(
-        lh.lhIdx,
+        lh.lhidx,
         6);
 
       const mapFn = R.curry(buildCrosses)
@@ -154,15 +156,16 @@ export const getRhocs_2 = (lhs) => {
         R.drop(1, lhBinary));
 
       return {
-        lhName: lh.lhName,
-        eshori: lh.eshori,
-        ishori: lh.ishori,
+        lhname: lh.lhname,
+        eshkor: lh.eshkor,
+        ishkor: lh.ishkor,
         crosses
       }
     }
     catch(err){
       console.error(err);
-      throw new Error('Cannot build mustard series.');
+      throw new Error(
+        'Cannot build bean branch series.');
     }
 
   }
@@ -171,3 +174,17 @@ export const getRhocs_2 = (lhs) => {
 }
 
 export const rhocs_2 = getRhocs_2(rhocs_1);
+
+export const getRcxt2ByLhn = lhname => {
+
+  const lhContext = R.find(
+    R.propEq('lhname', lhname),
+    rhocs_2);
+
+  if(R.isNil(lhContext)){
+    throw new Error(
+      `${lhname} is not a valid long hook.`);
+  }
+
+  return lhContext;
+}
