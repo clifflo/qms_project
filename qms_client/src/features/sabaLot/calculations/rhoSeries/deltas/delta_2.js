@@ -46,3 +46,11 @@ export const getCestm = (srclhn, tgtlhn) => {
   return R.map(mapFn, R.range(0, 6));
 
 }
+
+export const getRdfhs = lhname => {
+
+}
+
+export const getRdhgs = lnname => {
+  
+}

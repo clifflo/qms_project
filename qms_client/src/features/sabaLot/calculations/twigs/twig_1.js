@@ -145,11 +145,13 @@ export const elrs = [
 export const getElr = (source, target) => {
 
   if(R.isNil(source)){
-    throw new Error('Source elemental cannot be nil.');
+    throw new Error(
+      'Source elemental cannot be nil.');
   }
 
   if(R.isNil(target)){
-    throw new Error('Target elemental cannot be nil.');
+    throw new Error(
+      'Target elemental cannot be nil.');
   }
 
   if(!RA.isString(source)){

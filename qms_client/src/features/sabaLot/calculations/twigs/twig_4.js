@@ -58,7 +58,7 @@ export const matchBrsc = (sBranch, tBranch) => {
 
 // Trunk Small Compound
 // 天干五合
-const getTscSet = () => {
+const getTkscSet = () => {
 
   const mapFn = i => {
     const celemIdx = i - 1;
@@ -75,7 +75,7 @@ const getTscSet = () => {
   return R.map(mapFn, R.range(0, 5));
 }
 
-export const tscSet = getTscSet();
+export const tkscSet = getTkscSet();
 
 // 地支沖
 const buildFlushSet = () => {
@@ -100,8 +100,7 @@ export const getFlushOp = (sBranch) => {
   return tBranch;
 }
 
-// Axe Hunter
-const getAxehSet = () => {
+const getAxehs = () => {
 
   const mapFn = (i) => {
     const sBranch = itemOfBranch(i);
@@ -114,9 +113,9 @@ const getAxehSet = () => {
   return R.map(mapFn, R.range(0, 6));
 }
 
-export const clushSet = getClushSet();
+export const axehs = getAxehs();
 
-const getArcherSet = () => {
+const getBowhs = () => {
 
   const mapFn = i => {
 
@@ -139,10 +138,10 @@ const getArcherSet = () => {
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get archer set.'
+      'Cannot get bow hunter set.'
     )
   }
 
 }
 
-export const archerSet = getArcherSet();
+export const bowhs = getBowhs();
