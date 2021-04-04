@@ -100,7 +100,8 @@ export const getFlushOp = (sBranch) => {
   return tBranch;
 }
 
-const getClushSet = () => {
+// Axe Hunter
+const getAxehSet = () => {
 
   const mapFn = (i) => {
     const sBranch = itemOfBranch(i);

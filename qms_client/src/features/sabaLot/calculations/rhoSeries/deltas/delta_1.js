@@ -6,8 +6,8 @@ import {
   octalToDecimal
 } from '../../utils/util_2';
 import {
-  getLhcByIdx
-} from '../rhos/rho_3';
+  getRcxt1ByLhn
+} from '../rhos/rho_1';
 
 export const getLhnFromBilot = bilot => {
 
@@ -29,7 +29,7 @@ export const getLhnFromBilot = bilot => {
     }
 
     const lhidx = binaryToDecimal(bilot);
-    const lhname = getLhcByIdx(lhidx).lhname;
+    const lhname = getRcxt1ByLhn(lhidx).lhname;
 
     if(R.isNil(lhname)){
       throw new Error(
@@ -64,5 +64,5 @@ export const getLhnFromOclot = oclot => {
   }
 
   const lhidx = octalToDecimal(oclot);
-  return getLhcByIdx(lhidx).lhname;
+  return getRcxt1ByLhn(lhidx).lhname;
 }

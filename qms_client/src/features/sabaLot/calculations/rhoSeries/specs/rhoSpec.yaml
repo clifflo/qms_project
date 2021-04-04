@@ -55,3 +55,31 @@
     would define ISSHEXT to define which part we
     would like to get --- internal or external.
   spoccur: Rho-2
+-
+  spalias: srclhn
+  spfname: Source long hook name
+  spdesn: >
+    It means the name of 本卦.
+  spoccur: Delta-2
+-
+  spalias: srclhn
+  spfname: Source long hook name
+  spdesn: >
+    It means the name of 之卦.
+  spoccur: Delta-2
+-
+  spalias: cestm
+  spfname: Cross striking map
+  spdesn: >
+    So we would have to check which cross is striking.
+    For the source long hook we would say 'striking'
+    and in the target long hook we would say 'from
+    strike'.
+  spoccur: Delta-2
+-
+  spalias: crsi
+  spfname: Cross sign
+  spdesn: >
+    It stands for whether the cross is 陽爻 or 陰爻.
+    We define '1' as 陽爻 and '0' as 陰爻.
+  spoccur: Rho-2

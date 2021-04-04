@@ -172,3 +172,41 @@ const getRhocs_1 = () => {
 }
 
 export const rhocs_1 = getRhocs_1();
+
+export const getRcxt1ByLhn = (lhName) => {
+
+  const lhContext = R.find(
+    R.propEq('lhName', lhName),
+    rhocs_1);
+
+  if(R.isNil(lhContext)){
+    throw new Error(
+      `${lhName} is not a valid long hook.`);
+  }
+
+  return lhContext;
+}
+
+export const getRcxt1ByLx = lhIdx => {
+
+  const lhContext = R.find(
+    R.propEq('lhIdx', lhIdx),
+    rhocs_1);
+
+  if(R.isNil(lhIdx)){
+    throw new Error(
+      'Long hook number should not be nil.');
+  }
+
+  if(!RA.isNumber(lhIdx)){
+    throw new Error(
+      'Long hook number must be a number.');
+  }
+
+  if(R.isNil(lhContext)){
+    throw new Error(
+      `${lhIdx} is not a valid long hook number.`);
+  }
+
+  return lhContext;
+}

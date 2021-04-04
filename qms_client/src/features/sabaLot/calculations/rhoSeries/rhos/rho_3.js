@@ -15,7 +15,7 @@ const baseHookSeriesSce =
 const baseHookSeries =
   R.split(',', baseHookSeriesSce);
 
-const getLhcByLhn = (lhName) => {
+export const getRcxt1ByLhn = (lhName) => {
 
   const lhContext = R.find(
     R.propEq('lhName', lhName),
@@ -29,7 +29,7 @@ const getLhcByLhn = (lhName) => {
   return lhContext;
 }
 
-export const getLhcByIdx = lhIdx => {
+export const getRcxt1ByLhn = lhIdx => {
 
   const lhContext = R.find(
     R.propEq('lhIdx', lhIdx),
@@ -60,7 +60,7 @@ const getHgbs = () => {
   const mapFn = (targetLhName) => {
 
     const targetLhIdx =
-      getLhcByLhn(targetLhName)
+      getRcxt1ByLhn(targetLhName)
       .lhIdx;
 
     if(R.isNil(targetLhIdx)){
@@ -117,7 +117,7 @@ const getRhpals = () => {
       // Pure Hook Name
       const puhName = '純' + shortHookName;
       const puhNumber =
-        getLhcByLhn(puhName)
+        getRcxt1ByLhn(puhName)
         .lhIdx;
 
       if(R.isNil(puhNumber)){
@@ -128,7 +128,7 @@ const getRhpals = () => {
       const puhBinary = decimalToBinary(puhNumber, 6);
       const resultHookNumber = gapDecimal ^ puhNumber;
       const resultHookContext =
-        getLhcByIdx(resultHookNumber);
+        getRcxt1ByLhn(resultHookNumber);
 
       return resultHookContext.lhName;
     }

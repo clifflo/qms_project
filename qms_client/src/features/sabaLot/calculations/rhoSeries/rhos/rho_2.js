@@ -170,5 +170,4 @@ export const getRhocs_2 = (lhs) => {
   return R.map(mapFn, lhs)
 }
 
-export const rhocs_2 =
-  getRhocs_2(rhocs_1);
+export const rhocs_2 = getRhocs_2(rhocs_1);
