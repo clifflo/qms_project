@@ -83,3 +83,9 @@
     It stands for whether the cross is 陽爻 or 陰爻.
     We define '1' as 陽爻 and '0' as 陰爻.
   spoccur: Rho-2
+-
+  spalias: slhbns
+  spfname: Source Long Hook Binaries
+  spdesn: >
+    It stands for all the crosses of the 本卦.
+  spoccur: Delta-2 

@@ -15,43 +15,7 @@ const baseHookSeriesSce =
 const baseHookSeries =
   R.split(',', baseHookSeriesSce);
 
-export const getRcxt1ByLhn = (lhName) => {
 
-  const lhContext = R.find(
-    R.propEq('lhName', lhName),
-    rhocs_1);
-
-  if(R.isNil(lhContext)){
-    throw new Error(
-      `${lhName} is not a valid long hook.`);
-  }
-
-  return lhContext;
-}
-
-export const getRcxt1ByLhn = lhIdx => {
-
-  const lhContext = R.find(
-    R.propEq('lhIdx', lhIdx),
-    rhocs_1);
-
-  if(R.isNil(lhIdx)){
-    throw new Error(
-      'Long hook number should not be nil.');
-  }
-
-  if(!RA.isNumber(lhIdx)){
-    throw new Error(
-      'Long hook number must be a number.');
-  }
-
-  if(R.isNil(lhContext)){
-    throw new Error(
-      `${lhIdx} is not a valid long hook number.`);
-  }
-
-  return lhContext;
-}
 
 const getHgbs = () => {
 
@@ -128,7 +92,7 @@ const getRhpals = () => {
       const puhBinary = decimalToBinary(puhNumber, 6);
       const resultHookNumber = gapDecimal ^ puhNumber;
       const resultHookContext =
-        getRcxt1ByLhn(resultHookNumber);
+        getRcxt1ByLx(resultHookNumber);
 
       return resultHookContext.lhName;
     }

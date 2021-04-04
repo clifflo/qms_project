@@ -4,10 +4,21 @@ import * as R from 'ramda';
 export const decimalToBinary =
   (decimalNumber, numberOfDigits) => {
 
+  if(R.isNil(decimalNumber)){
+    throw new Error(
+      'Decimal number should not be nil.');
+  }
+
+  if(!RA.isNumber(decimalNumber)){
+    throw new Error(
+      'Decimal number must be a number of course.');
+  }
+
   if(R.isNil(numberOfDigits)){
     throw new Error(
       'Need to enter number of digits');
   }
+
 
   if(!RA.isNumber(numberOfDigits)){
     throw new Error(
@@ -16,7 +27,9 @@ export const decimalToBinary =
 
   const rawBinary = decimalNumber.toString(2);
 
-  const addedZeroLength = numberOfDigits - rawBinary.length;
+  const addedZeroLength =
+    numberOfDigits - rawBinary.length;
+
   let addedZeroes = ''
 
   for(let i = 0; i < addedZeroLength; i++){
