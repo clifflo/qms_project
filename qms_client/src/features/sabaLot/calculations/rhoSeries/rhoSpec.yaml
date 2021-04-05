@@ -112,4 +112,41 @@
   spalias: rlhgn
   spfname: Rho long hook generation
   spdesn: >-
-    It stands for 
+    It stands for the number of 'generation' of a
+    rho long hook series. So for 二世卦 the generation
+    would be 1. Noted that 世爻 is defined as Rho
+    Jack and I do not use 'generation' to define it.
+  spoccur: Rho-3
+-
+  spalias: rhhn
+  spfname: Rho head long hook name
+  spdesn: >-
+    It stands for the head long hook of a rho long hook
+    series. So the head long hook for 乾午卦宮 is 純乾,
+    not 乾.
+-
+  spalias: rhlhb
+  spfname: Rho head long hook binaries
+  spdesn: >-
+    It stands for the binaries of the head long hook of
+    a rho long hook series. So the So the head long hook
+    for 乾午卦宮 is 純乾, with binaries 'b111111'.
+  spoccur: Rho-3
+-
+  spalias: rglhi
+  spfname: Rho generated long hook index
+  spdesn: >-
+    It stands for the process of using the RHGBS tp
+    generate those long hooks with different generations.
+    For example, 節卦 in 坤午卦宮 is a 午一世卦 and it
+    has a generation of 0. 師卦　in 坤午卦宮 is a 午歸魂卦
+    and it has a generation of 6. So the long hook
+    generated via this process will have index of
+    RGLHI.
+  spoccur: Rho-3
+-
+  spalias: rglct1
+  spfname: Rho generated long hook context version 1
+  spdesn: >-
+    This is the RHOCXT_1 found by RGLHI.
+  spoccur: Rho-3

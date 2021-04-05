@@ -42,8 +42,8 @@ const getRhgbs = () => {
 
   try{
     // Hook Gap Binary Set
-    const hgbs_1 = R.map(mapFn, rblhss);
-    const hgbs_2 = R.uniq(hgbs_1);
+    const rhgbs_1 = R.map(mapFn, rblhss);
+    const rhgbs_2 = R.uniq(hgbs_1);
 
     if(hgbs_2.length != 7){
       throw new Error(
@@ -73,23 +73,22 @@ const getRhpals = () => {
     try{
       const gapDecimal = binaryToDecimal(gapBinary);
 
-      // Pure Hook Name
-      const puhName = '純' + shortHookName;
-      const puhNumber =
-        getRcxt1ByLhn(puhName)
+      const rhlhn = '純' + shortHookName;
+      const rhlix =
+        getRcxt1ByLhn(rhlhn)
         .lhidx;
 
-      if(R.isNil(puhNumber)){
+      if(R.isNil(rhlix)){
         throw new Error(
-          'Pure hook number should not be nil.');
+          'RHLIX should not be nil.');
       }
 
-      const puhBinary = decimalToBinary(puhNumber, 6);
-      const resultHookNumber = gapDecimal ^ puhNumber;
-      const resultHookContext =
-        getRcxt1ByLx(resultHookNumber);
+      const puhBinary = decimalToBinary(rhlix, 6);
+      const rglhi = gapDecimal ^ rhlix;
+      const rglct1 =
+        getRcxt1ByLx(rglhi);
 
-      return resultHookContext.lhname;
+      return rglct1.lhname;
     }
     catch(err){
       console.error(err);
