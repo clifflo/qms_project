@@ -4,7 +4,7 @@ import {
   rhocs_4
 } from './rho_4';
 import {
-  getElr,
+  getElre,
   idxOfTrunk,
   itemOfTrunk
 } from '../twigs/twig_1';
@@ -26,7 +26,7 @@ const getRhocs_5 = () => {
 
 
     try{
-      const crfcs = getElr(rhhElem, cross_1.cbel);
+      const crfcs = getElre(rhhElem, cross_1.cbel);
       const fcn = fcnl[crfcs];
       let cross_2 = Object.assign({}, cross_1);
       cross_2.fcn = fcn;
@@ -73,7 +73,7 @@ const getRhocs_5 = () => {
   // Map Function 1 non-curried.
   const mapFn_1n = (rhhElem, cross) => {
 
-    const crfcs = getElr(
+    const crfcs = getElre(
       rhhElem,
       cross.cbel);
 

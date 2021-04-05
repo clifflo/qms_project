@@ -133,13 +133,6 @@
     Jack and I do not use 'generation' to define it.
   spoccur: Rho-3
 -
-  spalias: rhhn
-  spfname: Rho head long hook name
-  spdesn: >-
-    It stands for the head long hook of a rho long hook
-    series. So the head long hook for 乾午卦宮 is 純乾,
-    not 乾.
--
   spalias: rhlhb
   spfname: Rho head long hook binaries
   spdesn: >-
@@ -172,3 +165,16 @@
     It stands for just only the interal part or the
     external part of a natto.
   spoccur: Rho-2
+-
+  spalias: rhshn
+  spfname: Rho head short hook name
+  spdesn: >-
+    It stands for the short hook, not the long hook.
+    So for 坤午卦宮 the RHSHN is 坤 but not 純坤.
+  spoccur: Rho-2
+-
+  spalias: rhkpal
+  spfname: Rho hook palace
+  spdesn: >-
+    It stands for each of the 午卦宮.
+  spoccur: Rho-3

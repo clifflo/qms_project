@@ -48,20 +48,11 @@ const getNattos = () => {
 
   const mapFn = sentence => {
 
-    // Generic short hook original
     const gshkor = sentence[0];
-
-    // Generic short hook elemental
     const gshele = sentence[1];
-
-    // External Short Hook Bean Trunk
     const eshbt = sentence[4];
-
-    // Internal Short Hook Bean Trunk
     const ishbt = sentence[2];
     const bbssb = sentence[3];
-
-    // Bean Branch Series is Clockwise
     const bbsIsCw = sentence[5] == '順';
     const fbbrs = getFbbrs(
       bbssb, bbsIsCw);

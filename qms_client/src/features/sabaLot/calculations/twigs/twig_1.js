@@ -142,7 +142,7 @@ export const elrs = [
   'Seed'
 ];
 
-export const getElr = (source, target) => {
+export const getElre = (source, target) => {
 
   if(R.isNil(source)){
     throw new Error(

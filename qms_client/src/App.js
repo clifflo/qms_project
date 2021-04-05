@@ -1,12 +1,12 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
-import { getRcxt3ByLn } from
-'./features/sabaLot/calculations/rhoSeries/rhos/rho_3';
+import { rhocs_4 } from
+'./features/sabaLot/calculations/rhoSeries/rhos/rho_4';
 
 function showTree(){
   return (
     <div>
-      <JSONTree data={getRcxt3ByLn('無妄')}/>
+      <JSONTree data={rhocs_4}/>
     </div>
   )
 }

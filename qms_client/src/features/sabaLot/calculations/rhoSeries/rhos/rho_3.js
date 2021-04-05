@@ -64,7 +64,7 @@ const getRhgbs = () => {
 
 }
 
-const rhgbs = getRhgbs();
+export const rhgbs = getRhgbs();
 
 const getRhpals = () => {
 
@@ -111,7 +111,7 @@ const getRhpals = () => {
     const rlhkss_3 = R.join(',', rlhkss_2);
 
     return {
-      rhhook: gshkor,
+      rhshn: gshkor,
       rlhkss_3
     }
   }
@@ -120,9 +120,9 @@ const getRhpals = () => {
   return result;
 }
 
-const rhpals = getRhpals();
+export const rhpals = getRhpals();
 
-const buildRjackIdx = rlhgn => {
+export const buildRjackIdx = rlhgn => {
 
   const mapper = {
     0: 5,
@@ -138,83 +138,4 @@ const buildRjackIdx = rlhgn => {
   const lhcuwi = mapper[rlhgn];
   const lhcdwi = 5 - lhcuwi;
   return lhcdwi;
-}
-
-const getRhocs_3 = () => {
-
-  const mapFn_1 = (
-    rhkpal,
-    lhname,
-    rlhgn) => {
-
-    try{
-
-      const rhojki = buildRjackIdx(rlhgn);
-      const rhokgi = (rhojki + 3) % 6;
-
-      return {
-        lhname,
-        rhhook: rhkpal.rhhook,
-        rlhgn,
-        rhojki,
-        rhokgi
-      }
-    }
-    catch(err){
-      console.error(err);
-      throw new Error(
-        'Map function 2 error for '
-        + 'get hook palace set 2.');
-    }
-
-  }
-
-  const mapFn_1_curried = R.curry(mapFn_1);
-
-  const mapFn_2 = rhkpal => {
-
-    try {
-      const series = R.split(
-        ',', rhkpal.rlhkss_3);
-      const result = RA.mapIndexed(
-        mapFn_1_curried(rhkpal),
-        series);
-      return result;
-    }
-    catch(err){
-      console.error(err);
-      throw new Error(
-        'Map function 2 error for get '
-        + 'Rho hook palace set 2.')
-    }
-
-  }
-
-  const nestedList = R.map(mapFn_2, rhpals);
-
-  const flatList = R.flatten(nestedList);
-  return flatList;
-}
-
-export const rhocs_3 = getRhocs_3();
-
-export const getRcxt3ByLn = lhname => {
-
-  if(R.isNil(lhname)){
-    throw new Error(
-      'Long hook name should not be nil '
-      + 'for RHOCS 3.');
-  }
-
-  const rhocxt_3 = R.find(
-    R.propEq('lhname', lhname),
-    rhocs_3);
-
-  if(R.isNil(rhocxt_3)){
-    throw new Error(
-      `${lhname} is not a valid long hook `
-      + 'for RHOCS 3.');
-  }
-
-  return rhocxt_3;
 }
