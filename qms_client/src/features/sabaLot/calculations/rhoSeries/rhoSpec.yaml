@@ -35,21 +35,21 @@
 -
   spalias: oclot
   spfname: Octal Lot
-  spdesn: >
+  spdesn: >-
     Casting the lot for long hook by using octal
     number.
   spoccur: Delta-1
 -
   spalias: bilot
   spfname: Binary Lot
-  spdesn: >
+  spdesn: >-
     Casting the lot for long hook by using binary
     number.
   spoccur: Delta-1
 -
   spalias: isShetp
-  spfname: Is short hook external part?
-  spdesn: >
+  spfname: Is short hook external part
+  spdesn: >-
     So for a short hook it would have both internal
     and external bean branch series and trunk. So we
     would define ISSHEXT to define which part we
@@ -58,19 +58,19 @@
 -
   spalias: srclhn
   spfname: Source long hook name
-  spdesn: >
+  spdesn: >-
     It means the name of 本卦.
   spoccur: Delta-2
 -
   spalias: srclhn
   spfname: Source long hook name
-  spdesn: >
+  spdesn: >-
     It means the name of 之卦.
   spoccur: Delta-2
 -
   spalias: cestm
   spfname: Cross striking map
-  spdesn: >
+  spdesn: >-
     So we would have to check which cross is striking.
     For the source long hook we would say 'striking'
     and in the target long hook we would say 'from
@@ -79,13 +79,37 @@
 -
   spalias: crsi
   spfname: Cross sign
-  spdesn: >
+  spdesn: >-
     It stands for whether the cross is 陽爻 or 陰爻.
-    We define '1' as 陽爻 and '0' as 陰爻.
+    I would define '1' as 陽爻 and '0' as 陰爻.
   spoccur: Rho-2
 -
   spalias: slhbns
   spfname: Source Long Hook Binaries
-  spdesn: >
+  spdesn: >-
     It stands for all the crosses of the 本卦.
-  spoccur: Delta-2 
+  spoccur: Delta-2
+-
+  spalias: rblhss
+  spfname: Rho base long hook series
+  spdesn: >-
+    It stands for the long hooks of 乾卦宮. As
+    there are also 卦宮 in 玄空大卦, I would define
+    the 卦宮 in 火珠林 as 午卦宮. So I would use
+    乾午卦宮 to calculate the bitwise difference
+    with 純乾卦 and then apply those to other 7
+    short hooks.
+  spoccur: Rho-4
+-
+  spalias: rhgbs
+  spfname: Rho hook gap binaries set
+  spdesn: >-
+    It stands for the bitwise difference between each
+    of the generation between the rho head hook and
+    the generated long hook. For example, the hook gap
+    binaries between 純乾 and 否 would be 'b111000'.
+-
+  spalias: rlhgn
+  spfname: Rho long hook generation
+  spdesn: >-
+    It stands for 

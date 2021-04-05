@@ -9,15 +9,10 @@ import {
   binaryToDecimal
 } from '../utils/util_2';
 
-const baseHookSeriesSce =
-  '姤,遯,否,觀,剝,晉,大有';
+const rblhss =
+  R.split(',', '姤,遯,否,觀,剝,晉,大有');
 
-const baseHookSeries =
-  R.split(',', baseHookSeriesSce);
-
-
-
-const getHgbs = () => {
+const getRhgbs = () => {
 
   const sourceLhIdx = 63;
 
@@ -34,8 +29,8 @@ const getHgbs = () => {
 
     if(!RA.isNumber(targetLhIdx)){
       throw new Error(
-        'How come the Long Hook '
-        + 'Index becomes a string?');
+        'How come the long hook '
+        + 'index becomes a string?');
     }
 
     const gapBinary = decimalToBinary(
@@ -47,22 +42,22 @@ const getHgbs = () => {
 
   try{
     // Hook Gap Binary Set
-    const hgbs_1 = R.map(mapFn, baseHookSeries);
+    const hgbs_1 = R.map(mapFn, rblhss);
     const hgbs_2 = R.uniq(hgbs_1);
 
     if(hgbs_2.length != 7){
       throw new Error(
-        'It must be seven hook gap binaries'
-        + 'only but now we have '
-        + hgbs_2.length
-        + 'of them, how come?');
+        'It must have 7 hook gap binaries'
+        + 'only but now it has '
+        + hgbs_2.length + '.');
     }
 
-    return R.map(mapFn, baseHookSeries);
+    return R.map(mapFn, rblhss);
   }
   catch(err){
     console.error(err);
-    throw new Error('Cannot get hook gap binary set.');
+    throw new Error(
+      'Cannot get hook gap binary set.');
   }
 
 }
@@ -169,7 +164,7 @@ const getRhocs_3 = () => {
       console.error(err);
       throw new Error(
         'Map function 2 error for '
-        + 'get Hook Palace Set 2.');
+        + 'get hook palace set 2.');
     }
 
   }
@@ -179,7 +174,8 @@ const getRhocs_3 = () => {
   const mapFn_2 = rhkpal => {
 
     try {
-      const series = R.split(',', rhkpal.seriesSce);
+      const series = R.split(
+        ',', rhkpal.seriesSce);
       const result = RA.mapIndexed(
         mapFn_1_curried(rhkpal),
         series);
@@ -189,7 +185,7 @@ const getRhocs_3 = () => {
       console.error(err);
       throw new Error(
         'Map function 2 error for get '
-        + 'Rho Hook Palace Set 2.')
+        + 'Rho hook palace set 2.')
     }
 
   }

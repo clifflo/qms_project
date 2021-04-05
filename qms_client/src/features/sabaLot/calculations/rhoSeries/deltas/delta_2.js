@@ -40,17 +40,17 @@ export const getCestm = (srclhn, tgtlhn) => {
         'Target Cross Sign must be 1 or 0.');
     }
 
-    return scrsi == tcrsi;
+    return scrsi != tcrsi;
   }
 
   return R.map(mapFn, R.range(0, 6));
 
 }
 
-export const getRdfhs = lhname => {
+export const getRdfhs = (rdbr, lhname) => {
 
 }
 
-export const getRdhgs = lnname => {
-  
+export const getRdhgs = (rdbr, lnname) => {
+
 }
