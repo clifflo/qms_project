@@ -11,7 +11,7 @@ import {
   getElem
 } from '../../twigs/twig_1';
 
-const getTruncatedNatto = (
+const getTrnto = (
   gshkor,
   isShetp) => {
 
@@ -52,14 +52,12 @@ const getTruncatedNatto = (
 
     if(R.isNil(lshbt)){
       throw new Error(
-        'Internal Short Hook Bean Trunk '
-        + 'should not be nil.')
+        'ISHBT should not be nil.');
     }
 
     if(R.isNil(lbbrs)){
       throw new Error(
-        'Internal Bean Branch Series '
-        + 'should not be nil.');
+        'IBBRS should not be nil.');
     }
 
     return {
@@ -74,22 +72,22 @@ const buildCrosses = (
   fbbrs,
   eshbt,
   ishbt,
-  crsi, 
-  downwardIndex,
+  crsi,
+  lhcdwi,
   list) => {
 
-  const crtk = downwardIndex <= 2 ?
+  const crtk = lhcdwi <= 2 ?
     eshbt : ishbt;
 
-  const crbh = fbbrs[downwardIndex];
+  const crbh = fbbrs[lhcdwi];
 
   const cbel = getElem(crbh);
 
   return {
-    crsi, // Cross Sign
-    crtk, // Cross Trunk
-    crbh, // Cross Branch
-    cbel // Cross Branch Elemental
+    crsi,
+    crtk,
+    crbh,
+    cbel
   }
 }
 
@@ -111,12 +109,10 @@ export const getRhocs_2 = (lhs) => {
       let ibbrs; // Internal Bean Branch Series
       let ishbt; // Internal Short Hook Bean Trunk
 
-      // External truncated natto
-      const etn = getTruncatedNatto(
+      const etn = getTrnto(
         lh.eshkor, true);
 
-      // Internal truncated Natto
-      const itn = getTruncatedNatto(
+      const itn = getTrnto(
         lh.ishkor, false);
 
       ebbrs = etn.lbbrs;
@@ -126,15 +122,14 @@ export const getRhocs_2 = (lhs) => {
 
       if(R.isNil(ebbrs)){
         throw new Error(
-          'External Bean Branch Series should not be nil.')
+          'EBBRS should not be nil.')
       }
 
       if(R.isNil(ibbrs)){
         throw new Error(
-          'Internal Bean Branch Series should not be nil.')
+          'IBBRS should not be nil.')
       }
 
-      // Full Bean Branch Series
       const fbbrs = R.concat(ebbrs, ibbrs);
 
       const lhBinary = decimalToBinary(
@@ -146,7 +141,7 @@ export const getRhocs_2 = (lhs) => {
         (eshbt)
         (ishbt);
 
-      const crosses = RA.mapIndexed(
+      const lhcres = RA.mapIndexed(
         mapFn,
         R.drop(1, lhBinary));
 
@@ -154,7 +149,7 @@ export const getRhocs_2 = (lhs) => {
         lhname: lh.lhname,
         eshkor: lh.eshkor,
         ishkor: lh.ishkor,
-        crosses
+        lhcres
       }
     }
     catch(err){
@@ -172,14 +167,14 @@ export const rhocs_2 = getRhocs_2(rhocs_1);
 
 export const getRcxt2ByLhn = lhname => {
 
-  const lhContext = R.find(
+  const rhocxt_2 = R.find(
     R.propEq('lhname', lhname),
     rhocs_2);
 
-  if(R.isNil(lhContext)){
+  if(R.isNil(rhocxt_2)){
     throw new Error(
       `${lhname} is not a valid long hook.`);
   }
 
-  return lhContext;
+  return rhocxt_2;
 }

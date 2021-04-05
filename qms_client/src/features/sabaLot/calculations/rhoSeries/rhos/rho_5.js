@@ -45,13 +45,13 @@ const getRhocs_5 = () => {
   const mapFn_2 = lhc_4 => {
 
     try {
-      const crosses = R.map(
+      const lhcres = R.map(
         mapFn_1c(lhc_4.rhhElem),
-        lhc_4.crosses);
+        lhc_4.lhcres);
 
       // Long Hook Context 5
       let lhc_5 = Object.assign({}, lhc_4);
-      lhc_5.crosses = crosses;
+      lhc_5.lhcres = lhcres;
 
       return lhc_5;
     }
@@ -88,13 +88,13 @@ const getRhocs_5 = () => {
 
   const mapFn_2 = (lhContext) => {
 
-    const crosses = R.map(
+    const lhcres = R.map(
       mapFn_1c(lhContext.rhhElem),
-      lhContext.crosses);
+      lhContext.lhcres);
 
     return {
       ...lhContext,
-      crosses
+      lhcres
     }
   }
 

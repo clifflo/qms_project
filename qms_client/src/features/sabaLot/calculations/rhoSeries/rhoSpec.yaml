@@ -165,3 +165,10 @@
   spdesn: >-
     This is the RHOCXT_1 found by RGLHI.
   spoccur: Rho-3
+-
+  spalias: trnto
+  spfname: Truncated natto
+  spdesn: >-
+    It stands for just only the interal part or the
+    external part of a natto.
+  spoccur: Rho-2
