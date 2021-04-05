@@ -1,12 +1,12 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
-import { getCestm } from
-'./features/sabaLot/calculations/rhoSeries/deltas/delta_2';
+import { rhocs_3 } from
+'./features/sabaLot/calculations/rhoSeries/rhos/rho_3';
 
 function showTree(){
   return (
     <div>
-      <JSONTree data={getCestm('純坤', '歸妹')}/>
+      <JSONTree data={rhocs_3}/>
     </div>
   )
 }

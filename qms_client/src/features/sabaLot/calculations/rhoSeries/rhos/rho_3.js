@@ -2,12 +2,14 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   rhocs_1,
-  shoriSce
+  shkorOrder,
+  getRcxt1ByLhn,
+  getRcxt1ByLx
 } from './rho_1';
 import {
   decimalToBinary,
   binaryToDecimal
-} from '../utils/util_2';
+} from '../../utils/util_2';
 
 const rblhss =
   R.split(',', '姤,遯,否,觀,剝,晉,大有');
@@ -41,15 +43,15 @@ const getRhgbs = () => {
   }
 
   try{
-    // Hook Gap Binary Set
-    const rhgbs_1 = R.map(mapFn, rblhss);
-    const rhgbs_2 = R.uniq(hgbs_1);
 
-    if(hgbs_2.length != 7){
+    const rhgbs_1 = R.map(mapFn, rblhss);
+    const rhgbs_2 = R.uniq(rhgbs_1);
+
+    if(rhgbs_2.length != 7){
       throw new Error(
-        'It must have 7 hook gap binaries'
+        'It must have 7 Rho hook gap binaries'
         + 'only but now it has '
-        + hgbs_2.length + '.');
+        + rhgbs_2.length + '.');
     }
 
     return R.map(mapFn, rblhss);
@@ -57,7 +59,7 @@ const getRhgbs = () => {
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get hook gap binary set.');
+      'Cannot get Rho hook gap binaries set.');
   }
 
 }
@@ -100,27 +102,27 @@ const getRhpals = () => {
 
   const mapFn_2 = gshkor => {
 
-    const rawSeries = RA.mapIndexed(
-      mapFn_1c(gshkor), hgbs);
+    const rlhkss_1 = RA.mapIndexed(
+      mapFn_1c(gshkor), rhgbs);
 
-    const finalSeries = R.prepend(
-      '純' + gshkor, rawSeries);
+    const rlhkss_2 = R.prepend(
+      '純' + gshkor, rlhkss_1);
 
-    const seriesSce = R.join(',', finalSeries);
+    const rlhkss_3 = R.join(',', rlhkss_2);
 
     return {
-      rhHook: shortHookName,
-      seriesSce
+      rhhook: gshkor,
+      rlhkss_3
     }
   }
 
-  const result = R.map(mapFn_2, shoriSce);
+  const result = R.map(mapFn_2, shkorOrder);
   return result;
 }
 
 const rhpals = getRhpals();
 
-const buildRjackIdx = (lpalIndex) => {
+const buildRjackIdx = (rlhgn) => {
 
   const mapper = {
     0: 5,
@@ -133,9 +135,9 @@ const buildRjackIdx = (lpalIndex) => {
     7: 2
   }
 
-  const upwardIndex = mapper[lpalIndex];
-  const downwardIndex = 5 - upwardIndex;
-  return downwardIndex;
+  const lhcuwi = mapper[rlhgn];
+  const lhcdwi = 5 - lhcuwi;
+  return lhcdwi;
 }
 
 const getRhocs_3 = () => {
@@ -143,19 +145,19 @@ const getRhocs_3 = () => {
   const mapFn_1 = (
     rhkpal,
     lhname,
-    lpalIndex) => {
+    rlhgn) => {
 
     try{
 
-      const rhojkIdx = buildRjackIdx(lpalIndex);
-      const rhokgIdx = (rhojkIdx + 3) % 6;
+      const rhojki = buildRjackIdx(rlhgn);
+      const rhokgi = (rhojki + 3) % 6;
 
       return {
         lhname,
-        rhHook: rhkpal.rhHook,
-        lpalIndex,
-        rhojkIdx,
-        rhokgIdx
+        rhhook: rhkpal.rhhook,
+        rlhgn,
+        rhojki,
+        rhokgi
       }
     }
     catch(err){
@@ -173,7 +175,7 @@ const getRhocs_3 = () => {
 
     try {
       const series = R.split(
-        ',', rhkpal.seriesSce);
+        ',', rhkpal.rlhkss_3);
       const result = RA.mapIndexed(
         mapFn_1_curried(rhkpal),
         series);
@@ -193,6 +195,5 @@ const getRhocs_3 = () => {
   const flatList = R.flatten(nestedList);
   return flatList;
 }
-
 
 export const rhocs_3 = getRhocs_3();

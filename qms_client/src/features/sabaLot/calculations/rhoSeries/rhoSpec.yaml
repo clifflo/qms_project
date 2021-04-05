@@ -101,6 +101,21 @@
     short hooks.
   spoccur: Rho-4
 -
+  spalias: rlhkss
+  spfname: Rho long hook series
+  spdesn: >-
+    So I would calculate all those 7 generated long
+    hooks firstly and then I will add back the rho
+    head long hook to form the whole long hook series.
+  spoccur: Rho-3
+-
+  spalias: lhcuwi
+  spfname: Long hook cross upward index
+  spdesn: >-
+    It means the cross counted from the bottom starting
+    from 0.
+  spoccur: Rho-3
+-
   spalias: rhgbs
   spfname: Rho hook gap binaries set
   spdesn: >-
