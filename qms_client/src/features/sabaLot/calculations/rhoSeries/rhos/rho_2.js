@@ -28,7 +28,6 @@ const getTruncatedNatto = (
       `Cannot find natto. ${gshkor} is not valid.`);
   }
 
-  // Is short hook external part
   if(isShetp){
 
     if(R.isNil(natto.eshbt)){
@@ -72,21 +71,18 @@ const getTruncatedNatto = (
 }
 
 const buildCrosses = (
-  fbbrs, // Full Bean Branch Series
-  eshbt, // External Short Hook Bean Trunk
-  ishbt, // Internal Short Hook Bean Trunk
-  crsi, // Cross sign
+  fbbrs,
+  eshbt,
+  ishbt,
+  crsi, 
   downwardIndex,
   list) => {
 
-  // Cross Trunk
   const crtk = downwardIndex <= 2 ?
     eshbt : ishbt;
 
-  // Cross Branch
   const crbh = fbbrs[downwardIndex];
 
-  // Cross Branch Elemental
   const cbel = getElem(crbh);
 
   return {
@@ -95,7 +91,6 @@ const buildCrosses = (
     crbh, // Cross Branch
     cbel // Cross Branch Elemental
   }
-
 }
 
 export const getRhocs_2 = (lhs) => {

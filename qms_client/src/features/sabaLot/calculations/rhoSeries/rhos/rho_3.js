@@ -62,18 +62,18 @@ const getRhgbs = () => {
 
 }
 
-// Hook Gap Binaries Set
-const hgbs = getHgbs();
+const rhgbs = getRhgbs();
 
 const getRhpals = () => {
 
   const mapFn_1 =
-    (shortHookName, gapBinary, index) => {
+    (gshkor, gapBinary, index) => {
 
     try{
+
       const gapDecimal = binaryToDecimal(gapBinary);
 
-      const rhlhn = '純' + shortHookName;
+      const rhlhn = '純' + gshkor;
       const rhlix =
         getRcxt1ByLhn(rhlhn)
         .lhidx;
@@ -83,7 +83,6 @@ const getRhpals = () => {
           'RHLIX should not be nil.');
       }
 
-      const puhBinary = decimalToBinary(rhlix, 6);
       const rglhi = gapDecimal ^ rhlix;
       const rglct1 =
         getRcxt1ByLx(rglhi);
@@ -96,15 +95,16 @@ const getRhpals = () => {
         'Error in getting hook series.')
     }
   }
-  const mapFn_1_curried = R.curry(mapFn_1);
 
-  const mapFn_2 = (shortHookName) => {
+  const mapFn_1c = R.curry(mapFn_1);
+
+  const mapFn_2 = gshkor => {
 
     const rawSeries = RA.mapIndexed(
-      mapFn_1_curried(shortHookName), hgbs);
+      mapFn_1c(gshkor), hgbs);
 
     const finalSeries = R.prepend(
-      '純' + shortHookName, rawSeries);
+      '純' + gshkor, rawSeries);
 
     const seriesSce = R.join(',', finalSeries);
 
@@ -118,7 +118,6 @@ const getRhpals = () => {
   return result;
 }
 
-// Rho Hook Palaces
 const rhpals = getRhpals();
 
 const buildRjackIdx = (lpalIndex) => {
