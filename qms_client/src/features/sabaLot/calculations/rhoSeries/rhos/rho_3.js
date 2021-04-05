@@ -122,7 +122,7 @@ const getRhpals = () => {
 
 const rhpals = getRhpals();
 
-const buildRjackIdx = (rlhgn) => {
+const buildRjackIdx = rlhgn => {
 
   const mapper = {
     0: 5,
@@ -197,3 +197,24 @@ const getRhocs_3 = () => {
 }
 
 export const rhocs_3 = getRhocs_3();
+
+export const getRcxt3ByLn = lhname => {
+
+  if(R.isNil(lhname)){
+    throw new Error(
+      'Long hook name should not be nil '
+      + 'for RHOCS 3.');
+  }
+
+  const rhocxt_3 = R.find(
+    R.propEq('lhname', lhname),
+    rhocs_3);
+
+  if(R.isNil(rhocxt_3)){
+    throw new Error(
+      `${lhname} is not a valid long hook `
+      + 'for RHOCS 3.');
+  }
+
+  return rhocxt_3;
+}

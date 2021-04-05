@@ -46,7 +46,7 @@ const getFbbrs = (bbssb, bbsIsCw) => {
 
 const getNattos = () => {
 
-  const mapFn = (sentence) => {
+  const mapFn = sentence => {
 
     // Generic short hook original
     const gshkor = sentence[0];
@@ -110,7 +110,6 @@ const lhParagraph = RA.concatAll([
   '兌為澤,澤水困,澤地萃,澤山咸,水山蹇,地山謙,雷山小過,雷澤歸妹'
 ]);
 
-// Get Short Hook Number Alt Index
 const getShalidx =
   (shkal) => {
   return utGetIdx(
@@ -191,7 +190,7 @@ export const getRcxt1ByLhn = lhname => {
 
 export const getRcxt1ByLx = lhidx => {
 
-  const lhContext = R.find(
+  const rhocxt_1 = R.find(
     R.propEq('lhidx', lhidx),
     rhocs_1);
 
@@ -205,10 +204,10 @@ export const getRcxt1ByLx = lhidx => {
       'Long hook number must be a number.');
   }
 
-  if(R.isNil(lhContext)){
+  if(R.isNil(rhocxt_1)){
     throw new Error(
       `${lhidx} is not a valid long hook number.`);
   }
 
-  return lhContext;
+  return rhocxt_1;
 }

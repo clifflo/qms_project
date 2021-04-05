@@ -21,7 +21,7 @@ const mapFn_1 = rhocxt_1 => {
         'Rho Jack Cross Index should not be nil.');
     }
 
-    const rjcrs = rhocxt_1.crosses[rhojkIdx];
+    const rjcrs = rhocxt_1.lhcres[rhojkIdx];
 
     if(R.isNil(rjcrs)){
       throw new Error(
@@ -76,14 +76,13 @@ const mapFn_1 = rhocxt_1 => {
 
     const mapFn_2f = mapFn_2c(rfcso);
 
-    rhocxt_2a.crosses =
+    rhocxt_2a.lhcres =
       RA.mapIndexed(
-        mapFn_2f, rhocxt_1.crosses);
+        mapFn_2f, rhocxt_1.lhcres);
 
     delete rhocxt_2a.lpalIndex;
     delete rhocxt_2a.rhojkIdx;
     delete rhocxt_2a.rhokgIdx;
-    delete rhocxt_2a.gpalIndex;
     delete rhocxt_2a.rhhElem;
 
     return rhocxt_2a;

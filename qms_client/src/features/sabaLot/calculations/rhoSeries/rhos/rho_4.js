@@ -15,31 +15,11 @@ import {
 import {
   getElr
 } from '../twigs/twig_1';
+import {
+  nattos
+} from '../rhos/rho_1';
 
 const getRhocs_4 = () => {
-
-  const rhHookOrder = '乾坎艮震巽離坤兌';
-  const rhhElemOrder = '金水土木木火土金';
-
-  const getHeadHookIndex = (rhHook) => {
-
-    try{
-
-      const result = utGetIdx(
-        rhHook, rhHookOrder);
-
-      if(R.isNil(result)){
-        throw new Error(
-          `${rhHook} is not a valid head hook.`);
-      }
-
-      return result;
-    }
-    catch(err){
-      console.error(err);
-      throw new Error('Cannot get hook palace index.');
-    }
-  }
 
   const mapFn = rhocxt_3 => {
 
@@ -47,14 +27,18 @@ const getRhocs_4 = () => {
       R.propEq('lhname', rhocxt_3.lhname),
       rhocs_2);
 
-    const lpalIndex = rhocxt_3.lpalIndex;
+    const rlhgn = rhocxt_3.rlhgn;
 
-    // Head Hook Index
-    const hhIndex = getHeadHookIndex(rhocxt_3.rhHook);
+    if(R.isNil(rlhgn)){
+      throw new Error(
+        'RLHGN should not be nil.');
+    }
+
+    const hhIndex = getRhhix(rhocxt_3.rhhook);
 
     // Global Palace Index
     const gpalIndex = (hhIndex * 8) + lpalIndex;
-    const rhhElem = rhhElemOrder[hhIndex]
+    const rhhElem = rhhelOrder[hhIndex]
 
     return {
       ...rhocxt_2,
