@@ -13,7 +13,7 @@ import {
   getElre
 } from '../../twigs/twig_1';
 import {
-  buildRjackIdx,
+  buildRjkdi,
   rhpals,
   rhgbs
 } from './rho_3';
@@ -27,15 +27,15 @@ const getRhocs_3 = () => {
 
     try{
 
-      const rhojki = buildRjackIdx(rlhgn);
-      const rhokgi = (rhojki + 3) % 6;
+      const rjkdi = buildRjkdi(rlhgn);
+      const rkgdi = (rjkdi + 3) % 6;
 
       return {
         lhname,
         rhshn: rhkpal.rhshn,
         rlhgn,
-        rhojki,
-        rhokgi
+        rjkdi,
+        rkgdi
       }
     }
     catch(err){
@@ -52,26 +52,31 @@ const getRhocs_3 = () => {
   const mapFn_2 = rhkpal => {
 
     try {
-      const series = R.split(
-        ',', rhkpal.rlhkss_3);
+
       const result = RA.mapIndexed(
         mapFn_1c(rhkpal),
-        series);
+        rhkpal.rlhkss);
+
       return result;
     }
     catch(err){
       console.error(err);
       throw new Error(
-        'Map function 2 error for get '
-        + 'Rho hook palace set 2.')
+        'Get RHOCS_3 Map Function 2 error.')
     }
 
   }
 
-  const nestedList = R.map(mapFn_2, rhpals);
+  try{
+    const nestedList = R.map(mapFn_2, rhpals);
+    const flatList = R.flatten(nestedList);
+    return flatList;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get RHOCS_3.');
+  }
 
-  const flatList = R.flatten(nestedList);
-  return flatList;
 }
 
 const rhocs_3 = getRhocs_3();

@@ -108,11 +108,9 @@ const getRhpals = () => {
     const rlhkss_2 = R.prepend(
       '純' + gshkor, rlhkss_1);
 
-    const rlhkss_3 = R.join(',', rlhkss_2);
-
     return {
       rhshn: gshkor,
-      rlhkss_3
+      rlhkss: rlhkss_2
     }
   }
 
@@ -122,7 +120,7 @@ const getRhpals = () => {
 
 export const rhpals = getRhpals();
 
-export const buildRjackIdx = rlhgn => {
+export const buildRjkdi = rlhgn => {
 
   const mapper = {
     0: 5,
