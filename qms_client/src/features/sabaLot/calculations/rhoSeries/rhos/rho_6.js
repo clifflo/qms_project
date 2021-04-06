@@ -7,7 +7,7 @@ const getRhocs_6 = () => {
   const mapFn = rhocxt => {
 
     // Non unique Cross Focus Set
-    const ncfss = R.map(R.prop('crfcs'), rhocxt.crosses);
+    const ncfss = R.map(R.prop('crfcs'), rhocxt.lhcres);
 
     if(R.isNil(ncfss)){
       throw new Error(
@@ -30,7 +30,7 @@ const getRhocs_6 = () => {
       // Rho Head Long Hook
       const rhcesResult = R.find(
         R.propEq('lhname', '純' + rhocxt.rhHook),
-        rhocs_5).crosses;
+        rhocs_5).lhcres;
 
       if(R.isNil(rhcesResult)){
         throw new Error(

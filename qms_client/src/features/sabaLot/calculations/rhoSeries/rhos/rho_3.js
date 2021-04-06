@@ -4,7 +4,7 @@ import {
   rhocs_1,
   shkorOrder,
   getRcxt1ByLhn,
-  getRcxt1ByLx
+  getRcxt1ByLhx
 } from './rho_1';
 import {
   decimalToBinary,
@@ -87,7 +87,7 @@ const getRhpals = () => {
 
       const rglhi = gapDecimal ^ rhlix;
       const rglct1 =
-        getRcxt1ByLx(rglhi);
+        getRcxt1ByLhx(rglhi);
 
       return rglct1.lhname;
     }

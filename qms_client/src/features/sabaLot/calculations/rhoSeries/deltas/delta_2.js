@@ -15,7 +15,6 @@ export const getCestm = (srclhn, tgtlhn) => {
     return (crsi == '0') || (crsi == '1');
   }
 
-  // Cross Index
   const mapFn = cridx => {
     const scrsi = srocxt_2.lhcres[cridx].crsi;
     const tcrsi = tgtcxt_2.lhcres[cridx].crsi;
@@ -48,7 +47,7 @@ export const getCestm = (srclhn, tgtlhn) => {
 }
 
 export const getRdfhs = (rdbr, lhname) => {
-
+  
 }
 
 export const getRdhgs = (rdbr, lnname) => {

@@ -4,7 +4,8 @@ import {
   rhocs_2
 } from './rho_2';
 import {
-  nattos
+  nattos,
+  getRcxtvByLhn
 } from './rho_1';
 import {
   utGetIdx
@@ -81,7 +82,7 @@ const getRhocs_3 = () => {
 
 const rhocs_3 = getRhocs_3();
 
-export const getRcxt3ByLn = lhname => {
+const getRcxt3ByLn = lhname => {
 
   if(R.isNil(lhname)){
     throw new Error(
@@ -147,3 +148,15 @@ const getRhocs_4 = () => {
 }
 
 export const rhocs_4 = getRhocs_4();
+
+export const getRcxt4ByLhn = lhname => {
+  try {
+    return getRcxtvByLhn(
+      lhname, rhocs_4, 4);
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get RHOCXT_4 by long hook name.')
+  }
+}

@@ -178,3 +178,24 @@
   spdesn: >-
     It stands for each of the 午卦宮.
   spoccur: Rho-3
+-
+  spalias: rdfhs
+  spfname: Rho day flush set
+  spdesn: >-
+    It stands for the flush opponent of the day branch.
+    Noted that for the day betapsi only the branch is
+    considered, not the trunk.
+  spoccur: Delta-3
+-
+  spalias: rocsvo
+  spfname: Rho context set versioned object
+  spdesn: >-
+    It stands for the different version of rho context
+    set.
+  spoccur: Rho-1
+-
+  spalias: rcxtvo
+  spfname: Rho context versioned object
+  spdesn: >-
+    It stands for the different version of rho context.
+  spoccur: Rho-1

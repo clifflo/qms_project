@@ -6,6 +6,7 @@ import {
 import {
   rhocs_1,
   nattos,
+  getRcxtvByLhn
 } from './rho_1';
 import {
   getElem
@@ -103,7 +104,6 @@ export const getRhocs_2 = (lhs) => {
       const ishBinary = decimalToBinary(
         lh.ishidx, 3);
 
-
       let ebbrs; // External Bean Branch Series
       let eshbt; // External Short Hook Bean Trunk
       let ibbrs; // Internal Bean Branch Series
@@ -167,14 +167,13 @@ export const rhocs_2 = getRhocs_2(rhocs_1);
 
 export const getRcxt2ByLhn = lhname => {
 
-  const rhocxt_2 = R.find(
-    R.propEq('lhname', lhname),
-    rhocs_2);
-
-  if(R.isNil(rhocxt_2)){
-    throw new Error(
-      `${lhname} is not a valid long hook.`);
+  try {
+    return getRcxtvByLhn(
+      lhname, rhocs_2, 2);
   }
-
-  return rhocxt_2;
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get RHOCXT_2 by long hook name.')
+  }
 }

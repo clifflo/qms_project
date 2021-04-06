@@ -6,7 +6,7 @@ const getRhocs_8 = () => {
 
   const mapFn_1n = (rhocxt, idx) => {
 
-    const cross = rhocxt.crosses[idx];
+    const cross = rhocxt.lhcres[idx];
     const rhcrs = rhocxt.rhces[idx];
     const rhhfs = rhocxt.rhhfs;
 
@@ -56,13 +56,13 @@ const getRhocs_8 = () => {
 
   const mapFn_2 = rhocxt_1 => {
     if(rhocxt_1.isLhhd){
-      const crosses_2 =
+      const lhcres_2 =
         R.map(mapFn_1c(rhocxt_1), R.range(0, 6));
 
-      const xLens = R.lensProp('crosses');
+      const xLens = R.lensProp('lhcres');
       const rhocxt_2 = R.set(
         xLens,
-        crosses_2,
+        lhcres_2,
         rhocxt_1);
 
       const rhocxt_3 = R.compose(

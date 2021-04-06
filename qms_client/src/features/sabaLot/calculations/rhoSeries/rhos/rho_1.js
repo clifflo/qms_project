@@ -165,40 +165,114 @@ const getRhocs_1 = () => {
 
 export const rhocs_1 = getRhocs_1();
 
-export const getRcxt1ByLhn = lhname => {
+export const getRcxtvByLhx = (
+  lhidx,
+  rocsvo,
+  rocsvn) => {
 
-  const lhContext = R.find(
-    R.propEq('lhname', lhname),
-    rhocs_1);
-
-  if(R.isNil(lhContext)){
+  if(R.isNil(rocsvo)){
     throw new Error(
-      `${lhname} is not a valid long hook.`);
+      'RHCSVO should not be nil.');
   }
 
-  return lhContext;
-}
+  if(!RA.isArray(rocsvo)){
+    throw new Error(
+      'ROCSVO must be an array.');
+  }
 
-export const getRcxt1ByLx = lhidx => {
+  if(R.isNil(rocsvn)){
+    throw new Error(
+      'ROCSVN should not be nil.');
+  }
 
-  const rhocxt_1 = R.find(
-    R.propEq('lhidx', lhidx),
-    rhocs_1);
+  if(!RA.isNumber(rocsvn)){
+    throw new Error(
+      'ROCSVN must be a number.');
+  }
 
   if(R.isNil(lhidx)){
     throw new Error(
-      'Long hook number should not be nil.');
+      'Long hook index should not be nil.');
   }
 
-  if(!RA.isNumber(lhidx)){
+  const rcxtvo = R.find(
+    R.propEq('lhidx', lhidx),
+    rocsvo);
+
+  if(R.isNil(rcxtvo)){
     throw new Error(
-      'Long hook number must be a number.');
+      `${lhidx} is not a valid long hook index `
+      + `for rho context ${rocsvn}`);
   }
 
-  if(R.isNil(rhocxt_1)){
+  return rcxtvo;
+}
+
+export const getRcxtvByLhn = (
+  lhname,
+  rocsvo,
+  rocsvn) => {
+
+  if(R.isNil(rocsvo)){
     throw new Error(
-      `${lhidx} is not a valid long hook number.`);
+      'RHCSVO should not be nil.');
   }
 
-  return rhocxt_1;
+  if(!RA.isArray(rocsvo)){
+    throw new Error(
+      'ROCSVO must be an array.');
+  }
+
+  if(R.isNil(rocsvn)){
+    throw new Error(
+      'ROCSVN should not be nil.');
+  }
+
+  if(!RA.isNumber(rocsvn)){
+    throw new Error(
+      'ROCSVN must be a number.');
+  }
+
+  if(R.isNil(lhname)){
+    throw new Error(
+      'Long hook name should not be nil.');
+  }
+
+  const rcxtvo = R.find(
+    R.propEq('lhname', lhname),
+    rocsvo);
+
+  if(R.isNil(rcxtvo)){
+    throw new Error(
+      `${lhname} is not a valid long hook `
+      + `for rho context ${rocsvn}`);
+  }
+
+  return rcxtvo;
+}
+
+export const getRcxt1ByLhn = lhname => {
+
+  try {
+    return getRcxtvByLhn(
+      lhname, rhocs_1, 1);
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get RHOCXT_1 by long hook name.')
+  }
+}
+
+export const getRcxt1ByLhx = lhidx => {
+
+  try {
+    return getRcxtvByLhx(
+      lhidx, rhocs_1, 1);
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get RHOCXT_1 by long hook index.')
+  }
 }
