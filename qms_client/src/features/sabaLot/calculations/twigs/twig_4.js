@@ -15,24 +15,24 @@ const getBrscSet = () => {
 
   const mapFn = i => {
     const sBranch = itemOfBranch(i);
-    const tBri =  13 - i;
-    const tBranch = itemOfBranch(tBri);
+    const tBridx =  13 - i;
+    const tBranch = itemOfBranch(tBridx);
 
     const sBelem = getElem(sBranch);
     const sBelemIdx = idxOfElem(sBelem);
 
-    // Compound Elemental
-    const celemSet = '土木火金水火';
-    const celem = celemSet[i - 1];
+    // Small Compound Elemental
+    const scelemSet = '土木火金水火';
+    const scelem = scelemSet[i - 1];
     return {
-      branches: [sBranch, tBranch],
-      celem
+      scpbrs: [sBranch, tBranch],
+      scelem
     }
   }
 
-  try{
-    const result = R.map(mapFn, R.range(1, 7));
-    return result;
+  try {
+    const _brscSet = R.map(mapFn, R.range(1, 7));
+    return _brscSet;
   }
   catch(err){
     console.error(err);
@@ -43,17 +43,43 @@ const getBrscSet = () => {
 
 export const brscSet = getBrscSet();
 
-export const matchBrsc = (sBranch, tBranch) => {
+// BSCOM is Branch small compound myself
+// BSCPT is Branch small compound reaction truncated
+export const getBscrt = bscom => {
 
-  const findFn = brsc => {
-    const intersect = R.intersection(
-      brsc.branches, [sBranch, tBranch]);
-    const valid = intersect.length == 2;
-    return valid;
+  // BSCOD is Branch small compound reaction
+  const findFn = bscom => {
+    const mBscor = R.includes(
+      bscom, bscor.scpbrs);
+    if(R.isNil(mBscor)){
+      throw new Error(
+        'The matched BSCOR should not be nil.');
+    }
+    return mBscor;
   }
 
-  const result = !R.isNil(R.find(findFn, brscSet));
-  return result;
+  const oppoFn = bscor => {
+    const opponent = R.without(
+      [bscom], bscor.scpbrs)[0];
+    return {
+      bscoo: opponent,
+      scelem: bscor.scelem
+    }
+  }
+
+  try {
+    const _bscrt = R.compose(
+      oppoFn,
+      R.find(findFn))
+    (brscSet);
+
+    return _bscrt;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get BSCRT.');
+  }
 }
 
 // Trunk Small Compound
