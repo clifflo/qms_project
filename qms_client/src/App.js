@@ -1,12 +1,12 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
-import { getFlushop } from
-'./features/sabaLot/calculations/twigs/twig_5';
+import { getRdbrc_1 } from
+'./features/sabaLot/calculations/rhoSeries/deltas/delta_2';
 
 function showTree(){
   return (
     <div>
-      <JSONTree data={getFlushop('丑')}/>
+      <JSONTree data={getRdbrc_1('未', '大過')}/>
     </div>
   )
 }

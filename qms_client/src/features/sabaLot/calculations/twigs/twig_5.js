@@ -23,7 +23,7 @@ export const hunterSet = {
 // BBDRS is Branch bidirectional reaction set
 // BBDRO is Branch bidirectional reaction oppoent
 // BBDRM is Branch bidirectional reaction myself
-const getBbdro = (bbdrs, bbdrm) => {
+const getBbdro_n = (bbdrs, bbdrm) => {
 
   if(R.isNil(bbdrm)){
     throw new Error(
@@ -45,13 +45,17 @@ const getBbdro = (bbdrs, bbdrm) => {
   }
 
   const oppoFn = bbdre => {
-    const oppo = R.without([bbdre], bbdrm);
-    return oppo[0];
+    const opponent = R.without(
+      [bbdrm], bbdre)[0];
+    return opponent;
   }
 
   try{
-    const bbdre_1 = R.find(findFn, bbdrs);
-    const bbdro = oppoFn(bbdre_1);
+
+    const bbdro = R.compose(
+      oppoFn,
+      R.find(findFn))
+    (bbdrs)
 
     if(R.isNil(bbdro)){
       throw new Error(
@@ -72,6 +76,8 @@ const getBbdro = (bbdrs, bbdrm) => {
   }
 }
 
+const getBbdro_c = R.curry(getBbdro_n);
+
 const getFlushSet = () => {
 
   const mapFn = (i) => {
@@ -85,10 +91,10 @@ const getFlushSet = () => {
 
 export const flushSet = getFlushSet();
 
-export const getFlushop =
-  R.curry(getBbdro)(flushSet);
+export const getFlhop =
+  getBbdro_c(flushSet);
 
-const getPauseSet = () => {
+const getHitSet = () => {
 
   const mapFn = (i) => {
     const sBranch = itemOfBranch(i);
@@ -99,9 +105,12 @@ const getPauseSet = () => {
   return R.map(mapFn, R.range(0, 6));
 }
 
-export const pauseSet = getPauseSet();
+export const hitSet = getHitSet();
 
-const getHitSet = () => {
+export const getHitop =
+  getBbdro_c(hitSet);
+
+const getPauseSet = () => {
 
   const mapFn = i => {
 
@@ -125,4 +134,7 @@ const getHitSet = () => {
 
 }
 
-export const hitSet = getHitSet();
+export const pauseSet = getPauseSet();
+
+export const getPseop =
+  getBbdro_c(pauseSet);
