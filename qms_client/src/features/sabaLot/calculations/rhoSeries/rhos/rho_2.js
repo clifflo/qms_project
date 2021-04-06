@@ -88,7 +88,8 @@ const buildCrosses = (
     crsi,
     crtk,
     crbh,
-    cbel
+    cbel,
+    lhcdwi
   }
 }
 

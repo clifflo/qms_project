@@ -42,8 +42,7 @@ const getRhocs_3 = () => {
     catch(err){
       console.error(err);
       throw new Error(
-        'Map function 2 error for '
-        + 'get hook palace set 2.');
+        'Mapfn 2 error for get RHOCS_3.');
     }
 
   }
@@ -97,7 +96,7 @@ const getRcxt3ByLn = lhname => {
   if(R.isNil(rhocxt_3)){
     throw new Error(
       `${lhname} is not a valid long hook `
-      + 'for RHOCS_3.');
+      + 'name for RHOCS_3.');
   }
 
   return rhocxt_3;
