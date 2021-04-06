@@ -9,19 +9,19 @@ import {
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
-export const getBpse = (betapsi) => {
+export const getBpse = betapsi => {
 
-  const trunk = betapsi[0];
-  const branch = betapsi[1];
+  const bptk = betapsi[0];
+  const bpbr = betapsi[1];
 
-  if(!isValidTrunk(trunk)){
+  if(!isValidTrunk(bptk)){
     throw new Error(
-      `${trunk} is not a valid trunk for betapsi.`);
+      `${bptk} is not a valid trunk for betapsi.`);
   }
 
-  if(!isValidBranch(branch)){
+  if(!isValidBranch(bpbr)){
     throw new Error(
-      `${branch} is not a valid branch for betapsi.`
+      `${bpbr} is not a valid branch for betapsi.`
     )
   }
 
@@ -32,7 +32,7 @@ export const getBpse = (betapsi) => {
   if(!isValidMatch){
     throw new Error(
       'Betapsi not valid due to wrong match '
-      + 'of trunk and branch.'
+      + 'of BPTK and BPBR.'
     )
   }
 

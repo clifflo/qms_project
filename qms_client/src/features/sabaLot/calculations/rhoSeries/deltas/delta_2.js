@@ -57,7 +57,9 @@ export const getCestm = (srclhn, tgtlhn) => {
 
 }
 
-// Rho construct branch reaction context 1
+// RCBRC_1 stands for Rho construct branch
+// reaction context 1.
+// RCSBR stands for rho construct branch.
 export const getRcbrc_1 = (rcsbr, lhname) => {
 
   // Rho construct BSCRT

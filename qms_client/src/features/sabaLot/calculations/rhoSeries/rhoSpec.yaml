@@ -210,6 +210,12 @@
   spals: rcfho
   spfna: Rho construct flush opponent
   spdesn: >-
-    The term 'construct' means day construct or month
-    construct. So both day and month will be calculated
-    for their
+    The flush opponent of RSCBR.
+  spocr: Delta-2
+-
+  spals: rscbr
+  spfna: Rho construct branch
+  spdesn: >-
+    It stands for the branch in either the day construct
+    or the month construct.
+  spocr: Delta-2
