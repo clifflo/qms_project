@@ -105,7 +105,6 @@ export const itemOfBtp = idx => {
   try{
     const tenthIdx = Math.floor(idx / 10);
 
-    // Betapsi Lead Branch Index
     const bplbi = 12 - (tenthIdx * 2);
 
     // Trunk Index

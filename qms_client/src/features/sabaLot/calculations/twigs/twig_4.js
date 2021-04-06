@@ -79,7 +79,7 @@ export const getBscrt = bscom => {
       [bscom], mBscpr.scpbrs)[0];
 
     return {
-      bscoo: opponent,
+      bscpo: opponent,
       scelem: mBscpr.scelem
     }
   }

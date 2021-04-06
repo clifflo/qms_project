@@ -9,6 +9,9 @@ import {
   decimalToBinary
 } from '../../utils/util_2';
 import {
+  getBscrt
+} from '../../twigs/twig_4';
+import {
   getFlhop,
   getHitop,
   getPseop
@@ -54,27 +57,39 @@ export const getCestm = (srclhn, tgtlhn) => {
 
 }
 
-// Rho day branch reaction context 1
-export const getRdbrc_1 = (rdbr, lhname) => {
+// Rho construct branch reaction context 1
+export const getRcbrc_1 = (rcsbr, lhname) => {
 
-  // Rho day flush opponent
-  const rdfho = getFlhop(rdbr);
-  const rdhto = getHitop(rdbr);
-  const rdpso = getPseop(rdbr);
+  // Rho construct BSCRT
+  const rcbst = getBscrt(rcsbr);
 
-  if(R.isNil(rdfho)){
+  // Rho construct flush opponent
+  const rcfho = getFlhop(rcsbr);
+
+  // Rho construct hit opponent
+  const rchto = getHitop(rcsbr);
+
+  // Rho construct pause opponent
+  const rcpso = getPseop(rcsbr);
+
+  if(R.isNil(rcfho)){
     throw new Error(
-      'RDFHO should not be nil.');
+      'RCFHO should not be nil.');
   }
 
-  if(R.isNil(rdhto)){
+  if(R.isNil(rchto)){
     throw new Error(
-      'RDHTO should not be nil.');
+      'RCHTO should not be nil.');
   }
 
-  if(R.isNil(rdpso)){
+  if(R.isNil(rcpso)){
     throw new Error(
-      'RDPSO should not be nil.');
+      'RCPSO should not be nil.');
+  }
+
+  if(R.isNil(rcbst)){
+    throw new Error(
+      'RCBST should not be nil.');
   }
 
   const mapFn = lhcros => {
@@ -87,9 +102,10 @@ export const getRdbrc_1 = (rdbr, lhname) => {
     }
 
     return {
-      isRdfho: crbh == rdfho,
-      isRdhto: crbh == rdhto,
-      isRdpso: crbh == rdpso,
+      isRcfho: crbh == rcfho,
+      isRchto: crbh == rchto,
+      isRcpso: crbh == rcpso,
+      isRcbso: crbh == rcbst.bscpo,
       crbh,
       lhcdwi: lhcros.lhcdwi
     }
@@ -97,16 +113,18 @@ export const getRdbrc_1 = (rdbr, lhname) => {
 
   try{
     const rhocxt_4 = getRcxt4ByLhn(lhname);
-    const rdbrs_1 = R.map(mapFn, rhocxt_4.lhcres);
+    const rcsbrs_1 = R.map(mapFn, rhocxt_4.lhcres);
     return {
-      rdfho,
-      rdhto,
-      rdpso,
-      rdbrs_1
+      rcsbr,
+      rcfho,
+      rchto,
+      rcpso,
+      rcbst,
+      rcsbrs_1
     }
   }
   catch(err){
     console.error(err);
-    throw new Error('Cannot get RDBRC_1.');
+    throw new Error('Cannot get RCBRC_1.');
   }
 }
