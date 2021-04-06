@@ -77,71 +77,69 @@ const getTkscSet = () => {
 
 export const tkscSet = getTkscSet();
 
-// 地支沖
-const getFlushSet = () => {
-
-  const mapFn = (i) => {
-    const sBranch = itemOfBranch(i);
-    const tBranch = itemOfBranch(i + 6);
-    return [
-      sBranch, tBranch
-    ]
-  }
-
-  return R.map(mapFn, R.range(0, 6));
-}
-
-export const flushSet = getFlushSet();
-
-// Get Flush opponent
-export const getFlushOp = (sBranch) => {
-  const sBridx = idxOfBranch(sBranch);
-  const tBranch = itemOfBranch(sBridx + 6);
-  return tBranch;
-}
-
-const getAxehs = () => {
-
-  const mapFn = (i) => {
-    const sBranch = itemOfBranch(i);
-    const tBranch = itemOfBranch(7 - i);
-    return {
-      [sBranch]: tBranch
-    }
-  }
-
-  return R.map(mapFn, R.range(0, 6));
-}
-
-export const axehs = getAxehs();
-
-const getBowhs = () => {
+// Branch Large Compound
+// 地支三合
+const getBrlcSet = () => {
 
   const mapFn = i => {
 
-    // Source Branch Index
-    const sBri = i * 2;
-
-    // Target Branch Index
-    const tBri = sBri - 3;
-
-    const sBranch = itemOfBranch(sBri);
-    const tBranch = itemOfBranch(tBri);
+    // Branch Index
+    const bridx_2 = i * 3;
+    const bridx_1 = bridx_2 - 4;
+    const bridx_3 = bridx_2 + 4;
+    const brixs = [bridx_1, bridx_2, bridx_3];
+    const branches = R.map(itemOfBranch, brixs);
+    const blce = getElem(branches[1]);
     return {
-      [sBranch]: tBranch
+      branches,
+      blce
     }
   }
 
   try{
-    return R.map(mapFn, R.range(0, 6));
+    return R.map(mapFn, R.range(0, 4));
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get bow hunter set.'
+      'Cannot get branch big compound.'
     )
   }
-
 }
 
-export const bowhs = getBowhs();
+export const brlcSet = getBrlcSet();
+
+// Meeting Set
+// 地支三會
+const getMtigSet = () => {
+
+  const mapFn = i => {
+
+    // 'j' is the starting position with a step
+    // of three.
+
+    const j = i * 3;
+    const bridx_1 = j + 2;
+    const bridx_2 = j + 3;
+    const bridx_3 = j + 4;
+    const brixs = [bridx_1, bridx_2, bridx_3];
+    const branches = R.map(itemOfBranch, brixs);
+    const melem = getElem(branches[1]);
+
+    return {
+      branches,
+      melem
+    }
+  }
+
+  try {
+    return R.map(mapFn, R.range(0, 4));
+  }
+  catch(err){
+    throw new Error(
+      'Cannot get Meeting Set.'
+    )
+  }
+}
+
+export const mtigSet = getMtgSet();

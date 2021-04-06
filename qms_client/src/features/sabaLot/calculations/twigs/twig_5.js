@@ -1,79 +1,11 @@
 import * as R from 'ramda';
 import {
   itemOfBranch,
-  getElem
+  getElem,
+  isValidBranch
 } from './twig_1';
 
-// Branch Large Compound
-// 地支三合
-const getBrlcSet = () => {
-
-  const mapFn = i => {
-
-    // Branch Index
-    const bridx_2 = i * 3;
-    const bridx_1 = bridx_2 - 4;
-    const bridx_3 = bridx_2 + 4;
-    const brixs = [bridx_1, bridx_2, bridx_3];
-    const branches = R.map(itemOfBranch, brixs);
-    const blce = getElem(branches[1]);
-    return {
-      branches,
-      blce
-    }
-  }
-
-  try{
-    return R.map(mapFn, R.range(0, 4));
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      'Cannot get branch big compound.'
-    )
-  }
-}
-
-export const brlcSet = getBrlcSet();
-
-// Meeting Set
-// 地支三會
-const getMtgSet = () => {
-
-  const mapFn = i => {
-
-    // 'j' is the starting position with a step
-    // of three.
-
-    const j = i * 3;
-    const bridx_1 = j + 2;
-    const bridx_2 = j + 3;
-    const bridx_3 = j + 4;
-    const brixs = [bridx_1, bridx_2, bridx_3];
-    const branches = R.map(itemOfBranch, brixs);
-    const melem = getElem(branches[1]);
-
-    return {
-      branches,
-      melem
-    }
-  }
-
-  try {
-    return R.map(mapFn, R.range(0, 4));
-  }
-  catch(err){
-    throw new Error(
-      'Cannot get Meeting Set.'
-    )
-  }
-}
-
-export const mtgSet = getMtgSet();
-
-// Arrestment Set
-// 地支相刑
-export const arrmtSet = {
+export const hunterSet = {
   '寅': '巳',
   '巳': '申',
   '申': '寅',
@@ -88,40 +20,97 @@ export const arrmtSet = {
   '亥': '亥'
 }
 
-const getAxehs = () => {
+// BBDRS is Branch bidirectional reaction set
+// BBDRO is Branch bidirectional reaction oppoent
+// BBDRM is Branch bidirectional reaction myself
+const getBbdro = (bbdrs, bbdrm) => {
+
+  if(R.isNil(bbdrm)){
+    throw new Error(
+      'BBDRM should not be nil.');
+  }
+
+  if(!isValidBranch(bbdrm)){
+    throw new Error(
+      `${bbdrm} is not a valid branch for BBDRM.`);
+  }
+
+  const findFn = bbdre => {
+    const mBbdre = R.includes(bbdrm, bbdre);
+    if(R.isNil(mBbdre)){
+      throw new Error(
+        'The matched BBDRE should not be nil.');
+    }
+    return mBbdre;
+  }
+
+  const oppoFn = bbdre => {
+    const oppo = R.without([bbdre], bbdrm);
+    return oppo[0];
+  }
+
+  try{
+    const bbdre_1 = R.find(findFn, bbdrs);
+    const bbdro = oppoFn(bbdre_1);
+
+    if(R.isNil(bbdro)){
+      throw new Error(
+        `BBDRO should not be nil for ${bbdrm}.`)
+    }
+
+    if(!isValidBranch(bbdro)){
+      throw new Error(
+        `${bbdro} is not a valid branch for BBDRO`);
+    }
+
+    return bbdro;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      `Cannot get BBDRO for ${bbdrm}.`);
+  }
+}
+
+const getFlushSet = () => {
 
   const mapFn = (i) => {
     const sBranch = itemOfBranch(i);
-    const tBranch = itemOfBranch(7 - i);
-    return {
-      [sBranch]: tBranch
-    }
+    const tBranch = itemOfBranch(i + 6);
+    return [sBranch, tBranch];
   }
 
   return R.map(mapFn, R.range(0, 6));
 }
 
-export const axehs = getAxehs();
+export const flushSet = getFlushSet();
 
-export const getAprey = ahpdr => {
+export const getFlushop =
+  R.curry(getBbdro)(flushSet);
 
+const getPauseSet = () => {
+
+  const mapFn = (i) => {
+    const sBranch = itemOfBranch(i);
+    const tBranch = itemOfBranch(7 - i);
+    return [sBranch, tBranch];
+  }
+
+  return R.map(mapFn, R.range(0, 6));
 }
 
-const getBowhs = () => {
+export const pauseSet = getPauseSet();
+
+const getHitSet = () => {
 
   const mapFn = i => {
 
-    // Source Branch Index
-    const sBri = i * 2;
+    const sBridx = i * 2;
+    const tBridx = sBridx - 3;
 
-    // Target Branch Index
-    const tBri = sBri - 3;
-
-    const sBranch = itemOfBranch(sBri);
-    const tBranch = itemOfBranch(tBri);
-    return {
-      [sBranch]: tBranch
-    }
+    const sBranch = itemOfBranch(sBridx);
+    const tBranch = itemOfBranch(tBridx);
+    return [sBranch, tBranch];
   }
 
   try{
@@ -136,4 +125,4 @@ const getBowhs = () => {
 
 }
 
-export const bowhs = getBowhs();
+export const hitSet = getHitSet();

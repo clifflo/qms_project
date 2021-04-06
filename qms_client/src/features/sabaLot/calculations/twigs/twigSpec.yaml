@@ -10,3 +10,19 @@
   spdesn: >
     It stands for the alias of defining trunk index
     in various conditions.
+  spocr: Twig-1
+-
+  spal: bbdrs
+  spfns: Branch bidirectional reaction set
+  spdesn: >-
+    It stands for the group name of 地支沖,破,害.
+    The singular form of each reaction is
+    BBDRE.
+  spocr: Twig-5
+-
+  spal: bbdrm
+  spfns: Branch bidirectional reaction myself
+  spdesn: >
+    It stands for the 'self branch' of a BBDRE.
+    For example, in 子未害 then if you enter 子 and
+    asks for the opponent then 子 is the BBDRM.
