@@ -78,7 +78,7 @@ const getTkscSet = () => {
 export const tkscSet = getTkscSet();
 
 // 地支沖
-const buildFlushSet = () => {
+const getFlushSet = () => {
 
   const mapFn = (i) => {
     const sBranch = itemOfBranch(i);
@@ -91,7 +91,7 @@ const buildFlushSet = () => {
   return R.map(mapFn, R.range(0, 6));
 }
 
-export const flushSet = buildFlushSet();
+export const flushSet = getFlushSet();
 
 // Get Flush opponent
 export const getFlushOp = (sBranch) => {

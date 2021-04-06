@@ -46,10 +46,12 @@ export const getCestm = (srclhn, tgtlhn) => {
 
 }
 
-export const getRdfhs = (rdbr, lhname) => {
-  
-}
+export const getRdtns = (rdbr, lhname) => {
 
-export const getRdhgs = (rdbr, lnname) => {
+  const rhocxt_4 = getRcxt4ByLhn(rdbr);
+
+  const mapFn = lhcros => {
+    
+  }
 
 }

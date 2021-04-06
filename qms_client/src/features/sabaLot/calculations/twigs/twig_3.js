@@ -25,11 +25,14 @@ export const getBpse = (betapsi) => {
     )
   }
 
-  const difference = idxOfBranch(branch) - idxOfTrunk(trunk);
+  const difference =
+    idxOfBranch(branch) - idxOfTrunk(trunk);
+
   const isValidMatch = (difference % 2) == 0
   if(!isValidMatch){
     throw new Error(
-      'Betapsi not valid due to wrong match of trunk and branch.'
+      'Betapsi not valid due to wrong match '
+      + 'of trunk and branch.'
     )
   }
 
@@ -68,7 +71,8 @@ export const idxOfBtp = (betapsi) => {
   }
   catch(err){
     console.error(err);
-    throw new Error('Cannot get Betapsi Index.');
+    throw new Error(
+      'Cannot get Betapsi Index.');
   }
 }
 

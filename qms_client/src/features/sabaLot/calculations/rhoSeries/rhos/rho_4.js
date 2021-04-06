@@ -136,8 +136,10 @@ const getRhocs_4 = () => {
   try {
 
     const rhocs_4a = R.map(mapFn, rhocs_3);
+
     const rhocs_4b = R.sortBy(
       R.prop('rglhi'), rhocs_4a);
+      
     return rhocs_4b;
   }
   catch(err){

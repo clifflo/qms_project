@@ -1,22 +1,12 @@
 -
-  spalias: brsc
-  spfname: Branch small compound
+  spals: brsc
+  spfna: Branch small compound
   spdesn: >
     地支六合 is defined as 地支小合.
-  spoccur: Twig-4
+  spocr: Twig-4
 -
-  spalias: axehs
-  spfname: Axe hunter set
+  spals: tkidx
+  spfna: Trunk index
   spdesn: >
-    It stands for 地支破. The set is an object
-    of which the key is the hunter and the value
-    would be the prey.
--
-  spalias: bowhs
-  spfname: Bow hunter set
-  spdesn: >
-    It stands for 地支害. The set is an object
-    of which the key is the hunter and the value
-    would be the prey.
--
-  sp
+    It stands for the alias of defining trunk index
+    in various conditions.

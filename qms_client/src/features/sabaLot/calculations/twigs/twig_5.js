@@ -87,3 +87,53 @@ export const arrmtSet = {
   '酉': '酉',
   '亥': '亥'
 }
+
+const getAxehs = () => {
+
+  const mapFn = (i) => {
+    const sBranch = itemOfBranch(i);
+    const tBranch = itemOfBranch(7 - i);
+    return {
+      [sBranch]: tBranch
+    }
+  }
+
+  return R.map(mapFn, R.range(0, 6));
+}
+
+export const axehs = getAxehs();
+
+export const getAprey = ahpdr => {
+
+}
+
+const getBowhs = () => {
+
+  const mapFn = i => {
+
+    // Source Branch Index
+    const sBri = i * 2;
+
+    // Target Branch Index
+    const tBri = sBri - 3;
+
+    const sBranch = itemOfBranch(sBri);
+    const tBranch = itemOfBranch(tBri);
+    return {
+      [sBranch]: tBranch
+    }
+  }
+
+  try{
+    return R.map(mapFn, R.range(0, 6));
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get bow hunter set.'
+    )
+  }
+
+}
+
+export const bowhs = getBowhs();

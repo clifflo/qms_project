@@ -1,31 +1,31 @@
 -
-  spalias: bbssb
-  spfname: Bean branch series start branch
+  spals: bbssb
+  spfna: Bean branch series start branch
   spdesn: >
     As of 乾, we will have the branches
     starting from the bottom as 子寅辰午申戌.
     In this case, 子 is the BBSSB.
   spoccur: Rho-1
 -
-  spalias: bbssi
-  spfname: Index of bean branch series start branch
+  spals: bbssi
+  spfna: Index of bean branch series start branch
   spoccur: Rho-1
 -
-  spalias: eshbt
-  spfname: External short hook bean trunk
+  spals: eshbt
+  spfna: External short hook bean trunk
   spdesn: >
     In long hook 師, ESHBT is the trunk of the
     external short hook, which is 癸.
   spoccur: Rho-1
 -
-  spalias: ishbt
-  spfname: Internal short hook bean trunk
+  spals: ishbt
+  spfna: Internal short hook bean trunk
   spdesn: >
     Refers to ESHBT.
   spoccur: Rho-1
 -
-  spalias: gshkor
-  spfname: >
+  spals: gshkor
+  spfna: >
     Generic short hook original
   spdesn: >
     The term 'generic' means that it defines the
@@ -33,22 +33,22 @@
     internal or external short hook in a long hook.
   spoccur: Rho-1
 -
-  spalias: oclot
-  spfname: Octal Lot
+  spals: oclot
+  spfna: Octal Lot
   spdesn: >-
     Casting the lot for long hook by using octal
     number.
   spoccur: Delta-1
 -
-  spalias: bilot
-  spfname: Binary Lot
+  spals: bilot
+  spfna: Binary Lot
   spdesn: >-
     Casting the lot for long hook by using binary
     number.
   spoccur: Delta-1
 -
-  spalias: isShetp
-  spfname: Is short hook external part
+  spals: isShetp
+  spfna: Is short hook external part
   spdesn: >-
     So for a short hook it would have both internal
     and external bean branch series and trunk. So we
@@ -56,20 +56,20 @@
     would like to get --- internal or external.
   spoccur: Rho-2
 -
-  spalias: srclhn
-  spfname: Source long hook name
+  spals: srclhn
+  spfna: Source long hook name
   spdesn: >-
     It means the name of 本卦.
   spoccur: Delta-2
 -
-  spalias: srclhn
-  spfname: Source long hook name
+  spals: srclhn
+  spfna: Source long hook name
   spdesn: >-
     It means the name of 之卦.
   spoccur: Delta-2
 -
-  spalias: cestm
-  spfname: Cross striking map
+  spals: cestm
+  spfna: Cross striking map
   spdesn: >-
     So we would have to check which cross is striking.
     For the source long hook we would say 'striking'
@@ -77,21 +77,21 @@
     strike'.
   spoccur: Delta-2
 -
-  spalias: crsi
-  spfname: Cross sign
+  spals: crsi
+  spfna: Cross sign
   spdesn: >-
     It stands for whether the cross is 陽爻 or 陰爻.
     I would define '1' as 陽爻 and '0' as 陰爻.
   spoccur: Rho-2
 -
-  spalias: slhbns
-  spfname: Source Long Hook Binaries
+  spals: slhbns
+  spfna: Source Long Hook Binaries
   spdesn: >-
     It stands for all the crosses of the 本卦.
   spoccur: Delta-2
 -
-  spalias: rblhss
-  spfname: Rho base long hook series
+  spals: rblhss
+  spfna: Rho base long hook series
   spdesn: >-
     It stands for the long hooks of 乾卦宮. As
     there are also 卦宮 in 玄空大卦, I would define
@@ -101,31 +101,31 @@
     short hooks.
   spoccur: Rho-4
 -
-  spalias: rlhkss
-  spfname: Rho long hook series
+  spals: rlhkss
+  spfna: Rho long hook series
   spdesn: >-
     So I would calculate all those 7 generated long
     hooks firstly and then I will add back the rho
     head long hook to form the whole long hook series.
   spoccur: Rho-3
 -
-  spalias: lhcuwi
-  spfname: Long hook cross upward index
+  spals: lhcuwi
+  spfna: Long hook cross upward index
   spdesn: >-
     It means the cross counted from the bottom starting
     from 0.
   spoccur: Rho-3
 -
-  spalias: rhgbs
-  spfname: Rho hook gap binaries set
+  spals: rhgbs
+  spfna: Rho hook gap binaries set
   spdesn: >-
     It stands for the bitwise difference between each
     of the generation between the rho head hook and
     the generated long hook. For example, the hook gap
     binaries between 純乾 and 否 would be 'b111000'.
 -
-  spalias: rlhgn
-  spfname: Rho long hook generation
+  spals: rlhgn
+  spfna: Rho long hook generation
   spdesn: >-
     It stands for the number of 'generation' of a
     rho long hook series. So for 二世卦 the generation
@@ -133,16 +133,16 @@
     Jack and I do not use 'generation' to define it.
   spoccur: Rho-3
 -
-  spalias: rhlhb
-  spfname: Rho head long hook binaries
+  spals: rhlhb
+  spfna: Rho head long hook binaries
   spdesn: >-
     It stands for the binaries of the head long hook of
     a rho long hook series. So the So the head long hook
     for 乾午卦宮 is 純乾, with binaries 'b111111'.
   spoccur: Rho-3
 -
-  spalias: rglhi
-  spfname: Rho generated long hook index
+  spals: rglhi
+  spfna: Rho generated long hook index
   spdesn: >-
     It stands for the process of using the RHGBS tp
     generate those long hooks with different generations.
@@ -153,49 +153,65 @@
     RGLHI.
   spoccur: Rho-3
 -
-  spalias: rglct1
-  spfname: Rho generated long hook context version 1
+  spals: rglct1
+  spfna: Rho generated long hook context version 1
   spdesn: >-
     This is the RHOCXT_1 found by RGLHI.
   spoccur: Rho-3
 -
-  spalias: trnto
-  spfname: Truncated natto
+  spals: trnto
+  spfna: Truncated natto
   spdesn: >-
     It stands for just only the interal part or the
     external part of a natto.
   spoccur: Rho-2
 -
-  spalias: rhshn
-  spfname: Rho head short hook name
+  spals: rhshn
+  spfna: Rho head short hook name
   spdesn: >-
     It stands for the short hook, not the long hook.
     So for 坤午卦宮 the RHSHN is 坤 but not 純坤.
   spoccur: Rho-2
 -
-  spalias: rhkpal
-  spfname: Rho hook palace
+  spals: rhkpal
+  spfna: Rho hook palace
   spdesn: >-
     It stands for each of the 午卦宮.
   spoccur: Rho-3
 -
-  spalias: rdfhs
-  spfname: Rho day flush set
+  spals: rdfhs
+  spfna: Rho day flush set
   spdesn: >-
     It stands for the flush opponent of the day branch.
     Noted that for the day betapsi only the branch is
     considered, not the trunk.
   spoccur: Delta-3
 -
-  spalias: rocsvo
-  spfname: Rho context set versioned object
+  spals: rocsvo
+  spfna: Rho context set versioned object
   spdesn: >-
     It stands for the different version of rho context
     set.
   spoccur: Rho-1
 -
-  spalias: rcxtvo
-  spfname: Rho context versioned object
+  spals: rcxtvo
+  spfna: Rho context versioned object
   spdesn: >-
     It stands for the different version of rho context.
   spoccur: Rho-1
+-
+  spals: rdbrs
+  spfna: Rho day branch reaction set
+  spdesn: >-
+    It stands for all the day branch reactions with the
+    cross branch. So it includes hunters (gun, arrow and
+    axe) and flushes. Noted that brakes no matter the
+    generic ones or the rhos are not included.
+  spoccur: Delta-2
+-
+  spals: lhcres
+  spfna: Long hook crosses
+  spdesn: >-
+    It stands for all the crosses within a long hook
+    and this is the plural name. LHCROS is the singular.
+  spoccur: Rho-3
