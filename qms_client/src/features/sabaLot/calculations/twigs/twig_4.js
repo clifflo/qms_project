@@ -11,7 +11,7 @@ import * as R from 'ramda';
 
 // Branch Small Compound
 // 地支六合
-const getBrscSet = () => {
+const getBscprSet = () => {
 
   const mapFn = i => {
     const sBranch = itemOfBranch(i);
@@ -41,29 +41,46 @@ const getBrscSet = () => {
   }
 }
 
-export const brscSet = getBrscSet();
+export const bscprSet = getBscprSet();
 
-// BSCOM is Branch small compound myself
-// BSCPT is Branch small compound reaction truncated
 export const getBscrt = bscom => {
 
-  // BSCOD is Branch small compound reaction
-  const findFn = bscom => {
-    const mBscor = R.includes(
-      bscom, bscor.scpbrs);
-    if(R.isNil(mBscor)){
-      throw new Error(
-        'The matched BSCOR should not be nil.');
-    }
-    return mBscor;
+  if(R.isNil(bscom)){
+    throw new Error(
+      'BSCOM should not be nil.');
   }
 
-  const oppoFn = bscor => {
+  if(!isValidBranch(bscom)){
+    throw new Error(
+      `${bscom} is not a valid branch.`);
+  }
+
+  const findFn = bscpr => {
+
+    const cBscpr = R.includes(
+      bscom, bscpr.scpbrs);
+
+    if(R.isNil(cBscpr)){
+      throw new Error(
+        'The checked BSCPR should not be nil.');
+    }
+
+    return cBscpr;
+  }
+
+  const oppoFn = mBscpr => {
+
+    if(R.isNil(mBscpr)){
+      throw new Error(
+        'Matched BSCPR should not be nil.')
+    }
+
     const opponent = R.without(
-      [bscom], bscor.scpbrs)[0];
+      [bscom], mBscpr.scpbrs)[0];
+
     return {
       bscoo: opponent,
-      scelem: bscor.scelem
+      scelem: mBscpr.scelem
     }
   }
 
@@ -71,7 +88,7 @@ export const getBscrt = bscom => {
     const _bscrt = R.compose(
       oppoFn,
       R.find(findFn))
-    (brscSet);
+    (bscprSet);
 
     return _bscrt;
   }
@@ -168,4 +185,4 @@ const getMtigSet = () => {
   }
 }
 
-export const mtigSet = getMtgSet();
+export const mtigSet = getMtigSet();

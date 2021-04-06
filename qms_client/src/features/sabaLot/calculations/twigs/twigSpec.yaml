@@ -22,7 +22,29 @@
 -
   spal: bbdrm
   spfns: Branch bidirectional reaction myself
-  spdesn: >
+  spdesn: >-
     It stands for the 'self branch' of a BBDRE.
     For example, in 子未害 then if you enter 子 and
     asks for the opponent then 子 is the BBDRM.
+  spocr: Twig-5
+-
+  spal: bscpr
+  spfns: Branch small compound reaction
+  spdesn: >-
+    It stands for the 地支六合 reactions.
+  spocr: Twig-4
+-
+  spal: bscrt
+  spfns: Branch small compound reaction truncated
+  spdesn: >-
+    It stands for a BSCRP but when we enter the myself
+    branch it would return the opponent but also the
+    compound elemental.
+  spocr: Twig-4
+-
+  spal: bscom
+  spfns: Branch small compound myself
+  spdesn: >-
+    It stands for the myself branch we enter for querying
+    the BSCRT.
+  spocr: Twig-4
