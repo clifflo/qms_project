@@ -25,13 +25,24 @@
   spocr: Rho-1
 -
   spals: gshkor
-  spfna: >
-    Generic short hook original
-  spdesn: >
+  spfna: Generic short hook original
+  spdesn: >-
     The term 'generic' means that it defines the
     short hook itself. It does not refers to any
     internal or external short hook in a long hook.
   spocr: Rho-1
+-
+  spals: rhshel
+  spfna: Rho head short hook element
+  spdesn: >-
+    I define with the term 'Rho head' because I do not
+    want to refer the long hook with external short hook
+    or internal short hook which are irrelevant. So 'Rho
+    head' is specifically refers to the 午卦宮 to avoid
+    confusion.
+  spocr: Rho-4
+-
+  spals: ncfss
 -
   spals: oclot
   spfna: Octal Lot
@@ -219,3 +230,5 @@
     It stands for the branch in either the day construct
     or the month construct.
   spocr: Delta-2
+-
+  spals: rhofs

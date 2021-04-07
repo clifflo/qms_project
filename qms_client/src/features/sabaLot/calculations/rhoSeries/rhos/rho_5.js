@@ -7,13 +7,12 @@ import {
   getElre,
   idxOfTrunk,
   itemOfTrunk
-} from '../twigs/twig_1';
-
+} from '../../twigs/twig_1';
 
 const getRhocs_5 = () => {
 
-  // Focus Chinese Name List
-  const fcnl = {
+  // Rho focus set
+  const rpfos = {
     'Draw': '丙兄弟',
     'Fruit': '丙子孫',
     'Bank': '丙妻財',
@@ -21,85 +20,106 @@ const getRhocs_5 = () => {
     'Seed': '丙父母',
   }
 
-  // Map Function 1 non curried
-  const mapFn_1n = (rhhElem, cross_1) => {
-
+  const mapFn_1n = (rhshel, lhcros_1) => {
 
     try{
-      const crfcs = getElre(rhhElem, cross_1.cbel);
-      const fcn = fcnl[crfcs];
-      let cross_2 = Object.assign({}, cross_1);
-      cross_2.fcn = fcn;
-      return cross_2;
+      const crfcs = getElre(rhshel, lhcros_1.cbel);
+      const rofcs = rpfos[crfcs];
+      const rofcsLens = R.lensProp('rofcs');
+      let lhcros_2 = R.set(
+        rofcsLens, rofcs, lhcros_1);
+      return lhcros_2;
     }
     catch(err){
       console.error(err);
       throw new Error(
-        'Map function 1 is error.');
+        'MAPFN_1 is error for get RHOCS_5.');
     }
   }
-
-  // Map Function 1 curried
   const mapFn_1c = R.curry(mapFn_1n);
 
-  const mapFn_2 = lhc_4 => {
+  const mapFn_2 = rhocxt_4 => {
 
-    try {
+    try{
+
       const lhcres = R.map(
-        mapFn_1c(lhc_4.rhhElem),
-        lhc_4.lhcres);
+        mapFn_1c(rhocxt_4.rhshel),
+        rhocxt_4.lhcres);
 
-      // Long Hook Context 5
-      let lhc_5 = Object.assign({}, lhc_4);
-      lhc_5.lhcres = lhcres;
-
-      return lhc_5;
+      const lhcresLens = R.lensProp('lhcres');
+      const rhocxt_5 = R.set(
+        lhcresLens, lhcres, rhocxt_4);
+      return rhocxt_5;
     }
     catch(err){
       console.error(err);
       throw new Error(
-        'Map function 2 is error.');
+        'MAPFN_2 for get RHOCS_5 is error.');
     }
-
   }
 
   return R.map(mapFn_2, rhocs_4);
 }
 
-export const rhocs_5 = getRhocs_4();
+export const rhocs_5 = getRhocs_5();
 
-const getRhocs_5 = () => {
+const getRhocs_6 = () => {
 
-  // Map Function 1 non-curried.
-  const mapFn_1n = (rhhElem, cross) => {
+  const mapFn = rhocxt => {
 
-    const crfcs = getElre(
-      rhhElem,
-      cross.cbel);
+    // Non unique Rho Focus Set
+    const ncfss = R.map(
+      R.prop('rofcs'), rhocxt.lhcres);
 
-    return {
-      ...cross,
-      crfcs
+    if(R.isNil(ncfss)){
+      throw new Error(
+        'Non Unique Cross Focus Set should '
+        + 'not be nil.');
     }
+
+    // Unique Cross Focus Set
+    const ucfss = R.uniq(ncfss);
+
+    // Long Hook with hidden
+    const isLhhd = ucfss.length < 5;
+
+    // Rho Hidden Hook Focus Set
+    const rhhfs = R.difference(elrs, ucfss);
+    let rhces;
+
+    if(isLhhd){
+
+      // Rho Head Long Hook
+      const rhcesResult = R.find(
+        R.propEq('lhname', '純' + rhocxt.rhHook),
+        rhocs_5).lhcres;
+
+      if(R.isNil(rhcesResult)){
+        throw new Error(
+          'Cannot find the Rho Head Long Hook. '
+          + `${rhocxt.rhHook} may not be a valid `
+          + 'Rho Head Hook Name.')
+      }
+
+      rhces = rhcesResult;
+
+      return {
+        ...rhocxt,
+        isLhhd,
+        rhhfs,
+        rhces
+      }
+    }
+    else {
+      return {
+        ...rhocxt,
+        isLhhd
+      }
+    }
+
   }
 
-  // Map Function 1 curried
-  const mapFn_1c = R.curry(mapFn_1n);
-
-  const mapFn_2 = (lhContext) => {
-
-    const lhcres = R.map(
-      mapFn_1c(lhContext.rhhElem),
-      lhContext.lhcres);
-
-    return {
-      ...lhContext,
-      lhcres
-    }
-  }
-
-  const result = R.map(mapFn_2, rhocs_4);
-  return result;
+  return R.map(mapFn, rhocs_5)
 }
 
-export const rhocs_5 = getRhocs_5();
+export const rhocs_6 = getRhocs_6();
