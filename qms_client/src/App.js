@@ -1,12 +1,12 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
-import { getRcbrc_1 } from
-'./features/sabaLot/calculations/rhoSeries/deltas/delta_2';
+import { test } from
+'./features/sabaLot/calculations/twigs/twig_7';
 
 function showTree(){
   return (
     <div>
-      <JSONTree data={getRcbrc_1('卯', '蹇')}/>
+      <JSONTree data={test}/>
     </div>
   )
 }
