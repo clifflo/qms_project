@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-export const pflat = obj_1 => {
+export const propFlat = obj_1 => {
   try{
     let result = {};
     let obj_2 = Object.assign({}, obj_1);
@@ -14,6 +14,6 @@ export const pflat = obj_1 => {
   }
   catch(err){
     console.error(err);
-    throw new Error('Pflat does not work.');
+    throw new Error('Propflat does not work.');
   }
 }

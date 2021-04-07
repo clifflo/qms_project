@@ -48,3 +48,10 @@
     It stands for the myself branch we enter for querying
     the BSCRT.
   spocr: Twig-4
+-
+  spal: brfan
+  spfns: Branch from animal
+  spdesn: >-
+    It stands for getting the branch from an animal. For
+    example, when we enter 狗 we can get 戌.
+  spocr: Twig-7

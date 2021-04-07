@@ -1,91 +1,68 @@
 import * as R from 'ramda';
-import * as RA from 'ramda-adjunct';
-import { brlcSet } from './twig_5';
-import { adjust } from '../utils/util_1';
-import {
-  isValidBranch,
-  branchOrder,
-  idxOfBranch,
-  itemOfBranch
-} from './twig_1';
 
-// Milo Tangerine is the 天元祿吉神
-export const miloTgset = {
-  '甲':'寅',
-  '乙':'卯',
-  '丙戊':'巳',
-  '丁己':'午',
-  '庚':'申',
-  '辛':'酉',
-  '壬':'亥',
-  '癸':'子'
-}
+// Branch Large Compound
+// 地支三合
+const getBrlcSet = () => {
 
-// Horse Tangerine is 驛馬吉神
-const getHorseTgset = () => {
+  const mapFn = i => {
 
-  const brhList = '寅亥申巳';
-
-  const mapFn = idx => {
-    const sBranch = itemOfBranch(idx);
-    const tBranch = item(brhList, idx);
-
+    // Branch Index
+    const bridx_2 = i * 3;
+    const bridx_1 = bridx_2 - 4;
+    const bridx_3 = bridx_2 + 4;
+    const brixs = [bridx_1, bridx_2, bridx_3];
+    const branches = R.map(itemOfBranch, brixs);
+    const blce = getElem(branches[1]);
     return {
-      [sBranch]: tBranch
+      branches,
+      blce
     }
   }
 
-  return R.map(mapFn, R.range(0, 12));
+  try{
+    return R.map(mapFn, R.range(0, 4));
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get branch big compound.'
+    )
+  }
 }
 
-export const horseTgset = getHorseTgset();
+export const brlcSet = getBrlcSet();
 
-// Gamma Sigma Tangerine Set
-// 乙巳貴人（火珠林專用天乙貴人）
-export const gmsmTgset = {
-  '甲戊':'牛羊',
-  '乙己':'鼠猴',
-  '丙丁':'豬雞',
-  '壬癸':'兔蛇',
-  '庚辛':'虎馬',
-}
+// Meeting Set
+// 地支三會
+const getMtigSet = () => {
 
-// Gamma Xi Tangerine Set
-// 乙酉貴人（六壬專用天乙貴人）
-export const gmxiTgset = {
-  '甲戊庚':'牛羊',
-  '乙己':'鼠猴',
-  '丙丁':'豬雞',
-  '壬癸':'兔蛇',
-  '辛': '馬虎'
-}
+  const mapFn = i => {
 
-export const luckyTgset = {
-  '甲':'虎',
-  '乙':'豬牛',
-  '丙':'犬鼠',
-  '丁':'雞',
-  '戊':'𤠣',
-  '己':'羊',
-  '庚':'馬',
-  '辛':'蛇',
-  '癸':'兔',
-  '壬':'龍'
-}
+    // 'j' is the starting position with a step
+    // of three.
 
-const getGivenKill = () => {
-  const brhList = '巳寅亥申';
-
-  const mapFn = idx => {
-    const sBranch = itemOfBranch(idx);
-    const tBranch = item(brhList, idx);
+    const j = i * 3;
+    const bridx_1 = j + 2;
+    const bridx_2 = j + 3;
+    const bridx_3 = j + 4;
+    const brixs = [bridx_1, bridx_2, bridx_3];
+    const branches = R.map(itemOfBranch, brixs);
+    const melem = getElem(branches[1]);
 
     return {
-      [sBranch]: tBranch
+      branches,
+      melem
     }
   }
 
-  return R.map(mapFn, R.range(0, 12));
+  try {
+    return R.map(mapFn, R.range(0, 4));
+  }
+  catch(err){
+    throw new Error(
+      'Cannot get Meeting Set.'
+    )
+  }
 }
 
-export const givenKill = getGivenKill();
+export const mtigSet = getMtigSet();

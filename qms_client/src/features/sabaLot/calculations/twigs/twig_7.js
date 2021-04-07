@@ -1,1 +1,97 @@
 import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
+import {
+  branchOrder,
+  isValidBranch
+} from './twig_1';
+
+export const monthOrder =
+  R.split(',',
+  '正,二,三,四,五,六,七,八,'
+  + '九,十,十一,十二');
+
+export const isValidMonth = month => {
+
+  if(R.isNil(month)){
+    throw new Error(
+      'Month should not be nil.');
+  }
+
+  if(!RA.isString(month)){
+    throw new Error(
+      'Month must be a string.');
+  }
+
+  return R.includes(month, monthOrder);
+}
+
+
+
+export const getMthbrm = () => {
+
+}
+
+export const animalOrder =
+  '鼠牛虎兔龍蛇馬羊𤠣雞狗豬';
+
+// Branch animal map, 地支和生肖之對應
+const getBrhanm = () => {
+
+  const mapFn = idx => {
+
+    const branch = branchOrder[idx];
+    const animal = animalOrder[idx];
+
+    return {
+      [branch]: animal
+    }
+  }
+
+  try{
+    const _bchanm = R.map(mapFn, R.range(0, 12));
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get BCHANM');
+  }
+}
+
+export const brhanm = getBrhanm();
+
+export const brhami = R.invertObj(bchanm);
+
+// BRFAN means Branch from animal
+export const getBrfan = animal => {
+
+  if(R.isNil(animal)){
+    throw new Error(
+      'Animal should not be nil.');
+  }
+
+  if(!RA.isString(animal)){
+    throw new Error(
+      'Animal must be string.');
+  }
+
+  if(isValidAnimal(animal)){
+    throw new Error(
+      `${animal} is not a valid animal.`);
+  }
+
+  const branch = bchanm[animal];
+  return branch;
+}
+
+export const brakeParser = brkstc => {
+
+  const mapFn = character => {
+
+    // Is responsible character
+    const isReschr = R.allPass([
+      isValidTrunk,
+      isValidBranch,
+      isValidAnimal,
+      isValidMonth
+    ]);
+  }
+}
