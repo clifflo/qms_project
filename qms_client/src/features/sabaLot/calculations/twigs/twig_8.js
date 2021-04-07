@@ -59,6 +59,10 @@ export const getBkfstc_1 = brkspa => {
   }
 }
 
+export const getBkprops = bkfstc => {
+  
+}
+
 export const getBkfstc_5 = bkfstc_4 => {
 
   const regexString =

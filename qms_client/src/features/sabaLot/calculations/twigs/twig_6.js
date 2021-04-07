@@ -1,4 +1,8 @@
 import * as R from 'ramda';
+import {
+  itemOfBranch,
+  getElem
+} from './twig_1';
 
 // Branch Large Compound
 // 地支三合
@@ -12,6 +16,8 @@ const getBrlcSet = () => {
     const bridx_3 = bridx_2 + 4;
     const brixs = [bridx_1, bridx_2, bridx_3];
     const branches = R.map(itemOfBranch, brixs);
+
+    // Branch large compound element
     const blce = getElem(branches[1]);
     return {
       branches,

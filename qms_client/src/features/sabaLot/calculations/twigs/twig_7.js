@@ -115,7 +115,13 @@ export const getBrfan = animal => {
 export const branchRegex = `[${branchOrder}]`;
 export const trunkRegex = `[${trunkOrder}]`;
 export const animalRegex = `[${animalOrder}]`;
-export const monthRegex = `[${monthOrder}]`
+export const monthRegex = `[${monthOrder}]`;
 
 export const varbrhRegex =
   `${branchRegex}|${animalRegex}`;
+
+export const lbrlcmRegex =
+  '(正五九|二六十|三七十一|四八十二)';
+
+export const lbrlcbRegex =
+  '(寅午戌|申子辰|亥卯未|巳酉丑)';
