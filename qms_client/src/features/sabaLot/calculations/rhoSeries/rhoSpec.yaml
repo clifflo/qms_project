@@ -231,4 +231,15 @@
     or the month construct.
   spocr: Delta-2
 -
-  spals: rhofs
+  spals: rfosm
+  spfna: Rho focus set map
+  spdesn: >-
+    It stands for the rho focus mapped with the elemental
+    relations. So 丙妻財 will be mapped with 'Bank', etc.
+  spocr: Rho-5
+-
+  spals: rfsset
+  spfna: Rho focus set
+  spdesn: >-
+    It stands for the set of 丙六親.
+  spocr: Rho-5

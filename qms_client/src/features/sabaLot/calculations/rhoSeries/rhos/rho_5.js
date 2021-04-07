@@ -9,22 +9,26 @@ import {
   itemOfTrunk
 } from '../../twigs/twig_1';
 
+// Rho focus set map
+const rfosm = {
+  'Draw': '丙兄弟',
+  'Fruit': '丙子孫',
+  'Bank': '丙妻財',
+  'Hacker': '丙官鬼',
+  'Seed': '丙父母',
+};
+
+const rfsset = R.values(rfosm);
+
 const getRhocs_5 = () => {
 
-  // Rho focus set
-  const rpfos = {
-    'Draw': '丙兄弟',
-    'Fruit': '丙子孫',
-    'Bank': '丙妻財',
-    'Hacker': '丙官鬼',
-    'Seed': '丙父母',
-  }
+
 
   const mapFn_1n = (rhshel, lhcros_1) => {
 
     try{
       const crfcs = getElre(rhshel, lhcros_1.cbel);
-      const rofcs = rpfos[crfcs];
+      const rofcs = rfosm[crfcs];
       const rofcsLens = R.lensProp('rofcs');
       let lhcros_2 = R.set(
         rofcsLens, rofcs, lhcros_1);
@@ -84,24 +88,21 @@ const getRhocs_6 = () => {
     const isLhhd = ucfss.length < 5;
 
     // Rho Hidden Hook Focus Set
-    const rhhfs = R.difference(elrs, ucfss);
-    let rhces;
+    const rhhfs = R.difference(rfsset, ucfss);
 
     if(isLhhd){
 
       // Rho Head Long Hook
-      const rhcesResult = R.find(
-        R.propEq('lhname', '純' + rhocxt.rhHook),
+      const rhces = R.find(
+        R.propEq('lhname', '純' + rhocxt.rhshn),
         rhocs_5).lhcres;
 
-      if(R.isNil(rhcesResult)){
+      if(R.isNil(rhces)){
         throw new Error(
           'Cannot find the Rho Head Long Hook. '
           + `${rhocxt.rhHook} may not be a valid `
           + 'Rho Head Hook Name.')
       }
-
-      rhces = rhcesResult;
 
       return {
         ...rhocxt,
