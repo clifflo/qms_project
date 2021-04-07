@@ -55,3 +55,15 @@
     It stands for getting the branch from an animal. For
     example, when we enter 狗 we can get 戌.
   spocr: Twig-7
+-
+  spal: blcms
+  spfns: Branch large compound members
+  spdesn: >-
+    It stands for the members in a branch large compound.
+    So in a 申子辰 as a 三合水局 then 申子辰 is the BLCMS.
+  spocr: Twig-6
+-
+  spal: blcel
+  spfns: Branch large compound element
+  spdesn: >-
+    

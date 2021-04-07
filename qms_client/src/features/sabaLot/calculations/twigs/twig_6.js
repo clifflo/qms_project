@@ -4,9 +4,9 @@ import {
   getElem
 } from './twig_1';
 
-// Branch Large Compound
+// Branch Large Compound Set
 // 地支三合
-const getBrlcSet = () => {
+const getBrlcs = () => {
 
   const mapFn = i => {
 
@@ -15,13 +15,16 @@ const getBrlcSet = () => {
     const bridx_1 = bridx_2 - 4;
     const bridx_3 = bridx_2 + 4;
     const brixs = [bridx_1, bridx_2, bridx_3];
-    const branches = R.map(itemOfBranch, brixs);
+    const blcms = R.compose(
+      R.join(''),
+      R.map(itemOfBranch))
+    (brixs);
 
     // Branch large compound element
-    const blce = getElem(branches[1]);
+    const blcel = getElem(branches[1]);
     return {
-      branches,
-      blce
+      blcbs,
+      blcel
     }
   }
 
@@ -36,7 +39,18 @@ const getBrlcSet = () => {
   }
 }
 
-export const brlcSet = getBrlcSet();
+export const brlcs = getBrlcs();
+
+export const br
+
+// ELFTB stands for get element from triple branches
+// TRBRS stands for triple branches
+export const getElftb = trbrs => {
+
+  const mapFn = brlcd => {
+    const
+  }
+}
 
 // Meeting Set
 // 地支三會

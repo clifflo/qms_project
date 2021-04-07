@@ -58,31 +58,3 @@ export const getBkfstc_1 = brkspa => {
       'Cannot parse brake sentence.');
   }
 }
-
-export const getBkprops = bkfstc => {
-  
-}
-
-export const getBkfstc_5 = bkfstc_4 => {
-
-  const regexString =
-    `(${monthRegex}+)(${varbrhRegex}+)`;
-
-  const regexObj = new RegExp(
-    regexString, 'g');
-
-  const mbkfst = Array.from(
-    bkfstc_4.matchAll(regexObj));
-
-  return mbkfst;
-}
-
-const hello = R.compose(
-  getBkfstc_5, getBkfstc_1)
-
-const deltaBrake_03 =
-  ['正月戌兮、二月丑，三月虎兮、四蛇走，',
-  '五月酉兮、六卯位，七鼠、八馬各看守，',
-  '九亥、十辰、十一申，十二未上君知否。'];
-
-export const test = hello(deltaBrake_03);

@@ -1,12 +1,12 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
-import { brlcSet } from
-'./features/sabaLot/calculations/twigs/twig_6';
+import { rhocs_6 } from
+'./features/sabaLot/calculations/rhoSeries/rhos/rho_6';
 
 function showTree(){
   return (
     <div>
-      <JSONTree data={brlcSet}/>
+      <JSONTree data={rhocs_6}/>
     </div>
   )
 }
