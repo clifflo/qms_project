@@ -2,15 +2,11 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   branchOrder,
-  trunkOrder,
-  isValidBranch,
-  isValidTrunk
+  trunkOrder
 } from './twig_1';
 
-export const monthOrder =
-  R.split(',',
-  '正,二,三,四,五,六,七,八,'
-  + '九,十,十一,十二');
+export const monthOrder = '正二三四五六七八九十霜臘';
+export const mthaltOrder = '正二三四五六七八九十子丑';
 
 export const isValidMonth = month => {
 
@@ -119,71 +115,7 @@ export const getBrfan = animal => {
 export const branchRegex = `[${branchOrder}]`;
 export const trunkRegex = `[${trunkOrder}]`;
 export const animalRegex = `[${animalOrder}]`;
+export const monthRegex = `[${monthOrder}]`
 
-// BRKSPA is brake sentence part array
-// BKFSTC_1 is brake full sentence version 1
-export const getBkfstc_1 = brkspa => {
-
-  console.log('aaa');
-
-  const mapFn = character => {
-
-    // Is responsible character function
-    const isRescrf = R.anyPass([
-      isValidTrunk,
-      isValidBranch,
-      isValidAnimal,
-      isValidMonth
-    ]);
-
-    const isReschr = isRescrf(character);
-
-    if(isReschr){
-      return character;
-    }
-    else {
-      return '_'
-    }
-  }
-
-  try {
-    const bkfstc_1 = R.compose(
-      R.join(''),
-      R.reject(R.equals('_')),
-      R.map(mapFn),
-      R.join(''))
-    (brkspa);
-
-    return bkfstc_1;
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      'Cannot parse brake sentence.');
-  }
-}
-
-export const getBkfstc_2 = bkfstc_1 => {
-
-  const regexString =
-    `(${trunkRegex}+)(${animalRegex}+)`;
-
-  console.log(regexString);
-
-  const regexObj = new RegExp(
-    regexString,
-    'g');
-  const mbkfst = Array.from(bkfstc_1.matchAll(regexObj));
-  console.log(mbkfst);
-  return mbkfst;
-}
-
-const hello = R.compose(
-  getBkfstc_2, getBkfstc_1)
-
-
-const deltaBrake_03 =
-  ['甲戊兼牛羊，乙己鼠猴鄉，丙丁豬雞位，',
-   '壬癸兔蛇藏，庚辛逢馬虎，此是貴人方。'];
-
-export const test = hello(deltaBrake_03);
+export const varbrhRegex =
+  `${branchRegex}|${animalRegex}`;
