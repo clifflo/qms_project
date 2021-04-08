@@ -184,6 +184,12 @@
     So for 坤午卦宮 the RHSHN is 坤 but not 純坤.
   spocr: Rho-2
 -
+  spals: rjkdi
+  spfna: Rho jack downward index
+  spdesn: >-
+    It stands for the 世爻 with downward index.
+  spocr: Rho-4, Rho-6
+-
   spals: rhkpal
   spfna: Rho hook palace
   spdesn: >-
@@ -243,3 +249,6 @@
   spdesn: >-
     It stands for the set of 丙六親.
   spocr: Rho-5
+-
+  spals: rrfcs
+  spfna: Rho raw focus

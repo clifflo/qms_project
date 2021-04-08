@@ -22,12 +22,10 @@ const rfsset = R.values(rfosm);
 
 const getRhocs_5 = () => {
 
-
-
   const mapFn_1n = (rhshel, lhcros_1) => {
 
     try{
-      const crfcs = getElre(rhshel, lhcros_1.cbel);
+      const rrfcs = getElre(rhshel, lhcros_1.cbel);
       const rofcs = rfosm[crfcs];
       const rofcsLens = R.lensProp('rofcs');
       let lhcros_2 = R.set(

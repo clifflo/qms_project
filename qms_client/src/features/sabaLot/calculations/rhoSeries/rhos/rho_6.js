@@ -14,14 +14,14 @@ const mapFn_1 = rhocxt_1 => {
   const getRfcso = () => {
 
     // Rho Jack Cross Index
-    const rhojkIdx = rhocxt_1.rhojkIdx;
+    const rjkdi = rhocxt_1.rjkdi;
 
-    if(R.isNil(rhojkIdx)){
+    if(R.isNil(rjkdi)){
       throw new Error(
-        'Rho Jack Cross Index should not be nil.');
+        'RJKDI should not be nil.');
     }
 
-    const rjcrs = rhocxt_1.lhcres[rhojkIdx];
+    const rjcrs = rhocxt_1.lhcres[rjkdi];
 
     if(R.isNil(rjcrs)){
       throw new Error(
@@ -41,7 +41,7 @@ const mapFn_1 = rhocxt_1 => {
 
     return {
       rhokgIdx: rhocxt_1.rhokgIdx,
-      rhojkIdx: rhocxt_1.rhojkIdx,
+      rjkdi: rhocxt_1.rjkdi,
       rhoqnIdx
     }
 
@@ -58,7 +58,7 @@ const mapFn_1 = rhocxt_1 => {
     }
 
     const isRkg = idx == rfcso.rhokgIdx;
-    const isRjk = idx == rfcso.rhojkIdx;
+    const isRjk = idx == rfcso.rjkdi;
     const isRqn = idx == rfcso.rhoqnIdx;
 
     return {
@@ -81,7 +81,7 @@ const mapFn_1 = rhocxt_1 => {
         mapFn_2f, rhocxt_1.lhcres);
 
     delete rhocxt_2a.lpalIndex;
-    delete rhocxt_2a.rhojkIdx;
+    delete rhocxt_2a.rjkdi;
     delete rhocxt_2a.rhokgIdx;
     delete rhocxt_2a.rhhElem;
 

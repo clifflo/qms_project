@@ -51,7 +51,7 @@ const getRhocs_3 = () => {
 
   const mapFn_2 = rhkpal => {
 
-    try {
+    try{
 
       const result = RA.mapIndexed(
         mapFn_1c(rhkpal),
@@ -139,7 +139,7 @@ const getRhocs_4 = () => {
 
     const rhocs_4b = R.sortBy(
       R.prop('rglhi'), rhocs_4a);
-      
+
     return rhocs_4b;
   }
   catch(err){
