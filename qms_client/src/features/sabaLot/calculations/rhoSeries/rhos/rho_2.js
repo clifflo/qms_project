@@ -97,7 +97,7 @@ export const getRhocs_2 = (lhs) => {
 
   const mapFn = (lh) => {
 
-    try {
+    try{
 
       const eshBinary = decimalToBinary(
         lh.eshidx, 3);
