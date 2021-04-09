@@ -1,0 +1,282 @@
+-
+  spals: bbssb
+  spfna: Bean branch series start branch
+  spdesn: >
+    As of 乾, we will have the branches
+    starting from the bottom as 子寅辰午申戌.
+    In this case, 子 is the BBSSB.
+  spocr: Rho-1
+-
+  spals: bbssi
+  spfna: Index of bean branch series start branch
+  spocr: Rho-1
+-
+  spals: eshbt
+  spfna: External short hook bean trunk
+  spdesn: >
+    In long hook 師, ESHBT is the trunk of the
+    external short hook, which is 癸.
+  spocr: Rho-1
+-
+  spals: ishbt
+  spfna: Internal short hook bean trunk
+  spdesn: >
+    Refers to ESHBT.
+  spocr: Rho-1
+-
+  spals: gshkor
+  spfna: Generic short hook original
+  spdesn: >-
+    The term 'generic' means that it defines the
+    short hook itself. It does not refers to any
+    internal or external short hook in a long hook.
+  spocr: Rho-1
+-
+  spals: rhshel
+  spfna: Rho head short hook element
+  spdesn: >-
+    I define with the term 'Rho head' because I do not
+    want to refer the long hook with external short hook
+    or internal short hook which are irrelevant. So 'Rho
+    head' is specifically refers to the 午卦宮 to avoid
+    confusion.
+  spocr: Rho-4
+-
+  spals: ncfss
+-
+  spals: oclot
+  spfna: Octal Lot
+  spdesn: >-
+    Casting the lot for long hook by using octal
+    number.
+  spocr: Delta-1
+-
+  spals: bilot
+  spfna: Binary Lot
+  spdesn: >-
+    Casting the lot for long hook by using binary
+    number.
+  spocr: Delta-1
+-
+  spals: isShetp
+  spfna: Is short hook external part
+  spdesn: >-
+    So for a short hook it would have both internal
+    and external bean branch series and trunk. So we
+    would define ISSHEXT to define which part we
+    would like to get --- internal or external.
+  spocr: Rho-2
+-
+  spals: srclhn
+  spfna: Source long hook name
+  spdesn: >-
+    It means the name of 本卦.
+  spocr: Delta-2
+-
+  spals: srclhn
+  spfna: Source long hook name
+  spdesn: >-
+    It means the name of 之卦.
+  spocr: Delta-2
+-
+  spals: cestm
+  spfna: Cross striking map
+  spdesn: >-
+    So we would have to check which cross is striking.
+    For the source long hook we would say 'striking'
+    and in the target long hook we would say 'from
+    strike'.
+  spocr: Delta-2
+-
+  spals: crsi
+  spfna: Cross sign
+  spdesn: >-
+    It stands for whether the cross is 陽爻 or 陰爻.
+    I would define '1' as 陽爻 and '0' as 陰爻.
+  spocr: Rho-2
+-
+  spals: slhbns
+  spfna: Source Long Hook Binaries
+  spdesn: >-
+    It stands for all the crosses of the 本卦.
+  spocr: Delta-2
+-
+  spals: rblhss
+  spfna: Rho base long hook series
+  spdesn: >-
+    It stands for the long hooks of 乾卦宮. As
+    there are also 卦宮 in 玄空大卦, I would define
+    the 卦宮 in 火珠林 as 午卦宮. So I would use
+    乾午卦宮 to calculate the bitwise difference
+    with 純乾卦 and then apply those to other 7
+    short hooks.
+  spocr: Rho-4
+-
+  spals: rlhkss
+  spfna: Rho long hook series
+  spdesn: >-
+    So I would calculate all those 7 generated long
+    hooks firstly and then I will add back the rho
+    head long hook to form the whole long hook series.
+  spocr: Rho-3
+-
+  spals: lhcuwi
+  spfna: Long hook cross upward index
+  spdesn: >-
+    It means the cross counted from the bottom starting
+    from 0.
+  spocr: Rho-3
+-
+  spals: rhgbs
+  spfna: Rho hook gap binaries set
+  spdesn: >-
+    It stands for the bitwise difference between each
+    of the generation between the rho head hook and
+    the generated long hook. For example, the hook gap
+    binaries between 純乾 and 否 would be 'b111000'.
+-
+  spals: rlhgn
+  spfna: Rho long hook generation
+  spdesn: >-
+    It stands for the number of 'generation' of a
+    rho long hook series. So for 二世卦 the generation
+    would be 1. Noted that 世爻 is defined as Rho
+    Jack and I do not use 'generation' to define it.
+  spocr: Rho-3
+-
+  spals: rhlhb
+  spfna: Rho head long hook binaries
+  spdesn: >-
+    It stands for the binaries of the head long hook of
+    a rho long hook series. So the So the head long hook
+    for 乾午卦宮 is 純乾, with binaries 'b111111'.
+  spocr: Rho-3
+-
+  spals: rglhi
+  spfna: Rho generated long hook index
+  spdesn: >-
+    It stands for the process of using the RHGBS tp
+    generate those long hooks with different generations.
+    For example, 節卦 in 坤午卦宮 is a 午一世卦 and it
+    has a generation of 0. 師卦　in 坤午卦宮 is a 午歸魂卦
+    and it has a generation of 6. So the long hook
+    generated via this process will have index of
+    RGLHI.
+  spocr: Rho-3
+-
+  spals: rglct1
+  spfna: Rho generated long hook context version 1
+  spdesn: >-
+    This is the RHOCXT_1 found by RGLHI.
+  spocr: Rho-3
+-
+  spals: trnto
+  spfna: Truncated natto
+  spdesn: >-
+    It stands for just only the interal part or the
+    external part of a natto.
+  spocr: Rho-2
+-
+  spals: rhshn
+  spfna: Rho head short hook name
+  spdesn: >-
+    It stands for the short hook, not the long hook.
+    So for 坤午卦宮 the RHSHN is 坤 but not 純坤.
+  spocr: Rho-2
+-
+  spals: rjkdi
+  spfna: Rho jack downward index
+  spdesn: >-
+    It stands for the 世爻 with downward index.
+  spocr: Rho-4, Rho-6
+-
+  spals: rhkpal
+  spfna: Rho hook palace
+  spdesn: >-
+    It stands for each of the 午卦宮.
+  spocr: Rho-3
+-
+  spals: rdfhs
+  spfna: Rho day flush set
+  spdesn: >-
+    It stands for the flush opponent of the day branch.
+    Noted that for the day betapsi only the branch is
+    considered, not the trunk.
+  spocr: Delta-3
+-
+  spals: rocsvo
+  spfna: Rho context set versioned object
+  spdesn: >-
+    It stands for the different version of rho context
+    set.
+  spocr: Rho-1
+-
+  spals: rcxtvo
+  spfna: Rho context versioned object
+  spdesn: >-
+    It stands for the different version of rho context.
+  spocr: Rho-1
+-
+  spals: lhcres
+  spfna: Long hook crosses
+  spdesn: >-
+    It stands for all the crosses within a long hook
+    and this is the plural name. LHCROS is the singular.
+  spocr: Rho-3
+  spprops:
+    - crbel
+    - crsi
+    - crtk
+    - crbh
+    - crbel
+    - lhcdwi
+-
+  spals: rcfho
+  spfna: Rho construct flush opponent
+  spdesn: >-
+    The flush opponent of RSCBR.
+  spocr: Delta-2
+-
+  spals: rscbr
+  spfna: Rho construct branch
+  spdesn: >-
+    It stands for the branch in either the day construct
+    or the month construct.
+  spocr: Delta-2
+-
+  spals: rfosm
+  spfna: Rho focus set map
+  spdesn: >-
+    It stands for the rho focus mapped with the elemental
+    relations. So 丙妻財 will be mapped with 'Bank', etc.
+  spocr: Rho-5
+-
+  spals: rfsset
+  spfna: Rho focus set
+  spdesn: >-
+    It stands for the set of 丙六親.
+  spocr: Rho-5
+-
+  spals: crbel
+  spfna: Cross branch elemental
+  spdesn: >-
+    It stands for the elemental of a cross branch. For
+    example, for a LHCDWI of 0 which is the 第六爻 for
+    the 升卦 the CRBH is 癸 and the CRBEL is 水.
+  spocr: Rho-2
+-
+  spals: rrfcs
+  spfna: Rho raw focus
+  spdesn: >-
+    It stands for the elemental relation between the
+    rho head hook and the CRBEL.
+  spocr: Rho-2
+-
+  spas: get_rcsbfc
+  spfna: Get rho crosses by focus
+  spdesn: >-
+    It stands for getting the rho cross by using the
+    ROFCS. So we need to enter '丙子孫', '丙父母' then
+    but not 'Fruit', 'Seed'. Noted that it does not
+    differentiate between source long hook.
+  spocr: Rho-2
