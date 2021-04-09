@@ -223,6 +223,13 @@
     It stands for all the crosses within a long hook
     and this is the plural name. LHCROS is the singular.
   spocr: Rho-3
+  spprops:
+    - crbel
+    - crsi
+    - crtk
+    - crbh
+    - crbel
+    - lhcdwi
 -
   spals: rcfho
   spfna: Rho construct flush opponent
@@ -250,5 +257,26 @@
     It stands for the set of 丙六親.
   spocr: Rho-5
 -
+  spals: crbel
+  spfna: Cross branch elemental
+  spdesn: >-
+    It stands for the elemental of a cross branch. For
+    example, for a LHCDWI of 0 which is the 第六爻 for
+    the 升卦 the CRBH is 癸 and the CRBEL is 水.
+  spocr: Rho-2
+-
   spals: rrfcs
   spfna: Rho raw focus
+  spdesn: >-
+    It stands for the elemental relation between the
+    rho head hook and the CRBEL.
+  spocr: Rho-2
+-
+  spas: get_rcsbfc
+  spfna: Get rho crosses by focus
+  spdesn: >-
+    It stands for getting the rho cross by using the
+    ROFCS. So we need to enter '丙子孫', '丙父母' then
+    but not 'Fruit', 'Seed'. Noted that it does not
+    differentiate between source long hook.
+  spocr: Rho-2

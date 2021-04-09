@@ -61,7 +61,6 @@ const getRhgbs = () => {
     throw new Error(
       'Cannot get Rho hook gap binaries set.');
   }
-
 }
 
 export const rhgbs = getRhgbs();

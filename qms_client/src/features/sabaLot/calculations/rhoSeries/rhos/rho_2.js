@@ -82,13 +82,13 @@ const buildCrosses = (
 
   const crbh = fbbrs[lhcdwi];
 
-  const cbel = getElem(crbh);
+  const crbel = getElem(crbh);
 
   return {
     crsi,
     crtk,
     crbh,
-    cbel,
+    crbel,
     lhcdwi
   }
 }

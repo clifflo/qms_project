@@ -25,7 +25,7 @@ const getRhocs_5 = () => {
   const mapFn_1n = (rhshel, lhcros_1) => {
 
     try{
-      const rrfcs = getElre(rhshel, lhcros_1.cbel);
+      const rrfcs = getElre(rhshel, lhcros_1.crbel);
       const rofcs = rfosm[crfcs];
       const rofcsLens = R.lensProp('rofcs');
       let lhcros_2 = R.set(
