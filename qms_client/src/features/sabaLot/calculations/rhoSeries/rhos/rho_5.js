@@ -10,7 +10,7 @@ import {
 } from '../../twigs/twig_1';
 
 // Rho focus set map
-const rfosm = {
+const rcfsm = {
   'Draw': '丙兄弟',
   'Fruit': '丙子孫',
   'Bank': '丙妻財',
@@ -18,7 +18,15 @@ const rfosm = {
   'Seed': '丙父母',
 };
 
-const rfsset = R.values(rfosm);
+const rfcmap = {
+  '丙兄弟': 'dtf-xd',
+  '丙子孫': 'dtf-zs',
+  '丙妻財': 'dtf-qc',
+  '丙官鬼': 'dtf-gg',
+  '丙父母': 'dtf-fm',
+}
+
+const rcfset = R.values(rcfsm);
 
 const getRhocs_5 = () => {
 
@@ -26,7 +34,7 @@ const getRhocs_5 = () => {
 
     try{
       const rrfcs = getElre(rhshel, lhcros_1.crbel);
-      const rofcs = rfosm[crfcs];
+      const rcfcs = rcfsm[crfcs];
       const rofcsLens = R.lensProp('rofcs');
       let lhcros_2 = R.set(
         rofcsLens, rofcs, lhcros_1);

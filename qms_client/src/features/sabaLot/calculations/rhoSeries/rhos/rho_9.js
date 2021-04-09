@@ -6,9 +6,25 @@ import { trunkOrder } from '../../twigs/twig_1';
 const ropldOrder =
   R.compose(
     R.reverse,
-    R.map(R.concat('丙')),
+    R.concat('丙')
     R.split(','))
   ('青龍,朱雀,勾陳,螣蛇,白虎,玄武');
+
+// Rho paladin code map
+export const rplcm = {
+  '丙青龍': 'dtp-ql',
+  '丙朱雀': 'dtp-zj',
+  '丙勾陳': 'dtp-gc',
+  '丙螣蛇': 'dtp-ts',
+  '丙白虎': 'dtp-bh',
+  '丙玄武': 'dtp-xw'
+}
+
+// Rho paladin code map inverted
+export const rpcmi = R.invertObj(rplcm);
+
+// Rho paladin code set
+const rpcds = R.values[rplcm];
 
 // Rho Paladin Start Position Map
 const rpspm_1 = {
