@@ -22,7 +22,7 @@ import {
 const getRhocs_3 = () => {
 
   const mapFn_1 = (
-    rhkpal,
+    rhksrs,
     lhname,
     rlhgn) => {
 
@@ -33,7 +33,7 @@ const getRhocs_3 = () => {
 
       return {
         lhname,
-        rhshn: rhkpal.rhshn,
+        rhshn: rhksrs.rhshn,
         rlhgn,
         rjkdi,
         rkgdi
@@ -49,13 +49,13 @@ const getRhocs_3 = () => {
 
   const mapFn_1c = R.curry(mapFn_1);
 
-  const mapFn_2 = rhkpal => {
+  const mapFn_2 = rhksrs => {
 
     try{
 
       const result = RA.mapIndexed(
-        mapFn_1c(rhkpal),
-        rhkpal.rlhkss);
+        mapFn_1c(rhksrs),
+        rhksrs.rlhkss);
 
       return result;
     }

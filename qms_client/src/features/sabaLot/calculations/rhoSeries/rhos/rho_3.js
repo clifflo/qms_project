@@ -16,27 +16,27 @@ const rblhss =
 
 const getRhgbs = () => {
 
-  const sourceLhIdx = 63;
+  const sLhidx = 63;
 
-  const mapFn = (targetLhName) => {
+  const mapFn = tLhname => {
 
-    const targetLhIdx =
-      getRcxt1ByLhn(targetLhName)
+    const tLhidx =
+      getRcxt1ByLhn(tLhname)
       .lhidx;
 
-    if(R.isNil(targetLhIdx)){
+    if(R.isNil(tLhidx)){
       throw new Error(
-        'Target long hook number should not be nil.');
+        'Target LHIDX should not be nil.');
     }
 
-    if(!RA.isNumber(targetLhIdx)){
+    if(!RA.isNumber(tLhidx)){
       throw new Error(
         'How come the long hook '
         + 'index becomes a string?');
     }
 
     const gapBinary = decimalToBinary(
-      sourceLhIdx ^ targetLhIdx,
+      sLhidx ^ tLhidx,
       6);
 
     return gapBinary;

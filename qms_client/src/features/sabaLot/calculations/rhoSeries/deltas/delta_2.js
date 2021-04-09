@@ -17,40 +17,40 @@ import {
   getPseop
 } from '../../twigs/twig_5';
 
-export const getCestm = (srclhn, tgtlhn) => {
+export const getCestm = (bkrlhn, chelhn) => {
 
-  const srocxt_2 = getRcxt2ByLhn(srclhn);
-  const tgtcxt_2 = getRcxt2ByLhn(tgtlhn);
+  const bkrcxt_2 = getRcxt2ByLhn(bkrlhn);
+  const chrcxt_2 = getRcxt2ByLhn(chelhn);
 
   const isZeroOrOne = crsi => {
     return (crsi == '0') || (crsi == '1');
   }
 
   const mapFn = cridx => {
-    const scrsi = srocxt_2.lhcres[cridx].crsi;
-    const tcrsi = tgtcxt_2.lhcres[cridx].crsi;
+    const bcrsi = bkrcxt_2.lhcres[cridx].crsi;
+    const ccrsi = chrcxt_2.lhcres[cridx].crsi;
 
-    if(R.isNil(scrsi)){
+    if(R.isNil(bcrsi)){
       throw new Error(
-        'Source Cross Sign should not be nil.');
+        'Book CRSI should not be nil.');
     }
 
-    if(R.isNil(tcrsi)){
+    if(R.isNil(ccrsi)){
       throw new Error(
-        'Target Cross Sign should not be nil.');
+        'Cheese CRSI should not be nil.');
     }
 
-    if(!isZeroOrOne(scrsi)){
+    if(!isZeroOrOne(bcrsi)){
       throw new Error(
-        'Source Cross Sign must be 1 or 0.');
+        'BCRSI must be 1 or 0.');
     }
 
-    if(!isZeroOrOne(tcrsi)){
+    if(!isZeroOrOne(ccrsi)){
       throw new Error(
-        'Target Cross Sign must be 1 or 0.');
+        'CCRSI must be 1 or 0.');
     }
 
-    return scrsi != tcrsi;
+    return bcrsi != ccrsi;
   }
 
   return R.map(mapFn, R.range(0, 6));
