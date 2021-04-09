@@ -1,106 +1,95 @@
 import * as R from 'ramda';
-import * as RA from 'ramda-adjunct';
-import {
-  idxOfBranch
-} from '../twigs/twig_1';
-import {
-  matchBsc
-} from '../twigs/twig_4';
-import { rhocs_6 } from './rho_6';
-import produce from 'immer';
+import { pflat } from '../../utils/util_4';
+import { utItem, utGetIdx } from '../../utils/util_1';
+import { trunkOrder } from '../../twigs/twig_1';
 
-const mapFn_1 = rhocxt_1 => {
+const ropldOrder =
+  R.compose(
+    R.reverse,
+    R.concat('丙')
+    R.split(','))
+  ('青龍,朱雀,勾陳,螣蛇,白虎,玄武');
 
-  const getRfcso = () => {
-
-    // Rho Jack Cross Index
-    const rjkdi = rhocxt_1.rjkdi;
-
-    if(R.isNil(rjkdi)){
-      throw new Error(
-        'RJKDI should not be nil.');
-    }
-
-    const rjcrs = rhocxt_1.lhcres[rjkdi];
-
-    if(R.isNil(rjcrs)){
-      throw new Error(
-        'Rho Jack Cross should not be nil.');
-    }
-
-    const rjcbh = rjcrs.crbh;
-
-    if(R.isNil(rjcbh)){
-      throw new Error(
-        'Rho Jack Cross Branch should '
-        + 'not be nil.');
-    }
-
-    const rhoqnIdx =
-      5 - (idxOfBranch(rjcbh) % 6);
-
-    return {
-      rhokgIdx: rhocxt_1.rhokgIdx,
-      rjkdi: rhocxt_1.rjkdi,
-      rhoqnIdx
-    }
-
-  }
-  const rfcso = getRfcso();
-
-  // Rho Face Cards stand for King, Queen, Jack
-  const mapFn_2n = (rfcso, cross, idx) => {
-
-    if(R.isNil(rfcso)){
-      throw new Error(
-        'Rho Face Cards Object should '
-        + 'not be nil.');
-    }
-
-    const isRkg = idx == rfcso.rhokgIdx;
-    const isRjk = idx == rfcso.rjkdi;
-    const isRqn = idx == rfcso.rhoqnIdx;
-
-    return {
-      ...cross,
-      isRkg,
-      isRjk,
-      isRqn
-    }
-  }
-
-  const mapFn_2c = R.curry(mapFn_2n);
-
-  const rhocxt_2b = produce(
-    rhocxt_1, rhocxt_2a => {
-
-    const mapFn_2f = mapFn_2c(rfcso);
-
-    rhocxt_2a.lhcres =
-      RA.mapIndexed(
-        mapFn_2f, rhocxt_1.lhcres);
-
-    delete rhocxt_2a.lpalIndex;
-    delete rhocxt_2a.rjkdi;
-    delete rhocxt_2a.rhokgIdx;
-    delete rhocxt_2a.rhhElem;
-
-    return rhocxt_2a;
-  });
-
-  return rhocxt_2b;
+// Rho paladin code map
+export const rplcm = {
+  '丙青龍': 'dtp-ql',
+  '丙朱雀': 'dtp-zj',
+  '丙勾陳': 'dtp-gc',
+  '丙螣蛇': 'dtp-ts',
+  '丙白虎': 'dtp-bh',
+  '丙玄武': 'dtp-xw'
 }
 
-const getRhocs_7 = () => {
-  try{
-    return R.map(mapFn_1, rhocs_6);
+// Rho paladin code map inverted
+export const rpcmi = R.invertObj(rplcm);
+
+// Rho paladin code set
+const rpcds = R.values[rplcm];
+
+// Rho Paladin Start Position Map
+const rpspm_1 = {
+  '甲乙': '丙青龍',
+  '丙丁': '丙朱雀',
+  '戊': '丙勾陳',
+  '己': '丙螣蛇',
+  '庚辛': '丙白虎',
+  '壬癸': '丙玄武'
+}
+
+export const rpspm_2 = pflat(rpspm_1);
+
+// Rho Paladin Cross Set List
+const getRpcsl = () => {
+
+  const mapFn_1n = (startIdx, distance) => {
+
+    // Rho paladin in cross
+    const rpicr = utItem(
+      ropldOrder, startIdx + distance);
+
+    return rpicr;
+  }
+
+  const mapFn_1c = R.curry(mapFn_1n);
+
+  const mapFn_2 = idx => {
+
+    // Rho paladin day trunk
+    const rpdtr = utItem(trunkOrder, idx);
+
+    if(R.isNil(rpdtr)){
+      throw new Error(
+        'RPDTR should not be nil.')
+    }
+
+    const rpstp  = rpspm_2[rpdtr];
+
+    // Rho Paladin Index
+    const rpdix = utGetIdx(rpstp, ropldOrder) + 1;
+
+    if(R.isNil(rpdix)){
+      throw new Error(
+        'RPDIX should not be nil.');
+    }
+
+    // Rho paladin cross set
+    const rpcst = R.map(
+      mapFn_1c(rpdix),
+      R.range(0, 6));
+
+    return {
+      rpdtr,
+      rpcst
+    };
+  }
+
+  try {
+    return R.map(mapFn_2, R.range(0, 10));
   }
   catch(err){
     console.error(err);
-    throw new Error(
-      'Cannot get Rho Context Set 7.');
+    throw new Error('Cannot get RPCSL');
   }
-
 }
 
-export const rhocs_7 = getRhocs_7();
+export const rpcsl = getRpcsl();
