@@ -1,10 +1,23 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+import { open } from 'fs/promises';
 
+const YAML = require('yaml')
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+
+  try{
+    const fileHandle =
+      await open(
+        'routes/specs/rhoSpec.yaml',
+        'r');
+    const data = YAML.parse(fileHandle)
+    res.render('index', { title: data });
+  }
+  finally{
+    await fileHandle?.close();
+  }
+
+);
 
 module.exports = router;
