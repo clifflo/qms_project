@@ -9,8 +9,8 @@ import {
   itemOfTrunk
 } from '../../twigs/twig_1';
 
-// Rho focus set map
-const rcfsm = {
+// Rho focus raw map
+const rfram = {
   'Draw': '丙兄弟',
   'Fruit': '丙子孫',
   'Bank': '丙妻財',
@@ -18,7 +18,8 @@ const rcfsm = {
   'Seed': '丙父母',
 };
 
-const rfcmap = {
+// Rho focus code map
+export const rfcom = {
   '丙兄弟': 'dtf-xd',
   '丙子孫': 'dtf-zs',
   '丙妻財': 'dtf-qc',
@@ -26,7 +27,65 @@ const rfcmap = {
   '丙父母': 'dtf-fm',
 }
 
-const rcfset = R.values(rcfsm);
+// Rho focus code set
+export const rfcds = R.values(rfcom);
+
+// Rho focus Chinese set
+export const rfcis = R.values(rfram);
+
+// Rho focus map inverted
+export const rfcmi = R.invertObj(rfcom);
+
+export const isValidRfchi = rfchi => {
+
+  if(R.isNil(rfchi)){
+    throw new Error(
+      'RFCHI should not be nil.');
+  }
+
+  if(!RA.isString(rfchi)){
+    throw new Error(
+      'RFCHI must be a string.');
+  }
+
+  const isValid = R.includes(rfchi, rfcis);
+
+  return isValid;
+}
+
+export const isValidRfcode = rfcode => {
+
+  if(R.isNil(rfchi)){
+    throw new Error(
+      'RFCODE should not be nil.');
+  }
+
+  if(!RA.isString(rfchi)){
+    throw new Error(
+      'RFCODE must be a string.');
+  }
+
+  const isValid = R.includes(rfcode, rfcds);
+
+  return isValid;
+}
+
+// Get rho focus Chinese
+export const getRfchi = rfcode => {
+
+  if(R.isNil(rfcode)){
+    throw new Error(
+      'RFCODE should not be nil for ' +
+      'getting RFCHI.')
+  }
+
+  if(!isValidRfcode(rfcode)){
+    throw new Error(
+      `${rfcode} is not a valid RFCODE.`);
+  }
+
+  return
+}
 
 const getRhocs_5 = () => {
 
