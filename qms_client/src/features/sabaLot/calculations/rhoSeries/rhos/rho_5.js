@@ -88,7 +88,7 @@ const rfram = {
   'Seed': '丙父母',
 };
 
-// Rho focus Chinese map
+// Rho focus chinese map
 export const rfcim = {
   '丙兄弟': 'dtf-xd',
   '丙子孫': 'dtf-zs',
@@ -100,7 +100,7 @@ export const rfcim = {
 // Rho focus code set
 export const rfcds = R.values(rfcim);
 
-// Rho focus Chinese set
+// Rho focus chinese set
 export const rfcis = R.values(rfram);
 
 // Rho focus map inverted
@@ -140,7 +140,7 @@ export const isValidRfcode = rfcode => {
   return isValid;
 }
 
-// Get rho focus Chinese
+// Get rho focus chinese
 export const getRfchi = rfcode => {
 
   if(R.isNil(rfcode)){
@@ -164,7 +164,20 @@ const getRhocs_5 = () => {
     try{
       const rrfcs = getElre(
         rhshel, lhcros_1.crbel);
-      const rofcs = rfcim[rrfcs];
+
+      if(R.isNil(rrfcs)){
+        throw new Error(
+          'RRFCS should not be nil.');
+      }
+
+      // Rho chinese focus
+      const rofcs = rfram[rrfcs];
+
+      if(R.isNil(rofcs)){
+        throw new Error(
+          'ROFCS should not be nil.');
+      }
+
       const rofcsLens = R.lensProp('rofcs');
       let lhcros_2 = R.set(
         rofcsLens, rofcs, lhcros_1);

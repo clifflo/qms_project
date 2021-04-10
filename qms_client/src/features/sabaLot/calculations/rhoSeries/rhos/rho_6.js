@@ -1,30 +1,33 @@
 import * as R from 'ramda';
-import { pflat } from '../../utils/util_4';
+import { propFlat } from '../../utils/util_4';
 import { utItem, utGetIdx } from '../../utils/util_1';
 import { trunkOrder } from '../../twigs/twig_1';
+import {
+  rhocs_5,
+  rfcis
+} from './rho_5';
 
 const getRhocs_6 = () => {
 
   const mapFn = rhocxt => {
 
-    // Non unique Rho Focus Set
-    const ncfss = R.map(
+    // Non unique Rho focus Chinee set
+    const ncfcs = R.map(
       R.prop('rofcs'), rhocxt.lhcres);
 
-    if(R.isNil(ncfss)){
+    if(R.isNil(ncfcs)){
       throw new Error(
-        'Non Unique Cross Focus Set should '
-        + 'not be nil.');
+        'NCFCS should not be nil.');
     }
 
-    // Unique Cross Focus Set
-    const ucfss = R.uniq(ncfss);
+    // Unique cross focus Chinese set
+    const ucfcs = R.uniq(ncfcs);
 
     // Long Hook with hidden
-    const isLhhd = ucfss.length < 5;
+    const isLhhd = ucfcs.length < 5;
 
-    // Rho Hidden Hook Focus Set
-    const rhhfs = R.difference(rfsset, ucfss);
+    // Rho hidden hook focus Chinese set
+    const rhhfcs = R.difference(rfcis, ucfcs);
 
     if(isLhhd){
 
@@ -43,7 +46,7 @@ const getRhocs_6 = () => {
       return {
         ...rhocxt,
         isLhhd,
-        rhhfs,
+        rhhfcs,
         rhces
       }
     }
@@ -61,11 +64,10 @@ const getRhocs_6 = () => {
 
 export const rhocs_6 = getRhocs_6();
 
-
 const ropldOrder =
   R.compose(
     R.reverse,
-    R.concat('丙')
+    R.map(R.concat('丙')),
     R.split(','))
   ('青龍,朱雀,勾陳,螣蛇,白虎,玄武');
 
@@ -95,7 +97,7 @@ const rpspm_1 = {
   '壬癸': '丙玄武'
 }
 
-export const rpspm_2 = pflat(rpspm_1);
+export const rpspm_2 = propFlat(rpspm_1);
 
 // Rho Paladin Cross Set List
 const getRpcsl = () => {
