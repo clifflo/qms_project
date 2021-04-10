@@ -184,8 +184,8 @@ export const getRhocs_2 = () => {
 
       return {
         lhname: rhocxt.lhname,
-        eshkor: rhocxt.eshkor,
-        ishkor: rhocxt.ishkor,
+        eshori: rhocxt.eshori,
+        ishori: rhocxt.ishori,
         lhcres
       }
     }

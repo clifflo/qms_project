@@ -14,10 +14,9 @@ import {
   getElre
 } from '../../twigs/twig_1';
 import {
-  buildRjkdi,
-  rhpals,
-  rhgbs
-} from './rho_3';
+  getRcxt1ByLhn,
+  getRcxt1ByLhx
+} from './rho_2';
 
 const rblhss =
   R.split(',', '姤,遯,否,觀,剝,晉,大有');
@@ -207,7 +206,7 @@ const getRhocs_3 = () => {
 
 }
 
-const rhocs_3 = getRhocs_3();
+export const rhocs_3 = getRhocs_3();
 
 const getRcxt3ByLn = lhname => {
 
@@ -228,64 +227,4 @@ const getRcxt3ByLn = lhname => {
   }
 
   return rhocxt_3;
-}
-
-const getRhocs_4 = () => {
-
-  const mapFn = rhocxt_3 => {
-
-    const rhocxt_2 = R.find(
-      R.propEq('lhname', rhocxt_3.lhname),
-      rhocs_2);
-
-    const natto = R.find(
-      R.propEq('gshkor', rhocxt_3.rhshn),
-      nattos);
-
-    if(R.isNil(natto)){
-      throw new Error(
-        'Natto should not be nil.');
-    }
-
-    const rhshel = natto.gshele;
-
-    if(R.isNil(rhshel)){
-      throw new Error(
-        'RHSHEL should not be nil.');
-    }
-
-    return {
-      ...rhocxt_2,
-      ...rhocxt_3,
-      rhshel
-    }
-  }
-
-  try {
-
-    const rhocs_4a = R.map(mapFn, rhocs_3);
-
-    const rhocs_4b = R.sortBy(
-      R.prop('rglhi'), rhocs_4a);
-
-    return rhocs_4b;
-  }
-  catch(err){
-    console.error(err);
-    throw new Error('Cannot get RHOCS_4.');
-  }
-}
-
-export const rhocs_4 = getRhocs_4();
-
-export const getRcxt4ByLhn = lhname => {
-  try {
-    return getRcxtvByLhn(
-      lhname, rhocs_4, 4);
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      'Cannot get RHOCXT_4 by long hook name.')
-  }
 }
