@@ -5,7 +5,8 @@ import {
 } from './rho_2';
 import {
   nattos,
-  getRcxtvByLhn
+  getRcxtvByLhn,
+  gshoriOrder
 } from './rho_1';
 import {
   utGetIdx
@@ -17,6 +18,10 @@ import {
   getRcxt1ByLhn,
   getRcxt1ByLhx
 } from './rho_2';
+import {
+  decimalToBinary,
+  binaryToDecimal
+} from '../../utils/util_2';
 
 const rblhss =
   R.split(',', '姤,遯,否,觀,剝,晉,大有');
@@ -72,7 +77,7 @@ const getRhgbs = () => {
 
 export const rhgbs = getRhgbs();
 
-const getRhpals = () => {
+const getRhksrs = () => {
 
   const mapFn_1 =
     (gshori, gapBinary, index) => {
@@ -195,7 +200,7 @@ const getRhocs_3 = () => {
   }
 
   try{
-    const nestedList = R.map(mapFn_2, rhpals);
+    const nestedList = R.map(mapFn_2, rhksrs);
     const flatList = R.flatten(nestedList);
     return flatList;
   }
