@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   rhocs_1,
-  shkorOrder,
+  gshoriOrder,
   getRcxt1ByLhn,
   getRcxt1ByLhx
 } from './rho_1';
@@ -68,13 +68,13 @@ export const rhgbs = getRhgbs();
 const getRhpals = () => {
 
   const mapFn_1 =
-    (gshkor, gapBinary, index) => {
+    (gshori, gapBinary, index) => {
 
     try{
 
       const gapDecimal = binaryToDecimal(gapBinary);
 
-      const rhlhn = '純' + gshkor;
+      const rhlhn = '純' + gshori;
       const rhlix =
         getRcxt1ByLhn(rhlhn)
         .lhidx;
@@ -99,21 +99,23 @@ const getRhpals = () => {
 
   const mapFn_1c = R.curry(mapFn_1);
 
-  const mapFn_2 = gshkor => {
+  const mapFn_2 = gshori => {
 
     const rlhkss_1 = RA.mapIndexed(
-      mapFn_1c(gshkor), rhgbs);
+      mapFn_1c(gshori), rhgbs);
 
     const rlhkss_2 = R.prepend(
-      '純' + gshkor, rlhkss_1);
+      '純' + gshori, rlhkss_1);
 
     return {
-      rhshn: gshkor,
+      rhshn: gshori,
       rlhkss: rlhkss_2
     }
   }
 
-  const result = R.map(mapFn_2, shkorOrder);
+  const result = R.map(
+    mapFn_2, gshoriOrder);
+    
   return result;
 }
 

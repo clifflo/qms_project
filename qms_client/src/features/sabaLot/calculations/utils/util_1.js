@@ -49,6 +49,12 @@ export const utGetIdx = (wordLike, listLike) => {
   if(RA.isString(listLike)){
     const sentence = listLike;
     const character = wordLike;
+
+    if(R.isNil(character)){
+      throw new Error(
+        'The first argument should not be nil.');
+    }
+
     if(character.length != 1){
       throw new Error(
         'The first argument must be just a single '

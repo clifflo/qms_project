@@ -28,7 +28,7 @@ export const rfcim = {
 }
 
 // Rho focus code set
-export const rfcds = R.values(rfcom);
+export const rfcds = R.values(rfcim);
 
 // Rho focus Chinese set
 export const rfcis = R.values(rfram);
@@ -55,12 +55,12 @@ export const isValidRfchi = rfchi => {
 
 export const isValidRfcode = rfcode => {
 
-  if(R.isNil(rfchi)){
+  if(R.isNil(rfcode)){
     throw new Error(
       'RFCODE should not be nil.');
   }
 
-  if(!RA.isString(rfchi)){
+  if(!RA.isString(rfcode)){
     throw new Error(
       'RFCODE must be a string.');
   }
@@ -94,7 +94,7 @@ const getRhocs_5 = () => {
     try{
       const rrfcs = getElre(
         rhshel, lhcros_1.crbel);
-      const rcfcs = rcfsm[crfcs];
+      const rofcs = rfcim[rrfcs];
       const rofcsLens = R.lensProp('rofcs');
       let lhcros_2 = R.set(
         rofcsLens, rofcs, lhcros_1);
