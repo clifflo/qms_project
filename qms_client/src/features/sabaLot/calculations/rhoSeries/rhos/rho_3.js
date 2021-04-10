@@ -1,15 +1,174 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
-import {
-  rhocs_1,
-  gshoriOrder,
-  getRcxt1ByLhn,
-  getRcxt1ByLhx
-} from './rho_1';
-import {
-  decimalToBinary,
-  binaryToDecimal
-} from '../../utils/util_2';
+
+
+const getTrnto = (
+  gshkor,
+  isShetp) => {
+
+  if(R.isNil(gshkor)){
+    throw new Error(
+      'GSHKOR should not be nil.');
+  }
+
+  const natto = R.find(
+    R.propEq('gshkor', gshkor), nattos);
+
+  if(!natto){
+    throw new Error(
+      `Cannot find natto. ${gshkor} is not valid.`);
+  }
+
+  if(isShetp){
+
+    if(R.isNil(natto.eshbt)){
+      throw new Error(
+        'ESHBT should not be nil.')
+    }
+
+    if(R.isNil(natto.ebbrs)){
+      throw new Error(
+        'EBBRS should not be nil.');
+    }
+
+    return {
+      lshbt: natto.eshbt,
+      lbbrs: natto.ebbrs
+    }
+  }
+  else {
+
+    const lshbt = natto.ishbt;
+    const lbbrs = natto.ibbrs;
+
+    if(R.isNil(lshbt)){
+      throw new Error(
+        'ISHBT should not be nil.');
+    }
+
+    if(R.isNil(lbbrs)){
+      throw new Error(
+        'IBBRS should not be nil.');
+    }
+
+    return {
+      lshbt,
+      lbbrs
+    }
+  }
+
+}
+
+const buildCrosses = (
+  fbbrs,
+  eshbt,
+  ishbt,
+  crsi,
+  lhcdwi,
+  list) => {
+
+  const crtk = lhcdwi <= 2 ?
+    eshbt : ishbt;
+
+  const crbh = fbbrs[lhcdwi];
+
+  const crbel = getElem(crbh);
+
+  return {
+    crsi,
+    crtk,
+    crbh,
+    crbel,
+    lhcdwi
+  }
+}
+
+
+export const getRhocs_2 = () => {
+
+  const mapFn = rhocxt => {
+
+    try{
+
+      const eshBinary = decimalToBinary(
+        rhocxt.eshidx, 3);
+
+      const ishBinary = decimalToBinary(
+        rhocxt.ishidx, 3);
+
+      let ebbrs; // External Bean Branch Series
+      let eshbt; // External Short Hook Bean Trunk
+      let ibbrs; // Internal Bean Branch Series
+      let ishbt; // Internal Short Hook Bean Trunk
+
+      const etn = getTrnto(
+        rhocxt.eshkor, true);
+
+      const itn = getTrnto(
+        rhocxt.ishkor, false);
+
+      ebbrs = etn.lbbrs;
+      eshbt = etn.lshbt;
+      ibbrs = itn.lbbrs;
+      ishbt = itn.lshbt;
+
+      if(R.isNil(ebbrs)){
+        throw new Error(
+          'EBBRS should not be nil.')
+      }
+
+      if(R.isNil(ibbrs)){
+        throw new Error(
+          'IBBRS should not be nil.')
+      }
+
+      const fbbrs = R.concat(ebbrs, ibbrs);
+
+      const lhBinary = decimalToBinary(
+        rhocxt.lhidx,
+        6);
+
+      const mapFn = R.curry(buildCrosses)
+        (fbbrs)
+        (eshbt)
+        (ishbt);
+
+      const lhcres = RA.mapIndexed(
+        mapFn,
+        R.drop(1, lhBinary));
+
+      return {
+        lhname: rhocxt.lhname,
+        eshkor: rhocxt.eshkor,
+        ishkor: rhocxt.ishkor,
+        lhcres
+      }
+    }
+    catch(err){
+      console.error(err);
+      throw new Error(
+        'Cannot build bean branch series.');
+    }
+
+  }
+
+  return R.map(mapFn, rhocs_1)
+}
+
+export const rhocs_2 = getRhocs_2();
+
+export const getRcxt2ByLhn = lhname => {
+
+  try {
+    return getRcxtvByLhn(
+      lhname, rhocs_2, 2);
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get RHOCXT_2 by long hook name.')
+  }
+}
 
 const rblhss =
   R.split(',', '姤,遯,否,觀,剝,晉,大有');
@@ -115,7 +274,7 @@ const getRhpals = () => {
 
   const result = R.map(
     mapFn_2, gshoriOrder);
-    
+
   return result;
 }
 
