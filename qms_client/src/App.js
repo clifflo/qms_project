@@ -1,12 +1,12 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
-import { rhocs_6 } from
+import { rpcsl } from
 './features/sabaLot/calculations/rhoSeries/rhos/rho_6';
 
 function showTree(){
   return (
     <div>
-      <JSONTree data={rhocs_6}/>
+      <JSONTree data={rpcsl}/>
     </div>
   )
 }

@@ -64,15 +64,15 @@ const getRhocs_6 = () => {
 
 export const rhocs_6 = getRhocs_6();
 
-const ropldOrder =
+export const rpldo =
   R.compose(
     R.reverse,
     R.map(R.concat('丙')),
     R.split(','))
   ('青龍,朱雀,勾陳,螣蛇,白虎,玄武');
 
-// Rho paladin code map
-export const rplcm = {
+// Rho paladin chinese map
+export const rpcim = {
   '丙青龍': 'dtp-ql',
   '丙朱雀': 'dtp-zj',
   '丙勾陳': 'dtp-gc',
@@ -81,11 +81,11 @@ export const rplcm = {
   '丙玄武': 'dtp-xw'
 }
 
-// Rho paladin code map inverted
-export const rpcmi = R.invertObj(rplcm);
+// Rho paladin code map
+export const rpcdm = R.invertObj(rpcim);
 
 // Rho paladin code set
-const rpcds = R.values[rplcm];
+export const rpcds = R.values[rpcim];
 
 // Rho Paladin Start Position Map
 const rpspm_1 = {
@@ -106,7 +106,7 @@ const getRpcsl = () => {
 
     // Rho paladin in cross
     const rpicr = utItem(
-      ropldOrder, startIdx + distance);
+      rpldo, startIdx + distance);
 
     return rpicr;
   }
@@ -126,7 +126,7 @@ const getRpcsl = () => {
     const rpstp  = rpspm_2[rpdtr];
 
     // Rho Paladin Index
-    const rpdix = utGetIdx(rpstp, ropldOrder) + 1;
+    const rpdix = utGetIdx(rpstp, rpldo) + 1;
 
     if(R.isNil(rpdix)){
       throw new Error(
