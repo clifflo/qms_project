@@ -1,7 +1,17 @@
 import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 import { propFlat } from '../../utils/util_4';
-import { utItem, utGetIdx } from '../../utils/util_1';
-import { trunkOrder } from '../../twigs/twig_1';
+import {
+  utItem,
+  utGetIdx
+} from '../../utils/util_1';
+import {
+  trunkOrder,
+  isValidTrunk
+} from '../../twigs/twig_1';
+import {
+  getRcxtvByLhn
+} from './rho_2'
 import {
   rhocs_5,
   rfcis
@@ -180,18 +190,26 @@ export const getRplbd = rdtr => {
       'RDTR must be a string.');
   }
 
-  if(isValidTrunk(rdtr)){
+  if(!isValidTrunk(rdtr)){
     throw new Error(
       `${rdtr} is not a valid trunk for RDTR.`);
   }
 
-  const rplbd = R.find(R.propEq('rpdtr', rdtr));
+  const rpcbd = R.find(
+    R.propEq('rpdtr', rdtr),
+    rpcsl);
+
+  const rplbd = rpcbd.rpcst;
 
   if(R.isNil(rplbd)){
     throw new Error(
       'RPLBD should not be nil.');
   }
 
-  return rplbd;
+  if(!RA.isArray(rplbd)){
+    throw new Error(
+      'RPLBD must be an array.');
+  }
 
+  return rplbd;
 }

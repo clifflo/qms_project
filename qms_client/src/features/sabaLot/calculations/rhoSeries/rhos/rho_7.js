@@ -1,7 +1,17 @@
 import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 import {
-  getRplbd
+  binaryToDecimal,
+  octalToDecimal
+} from '../../utils/util_2';
+import {
+  getRcxt1ByLhn
+} from './rho_2';
+import {
+  getRplbd,
+  getRcxt6ByLhn
 } from './rho_6';
+
 
 export const getLhnFromBilot = bilot => {
 
@@ -75,16 +85,21 @@ export const getRhocxt_7 = (rdtr, lhname) => {
 
   const rplbd = getRplbd(rdtr);
   const rhocxt_6 = getRcxt6ByLhn(lhname);
-  const lhcres = rhocxt_6.lhcres;
+  const lhcres_1 = rhocxt_6.lhcres;
+
 
   const mapFn = idx => {
-
-    const lhcros = lhcres[idx];
+    const lhcros = lhcres_1[idx];
     return {
       ...lhcros,
-      ropld: rplbd[idx]
+      rcpld: rplbd[idx]
     }
   }
 
-  
+  const lhcres_2 = R.map(mapFn, R.range(0, 6));
+
+  return {
+    ...rhocxt_6,
+    lhcres: lhcres_2
+  }
 }
