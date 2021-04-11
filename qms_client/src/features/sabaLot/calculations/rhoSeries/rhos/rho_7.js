@@ -1,15 +1,23 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
+  idxOfBranch,
+  trunkOrder
+} from '../../twigs/twig_1';
+import {
   binaryToDecimal,
   octalToDecimal
 } from '../../utils/util_2';
+import {
+  rhocs_1
+} from './rho_1';
 import {
   getRcxt1ByLhn
 } from './rho_2';
 import {
   getRpcstByRdtr,
-  getRcxt6ByLhn
+  getRcxt6ByLhn,
+  rhocs_6
 } from './rho_6';
 
 
@@ -71,24 +79,105 @@ export const getLhnFromOclot = oclot => {
   return getRcxt1ByLhn(lhidx).lhname;
 }
 
-export const getRhocs_7 = () => {
+const getRhocs_7 = () => {
 
-  const mapFn_1 = rhocxt => {
-    const { rjkdi, lhcres } = rhocxt;
+  const mapFn_1n =
+    (rjkdi, rkgdi, rqndi, lhcros) => {
 
     if(R.isNil(rjkdi)){
       throw new Error(
         'RJKDI should not be nil.');
     }
 
-    if(R.isNil(lhcres)){
+    const lhcdwi = lhcros.lhcdwi;
+
+    if(R.isNil(lhcdwi)){
+      throw new Error(
+        'LHCDWI should not be nil.');
+    }
+
+    const isRjk = lhcdwi == rjkdi;
+    const isRqn = lhcdwi == rqndi;
+    const isRkg = lhcdwi == rkgdi;
+
+    // Rho jack render function
+    const rjkrt = isRjk ? '世' : '';
+    const rjrqt = isRqn ? '身' : '';
+    const rkgrt = isRkg ? '應' : '';
+
+    // Rho face cards render text
+    const rfcrt = RA.concatAll([
+      rjkrt, rjrqt, rkgrt
+    ]);
+
+    return {
+      ...lhcros,
+      isRjk,
+      isRkg,
+      isRqn,
+      rfcrt
+    };
+  }
+
+  const mapFn_1c = R.curry(mapFn_1n);
+
+  const mapFn_2 = rhocxt => {
+
+    const { rjkdi, rkgdi } = rhocxt;
+    const lhcres_1 = rhocxt.lhcres;
+
+    if(R.isNil(rjkdi)){
+      throw new Error(
+        'RJKDI should not be nil.');
+    }
+
+    if(R.isNil(rkgdi)){
+      throw new Error(
+        'RKGDI should not be nil.');
+    }
+
+    if(R.isNil(lhcres_1)){
       throw new Error(
         'LHCRES should not be nil.');
     }
 
-    const rjkcr = rhocxt.lhcres[rhocxt.rjkdi];
+    const rjkcr = lhcres_1[rjkdi];
+
+    if(R.isNil(rjkcr)){
+      throw new Error(
+        'RKKCR should not be nil.');
+    }
+
+    const rjkbh = rjkcr.crbh;
+
+    if(R.isNil(rjkbh)){
+      throw new Error(
+        'RJKBH should not be nil.')
+    }
+
+    const rqndi = 5 - (idxOfBranch(rjkbh) % 6);
+
+    const lhcres_2 =
+      R.map(
+        mapFn_1c(rjkdi)(rkgdi)(rqndi),
+        lhcres_1);
+
+    return {
+      ...rhocxt,
+      lhcres: lhcres_2
+    }
+  }
+
+  try{
+    return R.map(mapFn_2, rhocs_6);
+  }
+  catch(err){
+    throw new Error(
+      'Cannot get RHOCS_7');
   }
 }
+
+export const rhocs_7 = getRhocs_7();
 
 export const getRhocxt_8 = (rdtr, lhname) => {
 
