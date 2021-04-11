@@ -178,7 +178,7 @@ const getRpcsl = () => {
 
 export const rpcsl = getRpcsl();
 
-export const getRplbd = rdtr => {
+export const getRpcstByRdtr = rdtr => {
 
   if(R.isNil(rdtr)){
     throw new Error(
@@ -199,17 +199,17 @@ export const getRplbd = rdtr => {
     R.propEq('rpdtr', rdtr),
     rpcsl);
 
-  const rplbd = rpcbd.rpcst;
+  const rpcst = rpcbd.rpcst;
 
-  if(R.isNil(rplbd)){
+  if(R.isNil(rpcst)){
     throw new Error(
-      'RPLBD should not be nil.');
+      'RPCST should not be nil.');
   }
 
-  if(!RA.isArray(rplbd)){
+  if(!RA.isArray(rpcst)){
     throw new Error(
-      'RPLBD must be an array.');
+      'RPCST must be an array.');
   }
 
-  return rplbd;
+  return rpcst;
 }

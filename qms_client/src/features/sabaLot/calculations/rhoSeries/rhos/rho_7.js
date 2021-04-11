@@ -8,7 +8,7 @@ import {
   getRcxt1ByLhn
 } from './rho_2';
 import {
-  getRplbd,
+  getRpcstByRdtr,
   getRcxt6ByLhn
 } from './rho_6';
 
@@ -83,16 +83,15 @@ export const getRhocxt_7 = (rdtr, lhname) => {
       'LHNAME should not be nil.');
   }
 
-  const rplbd = getRplbd(rdtr);
+  const rpcst = getRpcstByRdtr(rdtr);
   const rhocxt_6 = getRcxt6ByLhn(lhname);
   const lhcres_1 = rhocxt_6.lhcres;
-
 
   const mapFn = idx => {
     const lhcros = lhcres_1[idx];
     return {
       ...lhcros,
-      rcpld: rplbd[idx]
+      rcpld: rpcst[idx]
     }
   }
 
