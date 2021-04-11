@@ -37,7 +37,7 @@ const getRhocs_6 = () => {
     const isLhhd = ucfcs.length < 5;
 
     // Rho hidden hook focus Chinese set
-    const rhhfcs = R.difference(rfcis, ucfcs);
+    const rhfchs = R.difference(rfcis, ucfcs);
 
     if(isLhhd){
 
@@ -56,7 +56,7 @@ const getRhocs_6 = () => {
       return {
         ...rhocxt,
         isLhhd,
-        rhhfcs,
+        rhfchs,
         rhcres
       }
     }
