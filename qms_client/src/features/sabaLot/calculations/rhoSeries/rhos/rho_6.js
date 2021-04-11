@@ -23,7 +23,7 @@ const getRhocs_6 = () => {
 
     // Non unique Rho focus Chinee set
     const ncfcs = R.map(
-      R.prop('rofcs'), rhocxt.lhcres);
+      R.prop('rfchi'), rhocxt.lhcres);
 
     if(R.isNil(ncfcs)){
       throw new Error(

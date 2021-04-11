@@ -71,7 +71,26 @@ export const getLhnFromOclot = oclot => {
   return getRcxt1ByLhn(lhidx).lhname;
 }
 
-export const getRhocxt_7 = (rdtr, lhname) => {
+export const getRhocs_7 = () => {
+
+  const mapFn_1 = rhocxt => {
+    const { rjkdi, lhcres } = rhocxt;
+
+    if(R.isNil(rjkdi)){
+      throw new Error(
+        'RJKDI should not be nil.');
+    }
+
+    if(R.isNil(lhcres)){
+      throw new Error(
+        'LHCRES should not be nil.');
+    }
+
+    const rjkcr = rhocxt.lhcres[rhocxt.rjkdi];
+  }
+}
+
+export const getRhocxt_8 = (rdtr, lhname) => {
 
   if(R.isNil(rdtr)){
     throw new Error(
@@ -91,7 +110,7 @@ export const getRhocxt_7 = (rdtr, lhname) => {
     const lhcros = lhcres_1[idx];
     return {
       ...lhcros,
-      rcpld: rpcst[idx]
+      rplch: rpcst[idx]
     }
   }
 

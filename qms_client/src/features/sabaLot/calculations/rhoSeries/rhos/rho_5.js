@@ -102,8 +102,8 @@ export const rfcds = R.values(rfcim);
 // Rho focus chinese set
 export const rfcis = R.values(rfram);
 
-// Rho focus map inverted
-export const rfcmi = R.invertObj(rfcim);
+// Rho focus code map
+export const rfcom = R.invertObj(rfcim);
 
 export const isValidRfchi = rfchi => {
 
@@ -153,7 +153,7 @@ export const getRfchi = rfcode => {
       `${rfcode} is not a valid RFCODE.`);
   }
 
-  return rfcmi[rfcode];
+  return rfcom[rfcode];
 }
 
 const getRhocs_5 = () => {
@@ -170,16 +170,16 @@ const getRhocs_5 = () => {
       }
 
       // Rho chinese focus
-      const rofcs = rfram[rrfcs];
+      const rfchi = rfram[rrfcs];
 
-      if(R.isNil(rofcs)){
+      if(R.isNil(rfchi)){
         throw new Error(
           'ROFCS should not be nil.');
       }
 
-      const rofcsLens = R.lensProp('rofcs');
+      const rfchiLens = R.lensProp('rfchi');
       let lhcros_2 = R.set(
-        rofcsLens, rofcs, lhcros_1);
+        rfchiLens, rfchi, lhcros_1);
       return lhcros_2;
     }
     catch(err){
