@@ -42,11 +42,11 @@ const getRhocs_6 = () => {
     if(isLhhd){
 
       // Rho Head Long Hook
-      const rhces = R.find(
+      const rhcres = R.find(
         R.propEq('lhname', '純' + rhocxt.rhshn),
         rhocs_5).lhcres;
 
-      if(R.isNil(rhces)){
+      if(R.isNil(rhcres)){
         throw new Error(
           'Cannot find the Rho Head Long Hook. '
           + `${rhocxt.rhHook} may not be a valid `
@@ -57,7 +57,7 @@ const getRhocs_6 = () => {
         ...rhocxt,
         isLhhd,
         rhhfcs,
-        rhces
+        rhcres
       }
     }
     else {
