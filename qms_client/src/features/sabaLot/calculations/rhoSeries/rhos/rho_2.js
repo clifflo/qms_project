@@ -11,7 +11,6 @@ import {
   getElem
 } from '../../twigs/twig_1';
 
-
 export const getRcxtvByLhx = (
   lhidx,
   rocsvo,
@@ -99,7 +98,6 @@ export const getRcxtvByLhn = (
 }
 
 export const getRcxt1ByLhn = lhname => {
-
   try {
     return getRcxtvByLhn(
       lhname, rhocs_1, 1);
@@ -112,7 +110,6 @@ export const getRcxt1ByLhn = lhname => {
 }
 
 export const getRcxt1ByLhx = lhidx => {
-
   try {
     return getRcxtvByLhx(
       lhidx, rhocs_1, 1);

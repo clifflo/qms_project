@@ -64,6 +64,19 @@ const getRhocs_6 = () => {
 
 export const rhocs_6 = getRhocs_6();
 
+export const getRcxt6ByLhn = lhname => {
+
+  try {
+    return getRcxtvByLhn(
+      lhname, rhocs_6, 6);
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get RHOCXT_6 by long hook name.')
+  }
+}
+
 export const rpldo =
   R.compose(
     R.reverse,
@@ -123,7 +136,7 @@ const getRpcsl = () => {
         'RPDTR should not be nil.')
     }
 
-    const rpstp  = rpspm_2[rpdtr];
+    const rpstp = rpspm_2[rpdtr];
 
     // Rho Paladin Index
     const rpdix = utGetIdx(rpstp, rpldo) + 1;
@@ -154,3 +167,31 @@ const getRpcsl = () => {
 }
 
 export const rpcsl = getRpcsl();
+
+export const getRplbd = rdtr => {
+
+  if(R.isNil(rdtr)){
+    throw new Error(
+      'RDTR should not be nil.');
+  }
+
+  if(!RA.isString(rdtr)){
+    throw new Error(
+      'RDTR must be a string.');
+  }
+
+  if(isValidTrunk(rdtr)){
+    throw new Error(
+      `${rdtr} is not a valid trunk for RDTR.`);
+  }
+
+  const rplbd = R.find(R.propEq('rpdtr', rdtr));
+
+  if(R.isNil(rplbd)){
+    throw new Error(
+      'RPLBD should not be nil.');
+  }
+
+  return rplbd;
+
+}

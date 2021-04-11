@@ -24,7 +24,7 @@
     Refers to ESHBT.
   spocr: Rho-1
 -
-  spals: gshkor
+  spals: gshori
   spfna: Generic short hook original
   spdesn: >-
     The term 'generic' means that it defines the
@@ -41,8 +41,6 @@
     head' is specifically refers to the 午卦宮 to avoid
     confusion.
   spocr: Rho-4
--
-  spals: ncfss
 -
   spals: oclot
   spfna: Octal Lot
@@ -64,8 +62,14 @@
     So for a short hook it would have both internal
     and external bean branch series and trunk. So we
     would define ISSHEXT to define which part we
-    would like to get --- internal or external.
+    would like to get, whether internal or external.
   spocr: Rho-2
+-
+  spals: rfcis
+  spfna: Rho focus Chinese set
+  spdesn: >-
+    It stands for the Chinese name of the rho focus.
+    For example, 丙子孫 or 丙官鬼.
 -
   spals: srclhn
   spfna: Source long hook name
@@ -185,7 +189,7 @@
   spocr: Rho-4, Rho-6
 -
   spals: rhksrs
-  spfna: Rho hook palace
+  spfna: Rho hook series
   spdesn: >-
     It stands for each of the 午卦宮.
   spocr: Rho-3
@@ -293,7 +297,7 @@
     of 'dtf-qc'.
   spocr: Rho-5
 -
-  spas: rcsbfc
+  spals: rcsbfc
   spfna: Rho crosses by focus
   spdesn: >-
     It stands for getting the rho cross by using the
@@ -301,3 +305,19 @@
     but not 'Fruit', 'Seed'. Noted that it does not
     differentiate between source long hook.
   spocr: Rho-2
+-
+  spals: rpcim
+  spfna: Rho paladin chinese map
+  spdesn: >-
+    It stands for the map of which the key is the
+    chinese and the value is the code. For example,
+    with the key '丙子孫' the code would be 'dlt-zs'
+  spocr: Rho-6
+-
+  spals: rpcst
+  spfna: Rho paladin cross set
+  spdesn: >-
+    It stands for the rho paladin according to LHCDWI.
+    For example, with a day of '甲' in the RPCST of
+    index 2 it would be '丙螣蛇'.
+    

@@ -1,4 +1,7 @@
 import * as R from 'ramda';
+import {
+  getRplbd
+} from './rho_6';
 
 export const getLhnFromBilot = bilot => {
 
@@ -58,7 +61,30 @@ export const getLhnFromOclot = oclot => {
   return getRcxt1ByLhn(lhidx).lhname;
 }
 
-export const getRhocs_7 = (rdtr, lhname) => {
+export const getRhocxt_7 = (rdtr, lhname) => {
+
+  if(R.isNil(rdtr)){
+    throw new Error(
+      'RDTR should not be nil.');
+  }
+
+  if(R.isNil(lhname)){
+    throw new Error(
+      'LHNAME should not be nil.');
+  }
+
+  const rplbd = getRplbd(rdtr);
+  const rhocxt_6 = getRcxt6ByLhn(lhname);
+  const lhcres = rhocxt_6.lhcres;
+
+  const mapFn = idx => {
+
+    const lhcros = lhcres[idx];
+    return {
+      ...lhcros,
+      ropld: rplbd[idx]
+    }
+  }
 
   
 }
