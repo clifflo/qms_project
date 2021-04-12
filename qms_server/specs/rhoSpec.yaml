@@ -77,20 +77,22 @@
     It means the name of 本卦.
   spocr: Delta-2
 -
-  spals: srclhn
-  spfna: Source long hook name
+  spals: brklhn
+  spfna: Book long hook name
   spdesn: >-
-    It means the name of 之卦.
-  spocr: Delta-2
+    It means the name of 本卦.
+  spocr: Delta-1
 -
-  spals: cestm
-  spfna: Cross striking map
+  spals: crsts
+  spfna: Cross striking set
   spdesn: >-
-    So we would have to check which cross is striking.
-    For the source long hook we would say 'striking'
-    and in the target long hook we would say 'from
+    Book long hook is the 本卦 as the chinese word
+    本 stands for 書本. Cheese long hook is the 之卦
+    as the chinese word 之 is similar to 芝士.
+    For the book long hook we would say 'striking'
+    and in the cheese long hook we would say 'from
     strike'.
-  spocr: Delta-2
+  spocr: Delta-1
 -
   spals: crsi
   spfna: Cross sign
@@ -271,7 +273,7 @@
   spocr: Rho-2
 -
   spals: rcfcs
-  spfna: Rho Chinese focus
+  spfna: Rho chinese focus
   spdesn: >-
     It stands for the Chinese name of RRFCS. For example,
     RRFCS with 'Draw' would be '丙兄弟' in rcfcs.
@@ -318,6 +320,35 @@
   spfna: Rho paladin cross set
   spdesn: >-
     It stands for the rho paladin according to LHCDWI.
-    For example, with a day of '甲' in the RPCST of
-    index 2 it would be '丙螣蛇'.
-    
+    For example, with a day of 甲 in the RPCST of
+    index 2 it would be 丙螣蛇.
+  spocr: Rho-7
+-
+  spals: rfchi
+  spfna: Rho focus chinese
+  spdesn: >-
+    It stands for the rho focus written in chinese. So
+    it includes 丙父母 and 丙兄弟, etc.
+  spocr: Rho-5
+-
+  spals: rfcom
+  spfna: Rho focus code map
+  spdesn: >-
+    It stands for the map, with key as the RFCODE and the
+    value as the ROFCH.
+  spocr: Rho-5
+-
+  spals: rplch
+  spfna: Rho paladin chinese
+  spdesn: >-
+    It stands for the rho paladin in chinese. For example,
+    丁青龍, 丁白虎.
+  spocr: Rho-8
+-
+  spals: hyrcs
+  spfna: Hydrated rho context set
+  spdesn: >-
+    Hydrated means it would add the rho trunk to match with
+    the rho paladins. So it would state out the RDTK and
+    the mini rho context.
+  spocr: Rho-8
