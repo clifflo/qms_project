@@ -2,22 +2,22 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   rhocs_2
-} from './rho_2';
+} from './rho_02';
 import {
   nattos,
   getRcxtvByLhn,
   gshoriOrder
-} from './rho_1';
+} from './rho_01';
 import {
   utGetIdx
 } from '../../utils/util_1';
 import {
   getElre
-} from '../../twigs/twig_1';
+} from '../../twigs/twig_01';
 import {
   getRcxt1ByLhn,
   getRcxt1ByLhx
-} from './rho_2';
+} from './rho_02';
 import {
   decimalToBinary,
   binaryToDecimal

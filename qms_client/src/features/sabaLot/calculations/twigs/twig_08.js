@@ -4,14 +4,14 @@ import {
   trunkOrder,
   isValidBranch,
   isValidTrunk,
-} from './twig_1';
+} from './twig_01';
 import {
   isValidAnimal,
   isValidMonth,
   trunkRegex,
   varbrhRegex,
   monthRegex
-} from './twig_7';
+} from './twig_07';
 
 // BRKSPA is brake sentence part array
 // BKFSTC_1 is brake full sentence version 1

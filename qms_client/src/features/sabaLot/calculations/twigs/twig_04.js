@@ -6,7 +6,7 @@ import {
   getElem,
   idxOfElem,
   itemOfTrunk
-} from './twig_1';
+} from './twig_01';
 import * as R from 'ramda';
 
 // Branch Small Compound

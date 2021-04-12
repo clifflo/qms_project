@@ -3,22 +3,22 @@ import * as RA from 'ramda-adjunct';
 import {
   idxOfBranch,
   trunkOrder
-} from '../../twigs/twig_1';
+} from '../../twigs/twig_01';
 import {
   binaryToDecimal,
   octalToDecimal
 } from '../../utils/util_2';
 import {
   rhocs_1
-} from './rho_1';
+} from './rho_01';
 import {
   getRcxt1ByLhn
-} from './rho_2';
+} from './rho_02';
 import {
   getRpcstByRdtr,
   getRcxt6ByLhn,
   rhocs_6
-} from './rho_6';
+} from './rho_06';
 
 export const getLhnFromBilot = bilot => {
 

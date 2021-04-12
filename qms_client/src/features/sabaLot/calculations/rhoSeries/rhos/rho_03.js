@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   getElem
-} from '../../twigs/twig_1';
+} from '../../twigs/twig_01';
 import {
   decimalToBinary,
   binaryToDecimal
@@ -10,12 +10,12 @@ import {
 import {
   nattos,
   rhocs_1
-} from './rho_1';
+} from './rho_01';
 import {
   getRcxtvByLhn,
   getRcxt1ByLhx,
   getRcxt1ByLhn
-} from './rho_2';
+} from './rho_02';
 
 const getTrnto = (
   gshori,

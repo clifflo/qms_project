@@ -1,7 +1,7 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import { hycrs } from
-'./features/sabaLot/calculations/rhoSeries/rhos/rho_8';
+'./features/sabaLot/calculations/rhoSeries/rhos/rho_08';
 
 function showTree(){
   return (

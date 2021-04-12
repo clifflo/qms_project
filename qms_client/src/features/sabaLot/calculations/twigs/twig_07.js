@@ -3,7 +3,7 @@ import * as RA from 'ramda-adjunct';
 import {
   branchOrder,
   trunkOrder
-} from './twig_1';
+} from './twig_01';
 
 export const monthOrder = '正二三四五六七八九十霜臘';
 export const mthaltOrder = '正二三四五六七八九十子丑';

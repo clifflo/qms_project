@@ -3,7 +3,7 @@ import {
   itemOfBranch,
   getElem,
   isValidBranch
-} from './twig_1';
+} from './twig_01';
 
 export const hunterSet = {
   '寅': '巳',

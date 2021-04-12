@@ -6,10 +6,10 @@ import {
 import {
   rhocs_1,
   nattos
-} from './rho_1';
+} from './rho_01';
 import {
   getElem
-} from '../../twigs/twig_1';
+} from '../../twigs/twig_01';
 
 export const getRcxtvByLhx = (
   lhidx,

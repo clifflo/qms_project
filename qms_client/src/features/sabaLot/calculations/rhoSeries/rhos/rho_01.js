@@ -7,7 +7,7 @@ import {
 import {
   itemOfBranch,
   idxOfBranch
-} from '../../twigs/twig_1';
+} from '../../twigs/twig_01';
 
 const nattoParagraph =
   R.join(',', [
