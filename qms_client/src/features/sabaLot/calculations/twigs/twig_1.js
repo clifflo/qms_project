@@ -5,6 +5,19 @@ import {
   utGetIdx
 } from '../utils/util_1';
 
+export const emptyTrunkMap = {
+  '甲': '',
+  '乙': '',
+  '丙': '',
+  '丁': '',
+  '戊': '',
+  '己': '',
+  '庚': '',
+  '辛': '',
+  '壬': '',
+  '癸': ''
+}
+
 export const trunkContext = {
   '甲': 'Beta',
   '乙': 'Gamma',

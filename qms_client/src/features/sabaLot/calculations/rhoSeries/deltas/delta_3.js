@@ -1,5 +1,15 @@
 import * as R from 'ramda';
 
+export const dtbrk_00 = {
+  drbkt: '',
+  drbkd: '',
+  drbna: '',
+  dtbid: '',
+  drbor: [
+
+  ],
+}
+
 export const dtbrk_01 = {
   drbkt: 'day-trunk',
   drbna: '巳天元祿',
@@ -46,7 +56,7 @@ export const dtbrk_02 = {
   }
 }
 
-export const dtbrk_02 = {
+export const dtbrk_03 = {
   drbkt: 'day-branch',
   drbkd: 'tangerine',
   drbna: '巳驛馬',
@@ -69,4 +79,38 @@ export const dtbrk_02 = {
     '戌': '申',
     '亥': '巳'
   }
+}
+
+export const dtbrk_04 = {
+  drbkt: 'day-trunk',
+  drbkd: 'tangerine',
+  drbna: '午天乙貴人',
+  dtbid: '04',
+  drbor: [
+    '甲戊兼牛羊，乙己鼠猴鄉，丙丁豬雞位，',
+    '壬癸兔蛇藏，庚辛逢馬虎，此是貴人方。'
+  ],
+  drbmp: {
+    '甲': '丑未',
+    '乙': '子申',
+    '丙': '亥酉',
+    '丁': '亥酉',
+    '戊': '丑未',
+    '己': '子申',
+    '庚': '午寅',
+    '辛': '午寅',
+    '壬': '卯巳',
+    '癸': '卯巳'
+  }
+}
+
+export const dtbrk_0５ = {
+  drbkt: 'day-trunk',
+  drbkd: 'tangerine',
+  drbna: '福星貴人',
+  dtbid: '05',
+  drbor: [
+    '甲虎乙豬牛，丙同犬鼠遊，丁雞戊猴走，',
+    '己羊庚馬頭，辛蛇癸愛兔，壬日占龍樓。'
+  ],
 }
