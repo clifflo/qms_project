@@ -1,24 +1,10 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
-import { hycrs } from
-'./features/sabaLot/calculations/rhoSeries/rhos/rho_08';
-
-function showTree(){
-  return (
-    <div>
-      <JSONTree data={hycrs}/>
-    </div>
-  )
-}
-
+import RhoGui from './features/gui/rhoGui';
 
 function App() {
 
-  return (
-    <div className="App">
-      {showTree()}
-    </div>
-  );
+  return <RhoGui />;
 }
 
 export default App;
