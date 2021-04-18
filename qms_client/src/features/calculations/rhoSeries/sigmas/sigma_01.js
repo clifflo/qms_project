@@ -1,6 +1,9 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import { regexGen_7 } from '../../utils/util_4';
+import {
+  getBhdcvs
+} from '../../twigs/twig_08';
 
 export const sigmas_1 = {
   '巳天元祿': '甲祿在寅，乙祿在卯，丙戊祿在巳，丁己祿居午，庚祿居申，辛祿在酉，壬祿在亥，癸祿在子。',
@@ -70,7 +73,7 @@ export const getSigmas_2 = () => {
     const oldObj = {
       sgmna: origin[0],
       sgmexp: origin[1],
-      sgmcxt
+      ...sgmcxt
     }
 
     const newObj = R.reject(
@@ -88,7 +91,29 @@ export const sigmas_2 = getSigmas_2();
 
 export const getSigmas_3 = () => {
 
-  const mapFn_1n = bkmch => {
+  const mapFn_1 = bkmch => {
 
+    const key = RA.concatAll(getBhdcvs(bkmch[1]));
+    const value = RA.concatAll(getBhdcvs(bkmch[2]));
+
+    return [key, value];
   }
+
+  const mapFn_2 = sigma => {
+
+    const bkcxt = R.compose(
+      R.fromPairs,
+      R.map(mapFn_1))
+    (sigma.bkmhes);
+
+    return {
+      adjdStce: sigma.adjdStce,
+      sgmna: sigma.sgmna,
+      bkcxt
+    }
+  }
+
+  return R.map(mapFn_2, sigmas_2);
 }
+
+export const sigmas_3 = getSigmas_3();

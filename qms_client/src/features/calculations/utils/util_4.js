@@ -80,13 +80,14 @@ export const regexGen_5 = () => {
 export const regexGen_6 = rawStce => {
 
   const adjdStce = rawStce
-    .replace('犬', '狗')
-    .replace('十一', '霜')
-    .replace('十二', '臘');
+    .replaceAll('犬', '狗')
+    .replaceAll('十一', '霜')
+    .replaceAll('十二', '臘')
+    .replaceAll('、', '');
 
   const mapFn = regcxt => {
     const patt = new RegExp(regcxt.regex, 'g');
-    
+
     // Brake matches
     const bkmhes =  [...adjdStce.matchAll(patt)]
     return {

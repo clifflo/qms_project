@@ -41,8 +41,6 @@ const getBrlcs = () => {
 
 export const brlcs = getBrlcs();
 
-export const br
-
 // ELFTB stands for get element from triple branches
 // TRBRS stands for triple branches
 export const getElftb = trbrs => {
