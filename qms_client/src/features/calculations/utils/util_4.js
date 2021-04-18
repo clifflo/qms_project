@@ -1,8 +1,14 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
-export const monthRegex =
-  '((?:十一|十二|[正二三四五六七八九十])+)';
+const monthRegexPart =
+  '[正二三四五六七八九十子丑霜臘]';
+
+export const singleMonthRegex =
+  `(${monthRegexPart})`;
+
+export const multipleMonthRegex =
+  `((?:${monthRegexPart})+)`;
 
 export const branchRegex =
   RA.concatAll([
@@ -18,15 +24,6 @@ export const trunkRegex =
 export const seasonRegex =
   '([春夏秋冬]+)';
 
-export const tknbrRegex =
-  `${trunkRegex}${branchRegex}`;
-
-export const snnbrRegex =
-  `${seasonRegex}${branchRegex}`;
-
-export const trcboRegex =
-  '(甲己|乙庚|丙辛|丁壬|戊癸)';
-
 export const regexGen_1 = (regex_1, regex_2) => {
   return `${regex_1}(?:.*?)${regex_2}`;
 }
@@ -35,7 +32,9 @@ export const regexGen_2 = regn => {
 
   switch(regn){
     case 'm':
-      return monthRegex;
+      return singleMonthRegex;
+    case 'M':
+      return multipleMonthRegex;
     case 'b':
       return branchRegex;
     case 't':
@@ -53,13 +52,15 @@ export const regexGen_3 = regns => {
 export const regexGen_4 = () => {
 
   return [
-    'mb',
-    'mt',
+    'Mb',
+    'Mt',
     'bt',
     'tb',
     'sb',
     'st',
     'bb',
+    'bs',
+    'mb'
   ]
 }
 
@@ -76,14 +77,20 @@ export const regexGen_5 = () => {
 
 }
 
-export const regexGen_6 = sentence => {
+export const regexGen_6 = rawStce => {
+
+  const adjdStce = rawStce
+    .replace('犬', '狗')
+    .replace('十一', '霜')
+    .replace('十二', '臘');
 
   const mapFn = regcxt => {
     const patt = new RegExp(regcxt.regex, 'g');
-    const result =  [...sentence.matchAll(patt)]
+    // Brake matches
+    const bkmhes =  [...adjdStce.matchAll(patt)]
     return {
-      sentence,
-      result,
+      adjdStce,
+      bkmhes,
       ...regcxt
     }
   }
@@ -95,10 +102,14 @@ export const regexGen_7 = sen_1 => {
 
   const regg_6s = regexGen_6(sen_1);
   const maxFn = regg_6 => {
-    return regg_6.result.length;
+    return regg_6.bkmhes.length;
   }
 
   const regg_7 =
-    R.reduce(R.maxBy(maxFn), { result: [] }, regg_6s);
+    R.reduce(
+      R.maxBy(maxFn),
+      { bkmhes: [] },
+      regg_6s);
+
   return regg_7;
 }

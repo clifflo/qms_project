@@ -5,7 +5,11 @@ import {
   trunkOrder
 } from './twig_01';
 
-export const monthOrder = '正二三四五六七八九十霜臘';
+export const monthOrder =
+  R.split(
+    ',',
+    '正,二,三,四,五,六,七,八,九,十,十一,十二');
+
 export const mthaltOrder = '正二三四五六七八九十子丑';
 
 export const isValidMonth = month => {
@@ -46,7 +50,7 @@ const getMthbrm = () => {
 }
 
 export const animalOrder =
-  '鼠牛虎兔龍蛇馬羊𤠣雞狗豬';
+  '鼠牛虎兔龍蛇馬羊猴雞狗豬';
 
 export const isValidAnimal = animal => {
 
@@ -111,17 +115,3 @@ export const getBrfan = animal => {
   const branch = brhanm[animal];
   return branch;
 }
-
-export const branchRegex = `[${branchOrder}]`;
-export const trunkRegex = `[${trunkOrder}]`;
-export const animalRegex = `[${animalOrder}]`;
-export const monthRegex = `[${monthOrder}]`;
-
-export const varbrhRegex =
-  `${branchRegex}|${animalRegex}`;
-
-export const lbrlcmRegex =
-  '(正五九|二六十|三七十一|四八十二)';
-
-export const lbrlcbRegex =
-  '(寅午戌|申子辰|亥卯未|巳酉丑)';
