@@ -86,6 +86,7 @@ export const regexGen_6 = rawStce => {
 
   const mapFn = regcxt => {
     const patt = new RegExp(regcxt.regex, 'g');
+    
     // Brake matches
     const bkmhes =  [...adjdStce.matchAll(patt)]
     return {

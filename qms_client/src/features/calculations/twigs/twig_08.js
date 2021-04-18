@@ -1,60 +1,44 @@
-import * as R from 'ramda';
-import {
-  branchOrder,
-  trunkOrder,
-  isValidBranch,
-  isValidTrunk,
-} from './twig_01';
-import {
-  isValidAnimal,
-  isValidMonth,
-  trunkRegex,
-  varbrhRegex,
-  monthRegex
-} from './twig_07';
+export const brhami = R.invertObj(brhanm);
 
-// BRKSPA is brake sentence part array
-// BKFSTC_1 is brake full sentence version 1
-export const getBkfstc_1 = brkspa => {
+// BRFAN means Branch from animal
+export const getBrfan = animal => {
 
-  const bkfstc_1 = R.join('', brkspa);
-  const bkfstc_2 = bkfstc_1.replace(
-    '十一', '霜');
-  const bkfstc_3 = bkfstc_2.replace(
-    '十二', '臘');
-
-  const mapFn = character => {
-
-    // Is responsible character function
-    const isRescrf = R.anyPass([
-      isValidTrunk,
-      isValidBranch,
-      isValidAnimal,
-      isValidMonth
-    ]);
-
-    const isReschr = isRescrf(character);
-
-    if(isReschr){
-      return character;
-    }
-    else {
-      return '_'
-    }
-  }
-
-  try {
-    const bkfstc_4 = R.compose(
-      R.join(''),
-      R.reject(R.equals('_')),
-      R.map(mapFn))
-    (bkfstc_3);
-
-    return bkfstc_4;
-  }
-  catch(err){
-    console.error(err);
+  if(R.isNil(animal)){
     throw new Error(
-      'Cannot parse brake sentence.');
+      'Animal should not be nil.');
   }
+
+  if(!RA.isString(animal)){
+    throw new Error(
+      'Animal must be string.');
+  }
+
+  if(isValidAnimal(animal)){
+    throw new Error(
+      `${animal} is not a valid animal.`);
+  }
+
+  const branch = brhanm[animal];
+  return branch;
+}
+
+export const getBrfmn = month => {
+
+    if(R.isNil(animal)){
+      throw new Error(
+        'Month should not be nil.');
+    }
+
+    if(!RA.isString(animal)){
+      throw new Error(
+        'Month must be string.');
+    }
+
+    if(isValidAnimal(animal)){
+      throw new Error(
+        `${month} is not a valid month.`);
+    }
+
+    const branch = brhanm[];
+    return branch;
 }
