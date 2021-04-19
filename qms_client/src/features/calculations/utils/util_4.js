@@ -24,11 +24,11 @@ export const trunkRegex =
 export const seasonRegex =
   '([春夏秋冬]+)';
 
-export const regexGen_1 = (regex_1, regex_2) => {
+export const reggen_1 = (regex_1, regex_2) => {
   return `${regex_1}(?:.*?)${regex_2}`;
 }
 
-export const regexGen_2 = regn => {
+export const reggen_2 = regn => {
 
   switch(regn){
     case 'm':
@@ -44,12 +44,12 @@ export const regexGen_2 = regn => {
   }
 }
 
-export const regexGen_3 = regns => {
-  return regexGen_1(
-    regexGen_2(regns[0]), regexGen_2(regns[1]));
+export const reggen_3 = regns => {
+  return reggen_1(
+    reggen_2(regns[0]), reggen_2(regns[1]));
 }
 
-export const regexGen_4 = () => {
+export const reggen_4 = () => {
 
   return [
     'Mb',
@@ -64,54 +64,15 @@ export const regexGen_4 = () => {
   ]
 }
 
-export const regexGen_5 = () => {
+export const reggen_5 = () => {
 
   const mapFn = regns => {
     return {
       regns,
-      regex: regexGen_3(regns)
+      regex: reggen_3(regns)
     }
   };
 
-  return R.map(mapFn, regexGen_4());
+  return R.map(mapFn, reggen_4());
 
-}
-
-export const regexGen_6 = rawStce => {
-
-  const adjdStce = rawStce
-    .replaceAll('犬', '狗')
-    .replaceAll('十一', '霜')
-    .replaceAll('十二', '臘')
-    .replaceAll('、', '');
-
-  const mapFn = regcxt => {
-    const patt = new RegExp(regcxt.regex, 'g');
-
-    // Brake matches
-    const bkmhes =  [...adjdStce.matchAll(patt)]
-    return {
-      adjdStce,
-      bkmhes,
-      ...regcxt
-    }
-  }
-
-  return R.map(mapFn, regexGen_5());
-}
-
-export const regexGen_7 = sen_1 => {
-
-  const regg_6s = regexGen_6(sen_1);
-  const maxFn = regg_6 => {
-    return regg_6.bkmhes.length;
-  }
-
-  const regg_7 =
-    R.reduce(
-      R.maxBy(maxFn),
-      { bkmhes: [] },
-      regg_6s);
-
-  return regg_7;
 }
