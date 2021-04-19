@@ -1,9 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
-import { regexGen_7 } from '../../utils/util_4';
-import {
-  getBhdcvs
-} from '../../twigs/twig_08';
+import { reggen_7 } from '../../utils/util_05';
+import { getBhdcvs } from '../../twigs/twig_08';
 
 export const sgcxts_1 = {
   '巳天元祿': '甲祿在寅，乙祿在卯，丙戊祿在巳，丁己祿居午，庚祿居申，辛祿在酉，壬祿在亥，癸祿在子。',
@@ -68,7 +66,7 @@ export const getSgcxts_2 = () => {
   const sigprs = R.toPairs(sgcxts_1);
 
   const mapFn = sigpr => {
-    const sgmcxt = regexGen_7(sigpr[1]);
+    const sgmcxt = reggen_7(sigpr[1]);
     const origin = R.split('--', sigpr[0]);
     const oldObj = {
       sgmna: origin[0],

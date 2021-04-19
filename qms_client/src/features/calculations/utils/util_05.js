@@ -1,6 +1,7 @@
 import {
   reggen_5
-} from './util_4';
+} from './util_04';
+import * as R from 'ramda';
 
 export const reggen_6 = rawStce => {
 
@@ -11,10 +12,12 @@ export const reggen_6 = rawStce => {
     .replaceAll('、', '');
 
   const mapFn = regcxt => {
+
     const patt = new RegExp(regcxt.regex, 'g');
 
     // Brake matches
-    const bkmhes =  [...adjdStce.matchAll(patt)]
+    const bkmhes = [...adjdStce.matchAll(patt)];
+
     return {
       adjdStce,
       bkmhes,

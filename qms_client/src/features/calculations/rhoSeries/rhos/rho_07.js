@@ -7,7 +7,7 @@ import {
 import {
   binaryToDecimal,
   octalToDecimal
-} from '../../utils/util_2';
+} from '../../utils/util_02';
 import {
   rhocs_1
 } from './rho_01';

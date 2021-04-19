@@ -7,7 +7,7 @@ import {
 } from '../rhos/rho_04';
 import {
   decimalToBinary
-} from '../../utils/util_2';
+} from '../../utils/util_02';
 
 export const getCrsts = (boklhn, chelhn) => {
 

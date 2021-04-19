@@ -10,7 +10,7 @@ import {
 } from './rho_01';
 import {
   utGetIdx
-} from '../../utils/util_1';
+} from '../../utils/util_01';
 import {
   getElre
 } from '../../twigs/twig_01';
@@ -21,7 +21,7 @@ import {
 import {
   decimalToBinary,
   binaryToDecimal
-} from '../../utils/util_2';
+} from '../../utils/util_02';
 
 const rblhss =
   R.split(',', '姤,遯,否,觀,剝,晉,大有');

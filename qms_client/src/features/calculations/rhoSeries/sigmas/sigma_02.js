@@ -1,6 +1,9 @@
+import { sgcxts_2 } from './sigma_01';
 import {
-  sgcxts_2
-}
+  getBhdcvs
+} from '../../twigs/twig_08';
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 
 export const getSgcxts_3 = () => {
 
@@ -8,7 +11,7 @@ export const getSgcxts_3 = () => {
 
     const key = RA.concatAll(
       getBhdcvs(bkmch[1]));
-      
+
     const value = RA.concatAll(
       getBhdcvs(bkmch[2]));
 
@@ -17,7 +20,7 @@ export const getSgcxts_3 = () => {
 
   const mapFn_2 = sigma => {
 
-    const bkcxt = R.compose(
+    const bkcont = R.compose(
       R.fromPairs,
       R.map(mapFn_1))
     (sigma.bkmhes);
@@ -25,7 +28,7 @@ export const getSgcxts_3 = () => {
     return {
       adjdStce: sigma.adjdStce,
       sgmna: sigma.sgmna,
-      bkcxt
+      bkcont
     }
   }
 
@@ -33,3 +36,7 @@ export const getSgcxts_3 = () => {
 }
 
 export const sgcxts_3 = getSgcxts_3();
+
+export const getSgcxts_4 = () => {
+
+}

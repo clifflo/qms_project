@@ -6,7 +6,7 @@ import {
 import {
   decimalToBinary,
   binaryToDecimal
-} from '../../utils/util_2';
+} from '../../utils/util_02';
 import {
   nattos,
   rhocs_1

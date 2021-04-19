@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   decimalToBinary
-} from '../../utils/util_2';
+} from '../../utils/util_02';
 import {
   rhocs_1,
   nattos
