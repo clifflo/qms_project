@@ -4,11 +4,14 @@ import {
   branchOrder,
   trunkOrder
 } from './twig_01';
+import {
+  utGetIdx
+} from '../utils/util_01';
 
 export const monthOrder =
-  '霜臘正二三四五六七八九十';
+  '正二三四五六七八九十霜臘';
 
-export const mthaltOrder = '子丑正二三四五六七八九十';
+export const mthaltOrder = '正二三四五六七八九十子丑';
 
 export const isValidMonth = month => {
 
@@ -45,6 +48,25 @@ const getMthbrm = () => {
     console.error(err);
     throw new Error('Cannot get MTHBRM.');
   }
+}
+
+export const idxOfMonth = month => {
+  if(R.isNil(month)){
+    throw new Error(
+      'Month should not be nil.');
+  }
+
+  if(!RA.isString(month)){
+    throw new Error(
+      'Month must be a string.');
+  }
+
+  if(!isValidMonth(month)){
+    throw new Error(
+      `${month} is not a valid month.`);
+  }
+
+  return utGetIdx(month, monthOrder);
 }
 
 export const animalOrder =

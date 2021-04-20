@@ -3,9 +3,9 @@ import {
 } from './util_04';
 import * as R from 'ramda';
 
-export const reggen_6 = rawStce => {
+export const reggen_6 = rawsen => {
 
-  const adjdStce = rawStce
+  const adjsen = rawsen
     .replaceAll('犬', '狗')
     .replaceAll('十一', '霜')
     .replaceAll('十二', '臘')
@@ -16,10 +16,10 @@ export const reggen_6 = rawStce => {
     const patt = new RegExp(regcxt.regex, 'g');
 
     // Brake matches
-    const bkmhes = [...adjdStce.matchAll(patt)];
+    const bkmhes = [...adjsen.matchAll(patt)];
 
     return {
-      adjdStce,
+      adjsen,
       bkmhes,
       ...regcxt
     }
@@ -28,18 +28,26 @@ export const reggen_6 = rawStce => {
   return R.map(mapFn, reggen_5());
 }
 
-export const reggen_7 = sen_1 => {
+export const reggen_7 = sentence => {
 
-  const regg_6s = reggen_6(sen_1);
-  const maxFn = regg_6 => {
-    return regg_6.bkmhes.length;
+  const regg6s = reggen_6(sentence);
+  const maxFn = regge6 => {
+    return regge6.bkmhes.length;
   }
 
-  const regg_7 =
+  // Monthy calculation
+  const mthcoa = R.includes('正', sentence);
+  const mthcob = R.includes('月', sentence);
+
+  const regge7 =
     R.reduce(
       R.maxBy(maxFn),
       { bkmhes: [] },
-      regg_6s);
+      regg6s);
 
-  return regg_7;
+  return {
+    mthcoa,
+    mthcob,
+    ...regge7
+  };
 }

@@ -74,5 +74,4 @@ export const reggen_5 = () => {
   };
 
   return R.map(mapFn, reggen_4());
-
 }
