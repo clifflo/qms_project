@@ -2,8 +2,19 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   idxOfBranch,
-  idxOfTrunk
+  idxOfTrunk,
+  isValidBranch
 } from './twig_01';
+import {
+  isValidAnimal,
+  isValidMonth,
+  animalOrder,
+  monthOrder
+} from './twig_07';
+import {
+  branmi,
+  brmhmi
+} from './twig_08';
 
 
 // BRFAN means Branch from animal

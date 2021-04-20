@@ -6,7 +6,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   idxOfGtwig
-} from '../twigs/twig_07';
+} from '../../twigs/twig_07';
 
 export const getSgcxts_3 = () => {
 

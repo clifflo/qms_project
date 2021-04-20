@@ -1,6 +1,10 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
+  isValidTrunk,
+  isValidBranch,
+  idxOfTrunk,
+  idxOfBranch,
   branchOrder,
   trunkOrder
 } from './twig_01';
@@ -103,33 +107,29 @@ export const idxOfAnimal = animal => {
   return utGetIdx(animal, animalOrder);
 }
 
-export const idxOfGtwig = gtwig => {
+export const seasonOrder = '春夏秋冬';
 
-  if(R.isNil(gtwig)){
+export const isValidSeason = season => {
+  return R.includes(season, seasonOrder);
+}
+
+export const idxOfSeason = season => {
+
+  if(R.isNil(season)){
     throw new Error(
-      'Generalized twig should not be nil.');
+      'Season should not be nil.');
   }
 
-  if(!RA.isString(twig)){
+  if(!RA.isString(season)){
     throw new Error(
-      'Generalized twig must be a string.');
+      'Season must be a string.');
   }
 
-  if(isValidBranch(gtwig)){
-    return idxOfBranch(gtwig);
-  }
-  else if(isValidAnimal(gtwig)){
-    return idxOfAnimal(gtwig);
-  }
-  else if(isValidTrunk(gtwig)){
-    return idxOfTrunk(gtwig);
-  }
-  else if(isValidMonth(gtwig)){
-    return idxOfMonth(gtwig);
-  }
-  else {
+  if(!isValidSeason(season)){
     throw new Error(
-      `${gtwig} is not a valid `
-      + 'generalized twig.');
+      `${season} is not a valid season.`);
   }
+
+  return utGetIdx(season, seasonOrder);
+
 }

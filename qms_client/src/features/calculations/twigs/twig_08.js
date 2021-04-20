@@ -2,10 +2,22 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   isValidAnimal,
-  isValidMonth
+  isValidMonth,
+  animalOrder,
+  monthOrder,
+  idxOfAnimal,
+  idxOfMonth,
+  isValidSeason,
+  idxOfSeason,
+  seasonOrder
 } from './twig_07';
 import {
-  isValidBranch
+  isValidBranch,
+  isValidTrunk,
+  idxOfBranch,
+  idxOfTrunk,
+  branchOrder,
+  trunkOrder
 } from './twig_01';
 
 
@@ -62,3 +74,37 @@ const getBrmthm = () => {
 export const brmthm = getBrmthm();
 
 export const brmhmi = R.invertObj(brmthm);
+
+export const idxOfGtwig = gtwig => {
+
+  if(R.isNil(gtwig)){
+    throw new Error(
+      'Generalized twig should not be nil.');
+  }
+
+  if(!RA.isString(gtwig)){
+    throw new Error(
+      'Generalized twig must be a string.');
+  }
+
+  if(isValidBranch(gtwig)){
+    return idxOfBranch(gtwig);
+  }
+  else if(isValidAnimal(gtwig)){
+    return idxOfAnimal(gtwig);
+  }
+  else if(isValidTrunk(gtwig)){
+    return idxOfTrunk(gtwig);
+  }
+  else if(isValidMonth(gtwig)){
+    return idxOfMonth(gtwig);
+  }
+  else if(isValidSeason(gtwig)){
+    return idxOfSeason(gtwig);
+  }
+  else {
+    throw new Error(
+      `${gtwig} is not a valid `
+      + 'generalized twig.');
+  }
+}

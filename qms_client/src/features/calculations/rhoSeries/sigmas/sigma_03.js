@@ -1,5 +1,12 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import {
+  idxOfGtwig
+} from '../../twigs/twig_08';
+import {
+  sgcxts_3
+} from './sigma_02';
+
 
 export const getSgcxts_4 = () => {
 
@@ -43,11 +50,11 @@ export const getSgcxts_4 = () => {
   const mapFn_3 = sgmcxt => {
 
     const sortFn = R.sortBy(
-      idxOfGtwig(R.prop[0]));
+      item => idxOfGtwig(item[0]));
 
     const bktgm = R.compose(
       R.fromPairs,
-      R.sortBy(sortFn),
+      sortFn,
       RA.concatAll,
       R.map(mapFn_2c(sgmcxt.mthcoa)),
       R.toPairs)
