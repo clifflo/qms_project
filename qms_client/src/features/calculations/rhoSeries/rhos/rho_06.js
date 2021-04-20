@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
-import { propFlat } from '../../utils/util_04';
 import {
   utItem,
   utGetIdx
@@ -94,33 +93,19 @@ export const rpldo =
     R.split(','))
   ('青龍,朱雀,勾陳,螣蛇,白虎,玄武');
 
-// Rho paladin chinese map
-export const rpcim = {
-  '丙青龍': 'dtp-ql',
-  '丙朱雀': 'dtp-zj',
-  '丙勾陳': 'dtp-gc',
-  '丙螣蛇': 'dtp-ts',
-  '丙白虎': 'dtp-bh',
-  '丙玄武': 'dtp-xw'
-}
-
-// Rho paladin code map
-export const rpcdm = R.invertObj(rpcim);
-
-// Rho paladin code set
-export const rpcds = R.values[rpcim];
-
 // Rho Paladin Start Position Map
-const rpspm_1 = {
-  '甲乙': '丙青龍',
-  '丙丁': '丙朱雀',
+const rpspm = {
+  '甲': '丙青龍',
+  '乙': '丙青龍',
+  '丙': '丙朱雀',
+  '丁': '丙朱雀',
   '戊': '丙勾陳',
   '己': '丙螣蛇',
-  '庚辛': '丙白虎',
-  '壬癸': '丙玄武'
+  '庚': '丙白虎',
+  '辛': '丙白虎',
+  '壬': '丙玄武',
+  '癸': '丙玄武'
 }
-
-export const rpspm_2 = propFlat(rpspm_1);
 
 // Rho Paladin Cross Set List
 const getRpcsl = () => {
@@ -146,7 +131,7 @@ const getRpcsl = () => {
         'RPDTR should not be nil.')
     }
 
-    const rpstp = rpspm_2[rpdtr];
+    const rpstp = rpspm[rpdtr];
 
     // Rho Paladin Index
     const rpdix = utGetIdx(rpstp, rpldo) + 1;
