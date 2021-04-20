@@ -10,95 +10,57 @@ import {
   isValidBranch
 } from './twig_01';
 
-// BRFAN means Branch from animal
-export const getBrfan = animal => {
 
-  if(R.isNil(animal)){
-    throw new Error(
-      'Animal should not be nil.');
-  }
+// Branch animal map, 地支和生肖之對應
+const getBrhanm = () => {
 
-  if(!RA.isString(animal)){
-    throw new Error(
-      'Animal must be string.');
-  }
+  const mapFn = idx => {
 
-  if(!isValidAnimal(animal)){
-    throw new Error(
-      `${animal} is not a valid animal.`);
-  }
+    const branch = branchOrder[idx];
+    const animal = animalOrder[idx];
 
-  const brfan = branmi[animal];
-
-  if(R.isNil(brfan)){
-    throw new Error('BRFAN should not be nil.');
-  }
-
-  if(!isValidBranch(brfan)){
-    throw new Error('BRFAN must be a valid branch.');
-  }
-
-  return brfan;
-}
-
-export const getBrfmn = month => {
-
-    if(R.isNil(month)){
-      throw new Error(
-        'Month should not be nil.');
-    }
-
-    if(!RA.isString(month)){
-      throw new Error(
-        'Month must be string.');
-    }
-
-    if(!isValidMonth(month)){
-      throw new Error(
-        `${month} is not a valid month.`);
-    }
-
-    const brfmn = brmhmi[month];
-
-    if(!isValidBranch(brfmn)){
-      throw new Error('BRFMN must be a valid branch.');
-    }
-
-    return brfmn;
-}
-
-// Branch soft convert from any branch
-// which stands for any sort of
-// animal, month or branch itself.
-// For hard convert (convert that must be
-// done or return original), please
-// refers to BRHDCT.
-export const getBrsfcv = genbrh => {
-
-  if(R.isNil(genbrh)){
-    throw new Error(
-      'GENBRH should not be nil.');
-  }
-
-  if(!RA.isString(genbrh)){
-    throw new Error('GENBRH must be a string.');
+    return [branch, animal];
   }
 
   try{
-    if(isValidBranch(genbrh)){
-      return genbrh;
-    }
-    else if(isValidAnimal(genbrh)){
-      return getBrfan(genbrh);
-
-    }
-    else {
-      return null;
-    }
+    return R.compose(
+      R.fromPairs,
+      R.map(mapFn))
+    (R.range(0, 12));
   }
   catch(err){
     console.error(err);
-    throw new Error('Cannot get BRSFCT.');
+    throw new Error('Cannot get BCHANM');
+  }
+}
+
+export const brhanm = getBrhanm();
+
+export const branmi = R.invertObj(brhanm);
+
+// Branch month map
+const getBrmthm = () => {
+
+  const mapFn = idx => {
+
+    const branch = branchOrder[idx];
+    const month = monthOrder[idx];
+
+    return [branch, month];
   }
 
+  try{
+    return R.compose(
+      R.fromPairs,
+      R.map(mapFn))
+    (R.range(0, 12));
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get BRMTHM');
+  }
 }
+
+export const brmthm = getBrmthm();
+
+export const brmhmi = R.invertObj(brmthm);

@@ -96,12 +96,14 @@ export const getSgcxts_4 = () => {
 
   const mapFn_3 = sgmcxt => {
 
+    const sortFn = R.sortBy(R.compose(R.toLower, R.prop('name')));
+
     const bktgm = R.compose(
-        R.fromPairs,
-        RA.concatAll,
-        R.map(mapFn_2c(sgmcxt.mthcoa)),
-        R.toPairs)
-      (sgmcxt.bkcont);
+      R.fromPairs,
+      RA.concatAll,
+      R.map(mapFn_2c(sgmcxt.mthcoa)),
+      R.toPairs)
+    (sgmcxt.bkcont);
 
     return {
       ...sgmcxt,

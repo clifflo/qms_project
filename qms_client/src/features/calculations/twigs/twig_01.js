@@ -42,11 +42,11 @@ export const branchContext = {
 export const branchOrder =
   '子丑寅卯辰巳午未申酉戌亥';
 
-export const idxOfTrunk = (trunk) => {
+export const idxOfTrunk = trunk => {
   return utGetIdx(trunk, trunkOrder)
 }
 
-export const getTrunkLiturgy = (trunk) => {
+export const getTrunkLiturgy = trunk => {
   return (idxOfTrunk(trunk) % 2) == 0 ?
     'Alpha': 'Omega';
 }

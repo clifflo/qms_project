@@ -51,6 +51,7 @@ const getMthbrm = () => {
 }
 
 export const idxOfMonth = month => {
+
   if(R.isNil(month)){
     throw new Error(
       'Month should not be nil.');
@@ -87,56 +88,37 @@ export const isValidAnimal = animal => {
   return R.includes(animal, animalOrder);
 }
 
-// Branch animal map, 地支和生肖之對應
-const getBrhanm = () => {
+export const idxOfAnimal = animal => {
 
-  const mapFn = idx => {
-
-    const branch = branchOrder[idx];
-    const animal = animalOrder[idx];
-
-    return [branch, animal];
+  if(R.isNil(animal)){
+    throw new Error(
+      'Animal should not be nil.');
   }
 
-  try{
-    return R.compose(
-      R.fromPairs,
-      R.map(mapFn))
-    (R.range(0, 12));
+  if(!isValidAnimal(animal)){
+    throw new Error(
+      `${animal} is not a valid animal.`);
   }
-  catch(err){
-    console.error(err);
-    throw new Error('Cannot get BCHANM');
-  }
+
+  return utGetIdx(animal, animalOrder);
 }
 
-export const brhanm = getBrhanm();
+export const idxOfTwig = twig => {
 
-export const branmi = R.invertObj(brhanm);
-
-// Branch month map
-const getBrmthm = () => {
-
-  const mapFn = idx => {
-
-    const branch = branchOrder[idx];
-    const month = monthOrder[idx];
-
-    return [branch, month];
+  if(R.isNil(twig)){
+    throw new Error(
+      'Twig should not be nil.');
   }
 
-  try{
-    return R.compose(
-      R.fromPairs,
-      R.map(mapFn))
-    (R.range(0, 12));
+  if(!RA.isString(twig)){
+    throw new Error(
+      'Twig must be a string.');
   }
-  catch(err){
-    console.error(err);
-    throw new Error('Cannot get BRMTHM');
+
+  if(isValidBranch(twig)){
+    return idxOfBranch(twig);
+  }
+  else if(isValidAnimal(twig)){
+    return idxOfAnimal(twig);
   }
 }
-
-export const brmthm = getBrmthm();
-
-export const brmhmi = R.invertObj(brmthm);
