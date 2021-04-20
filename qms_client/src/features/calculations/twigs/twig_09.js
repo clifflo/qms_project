@@ -1,9 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  getBrsfcv
-} from './twig_08';
-import {
   idxOfBranch,
   idxOfTrunk
 } from './twig_01';

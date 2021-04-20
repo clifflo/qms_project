@@ -1,8 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  branmi,
-  brmhmi,
   isValidAnimal,
   isValidMonth
 } from './twig_07';

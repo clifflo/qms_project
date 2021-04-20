@@ -103,22 +103,33 @@ export const idxOfAnimal = animal => {
   return utGetIdx(animal, animalOrder);
 }
 
-export const idxOfTwig = twig => {
+export const idxOfGtwig = gtwig => {
 
-  if(R.isNil(twig)){
+  if(R.isNil(gtwig)){
     throw new Error(
-      'Twig should not be nil.');
+      'Generalized twig should not be nil.');
   }
 
   if(!RA.isString(twig)){
     throw new Error(
-      'Twig must be a string.');
+      'Generalized twig must be a string.');
   }
 
-  if(isValidBranch(twig)){
-    return idxOfBranch(twig);
+  if(isValidBranch(gtwig)){
+    return idxOfBranch(gtwig);
   }
-  else if(isValidAnimal(twig)){
-    return idxOfAnimal(twig);
+  else if(isValidAnimal(gtwig)){
+    return idxOfAnimal(gtwig);
+  }
+  else if(isValidTrunk(gtwig)){
+    return idxOfTrunk(gtwig);
+  }
+  else if(isValidMonth(gtwig)){
+    return idxOfMonth(gtwig);
+  }
+  else {
+    throw new Error(
+      `${gtwig} is not a valid `
+      + 'generalized twig.');
   }
 }
