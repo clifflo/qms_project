@@ -9,11 +9,7 @@ import {
   idxOfBranch
 } from '../../twigs/twig_01';
 
-/**
- * Represents a natto paragraph.
- * 這是納甲歌，將八卦排入相關的干支。
- */
-const nattoParagraph =
+export const rawntos =
   R.join(',', [
     '乾金甲子壬順佈,坎水戊寅戊順佈',
     '艮土丙辰丙順佈,震木庚子庚順佈',
@@ -21,14 +17,7 @@ const nattoParagraph =
     '坤土乙未癸逆佈,兌金丁巳丁逆佈',
   ])
 
-/**
-  * Get full bean branches
-  * 納甲歌中一個卦中地支的相關排法。
-  * @name fbbrs
-  * @param bbssb - Bean branch series start branch.
-  * @param bbscw - Bean branch series is clockwise
-  */
-const getFbbrs = (bbssb, bbscw) => {
+export const getFbbrs = (bbssb, bbscw) => {
 
   try{
     if(R.isNil(bbssb)){
@@ -56,7 +45,7 @@ const getFbbrs = (bbssb, bbscw) => {
 
 }
 
-const getNattos = () => {
+export const getContos = () => {
 
   const mapFn = sentence => {
 
@@ -69,11 +58,9 @@ const getNattos = () => {
     const fbbrs = getFbbrs(
       bbssb, bbscw);
 
-    // External Bean Branch Series
     const ebbrs =
       R.reverse(R.takeLast(3, fbbrs));
 
-    // Internal Bean Branch Series
     const ibbrs =
       R.reverse(R.take(3, fbbrs));
 
@@ -91,10 +78,10 @@ const getNattos = () => {
   return R.compose(
     R.map(mapFn),
     R.split(','))
-    (nattoParagraph);
+    (rawntos);
 }
 
-export const nattos = getNattos();
+export const nattos = getContos();
 
 // Generic short hook alternative
 export const gshaltOrder = '地雷水澤山火風天';
