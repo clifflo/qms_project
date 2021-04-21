@@ -51,6 +51,8 @@
     ]
   },
   "devDependencies": {
+    "esdoc": "^1.1.0",
+    "esdoc-standard-plugin": "^1.0.0",
     "redux-devtools": "^3.7.0"
   }
 }

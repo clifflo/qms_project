@@ -25,13 +25,10 @@ const nattoParagraph =
   * Get full bean branches
   * 納甲歌中一個卦中地支的相關排法。
   * @name fbbrs
-  * @param bbssb {string} - Bean branch series start branch.
-  *
-  *   As of 乾, we will have the branches
-  *   starting from the bottom as 子寅辰午申戌.
-  *   In this case, 子 is the BBSSB.
+  * @param bbssb - Bean branch series start branch.
+  * @param bbscw - Bean branch series is clockwise
   */
-const getFbbrs = (bbssb, bbsIsCw) => {
+const getFbbrs = (bbssb, bbscw) => {
 
   try{
     if(R.isNil(bbssb)){
@@ -43,7 +40,7 @@ const getFbbrs = (bbssb, bbsIsCw) => {
 
     const mapFn = idx => {
       const rawAdjustment = idx * 2;
-      const finalAdjustment = bbsIsCw ?
+      const finalAdjustment = bbscw ?
         rawAdjustment : (-rawAdjustment);
       return itemOfBranch(bbsbi + finalAdjustment);
     }
