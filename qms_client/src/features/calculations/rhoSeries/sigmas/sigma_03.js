@@ -7,7 +7,6 @@ import {
   sgcxts_3
 } from './sigma_02';
 
-
 export const getSgcxts_4 = () => {
 
   // Brake match key part
