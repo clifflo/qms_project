@@ -1,12 +1,14 @@
-import * as  http from 'http';
+const http = require('http');
+const url = require('url');
 
 const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = http.createServer((req, res) => {
+  const q = url.parse(req.url, true);
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify({ 'a': 'v' }));
+  res.end(JSON.stringify({ 'a': q }));
 });
 
 server.listen(port, hostname, () => {
