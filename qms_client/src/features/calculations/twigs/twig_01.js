@@ -5,7 +5,6 @@ import {
   utGetIdx
 } from '../utils/util_01';
 
-
 export const trunkContext = {
   '甲': 'Beta',
   '乙': 'Gamma',
@@ -42,48 +41,38 @@ export const branchContext = {
 export const branchOrder =
   '子丑寅卯辰巳午未申酉戌亥';
 
-export const idxOfTrunk = trunk => {
-  return utGetIdx(trunk, trunkOrder)
+export function itemOfTrunk(index){
+  return utItem(trunkOrder, index);
 }
 
-export const getTrunkLiturgy = trunk => {
-  return (idxOfTrunk(trunk) % 2) == 0 ?
-    'Alpha': 'Omega';
+export function itemOfBranch(index){
+  return utItem(branchOrder, index);
 }
 
-export const getBranchLiturgy = (branch) => {
-  return (idxOfBranch(branch) % 2) == 0 ?
-    'Alpha': 'Omega';
+export function itemOfElem(index){
+  return utItem(elemOrder, index);
 }
 
-export const getTwigLiturgy = (twig) => {
+export function isValidBranch(branch){
+  return R.includes(branch, branchOrder);
+}
 
-  if(isValidTrunk(twig)){
-    const trunk = twig;
-    return getTrunkLiturgy(trunk);
-  }
-  else if(isValidBranch(twig)){
-    const branch = twig;
-    return getBranchLiturgy(branch);
-  }
-  else {
-    throw new Error(`${twig} is not a valid twig.`);
-  }
+export function isValidTrunk(trunk){
+  return R.includes(trunk, trunkOrder);
+}
+
+export function isValidElem(elemental){
+  return R.includes(elemental, elemOrder);
+}
+
+export function idxOfElem(elemental){
+  return utGetIdx(elemental, elemOrder)
 }
 
 export const idxOfBranch = (branch) => {
   return utGetIdx(branch, branchOrder)
 }
 
-const getBelem = branch => {
-
-  const belemOrder = '水土木木土火火土金金土水';
-  const bridx = idxOfBranch(branch);
-  return belemOrder[bridx];
-}
-
-const getTelem = trunk => {
-  const tki = idxOfTrunk(trunk);
-  const elei = Math.floor(tki / 2) + 2;
-  return itemOfElem(elei);
+export const idxOfTrunk = trunk => {
+  return utGetIdx(trunk, trunkOrder)
 }

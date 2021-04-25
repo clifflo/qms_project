@@ -5,7 +5,7 @@ import {
 } from './rho_02';
 import {
   nattos,
-  gshoriOrder
+  gshoro
 } from './rho_01';
 import {
   utGetIdx
@@ -127,7 +127,7 @@ const getRhksrs = () => {
   }
 
   const result = R.map(
-    mapFn_2, gshoriOrder);
+    mapFn_2, gshoro);
 
   return result;
 }

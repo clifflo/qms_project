@@ -4,8 +4,8 @@ import {
   utGetIdx
 } from '../../utils/util_01';
 import {
-  gshaltOrder,
-  gshoriOrder
+  gshalo,
+  gshoro
 } from './rho_01';
 
 const lhParagraph = R.join(',', [
@@ -35,7 +35,7 @@ const getGshalx = gshalt => {
 
   const gshalx = utGetIdx(
     gshalt,
-    gshaltOrder);
+    gshalo);
 
   if(gshalx == -1){
     throw new Error(
@@ -86,10 +86,10 @@ const getRhocs_1 = () => {
       getGshalx(ishalt);
 
     const eshori =
-      gshoriOrder[eshidx];
+      gshoro[eshidx];
 
     const ishori =
-      gshoriOrder[ishidx];
+      gshoro[ishidx];
 
     const lhidx =
       (eshidx * 8) +

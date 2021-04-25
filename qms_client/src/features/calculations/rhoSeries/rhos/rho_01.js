@@ -5,8 +5,8 @@ import {
   utGetIdx
 } from '../../utils/util_01';
 import {
-  itemOfBranch,
-  idxOfBranch
+  idxOfBranch,
+  itemOfBranch
 } from '../../twigs/twig_01';
 
 // Raw nattos
@@ -86,7 +86,7 @@ export const getBkntos = () => {
 export const nattos = getBkntos();
 
 // Generic short hook alternative
-export const gshaltOrder = '地雷水澤山火風天';
+export const gshalo = '地雷水澤山火風天';
 
 // Generic short hook original
-export const gshoriOrder = '坤震坎兌艮離巽乾';
+export const gshoro = '坤震坎兌艮離巽乾';
