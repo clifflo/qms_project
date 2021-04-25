@@ -94,7 +94,14 @@ export const getRcxtvByLhn = (
       + `for rho context ${rocsvn}`);
   }
 
-  return rcxtvo;
+  // Rho context filtered by
+  const rcfb = 'Long hook name';
+
+  return {
+    ...rcxtvo,
+    rocsvn,
+    rcfb
+  };
 }
 
 export const getRcxt1ByLhn = lhname => {

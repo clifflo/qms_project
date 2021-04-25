@@ -24,7 +24,7 @@ const s_fbbrs = {
       sppna: 'Bean branch series start branch',
       sppdes: [
         'As of 乾, we will have 子 as the [bbssb].',
-        'The value of [bbssb] from all 午卦宮s are',
+        'The value of [bbssb] from all 卦宮 are',
         'parsed from the [rawntos].'
       ]
     },
@@ -62,7 +62,28 @@ const s_bkntos = {
       sprfn: 'Generic short hook elemental',
       spdesr: [
         'It stands for the elemental for a short hook.',
-        'For example, 乾 is 金, 離 is 火, etc.'
+        'For example, 乾 is 金, 離 is 火, etc. The term',
+        '"generic" means that it represent the whole',
+        '卦宮, rather that the external or internal',
+        'short hook within a long hook.'
+      ]
+    },
+    {
+      sprpn: 'eshbt',
+      sprfn: 'External short hook bean trunk',
+      spdesr: [
+        'It stands for the trunk for the external',
+        'short hook. For example, the ~ of 乾午卦宮',
+        'is 甲.'
+      ]
+    },
+    {
+      sprpn: 'ishbt',
+      sprfn: 'External short hook bean trunk',
+      spdesr: [
+        'It stands for the trunk for the external',
+        'short hook. For example, the ~ of 乾午卦宮',
+        'is 壬.'
       ]
     }
   ]
