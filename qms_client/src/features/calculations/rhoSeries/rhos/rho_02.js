@@ -1,5 +1,12 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import {
+  utGetIdx
+} from '../../utils/util_01';
+import {
+  gshaltOrder,
+  gshoriOrder
+} from './rho_01';
 
 const lhParagraph = R.join(',', [
   '乾為天,天風姤,天山遯,天地否,風地觀,山地剝,火地晉,地風升',
