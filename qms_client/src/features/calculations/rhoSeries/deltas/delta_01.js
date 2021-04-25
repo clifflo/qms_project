@@ -1,20 +1,14 @@
 import * as R from 'ramda';
 import {
   getRcxt2ByLhn
-} from '../rhos/rho_02';
+} from '../rhos/rho_03';
 import {
   getRcxt4ByLhn
-} from '../rhos/rho_04';
+} from '../rhos/rho_05';
 import {
   decimalToBinary
 } from '../../utils/util_02';
 
-/**
-  * Get cross strike set.
-  * @name crsts
-  * @param boklhn - Book long hook, 本卦
-  * @param chelhn - Cheese long hook, 之卦
-  */
 export const getCrsts = (boklhn, chelhn) => {
 
   const bkrcxt_2 = getRcxt2ByLhn(boklhn);
