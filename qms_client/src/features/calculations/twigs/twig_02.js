@@ -1,7 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
-
 export const elrs = [
   'Draw',
   'Fruit',
@@ -10,41 +9,43 @@ export const elrs = [
   'Seed'
 ];
 
-export const getElre = (source, target) => {
+export const getElre = (selem, telem) => {
 
-  if(R.isNil(source)){
+  if(R.isNil(selem)){
     throw new Error(
-      'Source elemental cannot be nil.');
+      'SELEM cannot be nil.');
   }
 
-  if(R.isNil(target)){
+  if(R.isNil(telem)){
     throw new Error(
-      'Target elemental cannot be nil.');
+      'TELEM cannot be nil.');
   }
 
-  if(!RA.isString(source)){
-    throw new Error('Source elemental must be string.');
-  }
-
-  if(!RA.isString(target)){
-    throw new Error('Target elemental must be string.');
-  }
-
-  if(!isValidElem(source)){
+  if(!RA.isString(selem)){
     throw new Error(
-      `${source} is not a valid source elemental.`);
+      'SELEM must be string.');
   }
 
-  if(!isValidElem(target)){
+  if(!RA.isString(telem)){
     throw new Error(
-      `${target} is not a valid target elemental.`);
+      'TELEM must be string.');
+  }
+
+  if(!isValidElem(selem)){
+    throw new Error(
+      `${selem} is not a valid SELEM.`);
+  }
+
+  if(!isValidElem(telem)){
+    throw new Error(
+      `${telem} is not a valid TELEM.`);
   }
 
   const sourceIndex = utGetIdx(
-    source, elemOrder);
+    selem, elemOrder);
 
   const targetIndex = utGetIdx(
-    target, elemOrder);
+    telem, elemOrder);
 
   if(sourceIndex == -1){
     throw new Error(
@@ -65,7 +66,7 @@ export const isValidElrl = elrl => {
   return R.includes(elrl, elrs);
 }
 
-export function getElem(twig){
+export const getElem = twig => {
 
   const getBelem = branch => {
 
@@ -95,30 +96,5 @@ export function getElem(twig){
   else {
     throw new Error(
       `'${twig}' is not a valid twig.`);
-  }
-}
-
-export const getTrunkLiturgy = trunk => {
-  return (idxOfTrunk(trunk) % 2) == 0 ?
-    'Alpha': 'Omega';
-}
-
-export const getBranchLiturgy = (branch) => {
-  return (idxOfBranch(branch) % 2) == 0 ?
-    'Alpha': 'Omega';
-}
-
-export const getTwigLiturgy = (twig) => {
-
-  if(isValidTrunk(twig)){
-    const trunk = twig;
-    return getTrunkLiturgy(trunk);
-  }
-  else if(isValidBranch(twig)){
-    const branch = twig;
-    return getBranchLiturgy(branch);
-  }
-  else {
-    throw new Error(`${twig} is not a valid twig.`);
   }
 }
