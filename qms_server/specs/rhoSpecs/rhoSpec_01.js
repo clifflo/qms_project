@@ -15,7 +15,8 @@ const s_fbbrs = {
   spdesr: [
     'As of 乾, we will have the branches',
     'starting from the bottom cross with',
-    '子寅辰午申戌, which is the [fbbrs].'
+    '子, so 子 is the [bbssb]. Then ~ would',
+    'be 子寅辰午申戌.'
   ],
   sploc: 'rho_01',
   spprms: [
@@ -85,13 +86,64 @@ const s_bkntos = {
         'short hook. For example, the ~ of 乾午卦宮',
         'is 壬.'
       ]
+    },
+    {
+      sprpn: 'ebbrs',
+      sprfn: 'External bean branch series',
+      spdesr: [
+        'As of 乾午卦宮, it has the [fbbrs] of '
+        '子寅辰午申戌. So 子寅辰 is the ~.'
+      ]
+    },
+    {
+      sprpn: 'ibbrs',
+      sprfn: 'Internal bean branch series',
+      spdesr: [
+        'As of 乾午卦宮, it has the [fbbrs] of '
+        '子寅辰午申戌. So 午申戌 is the ~.'
+      ]
+    }
+  ]
+}
+
+const s_rhocs_1 = {
+  spals: 'rhocs_1',
+  spgtr: 'getRhocs_1',
+  spname: 'Rho context 1',
+  sploc: 'rho_02',
+  spprms: [
+    {
+      sprpn: 'eshalt',
+      sprfn: 'External short hook alternative',
+      spdesr: [
+        'For example, 無妄卦 has a ~ of 天.'
+      ],
+      sploc: 'rho_03',
+      sptype: 'C'
+    },
+    {
+      sprpn: 'ishalt',
+      sprfn: 'External short hook alternative',
+      spdesr: [
+        'For example, 無妄卦 has a ~ of 雷.'
+      ]
+    },
+    {
+      sprpn: 'eshidx',
+      sprfn: 'External short hook index',
+      spdesr: [
+        'For example, 無妄卦 has a [eshalt] of 雷.',
+        'And for 雷, by the '
+      ]
     }
   ]
 }
 
 const rhoSpec_01 = [
   s_fbbrs,
-  s_rawntos
+  s_rawntos,
+  s_bkntos,
+  s_rhocs_1
 ]
 
 module.exports = rhoSpec_01;

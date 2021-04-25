@@ -1,121 +1,79 @@
-import {
-  isValidBranch,
-  idxOfBranch,
-  itemOfElem,
-  itemOfBranch,
-  getElem,
-  idxOfElem,
-  itemOfTrunk
-} from './twig_01';
-import * as R from 'ramda';
+export const getChbs = tBranch => {
 
-// Branch Small Compound
-// 地支六合
-const getBscprSet = () => {
+  const tBridx = idxOfBranch(tBranch);
+  const moiFn = (movement, elem) => {
 
-  const mapFn = i => {
-    const sBranch = itemOfBranch(i);
-    const tBridx =  13 - i;
-    const tBranch = itemOfBranch(tBridx);
-
-    const sBelem = getElem(sBranch);
-    const sBelemIdx = idxOfElem(sBelem);
-
-    // Small Compound Elemental
-    const scelemSet = '土木火金水火';
-    const scelem = scelemSet[i - 1];
-    return {
-      scpbrs: [sBranch, tBranch],
-      scelem
+    try{
+      const chsx = tBridx + movement;
+      const chosen = itemOfChosen(chsx);
+      return chosen
+    }
+    catch(err){
+      console.error(err);
+      throw new Error(
+        'Moi function of get the source branch of '
+        + 'Chosen of Branch is error.');
     }
   }
 
-  try {
-    const _brscSet = R.map(mapFn, R.range(1, 7));
-    return _brscSet;
+  try{
+    const result = R.mapObjIndexed(moiFn, cbaml);
+    return result;
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get Branch Compound Set.');
+      'Cannot get the source branch of '
+      + 'Chosen of Branch.');
   }
+
 }
 
-export const bscprSet = getBscprSet();
+// Chosen Of Branch from source element
+// returning target branch as a table
+const buildCbtt = () => {
 
-export const getBscrt = bscom => {
+  try{
 
-  if(R.isNil(bscom)){
-    throw new Error(
-      'BSCOM should not be nil.');
-  }
+    const getChbt_c = R.curry(getChbt);
 
-  if(!isValidBranch(bscom)){
-    throw new Error(
-      `${bscom} is not a valid branch.`);
-  }
-
-  const findFn = bscpr => {
-
-    const cBscpr = R.includes(
-      bscom, bscpr.scpbrs);
-
-    if(R.isNil(cBscpr)){
-      throw new Error(
-        'The checked BSCPR should not be nil.');
+    const mapFn = elem => {
+      return R.map(getChbt_c(elem), chosenOrder);
     }
 
-    return cBscpr;
-  }
-
-  const oppoFn = mBscpr => {
-
-    if(R.isNil(mBscpr)){
-      throw new Error(
-        'Matched BSCPR should not be nil.')
-    }
-
-    const opponent = R.without(
-      [bscom], mBscpr.scpbrs)[0];
-
-    return {
-      bscpo: opponent,
-      scelem: mBscpr.scelem
-    }
-  }
-
-  try {
-    const _bscrt = R.compose(
-      oppoFn,
-      R.find(findFn))
-    (bscprSet);
-
-    return _bscrt;
+    const result = R.map(mapFn, elemOrder);
+    return result;
   }
   catch(err){
     console.error(err);
-    throw new Error(
-      'Cannot get BSCRT.');
+    throw new Error('Cannot build Chosen for '
+    + 'Branch as a table.');
   }
 }
 
-// Trunk Small Compound
-// 天干五合
-const getTkscSet = () => {
+export const cbtt = buildCbtt();
 
-  const mapFn = i => {
-    const celemIdx = i - 1;
-    const celem = itemOfElem(celemIdx);
-    const sTrunk = itemOfTrunk(i);
-    const tTrunk = itemOfTrunk(i + 5);
+// Chosen Of Branch from target branch returning
+// source element as a table
+const buildCbst = () => {
 
+  const mapFn = tBranch => {
+    const chbs = getChbs(tBranch);
     return {
-      trunks: [sTrunk, tTrunk],
-      celem
+      tBranch,
+      chbs
     }
   }
 
-  return R.map(mapFn, R.range(0, 5));
+  try{
+    const result = R.map(mapFn, branchOrder);
+    return result;
+  }
+  catch(err){
+    throw new Error(
+      'Cannot build Chosen Of Branch '
+      + 'returning source element as a table.')
+  }
 }
 
-export const tkscSet = getTkscSet();
+export const cbst = buildCbst();

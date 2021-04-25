@@ -1,127 +1,98 @@
-import {
-  idxOfBranch,
-  idxOfTrunk,
-  itemOfTrunk,
-  itemOfBranch,
-  isValidTrunk,
-  isValidBranch
-} from './twig_01';
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import {
+  item,
+  utGetIdx
+} from '../utils/util_01';
+import {
+  isValidBranch,
+  isValidTrunk,
+  isValidElem,
+  itemOfBranch,
+  idxOfBranch,
+  idxOfTrunk,
+  getElem,
+  elemOrder,
+  branchOrder
+} from './twig_01';
 
-export const getBpse = betapsi => {
+const chosenSentence =
+  '長生,沐浴,冠帶,臨官,帝旺,衰,病,長死,墓,絕,胎,養';
 
-  const bptk = betapsi[0];
-  const bpbr = betapsi[1];
+export const chosenOrder =
+  R.split(',', chosenSentence);
 
-  if(!isValidTrunk(bptk)){
+export const isValidChosen = chosen =>
+  R.includes(chosen, chosenOrder);
+
+export const idxOfChosen = chosen => {
+
+  if(R.isNil(chosen)){
     throw new Error(
-      `${bptk} is not a valid trunk for betapsi.`);
+      'Chosen should not be nil.');
   }
 
-  if(!isValidBranch(bpbr)){
+  if(!RA.isString(chosen)){
     throw new Error(
-      `${bpbr} is not a valid branch for betapsi.`
-    )
+      'Chosen must be a string.');
   }
 
-  const difference =
-    idxOfBranch(branch) - idxOfTrunk(trunk);
-
-  const isValidMatch = (difference % 2) == 0
-  if(!isValidMatch){
+  if(!isValidChosen(chosen)){
     throw new Error(
-      'Betapsi not valid due to wrong match '
-      + 'of BPTK and BPBR.'
-    )
-  }
-
-  // Betapsi Series Lead Branch
-  const bslb = itemOfBranch(difference);
-
-  // Betapsi Series Full Name
-  const bsfn = `甲${bslb}旬`;
-
-  // Betapsi Series Void A
-  const bsva = itemOfBranch(difference - 2);
-
-  // Betapsi Series Void B
-  const bsvb = itemOfBranch(difference - 1);
-
-  // Betapsi Series Void List
-  const bsvl = [bsva, bsvb];
-
-  return {
-    bsfn,
-    bsvl
-  }
-}
-
-// Get Betapsi Index
-export const idxOfBtp = (betapsi) => {
-
-  try{
-    const bsfn = getBpse(betapsi).bsfn;
-    const bridx = idxOfBranch(bsfn[1]);
-    const tkidx = idxOfTrunk(betapsi[0]);
-
-    const bpseIdx = ((12 - bridx) % 12) / 2;
-    const bpidx = (bpseIdx * 10) + tkidx;
-    return bpidx;
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      'Cannot get Betapsi Index.');
-  }
-}
-
-export const itemOfBtp = idx => {
-
-  if(R.isNil(idx)){
-    throw new Error(
-      'Betapsi index is nil.'
-    )
-  }
-
-  if(!RA.isNumber(idx)){
-    throw new Error(
-      'Betapsi index must be a number.'
-    );
-  }
-
-  if(idx > 59){
-    throw new Error(
-      'Betapsi index should not be bigger than 59.'
-    )
-  }
-
-  if(idx < 0){
-    throw new Error(
-      'Betapsi index should not be smaller than 0.'
-    )
+      'The chosen is not valid.');
   }
 
   try{
-    const tenthIdx = Math.floor(idx / 10);
-
-    const bplbi = 12 - (tenthIdx * 2);
-
-    // Trunk Index
-    const tkidx = idx % 10;
-    const trunk = itemOfTrunk(tkidx);
-
-    // Branch Index
-    const bridx =  bplbi + tkidx;
-
-    const branch = itemOfBranch(bridx);
-
-    return trunk + branch;
+    const chidx = utGetIdx(chosen, chosenOrder);
+    return chidx;
   }
   catch(err){
     console.error(err);
-    throw new Error('Cannot get Betapsi item.');
+    throw new Error('Cannot get chosen index.');
   }
 
+}
+
+export const itemOfChosen = chsx => {
+  if(R.isNil(chsx)){
+    throw new Error(
+      'Chosen index should not be nil.');
+  }
+  return item(chosenOrder, chsx);
+}
+
+// Movement List for Chosen for branch
+const cbaml = {
+  '金': 7,
+  '木': 1,
+  '水': 4,
+  '火': 10,
+  '土': 10
+};
+
+// This is the chosen between branches.
+// Using 圖解六壬大全 Page 106, I would define
+// the column as source, the row as the target.
+// Chinese is 立生運.
+// Example: 申金立墓於丑。
+// The branch and elemental must be written together
+// for the source.
+export const getChbt = (sElem, chosen) => {
+
+  try{
+    const movement = cbaml[sElem];
+    const chsx = idxOfChosen(chosen);
+    const tBridx = chsx - cbaml[sElem];
+    const tBranch = itemOfBranch(tBridx);
+    return {
+      sElem,
+      chosen,
+      tBranch
+    }
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get target branch for chosen.');
+  }
 
 }

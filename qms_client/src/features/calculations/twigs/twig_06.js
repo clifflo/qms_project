@@ -1,86 +1,71 @@
-import * as R from 'ramda';
-import {
-  itemOfBranch,
-  getElem
-} from './twig_1';
+export const itemOfBtp = idx => {
 
-// Branch Large Compound Set
-// 地支三合
-const getBrlcs = () => {
+  if(R.isNil(idx)){
+    throw new Error(
+      'Betapsi index is nil.'
+    )
+  }
 
-  const mapFn = i => {
+  if(!RA.isNumber(idx)){
+    throw new Error(
+      'Betapsi index must be a number.'
+    );
+  }
 
-    // Branch Index
-    const bridx_2 = i * 3;
-    const bridx_1 = bridx_2 - 4;
-    const bridx_3 = bridx_2 + 4;
-    const brixs = [bridx_1, bridx_2, bridx_3];
-    const blcms = R.compose(
-      R.join(''),
-      R.map(itemOfBranch))
-    (brixs);
+  if(idx > 59){
+    throw new Error(
+      'Betapsi index should not be bigger than 59.'
+    )
+  }
 
-    // Branch large compound element
-    const blcel = getElem(branches[1]);
-    return {
-      blcbs,
-      blcel
-    }
+  if(idx < 0){
+    throw new Error(
+      'Betapsi index should not be smaller than 0.'
+    )
   }
 
   try{
-    return R.map(mapFn, R.range(0, 4));
+    const tenthIdx = Math.floor(idx / 10);
+
+    const bplbi = 12 - (tenthIdx * 2);
+
+    // Trunk Index
+    const tkidx = idx % 10;
+    const trunk = itemOfTrunk(tkidx);
+
+    // Branch Index
+    const bridx =  bplbi + tkidx;
+
+    const branch = itemOfBranch(bridx);
+
+    return trunk + branch;
   }
   catch(err){
     console.error(err);
-    throw new Error(
-      'Cannot get branch big compound.'
-    )
+    throw new Error('Cannot get Betapsi item.');
   }
+
+
 }
 
-export const brlcs = getBrlcs();
 
-// ELFTB stands for get element from triple branches
-// TRBRS stands for triple branches
-export const getElftb = trbrs => {
-
-  const mapFn = brlcd => {
-    const
-  }
-}
-
-// Meeting Set
-// 地支三會
-const getMtigSet = () => {
+// Trunk Small Compound
+// 天干五合
+const getTkscSet = () => {
 
   const mapFn = i => {
-
-    // 'j' is the starting position with a step
-    // of three.
-
-    const j = i * 3;
-    const bridx_1 = j + 2;
-    const bridx_2 = j + 3;
-    const bridx_3 = j + 4;
-    const brixs = [bridx_1, bridx_2, bridx_3];
-    const branches = R.map(itemOfBranch, brixs);
-    const melem = getElem(branches[1]);
+    const celemIdx = i - 1;
+    const celem = itemOfElem(celemIdx);
+    const sTrunk = itemOfTrunk(i);
+    const tTrunk = itemOfTrunk(i + 5);
 
     return {
-      branches,
-      melem
+      trunks: [sTrunk, tTrunk],
+      celem
     }
   }
 
-  try {
-    return R.map(mapFn, R.range(0, 4));
-  }
-  catch(err){
-    throw new Error(
-      'Cannot get Meeting Set.'
-    )
-  }
+  return R.map(mapFn, R.range(0, 5));
 }
 
-export const mtigSet = getMtigSet();
+export const tkscSet = getTkscSet();

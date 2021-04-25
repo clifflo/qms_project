@@ -72,7 +72,6 @@ export const getBkntos = () => {
       gshele,
       eshbt,
       ishbt,
-      bbssb,
       ebbrs,
       ibbrs
     };

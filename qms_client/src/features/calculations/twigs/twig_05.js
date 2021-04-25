@@ -1,140 +1,77 @@
-import * as R from 'ramda';
 import {
+  idxOfBranch,
+  idxOfTrunk,
+  itemOfTrunk,
   itemOfBranch,
-  getElem,
+  isValidTrunk,
   isValidBranch
 } from './twig_01';
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 
-export const hunterSet = {
-  '寅': '巳',
-  '巳': '申',
-  '申': '寅',
-  '丑': '戌',
-  '戌': '未',
-  '未': '丑',
-  '卯': '子',
-  '子': '卯',
-  '辰': '辰',
-  '午': '午',
-  '酉': '酉',
-  '亥': '亥'
-}
+export const getBpse = betapsi => {
 
-// BBDRS is Branch bidirectional reaction set
-// BBDRO is Branch bidirectional reaction oppoent
-// BBDRM is Branch bidirectional reaction myself
-const getBbdro_n = (bbdrs, bbdrm) => {
+  const bptk = betapsi[0];
+  const bpbr = betapsi[1];
 
-  if(R.isNil(bbdrm)){
+  if(!isValidTrunk(bptk)){
     throw new Error(
-      'BBDRM should not be nil.');
+      `${bptk} is not a valid trunk for betapsi.`);
   }
 
-  if(!isValidBranch(bbdrm)){
+  if(!isValidBranch(bpbr)){
     throw new Error(
-      `${bbdrm} is not a valid branch for BBDRM.`);
-  }
-
-  const findFn = bbdre => {
-    const mBbdre = R.includes(bbdrm, bbdre);
-    if(R.isNil(mBbdre)){
-      throw new Error(
-        'The matched BBDRE should not be nil.');
-    }
-    return mBbdre;
-  }
-
-  const oppoFn = bbdre => {
-    const opponent = R.without(
-      [bbdrm], bbdre)[0];
-    return opponent;
-  }
-
-  try{
-
-    const bbdro = R.compose(
-      oppoFn,
-      R.find(findFn))
-    (bbdrs)
-
-    if(R.isNil(bbdro)){
-      throw new Error(
-        `BBDRO should not be nil for ${bbdrm}.`)
-    }
-
-    if(!isValidBranch(bbdro)){
-      throw new Error(
-        `${bbdro} is not a valid branch for BBDRO`);
-    }
-
-    return bbdro;
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      `Cannot get BBDRO for ${bbdrm}.`);
-  }
-}
-
-const getBbdro_c = R.curry(getBbdro_n);
-
-const getFlushSet = () => {
-
-  const mapFn = (i) => {
-    const sBranch = itemOfBranch(i);
-    const tBranch = itemOfBranch(i + 6);
-    return [sBranch, tBranch];
-  }
-
-  return R.map(mapFn, R.range(0, 6));
-}
-
-export const flushSet = getFlushSet();
-
-export const getFlhop =
-  getBbdro_c(flushSet);
-
-const getHitSet = () => {
-
-  const mapFn = (i) => {
-    const sBranch = itemOfBranch(i);
-    const tBranch = itemOfBranch(7 - i);
-    return [sBranch, tBranch];
-  }
-
-  return R.map(mapFn, R.range(0, 6));
-}
-
-export const hitSet = getHitSet();
-
-export const getHitop =
-  getBbdro_c(hitSet);
-
-const getPauseSet = () => {
-
-  const mapFn = i => {
-
-    const sBridx = i * 2;
-    const tBridx = sBridx - 3;
-
-    const sBranch = itemOfBranch(sBridx);
-    const tBranch = itemOfBranch(tBridx);
-    return [sBranch, tBranch];
-  }
-
-  try{
-    return R.map(mapFn, R.range(0, 6));
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      'Cannot get bow hunter set.'
+      `${bpbr} is not a valid branch for betapsi.`
     )
   }
 
+  const difference =
+    idxOfBranch(branch) - idxOfTrunk(trunk);
+
+  const isValidMatch = (difference % 2) == 0
+  if(!isValidMatch){
+    throw new Error(
+      'Betapsi not valid due to wrong match '
+      + 'of BPTK and BPBR.'
+    )
+  }
+
+  // Betapsi Series Lead Branch
+  const bslb = itemOfBranch(difference);
+
+  // Betapsi Series Full Name
+  const bsfn = `甲${bslb}旬`;
+
+  // Betapsi Series Void A
+  const bsva = itemOfBranch(difference - 2);
+
+  // Betapsi Series Void B
+  const bsvb = itemOfBranch(difference - 1);
+
+  // Betapsi Series Void List
+  const bsvl = [bsva, bsvb];
+
+  return {
+    bsfn,
+    bsvl
+  }
 }
 
-export const pauseSet = getPauseSet();
+// Get Betapsi Index
+export const idxOfBtp = (betapsi) => {
 
-export const getPseop =
-  getBbdro_c(pauseSet);
+  try{
+    const bsfn = getBpse(betapsi).bsfn;
+    const bridx = idxOfBranch(bsfn[1]);
+    const tkidx = idxOfTrunk(betapsi[0]);
+
+    const bpseIdx = ((12 - bridx) % 12) / 2;
+    const bpidx = (bpseIdx * 10) + tkidx;
+    return bpidx;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get Betapsi Index.');
+  }
+}

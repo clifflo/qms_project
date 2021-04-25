@@ -1,110 +1,79 @@
 import * as R from 'ramda';
-import * as RA from 'ramda-adjunct';
 import {
-  isValidAnimal,
-  isValidMonth,
-  animalOrder,
-  monthOrder,
-  idxOfAnimal,
-  idxOfMonth,
-  isValidSeason,
-  idxOfSeason,
-  seasonOrder
-} from './twig_07';
-import {
-  isValidBranch,
-  isValidTrunk,
-  idxOfBranch,
-  idxOfTrunk,
-  branchOrder,
-  trunkOrder
+  itemOfBranch,
+  getElem,
+  isValidBranch
 } from './twig_01';
 
+export const hunterSet = {
+  '寅': '巳',
+  '巳': '申',
+  '申': '寅',
+  '丑': '戌',
+  '戌': '未',
+  '未': '丑',
+  '卯': '子',
+  '子': '卯',
+  '辰': '辰',
+  '午': '午',
+  '酉': '酉',
+  '亥': '亥'
+}
 
-// Branch animal map, 地支和生肖之對應
-const getBrhanm = () => {
+// BBDRS is Branch bidirectional reaction set
+// BBDRO is Branch bidirectional reaction oppoent
+// BBDRM is Branch bidirectional reaction myself
+const getBbdro_n = (bbdrs, bbdrm) => {
 
-  const mapFn = idx => {
+  if(R.isNil(bbdrm)){
+    throw new Error(
+      'BBDRM should not be nil.');
+  }
 
-    const branch = branchOrder[idx];
-    const animal = animalOrder[idx];
+  if(!isValidBranch(bbdrm)){
+    throw new Error(
+      `${bbdrm} is not a valid branch for BBDRM.`);
+  }
 
-    return [branch, animal];
+  const findFn = bbdre => {
+    const mBbdre = R.includes(bbdrm, bbdre);
+    if(R.isNil(mBbdre)){
+      throw new Error(
+        'The matched BBDRE should not be nil.');
+    }
+    return mBbdre;
+  }
+
+  const oppoFn = bbdre => {
+    const opponent = R.without(
+      [bbdrm], bbdre)[0];
+    return opponent;
   }
 
   try{
-    return R.compose(
-      R.fromPairs,
-      R.map(mapFn))
-    (R.range(0, 12));
+
+    const bbdro = R.compose(
+      oppoFn,
+      R.find(findFn))
+    (bbdrs)
+
+    if(R.isNil(bbdro)){
+      throw new Error(
+        `BBDRO should not be nil for ${bbdrm}.`)
+    }
+
+    if(!isValidBranch(bbdro)){
+      throw new Error(
+        `${bbdro} is not a valid branch for BBDRO`);
+    }
+
+    return bbdro;
   }
   catch(err){
     console.error(err);
-    throw new Error('Cannot get BCHANM');
+    throw new Error(
+      `Cannot get BBDRO for ${bbdrm}.`);
   }
 }
 
-export const brhanm = getBrhanm();
-
-export const branmi = R.invertObj(brhanm);
-
-// Branch month map
-const getBrmthm = () => {
-
-  const mapFn = idx => {
-
-    const branch = branchOrder[idx];
-    const month = monthOrder[idx];
-
-    return [branch, month];
-  }
-
-  try{
-    return R.compose(
-      R.fromPairs,
-      R.map(mapFn))
-    (R.range(0, 12));
-  }
-  catch(err){
-    console.error(err);
-    throw new Error('Cannot get BRMTHM');
-  }
-}
-
-export const brmthm = getBrmthm();
-
-export const brmhmi = R.invertObj(brmthm);
-
-export const idxOfGtwig = gtwig => {
-
-  if(R.isNil(gtwig)){
-    throw new Error(
-      'Generalized twig should not be nil.');
-  }
-
-  if(!RA.isString(gtwig)){
-    throw new Error(
-      'Generalized twig must be a string.');
-  }
-
-  if(isValidBranch(gtwig)){
-    return idxOfBranch(gtwig);
-  }
-  else if(isValidAnimal(gtwig)){
-    return idxOfAnimal(gtwig);
-  }
-  else if(isValidTrunk(gtwig)){
-    return idxOfTrunk(gtwig);
-  }
-  else if(isValidMonth(gtwig)){
-    return idxOfMonth(gtwig);
-  }
-  else if(isValidSeason(gtwig)){
-    return idxOfSeason(gtwig);
-  }
-  else {
-    throw new Error(
-      `${gtwig} is not a valid `
-      + 'generalized twig.');
-  }
-}
+const getBbdro_c = R.curry(getBbdro_n);

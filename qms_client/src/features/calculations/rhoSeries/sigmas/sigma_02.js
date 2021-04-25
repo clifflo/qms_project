@@ -1,12 +1,12 @@
 import { sgcxts_2 } from './sigma_01';
 import {
   getBhdcvs
-} from '../../twigs/twig_09';
+} from '../../twigs/twig_13';
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   idxOfGtwig
-} from '../../twigs/twig_07';
+} from '../../twigs/twig_11';
 
 export const getSgcxts_3 = () => {
 

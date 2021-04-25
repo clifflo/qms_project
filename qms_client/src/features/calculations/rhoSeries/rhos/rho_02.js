@@ -20,6 +20,7 @@ const lhParagraph = R.join(',', [
   '澤水困,澤地萃,澤山咸,水山蹇,地山謙,雷山小過,雷澤歸妹'
 ]);
 
+// Generic short hook alternative index
 const getGshalx = gshalt => {
 
   if(R.isNil(gshalt)){
