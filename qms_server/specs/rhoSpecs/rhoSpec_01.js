@@ -2,7 +2,7 @@ const s_rawntos = {
   spals: 'rawntos',
   spname: 'Raw nattos',
   spdesr: [
-    'It stands for the 納甲歌.'
+    'It stands for the raw 納甲歌.'
   ],
   sploc: 'rho_01',
   sptype: 'C'
@@ -34,6 +34,35 @@ const s_fbbrs = {
       sppdes: [
         'As of 乾, we will have a clockwise one.',
         '順佈 means clockwise and 逆佈 is anticlockwise.'
+      ]
+    }
+  ]
+}
+
+const s_bkntos = {
+  spals: 'bkntos',
+  spname: 'Baked nattos',
+  spdesr: [
+    'It stands for the baked version of nattos.',
+    'That means the starting bean branch and the',
+    'trunk for the short hook in both the external',
+    'and the internal case are both defined.'
+  ],
+  sprtps: [
+    {
+      sprpn: 'gshori',
+      sprfn: 'Generic short hook original name',
+      spdesr: [
+        'It stands for the original name of a short',
+        'hook, i.e. one of the 坤震坎兌艮離巽乾.'
+      ]
+    },
+    {
+      sprpn: 'gshele',
+      sprfn: 'Generic short hook elemental',
+      spdesr: [
+        'It stands for the elemental for a short hook.',
+        'For example, 乾 is 金, 離 is 火, etc.'
       ]
     }
   ]

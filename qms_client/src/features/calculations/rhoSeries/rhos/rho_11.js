@@ -1,133 +1,200 @@
 import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 import {
-  trunkOrder
+  utItem,
+  utGetIdx
+} from '../../utils/util_01';
+import {
+  trunkOrder,
+  isValidTrunk
 } from '../../twigs/twig_01';
 import {
-  rhocs_1
-} from './rho_01';
-import {
   getRcxtvByLhn
-} from './rho_02';
+} from './rho_02'
 import {
-  getRpcstByRdtr
-} from './rho_07';
-import {
-  rhocs_7
-} from './rho_09';
+  rhocs_5,
+  rfcis
+} from './rho_05';
 
-const getRhocs_8 = () => {
+const getRhocs_6 = () => {
 
-  const mapFn_1n =
-    (lhcres, rhfchs, rhcros) => {
+  const mapFn = rhocxt => {
 
-    if(R.isNil(lhcres)){
+    // Non unique Rho focus Chinee set
+    const ncfcs = R.map(
+      R.prop('rfchi'), rhocxt.lhcres);
+
+    if(R.isNil(ncfcs)){
       throw new Error(
-        'LHCRES should not be nil for MAPFN_1');
+        'NCFCS should not be nil.');
     }
 
-    if(R.isNil(rhcros)){
-      throw new Error(
-        'RHCROS should not be nil for MAPFN_1.');
-    }
+    // Unique cross focus Chinese set
+    const ucfcs = R.uniq(ncfcs);
 
-    if(R.isNil(rhfchs)){
-      throw new Error(
-        'RHFCHS should not be nil for MAPFN_1.');
-    }
+    // Long Hook with hidden
+    const isLhhd = ucfcs.length < 5;
 
-    const lhcros = lhcres[rhcros.lhcdwi];
+    // Rho hidden hook focus Chinese set
+    const rhfchs = R.difference(rfcis, ucfcs);
 
-    if(R.isNil(lhcros)){
-      throw new Error(
-        'LHCROS should not be nil for MAPFN_1.');
-    }
+    if(isLhhd){
 
-    const rfchi = rhcros.rfchi;
-
-    if(R.isNil(rfchi)){
-      throw new Error(
-        'RFCHI should not be nil for MAPFN_1.');
-    }
-
-    // Is rho boxed cross, i.e. a cross
-    // with a hidden part.
-    const isRbxcr = R.includes(
-      rfchi, rhfchs);
-
-    if(isRbxcr){
-      const rhidcr = rhcros;
-      return {
-        isRbxcr,
-        ...lhcros,
-        rhidcr
-      }
-    }
-    else {
-      return {
-        isRbxcr,
-        ...lhcros
-      }
-    }
-  }
-
-  const mapFn_1c = R.curry(mapFn_1n);
-
-  const mapFn_2 = rhocxt => {
-
-    if(!rhocxt.isLhhd){
-      return rhocxt;
-    }
-    else {
-
-      const rhcres = rhocxt.rhcres;
-      const rhfchs = rhocxt.rhfchs;
+      // Rho Head Long Hook
+      const rhcres = R.find(
+        R.propEq('lhname', '純' + rhocxt.rhshn),
+        rhocs_5).lhcres;
 
       if(R.isNil(rhcres)){
         throw new Error(
-          'RHCRES should not be nil for MAPFN_2.');
-      }
-
-      if(R.isNil(rhfchs)){
-        throw new Error(
-          'RHFCHS should not be nil for MAPFN_2.');
-      }
-
-      const lhcres =
-        R.map(
-          mapFn_1c(rhocxt.lhcres)(rhfchs),
-          rhcres);
-
-      if(R.isNil(lhcres)){
-        throw new Error(
-          'LHCRES should not be nil for MAPFN_2.');
+          'Cannot find the Rho Head Long Hook. '
+          + `${rhocxt.rhHook} may not be a valid `
+          + 'Rho Head Hook Name.')
       }
 
       return {
         ...rhocxt,
-        lhcres
+        isLhhd,
+        rhfchs,
+        rhcres
       }
     }
+    else {
+      return {
+        ...rhocxt,
+        isLhhd
+      }
+    }
+
   }
 
-  try {
-    return R.map(mapFn_2, rhocs_7);
-  }
-  catch(err){
-    throw new Error(
-      'Cannot get RHOCS_8');
-  }
+  return R.map(mapFn, rhocs_5)
 }
 
-export const rhocs_8 = getRhocs_8();
+export const rhocs_6 = getRhocs_6();
 
-export const getRcxt8ByLhn = lhname => {
+export const getRcxt6ByLhn = lhname => {
+
   try {
     return getRcxtvByLhn(
-      lhname, rhocs_8, 8);
+      lhname, rhocs_6, 6);
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get RHOCXT_8 by long hook name.')
+      'Cannot get RHOCXT_6 by long hook name.')
   }
+}
+
+export const rpldo =
+  R.compose(
+    R.reverse,
+    R.map(R.concat('丙')),
+    R.split(','))
+  ('青龍,朱雀,勾陳,螣蛇,白虎,玄武');
+
+// Rho Paladin Start Position Map
+const rpspm = {
+  '甲': '丙青龍',
+  '乙': '丙青龍',
+  '丙': '丙朱雀',
+  '丁': '丙朱雀',
+  '戊': '丙勾陳',
+  '己': '丙螣蛇',
+  '庚': '丙白虎',
+  '辛': '丙白虎',
+  '壬': '丙玄武',
+  '癸': '丙玄武'
+}
+
+// Rho Paladin Cross Set List
+const getRpcsl = () => {
+
+  const mapFn_1n = (startIdx, distance) => {
+
+    // Rho paladin in cross
+    const rpicr = utItem(
+      rpldo, startIdx + distance);
+
+    return rpicr;
+  }
+
+  const mapFn_1c = R.curry(mapFn_1n);
+
+  const mapFn_2 = idx => {
+
+    // Rho paladin day trunk
+    const rpdtr = utItem(trunkOrder, idx);
+
+    if(R.isNil(rpdtr)){
+      throw new Error(
+        'RPDTR should not be nil.')
+    }
+
+    const rpstp = rpspm[rpdtr];
+
+    // Rho Paladin Index
+    const rpdix = utGetIdx(rpstp, rpldo) + 1;
+
+    if(R.isNil(rpdix)){
+      throw new Error(
+        'RPDIX should not be nil.');
+    }
+
+    // Rho paladin cross set
+    const rpcst = R.map(
+      mapFn_1c(rpdix),
+      R.range(0, 6));
+
+    return {
+      rpdtr,
+      rpcst
+    };
+  }
+
+  try {
+    return R.map(mapFn_2, R.range(0, 10));
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get RPCSL');
+  }
+}
+
+export const rpcsl = getRpcsl();
+
+export const getRpcstByRdtr = rdtr => {
+
+  if(R.isNil(rdtr)){
+    throw new Error(
+      'RDTR should not be nil.');
+  }
+
+  if(!RA.isString(rdtr)){
+    throw new Error(
+      'RDTR must be a string.');
+  }
+
+  if(!isValidTrunk(rdtr)){
+    throw new Error(
+      `${rdtr} is not a valid trunk for RDTR.`);
+  }
+
+  const rpcbd = R.find(
+    R.propEq('rpdtr', rdtr),
+    rpcsl);
+
+  const rpcst = rpcbd.rpcst;
+
+  if(R.isNil(rpcst)){
+    throw new Error(
+      'RPCST should not be nil.');
+  }
+
+  if(!RA.isArray(rpcst)){
+    throw new Error(
+      'RPCST must be an array.');
+  }
+
+  return rpcst;
 }

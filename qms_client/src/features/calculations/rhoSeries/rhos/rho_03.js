@@ -6,7 +6,7 @@ import {
 import {
   rhocs_1,
   nattos
-} from './rho_01';
+} from './rho_02';
 import {
   getElem
 } from '../../twigs/twig_01';

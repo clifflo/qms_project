@@ -1,176 +1,109 @@
-import * as R from 'ramda';
-import * as RA from 'ramda-adjunct';
-import {
-  idxOfBranch,
-  trunkOrder
-} from '../../twigs/twig_01';
-import {
-  binaryToDecimal,
-  octalToDecimal
-} from '../../utils/util_02';
-import {
-  rhocs_1
-} from './rho_01';
-import {
-  getRcxt1ByLhn
-} from './rho_02';
-import {
-  getRpcstByRdtr,
-  getRcxt6ByLhn,
-  rhocs_6
-} from './rho_07';
 
-export const getLhnFromBilot = bilot => {
 
-  try{
+export const getRhocs_2 = () => {
 
-    if(R.isNil(bilot)){
+  const mapFn = rhocxt => {
+
+    try{
+
+      const eshBinary = decimalToBinary(
+        rhocxt.eshidx, 3);
+
+      const ishBinary = decimalToBinary(
+        rhocxt.ishidx, 3);
+
+      let ebbrs; // External bean branch series
+      let eshbt; // External short hook bean trunk
+      let ibbrs; // Internal bean branch series
+      let ishbt; // Internal short hook bean trunk
+
+      // External short hook content
+      const eshcot = getTrnto(
+        rhocxt.eshori, true);
+
+      // Internal short hook content
+      const ishcot = getTrnto(
+        rhocxt.ishori, false);
+
+      if(R.isNil(eshcot)){
+        throw new Error(
+          'ESHCOT should not be nil.');
+      }
+
+      if(R.isNil(ishcot)){
+        throw new Error(
+          'ISHCOT should not be nil.');
+      }
+
+      ebbrs = eshcot.lbbrs;
+      eshbt = eshcot.lshbt;
+      ibbrs = ishcot.lbbrs;
+      ishbt = ishcot.lshbt;
+
+      if(R.isNil(ebbrs)){
+        throw new Error(
+          'EBBRS should not be nil.')
+      }
+
+      if(R.isNil(ibbrs)){
+        throw new Error(
+          'IBBRS should not be nil.')
+      }
+
+      if(R.isNil(eshbt)){
+        throw new Error(
+          'ESHBT should not be nil.');
+      }
+
+      if(R.isNil(ishbt)){
+        throw new Error(
+          'ISHBT should not be nil.');
+      }
+
+      const fbbrs = R.concat(ebbrs, ibbrs);
+
+      const lhBinary = decimalToBinary(
+        rhocxt.lhidx,
+        6);
+
+      const mapFn = R.curry(buildCrosses)
+        (fbbrs)
+        (eshbt)
+        (ishbt);
+
+      const lhcres = RA.mapIndexed(
+        mapFn,
+        R.drop(1, lhBinary));
+
+      return {
+        lhname: rhocxt.lhname,
+        eshori: rhocxt.eshori,
+        ishori: rhocxt.ishori,
+        lhcres
+      }
+    }
+    catch(err){
+      console.error(err);
       throw new Error(
-        'BILOT should not be nil.');
+        'Cannot build bean branch series.');
     }
 
-    if(!RA.isString(bilot)){
-      throw new Error(
-        'BILOT must be a string.');
-    }
+  }
 
-    if(bilot.length != 7){
-      throw new Error(
-        'Length of BILOT must be 7.');
-    }
+  return R.map(mapFn, rhocs_1)
+}
 
-    const lhidx = binaryToDecimal(bilot);
-    const lhname = getRcxt1ByLhn(lhidx).lhname;
+export const rhocs_2 = getRhocs_2();
 
-    if(R.isNil(lhname)){
-      throw new Error(
-        'Long hook name should not be nil.');
-    }
+export const getRcxt2ByLhn = lhname => {
 
-    return lhname;
+  try {
+    return getRcxtvByLhn(
+      lhname, rhocs_2, 2);
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get Long hook name.');
-  }
-
-}
-
-export const getLhnFromOclot = oclot => {
-
-  if(R.isNil(oclot)){
-    throw new Error(
-      'OCLOT should not be nil.');
-  }
-
-  if(!RA.isString(oclot)){
-    throw new Error(
-      'OCLOT must be a string.');
-  }
-
-  if(oclot.length != 5){
-    throw new Error(
-      'Length of OCLOT must be 5.');
-  }
-
-  const lhidx = octalToDecimal(oclot);
-  return getRcxt1ByLhn(lhidx).lhname;
-}
-
-const getRhocs_7 = () => {
-
-  const mapFn_1n =
-    (rjkdi, rkgdi, rqndi, lhcros) => {
-
-    if(R.isNil(rjkdi)){
-      throw new Error(
-        'RJKDI should not be nil.');
-    }
-
-    const lhcdwi = lhcros.lhcdwi;
-
-    if(R.isNil(lhcdwi)){
-      throw new Error(
-        'LHCDWI should not be nil.');
-    }
-
-    const isRjk = lhcdwi == rjkdi;
-    const isRqn = lhcdwi == rqndi;
-    const isRkg = lhcdwi == rkgdi;
-
-    // Rho jack render function
-    const rjkrt = isRjk ? '世' : '';
-    const rjrqt = isRqn ? '身' : '';
-    const rkgrt = isRkg ? '應' : '';
-
-    // Rho face cards render text
-    const rfcrt = RA.concatAll([
-      rjkrt, rjrqt, rkgrt
-    ]);
-
-    return {
-      ...lhcros,
-      rfcrt
-    };
-  }
-
-  const mapFn_1c = R.curry(mapFn_1n);
-
-  const mapFn_2 = rhocxt => {
-
-    const { rjkdi, rkgdi } = rhocxt;
-    const lhcres_1 = rhocxt.lhcres;
-
-    if(R.isNil(rjkdi)){
-      throw new Error(
-        'RJKDI should not be nil.');
-    }
-
-    if(R.isNil(rkgdi)){
-      throw new Error(
-        'RKGDI should not be nil.');
-    }
-
-    if(R.isNil(lhcres_1)){
-      throw new Error(
-        'LHCRES should not be nil.');
-    }
-
-    const rjkcr = lhcres_1[rjkdi];
-
-    if(R.isNil(rjkcr)){
-      throw new Error(
-        'RKKCR should not be nil.');
-    }
-
-    const rjkbh = rjkcr.crbh;
-
-    if(R.isNil(rjkbh)){
-      throw new Error(
-        'RJKBH should not be nil.')
-    }
-
-    const rqndi = 5 - (idxOfBranch(rjkbh) % 6);
-
-    const lhcres_2 =
-      R.map(
-        mapFn_1c(rjkdi)(rkgdi)(rqndi),
-        lhcres_1);
-
-    return {
-      ...rhocxt,
-      lhcres: lhcres_2
-    }
-  }
-
-  try{
-    return R.map(mapFn_2, rhocs_6);
-  }
-  catch(err){
-    throw new Error(
-      'Cannot get RHOCS_7');
+      'Cannot get RHOCXT_2 by long hook name.')
   }
 }
-
-export const rhocs_7 = getRhocs_7();
