@@ -21,14 +21,45 @@ const s_fbbrs = {
 }
 
 const s_bbssb = {
-  sppals: 'bbssb',
-  sppna: 'Bean branch series start branch',
-  sppdes: [
+  spals: 'bbssb',
+  spna: 'Bean branch series start branch',
+  spdesr: [
     'As of 乾, we will have 子 as the [bbssb].',
     'The value of [bbssb] from all 卦宮 are',
     'parsed from the [rawntos].'
   ],
   spbel: 'fbbrs'
+}
+
+const s_gshori = {
+  spals: 'gshori',
+  spname: 'Generic short hook original name',
+  spdesr: [
+    'It stands for the original name of a short',
+    'hook, i.e. one of the 坤震坎兌艮離巽乾.'
+  ]
+}
+
+const s_gshele = {
+  spals: 'gshele',
+  spname: 'Generic short hook elemental',
+  spdesr: [
+    'It stands for the elemental for a short hook.',
+    'For example, 乾 is 金, 離 is 火, etc. The term',
+    '"generic" means that it represent the whole',
+    '卦宮, rather that the external or internal',
+    'short hook within a long hook.'
+  ]
+}
+
+const s_eshbt = {
+  spals: 'eshbt',
+  spname: 'External short hook bean trunk',
+  spdesr: [
+    'It stands for the trunk for the external',
+    'short hook. For example, the ~ of 乾午卦宮',
+    'is 甲.'
+  ]
 }
 
 const s_bkntos = {
@@ -41,34 +72,8 @@ const s_bkntos = {
     'and the internal case are both defined.'
   ],
   sprtps: [
-    {
-      sprpn: 'gshori',
-      sprfn: 'Generic short hook original name',
-      spdesr: [
-        'It stands for the original name of a short',
-        'hook, i.e. one of the 坤震坎兌艮離巽乾.'
-      ]
-    },
-    {
-      sprpn: 'gshele',
-      sprfn: 'Generic short hook elemental',
-      spdesr: [
-        'It stands for the elemental for a short hook.',
-        'For example, 乾 is 金, 離 is 火, etc. The term',
-        '"generic" means that it represent the whole',
-        '卦宮, rather that the external or internal',
-        'short hook within a long hook.'
-      ]
-    },
-    {
-      sprpn: 'eshbt',
-      sprfn: 'External short hook bean trunk',
-      spdesr: [
-        'It stands for the trunk for the external',
-        'short hook. For example, the ~ of 乾午卦宮',
-        'is 甲.'
-      ]
-    },
+
+
     {
       sprpn: 'ishbt',
       sprfn: 'External short hook bean trunk',
@@ -97,43 +102,46 @@ const s_bkntos = {
   ]
 }
 
+const s_eshalt = {
+  spals: 'eshalt',
+  spname: 'External short hook alternative',
+  spdesr: [
+    'For example, 無妄卦 has a ~ of 天.'
+  ]
+}
+
+const s_ishalt = {
+  spals: 'ishalt',
+  spname: 'Internal short hook alternative',
+  spdesr: [
+    'For example, 無妄卦 has a ~ of 雷.'
+  ]
+}
+
+const s_eshidx = {
+  spals: 'eshidx',
+  spname: 'External short hook index',
+  spdesr: [
+    'For example, 無妄卦 has a [eshalt] of 雷.',
+    'And for 雷, by the [gshalo], ~ would be 1.'
+  ]
+}
+
+const s_ishidx = {
+  spals: 'ishidx',
+  spname: 'Internal short hook index',
+  sploc: 'rho_03',
+  spdesr: [
+    'For example, 無妄卦 has a [ishalt] of 雷.',
+    'And for 雷, by the [gshalo], ~ would be 0.'
+  ]
+}
+
 const s_rhocs_1 = {
   spals: 'rhocs_1',
   spgtr: 'getRhocs_1',
   spname: 'Rho context 1',
-  sploc: 'rho_03',
-  spprms: [
-    {
-      sprpn: 'eshalt',
-      sprfn: 'External short hook alternative',
-      spdesr: [
-        'For example, 無妄卦 has a ~ of 天.'
-      ]
-    },
-    {
-      sprpn: 'ishalt',
-      sprfn: 'External short hook alternative',
-      spdesr: [
-        'For example, 無妄卦 has a ~ of 雷.'
-      ]
-    },
-    {
-      sprpn: 'eshidx',
-      sprfn: 'External short hook index',
-      spdesr: [
-        'For example, 無妄卦 has a [eshalt] of 雷.',
-        'And for 雷, by the [gshalo], ~ would be 1.'
-      ]
-    },
-    {
-      sprpn: 'ishidx',
-      sprfn: 'Internal short hook index',
-      spdesr: [
-        'For example, 無妄卦 has a [ishalt] of 雷.',
-        'And for 雷, by the [gshalo], ~ would be 0.'
-      ]
-    }
-  ]
+  sploc: 'rho_03'
 }
 
 const s_gshalo = {

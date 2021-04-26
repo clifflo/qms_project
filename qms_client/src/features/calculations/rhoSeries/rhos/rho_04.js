@@ -29,42 +29,44 @@ const rblhss =
 
 const getRhgbs = () => {
 
-  const sLhidx = 63;
+  const slhidx = 63;
 
-  const mapFn = tLhname => {
+  const mapFn = tlhna => {
 
-    const tLhidx =
-      getRcxt1ByLhn(tLhname)
+    const tlhidx =
+      getRcxt1ByLhn(tlhna)
       .lhidx;
 
-    if(R.isNil(tLhidx)){
+    if(R.isNil(tlhidx)){
       throw new Error(
-        'Target LHIDX should not be nil.');
+        'TLHIDX should not be nil.');
     }
 
-    if(!RA.isNumber(tLhidx)){
+    if(!RA.isNumber(tlhidx)){
       throw new Error(
         'How come the long hook '
         + 'index becomes a string?');
     }
 
-    const gapBinary = decimalToBinary(
-      sLhidx ^ tLhidx,
+    const rgbnry = decimalToBinary(
+      slhidx ^ tlhidx,
       6);
 
-    return gapBinary;
+    return rgbnry;
   }
 
   try{
 
-    const rhgbs_1 = R.map(mapFn, rblhss);
-    const rhgbs_2 = R.uniq(rhgbs_1);
+    const rhgbs = R.compose(
+      R.uniq,
+      R.map(mapFn))
+    (rblhss)
 
-    if(rhgbs_2.length != 7){
+    if(rhgbs.length != 7){
       throw new Error(
-        'It must have 7 Rho hook gap binaries'
-        + 'only but now it has '
-        + rhgbs_2.length + '.');
+        'It must have 7 unique rho hook '
+        + 'gap binaries only but now it has '
+        + rhgbs.length + '.');
     }
 
     return R.map(mapFn, rblhss);
@@ -81,11 +83,11 @@ export const rhgbs = getRhgbs();
 const getRhksrs = () => {
 
   const mapFn_1 =
-    (gshori, gapBinary, index) => {
+    (gshori, rgbnry, index) => {
 
     try{
 
-      const gapDecimal = binaryToDecimal(gapBinary);
+      const gapDecimal = binaryToDecimal(rgbnry);
 
       const rhlhn = '純' + gshori;
       const rhlix =

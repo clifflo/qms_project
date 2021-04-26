@@ -38,7 +38,7 @@ export const getRcxtvByLhx = (
 
   if(R.isNil(lhidx)){
     throw new Error(
-      'Long hook index should not be nil.');
+      'LHIDX should not be nil.');
   }
 
   const rcxtvo = R.find(
