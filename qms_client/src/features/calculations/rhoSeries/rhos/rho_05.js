@@ -1,5 +1,10 @@
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
+import {
+  rhksrs
+} from './rho_04';
 
-export const buildRjkdi = rlhgn => {
+export const buildRjkdi = rhgidx => {
 
   const mapper = {
     0: 5,
@@ -12,7 +17,7 @@ export const buildRjkdi = rlhgn => {
     7: 2
   }
 
-  const lhcuwi = mapper[rlhgn];
+  const lhcuwi = mapper[rhgidx];
   const lhcdwi = 5 - lhcuwi;
   return lhcdwi;
 }
@@ -22,17 +27,17 @@ const getRhocs_3 = () => {
   const mapFn_1 = (
     rhksrs,
     lhname,
-    rlhgn) => {
+    rhgidx) => {
 
     try{
 
-      const rjkdi = buildRjkdi(rlhgn);
+      const rjkdi = buildRjkdi(rhgidx);
       const rkgdi = (rjkdi + 3) % 6;
 
       return {
         lhname,
         rhshn: rhksrs.rhshn,
-        rlhgn,
+        rhgidx,
         rjkdi,
         rkgdi
       }

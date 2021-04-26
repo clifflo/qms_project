@@ -13,17 +13,17 @@ import {
 
 export const getRcxtvByLhx = (
   lhidx,
-  rocsvo,
+  rocsob,
   rocsvn) => {
 
-  if(R.isNil(rocsvo)){
+  if(R.isNil(rocsob)){
     throw new Error(
-      'RHCSVO should not be nil.');
+      'ROCSOB should not be nil.');
   }
 
-  if(!RA.isArray(rocsvo)){
+  if(!RA.isArray(rocsob)){
     throw new Error(
-      'ROCSVO must be an array.');
+      'ROCSOB must be an array.');
   }
 
   if(R.isNil(rocsvn)){
@@ -41,32 +41,32 @@ export const getRcxtvByLhx = (
       'LHIDX should not be nil.');
   }
 
-  const rcxtvo = R.find(
+  const rcxtob = R.find(
     R.propEq('lhidx', lhidx),
-    rocsvo);
+    rocsob);
 
-  if(R.isNil(rcxtvo)){
+  if(R.isNil(rcxtob)){
     throw new Error(
       `${lhidx} is not a valid long hook index `
       + `for rho context ${rocsvn}`);
   }
 
-  return rcxtvo;
+  return rcxtob;
 }
 
 export const getRcxtvByLhn = (
   lhname,
-  rocsvo,
+  rocsob,
   rocsvn) => {
 
-  if(R.isNil(rocsvo)){
+  if(R.isNil(rocsob)){
     throw new Error(
-      'RHCSVO should not be nil.');
+      'ROCSOB should not be nil.');
   }
 
-  if(!RA.isArray(rocsvo)){
+  if(!RA.isArray(rocsob)){
     throw new Error(
-      'ROCSVO must be an array.');
+      'ROCSOB must be an array.');
   }
 
   if(R.isNil(rocsvn)){
@@ -84,11 +84,11 @@ export const getRcxtvByLhn = (
       'LHNAME should not be nil.');
   }
 
-  const rcxtvo = R.find(
+  const rcxtob = R.find(
     R.propEq('lhname', lhname),
-    rocsvo);
+    rocsob);
 
-  if(R.isNil(rcxtvo)){
+  if(R.isNil(rcxtob)){
     throw new Error(
       `${lhname} is not a valid long hook `
       + `for rho context ${rocsvn}`);
@@ -98,7 +98,7 @@ export const getRcxtvByLhn = (
   const rcfb = 'Long hook name';
 
   return {
-    ...rcxtvo,
+    ...rcxtob,
     rocsvn,
     rcfb
   };

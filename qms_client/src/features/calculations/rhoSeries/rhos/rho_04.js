@@ -83,11 +83,11 @@ export const rhgbs = getRhgbs();
 const getRhksrs = () => {
 
   const mapFn_1 =
-    (gshori, rgbnry, index) => {
+    (gshori, rgbnry, rhgidx) => {
 
     try{
 
-      const gapDecimal = binaryToDecimal(rgbnry);
+      const rgdecm = binaryToDecimal(rgbnry);
 
       const rhlhn = '純' + gshori;
       const rhlix =
@@ -96,10 +96,10 @@ const getRhksrs = () => {
 
       if(R.isNil(rhlix)){
         throw new Error(
-          'RHLIX should not be nil.');
+          '[rhlix] should not be nil.');
       }
 
-      const rglhi = gapDecimal ^ rhlix;
+      const rglhi = rgdecm ^ rhlix;
       const rglct1 =
         getRcxt1ByLhx(rglhi);
 
