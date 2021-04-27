@@ -1,4 +1,5 @@
-const getTrnto = (
+
+export const getTrnto = (
   gshori,
   isShetp) => {
 

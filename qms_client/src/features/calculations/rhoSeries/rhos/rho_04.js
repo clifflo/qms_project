@@ -80,15 +80,14 @@ const getRhgbs = () => {
 
 export const rhgbs = getRhgbs();
 
-const getRhksrs = () => {
+const getRlhsl = () => {
 
   const mapFn_1 =
-    (gshori, rgbnry, rhgidx) => {
+    (gshori, rgbnry) => {
 
     try{
 
       const rgdecm = binaryToDecimal(rgbnry);
-
       const rhlhn = '純' + gshori;
       const rhlix =
         getRcxt1ByLhn(rhlhn)
@@ -100,8 +99,7 @@ const getRhksrs = () => {
       }
 
       const rglhi = rgdecm ^ rhlix;
-      const rglct1 =
-        getRcxt1ByLhx(rglhi);
+      const rglct1 = getRcxt1ByLhx(rglhi);
 
       return rglct1.lhname;
     }
@@ -116,15 +114,16 @@ const getRhksrs = () => {
 
   const mapFn_2 = gshori => {
 
-    const rlhkss_1 = RA.mapIndexed(
+    const rlhst = RA.mapIndexed(
       mapFn_1c(gshori), rhgbs);
 
-    const rlhkss_2 = R.prepend(
-      '純' + gshori, rlhkss_1);
+    const rlhsf = R.prepend(
+      '純' + gshori, rlhst);
 
     return {
-      rhshn: gshori,
-      rlhkss: rlhkss_2
+      _type: 'rlhsc',
+      rhlhn: gshori,
+      rlhsf: rlhsf
     }
   }
 
@@ -134,4 +133,4 @@ const getRhksrs = () => {
   return result;
 }
 
-export const rhksrs = getRhksrs();
+export const rlhsl = getRlhsl();

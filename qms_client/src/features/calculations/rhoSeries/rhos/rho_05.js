@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  rhksrs
+  rlhsl
 } from './rho_04';
 
 export const buildRjkdi = rhgidx => {
@@ -25,7 +25,7 @@ export const buildRjkdi = rhgidx => {
 const getRhocs_3 = () => {
 
   const mapFn_1 = (
-    rhksrs,
+    rlhsc,
     lhname,
     rhgidx) => {
 
@@ -36,7 +36,7 @@ const getRhocs_3 = () => {
 
       return {
         lhname,
-        rhshn: rhksrs.rhshn,
+        rhshn: rlhsc.rhshn,
         rhgidx,
         rjkdi,
         rkgdi
@@ -52,13 +52,13 @@ const getRhocs_3 = () => {
 
   const mapFn_1c = R.curry(mapFn_1);
 
-  const mapFn_2 = rhksrs => {
+  const mapFn_2 = rlhsc => {
 
     try{
 
       const result = RA.mapIndexed(
-        mapFn_1c(rhksrs),
-        rhksrs.rlhkss);
+        mapFn_1c(rlhsc),
+        rlhsc.rlhsf);
 
       return result;
     }
@@ -67,17 +67,16 @@ const getRhocs_3 = () => {
       throw new Error(
         'Get RHOCS_3 Map Function 2 error.')
     }
-
   }
 
   try{
-    const nestedList = R.map(mapFn_2, rhksrs);
-    const flatList = R.flatten(nestedList);
-    return flatList;
+    const rhocs_3a = R.map(mapFn_2, rlhsl);
+    const rhocs_3b = R.flatten(nestedList);
+    return rhocs_3b;
   }
   catch(err){
     console.error(err);
-    throw new Error('Cannot get RHOCS_3.');
+    throw new Error('Cannot get [rhocs_3].');
   }
 
 }
