@@ -1,8 +1,8 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
-import { rhocs_8 } from
-  '../calculations/rhoSeries/rhos/rho_13';
+import { hycrs } from
+  '../calculations/rhoSeries/rhos/rho_14';
 
 export default function RhoGui() {
-  return <JSONTree data={rhocs_8}/>
+  return <JSONTree data={hycrs}/>
 }

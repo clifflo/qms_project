@@ -159,7 +159,8 @@ const getRhocs_7 = () => {
 
     return {
       ...rhocxt,
-      lhcres: lhcres_2
+      lhcres: lhcres_2,
+      _type: 'rhocxt_7'
     }
   }
 

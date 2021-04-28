@@ -1,5 +1,19 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import {
+  rhocs_1
+} from './rho_02';
+import {
+  rhocs_8,
+  getRcxt8ByLhn
+} from './rho_12';
+import {
+  getRpcstByRdtr
+} from './rho_13';
+import {
+  trkod
+} from '../../twigs/twig_01';
+
 
 const getHyrcs = () => {
 

@@ -1,130 +1,131 @@
 import * as R from 'ramda';
-import * as RA from 'ramda-adjunct';
 import {
-  utItem,
-  utGetIdx
-} from '../../utils/util_01';
-import {
-  trkod,
-  isValidTrunk
+  trkod
 } from '../../twigs/twig_01';
 import {
-  getRcxtvByLhn
-} from './rho_02'
+  rhocs_1
+} from './rho_01';
 import {
-  rhocs_5,
-  rfcis
-} from './rho_06';
+  getRcxtvByLhn
+} from './rho_05';
+import {
+  rhocs_7
+} from './rho_11';
 
-export const rpldo =
-  R.compose(
-    R.reverse,
-    R.map(R.concat('丙')),
-    R.split(','))
-  ('青龍,朱雀,勾陳,螣蛇,白虎,玄武');
+const getRhocs_8 = () => {
 
-// Rho Paladin Start Position Map
-const rpspm = {
-  '甲': '丙青龍',
-  '乙': '丙青龍',
-  '丙': '丙朱雀',
-  '丁': '丙朱雀',
-  '戊': '丙勾陳',
-  '己': '丙螣蛇',
-  '庚': '丙白虎',
-  '辛': '丙白虎',
-  '壬': '丙玄武',
-  '癸': '丙玄武'
-}
+  const mapFn_1n =
+    (lhcres, rhfchs, rhcros) => {
 
-// Rho Paladin Cross Set List
-const getRpcsl = () => {
+    if(R.isNil(lhcres)){
+      throw new Error(
+        'LHCRES should not be nil for MAPFN_1');
+    }
 
-  const mapFn_1n = (startIdx, distance) => {
+    if(R.isNil(rhcros)){
+      throw new Error(
+        'RHCROS should not be nil for MAPFN_1.');
+    }
 
-    // Rho paladin in cross
-    const rpicr = utItem(
-      rpldo, startIdx + distance);
+    if(R.isNil(rhfchs)){
+      throw new Error(
+        'RHFCHS should not be nil for MAPFN_1.');
+    }
 
-    return rpicr;
+    const lhcros = lhcres[rhcros.lhcdwi];
+
+    if(R.isNil(lhcros)){
+      throw new Error(
+        'LHCROS should not be nil for MAPFN_1.');
+    }
+
+    const rfcna = rhcros.rfcna;
+
+    if(R.isNil(rfcna)){
+      throw new Error(
+        'RFCHI should not be nil for MAPFN_1.');
+    }
+
+    // Is rho boxed cross, i.e. a cross
+    // with a hidden part.
+    const isRbxcr = R.includes(
+      rfcna, rhfchs);
+
+    if(isRbxcr){
+      const rhidcr = rhcros;
+      return {
+        isRbxcr,
+        ...lhcros,
+        rhidcr
+      }
+    }
+    else {
+      return {
+        isRbxcr,
+        ...lhcros
+      }
+    }
   }
 
   const mapFn_1c = R.curry(mapFn_1n);
 
-  const mapFn_2 = idx => {
+  const mapFn_2 = rhocxt => {
 
-    // Rho paladin day trunk
-    const rpdtr = utItem(trkod, idx);
-
-    if(R.isNil(rpdtr)){
-      throw new Error(
-        'RPDTR should not be nil.')
+    if(!rhocxt.isLhhd){
+      return rhocxt;
     }
+    else {
 
-    const rpstp = rpspm[rpdtr];
+      const rhcres = rhocxt.rhcres;
+      const rhfchs = rhocxt.rhfchs;
 
-    // Rho Paladin Index
-    const rpdix = utGetIdx(rpstp, rpldo) + 1;
+      if(R.isNil(rhcres)){
+        throw new Error(
+          'RHCRES should not be nil for MAPFN_2.');
+      }
 
-    if(R.isNil(rpdix)){
-      throw new Error(
-        'RPDIX should not be nil.');
+      if(R.isNil(rhfchs)){
+        throw new Error(
+          'RHFCHS should not be nil for MAPFN_2.');
+      }
+
+      const lhcres =
+        R.map(
+          mapFn_1c(rhocxt.lhcres)(rhfchs),
+          rhcres);
+
+      if(R.isNil(lhcres)){
+        throw new Error(
+          'LHCRES should not be nil for MAPFN_2.');
+      }
+
+      return {
+        ...rhocxt,
+        lhcres
+      }
     }
-
-    // Rho paladin cross set
-    const rpcst = R.map(
-      mapFn_1c(rpdix),
-      R.range(0, 6));
-
-    return {
-      rpdtr,
-      rpcst
-    };
   }
 
   try {
-    return R.map(mapFn_2, R.range(0, 10));
+    return R.map(mapFn_2, rhocs_7);
   }
   catch(err){
     console.error(err);
-    throw new Error('Cannot get RPCSL');
+    throw new Error(
+      'Cannot get RHOCS_8');
   }
 }
 
-export const rpcsl = getRpcsl();
+export const rhocs_8 = getRhocs_8();
 
-export const getRpcstByRdtr = rdtr => {
-
-  if(R.isNil(rdtr)){
-    throw new Error(
-      'RDTR should not be nil.');
+export const getRcxt8ByLhn = lhname => {
+  try {
+    return getRcxtvByLhn(
+      lhname, rhocs_8, 8);
   }
-
-  if(!RA.isString(rdtr)){
+  catch(err){
+    console.error(err);
     throw new Error(
-      'RDTR must be a string.');
+      'Cannot get RHOCXT_8 by long hook name.')
   }
-
-  if(!isValidTrunk(rdtr)){
-    throw new Error(
-      `${rdtr} is not a valid trunk for RDTR.`);
-  }
-
-  const rpcbd = R.find(
-    R.propEq('rpdtr', rdtr),
-    rpcsl);
-
-  const rpcst = rpcbd.rpcst;
-
-  if(R.isNil(rpcst)){
-    throw new Error(
-      'RPCST should not be nil.');
-  }
-
-  if(!RA.isArray(rpcst)){
-    throw new Error(
-      'RPCST must be an array.');
-  }
-
-  return rpcst;
 }
