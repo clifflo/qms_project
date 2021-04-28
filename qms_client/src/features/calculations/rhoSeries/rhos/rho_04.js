@@ -1,15 +1,50 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import {
+  decimalToBinary
+} from '../../utils/util_02';
+import {
+  rhocs_1
+} from './rho_02';
+import {
+  getTrnto
+} from './rho_03';
+import {
+  getElem
+} from '../../twigs/twig_02';
+
+const buildCrosses = (
+  fbbrs,
+  eshbt,
+  ishbt,
+  crsi,
+  lhcdwi,
+  list) => {
+
+  const crtk = lhcdwi <= 2 ?
+    eshbt : ishbt;
+
+  const crbh = fbbrs[lhcdwi];
+
+  const crbel = getElem(crbh);
+
+  return {
+    crsi,
+    crtk,
+    crbh,
+    crbel,
+    lhcdwi
+  }
+}
+
 
 export const getRhocs_2 = () => {
 
   const mapFn = rhocxt => {
 
     try{
-
       const eshBinary = decimalToBinary(
         rhocxt.eshidx, 3);
-
       const ishBinary = decimalToBinary(
         rhocxt.ishidx, 3);
 
