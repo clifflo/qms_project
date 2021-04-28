@@ -82,7 +82,7 @@ export const getBkntos = () => {
     (rawntos);
 }
 
-export const nattos = getBkntos();
+export const bkntos = getBkntos();
 
 // Generic short hook alternative
 export const gshalo = '地雷水澤山火風天';
