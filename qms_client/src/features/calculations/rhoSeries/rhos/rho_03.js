@@ -76,7 +76,7 @@ export const getTrnto = (
 
 }
 
-const buildCrosses = (
+export const buildCrosses = (
   fbbrs,
   eshbt,
   ishbt,

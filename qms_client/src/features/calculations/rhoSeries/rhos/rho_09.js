@@ -1,53 +1,59 @@
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
+import {
+  rfcns,
+  rfens,
+  rfmap,
+  rhocs_4
+} from './rho_08';
+import {
+  getElre
+} from '../../twigs/twig_02';
 
-export const isValidRfchi = rfchi => {
+export const isValidRfcna = rfcna => {
 
-  if(R.isNil(rfchi)){
+  if(R.isNil(rfcna)){
     throw new Error(
-      'RFCHI should not be nil.');
+      '[rfcna] should not be nil.');
   }
 
-  if(!RA.isString(rfchi)){
+  if(!RA.isString(rfcna)){
     throw new Error(
-      'RFCHI must be a string.');
+      '[rfcna] must be a string.');
   }
 
-  const isValid = R.includes(rfchi, rfcis);
+  const isValid = R.includes(rfcna, rfcns);
 
   return isValid;
 }
 
-export const isValidRfcode = rfcode => {
+export const isValidRfena = rfena => {
 
-  if(R.isNil(rfcode)){
+  if(R.isNil(rfena)){
     throw new Error(
-      'RFCODE should not be nil.');
+      '[rfena] should not be nil.');
   }
 
-  if(!RA.isString(rfcode)){
+  if(!RA.isString(rfena)){
     throw new Error(
-      'RFCODE must be a string.');
+      '[rfena] must be a string.');
   }
 
-  const isValid = R.includes(rfcode, rfcds);
+  const isValid = R.includes(rfena, rfens);
 
   return isValid;
 }
 
-// Get rho focus chinese
-export const getRfchi = rfcode => {
+// Get rho focus chinese from raw
+const getRfcfr = rrawf => {
 
-  if(R.isNil(rfcode)){
+  if(R.isNil(rrawf)){
     throw new Error(
-      'RFCODE should not be nil for ' +
-      'getting RFCHI.')
+      '[rrawf] should not be nil.')
   }
 
-  if(!isValidRfcode(rfcode)){
-    throw new Error(
-      `${rfcode} is not a valid RFCODE.`);
-  }
-
-  return rfcom[rfcode];
+  return R.find(
+    R.propEq('rrawf', rrawf), rfmap).rfcna;
 }
 
 const getRhocs_5 = () => {
@@ -55,25 +61,26 @@ const getRhocs_5 = () => {
   const mapFn_1n = (rhshel, lhcros_1) => {
 
     try{
-      const rrfcs = getElre(
+      const rrawf = getElre(
         rhshel, lhcros_1.crbel);
 
-      if(R.isNil(rrfcs)){
+      if(R.isNil(rrawf)){
         throw new Error(
-          'RRFCS should not be nil.');
+          '[rrawf] should not be nil.');
       }
 
-      // Rho chinese focus
-      const rfchi = rfram[rrfcs];
+      const rfcna = getRfcfr(rrawf);
 
-      if(R.isNil(rfchi)){
+      if(R.isNil(rfcna)){
         throw new Error(
-          'ROFCS should not be nil.');
+          '[rfcna] should not be nil.');
       }
 
-      const rfchiLens = R.lensProp('rfchi');
+      const rfcnaLens = R.lensProp('rfcna');
+
       let lhcros_2 = R.set(
-        rfchiLens, rfchi, lhcros_1);
+        rfcnaLens, rfcna, lhcros_1);
+
       return lhcros_2;
     }
     catch(err){
@@ -85,12 +92,14 @@ const getRhocs_5 = () => {
   const mapFn_1c = R.curry(mapFn_1n);
 
   const mapFn_2 = rhocxt_4 => {
-
     try{
+
       const lhcres = R.map(
         mapFn_1c(rhocxt_4.rhshel),
         rhocxt_4.lhcres);
+
       const lhcresLens = R.lensProp('lhcres');
+
       const rhocxt_5 = R.set(
         lhcresLens, lhcres, rhocxt_4);
       return rhocxt_5;

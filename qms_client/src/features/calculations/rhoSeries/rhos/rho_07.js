@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   rlhsl
-} from './rho_05';
+} from './rho_06';
 
 export const buildRjkdi = rhgidx => {
 

@@ -17,7 +17,7 @@ import {
   getRcxtvByLhn,
   getRcxt1ByLhn,
   getRcxt1ByLhx
-} from './rho_04';
+} from './rho_05';
 import {
   decimalToBinary,
   binaryToDecimal

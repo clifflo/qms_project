@@ -16,7 +16,6 @@ import {
   rfcis
 } from './rho_06';
 
-
 export const rpldo =
   R.compose(
     R.reverse,

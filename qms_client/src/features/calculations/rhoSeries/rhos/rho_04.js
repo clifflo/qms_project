@@ -7,36 +7,12 @@ import {
   rhocs_1
 } from './rho_02';
 import {
-  getTrnto
+  getTrnto,
+  buildCrosses
 } from './rho_03';
 import {
   getElem
 } from '../../twigs/twig_02';
-
-const buildCrosses = (
-  fbbrs,
-  eshbt,
-  ishbt,
-  crsi,
-  lhcdwi,
-  list) => {
-
-  const crtk = lhcdwi <= 2 ?
-    eshbt : ishbt;
-
-  const crbh = fbbrs[lhcdwi];
-
-  const crbel = getElem(crbh);
-
-  return {
-    crsi,
-    crtk,
-    crbh,
-    crbel,
-    lhcdwi
-  }
-}
-
 
 export const getRhocs_2 = () => {
 
