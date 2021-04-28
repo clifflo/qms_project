@@ -1,136 +1,129 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  rhocs_2
+  decimalToBinary
+} from '../../utils/util_02';
+import {
+  rhocs_1,
+  nattos
 } from './rho_02';
 import {
-  nattos,
-  gshoro
-} from './rho_01';
-import {
-  utGetIdx
-} from '../../utils/util_01';
-import {
-  getElre
+  getElem
 } from '../../twigs/twig_01';
-import {
-  getRcxtvByLhn,
-  getRcxt1ByLhn,
-  getRcxt1ByLhx
-} from './rho_03';
-import {
-  decimalToBinary,
-  binaryToDecimal
-} from '../../utils/util_02';
 
-// Rho base long hook series set
-const rblhss =
-  R.split(',', '姤,遯,否,觀,剝,晉,大有');
+export const getRcxtvByLhx = (
+  lhidx,
+  rocsob,
+  rocsvn) => {
 
-const getRhgbs = () => {
-
-  const slhidx = 63;
-
-  const mapFn = tlhna => {
-
-    const tlhidx =
-      getRcxt1ByLhn(tlhna)
-      .lhidx;
-
-    if(R.isNil(tlhidx)){
-      throw new Error(
-        'TLHIDX should not be nil.');
-    }
-
-    if(!RA.isNumber(tlhidx)){
-      throw new Error(
-        'How come the long hook '
-        + 'index becomes a string?');
-    }
-
-    const rgbnry = decimalToBinary(
-      slhidx ^ tlhidx,
-      6);
-
-    return rgbnry;
+  if(R.isNil(rocsob)){
+    throw new Error(
+      'ROCSOB should not be nil.');
   }
 
-  try{
+  if(!RA.isArray(rocsob)){
+    throw new Error(
+      'ROCSOB must be an array.');
+  }
 
-    const rhgbs = R.compose(
-      R.uniq,
-      R.map(mapFn))
-    (rblhss)
+  if(R.isNil(rocsvn)){
+    throw new Error(
+      'ROCSVN should not be nil.');
+  }
 
-    if(rhgbs.length != 7){
-      throw new Error(
-        'It must have 7 unique rho hook '
-        + 'gap binaries only but now it has '
-        + rhgbs.length + '.');
-    }
+  if(!RA.isNumber(rocsvn)){
+    throw new Error(
+      'ROCSVN must be a number.');
+  }
 
-    return R.map(mapFn, rblhss);
+  if(R.isNil(lhidx)){
+    throw new Error(
+      'LHIDX should not be nil.');
+  }
+
+  const rcxtob = R.find(
+    R.propEq('lhidx', lhidx),
+    rocsob);
+
+  if(R.isNil(rcxtob)){
+    throw new Error(
+      `${lhidx} is not a valid long hook index `
+      + `for rho context ${rocsvn}`);
+  }
+
+  return rcxtob;
+}
+
+export const getRcxtvByLhn = (
+  lhname,
+  rocsob,
+  rocsvn) => {
+
+  if(R.isNil(rocsob)){
+    throw new Error(
+      'ROCSOB should not be nil.');
+  }
+
+  if(!RA.isArray(rocsob)){
+    throw new Error(
+      'ROCSOB must be an array.');
+  }
+
+  if(R.isNil(rocsvn)){
+    throw new Error(
+      'ROCSVN should not be nil.');
+  }
+
+  if(!RA.isNumber(rocsvn)){
+    throw new Error(
+      'ROCSVN must be a number.');
+  }
+
+  if(R.isNil(lhname)){
+    throw new Error(
+      'LHNAME should not be nil.');
+  }
+
+  const rcxtob = R.find(
+    R.propEq('lhname', lhname),
+    rocsob);
+
+  if(R.isNil(rcxtob)){
+    throw new Error(
+      `${lhname} is not a valid long hook `
+      + `for rho context ${rocsvn}`);
+  }
+
+  // Rho context filtered by
+  const rcfb = 'Long hook name';
+
+  return {
+    ...rcxtob,
+    rocsvn,
+    rcfb
+  };
+}
+
+export const getRcxt1ByLhn = lhname => {
+  try {
+    return getRcxtvByLhn(
+      lhname, rhocs_1, 1);
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get Rho hook gap binaries set.');
+      'Cannot get RHOCXT_1 by long hook name.')
   }
 }
 
-export const rhgbs = getRhgbs();
-
-const getRlhsl = () => {
-
-  const mapFn_1 =
-    (gshori, rgbnry) => {
-
-    try{
-
-      const rgdecm = binaryToDecimal(rgbnry);
-      const rhlhn = '純' + gshori;
-      const rhlix =
-        getRcxt1ByLhn(rhlhn)
-        .lhidx;
-
-      if(R.isNil(rhlix)){
-        throw new Error(
-          '[rhlix] should not be nil.');
-      }
-
-      const rglhi = rgdecm ^ rhlix;
-      const rglct1 = getRcxt1ByLhx(rglhi);
-
-      return rglct1.lhname;
-    }
-    catch(err){
-      console.error(err);
-      throw new Error(
-        'Error in getting hook series.')
-    }
+export const getRcxt1ByLhx = lhidx => {
+  try {
+    return getRcxtvByLhx(
+      lhidx, rhocs_1, 1);
   }
-
-  const mapFn_1c = R.curry(mapFn_1);
-
-  const mapFn_2 = gshori => {
-
-    const rlhst = RA.mapIndexed(
-      mapFn_1c(gshori), rhgbs);
-
-    const rlhsf = R.prepend(
-      '純' + gshori, rlhst);
-
-    return {
-      _type: 'rlhsc',
-      rhlhn: gshori,
-      rlhsf: rlhsf
-    }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get RHOCXT_1 by long hook index.')
   }
-
-  const result = R.map(
-    mapFn_2, gshoro);
-
-  return result;
 }
-
-export const rlhsl = getRlhsl();

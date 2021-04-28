@@ -1,10 +1,10 @@
 import * as R from 'ramda';
 import {
   getRcxt2ByLhn
-} from '../rhos/rho_03';
+} from '../rhos/rho_04';
 import {
   getRcxt4ByLhn
-} from '../rhos/rho_05';
+} from '../rhos/rho_06';
 import {
   decimalToBinary
 } from '../../utils/util_02';

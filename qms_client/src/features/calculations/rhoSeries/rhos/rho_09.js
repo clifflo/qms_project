@@ -1,109 +1,108 @@
 
+export const isValidRfchi = rfchi => {
 
-export const getRhocs_2 = () => {
+  if(R.isNil(rfchi)){
+    throw new Error(
+      'RFCHI should not be nil.');
+  }
 
-  const mapFn = rhocxt => {
+  if(!RA.isString(rfchi)){
+    throw new Error(
+      'RFCHI must be a string.');
+  }
+
+  const isValid = R.includes(rfchi, rfcis);
+
+  return isValid;
+}
+
+export const isValidRfcode = rfcode => {
+
+  if(R.isNil(rfcode)){
+    throw new Error(
+      'RFCODE should not be nil.');
+  }
+
+  if(!RA.isString(rfcode)){
+    throw new Error(
+      'RFCODE must be a string.');
+  }
+
+  const isValid = R.includes(rfcode, rfcds);
+
+  return isValid;
+}
+
+// Get rho focus chinese
+export const getRfchi = rfcode => {
+
+  if(R.isNil(rfcode)){
+    throw new Error(
+      'RFCODE should not be nil for ' +
+      'getting RFCHI.')
+  }
+
+  if(!isValidRfcode(rfcode)){
+    throw new Error(
+      `${rfcode} is not a valid RFCODE.`);
+  }
+
+  return rfcom[rfcode];
+}
+
+const getRhocs_5 = () => {
+
+  const mapFn_1n = (rhshel, lhcros_1) => {
 
     try{
+      const rrfcs = getElre(
+        rhshel, lhcros_1.crbel);
 
-      const eshBinary = decimalToBinary(
-        rhocxt.eshidx, 3);
-
-      const ishBinary = decimalToBinary(
-        rhocxt.ishidx, 3);
-
-      let ebbrs; // External bean branch series
-      let eshbt; // External short hook bean trunk
-      let ibbrs; // Internal bean branch series
-      let ishbt; // Internal short hook bean trunk
-
-      // External short hook content
-      const eshcot = getTrnto(
-        rhocxt.eshori, true);
-
-      // Internal short hook content
-      const ishcot = getTrnto(
-        rhocxt.ishori, false);
-
-      if(R.isNil(eshcot)){
+      if(R.isNil(rrfcs)){
         throw new Error(
-          'ESHCOT should not be nil.');
+          'RRFCS should not be nil.');
       }
 
-      if(R.isNil(ishcot)){
+      // Rho chinese focus
+      const rfchi = rfram[rrfcs];
+
+      if(R.isNil(rfchi)){
         throw new Error(
-          'ISHCOT should not be nil.');
+          'ROFCS should not be nil.');
       }
 
-      ebbrs = eshcot.lbbrs;
-      eshbt = eshcot.lshbt;
-      ibbrs = ishcot.lbbrs;
-      ishbt = ishcot.lshbt;
-
-      if(R.isNil(ebbrs)){
-        throw new Error(
-          'EBBRS should not be nil.')
-      }
-
-      if(R.isNil(ibbrs)){
-        throw new Error(
-          'IBBRS should not be nil.')
-      }
-
-      if(R.isNil(eshbt)){
-        throw new Error(
-          'ESHBT should not be nil.');
-      }
-
-      if(R.isNil(ishbt)){
-        throw new Error(
-          'ISHBT should not be nil.');
-      }
-
-      const fbbrs = R.concat(ebbrs, ibbrs);
-
-      const lhBinary = decimalToBinary(
-        rhocxt.lhidx,
-        6);
-
-      const mapFn = R.curry(buildCrosses)
-        (fbbrs)
-        (eshbt)
-        (ishbt);
-
-      const lhcres = RA.mapIndexed(
-        mapFn,
-        R.drop(1, lhBinary));
-
-      return {
-        lhname: rhocxt.lhname,
-        eshori: rhocxt.eshori,
-        ishori: rhocxt.ishori,
-        lhcres
-      }
+      const rfchiLens = R.lensProp('rfchi');
+      let lhcros_2 = R.set(
+        rfchiLens, rfchi, lhcros_1);
+      return lhcros_2;
     }
     catch(err){
       console.error(err);
       throw new Error(
-        'Cannot build bean branch series.');
+        'MAPFN_1 is error for get RHOCS_5.');
     }
+  }
+  const mapFn_1c = R.curry(mapFn_1n);
 
+  const mapFn_2 = rhocxt_4 => {
+
+    try{
+      const lhcres = R.map(
+        mapFn_1c(rhocxt_4.rhshel),
+        rhocxt_4.lhcres);
+      const lhcresLens = R.lensProp('lhcres');
+      const rhocxt_5 = R.set(
+        lhcresLens, lhcres, rhocxt_4);
+      return rhocxt_5;
+    }
+    catch(err){
+      console.error(err);
+      throw new Error(
+        'MAPFN_2 for get RHOCS_5 is error.');
+    }
   }
 
-  return R.map(mapFn, rhocs_1)
+  return R.map(mapFn_2, rhocs_4);
 }
 
-export const rhocs_2 = getRhocs_2();
-
-export const getRcxt2ByLhn = lhname => {
-
-  try {
-    return getRcxtvByLhn(
-      lhname, rhocs_2, 2);
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      'Cannot get RHOCXT_2 by long hook name.')
-  }
-}
+export const rhocs_5 = getRhocs_5();

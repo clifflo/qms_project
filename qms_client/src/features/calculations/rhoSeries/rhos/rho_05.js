@@ -1,105 +1,136 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  rlhsl
+  rhocs_2
+} from './rho_02';
+import {
+  nattos,
+  gshoro
+} from './rho_01';
+import {
+  utGetIdx
+} from '../../utils/util_01';
+import {
+  getElre
+} from '../../twigs/twig_01';
+import {
+  getRcxtvByLhn,
+  getRcxt1ByLhn,
+  getRcxt1ByLhx
 } from './rho_04';
+import {
+  decimalToBinary,
+  binaryToDecimal
+} from '../../utils/util_02';
 
-export const buildRjkdi = rhgidx => {
+// Rho base long hook series set
+const rblhss =
+  R.split(',', '姤,遯,否,觀,剝,晉,大有');
 
-  const mapper = {
-    0: 5,
-    1: 0,
-    2: 1,
-    3: 2,
-    4: 3,
-    5: 4,
-    6: 3,
-    7: 2
+const getRhgbs = () => {
+
+  const slhidx = 63;
+
+  const mapFn = tlhna => {
+
+    const tlhidx =
+      getRcxt1ByLhn(tlhna)
+      .lhidx;
+
+    if(R.isNil(tlhidx)){
+      throw new Error(
+        'TLHIDX should not be nil.');
+    }
+
+    if(!RA.isNumber(tlhidx)){
+      throw new Error(
+        'How come the long hook '
+        + 'index becomes a string?');
+    }
+
+    const rgbnry = decimalToBinary(
+      slhidx ^ tlhidx,
+      6);
+
+    return rgbnry;
   }
 
-  const lhcuwi = mapper[rhgidx];
-  const lhcdwi = 5 - lhcuwi;
-  return lhcdwi;
+  try{
+
+    const rhgbs = R.compose(
+      R.uniq,
+      R.map(mapFn))
+    (rblhss)
+
+    if(rhgbs.length != 7){
+      throw new Error(
+        'It must have 7 unique rho hook '
+        + 'gap binaries only but now it has '
+        + rhgbs.length + '.');
+    }
+
+    return R.map(mapFn, rblhss);
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get Rho hook gap binaries set.');
+  }
 }
 
-const getRhocs_3 = () => {
+export const rhgbs = getRhgbs();
 
-  const mapFn_1 = (
-    rlhsc,
-    lhname,
-    rhgidx) => {
+const getRlhsl = () => {
+
+  const mapFn_1 =
+    (gshori, rgbnry) => {
 
     try{
 
-      const rjkdi = buildRjkdi(rhgidx);
-      const rkgdi = (rjkdi + 3) % 6;
+      const rgdecm = binaryToDecimal(rgbnry);
+      const rhlhn = '純' + gshori;
+      const rhlix =
+        getRcxt1ByLhn(rhlhn)
+        .lhidx;
 
-      return {
-        lhname,
-        rhshn: rlhsc.rhshn,
-        rhgidx,
-        rjkdi,
-        rkgdi
+      if(R.isNil(rhlix)){
+        throw new Error(
+          '[rhlix] should not be nil.');
       }
+
+      const rglhi = rgdecm ^ rhlix;
+      const rglct1 = getRcxt1ByLhx(rglhi);
+
+      return rglct1.lhname;
     }
     catch(err){
       console.error(err);
       throw new Error(
-        'Mapfn 2 error for get RHOCS_3.');
+        'Error in getting hook series.')
     }
-
   }
 
   const mapFn_1c = R.curry(mapFn_1);
 
-  const mapFn_2 = rlhsc => {
+  const mapFn_2 = gshori => {
 
-    try{
+    const rlhst = RA.mapIndexed(
+      mapFn_1c(gshori), rhgbs);
 
-      const result = RA.mapIndexed(
-        mapFn_1c(rlhsc),
-        rlhsc.rlhsf);
+    const rlhsf = R.prepend(
+      '純' + gshori, rlhst);
 
-      return result;
-    }
-    catch(err){
-      console.error(err);
-      throw new Error(
-        'Get RHOCS_3 Map Function 2 error.')
+    return {
+      _type: 'rlhsc',
+      rhlhn: gshori,
+      rlhsf: rlhsf
     }
   }
 
-  try{
-    const rhocs_3a = R.map(mapFn_2, rlhsl);
-    const rhocs_3b = R.flatten(nestedList);
-    return rhocs_3b;
-  }
-  catch(err){
-    console.error(err);
-    throw new Error('Cannot get [rhocs_3].');
-  }
+  const result = R.map(
+    mapFn_2, gshoro);
 
+  return result;
 }
 
-export const rhocs_3 = getRhocs_3();
-
-const getRcxt3ByLn = lhname => {
-
-  if(R.isNil(lhname)){
-    throw new Error(
-      'Long hook name should not be nil '
-      + 'for RHOCS_3.');
-  }
-
-  const rhocxt_3 = R.find(
-    R.propEq('lhname', lhname),
-    rhocs_3);
-
-  if(R.isNil(rhocxt_3)){
-    throw new Error(
-      `${lhname} is not a valid long hook `
-      + 'name for RHOCS_3.');
-  }
-
-  return rhocxt_3;
-}
+export const rlhsl = getRlhsl();

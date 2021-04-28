@@ -1,72 +1,109 @@
-import * as R from 'ramda';
-import * as RA from 'ramda-adjunct';
 
-const getRhocs_6 = () => {
+
+export const getRhocs_2 = () => {
 
   const mapFn = rhocxt => {
 
-    // Non unique Rho focus Chinee set
-    const ncfcs = R.map(
-      R.prop('rfchi'), rhocxt.lhcres);
+    try{
 
-    if(R.isNil(ncfcs)){
-      throw new Error(
-        'NCFCS should not be nil.');
-    }
+      const eshBinary = decimalToBinary(
+        rhocxt.eshidx, 3);
 
-    // Unique cross focus Chinese set
-    const ucfcs = R.uniq(ncfcs);
+      const ishBinary = decimalToBinary(
+        rhocxt.ishidx, 3);
 
-    // Long Hook with hidden
-    const isLhhd = ucfcs.length < 5;
+      let ebbrs; // External bean branch series
+      let eshbt; // External short hook bean trunk
+      let ibbrs; // Internal bean branch series
+      let ishbt; // Internal short hook bean trunk
 
-    // Rho hidden hook focus Chinese set
-    const rhfchs = R.difference(rfcis, ucfcs);
+      // External short hook content
+      const eshcot = getTrnto(
+        rhocxt.eshori, true);
 
-    if(isLhhd){
+      // Internal short hook content
+      const ishcot = getTrnto(
+        rhocxt.ishori, false);
 
-      // Rho Head Long Hook
-      const rhcres = R.find(
-        R.propEq('lhname', '純' + rhocxt.rhshn),
-        rhocs_5).lhcres;
-
-      if(R.isNil(rhcres)){
+      if(R.isNil(eshcot)){
         throw new Error(
-          'Cannot find the Rho Head Long Hook. '
-          + `${rhocxt.rhHook} may not be a valid `
-          + 'Rho Head Hook Name.')
+          'ESHCOT should not be nil.');
       }
 
+      if(R.isNil(ishcot)){
+        throw new Error(
+          'ISHCOT should not be nil.');
+      }
+
+      ebbrs = eshcot.lbbrs;
+      eshbt = eshcot.lshbt;
+      ibbrs = ishcot.lbbrs;
+      ishbt = ishcot.lshbt;
+
+      if(R.isNil(ebbrs)){
+        throw new Error(
+          'EBBRS should not be nil.')
+      }
+
+      if(R.isNil(ibbrs)){
+        throw new Error(
+          'IBBRS should not be nil.')
+      }
+
+      if(R.isNil(eshbt)){
+        throw new Error(
+          'ESHBT should not be nil.');
+      }
+
+      if(R.isNil(ishbt)){
+        throw new Error(
+          'ISHBT should not be nil.');
+      }
+
+      const fbbrs = R.concat(ebbrs, ibbrs);
+
+      const lhBinary = decimalToBinary(
+        rhocxt.lhidx,
+        6);
+
+      const mapFn = R.curry(buildCrosses)
+        (fbbrs)
+        (eshbt)
+        (ishbt);
+
+      const lhcres = RA.mapIndexed(
+        mapFn,
+        R.drop(1, lhBinary));
+
       return {
-        ...rhocxt,
-        isLhhd,
-        rhfchs,
-        rhcres
+        lhname: rhocxt.lhname,
+        eshori: rhocxt.eshori,
+        ishori: rhocxt.ishori,
+        lhcres
       }
     }
-    else {
-      return {
-        ...rhocxt,
-        isLhhd
-      }
+    catch(err){
+      console.error(err);
+      throw new Error(
+        'Cannot build bean branch series.');
     }
 
   }
 
-  return R.map(mapFn, rhocs_5)
+  return R.map(mapFn, rhocs_1)
 }
 
-export const rhocs_6 = getRhocs_6();
+export const rhocs_2 = getRhocs_2();
 
-export const getRcxt6ByLhn = lhname => {
+export const getRcxt2ByLhn = lhname => {
 
   try {
     return getRcxtvByLhn(
-      lhname, rhocs_6, 6);
+      lhname, rhocs_2, 2);
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get RHOCXT_6 by long hook name.')
+      'Cannot get RHOCXT_2 by long hook name.')
   }
 }
