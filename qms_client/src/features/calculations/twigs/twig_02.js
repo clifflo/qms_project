@@ -13,32 +13,32 @@ export const getElre = (selem, telem) => {
 
   if(R.isNil(selem)){
     throw new Error(
-      'SELEM cannot be nil.');
+      '[selem] cannot be nil.');
   }
 
   if(R.isNil(telem)){
     throw new Error(
-      'TELEM cannot be nil.');
+      '[telem] cannot be nil.');
   }
 
   if(!RA.isString(selem)){
     throw new Error(
-      'SELEM must be string.');
+      '[selem] must be string.');
   }
 
   if(!RA.isString(telem)){
     throw new Error(
-      'TELEM must be string.');
+      '[telem] must be string.');
   }
 
   if(!isValidElem(selem)){
     throw new Error(
-      `${selem} is not a valid SELEM.`);
+      `${selem} is not a valid [selem].`);
   }
 
   if(!isValidElem(telem)){
     throw new Error(
-      `${telem} is not a valid TELEM.`);
+      `${telem} is not a valid [telem].`);
   }
 
   const sourceIndex = utGetIdx(
@@ -49,12 +49,12 @@ export const getElre = (selem, telem) => {
 
   if(sourceIndex == -1){
     throw new Error(
-      `'${source}' is not a valid source elemental.`);
+      `'${source}' is not a valid [selem].`);
   }
 
   if(targetIndex == -1){
     throw new Error(
-      `'${target}' is not a valid target elemental.`);
+      `'${target}' is not a valid [telem].`);
   }
 
   const difference = targetIndex - sourceIndex;
