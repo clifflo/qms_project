@@ -8,11 +8,11 @@ import {
   isValidBranch,
   isValidTrunk,
   isValidElem,
-  itemOfBranch,
+  itemobr,
   idxOfBranch,
   idxOfTrunk,
   getElem,
-  elemOrder,
+  elemod,
   branchOrder
 } from './twig_01';
 
@@ -83,7 +83,7 @@ export const getChbt = (sElem, chosen) => {
     const movement = cbaml[sElem];
     const chsx = idxOfChosen(chosen);
     const tBridx = chsx - cbaml[sElem];
-    const tBranch = itemOfBranch(tBridx);
+    const tBranch = itemobr(tBridx);
     return {
       sElem,
       chosen,

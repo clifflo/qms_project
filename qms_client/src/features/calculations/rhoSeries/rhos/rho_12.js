@@ -5,7 +5,7 @@ import {
   utGetIdx
 } from '../../utils/util_01';
 import {
-  trunkOrder,
+  trkod,
   isValidTrunk
 } from '../../twigs/twig_01';
 import {
@@ -55,7 +55,7 @@ const getRpcsl = () => {
   const mapFn_2 = idx => {
 
     // Rho paladin day trunk
-    const rpdtr = utItem(trunkOrder, idx);
+    const rpdtr = utItem(trkod, idx);
 
     if(R.isNil(rpdtr)){
       throw new Error(

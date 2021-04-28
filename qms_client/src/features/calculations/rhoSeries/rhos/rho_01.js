@@ -6,10 +6,9 @@ import {
 } from '../../utils/util_01';
 import {
   idxOfBranch,
-  itemOfBranch
+  itemobr
 } from '../../twigs/twig_01';
 
-// Raw nattos
 export const rawntos =
   R.join(',', [
     '乾金甲子壬順佈,坎水戊寅戊順佈',
@@ -33,7 +32,7 @@ export const getFbbrs = (bbssb, bbscw) => {
       const rawAdjustment = idx * 2;
       const finalAdjustment = bbscw ?
         rawAdjustment : (-rawAdjustment);
-      return itemOfBranch(bbsbi + finalAdjustment);
+      return itemobr(bbsbi + finalAdjustment);
     }
 
     const fbbrs = R.map(mapFn, R.range(0, 6))

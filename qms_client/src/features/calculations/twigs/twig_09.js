@@ -2,8 +2,8 @@
 const getFlushSet = () => {
 
   const mapFn = (i) => {
-    const sBranch = itemOfBranch(i);
-    const tBranch = itemOfBranch(i + 6);
+    const sBranch = itemobr(i);
+    const tBranch = itemobr(i + 6);
     return [sBranch, tBranch];
   }
 
@@ -18,8 +18,8 @@ export const getFlhop =
 const getHitSet = () => {
 
   const mapFn = (i) => {
-    const sBranch = itemOfBranch(i);
-    const tBranch = itemOfBranch(7 - i);
+    const sBranch = itemobr(i);
+    const tBranch = itemobr(7 - i);
     return [sBranch, tBranch];
   }
 
@@ -38,8 +38,8 @@ const getPauseSet = () => {
     const sBridx = i * 2;
     const tBridx = sBridx - 3;
 
-    const sBranch = itemOfBranch(sBridx);
-    const tBranch = itemOfBranch(tBridx);
+    const sBranch = itemobr(sBridx);
+    const tBranch = itemobr(tBridx);
     return [sBranch, tBranch];
   }
 

@@ -1,11 +1,18 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
+  rhocs_1
+} from './rho_02';
+import {
   decimalToBinary
 } from '../../utils/util_02';
 import {
   rawntos
 } from './rho_01';
+import {
+  isValidElem,
+  elemod
+} from '../../twigs/twig_01';
 import {
   getElem
 } from '../../twigs/twig_02';
@@ -13,14 +20,6 @@ import {
 export const getTrnto = (
   gshori,
   isShetp) => {
-
-  const firstGshori = rawntos[0].gshori;
-
-  if(R.isNil(firstGshori)){
-    throw new Error(
-      'First natto does not have GSHORI. '
-      + 'Please check the schema.');
-  }
 
   if(R.isNil(gshori)){
     throw new Error(
@@ -60,12 +59,12 @@ export const getTrnto = (
 
     if(R.isNil(lshbt)){
       throw new Error(
-        'ISHBT should not be nil.');
+        '[lshbt] should not be nil.');
     }
 
     if(R.isNil(lbbrs)){
       throw new Error(
-        'IBBRS should not be nil.');
+        '[lbbrs] should not be nil.');
     }
 
     return {

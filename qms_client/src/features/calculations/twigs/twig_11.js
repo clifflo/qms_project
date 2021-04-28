@@ -6,7 +6,7 @@ import {
   idxOfTrunk,
   idxOfBranch,
   branchOrder,
-  trunkOrder
+  trkod
 } from './twig_01';
 import {
   utGetIdx

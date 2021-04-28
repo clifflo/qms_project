@@ -3,7 +3,7 @@ import * as RA from 'ramda-adjunct';
 import {
   getElre,
   idxOfTrunk,
-  itemOfTrunk
+  itemotr
 } from '../../twigs/twig_01';
 import {
   nattos

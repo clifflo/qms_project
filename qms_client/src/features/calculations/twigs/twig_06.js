@@ -31,12 +31,12 @@ export const itemOfBtp = idx => {
 
     // Trunk Index
     const tkidx = idx % 10;
-    const trunk = itemOfTrunk(tkidx);
+    const trunk = itemotr(tkidx);
 
     // Branch Index
     const bridx =  bplbi + tkidx;
 
-    const branch = itemOfBranch(bridx);
+    const branch = itemobr(bridx);
 
     return trunk + branch;
   }
@@ -56,8 +56,8 @@ const getTkscSet = () => {
   const mapFn = i => {
     const celemIdx = i - 1;
     const celem = itemOfElem(celemIdx);
-    const sTrunk = itemOfTrunk(i);
-    const tTrunk = itemOfTrunk(i + 5);
+    const sTrunk = itemotr(i);
+    const tTrunk = itemotr(i + 5);
 
     return {
       trunks: [sTrunk, tTrunk],

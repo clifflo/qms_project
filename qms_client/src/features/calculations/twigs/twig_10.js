@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import {
-  itemOfBranch,
+  itemobr,
   getElem
 } from './twig_1';
 
@@ -17,7 +17,7 @@ const getBrlcs = () => {
     const brixs = [bridx_1, bridx_2, bridx_3];
     const blcms = R.compose(
       R.join(''),
-      R.map(itemOfBranch))
+      R.map(itemobr))
     (brixs);
 
     // Branch large compound element
@@ -64,7 +64,7 @@ const getMtigSet = () => {
     const bridx_2 = j + 3;
     const bridx_3 = j + 4;
     const brixs = [bridx_1, bridx_2, bridx_3];
-    const branches = R.map(itemOfBranch, brixs);
+    const branches = R.map(itemobr, brixs);
     const melem = getElem(branches[1]);
 
     return {

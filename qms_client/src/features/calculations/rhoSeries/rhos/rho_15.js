@@ -51,7 +51,7 @@ const getHyrcs = () => {
   try{
     return R.map(
       mapFn_2,
-      trunkOrder);
+      trkod);
   }
   catch(err){
     console.error(err);

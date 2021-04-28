@@ -18,9 +18,9 @@ export const trunkContext = {
   '癸': 'Lamda'
 }
 
-export const elemOrder = '金水木火土';
+export const elemod = '金水木火土';
 
-export const trunkOrder
+export const trkod
   = '甲乙丙丁戊己庚辛壬癸';
 
 export const branchContext = {
@@ -41,16 +41,16 @@ export const branchContext = {
 export const branchOrder =
   '子丑寅卯辰巳午未申酉戌亥';
 
-export function itemOfTrunk(index){
-  return utItem(trunkOrder, index);
+export function itemotr(index){
+  return utItem(trkod, index);
 }
 
-export function itemOfBranch(index){
+export function itemobr(index){
   return utItem(branchOrder, index);
 }
 
 export function itemOfElem(index){
-  return utItem(elemOrder, index);
+  return utItem(elemod, index);
 }
 
 export function isValidBranch(branch){
@@ -58,15 +58,15 @@ export function isValidBranch(branch){
 }
 
 export function isValidTrunk(trunk){
-  return R.includes(trunk, trunkOrder);
+  return R.includes(trunk, trkod);
 }
 
 export function isValidElem(elemental){
-  return R.includes(elemental, elemOrder);
+  return R.includes(elemental, elemod);
 }
 
 export function idxOfElem(elemental){
-  return utGetIdx(elemental, elemOrder)
+  return utGetIdx(elemental, elemod)
 }
 
 export const idxOfBranch = (branch) => {
@@ -74,7 +74,7 @@ export const idxOfBranch = (branch) => {
 }
 
 export const idxOfTrunk = trunk => {
-  return utGetIdx(trunk, trunkOrder)
+  return utGetIdx(trunk, trkod)
 }
 
 export const getTrunkLiturgy = trunk => {

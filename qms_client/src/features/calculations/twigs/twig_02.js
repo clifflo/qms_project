@@ -1,5 +1,18 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import {
+  isValidElem,
+  idxOfBranch,
+  idxOfTrunk,
+  isValidBranch,
+  isValidTrunk,
+  elemod,
+  itemOfElem
+} from './twig_01';
+import {
+  utGetIdx,
+  utItem,
+} from '../utils/util_01';
 
 export const elrs = [
   'Draw',
@@ -42,19 +55,19 @@ export const getElre = (selem, telem) => {
   }
 
   const sourceIndex = utGetIdx(
-    selem, elemOrder);
+    selem, elemod);
 
   const targetIndex = utGetIdx(
-    telem, elemOrder);
+    telem, elemod);
 
   if(sourceIndex == -1){
     throw new Error(
-      `'${source}' is not a valid [selem].`);
+      `'${selem}' is not a valid [selem].`);
   }
 
   if(targetIndex == -1){
     throw new Error(
-      `'${target}' is not a valid [telem].`);
+      `'${telem}' is not a valid [telem].`);
   }
 
   const difference = targetIndex - sourceIndex;
@@ -70,9 +83,9 @@ export const getElem = twig => {
 
   const getBelem = branch => {
 
-    const belemOrder = '水土木木土火火土金金土水';
+    const belemod = '水土木木土火火土金金土水';
     const bridx = idxOfBranch(branch);
-    return belemOrder[bridx];
+    return belemod[bridx];
   }
 
   const getTelem = trunk => {

@@ -41,7 +41,7 @@ const buildCbtt = () => {
       return R.map(getChbt_c(elem), chosenOrder);
     }
 
-    const result = R.map(mapFn, elemOrder);
+    const result = R.map(mapFn, elemod);
     return result;
   }
   catch(err){

@@ -1,8 +1,8 @@
 import {
   idxOfBranch,
   idxOfTrunk,
-  itemOfTrunk,
-  itemOfBranch,
+  itemotr,
+  itemobr,
   isValidTrunk,
   isValidBranch
 } from './twig_01';
@@ -37,16 +37,16 @@ export const getBpse = betapsi => {
   }
 
   // Betapsi Series Lead Branch
-  const bslb = itemOfBranch(difference);
+  const bslb = itemobr(difference);
 
   // Betapsi Series Full Name
   const bsfn = `甲${bslb}旬`;
 
   // Betapsi Series Void A
-  const bsva = itemOfBranch(difference - 2);
+  const bsva = itemobr(difference - 2);
 
   // Betapsi Series Void B
-  const bsvb = itemOfBranch(difference - 1);
+  const bsvb = itemobr(difference - 1);
 
   // Betapsi Series Void List
   const bsvl = [bsva, bsvb];

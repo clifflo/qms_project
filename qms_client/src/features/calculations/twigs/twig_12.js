@@ -17,7 +17,7 @@ import {
   idxOfBranch,
   idxOfTrunk,
   branchOrder,
-  trunkOrder
+  trkod
 } from './twig_01';
 
 
