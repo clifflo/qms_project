@@ -44,7 +44,7 @@ export const cknwa = (varArray, varName) => {
       `${varName} should not be nil.`);
   }
 
-  if(!RA.isPlainObject(varArray)){
+  if(!RA.isArray(varArray)){
     throw new Error(
       `${varName} must be an array.`);
   }

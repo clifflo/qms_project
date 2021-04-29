@@ -19,7 +19,6 @@ import {
   rhocs_6
 } from './rho_10';
 
-
 const getRhocs_7 = () => {
 
   const mapFn_1n =
@@ -63,6 +62,7 @@ const getRhocs_7 = () => {
 
     const { rjkdi, rkgdi } = rhocxt;
     const lhcrsl_1 = rhocxt.lhcrsl;
+  
 
     if(R.isNil(rjkdi)){
       throw new Error(

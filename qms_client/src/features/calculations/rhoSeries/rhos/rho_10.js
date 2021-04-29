@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import * as E from '../../egghead';
 import {
   rfcns
 } from './rho_08';
@@ -14,48 +15,41 @@ const getRhocs_6 = () => {
 
   const mapFn = rhocxt => {
 
-    const nfcns = R.map(
-      R.prop('rfcna'), rhocxt.lhcrsl);
+    // Unique focus list
+    const unifcl = R.compose(
+      R.uniq,
+      R.map(R.prop('rfcna')))
+    (rhocxt.lhcrsl);
 
-    if(R.isNil(nfcns)){
-      throw new Error(
-        '[nfcns] should not be nil.');
-    }
+    // Is lurking long hook, i.e. long hook with
+    // hidden part.
+    const islklh = unifcl.length < 5;
 
-    // Unique cross focus Chinese set
-    const ufcns = R.uniq(nfcns);
+    // Rho hidden focus list
+    const rhdnfl = R.difference(rfcns, unifcl);
 
-    // Long Hook with hidden
-    const isLhhd = ufcns.length < 5;
+    if(islklh){
 
-    // Rho hidden hook focus list
-    const rhhfl = R.difference(rfcns, ufcns);
-
-    if(isLhhd){
-
-      // Rho Head Long Hook Crosses
-      const rhlhcl = R.find(
+      // Rho pilot cross list
+      const rpilcl = R.find(
         R.propEq('lhname', '純' + rhocxt.rhlhn),
         rhocs_5).lhcrsl;
 
-      if(R.isNil(rhlhcl)){
-        throw new Error(
-          'Cannot find the Rho Head Long Hook. '
-          + `${rhocxt.rhHook} may not be a valid `
-          + 'Rho Head Hook Name.')
-      }
+      E.cknwa(rpilcl, 'rpilcl');
 
       return {
         ...rhocxt,
-        isLhhd,
-        rhhfl,
-        rhlhcl
+        islklh,
+        rhdnfl,
+        rpilcl,
+        _type: 'rhocxt_8'
       }
     }
     else {
       return {
         ...rhocxt,
-        isLhhd
+        islklh,
+        _type: 'rhocxt_8'
       }
     }
 

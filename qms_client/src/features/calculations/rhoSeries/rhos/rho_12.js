@@ -15,38 +15,36 @@ import {
 
 const getRhocs_8 = () => {
 
+  // [rpilcs] stands for Rho pilot cross
   const mapFn_1n =
-    (lhcrsl, rhhfl, rhlhcl) => {
+    (lhcrsl, rhdnfl, rpilcs) => {
 
     E.cknwa(lhcrsl, 'lhcrsl');
-    E.cknwa(rhlhcl, 'rhlhcl');
-    E.cknwa(rhhfl, 'rhhfl')
+    E.cknwo(rpilcs, 'rpilcs');
+    E.cknwa(rhdnfl, 'rhdnfl');
 
-    const lhcros = lhcrsl[rhcros.lhcdwi];
+    const lhcros = lhcrsl[rpilcs.lhcdwi];
     E.cknwo(lhcros);
 
-    const rfcna = rhlhcl.rfcna;
+    const rfcna = rpilcs.rfcna;
 
-    if(R.isNil(rfcna)){
-      throw new Error(
-        'RFCHI should not be nil for MAPFN_1.');
-    }
+    E.cknws(rfcna, 'rfcna');
 
     // Is rho boxed cross, i.e. a cross
     // with a hidden part.
-    const isRbxcr = R.includes(
-      rfcna, rhhfl);
+    const isrbxc = R.includes(
+      rfcna, rhdnfl);
 
-    if(isRbxcr){
+    if(isrbxc){
       return {
-        isRbxcr,
+        isrbxc,
         ...lhcros,
-        rhlhcl
+        rpilcs
       }
     }
     else {
       return {
-        isRbxcr,
+        isrbxc,
         ...lhcros
       }
     }
@@ -56,29 +54,27 @@ const getRhocs_8 = () => {
 
   const mapFn_2 = rhocxt => {
 
-    if(!rhocxt.isLhhd){
+    if(!rhocxt.islklh){
       return rhocxt;
     }
     else {
 
-      const rhlhcl = rhocxt.rhlhcl;
-      const rhhfl = rhocxt.rhhfl;
+      const rpilcl = rhocxt.rpilcl;
+      const rhdnfl = rhocxt.rhdnfl;
 
-      E.cknwa(rhlhcl, 'rhlhcl');
-      E.cknwa(rhhfl, 'rhhfl');
+      E.cknwa(rpilcl, 'rpilcl');
+      E.cknwa(rhdnfl, 'rhdnfl');
 
       const lhcrsl =
         R.map(
-          mapFn_1c(rhocxt.lhcrsl)(rhhfl),
-          rhlhcl);
+          mapFn_1c(rhocxt.lhcrsl)(rhdnfl),
+          rpilcl);
 
-      if(R.isNil(lhcrsl)){
-        throw new Error(
-          'LHCRES should not be nil for MAPFN_2.');
-      }
+      E.cknwa(lhcrsl, 'lhcrsl');
 
       return {
         ...rhocxt,
+        _type: 'rpilcs',
         lhcrsl
       }
     }
