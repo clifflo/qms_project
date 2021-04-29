@@ -1,26 +1,38 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
-// Exception by nil and check string
-export const cknws = (
-  varObj, varName) => {
+// Check by nil with string
+export const cknws = (varStr, varName) => {
 
-  if(R.isNil(varObj)){
+  if(R.isNil(varStr)){
     throw new Error(`${varName} should not be nil.`);
   }
 
-  if(!RA.isString(varObj)){
+  if(!RA.isString(varStr)){
     throw new Error(`${varName} must be a string.`);
   }
 }
 
-export const cknwn = (varObj, varName) => {
+// Check by nil with number
+export const cknwn = (varNum, varName) => {
+
+  if(R.isNil(varNum)){
+    throw new Error(`${varName} should not be nil.`);
+  }
+
+  if(!RA.isNumber(varNum)){
+    throw new Error(`${varName} must be a number.`);
+  }
+}
+
+// Check by nil with object
+export const cknwo = (varObj, varName) => {
 
   if(R.isNil(varObj)){
     throw new Error(`${varName} should not be nil.`);
   }
 
   if(!RA.isNumber(varObj)){
-    throw new Error(`${varName} must be a number.`);
+    throw new Error(`${varName} must be an object.`);
   }
 }
