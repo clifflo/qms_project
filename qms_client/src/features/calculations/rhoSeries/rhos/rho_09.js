@@ -94,14 +94,14 @@ const getRhocs_5 = () => {
   const mapFn_2 = rhocxt_4 => {
     try{
 
-      const lhcres = R.map(
+      const lhcrsl = R.map(
         mapFn_1c(rhocxt_4.rhshel),
-        rhocxt_4.lhcres);
+        rhocxt_4.lhcrsl);
 
-      const lhcresLens = R.lensProp('lhcres');
+      const lhcrslLens = R.lensProp('lhcrsl');
 
       const rhocxt_5 = R.set(
-        lhcresLens, lhcres, rhocxt_4);
+        lhcrslLens, lhcrsl, rhocxt_4);
       return rhocxt_5;
     }
     catch(err){

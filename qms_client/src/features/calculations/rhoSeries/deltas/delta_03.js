@@ -40,8 +40,8 @@ export const getDcstl = (wbllhn, chelhn) => {
 
     const mapFn = cridx => {
 
-      const wcrsi = wblrct.lhcres[cridx].crsi;
-      const ccrsi = cherct.lhcres[cridx].crsi;
+      const wcrsi = wblrct.lhcrsl[cridx].crsi;
+      const ccrsi = cherct.lhcrsl[cridx].crsi;
 
       E.cknws(wcrsi, 'wcrsi');
       E.cknws(ccrsi, 'ccrsi');
@@ -95,15 +95,15 @@ export const getDlcxt_2 = (wbllhn, chelhn, dpdtr) => {
 
   const dlcxt_1b = R.set(
     R.lensProp('wbcres'),
-    R.map(mapFn_1, dlcxt_1a.lhcres),
+    R.map(mapFn_1, dlcxt_1a.lhcrsl),
     dlcxt_1a);
 
   const dlcxt_1c = R.set(
     R.lensProp('chcres'),
-    R.map(mapFn_2, chrcxt.lhcres),
+    R.map(mapFn_2, chrcxt.lhcrsl),
     dlcxt_1b);
 
-  const dlcxt_2 = R.dissoc('lhcres', dlcxt_1b);
+  const dlcxt_1d = R.dissoc('lhcrsl', dlcxt_1c);
 
-  return dlcxt_2;
+  return dlcxt_1d;
 }

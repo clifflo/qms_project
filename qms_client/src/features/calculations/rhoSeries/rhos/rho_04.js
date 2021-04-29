@@ -83,7 +83,7 @@ export const getRhocs_2 = () => {
         (eshbt)
         (ishbt);
 
-      const lhcres = RA.mapIndexed(
+      const lhcrsl = RA.mapIndexed(
         mapFn,
         R.drop(1, lhBinary));
 
@@ -91,7 +91,7 @@ export const getRhocs_2 = () => {
         lhname: rhocxt.lhname,
         eshori: rhocxt.eshori,
         ishori: rhocxt.ishori,
-        lhcres
+        lhcrsl
       }
     }
     catch(err){

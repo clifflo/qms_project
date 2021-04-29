@@ -1,4 +1,5 @@
 import * as R from 'ramda';
+import * as E from '../../egghead';
 import {
   trkod
 } from '../../twigs/twig_01';
@@ -15,31 +16,16 @@ import {
 const getRhocs_8 = () => {
 
   const mapFn_1n =
-    (lhcres, rhhfl, rhcros) => {
+    (lhcrsl, rhhfl, rhlhcl) => {
 
-    if(R.isNil(lhcres)){
-      throw new Error(
-        'LHCRES should not be nil for MAPFN_1');
-    }
+    E.cknwa(lhcrsl, 'lhcrsl');
+    E.cknwa(rhlhcl, 'rhlhcl');
+    E.cknwa(rhhfl, 'rhhfl')
 
-    if(R.isNil(rhcros)){
-      throw new Error(
-        'RHCROS should not be nil for MAPFN_1.');
-    }
+    const lhcros = lhcrsl[rhcros.lhcdwi];
+    E.cknwo(lhcros);
 
-    if(R.isNil(rhhfl)){
-      throw new Error(
-        'RHFCHS should not be nil for MAPFN_1.');
-    }
-
-    const lhcros = lhcres[rhcros.lhcdwi];
-
-    if(R.isNil(lhcros)){
-      throw new Error(
-        'LHCROS should not be nil for MAPFN_1.');
-    }
-
-    const rfcna = rhcros.rfcna;
+    const rfcna = rhlhcl.rfcna;
 
     if(R.isNil(rfcna)){
       throw new Error(
@@ -52,11 +38,10 @@ const getRhocs_8 = () => {
       rfcna, rhhfl);
 
     if(isRbxcr){
-      const rhidcr = rhcros;
       return {
         isRbxcr,
         ...lhcros,
-        rhidcr
+        rhlhcl
       }
     }
     else {
@@ -76,32 +61,25 @@ const getRhocs_8 = () => {
     }
     else {
 
-      const rhlhcs = rhocxt.rhlhcs;
+      const rhlhcl = rhocxt.rhlhcl;
       const rhhfl = rhocxt.rhhfl;
 
-      if(R.isNil(rhlhcs)){
-        throw new Error(
-          'RHCRES should not be nil for MAPFN_2.');
-      }
+      E.cknwa(rhlhcl, 'rhlhcl');
+      E.cknwa(rhhfl, 'rhhfl');
 
-      if(R.isNil(rhhfl)){
-        throw new Error(
-          'RHFCHS should not be nil for MAPFN_2.');
-      }
-
-      const lhcres =
+      const lhcrsl =
         R.map(
-          mapFn_1c(rhocxt.lhcres)(rhhfl),
-          rhlhcs);
+          mapFn_1c(rhocxt.lhcrsl)(rhhfl),
+          rhlhcl);
 
-      if(R.isNil(lhcres)){
+      if(R.isNil(lhcrsl)){
         throw new Error(
           'LHCRES should not be nil for MAPFN_2.');
       }
 
       return {
         ...rhocxt,
-        lhcres
+        lhcrsl
       }
     }
   }

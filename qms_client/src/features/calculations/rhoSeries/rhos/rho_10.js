@@ -15,7 +15,7 @@ const getRhocs_6 = () => {
   const mapFn = rhocxt => {
 
     const nfcns = R.map(
-      R.prop('rfcna'), rhocxt.lhcres);
+      R.prop('rfcna'), rhocxt.lhcrsl);
 
     if(R.isNil(nfcns)){
       throw new Error(
@@ -34,11 +34,11 @@ const getRhocs_6 = () => {
     if(isLhhd){
 
       // Rho Head Long Hook Crosses
-      const rhlhcs = R.find(
+      const rhlhcl = R.find(
         R.propEq('lhname', '純' + rhocxt.rhlhn),
-        rhocs_5).lhcres;
+        rhocs_5).lhcrsl;
 
-      if(R.isNil(rhlhcs)){
+      if(R.isNil(rhlhcl)){
         throw new Error(
           'Cannot find the Rho Head Long Hook. '
           + `${rhocxt.rhHook} may not be a valid `
@@ -49,7 +49,7 @@ const getRhocs_6 = () => {
         ...rhocxt,
         isLhhd,
         rhhfl,
-        rhlhcs
+        rhlhcl
       }
     }
     else {

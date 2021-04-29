@@ -27,10 +27,10 @@ const getHdrcs = () => {
 
     const dpebt = getDpebt(dpdtr);
     const rhocxt_8 = getRcxt8ByLhn(lhname);
-    const lhcres_1 = rhocxt_8.lhcres;
+    const lhcrsl_1 = rhocxt_8.lhcrsl;
 
     const mapFn = idx => {
-      const lhcros = lhcres_1[idx];
+      const lhcros = lhcrsl_1[idx];
       const dplch = dpebt.dpcst[idx];
       return {
         ...lhcros,
@@ -38,12 +38,12 @@ const getHdrcs = () => {
       }
     }
 
-    const lhcres_2 = R.map(
+    const lhcrsl_2 = R.map(
       mapFn, R.range(0, 6));
 
     return {
       ...rhocxt_8,
-      lhcres: lhcres_2
+      lhcrsl: lhcrsl_2
     }
   }
 

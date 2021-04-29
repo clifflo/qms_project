@@ -62,7 +62,7 @@ const getRhocs_7 = () => {
   const mapFn_2 = rhocxt => {
 
     const { rjkdi, rkgdi } = rhocxt;
-    const lhcres_1 = rhocxt.lhcres;
+    const lhcrsl_1 = rhocxt.lhcrsl;
 
     if(R.isNil(rjkdi)){
       throw new Error(
@@ -74,12 +74,12 @@ const getRhocs_7 = () => {
         'RKGDI should not be nil.');
     }
 
-    if(R.isNil(lhcres_1)){
+    if(R.isNil(lhcrsl_1)){
       throw new Error(
         'LHCRES should not be nil.');
     }
 
-    const rjkcr = lhcres_1[rjkdi];
+    const rjkcr = lhcrsl_1[rjkdi];
 
     if(R.isNil(rjkcr)){
       throw new Error(
@@ -95,14 +95,14 @@ const getRhocs_7 = () => {
 
     const rqndi = 5 - (idxOfBranch(rjkbh) % 6);
 
-    const lhcres_2 =
+    const lhcrsl_2 =
       R.map(
         mapFn_1c(rjkdi)(rkgdi)(rqndi),
-        lhcres_1);
+        lhcrsl_1);
 
     return {
       ...rhocxt,
-      lhcres: lhcres_2,
+      lhcrsl: lhcrsl_2,
       _type: 'rhocxt_7'
     }
   }

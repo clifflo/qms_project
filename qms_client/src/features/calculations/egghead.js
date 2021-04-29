@@ -36,3 +36,16 @@ export const cknwo = (varObj, varName) => {
     throw new Error(`${varName} must be an object.`);
   }
 }
+
+export const cknwa = (varArray, varName) => {
+
+  if(R.isNil(varArray)){
+    throw new Error(
+      `${varName} should not be nil.`);
+  }
+
+  if(!RA.isPlainObject(varArray)){
+    throw new Error(
+      `${varName} must be an array.`);
+  }
+}
