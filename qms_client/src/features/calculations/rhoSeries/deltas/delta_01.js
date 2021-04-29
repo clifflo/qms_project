@@ -113,5 +113,5 @@ export const getDpebt = dpdtr => {
     R.propEq('dpdtr', dpdtr),
     dpevl);
 
-  return dpebt.dpcst;
+  return dpebt;
 }

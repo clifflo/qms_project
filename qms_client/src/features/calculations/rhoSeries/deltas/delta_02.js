@@ -2,6 +2,9 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../../egghead';
 import {
+  utFindByProp
+} from '../../utils/util_06';
+import {
   rhocs_1
 } from '../rhos/rho_02';
 import {
@@ -15,7 +18,7 @@ import {
   trkod
 } from '../../twigs/twig_01';
 
-const getHyrcs = () => {
+const getHdrcs = () => {
 
   const mapFn_1n = (dpdtr, lhname) => {
 
@@ -28,9 +31,10 @@ const getHyrcs = () => {
 
     const mapFn = idx => {
       const lhcros = lhcres_1[idx];
+      const dplch = dpebt.dpcst[idx];
       return {
         ...lhcros,
-        dplch: dpebt[idx]
+        dplch: dpebt.dpcst[idx]
       }
     }
 
@@ -50,12 +54,13 @@ const getHyrcs = () => {
 
   const mapFn_2 = dpdtr => {
 
-    const hymrcs = R.map(
+    // Hydrated mini rho context set
+    const hmrcs = R.map(
       mapFn_1c(dpdtr), lhnames);
 
     return {
       dpdtr,
-      hymrcs
+      hmrcs
     };
   }
 
@@ -72,4 +77,36 @@ const getHyrcs = () => {
 
 }
 
-export const hycrs = getHyrcs();
+export const hdrcs = getHdrcs();
+
+// Get hydrated rho context 1
+// We need day trunk and wheat bowl
+// long hook.
+export const getDlcxt_1 = (wbllhn, dpdtr) => {
+
+  try{
+    // Hydrated rho context
+    const hdrcxt =
+      utFindByProp('dpdtr', dpdtr, hdrcs);
+
+    const dlcxt_0 =
+      utFindByProp('lhname', wbllhn, hdrcxt.hmrcs);
+
+    const dlcxt_1 = {
+      ...dlcxt_0,
+      _type: 'dlcxt',
+      dpdtr
+    }
+
+    return dlcxt_1;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      '[getDlcxt_1] is error.');
+
+  }
+
+
+
+}

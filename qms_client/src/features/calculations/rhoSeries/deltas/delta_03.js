@@ -1,28 +1,30 @@
 import * as R from 'ramda';
 import * as E from '../../egghead';
 import {
-  getRcxt2ByLhn
-} from '../rhos/rho_05';
-import {
-  getRcxt4ByLhn
-} from '../rhos/rho_06';
-import {
   decimalToBinary
 } from '../../utils/util_02';
+import {
+  getDlcxt_1
+} from './delta_02';
+import {
+  getRcxt2ByLhn
+} from '../../rhos/rho_05';
+
+
+//    // Cheese with wheat bowl regex
+//    const cwwbrg = /(.+)之(.+)/g;
+
+    // Cheese with wheat bowl matches
+//    const cwwbms = cwwbrg.exec(chiwbl);
+//    const wbllhn = cwwbms[1];
+//    const chelhn = cwwbms[2];
 
 // Get delta cross strike list by
 // cheese in wheat bowl
-export const getDcstl = chiwbl => {
+export const getDcstl = (wbllhn, chelhn) => {
 
   try{
 
-    // Cheese with wheat bowl regex
-    const cwwbrg = /(.+)之(.+)/g;
-
-    // Cheese with wheat bowl matches
-    const cwwbms = cwwbrg.exec(chiwbl);
-    const wbllhn = cwwbms[1];
-    const chelhn = cwwbms[2];
     const wblrct = getRcxt2ByLhn(wbllhn);
     const cherct = getRcxt2ByLhn(chelhn);
 
@@ -34,13 +36,12 @@ export const getDcstl = chiwbl => {
     }
 
     const mapFn = cridx => {
+
       const wcrsi = wblrct.lhcres[cridx].crsi;
       const ccrsi = cherct.lhcres[cridx].crsi;
 
       E.cknws(wcrsi, 'wcrsi');
-
-      E.cknws(wcrsi);
-      E.cknws(ccrsi);
+      E.cknws(ccrsi, 'ccrsi');
 
       if(!isZeroOrOne(wcrsi)){
         throw new Error(
@@ -54,7 +55,6 @@ export const getDcstl = chiwbl => {
 
       return wcrsi != ccrsi;
     }
-
     return R.map(mapFn, R.range(0, 6));
   }
   catch(err){
@@ -64,6 +64,43 @@ export const getDcstl = chiwbl => {
 
 }
 
-export const getDlocs_1 = (bwllhn, chelhn) => {
+export const getDlcxt_2 = (wbllhn, chelhn, dpdtr) => {
 
+  E.cknws(wbllhn, 'wbllhn');
+  E.cknws(chelhn, 'chelhn');
+  E.cknws(dpdtr, 'dpdtr');
+
+  const dlcxt_1 = getDlcxt_1(wbllhn, dpdtr);
+  const dcstl = getDcstl(wbllhn, chelhn);
+  const chrcxt = getRcxt8ByLhn(chelhn);
+
+  const mapFn_1 = lhcros => {
+    const isStrike = dcstl[lhcros.lhcdwi];
+    return {
+      ...lhcros,
+      isStrike
+    }
+  }
+
+  const mapFn_2 = lhcros => {
+    const fromStrike = dcstl[lhcros.lhcdwi];
+    return {
+      ...lhcros,
+      fromStrike
+    }
+  }
+
+  const dlcxt_1a = R.set(
+    R.lensProp('wbcres'),
+    R.map(mapFn_1, dlcxt_1.lhcres),
+    dlcxt_1);
+
+  const dlcxt_1b = R.set(
+    R.lensProp('chcres'),
+    R.map(mapFn_2, chrcxt.lhcres),
+    dlcxt_1);
+
+  const dlcxt_2 = R.dissoc('lhcres', dlcxt_1b);
+
+  return dlcxt_2;
 }

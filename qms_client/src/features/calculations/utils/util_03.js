@@ -1,4 +1,4 @@
-export function getPermutation(items) {
+export const getPermutation = items => {
 
   let result = [];
   if (items.length === 0) return [];
@@ -24,7 +24,7 @@ export function getPermutation(items) {
   return result;
 }
 
-export function getCombinations(items) {
+export const getCombinations = items => {
 
   var combi = [];
   var temp = [];

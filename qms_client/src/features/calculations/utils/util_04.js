@@ -1,15 +1,16 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
-const monthRegexPart =
+// Month regex part
+const mnregp =
   '[正二三四五六七八九十子丑霜臘]';
 
 // Single month regex
 export const smorgx =
-  `(${monthRegexPart})`;
+  `(${mnregp})`;
 
-export const multipleMonthRegex =
-  `((?:${monthRegexPart})+)`;
+export const mmorgx =
+  `((?:${mnregp})+)`;
 
 export const branchRegex =
   RA.concatAll([
@@ -35,7 +36,7 @@ export const reggen_2 = regn => {
     case 'm':
       return smorgx;
     case 'M':
-      return multipleMonthRegex;
+      return mmorgx;
     case 'b':
       return branchRegex;
     case 't':
