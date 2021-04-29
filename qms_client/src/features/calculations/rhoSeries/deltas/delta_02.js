@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import * as E from '../../egghead';
 import {
   rhocs_1
 } from '../rhos/rho_02';
@@ -18,15 +19,8 @@ const getHyrcs = () => {
 
   const mapFn_1n = (dpdtr, lhname) => {
 
-    if(R.isNil(dpdtr)){
-      throw new Error(
-        'RDTR should not be nil.');
-    }
-
-    if(R.isNil(lhname)){
-      throw new Error(
-        'LHNAME should not be nil.');
-    }
+    E.cknws(dpdtr, 'dpdtr');
+    E.cknws(lhname, 'lhname');
 
     const dpebt = getDpebt(dpdtr);
     const rhocxt_8 = getRcxt8ByLhn(lhname);

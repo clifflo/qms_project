@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import * as E from '../../egghead';
 import {
   utItem,
   utGetIdx
@@ -21,12 +22,11 @@ export const rawntos =
 export const getFbbrs = (bbssb, bbscw) => {
 
   try{
-    if(R.isNil(bbssb)){
-      throw new Error(
-        'BBSSB should not be nil.');
-    }
 
+    E.cknws(bbssb, 'bbssb');
+    
     const bbsbi = idxOfBranch(bbssb);
+    E.cknwn(bbsbi, 'bbsbi');
 
     const mapFn = idx => {
       const rawAdjustment = idx * 2;
@@ -67,6 +67,7 @@ export const getBkntos = () => {
       R.reverse(R.take(3, fbbrs));
 
     return {
+      _type: 'bkdnto',
       gshori,
       gshele,
       eshbt,

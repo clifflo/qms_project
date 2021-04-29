@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import * as E from '../../egghead';
 import {
   utItem,
   utGetIdx
@@ -100,19 +101,11 @@ export const dpevl = getDpevl();
 // Get delta paladin envelop by trunk
 export const getDpebt = dpdtr => {
 
-  if(R.isNil(dpdtr)){
-    throw new Error(
-      'RDTR should not be nil.');
-  }
-
-  if(!RA.isString(dpdtr)){
-    throw new Error(
-      'DPDTR must be a string.');
-  }
+  E.cknws(dpdtr, 'dpdtr');
 
   if(!isValidTrunk(dpdtr)){
     throw new Error(
-      `${dpdtr} is not a valid trunk for DPDTR.`);
+      `${dpdtr} is not a valid trunk.`);
   }
 
   // Delta paladin cross set by day
