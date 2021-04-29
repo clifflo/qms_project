@@ -28,17 +28,17 @@ const getRhocs_6 = () => {
     // Long Hook with hidden
     const isLhhd = ufcns.length < 5;
 
-    // Rho hidden hook focus Chinese set
-    const rhfchs = R.difference(rfcns, ufcns);
+    // Rho hidden hook focus list
+    const rhhfl = R.difference(rfcns, ufcns);
 
     if(isLhhd){
 
       // Rho Head Long Hook Crosses
-      const rhcres = R.find(
+      const rhlhcs = R.find(
         R.propEq('lhname', '純' + rhocxt.rhlhn),
         rhocs_5).lhcres;
 
-      if(R.isNil(rhcres)){
+      if(R.isNil(rhlhcs)){
         throw new Error(
           'Cannot find the Rho Head Long Hook. '
           + `${rhocxt.rhHook} may not be a valid `
@@ -48,8 +48,8 @@ const getRhocs_6 = () => {
       return {
         ...rhocxt,
         isLhhd,
-        rhfchs,
-        rhcres
+        rhhfl,
+        rhlhcs
       }
     }
     else {

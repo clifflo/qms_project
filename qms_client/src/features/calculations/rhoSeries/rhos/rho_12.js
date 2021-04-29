@@ -15,7 +15,7 @@ import {
 const getRhocs_8 = () => {
 
   const mapFn_1n =
-    (lhcres, rhfchs, rhcros) => {
+    (lhcres, rhhfl, rhcros) => {
 
     if(R.isNil(lhcres)){
       throw new Error(
@@ -27,7 +27,7 @@ const getRhocs_8 = () => {
         'RHCROS should not be nil for MAPFN_1.');
     }
 
-    if(R.isNil(rhfchs)){
+    if(R.isNil(rhhfl)){
       throw new Error(
         'RHFCHS should not be nil for MAPFN_1.');
     }
@@ -49,7 +49,7 @@ const getRhocs_8 = () => {
     // Is rho boxed cross, i.e. a cross
     // with a hidden part.
     const isRbxcr = R.includes(
-      rfcna, rhfchs);
+      rfcna, rhhfl);
 
     if(isRbxcr){
       const rhidcr = rhcros;
@@ -76,23 +76,23 @@ const getRhocs_8 = () => {
     }
     else {
 
-      const rhcres = rhocxt.rhcres;
-      const rhfchs = rhocxt.rhfchs;
+      const rhlhcs = rhocxt.rhlhcs;
+      const rhhfl = rhocxt.rhhfl;
 
-      if(R.isNil(rhcres)){
+      if(R.isNil(rhlhcs)){
         throw new Error(
           'RHCRES should not be nil for MAPFN_2.');
       }
 
-      if(R.isNil(rhfchs)){
+      if(R.isNil(rhhfl)){
         throw new Error(
           'RHFCHS should not be nil for MAPFN_2.');
       }
 
       const lhcres =
         R.map(
-          mapFn_1c(rhocxt.lhcres)(rhfchs),
-          rhcres);
+          mapFn_1c(rhocxt.lhcres)(rhhfl),
+          rhlhcs);
 
       if(R.isNil(lhcres)){
         throw new Error(

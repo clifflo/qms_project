@@ -8,7 +8,10 @@ import {
 } from './delta_02';
 import {
   getRcxt2ByLhn
-} from '../../rhos/rho_05';
+} from '../rhos/rho_05';
+import {
+  getRcxt8ByLhn
+} from '../rhos/rho_12';
 
 
 //    // Cheese with wheat bowl regex
@@ -70,7 +73,7 @@ export const getDlcxt_2 = (wbllhn, chelhn, dpdtr) => {
   E.cknws(chelhn, 'chelhn');
   E.cknws(dpdtr, 'dpdtr');
 
-  const dlcxt_1 = getDlcxt_1(wbllhn, dpdtr);
+  const dlcxt_1a = getDlcxt_1(wbllhn, dpdtr);
   const dcstl = getDcstl(wbllhn, chelhn);
   const chrcxt = getRcxt8ByLhn(chelhn);
 
@@ -90,15 +93,15 @@ export const getDlcxt_2 = (wbllhn, chelhn, dpdtr) => {
     }
   }
 
-  const dlcxt_1a = R.set(
-    R.lensProp('wbcres'),
-    R.map(mapFn_1, dlcxt_1.lhcres),
-    dlcxt_1);
-
   const dlcxt_1b = R.set(
+    R.lensProp('wbcres'),
+    R.map(mapFn_1, dlcxt_1a.lhcres),
+    dlcxt_1a);
+
+  const dlcxt_1c = R.set(
     R.lensProp('chcres'),
     R.map(mapFn_2, chrcxt.lhcres),
-    dlcxt_1);
+    dlcxt_1b);
 
   const dlcxt_2 = R.dissoc('lhcres', dlcxt_1b);
 
