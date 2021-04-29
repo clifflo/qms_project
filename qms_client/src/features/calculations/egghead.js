@@ -32,7 +32,7 @@ export const cknwo = (varObj, varName) => {
     throw new Error(`${varName} should not be nil.`);
   }
 
-  if(!RA.isNumber(varObj)){
+  if(!RA.isPlainObject(varObj)){
     throw new Error(`${varName} must be an object.`);
   }
 }

@@ -8,6 +8,9 @@ import {
   nattos
 } from './rho_02';
 import {
+  rhocs_2
+} from './rho_04';
+import {
   getElem
 } from '../../twigs/twig_01';
 
@@ -111,8 +114,7 @@ export const getRcxt1ByLhn = lhname => {
   }
   catch(err){
     console.error(err);
-    throw new Error(
-      'Cannot get RHOCXT_1 by long hook name.')
+    throw new Error('Cannot get [rhocxt_1].');
   }
 }
 
@@ -123,7 +125,17 @@ export const getRcxt1ByLhx = lhidx => {
   }
   catch(err){
     console.error(err);
-    throw new Error(
-      'Cannot get RHOCXT_1 by long hook index.')
+    throw new Error('Cannot get [rhocxt_1].');
+  }
+}
+
+export const getRcxt2ByLhn = lhname => {
+  try {
+    return getRcxtvByLhn(
+      lhname, rhocs_2, 2);
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get [rhocxt_2].');
   }
 }

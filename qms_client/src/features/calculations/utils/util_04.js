@@ -4,7 +4,8 @@ import * as RA from 'ramda-adjunct';
 const monthRegexPart =
   '[正二三四五六七八九十子丑霜臘]';
 
-export const singleMonthRegex =
+// Single month regex
+export const smorgx =
   `(${monthRegexPart})`;
 
 export const multipleMonthRegex =
@@ -32,7 +33,7 @@ export const reggen_2 = regn => {
 
   switch(regn){
     case 'm':
-      return singleMonthRegex;
+      return smorgx;
     case 'M':
       return multipleMonthRegex;
     case 'b':

@@ -1,7 +1,8 @@
 import * as R from 'ramda';
+import * as E from '../../egghead';
 import {
   getRcxt2ByLhn
-} from '../rhos/rho_04';
+} from '../rhos/rho_05';
 import {
   getRcxt4ByLhn
 } from '../rhos/rho_06';
@@ -9,56 +10,60 @@ import {
   decimalToBinary
 } from '../../utils/util_02';
 
-// Delta cross strike list
-export const getDcstl = (boklhn, chelhn) => {
+// Get delta cross strike list by
+// cheese in wheat bowl
+export const getDcstl = chiwbl => {
 
   try{
 
-    const bkrcxt = getRcxt2ByLhn(boklhn);
-    const chrcxt = getRcxt2ByLhn(chelhn);
+    // Cheese with wheat bowl regex
+    const cwwbrg = /(.+)之(.+)/g;
 
-    E.chnwo(bkrcxt, 'bkrcxt');
-    E.chnwo(chrcxt, 'chrcxt');
+    // Cheese with wheat bowl matches
+    const cwwbms = cwwbrg.exec(chiwbl);
+    const wbllhn = cwwbms[1];
+    const chelhn = cwwbms[2];
+    const wblrct = getRcxt2ByLhn(wbllhn);
+    const cherct = getRcxt2ByLhn(chelhn);
+
+    E.cknwo(wblrct, 'wblrct');
+    E.cknwo(cherct, 'cherct');
 
     const isZeroOrOne = crsi => {
       return (crsi == '0') || (crsi == '1');
     }
 
     const mapFn = cridx => {
-      const bcrsi = bkrcxt.lhcres[cridx].crsi;
-      const ccrsi = chrcxt.lhcres[cridx].crsi;
+      const wcrsi = wblrct.lhcres[cridx].crsi;
+      const ccrsi = cherct.lhcres[cridx].crsi;
 
-      E.cknws(bcrsi, 'bcrsi');
+      E.cknws(wcrsi, 'wcrsi');
 
-      if(R.isNil(bcrsi)){
+      E.cknws(wcrsi);
+      E.cknws(ccrsi);
+
+      if(!isZeroOrOne(wcrsi)){
         throw new Error(
-          'Book CRSI should not be nil.');
-      }
-
-      if(R.isNil(ccrsi)){
-        throw new Error(
-          'Cheese CRSI should not be nil.');
-      }
-
-      if(!isZeroOrOne(bcrsi)){
-        throw new Error(
-          'BCRSI must be 1 or 0.');
+          '[wcrsi] must be 1 or 0.');
       }
 
       if(!isZeroOrOne(ccrsi)){
         throw new Error(
-          'CCRSI must be 1 or 0.');
+          '[ccrsi] must be 1 or 0.');
       }
 
-      return bcrsi != ccrsi;
+      return wcrsi != ccrsi;
     }
 
     return R.map(mapFn, R.range(0, 6));
   }
-
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get [dcstl].');
+  }
 
 }
 
-export const getDlocs_1 = (boklhn, chelhn) => {
+export const getDlocs_1 = (bwllhn, chelhn) => {
 
 }
