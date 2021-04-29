@@ -16,6 +16,7 @@ import {
   rfcis
 } from '../rhos/rho_06';
 
+// Delta paladin order
 export const dpldo =
   R.compose(
     R.reverse,
@@ -23,7 +24,7 @@ export const dpldo =
     R.split(','))
   ('青龍,朱雀,勾陳,螣蛇,白虎,玄武');
 
-// Delta Paladin Start Position Map
+// Delta paladin start position map
 const dpspm = {
   '甲': '丙青龍',
   '乙': '丙青龍',
@@ -37,8 +38,8 @@ const dpspm = {
   '癸': '丙玄武'
 }
 
-// Delta Paladin Cross Set List
-const getDpcsl = () => {
+// Delta paladin envelop ist
+const getDpevl = () => {
 
   const mapFn_1n = (startIdx, distance) => {
 
@@ -58,25 +59,27 @@ const getDpcsl = () => {
 
     if(R.isNil(dpdtr)){
       throw new Error(
-        'RPDTR should not be nil.')
+        '[dpdtr] should not be nil.')
     }
 
-    const rpstp = dpspm[dpdtr];
+    // Delta paladin start position
+    const dpstp = dpspm[dpdtr];
 
-    // Rho Paladin Index
-    const rpdix = utGetIdx(rpstp, dpldo) + 1;
+    // Delta Paladin Index
+    const dpdix = utGetIdx(dpstp, dpldo) + 1;
 
-    if(R.isNil(rpdix)){
+    if(R.isNil(dpdix)){
       throw new Error(
         'RPDIX should not be nil.');
     }
 
     // Delta paladin cross set
     const dpcst = R.map(
-      mapFn_1c(rpdix),
+      mapFn_1c(dpdix),
       R.range(0, 6));
 
     return {
+      _type: 'dpenv',
       dpdtr,
       dpcst
     };
@@ -91,40 +94,31 @@ const getDpcsl = () => {
   }
 }
 
-export const dpcsl = getDpcsl();
+// Delta paladin cross set list
+export const dpevl = getDpevl();
 
-export const getDpcstByRdtr = rdtr => {
+// Get delta paladin envelop by trunk
+export const getDpebt = dpdtr => {
 
-  if(R.isNil(rdtr)){
+  if(R.isNil(dpdtr)){
     throw new Error(
       'RDTR should not be nil.');
   }
 
-  if(!RA.isString(rdtr)){
+  if(!RA.isString(dpdtr)){
     throw new Error(
-      'RDTR must be a string.');
+      'DPDTR must be a string.');
   }
 
-  if(!isValidTrunk(rdtr)){
+  if(!isValidTrunk(dpdtr)){
     throw new Error(
-      `${rdtr} is not a valid trunk for RDTR.`);
+      `${dpdtr} is not a valid trunk for DPDTR.`);
   }
 
-  const rpcbd = R.find(
-    R.propEq('dpdtr', rdtr),
-    rpcsl);
+  // Delta paladin cross set by day
+  const dpebt = R.find(
+    R.propEq('dpdtr', dpdtr),
+    dpevl);
 
-  const dpcst = rpcbd.dpcst;
-
-  if(R.isNil(dpcst)){
-    throw new Error(
-      'RPCST should not be nil.');
-  }
-
-  if(!RA.isArray(dpcst)){
-    throw new Error(
-      'RPCST must be an array.');
-  }
-
-  return dpcst;
+  return dpebt.dpcst;
 }

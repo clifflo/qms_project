@@ -2,23 +2,23 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   rhocs_1
-} from './rho_02';
+} from '../rhos/rho_02';
 import {
   rhocs_8,
   getRcxt8ByLhn
-} from './rho_12';
+} from '../rhos/rho_12';
 import {
-  getRpcstByRdtr
-} from './rho_13';
+  getDpebt
+} from './delta_01';
 import {
   trkod
 } from '../../twigs/twig_01';
 
 const getHyrcs = () => {
 
-  const mapFn_1n = (rdtr, lhname) => {
+  const mapFn_1n = (dpdtr, lhname) => {
 
-    if(R.isNil(rdtr)){
+    if(R.isNil(dpdtr)){
       throw new Error(
         'RDTR should not be nil.');
     }
@@ -28,7 +28,7 @@ const getHyrcs = () => {
         'LHNAME should not be nil.');
     }
 
-    const rpcst = getRpcstByRdtr(rdtr);
+    const dpebt = getDpebt(dpdtr);
     const rhocxt_8 = getRcxt8ByLhn(lhname);
     const lhcres_1 = rhocxt_8.lhcres;
 
@@ -36,7 +36,7 @@ const getHyrcs = () => {
       const lhcros = lhcres_1[idx];
       return {
         ...lhcros,
-        rplch: rpcst[idx]
+        dplch: dpebt[idx]
       }
     }
 
@@ -54,10 +54,14 @@ const getHyrcs = () => {
   const lhnames = R.map(
     R.prop('lhname'), rhocs_1);
 
-  const mapFn_2 = rdtr => {
+  const mapFn_2 = dpdtr => {
+
+    const hymrcs = R.map(
+      mapFn_1c(dpdtr), lhnames);
+
     return {
-      rdtr,
-      hymrcs: R.map(mapFn_1c(rdtr), lhnames)
+      dpdtr,
+      hymrcs
     };
   }
 
