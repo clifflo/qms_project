@@ -5,7 +5,6 @@ import {
   octalToDecimal
 } from '../../utils/util_02';
 
-
 // Get long hook name from binary lots
 export const getLnfbl = bilot => {
 

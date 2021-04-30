@@ -4,7 +4,8 @@ import {
   rlhsl
 } from './rho_06';
 
-export const buildRjkdi = rhgidx => {
+// Rho hook generation index
+export const buildRjkdi = rhogen => {
 
   const mapper = {
     0: 5,
@@ -17,7 +18,7 @@ export const buildRjkdi = rhgidx => {
     7: 2
   }
 
-  const lhcuwi = mapper[rhgidx];
+  const lhcuwi = mapper[rhogen];
   const lhcdwi = 5 - lhcuwi;
   return lhcdwi;
 }
@@ -27,11 +28,11 @@ const getRhocs_3 = () => {
   const mapFn_1 = (
     rlhsc,
     lhname,
-    rhgidx) => {
+    rhogen) => {
 
     try{
 
-      const rjkdi = buildRjkdi(rhgidx);
+      const rjkdi = buildRjkdi(rhogen);
       const rkgdi = (rjkdi + 3) % 6;
       const rhlhn = rlhsc.rhlhn;
 
@@ -44,7 +45,7 @@ const getRhocs_3 = () => {
         _type: 'rhocxt_3',
         lhname,
         rhlhn,
-        rhgidx,
+        rhogen,
         rjkdi,
         rkgdi
       }

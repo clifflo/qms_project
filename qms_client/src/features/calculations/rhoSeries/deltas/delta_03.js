@@ -13,17 +13,6 @@ import {
   getRcxt8ByLhn
 } from '../rhos/rho_12';
 
-
-//    // Cheese with wheat bowl regex
-//    const cwwbrg = /(.+)之(.+)/g;
-
-    // Cheese with wheat bowl matches
-//    const cwwbms = cwwbrg.exec(chiwbl);
-//    const wbllhn = cwwbms[1];
-//    const chelhn = cwwbms[2];
-
-// Get delta cross strike list by
-// cheese in wheat bowl
 export const getDcstl = (wbllhn, chelhn) => {
 
   try{
@@ -65,45 +54,4 @@ export const getDcstl = (wbllhn, chelhn) => {
     throw new Error('Cannot get [dcstl].');
   }
 
-}
-
-export const getDlcxt_2 = (wbllhn, chelhn, dpdtr) => {
-
-  E.cknws(wbllhn, 'wbllhn');
-  E.cknws(chelhn, 'chelhn');
-  E.cknws(dpdtr, 'dpdtr');
-
-  const dlcxt_1a = getDlcxt_1(wbllhn, dpdtr);
-  const dcstl = getDcstl(wbllhn, chelhn);
-  const chrcxt = getRcxt8ByLhn(chelhn);
-
-  const mapFn_1 = lhcros => {
-    const isStrike = dcstl[lhcros.lhcdwi];
-    return {
-      ...lhcros,
-      isStrike
-    }
-  }
-
-  const mapFn_2 = lhcros => {
-    const fromStrike = dcstl[lhcros.lhcdwi];
-    return {
-      ...lhcros,
-      fromStrike
-    }
-  }
-
-  const dlcxt_1b = R.set(
-    R.lensProp('wbcres'),
-    R.map(mapFn_1, dlcxt_1a.lhcrsl),
-    dlcxt_1a);
-
-  const dlcxt_1c = R.set(
-    R.lensProp('chcres'),
-    R.map(mapFn_2, chrcxt.lhcrsl),
-    dlcxt_1b);
-
-  const dlcxt_1d = R.dissoc('lhcrsl', dlcxt_1c);
-
-  return dlcxt_1d;
 }

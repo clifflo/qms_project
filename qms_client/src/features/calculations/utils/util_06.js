@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import * as E from '../egghead';
 
 export const isAlnum = alnum => {
   return RA.isString(alnum) || RA.isNumber(alnum);
@@ -41,4 +42,16 @@ export const utFindByProp =
   return R.find(
     R.propEq(propName, propValue),
     list);
+}
+
+// [Delpn] is deleted props.
+export const utDissoc = (obj, delps) => {
+
+  E.cknwo(obj, 'Object');
+  E.cknwa(delps, 'Deleted props');
+
+  const result =
+    R.reduce(R.flip(R.dissoc), obj, delps);
+
+  return result;
 }

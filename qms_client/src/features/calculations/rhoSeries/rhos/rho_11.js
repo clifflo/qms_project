@@ -62,7 +62,6 @@ const getRhocs_7 = () => {
 
     const { rjkdi, rkgdi } = rhocxt;
     const lhcrsl_1 = rhocxt.lhcrsl;
-  
 
     if(R.isNil(rjkdi)){
       throw new Error(

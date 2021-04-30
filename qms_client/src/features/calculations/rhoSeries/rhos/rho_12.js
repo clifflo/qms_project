@@ -32,19 +32,19 @@ const getRhocs_8 = () => {
 
     // Is rho boxed cross, i.e. a cross
     // with a hidden part.
-    const isrbxc = R.includes(
+    const isRbxc = R.includes(
       rfcna, rhdnfl);
 
-    if(isrbxc){
+    if(isRbxc){
       return {
-        isrbxc,
+        isRbxc,
         ...lhcros,
         rpilcs
       }
     }
     else {
       return {
-        isrbxc,
+        isRbxc,
         ...lhcros
       }
     }
