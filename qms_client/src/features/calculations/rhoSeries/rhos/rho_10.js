@@ -18,7 +18,7 @@ const getRhocs_6 = () => {
     // Unique focus list
     const unifcl = R.compose(
       R.uniq,
-      R.map(R.prop('rfcna')))
+      R.map(R.prop('dfccn')))
     (rhocxt.lhcrsl);
 
     // Is lurking long hook, i.e. long hook with

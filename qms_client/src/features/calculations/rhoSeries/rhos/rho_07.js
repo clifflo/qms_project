@@ -105,8 +105,7 @@ const getRcxt3ByLn = lhname => {
 
   if(R.isNil(rhocxt_3)){
     throw new Error(
-      `${lhname} is not a valid long hook `
-      + 'name for RHOCS_3.');
+      `${lhname} is not a valid [lhname].`);
   }
 
   return rhocxt_3;

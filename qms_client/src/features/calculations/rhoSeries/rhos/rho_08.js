@@ -79,38 +79,49 @@ export const getRcxt4ByLhn = lhname => {
   }
 }
 
-export const rfmap = [
+
+export const dfcsm = [
   {
-    rfcna: '丙兄弟',
-    rfena: 'dtf-xd',
-    rrawf: 'Draw'
+    dfccn: '丙兄弟',
+    dfcsid: 'dtf-xd',
+    rrawf: 'Draw',
+    dfsnn: 'Brother',
+    dfcfen: 'Delta brother'
   },
   {
-    rfcna: '丙子孫',
-    rfena: 'dtf-zs',
-    rrawf: 'Fruit'
+    dfccn: '丙子孫',
+    dfcsid: 'dtf-zs',
+    rrawf: 'Fruit',
+    dfsnn: 'Children',
+    dfcfen: 'Delta children'
   },
   {
-    rfcna: '丙妻財',
-    rfena: 'dtf-qc',
-    rrawf: 'Bank'
+    dfccn: '丙妻財',
+    dfcsid: 'dtf-qc',
+    rrawf: 'Bank',
+    dfsnn: 'Money',
+    dfcfen: 'Delta money'
   },
   {
-    rfcna: '丙父母',
-    rfena: 'dtf-fm',
-    rrawf: 'Seed'
+    dfccn: '丙父母',
+    dfcsid: 'dtf-fm',
+    rrawf: 'Seed',
+    dfsnn: 'Parent',
+    dfcfen: 'Delta parent'
   },
   {
-    rfcna: '丙官鬼',
-    rfena: 'dtf-gg',
-    rrawf: 'Hacker'
+    dfccn: '丙官鬼',
+    dfcsid: 'dtf-gg',
+    rrawf: 'Hacker',
+    dfsnn: 'Ghost',
+    dfcfen: 'Delta ghost'
   }
 ]
 
 // Rho focus Chinese name set
 export const rfcns = R.map(
-  R.prop('rfcna'), rfmap);
+  R.prop('dfccn'), dfcsm);
 
 // Rho focus English name set
 export const rfens = R.map(
-  R.prop('rfena'), rfmap);
+  R.prop('dfcsid'), dfcsm);

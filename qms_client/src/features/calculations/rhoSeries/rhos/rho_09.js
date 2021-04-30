@@ -3,43 +3,43 @@ import * as RA from 'ramda-adjunct';
 import {
   rfcns,
   rfens,
-  rfmap,
+  dfcsm,
   rhocs_4
 } from './rho_08';
 import {
   getElre
 } from '../../twigs/twig_02';
 
-export const isValidRfcna = rfcna => {
+export const isValidRfcna = dfccn => {
 
-  if(R.isNil(rfcna)){
+  if(R.isNil(dfccn)){
     throw new Error(
-      '[rfcna] should not be nil.');
+      '[dfccn] should not be nil.');
   }
 
-  if(!RA.isString(rfcna)){
+  if(!RA.isString(dfccn)){
     throw new Error(
-      '[rfcna] must be a string.');
+      '[dfccn] must be a string.');
   }
 
-  const isValid = R.includes(rfcna, rfcns);
+  const isValid = R.includes(dfccn, rfcns);
 
   return isValid;
 }
 
-export const isValidRfena = rfena => {
+export const isValidRfena = dfsnn => {
 
-  if(R.isNil(rfena)){
+  if(R.isNil(dfsnn)){
     throw new Error(
-      '[rfena] should not be nil.');
+      '[dfsnn] should not be nil.');
   }
 
-  if(!RA.isString(rfena)){
+  if(!RA.isString(dfsnn)){
     throw new Error(
-      '[rfena] must be a string.');
+      '[dfsnn] must be a string.');
   }
 
-  const isValid = R.includes(rfena, rfens);
+  const isValid = R.includes(dfsnn, rfens);
 
   return isValid;
 }
@@ -53,7 +53,7 @@ const getRfcfr = rrawf => {
   }
 
   return R.find(
-    R.propEq('rrawf', rrawf), rfmap).rfcna;
+    R.propEq('rrawf', rrawf), dfcsm).dfccn;
 }
 
 const getRhocs_5 = () => {
@@ -69,17 +69,17 @@ const getRhocs_5 = () => {
           '[rrawf] should not be nil.');
       }
 
-      const rfcna = getRfcfr(rrawf);
+      const dfccn = getRfcfr(rrawf);
 
-      if(R.isNil(rfcna)){
+      if(R.isNil(dfccn)){
         throw new Error(
-          '[rfcna] should not be nil.');
+          '[dfccn] should not be nil.');
       }
 
-      const rfcnaLens = R.lensProp('rfcna');
+      const dfccnLens = R.lensProp('dfccn');
 
       let lhcros_2 = R.set(
-        rfcnaLens, rfcna, lhcros_1);
+        dfccnLens, dfccn, lhcros_1);
 
       return lhcros_2;
     }

@@ -21,9 +21,51 @@ import {
 export const dpldo =
   R.compose(
     R.reverse,
-    R.map(R.concat('丙')),
     R.split(','))
-  ('青龍,朱雀,勾陳,螣蛇,白虎,玄武');
+  ('丙青龍,丙朱雀,丙勾陳,丙螣蛇,丙白虎,丙玄武');
+
+// [dplcn] is delta paladin chinese name.
+// [dplnn] is delta paladin nickname.
+// [dplfen] is delta paladin full english name.
+// [dplsid] is delta paladin specification ID.
+export const dpnnm = [
+  {
+    dplcn: '丙青龍',
+    dplnn: 'Dragon',
+    dplfen: 'Delta dragon',
+    dplsid: 'dtp-ql'
+  },
+  {
+    dplcn: '丙朱雀',
+    dplnn: 'Phoenix',
+    dplfen: 'Delta phoenix',
+    dplsid: 'dtp-zj'
+  },
+  {
+    dplcn: '丙勾陳',
+    dplnn: 'Unicorn',
+    dplfen: 'Delta unicorn',
+    dplsid: 'dtp-gc'
+  },
+  {
+    dplcn: '丙螣蛇',
+    dplnn: 'Cobra',
+    dplfen: 'Delta cobra',
+    dplsid: 'dtp-ts'
+  },
+  {
+    dplcn: '丙白虎',
+    dplnn: 'Tiger',
+    dplfen: 'Delta tiger',
+    dplsid: 'dtp-bh'
+  },
+  {
+    dplcn: '丙玄武',
+    dplnn: 'Turtle',
+    dplfen: 'Delta turtle',
+    dplsid: 'dtp-xw'
+  }
+]
 
 // Delta paladin start position map
 const dpspm = {

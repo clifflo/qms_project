@@ -26,14 +26,14 @@ const getRhocs_8 = () => {
     const lhcros = lhcrsl[rpilcs.lhcdwi];
     E.cknwo(lhcros);
 
-    const rfcna = rpilcs.rfcna;
+    const dfccn = rpilcs.dfccn;
 
-    E.cknws(rfcna, 'rfcna');
+    E.cknws(dfccn, 'dfccn');
 
     // Is rho boxed cross, i.e. a cross
     // with a hidden part.
     const isRbxc = R.includes(
-      rfcna, rhdnfl);
+      dfccn, rhdnfl);
 
     if(isRbxc){
       return {
