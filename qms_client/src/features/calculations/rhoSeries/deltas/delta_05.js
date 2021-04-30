@@ -16,7 +16,8 @@ import {
   utDissoc
 } from '../../utils/util_06';
 
-export const getDlcxt_2 = (wbllhn, chelhn, dpdtr) => {
+export const getDlcxt_2 =
+  (wbllhn, chelhn, dpdtr) => {
 
   E.cknws(wbllhn, 'wbllhn');
   E.cknws(chelhn, 'chelhn');
