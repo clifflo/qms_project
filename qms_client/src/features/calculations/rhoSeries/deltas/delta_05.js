@@ -26,6 +26,12 @@ export const getDlcxt_2 = (wbllhn, chelhn, dpdtr) => {
   const dcstl = getDcstl(wbllhn, chelhn);
   const chrcxt = getRcxt8ByLhn(chelhn);
 
+  // Wheat bowl external short hook element
+  const wbeshe = dlcxt_1a.eshele;
+
+  // Wheat bowl internal short hook element
+  const wbishe = dlcxt_1a.ishele;
+
   // Wheat bowl external short hook original
   const wbesho = dlcxt_1a.eshori;
 
@@ -34,6 +40,12 @@ export const getDlcxt_2 = (wbllhn, chelhn, dpdtr) => {
 
   // Wheat bowl generation
   const wbrgen = dlcxt_1a.rhogen;
+
+  // Cheese external short hook element
+  const cheshe = dlcxt_1a.eshele;
+
+  // Cheese internal short hook element
+  const chishe = dlcxt_1a.ishele;
 
   // Cheese external short hook original
   const chesho = chrcxt.eshori;
@@ -73,6 +85,10 @@ export const getDlcxt_2 = (wbllhn, chelhn, dpdtr) => {
     chesho,
     chisho,
     wbrgen,
-    chrgen
+    chrgen,
+    cheshe,
+    chishe,
+    wbeshe,
+    wbishe
   }
 }

@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import * as E from '../../egghead';
 import {
   rhocs_1
 } from './rho_02';
@@ -38,39 +39,42 @@ export const getTrnto = (
 
   if(isShetp){
 
-    if(R.isNil(natto.eshbt)){
-      throw new Error(
-        'ESHBT should not be nil.')
-    }
+    E.cknws(natto.eshbt, 'eshbt');
+    E.cknwa(natto.ebbrs, 'ebbrs');
+    E.cknws(natto.gshele, 'gshele');
 
-    if(R.isNil(natto.ebbrs)){
-      throw new Error(
-        'EBBRS should not be nil.');
-    }
+    // Displayed short hook bean trunk
+    const dshbt = natto.eshbt;
+
+    // Displayed bean branch series
+    const dbbrs = natto.ebbrs;
+
+    const gshele = natto.gshele;
 
     return {
-      lshbt: natto.eshbt,
-      lbbrs: natto.ebbrs
+      dshbt,
+      dbbrs,
+      gshele
     }
   }
   else {
 
-    const lshbt = natto.ishbt;
-    const lbbrs = natto.ibbrs;
+    E.cknws(natto.ishbt, 'eshbt');
+    E.cknwa(natto.ibbrs, 'ebbrs');
+    E.cknws(natto.gshele, 'gshele');
 
-    if(R.isNil(lshbt)){
-      throw new Error(
-        '[lshbt] should not be nil.');
-    }
+    // Displayed short hook bean trunk
+    const dshbt = natto.ishbt;
 
-    if(R.isNil(lbbrs)){
-      throw new Error(
-        '[lbbrs] should not be nil.');
-    }
+    // Displayed bean branch series
+    const dbbrs = natto.ibbrs;
+
+    const gshele = natto.gshele;
 
     return {
-      lshbt,
-      lbbrs
+      dshbt,
+      dbbrs,
+      gshele
     }
   }
 

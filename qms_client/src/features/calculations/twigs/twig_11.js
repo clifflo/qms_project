@@ -5,7 +5,7 @@ import {
   isValidBranch,
   idxOfTrunk,
   idxOfBranch,
-  branchOrder,
+  brhod,
   trkod
 } from './twig_01';
 import {
@@ -37,7 +37,7 @@ const getMthbrm = () => {
   const mapFn = idx => {
 
     const month = monthOrder[idx];
-    const branch = branchOrder[idx];
+    const branch = brhod[idx];
 
     return {
       [month]: branch

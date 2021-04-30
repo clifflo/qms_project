@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import * as E from '../../egghead';
 import {
   decimalToBinary
 } from '../../utils/util_02';
@@ -24,53 +25,38 @@ export const getRhocs_2 = () => {
       const ishBinary = decimalToBinary(
         rhocxt.ishidx, 3);
 
-      let ebbrs; // External bean branch series
-      let eshbt; // External short hook bean trunk
-      let ibbrs; // Internal bean branch series
-      let ishbt; // Internal short hook bean trunk
-
       // External short hook content
       const eshcot = getTrnto(
         rhocxt.eshori, true);
+      E.cknwo(eshcot, 'eshcot');
 
       // Internal short hook content
       const ishcot = getTrnto(
         rhocxt.ishori, false);
+      E.cknwo(ishcot, 'eshcot');
 
-      if(R.isNil(eshcot)){
-        throw new Error(
-          'ESHCOT should not be nil.');
-      }
+      // External bean branch series
+      const ebbrs = eshcot.dbbrs;
 
-      if(R.isNil(ishcot)){
-        throw new Error(
-          'ISHCOT should not be nil.');
-      }
+      // External short hook bean trunk
+      const eshbt = eshcot.dshbt;
 
-      ebbrs = eshcot.lbbrs;
-      eshbt = eshcot.lshbt;
-      ibbrs = ishcot.lbbrs;
-      ishbt = ishcot.lshbt;
+      const eshele = eshcot.gshele;
 
-      if(R.isNil(ebbrs)){
-        throw new Error(
-          'EBBRS should not be nil.')
-      }
+      // Internal bean branch series
+      const ibbrs = ishcot.dbbrs;
 
-      if(R.isNil(ibbrs)){
-        throw new Error(
-          'IBBRS should not be nil.')
-      }
+       // Internal short hook bean trunk
+      const ishbt = ishcot.dshbt;
 
-      if(R.isNil(eshbt)){
-        throw new Error(
-          'ESHBT should not be nil.');
-      }
+      const ishele = ishcot.gshele;
 
-      if(R.isNil(ishbt)){
-        throw new Error(
-          'ISHBT should not be nil.');
-      }
+      E.cknwa(ebbrs, 'ebbrs');
+      E.cknws(eshbt, 'eshbt');
+      E.cknws(eshele, 'eshele');
+      E.cknwa(ibbrs, 'ibbrs');
+      E.cknws(ishbt, 'ishbt');
+      E.cknws(ishele, 'ishele');
 
       const fbbrs = R.concat(ebbrs, ibbrs);
 
@@ -91,6 +77,8 @@ export const getRhocs_2 = () => {
         lhname: rhocxt.lhname,
         eshori: rhocxt.eshori,
         ishori: rhocxt.ishori,
+        ishele,
+        eshele,
         lhcrsl
       }
     }

@@ -38,15 +38,17 @@ export const branchContext = {
   '亥': 'Mu',
 }
 
-export const branchOrder =
+// Branch order
+export const brhod =
   '子丑寅卯辰巳午未申酉戌亥';
 
+// Item of trunk
 export function itemotr(index){
   return utItem(trkod, index);
 }
 
 export function itemobr(index){
-  return utItem(branchOrder, index);
+  return utItem(brhod, index);
 }
 
 export function itemOfElem(index){
@@ -54,7 +56,7 @@ export function itemOfElem(index){
 }
 
 export function isValidBranch(branch){
-  return R.includes(branch, branchOrder);
+  return R.includes(branch, brhod);
 }
 
 export function isValidTrunk(trunk){
@@ -70,7 +72,7 @@ export function idxOfElem(elemental){
 }
 
 export const idxOfBranch = (branch) => {
-  return utGetIdx(branch, branchOrder)
+  return utGetIdx(branch, brhod)
 }
 
 export const idxOfTrunk = trunk => {
