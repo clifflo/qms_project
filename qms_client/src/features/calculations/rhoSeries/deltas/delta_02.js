@@ -2,8 +2,8 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../../egghead';
 import {
-  utFindByProp
-} from '../../utils/util_06';
+  utFindByPropEq
+} from '../../utils/util_04';
 import {
   rhocs_1
 } from '../rhos/rho_02';
@@ -87,10 +87,10 @@ export const getDlcxt_1 = (wbllhn, dpdtr) => {
   try{
     // Hydrated rho context
     const hdrcxt =
-      utFindByProp('dpdtr', dpdtr, hdrcs);
+      utFindByPropEq('dpdtr', dpdtr, hdrcs);
 
     const dlcxt_0 =
-      utFindByProp('lhname', wbllhn, hdrcxt.hmrcs);
+      utFindByPropEq('lhname', wbllhn, hdrcxt.hmrcs);
 
     const dlcxt_1 = {
       ...dlcxt_0,

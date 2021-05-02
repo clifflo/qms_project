@@ -2,11 +2,12 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../egghead';
 
-export const isAlnum = alnum => {
-  return RA.isString(alnum) || RA.isNumber(alnum);
+export const isStranum = stranum => {
+  return RA.isString(stranum) ||
+  RA.isNumber(stranum);
 }
 
-export const utFindByProp =
+export const utFindByPropEq =
   (propName, propValue, list) => {
 
   if(R.isNil(propName)){
@@ -24,9 +25,9 @@ export const utFindByProp =
       'Prop value should not be nil.');
   }
 
-  if(!isAlnum(propValue)){
+  if(!isStranum(propValue)){
     throw new Error(
-      'Prop value must be an alnum.');
+      'Prop value must be an stranum.');
   }
 
   if(R.isNil(list)){
@@ -43,6 +44,7 @@ export const utFindByProp =
     R.propEq(propName, propValue),
     list);
 }
+
 
 // [Delpn] is deleted props.
 export const utDissoc = (obj, delps) => {
