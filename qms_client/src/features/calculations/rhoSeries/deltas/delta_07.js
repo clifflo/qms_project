@@ -1,5 +1,10 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import * as E from '../../egghead';
+import {
+  utFindByPropTrue,
+  utFindByPropFalse
+} from '../../utils/util_04';
 import {
   utFilterByPropEq
 } from '../../utils/util_05';
@@ -43,7 +48,7 @@ export const getClbpl = (dplcn, slcrl) => {
 export const getRjkcr = slcrl => {
 
   try{
-    return utFindByPropTrue(slcrl, 'isRjk');
+    return utFindByPropTrue('isRjk', slcrl);
   }
   catch(err){
     console.error(err);
@@ -54,7 +59,7 @@ export const getRjkcr = slcrl => {
 export const getRqncr = slcrl => {
 
   try{
-    return utFindByPropTrue(slcrl, 'isRqn');
+    return utFindByPropTrue('isRqn', slcrl);
   }
   catch(err){
     console.error(err);
@@ -65,7 +70,7 @@ export const getRqncr = slcrl => {
 export const getRkgcr = slcrl => {
 
   try{
-    return utFindByPropTrue(slcrl, 'isRkg');
+    return utFindByPropTrue('isRkg', slcrl);
   }
   catch(err){
     console.error(err);
@@ -88,7 +93,7 @@ export const getClbfm =
     if(idicl.length == 1){
       return null;
     }
-    else if(crosses.length == 2){
+    else if(idicl.length == 2){
 
       // Wheat bowl iso downward index cross
       const wbics = utFindByPropTrue(
@@ -97,8 +102,8 @@ export const getClbfm =
       const chics = utFindByPropFalse(
         'isWbocr', idicl);
 
-      E.cknwo(wbics, 'wbics');
-      E.cknwo(chics, 'chics');
+      E.cknwo('wbics', wbics);
+      E.cknwo('chics', chics);
 
       // Is wheat bowl match the requied focus
       const isWbmfc = wbics.dfccn == wbdfc;
