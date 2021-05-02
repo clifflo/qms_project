@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import * as E from '../../egghead';
+import * as E from '../../examiner';
 import {
   decimalToBinary
 } from '../../utils/util_02';

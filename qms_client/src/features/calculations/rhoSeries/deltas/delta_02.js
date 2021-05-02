@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
-import * as E from '../../egghead';
+import * as E from '../../examiner';
 import {
   utFindByPropEq
 } from '../../utils/util_04';

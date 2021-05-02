@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
-import * as E from '../../egghead';
+import * as E from '../../examiner';
 import { utDissoc } from '../../utils/util_06';
 import { getDlcxt_2 } from './delta_05';
 

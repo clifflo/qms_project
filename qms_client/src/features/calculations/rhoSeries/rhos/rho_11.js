@@ -1,7 +1,9 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import * as E from '../../examiner';
 import {
   idxOfBranch,
+  isValidBranch,
   trkod
 } from '../../twigs/twig_01';
 import {
@@ -33,21 +35,25 @@ const getRhocs_7 = () => {
 
     if(R.isNil(lhcdwi)){
       throw new Error(
-        'LHCDWI should not be nil.');
+        '[lhcdwi] should not be nil.');
     }
 
     const isRjk = lhcdwi == rjkdi;
     const isRqn = lhcdwi == rqndi;
     const isRkg = lhcdwi == rkgdi;
 
-    // Rho jack render function
+    // Rho jack render text
     const rjkrt = isRjk ? '世' : '';
-    const rjrqt = isRqn ? '身' : '';
+
+    // Rho queen render text
+    const rqnrt = isRqn ? '身' : '';
+
+    // Rho king render text
     const rkgrt = isRkg ? '應' : '';
 
     // Rho face cards render text
     const rfcrt = RA.concatAll([
-      rjkrt, rjrqt, rkgrt
+      rjkrt, rqnrt, rkgrt
     ]);
 
     return {
@@ -64,47 +70,37 @@ const getRhocs_7 = () => {
   const mapFn_2 = rhocxt => {
 
     const { rjkdi, rkgdi } = rhocxt;
-    const lhcrsl_1 = rhocxt.lhcrsl;
+    const _lhcrsl = rhocxt.lhcrsl;
 
-    if(R.isNil(rjkdi)){
-      throw new Error(
-        'RJKDI should not be nil.');
-    }
+    E.cknwn(rjkdi, 'rjkdi');
+    E.cknwn(rkgdi, 'rkgdi');
+    E.cknwa(_lhcrsl, '_lhcrsl');
 
-    if(R.isNil(rkgdi)){
-      throw new Error(
-        'RKGDI should not be nil.');
-    }
+    // Rho jack cross
+    const rjkcr = _lhcrsl[rjkdi];
+    E.cknwo(rjkcr, 'rjkcr');
 
-    if(R.isNil(lhcrsl_1)){
-      throw new Error(
-        'LHCRES should not be nil.');
-    }
-
-    const rjkcr = lhcrsl_1[rjkdi];
-
-    if(R.isNil(rjkcr)){
-      throw new Error(
-        'RKKCR should not be nil.');
-    }
-
+    // Rho jack cross branch
     const rjkbh = rjkcr.crbh;
+    E.cknws(rjkbh, 'rjkbh');
 
-    if(R.isNil(rjkbh)){
+    if(!isValidBranch(rjkbh)){
       throw new Error(
-        'RJKBH should not be nil.')
+        `${rjkbh} is not a valid [rjkbh].`)
     }
 
+    // Rho queen index
     const rqndi = 5 - (idxOfBranch(rjkbh) % 6);
+    E.cknwa(rqndi, 'rqndi');
 
-    const lhcrsl_2 =
+    const lhcrsl =
       R.map(
         mapFn_1c(rjkdi)(rkgdi)(rqndi),
-        lhcrsl_1);
+        _lhcrsl);
 
     return {
       ...rhocxt,
-      lhcrsl: lhcrsl_2,
+      lhcrsl,
       _type: 'rhocxt_7'
     }
   }
@@ -114,7 +110,7 @@ const getRhocs_7 = () => {
   }
   catch(err){
     throw new Error(
-      'Cannot get RHOCS_7');
+      'Cannot get [rhocs_7]');
   }
 }
 

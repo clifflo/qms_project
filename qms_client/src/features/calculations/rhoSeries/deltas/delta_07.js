@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
-import * as E from '../../egghead';
+import * as E from '../../examiner';
 import {
   utFindByPropTrue,
   utFindByPropFalse
@@ -13,7 +13,7 @@ import {
 } from '../rhos/rho_08';
 
 // Get cross list by focus
-export const getClbfc = (dfccn, slcrl) => {
+const _getClbfc = (dfccn, slcrl) => {
 
   E.cknwa(slcrl, 'slcrl');
   E.cknws(dfccn, 'dfccn');
@@ -28,8 +28,9 @@ export const getClbfc = (dfccn, slcrl) => {
 
   return clbfc;
 }
+export const getClbfc = R.curry(_getClbfc);
 
-export const getClbpl = (dplcn, slcrl) => {
+const _getClbpl = (dplcn, slcrl) => {
 
   E.cknwa(slcrl, 'slcrl');
   E.cknws(dplcn, 'dplcn');
@@ -44,8 +45,9 @@ export const getClbpl = (dplcn, slcrl) => {
 
   return clbpl;
 }
+export const getClbpl = R.curry(_getClbpl);
 
-export const getRjkcr = slcrl => {
+const _getRjkcr = slcrl => {
 
   try{
     return utFindByPropTrue('isRjk', slcrl);
@@ -55,8 +57,9 @@ export const getRjkcr = slcrl => {
     throw new Error('Cannot get [rjkcr].');
   }
 }
+export const getRjkcr = R.curry(_getRjkcr);
 
-export const getRqncr = slcrl => {
+const _getRqncr = slcrl => {
 
   try{
     return utFindByPropTrue('isRqn', slcrl);
@@ -66,8 +69,9 @@ export const getRqncr = slcrl => {
     throw new Error('Cannot get [rqncr].');
   }
 }
+export const getRqncr = R.curry(_getRqncr);
 
-export const getRkgcr = slcrl => {
+const _getRkgcr = slcrl => {
 
   try{
     return utFindByPropTrue('isRkg', slcrl);
@@ -77,65 +81,4 @@ export const getRkgcr = slcrl => {
     throw new Error('Cannot get [rkgcr].');
   }
 }
-
-// [wbdfc] is wheat bowl delta focus chinese
-// [chdfc] is cheese delta focus chinese
-// [clbpm] is cross list by focus movement
-export const getClbfm =
-  (wbdfc, chdfc, slcrl) => {
-
-  const mapFn = lhcdwi => {
-
-    // Iso downward index cross list
-    const idicl = utFilterByPropEq(
-      'lhcdwi', lhcdwi, slcrl);
-
-    if(idicl.length == 1){
-      return null;
-    }
-    else if(idicl.length == 2){
-
-      // Wheat bowl iso downward index cross
-      const wbics = utFindByPropTrue(
-        'isWbocr', idicl);
-
-      const chics = utFindByPropFalse(
-        'isWbocr', idicl);
-
-      E.cknwo('wbics', wbics);
-      E.cknwo('chics', chics);
-
-      // Is wheat bowl match the requied focus
-      const isWbmfc = wbics.dfccn == wbdfc;
-      const isChmfc = chics.dfccn == chdfc;
-
-      // Is matching focus movement
-      const isMfcm = isWbmfc && isChmfc;
-      if(isMfcm){
-        return { wbics, chics };
-      }
-      else {
-        return null;
-      }
-    }
-    else {
-      throw new Error(
-        'It must be at least one cross'
-        + 'matched for various [lhcdwi].');
-    }
-  }
-
-  try{
-    const clbfm = R.compose(
-      RA.compact,
-      R.map(mapFn))
-    (R.range(0, 6));
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      'Cannot get [clbfm].');
-  }
-
-
-}
+export const getRkgcr = R.curry(_getRkgcr);

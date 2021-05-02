@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
-import * as E from '../egghead';
+import * as E from '../examiner';
 
 export const isStranum = stranum => {
   return RA.isString(stranum) ||
