@@ -1,8 +1,12 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import * as E from '../../egghead';
 import {
-  rfcns,
-  rfens,
+  utFindByPropEq
+} from '../../utils/util_04';
+import {
+  dfcns,
+  dfens,
   dfcsm,
   rhocs_4
 } from './rho_08';
@@ -22,38 +26,31 @@ export const isValidRfcna = dfccn => {
       '[dfccn] must be a string.');
   }
 
-  const isValid = R.includes(dfccn, rfcns);
+  const isValid = R.includes(dfccn, dfcns);
 
   return isValid;
 }
 
-export const isValidRfena = dfsnn => {
+// Get delta focus chinese by rho raw focus
+const getDfcbrf = rrawf => {
 
-  if(R.isNil(dfsnn)){
+  E.cknws(rrawf, 'rrawf');
+
+  try{
+    const dfcbrf =
+      utFindByPropEq('rrawf', rrawf, dfcsm)
+      .dfccn;
+    return dfcbrf;
+  }
+  catch(err){
+    console.error(err);
     throw new Error(
-      '[dfsnn] should not be nil.');
+      'Cannot get [dfcbrf].');
   }
 
-  if(!RA.isString(dfsnn)){
-    throw new Error(
-      '[dfsnn] must be a string.');
-  }
 
-  const isValid = R.includes(dfsnn, rfens);
 
-  return isValid;
-}
 
-// Get rho focus chinese from raw
-const getRfcfr = rrawf => {
-
-  if(R.isNil(rrawf)){
-    throw new Error(
-      '[rrawf] should not be nil.')
-  }
-
-  return R.find(
-    R.propEq('rrawf', rrawf), dfcsm).dfccn;
 }
 
 const getRhocs_5 = () => {
@@ -69,7 +66,7 @@ const getRhocs_5 = () => {
           '[rrawf] should not be nil.');
       }
 
-      const dfccn = getRfcfr(rrawf);
+      const dfccn = getDfcbrf(rrawf);
 
       if(R.isNil(dfccn)){
         throw new Error(

@@ -1,4 +1,5 @@
 import * as E from '../egghead';
+import * as R from 'ramda';
 
 export const utDissoc = (obj, delps) => {
 

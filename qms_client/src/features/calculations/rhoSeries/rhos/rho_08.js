@@ -39,7 +39,7 @@ const getRhocs_4 = () => {
 
     if(R.isNil(rhshel)){
       throw new Error(
-        'RHSHEL should not be nil.');
+        '[rhshel] should not be nil.');
     }
 
     return {
@@ -79,41 +79,44 @@ export const getRcxt4ByLhn = lhname => {
   }
 }
 
-
+// [dfccn] is delta focus chinese name
+// [dfcsid] is delta focus specification id
+// [dfsnn] is delta focus nickname
+// [dfcen] is delta focus full english name
 export const dfcsm = [
   {
     dfccn: '丙兄弟',
     dfcsid: 'dtf-xd',
     rrawf: 'Draw',
-    dfsnn: 'Brother',
+    dfcnn: 'Brother',
     dfcfen: 'Delta brother'
   },
   {
     dfccn: '丙子孫',
     dfcsid: 'dtf-zs',
     rrawf: 'Fruit',
-    dfsnn: 'Children',
+    dfcnn: 'Children',
     dfcfen: 'Delta children'
   },
   {
     dfccn: '丙妻財',
     dfcsid: 'dtf-qc',
     rrawf: 'Bank',
-    dfsnn: 'Money',
+    dfcnn: 'Money',
     dfcfen: 'Delta money'
   },
   {
     dfccn: '丙父母',
     dfcsid: 'dtf-fm',
     rrawf: 'Seed',
-    dfsnn: 'Parent',
+    dfcnn: 'Parent',
     dfcfen: 'Delta parent'
   },
   {
     dfccn: '丙官鬼',
     dfcsid: 'dtf-gg',
     rrawf: 'Hacker',
-    dfsnn: 'Ghost',
+    dfcnn: 'Ghost',
     dfcfen: 'Delta ghost'
   }
 ]
@@ -123,9 +126,9 @@ export const dfcns = R.map(
   R.prop('dfccn'), dfcsm);
 
 export const isValidDfccn = dfccn => {
-  return R.includes(dfccn, dfncs);
+  return R.includes(dfccn, dfcns);
 }
 
-// Delta focus english name set
-export const dfens = R.map(
-  R.prop('dfcsid'), dfcsm);
+// Delta focus full english name set
+export const dffens = R.map(
+  R.prop('dfcfen'), dfcsm);

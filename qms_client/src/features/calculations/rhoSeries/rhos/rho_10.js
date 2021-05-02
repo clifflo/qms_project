@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../../egghead';
 import {
-  rfcns
+  dfcns
 } from './rho_08';
 import {
   rhocs_5
@@ -23,32 +23,32 @@ const getRhocs_6 = () => {
 
     // Is lurking long hook, i.e. long hook with
     // hidden part.
-    const islklh = unifcl.length < 5;
+    const isLklh = unifcl.length < 5;
 
-    // Rho hidden focus list
-    const rhdnfl = R.difference(rfcns, unifcl);
+    // Delta hidden focus list
+    const dlhdfl = R.difference(dfcns, unifcl);
 
-    if(islklh){
+    if(isLklh){
 
       // Rho pilot cross list
-      const rpilcl = R.find(
+      const dpilcl = R.find(
         R.propEq('lhname', '純' + rhocxt.rhlhn),
         rhocs_5).lhcrsl;
 
-      E.cknwa(rpilcl, 'rpilcl');
+      E.cknwa(dpilcl, 'dpilcl');
 
       return {
         ...rhocxt,
-        islklh,
-        rhdnfl,
-        rpilcl,
+        isLklh,
+        dlhdfl,
+        dpilcl,
         _type: 'rhocxt_8'
       }
     }
     else {
       return {
         ...rhocxt,
-        islklh,
+        isLklh,
         _type: 'rhocxt_8'
       }
     }
@@ -69,6 +69,6 @@ export const getRcxt6ByLhn = lhname => {
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get RHOCXT_6 by long hook name.')
+      'Cannot get [rhocxt_6] by long hook name.')
   }
 }

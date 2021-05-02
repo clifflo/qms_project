@@ -4,7 +4,7 @@ import {
   utCheckPropName,
   utCheckPropValue,
   utCheckList
-} from './util_05';
+} from './util_04';
 
 export const utFilterByPropEq =
   (propName, propValue, list) => {
