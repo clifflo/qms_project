@@ -7,7 +7,7 @@ export const isStranum = stranum => {
   RA.isNumber(stranum);
 }
 
-const utCheckPropName = propName => {
+export const utCheckPropName = propName => {
 
   if(R.isNil(propName)){
     throw new Error(
@@ -20,7 +20,7 @@ const utCheckPropName = propName => {
   }
 }
 
-const utCheckPropValue = propValue => {
+export const utCheckPropValue = propValue => {
 
   if(R.isNil(propValue)){
     throw new Error(
@@ -33,7 +33,7 @@ const utCheckPropValue = propValue => {
   }
 }
 
-const utCheckList = list => {
+export const utCheckList = list => {
 
   if(R.isNil(list)){
     throw new Error(

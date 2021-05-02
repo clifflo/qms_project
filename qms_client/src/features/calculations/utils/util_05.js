@@ -1,12 +1,53 @@
-import * as E from '../egghead';
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
+import {
+  utCheckPropName,
+  utCheckPropValue,
+  utCheckList
+} from './util_05';
 
-export const utDissoc = (obj, delps) => {
+export const utFilterByPropEq =
+  (propName, propValue, list) => {
 
-  E.cknwo(obj, 'Object');
-  E.cknwa(delps, 'Deleted props');
+  utCheckPropName(propName);
+  utCheckPropValue(propValue);
+  utCheckList(list);
 
-  const result =
-    R.reduce(R.flip(R.dissoc), obj, delps);
+  return R.filter(
+    R.propEq(propName, propValue),
+    list);
+}
 
-  return result;
+export const utFilterByPropNeq =
+  (propName, propValue, list) => {
+
+  utCheckPropName(propName);
+  utCheckPropValue(propValue);
+  utCheckList(list);
+
+  return R.filter(
+    R.not(R.propEq(propName, propValue)),
+    list);
+}
+
+export const utFilterByPropTrue =
+  (propName, list) => {
+
+  utCheckPropName(propName);
+  utCheckList(list);
+
+  return R.filter(
+    R.prop(propName),
+    list);
+}
+
+export const utFilterByPropFalse =
+  (propName, list) => {
+
+  utCheckPropName(propName);
+  utCheckList(list);
+
+  return R.filter(
+    R.not(R.prop(propName)),
+    list);
 }

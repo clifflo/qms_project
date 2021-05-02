@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../../egghead';
-import { utDissoc } from '../../utils/util_05';
+import { utDissoc } from '../../utils/util_06';
 import { getDlcxt_2 } from './delta_05';
 
 export const buildDlcxt_3 = dlcxt_2 => {
