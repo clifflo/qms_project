@@ -118,10 +118,14 @@ export const dfcsm = [
   }
 ]
 
-// Rho focus Chinese name set
-export const rfcns = R.map(
+// Delta focus chinese name set
+export const dfcns = R.map(
   R.prop('dfccn'), dfcsm);
 
-// Rho focus English name set
-export const rfens = R.map(
+export const isValidDfccn = dfccn => {
+  return R.includes(dfccn, dfncs);
+}
+
+// Delta focus english name set
+export const dfens = R.map(
   R.prop('dfcsid'), dfcsm);

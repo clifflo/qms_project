@@ -9,13 +9,20 @@ import {
 export const utFilterByPropEq =
   (propName, propValue, list) => {
 
-  utCheckPropName(propName);
-  utCheckPropValue(propValue);
-  utCheckList(list);
+  try{
+    utCheckPropName(propName);
+    utCheckPropValue(propValue);
+    utCheckList(list);
 
-  return R.filter(
-    R.propEq(propName, propValue),
-    list);
+    return R.filter(
+      R.propEq(propName, propValue),
+      list);
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot filter by prop equals.')
+  }
 }
 
 export const utFilterByPropNeq =

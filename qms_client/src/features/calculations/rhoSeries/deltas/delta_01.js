@@ -17,8 +17,8 @@ import {
   rfcis
 } from '../rhos/rho_06';
 
-// Delta paladin order
-export const dpldo =
+// Delta paladin chinese order
+export const dplco =
   R.compose(
     R.reverse,
     R.split(','))
@@ -88,7 +88,7 @@ const getDpevl = () => {
 
     // Delta paladin in cross
     const dpicr = utItem(
-      dpldo, startIdx + distance);
+      dplco, startIdx + distance);
 
     return dpicr;
   }
@@ -109,7 +109,7 @@ const getDpevl = () => {
     const dpstp = dpspm[dpdtr];
 
     // Delta Paladin Index
-    const dpdix = utGetIdx(dpstp, dpldo) + 1;
+    const dpdix = utGetIdx(dpstp, dplco) + 1;
 
     if(R.isNil(dpdix)){
       throw new Error(

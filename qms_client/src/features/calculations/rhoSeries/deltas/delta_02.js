@@ -31,10 +31,10 @@ const getHdrcs = () => {
 
     const mapFn = idx => {
       const lhcros = lhcrsl_1[idx];
-      const dplch = dpebt.dpcst[idx];
+      const dplcn = dpebt.dpcst[idx];
       return {
         ...lhcros,
-        dplch: dpebt.dpcst[idx]
+        dplcn: dpebt.dpcst[idx]
       }
     }
 
