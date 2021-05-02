@@ -1,72 +1,53 @@
+import {
+  reggen_5
+} from './sigma_03';
 import * as R from 'ramda';
-import * as RA from 'ramda-adjunct';
-import {
-  idxOfGtwig
-} from '../../twigs/twig_08';
-import {
-  sgcxts_3
-} from './sigma_02';
 
-export const getSgcxts_4 = () => {
+export const reggen_6 = rawsen => {
 
-  // Brake match key part
-  const mapFn_1n = (mthcoa, bkmval, bkmkp)  => {
+  const adjsen = rawsen
+    .replaceAll('犬', '狗')
+    .replaceAll('十一', '霜')
+    .replaceAll('十二', '臘')
+    .replaceAll('、', '');
 
-    // Baked brake match key part
-    const getBkbkp = () => {
-      if(mthcoa){
-        if(bkmkp == '子'){
-          return '霜';
-        }
-        else if(bkmkp == '丑'){
-          return '臘';
-        }
-        else {
-          return bkmkp;
-        }
-      }
-      else {
-        return bkmkp;
-      }
-    }
+  const mapFn = regcxt => {
 
-    const bkbkp = getBkbkp();
+    const patt = new RegExp(regcxt.regex, 'g');
 
-    return [bkbkp, bkmval];
-  }
-
-  const mapFn_1c = R.curry(mapFn_1n);
-
-  const mapFn_2n = (mthcoa, bkctpa) => {
-
-    return R.map(
-      mapFn_1c(mthcoa)(bkctpa[1]),
-      bkctpa[0]);
-  }
-
-  const mapFn_2c = R.curry(mapFn_2n);
-
-  const mapFn_3 = sgmcxt => {
-
-    const sortFn = R.sortBy(
-      item => idxOfGtwig(item[0]));
-
-    const bktgm = R.compose(
-      R.fromPairs,
-      sortFn,
-      RA.concatAll,
-      R.map(mapFn_2c(sgmcxt.mthcoa)),
-      R.toPairs)
-    (sgmcxt.bkcont);
+    // Brake matches
+    const bkmhes = [...adjsen.matchAll(patt)];
 
     return {
-      ...sgmcxt,
-      bktgm
+      adjsen,
+      bkmhes,
+      ...regcxt
     }
   }
 
-  return R.map(mapFn_3, sgcxts_3);
-
+  return R.map(mapFn, reggen_5());
 }
 
-export const sgcxts_4 = getSgcxts_4();
+export const reggen_7 = sentence => {
+
+  const regg6s = reggen_6(sentence);
+  const maxFn = regge6 => {
+    return regge6.bkmhes.length;
+  }
+
+  // Monthy calculation
+  const mthcoa = R.includes('正', sentence);
+  const mthcob = R.includes('月', sentence);
+
+  const regge7 =
+    R.reduce(
+      R.maxBy(maxFn),
+      { bkmhes: [] },
+      regg6s);
+
+  return {
+    mthcoa,
+    mthcob,
+    ...regge7
+  };
+}

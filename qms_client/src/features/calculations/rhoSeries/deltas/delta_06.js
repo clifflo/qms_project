@@ -6,7 +6,7 @@ import { getDlcxt_2 } from './delta_05';
 
 export const buildDlcxt_3 = dlcxt_2 => {
 
-  // Get activated cross
+  // Get silk cross
   const getSlcros_n = (isWbocr, lhcros) => {
 
     E.cknwb(isWbocr, 'isWbocr');
