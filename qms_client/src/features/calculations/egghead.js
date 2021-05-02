@@ -49,3 +49,14 @@ export const cknwa = (varArray, varName) => {
       `${varName} must be an array.`);
   }
 }
+
+export const cknwb = (varBool, varName) => {
+
+  if(R.isNil(varBool)){
+    throw new Error(`${varName} should not be nil.`);
+  }
+
+  if(!RA.isBoolean(varBool)){
+    throw new Error(`${varName} must be a boolean.`);
+  }
+}

@@ -52,7 +52,10 @@ const getRhocs_7 = () => {
 
     return {
       ...lhcros,
-      rfcrt
+      rfcrt,
+      isRjk,
+      isRqn,
+      isRkg
     };
   }
 
