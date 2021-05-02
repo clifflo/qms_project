@@ -7,8 +7,7 @@ export const isStranum = stranum => {
   RA.isNumber(stranum);
 }
 
-export const utFindByPropEq =
-  (propName, propValue, list) => {
+const utCheckPropName = propName => {
 
   if(R.isNil(propName)){
     throw new Error(
@@ -19,6 +18,9 @@ export const utFindByPropEq =
     throw new Error(
       'Prop name must be a string.');
   }
+}
+
+const utCheckPropValue = propValue => {
 
   if(R.isNil(propValue)){
     throw new Error(
@@ -29,6 +31,9 @@ export const utFindByPropEq =
     throw new Error(
       'Prop value must be an stranum.');
   }
+}
+
+const utCheckList = list => {
 
   if(R.isNil(list)){
     throw new Error(
@@ -39,21 +44,50 @@ export const utFindByPropEq =
     throw new Error(
       'List must be an array.')
   }
+}
+
+export const utFindByPropEq =
+  (propName, propValue, list) => {
+
+  utCheckPropName(propName);
+  utCheckPropValue(propValue);
+  utCheckList(list);
 
   return R.find(
     R.propEq(propName, propValue),
     list);
 }
 
+export const utFindByPropNeq =
+  (propName, propValue, list) => {
 
-// [Delpn] is deleted props.
-export const utDissoc = (obj, delps) => {
+  utCheckPropName(propName);
+  utCheckPropValue(propValue);
+  utCheckList(list);
 
-  E.cknwo(obj, 'Object');
-  E.cknwa(delps, 'Deleted props');
+  return R.find(
+    R.not(R.propEq(propName, propValue)),
+    list);
+}
 
-  const result =
-    R.reduce(R.flip(R.dissoc), obj, delps);
+export const utFindByPropTrue =
+  (propName, list) => {
 
-  return result;
+  utCheckPropName(propName);
+  utCheckList(list);
+
+  return R.find(
+    R.prop(propName),
+    list);
+}
+
+export const utFindByPropFalse =
+  (propName, list) => {
+
+  utCheckPropName(propName);
+  utCheckList(list);
+
+  return R.find(
+    R.not(R.prop(propName)),
+    list);
 }

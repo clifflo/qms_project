@@ -14,7 +14,7 @@ import {
 } from '../rhos/rho_12';
 import {
   utDissoc
-} from '../../utils/util_04';
+} from '../../utils/util_05';
 
 export const getDlcxt_2 =
   (wbllhn, chelhn, dpdtr) => {
