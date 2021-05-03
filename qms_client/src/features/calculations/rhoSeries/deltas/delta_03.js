@@ -11,7 +11,7 @@ import {
 } from '../rhos/rho_05';
 import {
   getRcxt8ByLhn
-} from '../rhos/rho_12';
+} from '../rhos/rho_13';
 
 export const getDcstl = (wbllhn, chelhn) => {
 

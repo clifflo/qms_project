@@ -2,6 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../../examiner';
 
+
 // [wbdfc] is wheat bowl delta focus chinese
 // [chdfc] is cheese delta focus chinese
 // [clbpm] is cross list by focus movement
@@ -71,5 +72,5 @@ export const getClbfm =
 export const getClber =
   (dlmsr, dlmtg, dlmer) => {
 
-  
+
 }

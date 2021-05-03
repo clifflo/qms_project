@@ -2,75 +2,78 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../../examiner';
 import {
-  dfcns
+  utFindByPropEq
+} from '../../utils/util_04';
+import {
+  dfcns,
+  dfens,
+  dfcdl,
+  rhocs_4
 } from './rho_08';
 import {
-  rhocs_5
-} from './rho_09';
+  getElre
+} from '../../twigs/twig_02';
 import {
-  getRcxtvByLhn
-} from './rho_05';
+  getDfdbrf
+} from './rho_09';
 
-const getRhocs_6 = () => {
+const getRhocs_5 = () => {
 
-  const mapFn = rhocxt => {
+  const mapFn_1n = (rhshel, _lhcros) => {
 
-    // Unique focus list
-    const unifcl = R.compose(
-      R.uniq,
-      R.map(R.prop('dfccn')))
-    (rhocxt.lhcrsl);
+    try{
+      const rrawf = getElre(
+        rhshel, _lhcros.crbel);
 
-    // Is lurking long hook, i.e. long hook with
-    // hidden part. It is not the same as [rbxc],
-    // of which is referring to a cross, but not
-    // a long hook.
-    const isLklh = unifcl.length < 5;
-
-    // Delta hidden focus list
-    const dlhdfl = R.difference(dfcns, unifcl);
-
-    if(isLklh){
-
-      // Delta pilot cross list
-      const dpilcl = R.find(
-        R.propEq('lhname', '純' + rhocxt.rhlhn),
-        rhocs_5).lhcrsl;
-
-      E.cknwa(dpilcl, 'dpilcl');
-
-      return {
-        ...rhocxt,
-        isLklh,
-        dlhdfl,
-        dpilcl,
-        _type: 'rhocxt_8'
+      if(R.isNil(rrawf)){
+        throw new Error(
+          '[rrawf] should not be nil.');
       }
-    }
-    else {
-      return {
-        ...rhocxt,
-        isLklh,
-        _type: 'rhocxt_8'
-      }
-    }
 
+      // Delta focus dictionary
+      const dlfdi = getDfdbrf(rrawf);
+      const { dfccn } = dlfdi;
+
+      if(R.isNil(dfccn)){
+        throw new Error(
+          '[dfccn] should not be nil.');
+      }
+
+      const lhcros = {
+        ..._lhcros,
+        dfccn
+      }
+
+      return lhcros;
+    }
+    catch(err){
+      console.error(err);
+      throw new Error(
+        '[mapFn_1n] is error.');
+    }
   }
 
-  return R.map(mapFn, rhocs_5)
+  const mapFn_1c = R.curry(mapFn_1n);
+
+  const mapFn_2 = rhocxt_4 => {
+
+    try{
+      const lhcrsl = R.map(
+        mapFn_1c(rhocxt_4.rhshel),
+        rhocxt_4.lhcrsl);
+      const lhcrslLens = R.lensProp('lhcrsl');
+      const rhocxt_5 = R.set(
+        lhcrslLens, lhcrsl, rhocxt_4);
+      return rhocxt_5;
+    }
+    catch(err){
+      console.error(err);
+      throw new Error(
+        '[mapFn_2] is error.');
+    }
+  }
+
+  return R.map(mapFn_2, rhocs_4);
 }
 
-export const rhocs_6 = getRhocs_6();
-
-export const getRcxt6ByLhn = lhname => {
-
-  try {
-    return getRcxtvByLhn(
-      lhname, rhocs_6, 6);
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      'Cannot get [rhocxt_6] by long hook name.')
-  }
-}
+export const rhocs_5 = getRhocs_5();

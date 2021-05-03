@@ -24,44 +24,45 @@ export const dplco =
     R.split(','))
   ('丙青龍,丙朱雀,丙勾陳,丙螣蛇,丙白虎,丙玄武');
 
+// [dpldl] is delta paladin dictionary list
 // [dplcn] is delta paladin chinese name.
-// [dplnn] is delta paladin nickname.
+// [dplsen] is delta paladin nickname.
 // [dplfen] is delta paladin full english name.
 // [dplsid] is delta paladin specification ID.
-export const dpnnm = [
+export const dpldl = [
   {
     dplcn: '丙青龍',
-    dplnn: 'Dragon',
+    dplsen: 'Dragon',
     dplfen: 'Delta dragon',
     dplsid: 'dtp-ql'
   },
   {
     dplcn: '丙朱雀',
-    dplnn: 'Phoenix',
+    dplsen: 'Phoenix',
     dplfen: 'Delta phoenix',
     dplsid: 'dtp-zj'
   },
   {
     dplcn: '丙勾陳',
-    dplnn: 'Unicorn',
+    dplsen: 'Unicorn',
     dplfen: 'Delta unicorn',
     dplsid: 'dtp-gc'
   },
   {
     dplcn: '丙螣蛇',
-    dplnn: 'Cobra',
+    dplsen: 'Cobra',
     dplfen: 'Delta cobra',
     dplsid: 'dtp-ts'
   },
   {
     dplcn: '丙白虎',
-    dplnn: 'Tiger',
+    dplsen: 'Tiger',
     dplfen: 'Delta tiger',
     dplsid: 'dtp-bh'
   },
   {
     dplcn: '丙玄武',
-    dplnn: 'Turtle',
+    dplsen: 'Turtle',
     dplfen: 'Delta turtle',
     dplsid: 'dtp-xw'
   }
@@ -81,7 +82,7 @@ const dpspm = {
   '癸': '丙玄武'
 }
 
-// Delta paladin envelop ist
+// Delta paladin envelop list
 const getDpevl = () => {
 
   const mapFn_1n = (startIdx, distance) => {

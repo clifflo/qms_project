@@ -3,111 +3,97 @@ import * as RA from 'ramda-adjunct';
 import * as E from '../../examiner';
 import {
   utFindByPropEq
-} from '../../utils/util_04';
-import {
-  dfcns,
-  dfens,
-  dfcsm,
-  rhocs_4
-} from './rho_08';
-import {
-  getElre
-} from '../../twigs/twig_02';
+} from '../../utils/util_04'
 
-export const isValidRfcna = dfccn => {
-
-  if(R.isNil(dfccn)){
-    throw new Error(
-      '[dfccn] should not be nil.');
+// Delta focus dictionary list
+// [dfccn] is delta focus chinese name
+// [dfcsid] is delta focus specification id
+// [dfcsen] is delta focus short english name
+// [dfcen] is delta focus full english name
+export const dfcdl = [
+  {
+    dfccn: '丙兄弟',
+    dfcsid: 'dtf-xd',
+    rrawf: 'Draw',
+    dfcsen: 'Brother',
+    dfcfen: 'Delta brother'
+  },
+  {
+    dfccn: '丙子孫',
+    dfcsid: 'dtf-zs',
+    rrawf: 'Fruit',
+    dfcsen: 'Son',
+    dfcfen: 'Delta son'
+  },
+  {
+    dfccn: '丙妻財',
+    dfcsid: 'dtf-qc',
+    rrawf: 'Bank',
+    dfcsen: 'Money',
+    dfcfen: 'Delta money'
+  },
+  {
+    dfccn: '丙父母',
+    dfcsid: 'dtf-fm',
+    rrawf: 'Seed',
+    dfcsen: 'Parent',
+    dfcfen: 'Delta parent'
+  },
+  {
+    dfccn: '丙官鬼',
+    dfcsid: 'dtf-gg',
+    rrawf: 'Hacker',
+    dfcsen: 'Ghost',
+    dfcfen: 'Delta ghost'
   }
+]
 
-  if(!RA.isString(dfccn)){
-    throw new Error(
-      '[dfccn] must be a string.');
-  }
+// Delta focus chinese name set
+export const dfcns = R.map(
+  R.prop('dfccn'), dfcdl);
 
-  const isValid = R.includes(dfccn, dfcns);
-
-  return isValid;
+export const isValidDfccn = dfccn => {
+  return R.includes(dfccn, dfcns);
 }
 
-// Get delta focus envelop by rho raw focus
-const getDfebrf = rrawf => {
+// Delta focus short english name set
+export const dfsens = R.map(
+  R.prop('dfcsen'), dfcdl);
+
+export const isValidDfcsen = dfcsen => {
+  return R.includes(dfcsen, dfsens);
+}
+
+// Get delta focus dictionary by rho raw focus
+export const getDfdbrf = rrawf => {
 
   E.cknws(rrawf, 'rrawf');
 
   try{
-    const dfebrf =
-      utFindByPropEq('rrawf', rrawf, dfcsm)
-    return dfebrf;
+    const dfdbrf = utFindByPropEq(
+      'rrawf', rrawf, dfcdl);
+    return dfdbrf;
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get [dfcbrf].');
+      'Cannot get [dfdbrf].');
   }
 }
 
-const getRhocs_5 = () => {
+// Get delt focus dictionary by chinese name
+export const getDfdbcn = dfccn => {
 
-  const mapFn_1n = (rhshel, _lhcros) => {
+  E.cknws(dfccn, 'dfccn');
 
-    try{
-      const rrawf = getElre(
-        rhshel, _lhcros.crbel);
-
-      if(R.isNil(rrawf)){
-        throw new Error(
-          '[rrawf] should not be nil.');
-      }
-
-      // Delta focus envelop
-      const dlfev = getDfebrf(rrawf);
-      const { dfccn, dfcsen } = dlfev;
-
-      if(R.isNil(dfccn)){
-        throw new Error(
-          '[dfccn] should not be nil.');
-      }
-
-      const lhcros = {
-        ..._lhcros,
-        dfccn,
-        dfcsen
-      }
-
-      return lhcros;
-    }
-    catch(err){
-      console.error(err);
-      throw new Error(
-        '[mapFn_1n] is error.');
-    }
+  try{
+    const dfdbcn = utFindByPropEq(
+      'dfccn', dfccn, dfcdl);
+    return dfdbcn;
   }
-
-  const mapFn_1c = R.curry(mapFn_1n);
-
-  const mapFn_2 = rhocxt_4 => {
-    try{
-
-      const lhcrsl = R.map(
-        mapFn_1c(rhocxt_4.rhshel),
-        rhocxt_4.lhcrsl);
-
-      const lhcrslLens = R.lensProp('lhcrsl');
-
-      const rhocxt_5 = R.set(
-        lhcrslLens, lhcrsl, rhocxt_4);
-      return rhocxt_5;
-    }
-    catch(err){
-      console.error(err);
-      throw new Error(
-        'MAPFN_2 for get RHOCS_5 is error.');
-    }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get [dfdbcn].');
   }
-
-  return R.map(mapFn_2, rhocs_4);
 }
-
-export const rhocs_5 = getRhocs_5();

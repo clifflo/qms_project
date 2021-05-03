@@ -1,107 +1,118 @@
 import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 import * as E from '../../examiner';
 import {
+  idxOfBranch,
+  isValidBranch,
   trkod
 } from '../../twigs/twig_01';
+import {
+  binaryToDecimal,
+  octalToDecimal
+} from '../../utils/util_02';
 import {
   rhocs_1
 } from './rho_01';
 import {
-  getRcxtvByLhn
+  getRcxt1ByLhn
 } from './rho_05';
 import {
-  rhocs_7
+  getRcxt6ByLhn,
+  rhocs_6
 } from './rho_11';
 
-const getRhocs_8 = () => {
+const getRhocs_7 = () => {
 
-  // [rpilcs] stands for Rho pilot cross, i.e.
-  // the cross referring to the rho pilot,
-  // so it is also the hidden cross.
-  // [dlhdfl] is the delta hidden focus list.
   const mapFn_1n =
-    (lhcrsl, dlhdfl, rpilcs) => {
+    (rjkdi, rkgdi, rqndi, lhcros) => {
 
-    E.cknwa(lhcrsl, 'lhcrsl');
-    E.cknwo(rpilcs, 'rpilcs');
-    E.cknwa(dlhdfl, 'dlhdfl');
-
-    const lhcros = lhcrsl[rpilcs.lhcdwi];
-    E.cknwo(lhcros);
-
-    const dfccn = rpilcs.dfccn;
-    E.cknws(dfccn, 'dfccn');
-
-    // Is rho boxed cross, i.e. a cross
-    // with a hidden part.
-    const isRbxc = R.includes(
-      dfccn, dlhdfl);
-
-    if(isRbxc){
-      return {
-        isRbxc,
-        ...lhcros,
-        rpilcs
-      }
+    if(R.isNil(rjkdi)){
+      throw new Error(
+        'RJKDI should not be nil.');
     }
-    else {
-      return {
-        isRbxc,
-        ...lhcros
-      }
+
+    const lhcdwi = lhcros.lhcdwi;
+
+    if(R.isNil(lhcdwi)){
+      throw new Error(
+        '[lhcdwi] should not be nil.');
     }
+
+    const isRjk = lhcdwi == rjkdi;
+    const isRqn = lhcdwi == rqndi;
+    const isRkg = lhcdwi == rkgdi;
+
+    // Rho jack render text
+    const rjkrt = isRjk ? '世' : '';
+
+    // Rho queen render text
+    const rqnrt = isRqn ? '身' : '';
+
+    // Rho king render text
+    const rkgrt = isRkg ? '應' : '';
+
+    // Rho face cards render text
+    const rfcrt = RA.concatAll([
+      rjkrt, rqnrt, rkgrt
+    ]);
+
+    return {
+      ...lhcros,
+      rfcrt,
+      isRjk,
+      isRqn,
+      isRkg
+    };
   }
 
   const mapFn_1c = R.curry(mapFn_1n);
 
   const mapFn_2 = rhocxt => {
 
-    if(!rhocxt.isLklh){
-      return rhocxt;
+    const { rjkdi, rkgdi } = rhocxt;
+    const _lhcrsl = rhocxt.lhcrsl;
+
+    E.cknwn(rjkdi, 'rjkdi');
+    E.cknwn(rkgdi, 'rkgdi');
+    E.cknwa(_lhcrsl, '_lhcrsl');
+
+    // Rho jack cross
+    const rjkcr = _lhcrsl[rjkdi];
+    E.cknwo(rjkcr, 'rjkcr');
+
+    // Rho jack cross branch
+    const rjkbh = rjkcr.crbh;
+    E.cknws(rjkbh, 'rjkbh');
+
+    if(!isValidBranch(rjkbh)){
+      throw new Error(
+        `${rjkbh} is not a valid [rjkbh].`)
     }
-    else {
 
-      const dpilcl = rhocxt.dpilcl;
-      const dlhdfl = rhocxt.dlhdfl;
+    // Rho queen index
+    const rqndi = 5 - (idxOfBranch(rjkbh) % 6);
+    E.cknwn(rqndi, 'rqndi');
 
-      E.cknwa(dpilcl, 'dpilcl');
-      E.cknwa(dlhdfl, 'dlhdfl');
+    const lhcrsl =
+      R.map(
+        mapFn_1c(rjkdi)(rkgdi)(rqndi),
+        _lhcrsl);
 
-      const lhcrsl =
-        R.map(
-          mapFn_1c(rhocxt.lhcrsl)(dlhdfl),
-          dpilcl);
-
-      E.cknwa(lhcrsl, 'lhcrsl');
-
-      return {
-        ...rhocxt,
-        _type: 'rpilcs',
-        lhcrsl
-      }
+    return {
+      ...rhocxt,
+      lhcrsl,
+      _type: 'rhocxt_7'
     }
   }
 
-  try {
-    return R.map(mapFn_2, rhocs_7);
+  try{
+    return R.map(mapFn_2, rhocs_6);
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get RHOCS_8');
+      'Cannot get [rhocs_7].');
   }
 }
 
-export const rhocs_8 = getRhocs_8();
-
-export const getRcxt8ByLhn = lhname => {
-  try {
-    return getRcxtvByLhn(
-      lhname, rhocs_8, 8);
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      'Cannot get RHOCXT_8 by long hook name.')
-  }
-}
+export const rhocs_7 = getRhocs_7();

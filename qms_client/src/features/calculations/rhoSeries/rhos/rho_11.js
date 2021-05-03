@@ -2,117 +2,78 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../../examiner';
 import {
-  idxOfBranch,
-  isValidBranch,
-  trkod
-} from '../../twigs/twig_01';
+  dfcns
+} from './rho_09';
 import {
-  binaryToDecimal,
-  octalToDecimal
-} from '../../utils/util_02';
+  rhocs_5
+} from './rho_10';
 import {
-  rhocs_1
-} from './rho_01';
-import {
-  getRcxt1ByLhn
+  getRcxtvByLhn
 } from './rho_05';
 import {
-  getRcxt6ByLhn,
-  rhocs_6
-} from './rho_10';
+  getDfdbrf
+} from './rho_09';
 
-const getRhocs_7 = () => {
+const getRhocs_6 = () => {
 
-  const mapFn_1n =
-    (rjkdi, rkgdi, rqndi, lhcros) => {
+  const mapFn = rhocxt => {
 
-    if(R.isNil(rjkdi)){
-      throw new Error(
-        'RJKDI should not be nil.');
+    // Unique focus list
+    const unifcl = R.compose(
+      R.uniq,
+      R.map(R.prop('dfccn')))
+    (rhocxt.lhcrsl);
+
+    // Is lurking long hook, i.e. long hook with
+    // hidden part. It is not the same as [rbxc],
+    // of which is referring to a cross, but not
+    // a long hook.
+    const isLklh = unifcl.length < 5;
+
+    // Delta hidden focus list
+    const dlhdfl = R.difference(dfcns, unifcl);
+
+    if(isLklh){
+
+      // Delta pilot cross list
+      const dpilcl = R.find(
+        R.propEq('lhname', '純' + rhocxt.rhlhn),
+        rhocs_5).lhcrsl;
+
+      E.cknwa(dpilcl, 'dpilcl');
+
+      return {
+        ...rhocxt,
+        isLklh,
+        dlhdfl,
+        dpilcl,
+        _type: 'rhocxt_8'
+      }
+    }
+    else {
+      return {
+        ...rhocxt,
+        isLklh,
+        _type: 'rhocxt_8'
+      }
     }
 
-    const lhcdwi = lhcros.lhcdwi;
-
-    if(R.isNil(lhcdwi)){
-      throw new Error(
-        '[lhcdwi] should not be nil.');
-    }
-
-    const isRjk = lhcdwi == rjkdi;
-    const isRqn = lhcdwi == rqndi;
-    const isRkg = lhcdwi == rkgdi;
-
-    // Rho jack render text
-    const rjkrt = isRjk ? '世' : '';
-
-    // Rho queen render text
-    const rqnrt = isRqn ? '身' : '';
-
-    // Rho king render text
-    const rkgrt = isRkg ? '應' : '';
-
-    // Rho face cards render text
-    const rfcrt = RA.concatAll([
-      rjkrt, rqnrt, rkgrt
-    ]);
-
-    return {
-      ...lhcros,
-      rfcrt,
-      isRjk,
-      isRqn,
-      isRkg
-    };
   }
 
-  const mapFn_1c = R.curry(mapFn_1n);
+  return R.map(mapFn, rhocs_5)
+}
 
-  const mapFn_2 = rhocxt => {
+export const rhocs_6 = getRhocs_6();
 
-    const { rjkdi, rkgdi } = rhocxt;
-    const _lhcrsl = rhocxt.lhcrsl;
+export const getRcxt6ByLhn = lhname => {
 
-    E.cknwn(rjkdi, 'rjkdi');
-    E.cknwn(rkgdi, 'rkgdi');
-    E.cknwa(_lhcrsl, '_lhcrsl');
-
-    // Rho jack cross
-    const rjkcr = _lhcrsl[rjkdi];
-    E.cknwo(rjkcr, 'rjkcr');
-
-    // Rho jack cross branch
-    const rjkbh = rjkcr.crbh;
-    E.cknws(rjkbh, 'rjkbh');
-
-    if(!isValidBranch(rjkbh)){
-      throw new Error(
-        `${rjkbh} is not a valid [rjkbh].`)
-    }
-
-    // Rho queen index
-    const rqndi = 5 - (idxOfBranch(rjkbh) % 6);
-    E.cknwn(rqndi, 'rqndi');
-
-    const lhcrsl =
-      R.map(
-        mapFn_1c(rjkdi)(rkgdi)(rqndi),
-        _lhcrsl);
-
-    return {
-      ...rhocxt,
-      lhcrsl,
-      _type: 'rhocxt_7'
-    }
-  }
-
-  try{
-    return R.map(mapFn_2, rhocs_6);
+  try {
+    return getRcxtvByLhn(
+      lhname, rhocs_6, 6);
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get [rhocs_7].');
+      'Cannot get [rhocxt_6] by long hook name.')
   }
 }
-
-export const rhocs_7 = getRhocs_7();

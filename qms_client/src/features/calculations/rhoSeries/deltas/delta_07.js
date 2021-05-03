@@ -10,7 +10,7 @@ import {
 } from '../../utils/util_05';
 import {
   isValidDfccn
-} from '../rhos/rho_08';
+} from '../rhos/rho_09';
 
 // Get cross list by focus
 const _getClbfc = (dfccn, slcrl) => {
@@ -30,6 +30,7 @@ const _getClbfc = (dfccn, slcrl) => {
 }
 export const getClbfc = R.curry(_getClbfc);
 
+// Get cross list by paladin
 const _getClbpl = (dplcn, slcrl) => {
 
   E.cknwa(slcrl, 'slcrl');

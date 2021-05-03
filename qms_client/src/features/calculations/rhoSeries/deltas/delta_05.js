@@ -11,7 +11,7 @@ import {
 } from './delta_03';
 import {
   getRcxt8ByLhn
-} from '../rhos/rho_12';
+} from '../rhos/rho_13';
 import {
   utDissoc
 } from '../../utils/util_06';
