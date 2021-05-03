@@ -67,5 +67,9 @@ export const getClbfm =
 // extended version.
 // [dlmsr] is the delta mint source.
 // [dlmtg] is the delta mint target.
+// [dlmer] is the delta mint relation.
 export const getClber =
-  (dlmsr, dlmtg, dlmer, )
+  (dlmsr, dlmtg, dlmer) => {
+
+  
+}

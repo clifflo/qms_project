@@ -31,7 +31,12 @@ export const dlmsc = [
   'Turtle'
 ]
 
-// Delta mint set 'D'
+// Delta mint set 'D' is the sum of
+// 'A', 'B' and 'C' mint set
+export const dlmsd =
+  RA.concatAll(dlmsa, dlmsb, dlmsc);
+
+// Delta mint set 'E'
 export const dlmsd = [
   'draws with',
   'produces',
@@ -42,7 +47,7 @@ export const dlmsd = [
   'clashes with'
 ]
 
-// Delta mint set 'E'
+// Delta mint set 'F'
 export const dlmse = [
   'stands on',
   'converts to',

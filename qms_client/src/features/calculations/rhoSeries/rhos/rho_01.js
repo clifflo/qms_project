@@ -24,7 +24,7 @@ export const getFbbrs = (bbssb, bbscw) => {
   try{
 
     E.cknws(bbssb, 'bbssb');
-    
+
     const bbsbi = idxOfBranch(bbssb);
     E.cknwn(bbsbi, 'bbsbi');
 
@@ -90,3 +90,15 @@ export const gshalo = '地雷水澤山火風天';
 
 // Generic short hook original
 export const gshoro = '坤震坎兌艮離巽乾';
+
+// Generic short hook english
+export const gsheng = [
+  'Earth',
+  'Thunder',
+  'Lake',
+  'Swamp',
+  'Mountain',
+  'Lava',
+  'Monsoon',
+  'Sky'
+]
