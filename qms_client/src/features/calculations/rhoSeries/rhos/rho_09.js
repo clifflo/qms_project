@@ -56,8 +56,18 @@ export const isValidDfccn = dfccn => {
 }
 
 // Delta focus english name set
-export const dfens =
-  utPropMap('dfcen', dfcdl);
+const getDfens = () => {
+
+  try{
+    utPropMap('dfcen', dfcdl);
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get [dfens].');
+  }
+}
+
+export const dfens = getDfens();
 
 export const isValidDfcen = dfcen => {
   return R.includes(dfcen, dfens);
@@ -87,7 +97,7 @@ export const getDfcbe = dfcen => {
 
   E.cknws(dfcen, 'dfcen');
 
-  if(!isValidDfcsen(dfcen)){
+  if(!isValidDfcen(dfcen)){
     throw new Error(
       `${dfcen} is not a valid [dfcen].`);
   }

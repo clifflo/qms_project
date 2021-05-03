@@ -74,7 +74,7 @@ export const getDpcbe = dplen => {
   E.cknws(dplen, 'dplen');
 
   try{
-    const dpcbse = utDictParse(
+    const dpcbe = utDictParse(
       dplen,
       'dplen',
       'dplcn'
@@ -89,7 +89,17 @@ export const getDpcbe = dplen => {
 }
 
 // Delta paladin  english set
-export const dpens = utPropMap('dplen');
+const getDpens = () => {
+  try{
+    return utPropMap('dplen', dpldl);
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get [dpens].');
+  }
+}
+
+export const dpens = getDpens();
 
 export const isValidDplen = dplen => {
   return R.includes(dplen, dpens);

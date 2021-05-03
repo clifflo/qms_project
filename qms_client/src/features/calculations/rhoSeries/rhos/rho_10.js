@@ -30,9 +30,7 @@ const getRhocs_5 = () => {
           '[rrawf] should not be nil.');
       }
 
-      // Delta focus dictionary
-      const dlfdi = getDfdbrf(rrawf);
-      const { dfccn } = dlfdi;
+      const dfccn = getDfcbrf(rrawf);
 
       if(R.isNil(dfccn)){
         throw new Error(
