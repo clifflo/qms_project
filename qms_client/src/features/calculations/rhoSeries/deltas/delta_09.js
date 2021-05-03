@@ -1,3 +1,7 @@
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
+import * as E from '../../examiner';
+
 // [wbdfc] is wheat bowl delta focus chinese
 // [chdfc] is cheese delta focus chinese
 // [clbpm] is cross list by focus movement
@@ -57,3 +61,11 @@ export const getClbfm =
       'Cannot get [clbfm].');
   }
 }
+
+// [clbec] is cross list by elemental relations,
+// but for the case here it stands for the
+// extended version.
+// [dlmsr] is the delta mint source.
+// [dlmtg] is the delta mint target.
+export const getClber =
+  (dlmsr, dlmtg, dlmer, )
