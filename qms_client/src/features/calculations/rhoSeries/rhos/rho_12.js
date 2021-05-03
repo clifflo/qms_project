@@ -15,7 +15,10 @@ import {
 
 const getRhocs_8 = () => {
 
-  // [rpilcs] stands for Rho pilot cross
+  // [rpilcs] stands for Rho pilot cross, i.e.
+  // the cross referring to the rho pilot,
+  // so it is also the hidden cross.
+  // [dlhdfl] is the delta hidden focus list.
   const mapFn_1n =
     (lhcrsl, dlhdfl, rpilcs) => {
 
@@ -27,7 +30,6 @@ const getRhocs_8 = () => {
     E.cknwo(lhcros);
 
     const dfccn = rpilcs.dfccn;
-
     E.cknws(dfccn, 'dfccn');
 
     // Is rho boxed cross, i.e. a cross

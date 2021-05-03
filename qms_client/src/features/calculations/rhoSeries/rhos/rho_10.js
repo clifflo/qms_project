@@ -22,7 +22,9 @@ const getRhocs_6 = () => {
     (rhocxt.lhcrsl);
 
     // Is lurking long hook, i.e. long hook with
-    // hidden part.
+    // hidden part. It is not the same as [rbxc],
+    // of which is referring to a cross, but not
+    // a long hook.
     const isLklh = unifcl.length < 5;
 
     // Delta hidden focus list
@@ -30,7 +32,7 @@ const getRhocs_6 = () => {
 
     if(isLklh){
 
-      // Rho pilot cross list
+      // Delta pilot cross list
       const dpilcl = R.find(
         R.propEq('lhname', '純' + rhocxt.rhlhn),
         rhocs_5).lhcrsl;
