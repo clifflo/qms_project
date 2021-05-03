@@ -95,8 +95,8 @@ export const dfcsm = [
     dfccn: '丙子孫',
     dfcsid: 'dtf-zs',
     rrawf: 'Fruit',
-    dfcnn: 'Children',
-    dfcfen: 'Delta children'
+    dfcnn: 'Son',
+    dfcfen: 'Delta son'
   },
   {
     dfccn: '丙妻財',

@@ -61,10 +61,39 @@ export const getClbfm =
   }
 }
 
-// [clbwd] is cross list by delta word. So it would
-// define various kind of english wordings and
-// getting the respective cross list.
-export const getClbdw = (dltwd, slcrl) => {
+// [clbwd] is cross list by delta mint. So it would
+// define paladins, focuses and face cards of which
+// are defined as the 'mints'. So this function will
+// get their respective cross list.
+export const getClbdm = (dltwd, slcrl) => {
 
-  
+  // Delta mint set 'A'
+  const dlmsa = ['jack', 'queen', 'king'];
+
+  // Delta mint set 'B'
+  const dlmsb = [
+    'parent', 'brother', 'money', 'ghost', 'son'];
+
+  // Delta mint set 'C'
+  const dlmsc = [
+    'Dragon',
+    'Phoenix',
+    'Unicorn',
+    'Cobra',
+    'Tiger',
+    'Turtle'
+  ]
+
+  // Delta mint set 'D'
+  const dlmsd = [
+    'draws with',
+    'produces',
+    'produced by',
+    'hacks',
+    'hacked by',
+    'cooperates with',
+    'clashes with'
+  ]
+
+
 }
