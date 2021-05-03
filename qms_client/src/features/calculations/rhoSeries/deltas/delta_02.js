@@ -1,4 +1,20 @@
 
+
+
+// Delta paladin start position map
+const dpspm = {
+  '甲': '丙青龍',
+  '乙': '丙青龍',
+  '丙': '丙朱雀',
+  '丁': '丙朱雀',
+  '戊': '丙勾陳',
+  '己': '丙螣蛇',
+  '庚': '丙白虎',
+  '辛': '丙白虎',
+  '壬': '丙玄武',
+  '癸': '丙玄武'
+}
+
 // Delta paladin envelop list
 const getDpevl = () => {
 

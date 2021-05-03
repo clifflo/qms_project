@@ -91,3 +91,12 @@ export const utFindByPropFalse =
     R.not(R.prop(propName)),
     list);
 }
+
+export const utPropMap =
+  (propName, list) => {
+
+  utCheckPropName(propName);
+  utCheckList(list);
+
+  return R.map(R.prop(propName), list);
+}
