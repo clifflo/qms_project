@@ -89,7 +89,7 @@ export const getDpcbe = dplen => {
   }
 }
 
-// Delta paladin  english set
+// Delta paladin english set
 const getDpens = () => {
   try{
     return utSecondWord(

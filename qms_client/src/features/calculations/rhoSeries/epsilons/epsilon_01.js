@@ -1,16 +1,16 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  
+
 }
 
 // [epcnt] is the epsilon condition text.
-const rjkrl_1 = epcnt => {
+const rjkrl_1 = (epcnt, dltvb) => {
 
-  const
+  const spacedDltvb = ` ${dltvb} `;
 
-  if(R.includes(' co-produces with ')){
-    const mints = R.split('co-produces with', epcnt);
+  if(R.includes(spacedDltvb)){
+    const mints = R.split(spacedDltvb, epcnt);
     const firstMint = mints[0];
     const secondMint = mints[1];
   }

@@ -12,10 +12,6 @@ import {
   getClbpl
 } from './delta_08';
 
-const getNickname = fullEnglishName => {
-  return R.split(' ', fullEnglishName)[1];
-}
-
 // Get cross list by focus in english
 export const getClbfe = dfcen => {
 
@@ -24,8 +20,7 @@ export const getClbfe = dfcen => {
   try{
     const clbfe = R.compose(
       getClbfc,
-      getDfcbe,
-      getNickname)
+      getDfcbe)
     (dfcen);
 
     E.cknwa(clbfe);
@@ -45,8 +40,7 @@ export const getClbpe = dplen => {
   try{
     const clbpe = R.compose(
       getClbpl,
-      getDpcbe,
-      getNickname)
+      getDpcbe)
     (dplen);
 
     return clbpe;
@@ -60,3 +54,9 @@ export const getClbpe = dplen => {
 
 export { isValidDfcen } from '../../rhos/rho_09';
 export { isValidDplen } from './delta_01';
+
+export const rfacs = ['Jack', 'Queen', 'King'];
+
+export const isValidRfcad = rfacd => {
+  return R.includes(rfacd, rfacs);
+}

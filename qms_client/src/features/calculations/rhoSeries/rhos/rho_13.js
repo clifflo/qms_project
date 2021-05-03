@@ -102,6 +102,6 @@ export const getRcxt8ByLhn = lhname => {
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get RHOCXT_8 by long hook name.')
+      'Cannot get [rhocxt_8] by [lhname].')
   }
 }
