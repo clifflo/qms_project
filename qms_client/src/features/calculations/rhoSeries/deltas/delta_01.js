@@ -76,8 +76,12 @@ export const getDpdbse = dplsen => {
   try{
     const dpdbse = utFindByPropEq(
       'dplsen', dplsen, dpldl);
-
     return dpcbse;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      `${dplsen} is not a valid [dplsen].`);
   }
 }
 

@@ -28,6 +28,7 @@ const _getClbfc = (dfccn, slcrl) => {
 
   return clbfc;
 }
+
 export const getClbfc = R.curry(_getClbfc);
 
 // Get cross list by paladin
@@ -46,6 +47,7 @@ const _getClbpl = (dplcn, slcrl) => {
 
   return clbpl;
 }
+
 export const getClbpl = R.curry(_getClbpl);
 
 const _getRjkcr = slcrl => {
@@ -58,6 +60,7 @@ const _getRjkcr = slcrl => {
     throw new Error('Cannot get [rjkcr].');
   }
 }
+
 export const getRjkcr = R.curry(_getRjkcr);
 
 const _getRqncr = slcrl => {
@@ -70,6 +73,7 @@ const _getRqncr = slcrl => {
     throw new Error('Cannot get [rqncr].');
   }
 }
+
 export const getRqncr = R.curry(_getRqncr);
 
 const _getRkgcr = slcrl => {
@@ -82,4 +86,34 @@ const _getRkgcr = slcrl => {
     throw new Error('Cannot get [rkgcr].');
   }
 }
+
 export const getRkgcr = R.curry(_getRkgcr);
+
+// Get rho face card cross
+// [rfacd] is the rho face card
+export const getRfccr = (rfacd, slcrl) => {
+
+  E.cknws(rfacd);
+  
+  try{
+
+    if(rfacd == 'Jack'){
+      return getRjkcr(slcrl);
+    }
+    else if(rfacd == 'Queen'){
+      return getRqncr(slcrl);
+    }
+    else if(rfacd == 'King'){
+      return getRkgcr(slcrl);
+    }
+    else {
+      throw new Error(
+        `${rfacd} is not a valid [rfacd].`);
+    }
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      'Cannot get [rfccr].')
+  }
+}
