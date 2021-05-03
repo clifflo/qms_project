@@ -6,7 +6,8 @@ import {
   utPropMap
 } from '../../utils/util_04'
 import {
-  utDictParse
+  utDictParse,
+  utSecondWord
 } from '../../utils/util_06';
 
 // Delta focus dictionary list
@@ -19,31 +20,31 @@ export const dfcdl = [
     dfccn: '丙兄弟',
     dfcsid: 'dtf-xd',
     rrawf: 'Draw',
-    dfcen: 'Delta brother'
+    dfcen: 'Delta Brother'
   },
   {
     dfccn: '丙子孫',
     dfcsid: 'dtf-zs',
     rrawf: 'Fruit',
-    dfcen: 'Delta son'
+    dfcen: 'Delta Son'
   },
   {
     dfccn: '丙妻財',
     dfcsid: 'dtf-qc',
     rrawf: 'Bank',
-    dfcen: 'Delta money'
+    dfcen: 'Delta Money'
   },
   {
     dfccn: '丙父母',
     dfcsid: 'dtf-fm',
     rrawf: 'Seed',
-    dfcen: 'Delta parent'
+    dfcen: 'Delta Parent'
   },
   {
     dfccn: '丙官鬼',
     dfcsid: 'dtf-gg',
     rrawf: 'Hacker',
-    dfcen: 'Delta ghost'
+    dfcen: 'Delta Ghost'
   }
 ]
 
@@ -59,7 +60,10 @@ export const isValidDfccn = dfccn => {
 const getDfens = () => {
 
   try{
-    utPropMap('dfcen', dfcdl);
+    const _dfens =
+      utSecondWord(utPropMap('dfcen', dfcdl));
+
+    return _dfnes;
   }
   catch(err){
     console.error(err);

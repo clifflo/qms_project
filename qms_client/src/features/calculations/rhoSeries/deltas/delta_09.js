@@ -57,3 +57,6 @@ export const getClbpe = dplen => {
   }
 
 }
+
+export { isValidDfcen } from '../../rhos/rho_09';
+export { isValidDplen } from './delta_01';

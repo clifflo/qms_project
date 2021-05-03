@@ -20,7 +20,8 @@ import {
   utPropMap
 } from '../../utils/util_04';
 import {
-  utDictParse
+  utDictParse,
+  utSecondWord
 } from '../../utils/util_06';
 
 // Delta paladin chinese order
@@ -91,7 +92,8 @@ export const getDpcbe = dplen => {
 // Delta paladin  english set
 const getDpens = () => {
   try{
-    return utPropMap('dplen', dpldl);
+    return utSecondWord(
+      utPropMap('dplen', dpldl));
   }
   catch(err){
     console.error(err);
@@ -99,7 +101,7 @@ const getDpens = () => {
   }
 }
 
-export const dpens = getDpens();
+const dpens = getDpens();
 
 export const isValidDplen = dplen => {
   return R.includes(dplen, dpens);

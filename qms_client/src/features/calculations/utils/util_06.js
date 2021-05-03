@@ -32,3 +32,15 @@ export const utDictParse =
 
   return tProp[tPropName];
 }
+
+
+export const utSecondWord = list => {
+
+  utCheckList(list);
+
+  const mapFn = sentence => {
+    return R.split(sentence)[1];
+  }
+
+  return R.map(mapFn, list);
+}
