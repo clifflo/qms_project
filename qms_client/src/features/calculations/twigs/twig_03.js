@@ -22,6 +22,60 @@ const chosenSentence =
 export const chosenOrder =
   R.split(',', chosenSentence);
 
+// Chosen set map
+// [chsch] is the chosen chinese name
+// [chseg] is the chosen english name
+export const chsmp = [
+  {
+    chsch: '長生',
+    chseg: 'Long live'
+  },
+  {
+    chsch: '沐浴',
+    chseg: 'Bath'
+  },
+  {
+    chsch: '冠帶',
+    chseg: 'Belt'
+  },
+  {
+    chsch: '臨官',
+    chseg: 'Linguan'
+  },
+  {
+    chsch: '帝旺',
+    chseg: 'Wang'
+  },
+  {
+    chsch: '衰',
+    chseg: 'Tired'
+  },
+  {
+    chsch: '病',
+    chseg: 'Sick'
+  },
+  {
+    chsch: '長死',
+    chseg: 'Long death'
+  },
+  {
+    chsch: '墓',
+    chseg: 'Grave'
+  },
+  {
+    chsch: '絕',
+    chseg: 'Restart'
+  },
+  {
+    chsch: '胎',
+    chseg: 'Fetus'
+  },
+  {
+    chsch: '養',
+    chseg: 'Nourish'
+  }
+]
+
 export const isValidChosen = chosen =>
   R.includes(chosen, chosenOrder);
 
