@@ -1,95 +1,95 @@
 import * as R from 'ramda';
-import * as RA from 'ramda-adjunct';
 import * as E from '../../examiner';
-import { utDissoc } from '../../utils/util_06';
-import { getDlcxt_2 } from './delta_05';
+import {
+  decimalToBinary
+} from '../../utils/util_02';
+import {
+  getDlcxt_1,
+} from './delta_03';
+import {
+  getDcstl
+} from './delta_04';
+import {
+  getRcxt8ByLhn
+} from '../rhos/rho_13';
+import {
+  utDissoc
+} from '../../utils/util_06';
 
-export const buildDlcxt_3 = dlcxt_2 => {
+export const getDlcxt_2 =
+  (wbllhn, chelhn, dpdtr) => {
 
-  // Get silk cross
-  const getSlcros_n = (isWbocr, lhcros) => {
+  E.cknws(wbllhn, 'wbllhn');
+  E.cknws(chelhn, 'chelhn');
+  E.cknws(dpdtr, 'dpdtr');
 
-    E.cknwb(isWbocr, 'isWbocr');
+  const dlcxt_1a = getDlcxt_1(wbllhn, dpdtr);
+  const dcstl = getDcstl(wbllhn, chelhn);
+  const chrcxt = getRcxt8ByLhn(chelhn);
 
-    // Cross is slicable
-    const cslab = isWbocr ||
-      (lhcros.isStruck && !isWbocr);
+  // Wheat bowl external short hook element
+  const wbeshe = dlcxt_1a.eshele;
 
-    const cswbx = cslab && lhcros.isRbxc;
-    const cswnb = cslab && !lhcros.isRbxc;
+  // Wheat bowl internal short hook element
+  const wbishe = dlcxt_1a.ishele;
 
-    // Get cross type, i.e. wheat bowl or Cheese
-    // [cstc]
-    const cstype = isWbocr? 'w' : 'c';
+  // Wheat bowl external short hook original
+  const wbesho = dlcxt_1a.eshori;
 
-    if(cswbx){
+  // Wheat bowl internal short hook original
+  const wbisho = dlcxt_1a.ishori;
 
-      const _dpcros = utDissoc(lhcros, ['rpilcs']);
-      const _hdncrs = lhcros.rpilcs;
+  // Wheat bowl generation
+  const wbrgen = dlcxt_1a.rhogen;
 
-      const dpcid =
-        cstype + 's'
-        + lhcros.lhcdwi.toString();
+  // Cheese external short hook element
+  const cheshe = dlcxt_1a.eshele;
 
-      const hdcid =
-        cstype + 'h'
-        + lhcros.lhcdwi.toString();
+  // Cheese internal short hook element
+  const chishe = dlcxt_1a.ishele;
 
-      const dpcros = {
-        ..._dpcros,
-        isWbocr,
-        isDplcr: true,
-        crsid: dpcid
-      }
+  // Cheese external short hook original
+  const chesho = chrcxt.eshori;
 
-      const hdncrs = {
-        ..._hdncrs,
-        isWbocr,
-        isDplcr: false,
-        crsid: hdcid
-      }
+  // Cheese internal short hook original
+  const chisho = chrcxt.ishori;
 
-      return [dpcros, hdncrs];
-    }
-    else if(cswnb){
+  // Cheese rho generation
+  const chrgen = chrcxt.rhogen;
 
-      const dpcid =
-        cstype + 's'
-        + lhcros.lhcdwi.toString();
-
-      const dpcros = {
-        ...lhcros,
-        crsid: dpcid,
-        isWbocr,
-        isDplcr: true
-      };
-
-      return [dpcros];
-    }
-    else {
-      return [];
+  const mapFn_1 = lhcros => {
+    const isStrike = dcstl[lhcros.lhcdwi];
+    return {
+      ...lhcros,
+      isStrike
     }
   }
-  const getSlcros_c = R.curry(getSlcros_n);
 
-  // Wheat bowl sliced cross list
-  const wbslcl = R.compose(
-    R.flatten,
-    R.map(getSlcros_c(true)))
-  (dlcxt_2.wbowcl);
+  const mapFn_2 = lhcros => {
+    const isStruck = dcstl[lhcros.lhcdwi];
+    return {
+      ...lhcros,
+      isStruck
+    }
+  }
 
-  // Cheese sliced cross list
-  const chslcl = R.compose(
-    R.flatten,
-    R.map(getSlcros_c(false)))
-  (dlcxt_2.chescl);
+  const wbowcl = R.map(mapFn_1, dlcxt_1a.lhcrsl);
+  const chescl = R.map(mapFn_2, chrcxt.lhcrsl);
 
-  // Total sliced cross list, i.e.
-  // [wbslcl] concats [chslcl];
-
-  const toslcl = R.concat(wbslcl, chslcl);
-  return toslcl;
+  return {
+    wbllhn,
+    chelhn,
+    wbowcl,
+    chescl,
+    wbesho,
+    wbisho,
+    chesho,
+    chisho,
+    wbrgen,
+    chrgen,
+    cheshe,
+    chishe,
+    wbeshe,
+    wbishe
+  }
 }
-
-export const getDlcxt_3 =
-  R.compose(buildDlcxt_3, getDlcxt_2);

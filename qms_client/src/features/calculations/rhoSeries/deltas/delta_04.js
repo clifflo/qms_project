@@ -1,56 +1,57 @@
 import * as R from 'ramda';
-import * as RA from 'ramda-adjunct';
+import * as E from '../../examiner';
 import {
-  binaryToDecimal,
-  octalToDecimal
+  decimalToBinary
 } from '../../utils/util_02';
+import {
+  getDlcxt_1
+} from './delta_03';
+import {
+  getRcxt2ByLhn
+} from '../rhos/rho_05';
+import {
+  getRcxt8ByLhn
+} from '../rhos/rho_13';
 
-// Get long hook name from binary lots
-export const getLnfbl = bilot => {
+export const getDcstl = (wbllhn, chelhn) => {
 
   try{
 
-    E.cknws(bilot, 'bilot');
+    const wblrct = getRcxt2ByLhn(wbllhn);
+    const cherct = getRcxt2ByLhn(chelhn);
 
-    if(bilot.length != 7){
-      throw new Error(
-        'Length of BILOT must be 7.');
+    E.cknwo(wblrct, 'wblrct');
+    E.cknwo(cherct, 'cherct');
+
+    const isZeroOrOne = crsi => {
+      return (crsi == '0') || (crsi == '1');
     }
 
-    const lhidx = binaryToDecimal(bilot);
-    E.cknwn(lhidx);
+    const mapFn = cridx => {
 
-    const lhname = getRcxt1ByLhn(lhidx).lhname;
-    E.cknws(lhname);
+      const wcrsi = wblrct.lhcrsl[cridx].crsi;
+      const ccrsi = cherct.lhcrsl[cridx].crsi;
 
-    return lhname;
+      E.cknws(wcrsi, 'wcrsi');
+      E.cknws(ccrsi, 'ccrsi');
+
+      if(!isZeroOrOne(wcrsi)){
+        throw new Error(
+          '[wcrsi] must be 1 or 0.');
+      }
+
+      if(!isZeroOrOne(ccrsi)){
+        throw new Error(
+          '[ccrsi] must be 1 or 0.');
+      }
+
+      return wcrsi != ccrsi;
+    }
+    return R.map(mapFn, R.range(0, 6));
   }
   catch(err){
     console.error(err);
-    throw new Error(
-      '[getLnfbl] is error.');
+    throw new Error('Cannot get [dcstl].');
   }
 
-}
-
-// Get long hook name from octal lots
-export const getLnfol = oclot => {
-
-  if(R.isNil(oclot)){
-    throw new Error(
-      'OCLOT should not be nil.');
-  }
-
-  if(!RA.isString(oclot)){
-    throw new Error(
-      'OCLOT must be a string.');
-  }
-
-  if(oclot.length != 5){
-    throw new Error(
-      'Length of OCLOT must be 5.');
-  }
-
-  const lhidx = octalToDecimal(oclot);
-  return getRcxt1ByLhn(lhidx).lhname;
 }

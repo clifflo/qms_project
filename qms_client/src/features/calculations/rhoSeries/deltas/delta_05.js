@@ -1,95 +1,56 @@
 import * as R from 'ramda';
-import * as E from '../../examiner';
+import * as RA from 'ramda-adjunct';
 import {
-  decimalToBinary
+  binaryToDecimal,
+  octalToDecimal
 } from '../../utils/util_02';
-import {
-  getDlcxt_1,
-} from './delta_02';
-import {
-  getDcstl
-} from './delta_03';
-import {
-  getRcxt8ByLhn
-} from '../rhos/rho_13';
-import {
-  utDissoc
-} from '../../utils/util_06';
 
-export const getDlcxt_2 =
-  (wbllhn, chelhn, dpdtr) => {
+// Get long hook name from binary lots
+export const getLnfbl = bilot => {
 
-  E.cknws(wbllhn, 'wbllhn');
-  E.cknws(chelhn, 'chelhn');
-  E.cknws(dpdtr, 'dpdtr');
+  try{
 
-  const dlcxt_1a = getDlcxt_1(wbllhn, dpdtr);
-  const dcstl = getDcstl(wbllhn, chelhn);
-  const chrcxt = getRcxt8ByLhn(chelhn);
+    E.cknws(bilot, 'bilot');
 
-  // Wheat bowl external short hook element
-  const wbeshe = dlcxt_1a.eshele;
-
-  // Wheat bowl internal short hook element
-  const wbishe = dlcxt_1a.ishele;
-
-  // Wheat bowl external short hook original
-  const wbesho = dlcxt_1a.eshori;
-
-  // Wheat bowl internal short hook original
-  const wbisho = dlcxt_1a.ishori;
-
-  // Wheat bowl generation
-  const wbrgen = dlcxt_1a.rhogen;
-
-  // Cheese external short hook element
-  const cheshe = dlcxt_1a.eshele;
-
-  // Cheese internal short hook element
-  const chishe = dlcxt_1a.ishele;
-
-  // Cheese external short hook original
-  const chesho = chrcxt.eshori;
-
-  // Cheese internal short hook original
-  const chisho = chrcxt.ishori;
-
-  // Cheese rho generation
-  const chrgen = chrcxt.rhogen;
-
-  const mapFn_1 = lhcros => {
-    const isStrike = dcstl[lhcros.lhcdwi];
-    return {
-      ...lhcros,
-      isStrike
+    if(bilot.length != 7){
+      throw new Error(
+        'Length of BILOT must be 7.');
     }
+
+    const lhidx = binaryToDecimal(bilot);
+    E.cknwn(lhidx);
+
+    const lhname = getRcxt1ByLhn(lhidx).lhname;
+    E.cknws(lhname);
+
+    return lhname;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error(
+      '[getLnfbl] is error.');
   }
 
-  const mapFn_2 = lhcros => {
-    const isStruck = dcstl[lhcros.lhcdwi];
-    return {
-      ...lhcros,
-      isStruck
-    }
+}
+
+// Get long hook name from octal lots
+export const getLnfol = oclot => {
+
+  if(R.isNil(oclot)){
+    throw new Error(
+      'OCLOT should not be nil.');
   }
 
-  const wbowcl = R.map(mapFn_1, dlcxt_1a.lhcrsl);
-  const chescl = R.map(mapFn_2, chrcxt.lhcrsl);
-
-  return {
-    wbllhn,
-    chelhn,
-    wbowcl,
-    chescl,
-    wbesho,
-    wbisho,
-    chesho,
-    chisho,
-    wbrgen,
-    chrgen,
-    cheshe,
-    chishe,
-    wbeshe,
-    wbishe
+  if(!RA.isString(oclot)){
+    throw new Error(
+      'OCLOT must be a string.');
   }
+
+  if(oclot.length != 5){
+    throw new Error(
+      'Length of OCLOT must be 5.');
+  }
+
+  const lhidx = octalToDecimal(oclot);
+  return getRcxt1ByLhn(lhidx).lhname;
 }
