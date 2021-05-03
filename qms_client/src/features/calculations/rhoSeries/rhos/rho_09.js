@@ -5,6 +5,9 @@ import {
   utFindByPropEq,
   utPropMap
 } from '../../utils/util_04'
+import {
+  utDictParse
+} from '../../utils/util_06';
 
 // Delta focus dictionary list
 // [dfccn] is delta focus chinese name
@@ -16,36 +19,31 @@ export const dfcdl = [
     dfccn: '丙兄弟',
     dfcsid: 'dtf-xd',
     rrawf: 'Draw',
-    dfcsen: 'Brother',
-    dfcfen: 'Delta brother'
+    dfcen: 'Delta brother'
   },
   {
     dfccn: '丙子孫',
     dfcsid: 'dtf-zs',
     rrawf: 'Fruit',
-    dfcsen: 'Son',
-    dfcfen: 'Delta son'
+    dfcen: 'Delta son'
   },
   {
     dfccn: '丙妻財',
     dfcsid: 'dtf-qc',
     rrawf: 'Bank',
-    dfcsen: 'Money',
-    dfcfen: 'Delta money'
+    dfcen: 'Delta money'
   },
   {
     dfccn: '丙父母',
     dfcsid: 'dtf-fm',
     rrawf: 'Seed',
-    dfcsen: 'Parent',
-    dfcfen: 'Delta parent'
+    dfcen: 'Delta parent'
   },
   {
     dfccn: '丙官鬼',
     dfcsid: 'dtf-gg',
     rrawf: 'Hacker',
-    dfcsen: 'Ghost',
-    dfcfen: 'Delta ghost'
+    dfcen: 'Delta ghost'
   }
 ]
 
@@ -65,36 +63,43 @@ export const isValidDfcsen = dfcsen => {
   return R.includes(dfcsen, dfsens);
 }
 
-// Get delta focus dictionary by rho raw focus
-export const getDfdbrf = rrawf => {
+// Get delta focus chinese by rho raw focus
+export const getDfcbrf = rrawf => {
 
   E.cknws(rrawf, 'rrawf');
 
   try{
-    const dfdbrf = utFindByPropEq(
-      'rrawf', rrawf, dfcdl);
-    return dfdbrf;
+    const dfcbrf = utDictParse(
+      'rrawf', rrawf, 'dfccn', dfcdl);
+    E.ckwns(dfcbrf);
+    return dfcbrf;
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get [dfdbrf].');
+      'Cannot get [dfcbrf].')
   }
+
 }
 
-// Get delt focus dictionary by chinese name
-export const getDfdbcn = dfccn => {
+// Get delt focus chinese by english name
+export const getDfcbse = dfcsen => {
 
-  E.cknws(dfccn, 'dfccn');
+  E.cknws(dfcsen, 'dfcsen');
+
+  if(!isValidDfcsen(dfcsen)){
+    throw new Error(
+      `${dfcsen} is not a valid [dfcsen].`);
+  }
 
   try{
-    const dfdbcn = utFindByPropEq(
-      'dfccn', dfccn, dfcdl);
-    return dfdbcn;
+    const dfcbse = utDictParse(
+      'dfcsen', dfcsen, 'dfccn', dfcdl);
+    return dfcbse;
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get [dfdbcn].');
+      'Cannot get [dfcbse].');
   }
 }

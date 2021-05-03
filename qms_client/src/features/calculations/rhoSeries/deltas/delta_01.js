@@ -32,62 +32,59 @@ export const dplco =
 export const dpldl = [
   {
     dplcn: '丙青龍',
-    dplsen: 'Dragon',
-    dplfen: 'Delta dragon',
+    dplen: 'Delta dragon',
     dplsid: 'dtp-ql'
   },
   {
     dplcn: '丙朱雀',
-    dplsen: 'Phoenix',
-    dplfen: 'Delta phoenix',
+    dplen: 'Delta phoenix',
     dplsid: 'dtp-zj'
   },
   {
     dplcn: '丙勾陳',
-    dplsen: 'Unicorn',
-    dplfen: 'Delta unicorn',
+    dplen: 'Delta unicorn',
     dplsid: 'dtp-gc'
   },
   {
     dplcn: '丙螣蛇',
-    dplsen: 'Cobra',
-    dplfen: 'Delta cobra',
+    dplen: 'Delta cobra',
     dplsid: 'dtp-ts'
   },
   {
     dplcn: '丙白虎',
-    dplsen: 'Tiger',
-    dplfen: 'Delta tiger',
+    dplen: 'Delta tiger',
     dplsid: 'dtp-bh'
   },
   {
     dplcn: '丙玄武',
-    dplsen: 'Turtle',
-    dplfen: 'Delta turtle',
+    dplen: 'Delta turtle',
     dplsid: 'dtp-xw'
   }
 ]
 
-// Get delta paladin dictionary by short english
-export const getDpdbse = dplsen => {
+// Get delta paladin chinese by short english
+export const getDpcbe = dplen => {
 
   E.cknws(dplsen, 'dplsen');
 
   try{
-    const dpdbse = utFindByPropEq(
-      'dplsen', dplsen, dpldl);
-    return dpcbse;
+    const dpcbse = utDictParse(
+      dplen,
+      'dplen',
+      'dplcn'
+    )
+    return dpcbe;
   }
   catch(err){
     console.error(err);
     throw new Error(
-      `${dplsen} is not a valid [dplsen].`);
+      `${dplen} is not a valid [dplen].`);
   }
 }
 
-// Delta paladin short english set
-export const dpsens = utPropMap('dplsen');
+// Delta paladin  english set
+export const dpens = utPropMap('dplen');
 
-export const isValidDplsen = dplsen => {
-  return R.includes(dplsen, dpsens);
+export const isValidDplen = dplen => {
+  return R.includes(dplen, dpens);
 }

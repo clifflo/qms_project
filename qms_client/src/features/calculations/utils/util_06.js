@@ -11,3 +11,21 @@ export const utDissoc = (obj, delps) => {
 
   return result;
 }
+
+export const utDictParse =
+  (sPropName, sPropValue, tProp, list) => {
+
+  E.cknws(sPropName);
+  E.cknws(sPropValue);
+  E.cknws(tPropName);
+  E.cknwa(list);
+
+  const tProp = utFindByPropEq(
+    sPropName,
+    sPropValue,
+    list)
+
+  E.cknwo(tProp);
+
+  return tProp[tPropName];
+}
