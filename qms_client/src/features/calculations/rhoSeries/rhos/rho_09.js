@@ -55,12 +55,12 @@ export const isValidDfccn = dfccn => {
   return R.includes(dfccn, dfcns);
 }
 
-// Delta focus short english name set
-export const dfsens =
-  utPropMap('dfcsen', dfcdl);
+// Delta focus english name set
+export const dfens =
+  utPropMap('dfcen', dfcdl);
 
-export const isValidDfcsen = dfcsen => {
-  return R.includes(dfcsen, dfsens);
+export const isValidDfcen = dfcen => {
+  return R.includes(dfcen, dfens);
 }
 
 // Get delta focus chinese by rho raw focus
@@ -83,7 +83,7 @@ export const getDfcbrf = rrawf => {
 }
 
 // Get delt focus chinese by english name
-export const getDfcbse = dfcsen => {
+export const getDfcbe = dfcen => {
 
   E.cknws(dfcsen, 'dfcsen');
 
