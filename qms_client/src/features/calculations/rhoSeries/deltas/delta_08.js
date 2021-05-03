@@ -117,6 +117,3 @@ export const getRfccr = (rfacd, slcrl) => {
       'Cannot get [rfccr].')
   }
 }
-
-// Rho face card set
-export const rfcds = ['Jack', 'Queen', 'King'];

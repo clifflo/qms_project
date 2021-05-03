@@ -57,3 +57,39 @@ export const getClbpe = dplen => {
   }
 
 }
+
+const dltmts = [
+  'Jack',
+  'Queen',
+  'King',
+  'Dragon',
+  'Phoenix',
+  'Unicorn',
+  'Cobra',
+  'Tiger',
+  'Turtle',
+  'Parent',
+  'Son',
+  'Brother',
+  'Money',
+  'Ghost'
+]
+
+const isValidDltmnt = dltmnt => {
+  return R.includes(dltmts);
+}
+
+export const exelrs = [
+  'produces',
+  'produced by',
+  'hacks',
+  'hacked by',
+  'draws with',
+  'co-produces with',
+  'co-hacks with'
+]
+
+export const getClbmt = dltmnt => {
+
+
+}

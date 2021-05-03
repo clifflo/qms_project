@@ -20,7 +20,8 @@ export const trunkContext = {
 
 export const elemod = '金水木火土';
 
-export const elenm = {
+// Elemental context
+export const elementContext = {
   '金': 'Metal',
   '水': 'Water',
   '木': 'Wood',

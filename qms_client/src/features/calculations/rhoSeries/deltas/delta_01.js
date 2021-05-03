@@ -32,32 +32,32 @@ export const dplco =
 export const dpldl = [
   {
     dplcn: '丙青龍',
-    dplen: 'Delta dragon',
+    dplen: 'Delta Dragon',
     dplsid: 'dtp-ql'
   },
   {
     dplcn: '丙朱雀',
-    dplen: 'Delta phoenix',
+    dplen: 'Delta Phoenix',
     dplsid: 'dtp-zj'
   },
   {
     dplcn: '丙勾陳',
-    dplen: 'Delta unicorn',
+    dplen: 'Delta Unicorn',
     dplsid: 'dtp-gc'
   },
   {
     dplcn: '丙螣蛇',
-    dplen: 'Delta cobra',
+    dplen: 'Delta Cobra',
     dplsid: 'dtp-ts'
   },
   {
     dplcn: '丙白虎',
-    dplen: 'Delta tiger',
+    dplen: 'Delta Tiger',
     dplsid: 'dtp-bh'
   },
   {
     dplcn: '丙玄武',
-    dplen: 'Delta turtle',
+    dplen: 'Delta Turtle',
     dplsid: 'dtp-xw'
   }
 ]
