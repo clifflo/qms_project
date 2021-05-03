@@ -2,7 +2,8 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../../examiner';
 import {
-  utFindByPropEq
+  utFindByPropEq,
+  utPropMap
 } from '../../utils/util_04'
 
 // Delta focus dictionary list
@@ -57,8 +58,8 @@ export const isValidDfccn = dfccn => {
 }
 
 // Delta focus short english name set
-export const dfsens = R.map(
-  R.prop('dfcsen'), dfcdl);
+export const dfsens =
+  utPropMap('dfcsen', dfcdl);
 
 export const isValidDfcsen = dfcsen => {
   return R.includes(dfcsen, dfsens);

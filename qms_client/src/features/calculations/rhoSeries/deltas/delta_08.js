@@ -94,7 +94,7 @@ export const getRkgcr = R.curry(_getRkgcr);
 export const getRfccr = (rfacd, slcrl) => {
 
   E.cknws(rfacd);
-  
+
   try{
 
     if(rfacd == 'Jack'){
@@ -117,3 +117,6 @@ export const getRfccr = (rfacd, slcrl) => {
       'Cannot get [rfccr].')
   }
 }
+
+// Rho face card set
+export const rfcds = ['Jack', 'Queen', 'King'];
