@@ -31,61 +31,60 @@ export const isValidRfcna = dfccn => {
   return isValid;
 }
 
-// Get delta focus chinese by rho raw focus
-const getDfcbrf = rrawf => {
+// Get delta focus envelop by rho raw focus
+const getDfebrf = rrawf => {
 
   E.cknws(rrawf, 'rrawf');
 
   try{
-    const dfcbrf =
+    const dfebrf =
       utFindByPropEq('rrawf', rrawf, dfcsm)
-      .dfccn;
-    return dfcbrf;
+    return dfebrf;
   }
   catch(err){
     console.error(err);
     throw new Error(
       'Cannot get [dfcbrf].');
   }
-
-
-
-
 }
 
 const getRhocs_5 = () => {
 
-  const mapFn_1n = (rhshel, lhcros_1) => {
+  const mapFn_1n = (rhshel, _lhcros) => {
 
     try{
       const rrawf = getElre(
-        rhshel, lhcros_1.crbel);
+        rhshel, _lhcros.crbel);
 
       if(R.isNil(rrawf)){
         throw new Error(
           '[rrawf] should not be nil.');
       }
 
-      const dfccn = getDfcbrf(rrawf);
+      // Delta focus envelop
+      const dlfev = getDfebrf(rrawf);
+      const { dfccn, dfcsen } = dlfev;
 
       if(R.isNil(dfccn)){
         throw new Error(
           '[dfccn] should not be nil.');
       }
 
-      const dfccnLens = R.lensProp('dfccn');
+      const lhcros = {
+        ..._lhcros,
+        dfccn,
+        dfcsen
+      }
 
-      let lhcros_2 = R.set(
-        dfccnLens, dfccn, lhcros_1);
-
-      return lhcros_2;
+      return lhcros;
     }
     catch(err){
       console.error(err);
       throw new Error(
-        'MAPFN_1 is error for get RHOCS_5.');
+        '[mapFn_1n] is error.');
     }
   }
+
   const mapFn_1c = R.curry(mapFn_1n);
 
   const mapFn_2 = rhocxt_4 => {

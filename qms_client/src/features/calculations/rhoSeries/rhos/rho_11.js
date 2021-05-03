@@ -91,7 +91,7 @@ const getRhocs_7 = () => {
 
     // Rho queen index
     const rqndi = 5 - (idxOfBranch(rjkbh) % 6);
-    E.cknwa(rqndi, 'rqndi');
+    E.cknwn(rqndi, 'rqndi');
 
     const lhcrsl =
       R.map(
@@ -109,8 +109,9 @@ const getRhocs_7 = () => {
     return R.map(mapFn_2, rhocs_6);
   }
   catch(err){
+    console.error(err);
     throw new Error(
-      'Cannot get [rhocs_7]');
+      'Cannot get [rhocs_7].');
   }
 }
 

@@ -81,42 +81,42 @@ export const getRcxt4ByLhn = lhname => {
 
 // [dfccn] is delta focus chinese name
 // [dfcsid] is delta focus specification id
-// [dfsnn] is delta focus nickname
+// [dfcsen] is delta focus short english name
 // [dfcen] is delta focus full english name
 export const dfcsm = [
   {
     dfccn: '丙兄弟',
     dfcsid: 'dtf-xd',
     rrawf: 'Draw',
-    dfcnn: 'Brother',
+    dfcsen: 'Brother',
     dfcfen: 'Delta brother'
   },
   {
     dfccn: '丙子孫',
     dfcsid: 'dtf-zs',
     rrawf: 'Fruit',
-    dfcnn: 'Son',
+    dfcsen: 'Son',
     dfcfen: 'Delta son'
   },
   {
     dfccn: '丙妻財',
     dfcsid: 'dtf-qc',
     rrawf: 'Bank',
-    dfcnn: 'Money',
+    dfcsen: 'Money',
     dfcfen: 'Delta money'
   },
   {
     dfccn: '丙父母',
     dfcsid: 'dtf-fm',
     rrawf: 'Seed',
-    dfcnn: 'Parent',
+    dfcsen: 'Parent',
     dfcfen: 'Delta parent'
   },
   {
     dfccn: '丙官鬼',
     dfcsid: 'dtf-gg',
     rrawf: 'Hacker',
-    dfcnn: 'Ghost',
+    dfcsen: 'Ghost',
     dfcfen: 'Delta ghost'
   }
 ]

@@ -20,13 +20,13 @@ export const trunkContext = {
 
 export const elemod = '金水木火土';
 
-export const elenm = [
+export const elenm = {
   '金': 'Metal',
   '水': 'Water',
   '木': 'Wood',
   '火': 'Fire',
   '土': 'Soil'
-]
+}
 
 export const trkod
   = '甲乙丙丁戊己庚辛壬癸';
