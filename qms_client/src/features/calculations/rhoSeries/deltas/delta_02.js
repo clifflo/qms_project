@@ -1,5 +1,17 @@
-
-
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
+import * as E from '../../examiner';
+import {
+  utItem,
+  utGetIdx
+} from '../../utils/util_01';
+import {
+  trunkOrder,
+  isValidTrunk
+} from '../../twigs/twig_01';
+import {
+  dplco
+} from './delta_01';
 
 // Delta paladin start position map
 const dpspm = {
@@ -32,7 +44,7 @@ const getDpevl = () => {
   const mapFn_2 = idx => {
 
     // Delta paladin day trunk
-    const dpdtr = utItem(trkod, idx);
+    const dpdtr = utItem(trunkOrder, idx);
 
     if(R.isNil(dpdtr)){
       throw new Error(

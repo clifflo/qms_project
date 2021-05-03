@@ -79,20 +79,13 @@ const isValidDltmnt = dltmnt => {
   return R.includes(dltmts);
 }
 
-export const exelrs = [
-  'produces',
-  'produced by',
-  'hacks',
-  'hacked by',
-  'draws with',
-  'co-produces with',
-  'co-hacks with'
-]
-
 export const getClbmt = (dltmnt, slcrl) => {
 
-  const faceCards =
-    ['Jack', 'Queen', 'King'];
+  const faceCards = [
+    'Jack',
+    'Queen',
+    'King'
+  ];
 
   const paladins = [
     'Dragon',

@@ -4,7 +4,7 @@ import * as E from '../../examiner';
 import {
   idxOfBranch,
   isValidBranch,
-  trkod
+  trunkOrder
 } from '../../twigs/twig_01';
 import {
   binaryToDecimal,

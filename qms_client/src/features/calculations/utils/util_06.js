@@ -13,7 +13,7 @@ export const utDissoc = (obj, delps) => {
 }
 
 export const utDictParse =
-  (sPropName, sPropValue, tProp, list) => {
+  (sPropName, sPropValue, tPropName, list) => {
 
   E.cknws(sPropName);
   E.cknws(sPropValue);

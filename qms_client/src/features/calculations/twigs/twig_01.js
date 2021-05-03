@@ -29,7 +29,7 @@ export const elementContext = {
   '土': 'Soil'
 }
 
-export const trkod
+export const trunkOrder
   = '甲乙丙丁戊己庚辛壬癸';
 
 export const branchContext = {
@@ -48,16 +48,16 @@ export const branchContext = {
 }
 
 // Branch order
-export const brhod =
+export const branchOrder =
   '子丑寅卯辰巳午未申酉戌亥';
 
 // Item of trunk
 export function itemotr(index){
-  return utItem(trkod, index);
+  return utItem(trunkOrder, index);
 }
 
 export function itemobr(index){
-  return utItem(brhod, index);
+  return utItem(branchOrder, index);
 }
 
 export function itemOfElem(index){
@@ -65,11 +65,11 @@ export function itemOfElem(index){
 }
 
 export function isValidBranch(branch){
-  return R.includes(branch, brhod);
+  return R.includes(branch, branchOrder);
 }
 
 export function isValidTrunk(trunk){
-  return R.includes(trunk, trkod);
+  return R.includes(trunk, trunkOrder);
 }
 
 export function isValidElem(elemental){
@@ -81,11 +81,11 @@ export function idxOfElem(elemental){
 }
 
 export const idxOfBranch = (branch) => {
-  return utGetIdx(branch, brhod)
+  return utGetIdx(branch, branchOrder)
 }
 
 export const idxOfTrunk = trunk => {
-  return utGetIdx(trunk, trkod)
+  return utGetIdx(trunk, trunkOrder)
 }
 
 export const getTrunkLiturgy = trunk => {

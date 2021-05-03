@@ -13,7 +13,7 @@ import {
   idxOfTrunk,
   getElem,
   elemod,
-  brhod
+  branchOrder
 } from './twig_01';
 
 const chosenSentence =

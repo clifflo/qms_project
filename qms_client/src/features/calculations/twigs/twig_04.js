@@ -66,7 +66,7 @@ const buildCbst = () => {
   }
 
   try{
-    const result = R.map(mapFn, brhod);
+    const result = R.map(mapFn, branchOrder);
     return result;
   }
   catch(err){

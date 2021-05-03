@@ -6,7 +6,7 @@ import {
   utGetIdx
 } from '../../utils/util_01';
 import {
-  trkod,
+  trunkOrder,
   isValidTrunk
 } from '../../twigs/twig_01';
 import {
@@ -16,6 +16,12 @@ import {
   rhocs_5,
   rfcis
 } from '../rhos/rho_06';
+import {
+  utPropMap
+} from '../../utils/util_04';
+import {
+  utDictParse
+} from '../../utils/util_06';
 
 // Delta paladin chinese order
 export const dplco =
@@ -26,7 +32,7 @@ export const dplco =
 
 // [dpldl] is delta paladin dictionary list
 // [dplcn] is delta paladin chinese name.
-// [dplsen] is delta paladin nickname.
+// [dplen] is delta paladin nickname.
 // [dplfen] is delta paladin full english name.
 // [dplsid] is delta paladin specification ID.
 export const dpldl = [
@@ -65,7 +71,7 @@ export const dpldl = [
 // Get delta paladin chinese by short english
 export const getDpcbe = dplen => {
 
-  E.cknws(dplsen, 'dplsen');
+  E.cknws(dplen, 'dplen');
 
   try{
     const dpcbse = utDictParse(

@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as E from '../../examiner';
 import {
-  trkod
+  trunkOrder
 } from '../../twigs/twig_01';
 import {
   rhocs_1

@@ -12,7 +12,7 @@ import {
 // Delta focus dictionary list
 // [dfccn] is delta focus chinese name
 // [dfcsid] is delta focus specification id
-// [dfcsen] is delta focus short english name
+// [dfcen] is delta focus short english name
 // [dfcen] is delta focus full english name
 export const dfcdl = [
   {
@@ -71,7 +71,7 @@ export const getDfcbrf = rrawf => {
   try{
     const dfcbrf = utDictParse(
       'rrawf', rrawf, 'dfccn', dfcdl);
-    E.ckwns(dfcbrf);
+    E.cknws(dfcbrf);
     return dfcbrf;
   }
   catch(err){
@@ -85,16 +85,16 @@ export const getDfcbrf = rrawf => {
 // Get delt focus chinese by english name
 export const getDfcbe = dfcen => {
 
-  E.cknws(dfcsen, 'dfcsen');
+  E.cknws(dfcen, 'dfcen');
 
-  if(!isValidDfcsen(dfcsen)){
+  if(!isValidDfcsen(dfcen)){
     throw new Error(
-      `${dfcsen} is not a valid [dfcsen].`);
+      `${dfcen} is not a valid [dfcen].`);
   }
 
   try{
     const dfcbse = utDictParse(
-      'dfcsen', dfcsen, 'dfccn', dfcdl);
+      'dfcen', dfcen, 'dfccn', dfcdl);
     return dfcbse;
   }
   catch(err){

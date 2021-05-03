@@ -13,9 +13,9 @@ import {
 } from '../rhos/rho_13';
 import {
   getDpebt
-} from './delta_01';
+} from './delta_02';
 import {
-  trkod
+  trunkOrder
 } from '../../twigs/twig_01';
 
 const getHdrcs = () => {
@@ -67,7 +67,7 @@ const getHdrcs = () => {
   try{
     return R.map(
       mapFn_2,
-      trkod);
+      trunkOrder);
   }
   catch(err){
     console.error(err);
