@@ -7,7 +7,7 @@ import { getDlcxt_2 } from './delta_06';
 export const buildDlcxt_3 = dlcxt_2 => {
 
   // Get silk cross
-  const getSlcros_n = (isWbocr, lhcros) => {
+  const _getSlcros = (isWbocr, lhcros) => {
 
     E.cknwb(isWbocr, 'isWbocr');
 
@@ -70,21 +70,21 @@ export const buildDlcxt_3 = dlcxt_2 => {
       return [];
     }
   }
-  const getSlcros_c = R.curry(getSlcros_n);
+  const getSlcros = R.curry(_getSlcros);
 
-  // Wheat bowl sliced cross list
+  // Wheat bowl silk cross list
   const wbslcl = R.compose(
     R.flatten,
-    R.map(getSlcros_c(true)))
+    R.map(getSlcros(true)))
   (dlcxt_2.wbowcl);
 
-  // Cheese sliced cross list
+  // Cheese silk cross list
   const chslcl = R.compose(
     R.flatten,
     R.map(getSlcros_c(false)))
   (dlcxt_2.chescl);
 
-  // Total sliced cross list, i.e.
+  // Total silk cross list, i.e.
   // [wbslcl] concats [chslcl];
 
   const toslcl = R.concat(wbslcl, chslcl);

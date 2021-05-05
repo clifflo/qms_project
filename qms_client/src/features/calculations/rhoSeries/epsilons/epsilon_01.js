@@ -8,7 +8,7 @@ import {
 import {
   getClbfe,
   getRfccr
-}
+} from '../deltas/delta_09';
 import {
   getElre
 } '../../twigs/twig_02';
@@ -16,7 +16,7 @@ import {
 // [epcnt] is the epsilon condition text.
 const _epsfn_01 = (epcnt, slcrl) => {
 
-  const patt_01 = [
+  const _patt_1 = [
     'Jack',
     'Queen',
     'King',
@@ -27,12 +27,11 @@ const _epsfn_01 = (epcnt, slcrl) => {
     'Ghost'
   ]
 
-  const patt_02 = R.join('|', patt_01);
-
-  const patt_03 = 'hacks|produces';
+  const patt_1 = R.join('|', _patt_1);
+  const patt_2 = 'hacks|produces';
 
   const patt_full = new Regexp(
-    `(${patt_02}) (${patt_03}) (${patt_02})\.`);
+    `(${patt_1}) (${patt_2}) (${patt_1})\.`);
 
   const matches = patt_full.exec(epcnt);
 
