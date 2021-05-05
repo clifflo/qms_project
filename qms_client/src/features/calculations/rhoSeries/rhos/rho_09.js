@@ -60,21 +60,21 @@ export const isValidDfccn = dfccn => {
 const getDfens = () => {
 
   try{
-    const _dfens =
+    const _dfnns =
       utSecondWord(utPropMap('dfcen', dfcdl));
 
-    return _dfens;
+    return _dfnns;
   }
   catch(err){
     console.error(err);
-    throw new Error('Cannot get [dfens].');
+    throw new Error('Cannot get [dfnns].');
   }
 }
 
-export const dfens = getDfens();
+export const dfnns = getDfens();
 
 export const isValidDfcen = dfcen => {
-  return R.includes(dfcen, dfens);
+  return R.includes(dfcen, dfnns);
 }
 
 // Get delta focus chinese by rho raw focus

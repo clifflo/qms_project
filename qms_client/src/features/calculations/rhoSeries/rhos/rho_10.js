@@ -6,7 +6,7 @@ import {
 } from '../../utils/util_04';
 import {
   dfcns,
-  dfens,
+  dfnns,
   dfcdl,
   rhocs_4
 } from './rho_08';

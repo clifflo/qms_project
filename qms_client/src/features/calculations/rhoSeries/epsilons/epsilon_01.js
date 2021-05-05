@@ -3,11 +3,11 @@ import * as RA from 'ramda-adjunct';
 import {
   isValidDfcen,
   isValidDplen,
-  isValidRfcad
-} from '../epsilons/epsilon_01';
-import {
+  isValidRfcad,
   getClbfe,
-  getRfccr
+  getRfccr,
+  dfnns,
+  rfacs
 } from '../deltas/delta_09';
 import {
   getElre
@@ -27,7 +27,9 @@ const _epsfn_01 = (epcnt, slcrl) => {
     'Ghost'
   ]
 
-  const patt_1 = R.join('|', _patt_1);
+  const patt_1 = R.join(
+    '|',
+    RA.concatAll(dfnns, rfacs));
   const patt_2 = 'hacks|produces';
 
   const patt_full = new Regexp(
@@ -39,7 +41,7 @@ const _epsfn_01 = (epcnt, slcrl) => {
     if(!R.isNil(matches)){
 
       const firstMint = matches[1];
-      const dtverb = matches[2];
+      const deltaVerb = matches[2];
       const secondMint = matches[3];
 
       // Starts with face cards (first mint
@@ -70,11 +72,11 @@ const _epsfn_01 = (epcnt, slcrl) => {
           scross.crbel, tcrolt[0].crbel);
 
         const isProducing =
-          dtverb == 'produces' &&
+          deltaVerb == 'produces' &&
           elre == 'Seed';
 
         const isHacking =
-          dtverb == 'hacks' &&
+          deltaVerb == 'hacks' &&
           elre == 'Money';
 
         return isProducing || isHacking;
@@ -93,11 +95,11 @@ const _epsfn_01 = (epcnt, slcrl) => {
           scrolt[0].crbel, tcross.crbel);
 
         const isProducing =
-          dtverb == 'produces' &&
+          deltaVerb == 'produces' &&
           elre == 'Seed';
 
         const isHacking =
-          dtverb == 'hacks' &&
+          deltaVerb == 'hacks' &&
           elre == 'Money';
 
         return isProducing || isHacking;
@@ -114,11 +116,11 @@ const _epsfn_01 = (epcnt, slcrl) => {
           scross.crbel, tcross.crbel);
 
         const isProducing =
-          dtverb == 'produces' &&
+          deltaVerb == 'produces' &&
           elre == 'Seed';
 
         const isHacking =
-          dtverb == 'hacks' &&
+          deltaVerb == 'hacks' &&
           elre == 'Money';
 
         return isProducing || isHacking;
@@ -126,7 +128,7 @@ const _epsfn_01 = (epcnt, slcrl) => {
 
     }
     else {
-      return false;
+      return null;
     }
   }
   catch(err){
@@ -135,4 +137,4 @@ const _epsfn_01 = (epcnt, slcrl) => {
   }
 }
 
-export const epfsn_01 = R.curry(epfsn_01n);
+export const epfsn_01 = R.curry(_epfsn_01);
