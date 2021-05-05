@@ -22,6 +22,9 @@ import {
   decimalToBinary,
   binaryToDecimal
 } from '../../utils/util_02';
+import {
+  utCheckList
+} from '../../utils/util_04';
 
 // Rho base long hook series set
 const rblhss =

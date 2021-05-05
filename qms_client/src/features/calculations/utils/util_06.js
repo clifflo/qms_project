@@ -1,7 +1,8 @@
 import * as E from '../examiner';
 import * as R from 'ramda';
 import {
-  utFindByPropEq
+  utFindByPropEq,
+  utCheckList
 } from './util_04';
 
 export const utDissoc = (obj, delps) => {

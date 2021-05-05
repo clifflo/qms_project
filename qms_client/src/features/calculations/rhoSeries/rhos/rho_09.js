@@ -63,7 +63,7 @@ const getDfens = () => {
     const _dfens =
       utSecondWord(utPropMap('dfcen', dfcdl));
 
-    return _dfnes;
+    return _dfens;
   }
   catch(err){
     console.error(err);
