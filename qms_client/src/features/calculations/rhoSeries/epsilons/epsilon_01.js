@@ -16,20 +16,9 @@ import {
 // [epcnt] is the epsilon condition text.
 const _epsfn_01 = (epcnt, slcrl) => {
 
-  const _patt_1 = [
-    'Jack',
-    'Queen',
-    'King',
-    'Parent',
-    'Son',
-    'Brother',
-    'Money',
-    'Ghost'
-  ]
-
   const patt_1 = R.join(
-    '|',
-    RA.concatAll(dfnns, rfacs));
+    '|', RA.concatAll(dfnns, rfacs));
+
   const patt_2 = 'hacks|produces';
 
   const patt_full = new Regexp(
@@ -41,7 +30,7 @@ const _epsfn_01 = (epcnt, slcrl) => {
     if(!R.isNil(matches)){
 
       const firstMint = matches[1];
-      const deltaVerb = matches[2];
+      const epsvb_01 = matches[2];
       const secondMint = matches[3];
 
       // Starts with face cards (first mint
@@ -72,11 +61,11 @@ const _epsfn_01 = (epcnt, slcrl) => {
           scross.crbel, tcrolt[0].crbel);
 
         const isProducing =
-          deltaVerb == 'produces' &&
+          epsvb_01 == 'produces' &&
           elre == 'Seed';
 
         const isHacking =
-          deltaVerb == 'hacks' &&
+          epsvb_01 == 'hacks' &&
           elre == 'Money';
 
         return isProducing || isHacking;
@@ -95,11 +84,11 @@ const _epsfn_01 = (epcnt, slcrl) => {
           scrolt[0].crbel, tcross.crbel);
 
         const isProducing =
-          deltaVerb == 'produces' &&
+          epsvb_01 == 'produces' &&
           elre == 'Seed';
 
         const isHacking =
-          deltaVerb == 'hacks' &&
+          epsvb_01 == 'hacks' &&
           elre == 'Money';
 
         return isProducing || isHacking;
@@ -116,11 +105,11 @@ const _epsfn_01 = (epcnt, slcrl) => {
           scross.crbel, tcross.crbel);
 
         const isProducing =
-          deltaVerb == 'produces' &&
+          epsvb_01 == 'produces' &&
           elre == 'Seed';
 
         const isHacking =
-          deltaVerb == 'hacks' &&
+          epsvb_01 == 'hacks' &&
           elre == 'Money';
 
         return isProducing || isHacking;
