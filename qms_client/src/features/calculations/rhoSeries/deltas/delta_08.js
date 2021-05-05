@@ -13,7 +13,7 @@ import {
 } from '../rhos/rho_09';
 
 // Get cross list by focus
-const _getClbfc = (dfccn, slcrl) => {
+const _getClbfc = (slcrl, dfccn) => {
 
   E.cknwa(slcrl, 'slcrl');
   E.cknws(dfccn, 'dfccn');
@@ -32,7 +32,7 @@ const _getClbfc = (dfccn, slcrl) => {
 export const getClbfc = R.curry(_getClbfc);
 
 // Get cross list by paladin
-const _getClbpl = (dplcn, slcrl) => {
+const _getClbpl = (slcrl, dplcn) => {
 
   E.cknwa(slcrl, 'slcrl');
   E.cknws(dplcn, 'dplcn');

@@ -13,6 +13,7 @@ import {
   utGetIdx,
   utItem,
 } from '../utils/util_01';
+import * as E from '../examiner';
 
 export const elrs = [
   'Draw',
@@ -22,28 +23,10 @@ export const elrs = [
   'Seed'
 ];
 
-
 export const getElre = (selem, telem) => {
 
-  if(R.isNil(selem)){
-    throw new Error(
-      '[selem] cannot be nil.');
-  }
-
-  if(R.isNil(telem)){
-    throw new Error(
-      '[telem] cannot be nil.');
-  }
-
-  if(!RA.isString(selem)){
-    throw new Error(
-      '[selem] must be string.');
-  }
-
-  if(!RA.isString(telem)){
-    throw new Error(
-      '[telem] must be string.');
-  }
+  E.cknws(selem);
+  E.cknws(telem);
 
   if(!isValidElem(selem)){
     throw new Error(

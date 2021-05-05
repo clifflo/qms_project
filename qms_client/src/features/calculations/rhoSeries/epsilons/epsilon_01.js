@@ -5,16 +5,22 @@ import {
   isValidDplen,
   isValidRfcad
 } from '../epsilons/epsilon_01';
+import {
+  getElre
+} '../../twigs/twig_02';
 
 // [epcnt] is the epsilon condition text.
-const rjkrl_1 = (epcnt, dltvb) => {
+const epsfn_01 = (epcnt, dltvb, slcrl) => {
 
-  const spacedDltvb = ` ${dltvb} `;
+  const patt = new Regexp(
+    `(\w+) ${dltvb} (\w+)\.`);
 
-  if(R.includes(spacedDltvb)){
-    const mints = R.split(spacedDltvb, epcnt);
-    const mint_1 = mints[0];
-    const mint_2 = mints[1];
+  const mints = patt.exec(patt);
+
+  if(!R.isNil(matches)){
+
+    const mint_1 = mints[1];
+    const mint_2 = mints[2];
 
     // Starts with face cards (first mint
     // is face card) and ends with focus
@@ -40,11 +46,29 @@ const rjkrl_1 = (epcnt, dltvb) => {
       // Target cross list
       const tcrolt = getClbfc(secondMint);
 
-      if(dltvb == 'produces'){
-        
-      }
+      const elre = getElre(
+        scross.crbel, tcrolt[0].crbel);
+
+      const isProducing =
+        dltvb == 'produces' &&
+        elre == 'Seed';
+
+      const isHacking =
+        dltvb == 'hacks' &&
+        elre == 'Money';
+
+      return R.anyPass([
+        isProducing,
+        isHacking
+      ]);
     }
 
+    if(startWdfc){
 
+    }
+
+  }
+  else {
+    return false;
   }
 }

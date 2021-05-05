@@ -13,13 +13,13 @@ import {
 } from './delta_08';
 
 // Get cross list by focus in english
-export const getClbfe = dfcen => {
+export const getClbfe = (slcrl, dfcen) => {
 
   E.cknws(dfcen);
 
   try{
     const clbfe = R.compose(
-      getClbfc,
+      getClbfc(slcrl),
       getDfcbe)
     (dfcen);
 
@@ -33,13 +33,13 @@ export const getClbfe = dfcen => {
 }
 
 // Get cross list by paladin in english
-export const getClbpe = dplen => {
+export const getClbpe = (slcrl, dplen) => {
 
   E.cknws(dplen, 'dplen');
 
   try{
     const clbpe = R.compose(
-      getClbpl,
+      getClbpl(slcrl),
       getDpcbe)
     (dplen);
 
