@@ -7,7 +7,7 @@ import {
 } from '../../utils/util_01';
 import {
   idxOfBranch,
-  itemobr
+  itemOfBranch
 } from '../../twigs/twig_01';
 
 export const rawntos =
@@ -32,7 +32,7 @@ export const getFbbrs = (bbssb, bbscw) => {
       const rawAdjustment = idx * 2;
       const finalAdjustment = bbscw ?
         rawAdjustment : (-rawAdjustment);
-      return itemobr(bbsbi + finalAdjustment);
+      return itemOfBranch(bbsbi + finalAdjustment);
     }
 
     const fbbrs = R.map(mapFn, R.range(0, 6))

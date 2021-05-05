@@ -5,8 +5,8 @@ import { itemOfBtp } from './twigs/twig_03';
 import moment from 'moment';
 import {
   idxOfTrunk,
-  itemotr,
-  itemobr
+  itemOfTrunk,
+  itemOfBranch
 } from './twigs/twig_01';
 
 // Get Day Betapsi

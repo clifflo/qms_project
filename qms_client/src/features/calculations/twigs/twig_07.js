@@ -2,10 +2,10 @@ import {
   isValidBranch,
   idxOfBranch,
   itemOfElem,
-  itemobr,
+  itemOfBranch,
   getElem,
   idxOfElem,
-  itemotr
+  itemOfTrunk
 } from './twig_01';
 import * as R from 'ramda';
 
@@ -14,9 +14,9 @@ import * as R from 'ramda';
 const getBscprSet = () => {
 
   const mapFn = i => {
-    const sBranch = itemobr(i);
+    const sBranch = itemOfBranch(i);
     const tBridx =  13 - i;
-    const tBranch = itemobr(tBridx);
+    const tBranch = itemOfBranch(tBridx);
 
     const sBelem = getElem(sBranch);
     const sBelemIdx = idxOfElem(sBelem);

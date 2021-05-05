@@ -3,7 +3,7 @@ import * as RA from 'ramda-adjunct';
 import {
   getElre,
   idxOfTrunk,
-  itemotr
+  itemOfTrunk
 } from '../../twigs/twig_01';
 import {
   bkntos

@@ -6,7 +6,7 @@ import {
   idxOfTrunk,
   isValidBranch,
   isValidTrunk,
-  elemod,
+  elementalOrder,
   itemOfElem
 } from './twig_01';
 import {
@@ -56,10 +56,10 @@ export const getElre = (selem, telem) => {
   }
 
   const sourceIndex = utGetIdx(
-    selem, elemod);
+    selem, elementalOrder);
 
   const targetIndex = utGetIdx(
-    telem, elemod);
+    telem, elementalOrder);
 
   if(sourceIndex == -1){
     throw new Error(
@@ -84,9 +84,9 @@ export const getElem = twig => {
 
   const getBelem = branch => {
 
-    const belemod = '水土木木土火火土金金土水';
+    const belementalOrder = '水土木木土火火土金金土水';
     const bridx = idxOfBranch(branch);
-    return belemod[bridx];
+    return belementalOrder[bridx];
   }
 
   const getTelem = trunk => {

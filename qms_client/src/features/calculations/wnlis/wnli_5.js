@@ -27,13 +27,13 @@ const getWniday = dateMoment => {
 
   // Index of start trunk of year
   const styi = (tkyi + 1) * 2;
-  const stoy = itemotr(styi);
+  const stoy = itemOfTrunk(styi);
 
   // Month's trunk index
   const mtix = styi + month.wmidx;
-  const mtrk = itemotr(mtix);
+  const mtrk = itemOfTrunk(mtix);
   const mbix = month.wmidx + 2;
-  const mbrh = itemobr(mbix);
+  const mbrh = itemOfBranch(mbix);
   const wmbp = mtrk + mbrh;
 
   return {

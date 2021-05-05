@@ -13,7 +13,7 @@ import {
 } from './rho_01';
 import {
   isValidElem,
-  elemod
+  elementalOrder
 } from '../../twigs/twig_01';
 import {
   getElem
