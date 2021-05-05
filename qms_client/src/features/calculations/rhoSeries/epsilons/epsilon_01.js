@@ -6,69 +6,134 @@ import {
   isValidRfcad
 } from '../epsilons/epsilon_01';
 import {
+  getClbfe,
+  getRfccr
+}
+import {
   getElre
 } '../../twigs/twig_02';
 
 // [epcnt] is the epsilon condition text.
-const epsfn_01 = (epcnt, dltvb, slcrl) => {
+const _epsfn_01 = (epcnt, slcrl) => {
 
-  const patt = new Regexp(
-    `(\w+) ${dltvb} (\w+)\.`);
+  const patt_01 = [
+    'Jack',
+    'Queen',
+    'King',
+    'Parent',
+    'Son',
+    'Brother',
+    'Money',
+    'Ghost'
+  ]
 
-  const mints = patt.exec(patt);
+  const patt_02 = R.join('|', patt_01);
 
-  if(!R.isNil(matches)){
+  const patt_03 = 'hacks|produces';
 
-    const mint_1 = mints[1];
-    const mint_2 = mints[2];
+  const patt_full = new Regexp(
+    `(${patt_02}) (${patt_03}) (${patt_02})\.`);
 
-    // Starts with face cards (first mint
-    // is face card) and ends with focus
-    const startWfcd =
-      isValidRfcad(firstMint) &&
-      isValidDfcen(secondMint);
+  const matches = patt_full.exec(epcnt);
 
-    // Starts with delta focus and ends
-    // with face card
-    const startWdfc =
-      isValidDfcen(firstMint) &&
-      isValidRfcad(secondMint);
+  try{
+    if(!R.isNil(matches)){
 
-    const bothRfcds =
-      ifValidRfcad(firstMint) &&
-      isValidRfcad(secondMint);
+      const firstMint = matches[1];
+      const dtverb = matches[2];
+      const secondMint = matches[3];
 
-    if(startWfcd){
+      // Starts with face cards (first mint
+      // is face card) and ends with focus
+      const startWfcd =
+        isValidRfcad(firstMint) &&
+        isValidDfcen(secondMint);
 
-      // Source cross
-      const scross = getClbfe(firstMint);
+      // Starts with delta focus and ends
+      // with face card
+      const startWdfc =
+        isValidDfcen(firstMint) &&
+        isValidRfcad(secondMint);
 
-      // Target cross list
-      const tcrolt = getClbfc(secondMint);
+      const bothRfcds =
+        ifValidRfcad(firstMint) &&
+        isValidRfcad(secondMint);
 
-      const elre = getElre(
-        scross.crbel, tcrolt[0].crbel);
+      if(startWfcd){
 
-      const isProducing =
-        dltvb == 'produces' &&
-        elre == 'Seed';
+        // Source cross
+        const scross = getRfccr(firstMint);
 
-      const isHacking =
-        dltvb == 'hacks' &&
-        elre == 'Money';
+        // Target cross list
+        const tcrolt = getClbfe(secondMint);
 
-      return R.anyPass([
-        isProducing,
-        isHacking
-      ]);
+        const elre = getElre(
+          scross.crbel, tcrolt[0].crbel);
+
+        const isProducing =
+          dtverb == 'produces' &&
+          elre == 'Seed';
+
+        const isHacking =
+          dtverb == 'hacks' &&
+          elre == 'Money';
+
+        return isProducing || isHacking;
+      }
+      else if(startWdfc){
+
+        // Source cross list
+        const scrolt = getClbfe(firstMint);
+        E.cknwa(scrolt);
+
+        // Target cross
+        const tcross = getRfccr(secondMint);
+        E.cknwo(tcross);
+
+        const elre = getElre(
+          scrolt[0].crbel, tcross.crbel);
+
+        const isProducing =
+          dtverb == 'produces' &&
+          elre == 'Seed';
+
+        const isHacking =
+          dtverb == 'hacks' &&
+          elre == 'Money';
+
+        return isProducing || isHacking;
+      }
+      else if(bothRfcds){
+
+        const scross = getRfccr(firstMint);
+        E.cknwo(scross);
+
+        const tcross = getRfccr(secondMint);
+        E.cknwo(tcross);
+
+        const elre = getElre(
+          scross.crbel, tcross.crbel);
+
+        const isProducing =
+          dtverb == 'produces' &&
+          elre == 'Seed';
+
+        const isHacking =
+          dtverb == 'hacks' &&
+          elre == 'Money';
+
+        return isProducing || isHacking;
+      }
+
     }
-
-    if(startWdfc){
-
+    else {
+      return false;
     }
-
   }
-  else {
-    return false;
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get [epsfn_01].');
   }
 }
+
+export const epfsn_01 = R.curry(epfsn_01n);

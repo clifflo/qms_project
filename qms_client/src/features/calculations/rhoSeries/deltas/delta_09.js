@@ -54,6 +54,7 @@ export const getClbpe = (slcrl, dplen) => {
 
 export { isValidDfcen } from '../../rhos/rho_09';
 export { isValidDplen } from './delta_01';
+export { getRfccr } from './delta_08';
 
 export const rfacs = ['Jack', 'Queen', 'King'];
 
