@@ -23,6 +23,12 @@ export const elrs = [
   'Seed'
 ];
 
+export const isElreHacker = elre => elre == 'Hacker';
+export const isElreFruit = elre => elre == 'Fruit';
+export const isElreSeed = elre => elre == 'Seed';
+export const isElreBank = elre => elre == 'Bank';
+export const isElreDraw = elre => elre == 'Draw';
+
 export const getElre = (selem, telem) => {
 
   E.cknws(selem);
@@ -69,35 +75,6 @@ export const getElre = (selem, telem) => {
 
 export const isValidElre = elre => {
   return R.includes(elre, elrs);
-}
-
-// Get element cooperation
-export const getErco = (selem, telem) => {
-
-  E.cknws(selem);
-  E.cknws(telem);
-
-  try{
-
-    const elre = getElre(selem, telem);
-    E.cknws(elre, 'elre');
-
-    if(elre == 'Draw'){
-      return 'Co-draw';
-    }
-    else if(elre == 'Seed' || elre == 'Fruit'){
-      return 'Co-produce';
-    }
-    else if(elre == 'Hacker' || elre == 'Bank'){
-      return 'Co-hack';
-    }
-    else {
-      throw new Error(`${elre} is not valid.`);
-    }
-  }
-  catch(err){}
-
-
 }
 
 export const getElem = twig => {
