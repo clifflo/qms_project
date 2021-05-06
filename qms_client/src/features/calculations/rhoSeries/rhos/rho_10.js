@@ -14,7 +14,6 @@ import {
   dfcdl
 } from './rho_09';
 
-
 const getRhocs_5 = () => {
 
   const mapFn_1n = (rhshel, _lhcros) => {
@@ -25,12 +24,12 @@ const getRhocs_5 = () => {
         rhshel, _lhcros.crbel);
       E.cknws(rrawf);
 
-      const dfccn = R.find(
-        R.propEq('rrawf', rrawf), dfcdl)
-        .dfccn;
+      const dfcdi = R.find(
+        R.propEq('rrawf', rrawf), dfcdl);
+
       const lhcros = {
         ..._lhcros,
-        dfccn
+        ...dfcdi
       }
 
       return lhcros;

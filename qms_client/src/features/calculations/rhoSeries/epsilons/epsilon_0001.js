@@ -6,7 +6,8 @@ import {
   dhKing
 } from '../deltas/delta_07';
 import {
-  getErco
+  getErco,
+  isErcoEitherSeed
 } from '../../twigs/twig_02';
 
 // 't' is tester.
@@ -18,7 +19,7 @@ const epsl_0001t = dlcxt_2 => {
   const erco = getErco(
     jackCross.crbel, kingCross.crbel);
 
-  return erco == 'Co-produce';
+  return isErcoEitherSeed(erco);
 }
 
 // 'd' id description.

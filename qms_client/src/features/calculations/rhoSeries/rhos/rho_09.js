@@ -17,31 +17,26 @@ import {
 export const dfcdl = [
   {
     dfccn: '丙兄弟',
-    dfcsid: 'dtf-xd',
     rrawf: 'Draw',
     dfcen: 'Delta Brother'
   },
   {
     dfccn: '丙子孫',
-    dfcsid: 'dtf-zs',
     rrawf: 'Fruit',
     dfcen: 'Delta Son'
   },
   {
     dfccn: '丙妻財',
-    dfcsid: 'dtf-qc',
     rrawf: 'Bank',
     dfcen: 'Delta Money'
   },
   {
     dfccn: '丙父母',
-    dfcsid: 'dtf-fm',
     rrawf: 'Seed',
     dfcen: 'Delta Parent'
   },
   {
     dfccn: '丙官鬼',
-    dfcsid: 'dtf-gg',
     rrawf: 'Hacker',
     dfcen: 'Delta Ghost'
   }
@@ -55,5 +50,5 @@ export const isValidDfccn = dfccn => {
   return R.includes(dfccn, dfcns);
 }
 
-export const dfens = R.map(
-  R.prop('dfcen'), dfcdl);
+export const isDeltaBrother =
+  dfcen => dfcen == 'Delta Brother';

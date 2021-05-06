@@ -36,82 +36,47 @@ export const dplco =
 // [dplal] is delta paladin nickname.
 // [dplal] is delta paladin full english name.
 // [dplsid] is delta paladin specification ID.
-const _dpldl = [
+export const dpldl = [
   {
     dplcn: '丙青龍',
-    dplal: 'Dragon',
-    dplsid: 'dtp-ql'
+    dplal: 'Delta Dragon'
   },
   {
     dplcn: '丙朱雀',
-    dplal: 'Phoenix',
-    dplsid: 'dtp-zj'
+    dplal: 'Delta Phoenix'
   },
   {
     dplcn: '丙勾陳',
-    dplal: 'Unicorn',
-    dplsid: 'dtp-gc'
+    dplal: 'Delta Unicorn'
   },
   {
     dplcn: '丙螣蛇',
-    dplal: 'Cobra',
-    dplsid: 'dtp-ts'
+    dplal: 'Delta Cobra'
   },
   {
     dplcn: '丙白虎',
-    dplal: 'Tiger',
-    dplsid: 'dtp-bh'
+    dplal: 'Delta Tiger'
   },
   {
     dplcn: '丙玄武',
-    dplal: 'Turtle',
-    dplsid: 'dtp-xw'
+    dplal: 'Delta Turtle'
   }
 ]
 
-const dpldlMapFn = dpldi => {
-  const dplen = 'Delta ' + dpldi.dplal;
-  return {
-    ...dpldi,
-    dplen
-  }
-}
+export const isDeltaTiger =
+  dplen => dplen == 'Delta Tiger';
 
-export const dpldl = R.map(dpldlMapFn, _dpldl);
+export const isDeltaPhoenix =
+  dplen => dplen == 'Delta Phoenix';
 
-// Get delta paladin chinese by nickname
-export const getDpcba = dplal => {
+export const isDeltaTurtle =
+  dplen => dplen == 'Delta Turtle';
 
-  E.cknws(dplal, 'dplal');
+export const isDeltaUnicorn =
+  dplen => dplen == 'Delta Unicorn';
 
-  try{
-    const dpcba = utDictMove(
-      dplal,
-      'dplal',
-      'dplcn'
-    )
-    return dpcba;
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      `${dplal} is not a valid [dplal].`);
-  }
-}
+export const isDeltaDragon =
+  dplen => dplen == 'Delta Dragon';
 
-// Delta paladin nickname set
-const getDpnns = () => {
-  try{
-    return utPropMap('dplal', dpldl);
-  }
-  catch(err){
-    console.error(err);
-    throw new Error('Cannot get [dpnns].');
-  }
-}
-
-const dpnns = getDpnns();
-
-export const isValidDplal = dplal => {
-  return R.includes(dplal, dpnns);
-}
+export const isDeltaCobra =
+  dplen => dplen == 'Delta Cobra';
