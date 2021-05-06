@@ -33,44 +33,44 @@ export const dplco =
 
 // [dpldl] is delta paladin dictionary list
 // [dplcn] is delta paladin chinese name.
-// [dplnn] is delta paladin nickname.
-// [dplnn] is delta paladin full english name.
+// [dplal] is delta paladin nickname.
+// [dplal] is delta paladin full english name.
 // [dplsid] is delta paladin specification ID.
 const _dpldl = [
   {
     dplcn: '丙青龍',
-    dplnn: 'Dragon',
+    dplal: 'Dragon',
     dplsid: 'dtp-ql'
   },
   {
     dplcn: '丙朱雀',
-    dplnn: 'Phoenix',
+    dplal: 'Phoenix',
     dplsid: 'dtp-zj'
   },
   {
     dplcn: '丙勾陳',
-    dplnn: 'Unicorn',
+    dplal: 'Unicorn',
     dplsid: 'dtp-gc'
   },
   {
     dplcn: '丙螣蛇',
-    dplnn: 'Cobra',
+    dplal: 'Cobra',
     dplsid: 'dtp-ts'
   },
   {
     dplcn: '丙白虎',
-    dplnn: 'Tiger',
+    dplal: 'Tiger',
     dplsid: 'dtp-bh'
   },
   {
     dplcn: '丙玄武',
-    dplnn: 'Turtle',
+    dplal: 'Turtle',
     dplsid: 'dtp-xw'
   }
 ]
 
 const dpldlMapFn = dpldi => {
-  const dplen = 'Delta ' + dpldi.dplnn;
+  const dplen = 'Delta ' + dpldi.dplal;
   return {
     ...dpldi,
     dplen
@@ -80,14 +80,14 @@ const dpldlMapFn = dpldi => {
 export const dpldl = R.map(dpldlMapFn, _dpldl);
 
 // Get delta paladin chinese by nickname
-export const getDpcbe = dplnn => {
+export const getDpcbe = dplal => {
 
-  E.cknws(dplnn, 'dplnn');
+  E.cknws(dplal, 'dplal');
 
   try{
     const dpcbn = utDictParse(
-      dplnn,
-      'dplnn',
+      dplal,
+      'dplal',
       'dplcn'
     )
     return dpcbn;
@@ -95,14 +95,14 @@ export const getDpcbe = dplnn => {
   catch(err){
     console.error(err);
     throw new Error(
-      `${dplnn} is not a valid [dplnn].`);
+      `${dplal} is not a valid [dplal].`);
   }
 }
 
 // Delta paladin nickname set
 const getDpnns = () => {
   try{
-    return utPropMap('dplnn', dpldl);
+    return utPropMap('dplal', dpldl);
   }
   catch(err){
     console.error(err);
@@ -112,6 +112,6 @@ const getDpnns = () => {
 
 const dpnns = getDpnns();
 
-export const isValidDplnn = dplnn => {
-  return R.includes(dplnn, dpnns);
+export const isValidDplnn = dplal => {
+  return R.includes(dplal, dpnns);
 }

@@ -7,9 +7,8 @@ import {
 } from './delta_09';
 
 // [cbfwf] is cross by focus with rho face card
-export const getCbfwr = (dfcnn, rfacd, slcrl) => {
+export const getCbfwr = (dfcal, rfacd, slcrl) => {
 
-  E.
 
   const findFn = slcros => {
 

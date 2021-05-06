@@ -12,16 +12,37 @@ import {
   getClbpl
 } from './delta_08';
 
+const _getClbpl = (slcrl, dplcn) => {
+
+  E.cknwa(slcrl, 'slcrl');
+  E.cknws(dplcn, 'dplcn');
+
+  if(!isValidDfccn(dplcn)){
+    throw new Error(
+      `${dplcn} is not a valid [dplcn].`);
+  }
+
+  const clbpl = utFilterByPropEq(
+    'dplcn', dplcn, slcrl);
+
+  return clbpl;
+}
+
+export const getClbpl = R.curry(_getClbpl);
+
 // Get cross list by focus in english
-export const getClbfe = (slcrl, dfcen) => {
-  E.cknws(dfcen);
+// [dfcal] is delta focus alias.
+export const getClbfc = (dfcal, slcrl) => {
+
+  E.cknwa(slcrl, 'slcrl');
+  E.cknws(dfcal, 'dfcal');
+
   try{
-    const clbfe = R.compose(
-      getClbfc(slcrl),
-      getDfcbe)
-    (dfcen);
-    E.cknwa(clbfe);
-    return clbfe;
+
+    const dfccn = getDfcbn(dfcal);
+    const clbfc = utFilterByPropEq(
+      'dfccn', dfccn, slcrl);
+    return clbfc;
   }
   catch(err){
     console.error(err);
@@ -30,13 +51,13 @@ export const getClbfe = (slcrl, dfcen) => {
 }
 
 // Get cross list by paladin in english
-export const getClbpe = (slcrl, dplnn) => {
-  E.cknws(dplnn, 'dplnn');
+export const getClbpe = (slcrl, dplal) => {
+  E.cknws(dplal, 'dplal');
   try{
     const clbpe = R.compose(
       getClbpl(slcrl),
       getDpcbe)
-    (dplnn);
+    (dplal);
     return clbpe;
   }
   catch(err){

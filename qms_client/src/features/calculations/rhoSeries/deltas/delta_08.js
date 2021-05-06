@@ -12,44 +12,6 @@ import {
   isValidDfccn
 } from '../rhos/rho_09';
 
-// Get cross list by focus
-const _getClbfc = (slcrl, dfccn) => {
-
-  E.cknwa(slcrl, 'slcrl');
-  E.cknws(dfccn, 'dfccn');
-
-  if(!isValidDfccn(dfccn)){
-    throw new Error(
-      `${dfccn} is not a valid [dfccn].`);
-  }
-
-  const clbfc = utFilterByPropEq(
-    'dfccn', dfccn, slcrl);
-
-  return clbfc;
-}
-
-export const getClbfc = R.curry(_getClbfc);
-
-// Get cross list by paladin
-const _getClbpl = (slcrl, dplcn) => {
-
-  E.cknwa(slcrl, 'slcrl');
-  E.cknws(dplcn, 'dplcn');
-
-  if(!isValidDfccn(dplcn)){
-    throw new Error(
-      `${dplcn} is not a valid [dplcn].`);
-  }
-
-  const clbpl = utFilterByPropEq(
-    'dplcn', dplcn, slcrl);
-
-  return clbpl;
-}
-
-export const getClbpl = R.curry(_getClbpl);
-
 const _getRjkcr = slcrl => {
 
   try{

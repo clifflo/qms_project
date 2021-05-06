@@ -44,10 +44,13 @@ export const getClbfm =
       const isMfcm = isWbmfc && isChmfc;
 
       if(isMfcm){
-        return true;
+        return {
+          wbics,
+          chics
+        };
       }
       else {
-        return false;
+        return null;
       }
     }
     else {
@@ -73,18 +76,18 @@ export const getClbfm =
 // [cbfwp] is cross by focus with paladin.
 // [crmst] is cross must strike.
 export const getCbfwp =
-  (dplnn, dfcnn, crmst, slcrl) => {
+  (dplal, dfcal, crmst, slcrl) => {
 
-  E.cknws(dplnn, 'dplnn');
-  E.cknws(dfcnn, 'dfcnn');
+  E.cknws(dplal, 'dplal');
+  E.cknws(dfcal, 'dfcal');
 
   const findFn = slcros => {
 
     const matchDplnn =
-      slcros.dplcn == getDpcbn(dplnn);
+      slcros.dplcn == getDpcbn(dplal);
 
     const matchDfcen =
-      slcros.dfccn == getDfcbn(dfcnn);
+      slcros.dfccn == getDfcbn(dfcal);
 
     const matchCrmst =
       !crmst || slcros.isStrike;
