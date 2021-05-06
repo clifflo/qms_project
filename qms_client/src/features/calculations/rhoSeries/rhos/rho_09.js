@@ -6,8 +6,7 @@ import {
   utPropMap
 } from '../../utils/util_04'
 import {
-  utDictParse,
-  utSecondWord
+  utDictMove
 } from '../../utils/util_06';
 
 // Delta focus dictionary list
@@ -56,64 +55,5 @@ export const isValidDfccn = dfccn => {
   return R.includes(dfccn, dfcns);
 }
 
-// Delta focus english name set
-const getDfnns = () => {
-
-  try{
-    const _dfnns =
-      utSecondWord(utPropMap('dfcen', dfcdl));
-
-    return _dfnns;
-  }
-  catch(err){
-    console.error(err);
-    throw new Error('Cannot get [dfnns].');
-  }
-}
-
-export const dfnns = getDfnns();
-
-export const isValidDfcal = dfcen => {
-  return R.includes(dfcen, dfnns);
-}
-
-// Get delta focus chinese by rho raw focus
-export const getDfcbrf = rrawf => {
-
-  E.cknws(rrawf, 'rrawf');
-
-  try{
-    const dfcbrf = utDictParse(
-      'rrawf', rrawf, 'dfccn', dfcdl);
-    E.cknws(dfcbrf);
-    return dfcbrf;
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      'Cannot get [dfcbrf].')
-  }
-
-}
-
-// Get delt focus chinese by english name
-export const getDfcbe = dfcen => {
-
-  E.cknws(dfcen, 'dfcen');
-
-  if(!isValidDfcal(dfcen)){
-    throw new Error(
-      `${dfcen} is not a valid [dfcen].`);
-  }
-
-  try{
-    const dfcbse = utDictParse(
-      'dfcen', dfcen, 'dfccn', dfcdl);
-    return dfcbse;
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      'Cannot get [dfcbse].');
-  }
-}
+export const dfens = R.map(
+  R.prop('dfcen'), dfcdl);

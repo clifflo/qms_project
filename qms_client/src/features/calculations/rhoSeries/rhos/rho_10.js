@@ -5,38 +5,29 @@ import {
   utFindByPropEq
 } from '../../utils/util_04';
 import {
-  dfcns,
-  dfnns,
-  dfcdl,
   rhocs_4
 } from './rho_08';
 import {
   getElre
 } from '../../twigs/twig_02';
 import {
-  getDfcbrf
+  dfcdl
 } from './rho_09';
+
 
 const getRhocs_5 = () => {
 
   const mapFn_1n = (rhshel, _lhcros) => {
 
     try{
+
       const rrawf = getElre(
         rhshel, _lhcros.crbel);
+      E.cknws(rrawf);
 
-      if(R.isNil(rrawf)){
-        throw new Error(
-          '[rrawf] should not be nil.');
-      }
-
-      const dfccn = getDfcbrf(rrawf);
-
-      if(R.isNil(dfccn)){
-        throw new Error(
-          '[dfccn] should not be nil.');
-      }
-
+      const dfccn = R.find(
+        R.propEq('rrawf', rrawf), dfcdl)
+        .dfccn;
       const lhcros = {
         ..._lhcros,
         dfccn

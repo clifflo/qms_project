@@ -38,29 +38,66 @@ export const getElre = (selem, telem) => {
       `${telem} is not a valid [telem].`);
   }
 
-  const sourceIndex = utGetIdx(
-    selem, elementalOrder);
+  try{
 
-  const targetIndex = utGetIdx(
-    telem, elementalOrder);
+    const sourceIndex = utGetIdx(
+      selem, elementalOrder);
 
-  if(sourceIndex == -1){
-    throw new Error(
-      `'${selem}' is not a valid [selem].`);
+    const targetIndex = utGetIdx(
+      telem, elementalOrder);
+
+    if(sourceIndex == -1){
+      throw new Error(
+        `'${selem}' is not a valid [selem].`);
+    }
+
+    if(targetIndex == -1){
+      throw new Error(
+        `'${telem}' is not a valid [telem].`);
+    }
+
+    const difference = targetIndex - sourceIndex;
+    const relation = utItem(elrs, difference);
+    return relation;
+
   }
-
-  if(targetIndex == -1){
-    throw new Error(
-      `'${telem}' is not a valid [telem].`);
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get [elre].')
   }
-
-  const difference = targetIndex - sourceIndex;
-  const relation = utItem(elrs, difference);
-  return relation;
 }
 
-export const isValidElrl = elrl => {
-  return R.includes(elrl, elrs);
+export const isValidElre = elre => {
+  return R.includes(elre, elrs);
+}
+
+// Get element cooperation
+export const getErco = (selem, telem) => {
+
+  E.cknws(selem);
+  E.cknws(telem);
+
+  try{
+
+    const elre = getElre(selem, telem);
+    E.cknws(elre, 'elre');
+
+    if(elre == 'Draw'){
+      return 'Co-draw';
+    }
+    else if(elre == 'Seed' || elre == 'Fruit'){
+      return 'Co-produce';
+    }
+    else if(elre == 'Hacker' || elre == 'Bank'){
+      return 'Co-hack';
+    }
+    else {
+      throw new Error(`${elre} is not valid.`);
+    }
+  }
+  catch(err){}
+
+
 }
 
 export const getElem = twig => {

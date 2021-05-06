@@ -16,7 +16,7 @@ export const utDissoc = (obj, delps) => {
   return result;
 }
 
-export const utDictParse =
+export const utDictMove =
   (sPropName, sPropValue, tPropName, list) => {
 
   E.cknws(sPropName);
@@ -32,16 +32,4 @@ export const utDictParse =
   E.cknwo(tProp);
 
   return tProp[tPropName];
-}
-
-
-export const utSecondWord = list => {
-
-  utCheckList(list);
-
-  const mapFn = sentence => {
-    return R.split(sentence)[1];
-  }
-
-  return R.map(mapFn, list);
 }

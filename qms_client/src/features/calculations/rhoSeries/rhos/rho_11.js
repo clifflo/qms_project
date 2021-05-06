@@ -11,7 +11,6 @@ import {
   getRcxtvByLhn
 } from './rho_05';
 
-
 const getRhocs_6 = () => {
 
   const mapFn = rhocxt => {

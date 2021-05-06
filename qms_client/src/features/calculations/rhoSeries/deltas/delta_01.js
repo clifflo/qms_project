@@ -20,7 +20,7 @@ import {
   utPropMap
 } from '../../utils/util_04';
 import {
-  utDictParse,
+  utDictMove,
   utSecondWord
 } from '../../utils/util_06';
 
@@ -85,7 +85,7 @@ export const getDpcba = dplal => {
   E.cknws(dplal, 'dplal');
 
   try{
-    const dpcba = utDictParse(
+    const dpcba = utDictMove(
       dplal,
       'dplal',
       'dplcn'
