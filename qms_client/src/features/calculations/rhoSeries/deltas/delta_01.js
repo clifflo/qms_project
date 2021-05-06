@@ -33,76 +33,85 @@ export const dplco =
 
 // [dpldl] is delta paladin dictionary list
 // [dplcn] is delta paladin chinese name.
-// [dplen] is delta paladin nickname.
-// [dplfen] is delta paladin full english name.
+// [dplnn] is delta paladin nickname.
+// [dplnn] is delta paladin full english name.
 // [dplsid] is delta paladin specification ID.
-export const dpldl = [
+const _dpldl = [
   {
     dplcn: '丙青龍',
-    dplen: 'Delta Dragon',
+    dplnn: 'Dragon',
     dplsid: 'dtp-ql'
   },
   {
     dplcn: '丙朱雀',
-    dplen: 'Delta Phoenix',
+    dplnn: 'Phoenix',
     dplsid: 'dtp-zj'
   },
   {
     dplcn: '丙勾陳',
-    dplen: 'Delta Unicorn',
+    dplnn: 'Unicorn',
     dplsid: 'dtp-gc'
   },
   {
     dplcn: '丙螣蛇',
-    dplen: 'Delta Cobra',
+    dplnn: 'Cobra',
     dplsid: 'dtp-ts'
   },
   {
     dplcn: '丙白虎',
-    dplen: 'Delta Tiger',
+    dplnn: 'Tiger',
     dplsid: 'dtp-bh'
   },
   {
     dplcn: '丙玄武',
-    dplen: 'Delta Turtle',
+    dplnn: 'Turtle',
     dplsid: 'dtp-xw'
   }
 ]
 
-// Get delta paladin chinese by short english
-export const getDpcbe = dplen => {
+const dpldlMapFn = dpldi => {
+  const dplen = 'Delta ' + dpldi.dplnn;
+  return {
+    ...dpldi,
+    dplen
+  }
+}
 
-  E.cknws(dplen, 'dplen');
+export const dpldl = R.map(dpldlMapFn, _dpldl);
+
+// Get delta paladin chinese by nickname
+export const getDpcbe = dplnn => {
+
+  E.cknws(dplnn, 'dplnn');
 
   try{
-    const dpcbe = utDictParse(
-      dplen,
-      'dplen',
+    const dpcbn = utDictParse(
+      dplnn,
+      'dplnn',
       'dplcn'
     )
-    return dpcbe;
+    return dpcbn;
   }
   catch(err){
     console.error(err);
     throw new Error(
-      `${dplen} is not a valid [dplen].`);
+      `${dplnn} is not a valid [dplnn].`);
   }
 }
 
-// Delta paladin english set
-const getDpens = () => {
+// Delta paladin nickname set
+const getDpnns = () => {
   try{
-    return utSecondWord(
-      utPropMap('dplen', dpldl));
+    return utPropMap('dplnn', dpldl);
   }
   catch(err){
     console.error(err);
-    throw new Error('Cannot get [dpens].');
+    throw new Error('Cannot get [dpnns].');
   }
 }
 
-const dpens = getDpens();
+const dpnns = getDpnns();
 
-export const isValidDplen = dplen => {
-  return R.includes(dplen, dpens);
+export const isValidDplnn = dplnn => {
+  return R.includes(dplnn, dpnns);
 }

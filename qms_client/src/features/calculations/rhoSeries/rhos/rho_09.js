@@ -57,7 +57,7 @@ export const isValidDfccn = dfccn => {
 }
 
 // Delta focus english name set
-const getDfens = () => {
+const getDfnns = () => {
 
   try{
     const _dfnns =
@@ -71,7 +71,7 @@ const getDfens = () => {
   }
 }
 
-export const dfnns = getDfens();
+export const dfnns = getDfnns();
 
 export const isValidDfcen = dfcen => {
   return R.includes(dfcen, dfnns);

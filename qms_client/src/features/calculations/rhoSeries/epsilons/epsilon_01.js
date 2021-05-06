@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   isValidDfcen,
-  isValidDplen,
+  isValidDplnn,
   isValidRfcad,
   getClbfe,
   getRfccr,

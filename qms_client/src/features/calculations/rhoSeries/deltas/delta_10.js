@@ -61,3 +61,18 @@ export const getClbfm =
       'Cannot get [clbfm].');
   }
 }
+
+export const getCbfwp =
+  (dplnn, dfcen, slcrl) => {
+
+  E.cknws(dplnn, 'dplnn');
+  E.cknws(dfcen, 'dfcen');
+
+  const findFn = slcros => {
+
+    const matchDplen =
+      slcros.dplnn == dplnn;
+    const matchDfcen = slcros.dfcen =
+
+  }
+}

@@ -1,10 +1,10 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  isValidDplen
+  isValidDplnn
 } from './delta_01';
 import {
-  getDfebcn
+  getDpcbe
 } from '../rhos/rho_09';
 import {
   rfcds,
@@ -33,15 +33,15 @@ export const getClbfe = (slcrl, dfcen) => {
 }
 
 // Get cross list by paladin in english
-export const getClbpe = (slcrl, dplen) => {
+export const getClbpe = (slcrl, dplnn) => {
 
-  E.cknws(dplen, 'dplen');
+  E.cknws(dplnn, 'dplnn');
 
   try{
     const clbpe = R.compose(
       getClbpl(slcrl),
       getDpcbe)
-    (dplen);
+    (dplnn);
 
     return clbpe;
   }
@@ -52,8 +52,12 @@ export const getClbpe = (slcrl, dplen) => {
 
 }
 
-export { isValidDfcen } from '../../rhos/rho_09';
-export { isValidDplen } from './delta_01';
+export {
+  isValidDfcen,
+  dfnns
+} from '../../rhos/rho_09';
+
+export { isValidDplnn } from './delta_01';
 export { getRfccr } from './delta_08';
 
 export const rfacs = ['Jack', 'Queen', 'King'];
