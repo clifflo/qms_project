@@ -72,7 +72,7 @@ const getHdrcs = () => {
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get HYRCS.');
+      'Cannot get [hyrcs].');
   }
 
 }

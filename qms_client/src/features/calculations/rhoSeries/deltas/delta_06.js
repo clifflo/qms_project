@@ -23,30 +23,30 @@ export const getDlcxt_2 =
   E.cknws(chelhn, 'chelhn');
   E.cknws(dpdtr, 'dpdtr');
 
-  const dlcxt_1a = getDlcxt_1(wbllhn, dpdtr);
+  const dlcxt_1 = getDlcxt_1(wbllhn, dpdtr);
   const dcstl = getDcstl(wbllhn, chelhn);
   const chrcxt = getRcxt8ByLhn(chelhn);
 
   // Wheat bowl external short hook element
-  const wbeshe = dlcxt_1a.eshele;
+  const wbeshe = dlcxt_1.eshele;
 
   // Wheat bowl internal short hook element
-  const wbishe = dlcxt_1a.ishele;
+  const wbishe = dlcxt_1.ishele;
 
   // Wheat bowl external short hook original
-  const wbesho = dlcxt_1a.eshori;
+  const wbesho = dlcxt_1.eshori;
 
   // Wheat bowl internal short hook original
-  const wbisho = dlcxt_1a.ishori;
+  const wbisho = dlcxt_1.ishori;
 
   // Wheat bowl generation
-  const wbrgen = dlcxt_1a.rhogen;
+  const wbrgen = dlcxt_1.rhogen;
 
   // Cheese external short hook element
-  const cheshe = dlcxt_1a.eshele;
+  const cheshe = dlcxt_1.eshele;
 
   // Cheese internal short hook element
-  const chishe = dlcxt_1a.ishele;
+  const chishe = dlcxt_1.ishele;
 
   // Cheese external short hook original
   const chesho = chrcxt.eshori;
@@ -59,10 +59,22 @@ export const getDlcxt_2 =
 
   const mapFn_1 = lhcros => {
     const isStrike = dcstl[lhcros.lhcdwi];
-    return {
-      ...lhcros,
-      isStrike
+    if(isStrike){
+      const strkcr = chrcxt.lhcrsl[lhcros.lhcdwi];
+      return {
+        ...lhcros,
+        isStrike,
+        strkcr
+      }
     }
+    else {
+      return {
+        ...lhcros,
+        isStrike
+      }
+    }
+
+
   }
 
   const mapFn_2 = lhcros => {
@@ -73,7 +85,7 @@ export const getDlcxt_2 =
     }
   }
 
-  const wbowcl = R.map(mapFn_1, dlcxt_1a.lhcrsl);
+  const wbowcl = R.map(mapFn_1, dlcxt_1.lhcrsl);
   const chescl = R.map(mapFn_2, chrcxt.lhcrsl);
 
   return {
