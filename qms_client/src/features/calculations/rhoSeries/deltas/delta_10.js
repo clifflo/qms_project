@@ -6,11 +6,11 @@ import {
   getDfcbn
 } from './delta_09';
 
-// [wbdfc] is wheat bowl delta focus chinese
-// [chdfc] is cheese delta focus chinese
+// [wbdfn] is wheat bowl delta focus nickname
+// [chdfn] is cheese delta focus nickname
 // [clbpm] is cross list by focus movement
 export const getClbfm =
-  (wbdfc, chdfc, slcrl) => {
+  (wbdfn, chdfn, slcrl) => {
 
   const mapFn = lhcdwi => {
 
@@ -34,16 +34,20 @@ export const getClbfm =
       E.cknwo('chics', chics);
 
       // Is wheat bowl match the requied focus
-      const isWbmfc = wbics.dfccn == wbdfc;
-      const isChmfc = chics.dfccn == chdfc;
+      const isWbmfc =
+        wbics.dfccn == getDfcbn(wbdfn);
+
+      const isChmfc =
+        chics.dfccn == getDfcbn(chdfn);
 
       // Is matching focus movement
       const isMfcm = isWbmfc && isChmfc;
+
       if(isMfcm){
-        return { wbics, chics };
+        return true;
       }
       else {
-        return null;
+        return false;
       }
     }
     else {
@@ -55,7 +59,7 @@ export const getClbfm =
 
   try{
     const clbfm = R.compose(
-      RA.compact,
+      R.anyPass,
       R.map(mapFn))
     (R.range(0, 6));
   }
