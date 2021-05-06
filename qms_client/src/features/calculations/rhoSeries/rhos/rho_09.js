@@ -73,7 +73,7 @@ const getDfnns = () => {
 
 export const dfnns = getDfnns();
 
-export const isValidDfcen = dfcen => {
+export const isValidDfcal = dfcen => {
   return R.includes(dfcen, dfnns);
 }
 
@@ -101,7 +101,7 @@ export const getDfcbe = dfcen => {
 
   E.cknws(dfcen, 'dfcen');
 
-  if(!isValidDfcen(dfcen)){
+  if(!isValidDfcal(dfcen)){
     throw new Error(
       `${dfcen} is not a valid [dfcen].`);
   }

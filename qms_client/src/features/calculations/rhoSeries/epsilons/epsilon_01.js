@@ -1,8 +1,8 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  isValidDfcen,
-  isValidDplnn,
+  isValidDfcal,
+  isValidDplal,
   isValidRfcad,
   getClbfe,
   getRfccr,
@@ -37,12 +37,12 @@ const _epsfn_01 = (epcnt, slcrl) => {
       // is face card) and ends with focus
       const startWfcd =
         isValidRfcad(firstMint) &&
-        isValidDfcen(secondMint);
+        isValidDfcal(secondMint);
 
       // Starts with delta focus and ends
       // with face card
       const startWdfc =
-        isValidDfcen(firstMint) &&
+        isValidDfcal(firstMint) &&
         isValidRfcad(secondMint);
 
       const bothRfcds =

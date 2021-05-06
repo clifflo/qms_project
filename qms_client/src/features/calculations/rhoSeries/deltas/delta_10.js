@@ -2,8 +2,8 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../../examiner';
 import {
-  getDpcbn,
-  getDfcbn
+  getDpcba,
+  getDfcba
 } from './delta_09';
 
 // [wbdfn] is wheat bowl delta focus nickname
@@ -35,10 +35,10 @@ export const getClbfm =
 
       // Is wheat bowl match the requied focus
       const isWbmfc =
-        wbics.dfccn == getDfcbn(wbdfn);
+        wbics.dfccn == getDfcba(wbdfn);
 
       const isChmfc =
-        chics.dfccn == getDfcbn(chdfn);
+        chics.dfccn == getDfcba(chdfn);
 
       // Is matching focus movement
       const isMfcm = isWbmfc && isChmfc;
@@ -83,18 +83,18 @@ export const getCbfwp =
 
   const findFn = slcros => {
 
-    const matchDplnn =
-      slcros.dplcn == getDpcbn(dplal);
+    const matchDplal =
+      slcros.dplcn == getDpcba(dplal);
 
-    const matchDfcen =
-      slcros.dfccn == getDfcbn(dfcal);
+    const matchDfcal =
+      slcros.dfccn == getDfcba(dfcal);
 
     const matchCrmst =
       !crmst || slcros.isStrike;
 
     return R.allPass([
-      matchDplnn,
-      matchDfcen,
+      matchDplal,
+      matchDfcal,
       matchStrike,
       slcros.isWbocr
     ]);

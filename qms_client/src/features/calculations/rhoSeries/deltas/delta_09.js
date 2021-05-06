@@ -1,10 +1,10 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  isValidDplnn
+  isValidDplal
 } from './delta_01';
 import {
-  getDpcbe
+  getDpcba
 } from '../rhos/rho_09';
 import {
   rfcds,
@@ -39,7 +39,7 @@ export const getClbfc = (dfcal, slcrl) => {
 
   try{
 
-    const dfccn = getDfcbn(dfcal);
+    const dfccn = getDfcba(dfcal);
     const clbfc = utFilterByPropEq(
       'dfccn', dfccn, slcrl);
     return clbfc;
@@ -56,7 +56,7 @@ export const getClbpe = (slcrl, dplal) => {
   try{
     const clbpe = R.compose(
       getClbpl(slcrl),
-      getDpcbe)
+      getDpcba)
     (dplal);
     return clbpe;
   }
@@ -67,11 +67,11 @@ export const getClbpe = (slcrl, dplal) => {
 }
 
 export {
-  isValidDfcen
+  isValidDfcal
 } from '../../rhos/rho_09';
 
 export {
-  isValidDplnn
+  isValidDplal
 } from './delta_01';
 
 export {

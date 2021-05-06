@@ -80,17 +80,17 @@ const dpldlMapFn = dpldi => {
 export const dpldl = R.map(dpldlMapFn, _dpldl);
 
 // Get delta paladin chinese by nickname
-export const getDpcbe = dplal => {
+export const getDpcba = dplal => {
 
   E.cknws(dplal, 'dplal');
 
   try{
-    const dpcbn = utDictParse(
+    const dpcba = utDictParse(
       dplal,
       'dplal',
       'dplcn'
     )
-    return dpcbn;
+    return dpcba;
   }
   catch(err){
     console.error(err);
@@ -112,6 +112,6 @@ const getDpnns = () => {
 
 const dpnns = getDpnns();
 
-export const isValidDplnn = dplal => {
+export const isValidDplal = dplal => {
   return R.includes(dplal, dpnns);
 }
