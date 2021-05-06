@@ -1,6 +1,10 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../../examiner';
+import {
+  getDpcbn,
+  getDfcbn
+} from './delta_09';
 
 // [wbdfc] is wheat bowl delta focus chinese
 // [chdfc] is cheese delta focus chinese
@@ -62,17 +66,33 @@ export const getClbfm =
   }
 }
 
+// [cbfwp] is cross by focus with paladin.
+// [crmst] is cross must strike.
 export const getCbfwp =
-  (dplnn, dfcen, slcrl) => {
+  (dplnn, dfcnn, crmst, slcrl) => {
 
   E.cknws(dplnn, 'dplnn');
-  E.cknws(dfcen, 'dfcen');
+  E.cknws(dfcnn, 'dfcnn');
 
   const findFn = slcros => {
 
-    const matchDplen =
-      slcros.dplnn == dplnn;
-    const matchDfcen = slcros.dfcen =
+    const matchDplnn =
+      slcros.dplcn == getDpcbn(dplnn);
 
+    const matchDfcen =
+      slcros.dfccn == getDfcbn(dfcnn);
+
+    const matchCrmst =
+      !crmst || slcros.isStrike;
+
+    return R.allPass([
+      matchDplnn,
+      matchDfcen,
+      matchStrike,
+      slcros.isWbocr
+    ]);
   }
+
+  const result = R.find(findFn, slcrl);
+  return result;
 }
