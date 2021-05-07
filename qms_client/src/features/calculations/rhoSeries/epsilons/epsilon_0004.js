@@ -14,11 +14,15 @@ import {
 } from '../rhos/'
 
 // 't' is tester.
-const epsl_0004t = dlcxt_2 => {
+const epsl_0004t = dlcxt => {
 
   const findFn = wbcros => {
-    return isDeltaSon(wbcros.dfcen)
-      && wbcros.isStrike;
+    R.allPass([
+      isDeltaSon(wbcros.dfcen),
+      wbcros.isStrike
+      // has brake 天福 
+    ]);
+
   }
 
   const result = R.any(
@@ -33,7 +37,7 @@ const epsl_0004m = {
   epslChapter: '闡奧歌章',
   epslTitle: '禾苗田地章',
   epslContent: [
-    '發動子孫為天福'
+    '發動子孫為[天福]'
   ]
 }
 

@@ -28,7 +28,7 @@ const epsl_0003m = {
   epslChapter: '闡奧歌章',
   epslTitle: '禾苗田地章',
   epslContent: [
-    '(應為種子世為田)，',
+    '(應為種子世為田),',
     '世來剋應儉時年'
   ]
 }

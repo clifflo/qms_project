@@ -5,15 +5,18 @@ import {
 } from '../deltas/delta_07';
 
 // 't' is tester.
-const epsl_0005t = dlcxt_2 => {
+const epsl_0005t = dlcxt => {
 
   const findFn = wbcros => {
-    return isDeltaSon(wbcros.dfcen)
-      && wbcros.isStrike;
+    return R.allPass([
+      isDeltaSon(wbcros.dfcen),
+      wbcros.isStrike,
+      isDeltaDragon(wbcros.dplen);
+    ]);
   }
 
   const result = R.any(
-    findFn, dlcxt_2.wbowcl));
+    findFn, dlcxt.wbowcl));
 
   return result;
 }
@@ -25,7 +28,8 @@ const epsl_0005m = {
   epslTitle: '禾苗田地章',
   epslContent: [
     '(發動子孫為天福),'
-    '更得青龍天喜重'
+    '更得青龍天喜重,',
+    '高低遠近皆成熟'
   ]
 }
 

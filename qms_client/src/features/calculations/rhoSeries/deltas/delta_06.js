@@ -57,7 +57,8 @@ export const getDlcxt_2 =
   const mapFn_1 = lhcros => {
     const isStrike = dcstl[lhcros.lhcdwi];
     if(isStrike){
-      const strkcr = chrcxt.lhcrsl[lhcros.lhcdwi];
+      const strkcr =
+        chrcxt.lhcrsl[lhcros.lhcdwi];
       return {
         ...lhcros,
         isStrike,
@@ -82,8 +83,11 @@ export const getDlcxt_2 =
     }
   }
 
-  const wbowcl = R.map(mapFn_1, dlcxt_1.lhcrsl);
-  const chescl = R.map(mapFn_2, chrcxt.lhcrsl);
+  const wbowcl = R.map(
+    mapFn_1, dlcxt_1.lhcrsl);
+
+  const chescl = R.map(
+    mapFn_2, chrcxt.lhcrsl);
 
   return {
     wbllhn,
