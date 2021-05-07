@@ -33,35 +33,43 @@ export const dplco =
 
 // [dpldl] is delta paladin dictionary list
 // [dplcn] is delta paladin chinese name.
-// [dplal] is delta paladin nickname.
-// [dplal] is delta paladin full english name.
+// [dplen] is delta paladin nickname.
+// [dplen] is delta paladin full english name.
 // [dplsid] is delta paladin specification ID.
 export const dpldl = [
   {
     dplcn: '丙青龍',
-    dplal: 'Delta Dragon'
+    dplen: 'Delta Dragon'
   },
   {
     dplcn: '丙朱雀',
-    dplal: 'Delta Phoenix'
+    dplen: 'Delta Phoenix'
   },
   {
     dplcn: '丙勾陳',
-    dplal: 'Delta Unicorn'
+    dplen: 'Delta Unicorn'
   },
   {
     dplcn: '丙螣蛇',
-    dplal: 'Delta Cobra'
+    dplen: 'Delta Cobra'
   },
   {
     dplcn: '丙白虎',
-    dplal: 'Delta Tiger'
+    dplen: 'Delta Tiger'
   },
   {
     dplcn: '丙玄武',
-    dplal: 'Delta Turtle'
+    dplen: 'Delta Turtle'
   }
 ]
+
+export const getDplen = dplcn => {
+  try{
+    const result = R.find(
+      R.propEq('dplcn', dplcn),
+      dpldl).dplen
+  }
+}
 
 export const isDeltaTiger =
   dplen => dplen == 'Delta Tiger';

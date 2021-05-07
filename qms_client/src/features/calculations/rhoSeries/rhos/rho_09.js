@@ -5,9 +5,7 @@ import {
   utFindByPropEq,
   utPropMap
 } from '../../utils/util_04'
-import {
-  utDictMove
-} from '../../utils/util_06';
+
 
 // Delta focus dictionary list
 // [dfccn] is delta focus chinese name

@@ -59,7 +59,7 @@ const getDpevl = () => {
 
     if(R.isNil(dpdix)){
       throw new Error(
-        'RPDIX should not be nil.');
+        '[dpdix] should not be nil.');
     }
 
     // Delta paladin cross set
