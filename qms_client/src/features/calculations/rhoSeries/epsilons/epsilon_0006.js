@@ -5,14 +5,14 @@ import {
 } from '../deltas/delta_07';
 
 // 't' is tester.
-const epsl_0005t = dlcxt => {
+const epsl_0006t = dlcxt => {
 
   const findFn = wbcros => {
     return R.allPass([
       isDeltaSon(wbcros.dfcen),
       wbcros.isStrike,
-      isDeltaDragon(wbcros.dplen)
-      // has brake 天喜, 天福
+      // has brake 唐符
+      // do not have brakes 大耗 and 小耗
     ]);
   }
 
@@ -23,18 +23,22 @@ const epsl_0005t = dlcxt => {
 }
 
 // 'd' id description.
-const epsl_0005m = {
-  epslId: '0005',
+const epsl_0006m = {
+  epslId: '0006',
   epslChapter: '闡奧歌章',
   epslTitle: '禾苗田地章',
   epslContent: [
-    '(發動子孫為天福)，'
-    '更得青龍天喜重，',
-    '高低遠近皆成熟'
+    '子孫發動合天符，',
+    '(財與龍爻出現枝)，'
+    '[無殺無衝倉廩實]，',
+    '若逢二耗卻成虛。'
+  ],
+  epslFootnote: [
+    '天符和唐符相同。'
   ]
 }
 
-export const epsl_0005c = {
-  epslTestFn: epsl_0005t,
-  epslMetadata: epsl_0005d
+export const epsl_0006c = {
+  epslTestFn: epsl_0006t,
+  epslMetadata: epsl_0006d
 }
