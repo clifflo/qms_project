@@ -32,9 +32,12 @@ const getHdrcs = () => {
     const mapFn = idx => {
       const lhcros = lhcrsl_1[idx];
       const dplcn = dpebt.dpcst[idx];
+      const dplen = getDplen(dplcn);
+
       return {
         ...lhcros,
-        dplcn: dpebt.dpcst[idx]
+        dplcn,
+        dplen
       }
     }
 

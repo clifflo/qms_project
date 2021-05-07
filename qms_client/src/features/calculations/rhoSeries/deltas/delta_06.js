@@ -13,7 +13,6 @@ import {
   getRcxt8ByLhn
 } from '../rhos/rho_13';
 
-
 export const getDlcxt_2 =
   (wbllhn, chelhn, dpdtr) => {
 

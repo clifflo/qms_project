@@ -64,10 +64,19 @@ export const dpldl = [
 ]
 
 export const getDplen = dplcn => {
+
+  E.cknws(dplcn, 'dplcn');
+
   try{
     const result = R.find(
       R.propEq('dplcn', dplcn),
-      dpldl).dplen
+      dpldl).dplen;
+
+    return result;
+  }
+  catch(err){
+    console.error(err);
+    throw new Error('Cannot get [dplen].')
   }
 }
 

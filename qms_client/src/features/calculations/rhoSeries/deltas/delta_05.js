@@ -14,7 +14,7 @@ export const getLnfbl = bilot => {
 
     if(bilot.length != 7){
       throw new Error(
-        'Length of BILOT must be 7.');
+        'Length of [bilot] must be 7.');
     }
 
     const lhidx = binaryToDecimal(bilot);
@@ -36,19 +36,11 @@ export const getLnfbl = bilot => {
 // Get long hook name from octal lots
 export const getLnfol = oclot => {
 
-  if(R.isNil(oclot)){
-    throw new Error(
-      'OCLOT should not be nil.');
-  }
-
-  if(!RA.isString(oclot)){
-    throw new Error(
-      'OCLOT must be a string.');
-  }
+  E.cknws(oclot, 'oclot');
 
   if(oclot.length != 5){
     throw new Error(
-      'Length of OCLOT must be 5.');
+      'Length of [oclot] must be 5.');
   }
 
   const lhidx = octalToDecimal(oclot);
