@@ -4,7 +4,7 @@ import { item } from './utils/util_01';
 import { itemOfBtp } from './twigs/twig_03';
 import moment from 'moment';
 import {
-  idxOfTrunk,
+  indexOfTrunk,
   itemOfTrunk,
   itemOfBranch
 } from './twigs/twig_01';

@@ -1,6 +1,6 @@
 import {
-  idxOfBranch,
-  idxOfTrunk,
+  indexOfBranch,
+  indexOfTrunk,
   itemOfTrunk,
   itemOfBranch,
   isValidTrunk,
@@ -26,7 +26,7 @@ export const getBpse = betapsi => {
   }
 
   const difference =
-    idxOfBranch(branch) - idxOfTrunk(trunk);
+    indexOfBranch(branch) - indexOfTrunk(trunk);
 
   const isValidMatch = (difference % 2) == 0
   if(!isValidMatch){
@@ -62,8 +62,8 @@ export const idxOfBtp = (betapsi) => {
 
   try{
     const bsfn = getBpse(betapsi).bsfn;
-    const bridx = idxOfBranch(bsfn[1]);
-    const tkidx = idxOfTrunk(betapsi[0]);
+    const bridx = indexOfBranch(bsfn[1]);
+    const tkidx = indexOfTrunk(betapsi[0]);
 
     const bpseIdx = ((12 - bridx) % 12) / 2;
     const bpidx = (bpseIdx * 10) + tkidx;

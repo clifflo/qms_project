@@ -3,8 +3,8 @@ import * as RA from 'ramda-adjunct';
 import {
   isValidTrunk,
   isValidBranch,
-  idxOfTrunk,
-  idxOfBranch,
+  indexOfTrunk,
+  indexOfBranch,
   branchOrder,
   trunkOrder
 } from './twig_01';

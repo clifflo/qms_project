@@ -10,6 +10,7 @@ const epsl_0008t = dlcxt => {
   const findFn = wbcros => {
     return R.allPass([
       isDeltaGhost(wbcros.dfcen),
+      
       wbcros.isStrike,
       // has brake 唐符
       // do not have brakes 大耗 and 小耗

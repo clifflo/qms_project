@@ -2,8 +2,8 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   isValidElem,
-  idxOfBranch,
-  idxOfTrunk,
+  indexOfBranch,
+  indexOfTrunk,
   isValidBranch,
   isValidTrunk,
   elementalOrder,
@@ -82,12 +82,12 @@ export const getTwigElemc = twig => {
   const getBelem = branch => {
 
     const belementalOrder = '水土木木土火火土金金土水';
-    const bridx = idxOfBranch(branch);
+    const bridx = indexOfBranch(branch);
     return belementalOrder[bridx];
   }
 
   const getTelem = trunk => {
-    const tki = idxOfTrunk(trunk);
+    const tki = indexOfTrunk(trunk);
     const elei = Math.floor(tki / 2) + 2;
     return itemOfElem(elei);
   }

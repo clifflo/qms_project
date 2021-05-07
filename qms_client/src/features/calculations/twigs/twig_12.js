@@ -14,8 +14,8 @@ import {
 import {
   isValidBranch,
   isValidTrunk,
-  idxOfBranch,
-  idxOfTrunk,
+  indexOfBranch,
+  indexOfTrunk,
   branchOrder,
   trunkOrder
 } from './twig_01';
@@ -88,13 +88,13 @@ export const idxOfGtwig = gtwig => {
   }
 
   if(isValidBranch(gtwig)){
-    return idxOfBranch(gtwig);
+    return indexOfBranch(gtwig);
   }
   else if(isValidAnimal(gtwig)){
     return idxOfAnimal(gtwig);
   }
   else if(isValidTrunk(gtwig)){
-    return idxOfTrunk(gtwig);
+    return indexOfTrunk(gtwig);
   }
   else if(isValidMonth(gtwig)){
     return idxOfMonth(gtwig);

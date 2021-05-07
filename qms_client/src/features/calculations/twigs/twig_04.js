@@ -1,6 +1,6 @@
 export const getChbs = tBranch => {
 
-  const tBridx = idxOfBranch(tBranch);
+  const tBridx = indexOfBranch(tBranch);
   const moiFn = (movement, elem) => {
 
     try{

@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../../examiner';
 import {
-  idxOfBranch,
+  indexOfBranch,
   isValidBranch,
   trunkOrder
 } from '../../twigs/twig_01';
@@ -90,7 +90,7 @@ const getRhocs_7 = () => {
     }
 
     // Rho queen index
-    const rqndi = 5 - (idxOfBranch(rjkbh) % 6);
+    const rqndi = 5 - (indexOfBranch(rjkbh) % 6);
     E.cknwn(rqndi, 'rqndi');
 
     const lhcrsl =

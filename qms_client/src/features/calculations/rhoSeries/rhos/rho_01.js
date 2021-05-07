@@ -6,7 +6,7 @@ import {
   utGetIdx
 } from '../../utils/util_01';
 import {
-  idxOfBranch,
+  indexOfBranch,
   itemOfBranch
 } from '../../twigs/twig_01';
 
@@ -25,7 +25,7 @@ export const getFbbrs = (bbssb, bbscw) => {
 
     E.cknws(bbssb, 'bbssb');
 
-    const bbsbi = idxOfBranch(bbssb);
+    const bbsbi = indexOfBranch(bbssb);
     E.cknwn(bbsbi, 'bbsbi');
 
     const mapFn = idx => {

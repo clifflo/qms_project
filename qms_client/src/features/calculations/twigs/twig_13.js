@@ -1,8 +1,8 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  idxOfBranch,
-  idxOfTrunk,
+  indexOfBranch,
+  indexOfTrunk,
   isValidBranch
 } from './twig_01';
 import {

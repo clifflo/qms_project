@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   getElre,
-  idxOfTrunk,
+  indexOfTrunk,
   itemOfTrunk
 } from '../../twigs/twig_01';
 import {

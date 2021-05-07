@@ -1,6 +1,6 @@
 import {
   isValidBranch,
-  idxOfBranch,
+  indexOfBranch,
   itemOfElem,
   itemOfBranch,
   getTwigElemc,

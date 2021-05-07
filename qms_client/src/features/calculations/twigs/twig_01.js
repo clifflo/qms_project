@@ -22,16 +22,25 @@ export const elementalOrder = '金水木火土';
 
 // Elemental context
 export const elementalContext = {
-  '金': 'Metal',
-  '水': 'Water',
-  '木': 'Wood',
-  '火': 'Fire',
-  '土': 'Soil'
+  '金': 'Twig Metal',
+  '水': 'Twig Water',
+  '木': 'Twig Wood',
+  '火': 'Twig Fire',
+  '土': 'Twig Soil'
 }
 
 export const getTwigElele = elemc => {
   return elementalContext[elemc];
 }
+
+export const isTwigMetal = eleme => {
+  return eleme == 'Twig Metal';
+}
+
+export const isTwigFire = eleme => {
+  return eleme == 'Twig Fire';
+}
+
 
 export const trunkOrder
   = '甲乙丙丁戊己庚辛壬癸';
@@ -84,35 +93,10 @@ export function idxOfElem(elemental){
   return utGetIdx(elemental, elementalOrder)
 }
 
-export const idxOfBranch = (branch) => {
+export const indexOfBranch = (branch) => {
   return utGetIdx(branch, branchOrder)
 }
 
-export const idxOfTrunk = trunk => {
+export const indexOfTrunk = trunk => {
   return utGetIdx(trunk, trunkOrder)
-}
-
-export const getTrunkLiturgy = trunk => {
-  return (idxOfTrunk(trunk) % 2) == 0 ?
-    'Alpha': 'Omega';
-}
-
-export const getBranchLiturgy = (branch) => {
-  return (idxOfBranch(branch) % 2) == 0 ?
-    'Alpha': 'Omega';
-}
-
-export const getTwigLiturgy = (twig) => {
-
-  if(isValidTrunk(twig)){
-    const trunk = twig;
-    return getTrunkLiturgy(trunk);
-  }
-  else if(isValidBranch(twig)){
-    const branch = twig;
-    return getBranchLiturgy(branch);
-  }
-  else {
-    throw new Error(`${twig} is not a valid twig.`);
-  }
 }

@@ -23,7 +23,7 @@ const getWniday = dateMoment => {
 
   // Trunk of year
   const tkyr = wybp[0];
-  const tkyi = idxOfTrunk(tkyr) % 5;
+  const tkyi = indexOfTrunk(tkyr) % 5;
 
   // Index of start trunk of year
   const styi = (tkyi + 1) * 2;

@@ -9,8 +9,8 @@ import {
   isValidTrunk,
   isValidElem,
   itemOfBranch,
-  idxOfBranch,
-  idxOfTrunk,
+  indexOfBranch,
+  indexOfTrunk,
   getTwigElemc,
   elementalOrder,
   branchOrder
