@@ -9,17 +9,22 @@ import {
   getElre,
   isElreBank
 } from '../../twigs/twig_02';
+import {
+  isDeltaSon
+} from '../rhos/'
 
 // 't' is tester.
 const epsl_0004t = dlcxt_2 => {
 
-  const jackCross = dhJack(dhcxt_2);
-  const kingCross = dhKing(dhcxt_2);
+  const findFn = wbcros => {
+    return isDeltaSon(wbcros.dfcen)
+      && wbcros.isStrike;
+  }
 
-  const elre = getElre(
-    jackCross.crbel, kingCross.crbel);
+  const result = R.any(
+    findFn, dlcxt_2.wbowcl));
 
-  return isElreBank(elre);
+  return result;
 }
 
 // 'd' id description.

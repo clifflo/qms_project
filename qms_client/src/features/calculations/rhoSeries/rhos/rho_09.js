@@ -52,3 +52,15 @@ export const isValidDfccn = dfccn => {
 
 export const isDeltaBrother =
   dfcen => dfcen == 'Delta Brother';
+
+export const isDeltaSon =
+  dfcen => dfcen == 'Delta Son';
+
+export const isDeltaParent =
+  dfcen => dfcen == 'Delta Parent';
+
+export const isDeltaGhost =
+  dfcen => dfcen == 'Delta Ghost';
+
+export const isDeltaMoney =
+  dfcen => dfcen == 'Delta Money';
