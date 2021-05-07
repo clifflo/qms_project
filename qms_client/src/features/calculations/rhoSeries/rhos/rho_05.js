@@ -11,7 +11,7 @@ import {
   rhocs_2
 } from './rho_04';
 import {
-  getElem
+  getTwigElemc
 } from '../../twigs/twig_01';
 
 export const getRcxtvByLhx = (

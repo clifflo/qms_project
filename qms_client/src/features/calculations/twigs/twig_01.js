@@ -21,12 +21,16 @@ export const trunkContext = {
 export const elementalOrder = '金水木火土';
 
 // Elemental context
-export const elementContext = {
+export const elementalContext = {
   '金': 'Metal',
   '水': 'Water',
   '木': 'Wood',
   '火': 'Fire',
   '土': 'Soil'
+}
+
+export const getTwigElele = elemc => {
+  return elementalContext[elemc];
 }
 
 export const trunkOrder

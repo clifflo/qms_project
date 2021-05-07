@@ -17,7 +17,7 @@ const epsl_0001t = dlcxt_2 => {
   const kingCross = dhKing(dhcxt_2);
 
   const elre = getElre(
-    jackCross.crbel, kingCross.crbel);
+    jackCross.crbelc, kingCross.crbelc);
 
   return isElreHacker(elre);
 }

@@ -3,7 +3,7 @@ import {
   idxOfBranch,
   itemOfElem,
   itemOfBranch,
-  getElem,
+  getTwigElemc,
   idxOfElem,
   itemOfTrunk
 } from './twig_01';
@@ -18,7 +18,7 @@ const getBscprSet = () => {
     const tBridx =  13 - i;
     const tBranch = itemOfBranch(tBridx);
 
-    const sBelem = getElem(sBranch);
+    const sBelem = getTwigElemc(sBranch);
     const sBelemIdx = idxOfElem(sBelem);
 
     // Small Compound Elemental

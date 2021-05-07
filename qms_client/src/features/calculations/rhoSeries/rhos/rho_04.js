@@ -12,7 +12,7 @@ import {
   buildCrosses
 } from './rho_03';
 import {
-  getElem
+  getTwigElemc
 } from '../../twigs/twig_02';
 
 export const getRhocs_2 = () => {

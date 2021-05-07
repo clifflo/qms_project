@@ -17,7 +17,7 @@ const epsl_0001t = dlcxt_2 => {
   const kingCross = dhKing(dhcxt_2);
 
   const erco = getErco(
-    jackCross.crbel, kingCross.crbel);
+    jackCross.crbelc, kingCross.crbelc);
 
   return isErcoEitherSeed(erco);
 }

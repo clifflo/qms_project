@@ -11,7 +11,7 @@ import {
   itemOfBranch,
   idxOfBranch,
   idxOfTrunk,
-  getElem,
+  getTwigElemc,
   elementalOrder,
   branchOrder
 } from './twig_01';

@@ -13,10 +13,11 @@ import {
 } from './rho_01';
 import {
   isValidElem,
-  elementalOrder
+  elementalOrder,
+  getTwigElemce
 } from '../../twigs/twig_01';
 import {
-  getElem
+  getTwigElemc
 } from '../../twigs/twig_02';
 
 export const getTrnto = (
@@ -93,13 +94,14 @@ export const buildCrosses = (
 
   const crbh = fbbrs[lhcdwi];
 
-  const crbel = getElem(crbh);
+  const crbelc = getTwigElemc(crbh);
+  const crbele = elementContext[crbelc];
 
   return {
     crsi,
     crtk,
     crbh,
-    crbel,
+    crbelc,
     lhcdwi
   }
 }

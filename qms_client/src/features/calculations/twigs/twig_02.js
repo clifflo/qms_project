@@ -77,7 +77,7 @@ export const isValidElre = elre => {
   return R.includes(elre, elrs);
 }
 
-export const getElem = twig => {
+export const getTwigElemc = twig => {
 
   const getBelem = branch => {
 

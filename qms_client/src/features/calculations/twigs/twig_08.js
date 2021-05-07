@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import {
   itemOfBranch,
-  getElem,
+  getTwigElemc,
   isValidBranch
 } from './twig_01';
 
