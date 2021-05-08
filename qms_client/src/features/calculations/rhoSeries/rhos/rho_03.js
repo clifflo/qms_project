@@ -46,41 +46,50 @@ export const getTrnto = (
 
   if(isShetp){
 
-    E.cknws(natto.externalShortHookTrunk, 'externalShortHookTrunk');
-    E.cknwa(natto.ebbrs, 'ebbrs');
-    E.cknws(natto.genericShortHookElemental, 'genericShortHookElemental');
+    E.checkNilWithString(
+      natto.externalShortHookTrunk,
+      'External Short Hook Trunk');
 
-    // Displayed short hook bean trunk
-    const dshbt = natto.externalShortHookTrunk;
+    E.checkNilWithArray(
+      natto.externalSnapPeas,
+      'External Snap Peas');
 
-    // Displayed bean branch series
-    const dbbrs = natto.ebbrs;
+    E.checkNilWithString(
+      natto.genericShortHookElemental,
+      'Generic Short Hook Elemental');
 
-    const genericShortHookElemental = natto.genericShortHookElemental;
+    const effectiveShortHookTrunk =
+      natto.externalShortHookTrunk;
+
+    const effectiveSnapPeas =
+      natto.externalSnapPeas;
+
+    const genericShortHookElemental =
+      natto.genericShortHookElemental;
 
     return {
-      dshbt,
-      dbbrs,
+      effectiveShortHookTrunk,
+      effectiveSnapPeas,
       genericShortHookElemental
     }
   }
   else {
 
-    E.cknws(natto.internslShortHookTrunk, 'externalShortHookTrunk');
-    E.cknwa(natto.ibbrs, 'ebbrs');
-    E.cknws(natto.genericShortHookElemental, 'genericShortHookElemental');
+    E.checkNilWithString(natto.internslShortHookTrunk, 'externalShortHookTrunk');
+    E.checkNilWithArray(natto.internalSnapPeas, 'externalSnapPeass');
+    E.checkNilWithString(natto.genericShortHookElemental, 'genericShortHookElemental');
 
     // Displayed short hook bean trunk
-    const dshbt = natto.internslShortHookTrunk;
+    const effectiveShortHookTrunk = natto.internslShortHookTrunk;
 
     // Displayed bean branch series
-    const dbbrs = natto.ibbrs;
+    const effectiveSnapPeas = natto.internalSnapPeas;
 
     const genericShortHookElemental = natto.genericShortHookElemental;
 
     return {
-      dshbt,
-      dbbrs,
+      effectiveShortHookTrunk,
+      effectiveSnapPeas,
       genericShortHookElemental
     }
   }
@@ -88,7 +97,7 @@ export const getTrnto = (
 }
 
 export const buildCrosses = (
-  fullSnapPea,
+  fullSnapPeass,
   externalShortHookTrunk,
   internslShortHookTrunk,
   crossSign,
@@ -100,7 +109,7 @@ export const buildCrosses = (
     externalShortHookTrunk :
     internslShortHookTrunk;
 
-  const crossBranch = fullSnapPea[
+  const crossBranch = fullSnapPeass[
     longHookCrossDownwardIndex];
 
   const crbelc = getTwigElemc(crossBranch);

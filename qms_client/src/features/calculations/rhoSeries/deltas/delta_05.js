@@ -18,7 +18,7 @@ export const getLnfbl = bilot => {
     }
 
     const lhidx = binaryToDecimal(bilot);
-    E.cknwn(lhidx);
+    E.checkNilWithNumber(lhidx);
 
     const longHookName = getRhoContext1ByLongHookName(lhidx).longHookName;
     E.checkNilWithString(longHookName);

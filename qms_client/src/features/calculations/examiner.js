@@ -14,7 +14,7 @@ export const checkNilWithString = (varStr, varName) => {
 }
 
 // Check by nil with number
-export const cknwn = (varNum, varName) => {
+export const checkNilWithNumber = (varNum, varName) => {
 
   if(R.isNil(varNum)){
     throw new Error(`${varName} should not be nil.`);

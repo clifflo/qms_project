@@ -72,8 +72,8 @@ const getRhoContextSet_7 = () => {
     const { rjkdi, rkgdi } = rhocxt;
     const _lhcrsl = rhocxt.lhcrsl;
 
-    E.cknwn(rjkdi, 'rjkdi');
-    E.cknwn(rkgdi, 'rkgdi');
+    E.checkNilWithNumber(rjkdi, 'rjkdi');
+    E.checkNilWithNumber(rkgdi, 'rkgdi');
     E.checkNilWithArray(_lhcrsl, '_lhcrsl');
 
     // Rho jack cross
@@ -91,7 +91,7 @@ const getRhoContextSet_7 = () => {
 
     // Rho queen index
     const rqndi = 5 - (indexOfBranch(rjkbh) % 6);
-    E.cknwn(rqndi, 'rqndi');
+    E.checkNilWithNumber(rqndi, 'rqndi');
 
     const lhcrsl =
       R.map(

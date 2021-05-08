@@ -36,18 +36,18 @@ export const getRhoContextSet_2 = () => {
       E.cknwo(ishcot, 'eshcot');
 
       // External bean branch series
-      const externalSnapPeass = eshcot.dbbrs;
+      const externalSnapPeass = eshcot.effectiveSnapPeas;
 
       // External short hook bean trunk
-      const externalShortHookTrunk = eshcot.dshbt;
+      const externalShortHookTrunk = eshcot.effectiveShortHookTrunk;
 
       const eshele = eshcot.genericShortHookElemental;
 
       // Internal bean branch series
-      const internalSnapPeas = ishcot.dbbrs;
+      const internalSnapPeas = ishcot.effectiveSnapPeas;
 
        // Internal short hook bean trunk
-      const internslShortHookTrunk = ishcot.dshbt;
+      const internslShortHookTrunk = ishcot.effectiveShortHookTrunk;
 
       const ishele = ishcot.genericShortHookElemental;
 

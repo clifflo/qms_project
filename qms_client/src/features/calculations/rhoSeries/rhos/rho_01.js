@@ -18,7 +18,8 @@ export const rawNattos =
     '坤土乙未癸逆佈,兌金丁巳丁逆佈',
   ])
 
-export const getFullSnapPeas = (beginningSnapPea, snapPeasRunClockwise) => {
+export const getFullSnapPeas =
+  (beginningSnapPea, snapPeasRunClockwise) => {
 
   try{
 
@@ -26,14 +27,23 @@ export const getFullSnapPeas = (beginningSnapPea, snapPeasRunClockwise) => {
       beginningSnapPea,
       'Beginning Snap Pea');
 
-    const bbsbi = indexOfBranch(beginningSnapPea);
-    E.cknwn(bbsbi, 'bbsbi');
+    const beginningSnapPeaBranchIndex =
+      indexOfBranch(beginningSnapPea);
+
+    E.checkNilWithNumber(
+      beginningSnapPeaBranchIndex,
+      'Beginning Snap Pea Branch Index');
 
     const mapFn = idx => {
+
       const rawAdjustment = idx * 2;
+
       const finalAdjustment = snapPeasRunClockwise ?
         rawAdjustment : (-rawAdjustment);
-      return itemOfBranch(bbsbi + finalAdjustment);
+
+      return itemOfBranch(
+        beginningSnapPeaBranchIndex
+        + finalAdjustment);
     }
 
     const fullSnapPeas = R.map(mapFn, R.range(0, 6))
@@ -58,7 +68,7 @@ export const getBakedNattos = () => {
     const internslShortHookTrunk = sentence[2];
     const beginningSnapPea = sentence[3];
     const snapPeasRunClockwise = sentence[5] == '順';
-    const fullSnapPeas = getFullSnapPea(
+    const fullSnapPeas = getFullSnapPeas(
       beginningSnapPea, snapPeasRunClockwise);
 
     const externalSnapPeas =
@@ -85,6 +95,65 @@ export const getBakedNattos = () => {
 }
 
 export const bakedNattos = getBakedNattos();
+
+export const shortHookContextSet = [
+  {
+    _type: 'Short Hook Context',
+    genericShortHookIndex: 0,
+    genericShortHookOriginal: '地',
+    genericShortHookAlternative: '坤',
+    genericShortHookEnglish: 'Short Hook Earth'
+  },
+  {
+    _type: 'Short Hook Context',
+    genericShortHookIndex: 1,
+    genericShortHookOriginal: '雷',
+    genericShortHookAlternative: '震',
+    genericShortHookEnglish: 'Short Hook Thunder'
+  },
+  {
+    _type: 'Short Hook Context',
+    genericShortHookIndex: 2,
+    genericShortHookOriginal: '水',
+    genericShortHookAlternative: '坎',
+    genericShortHookEnglish: 'Short Hook Lake'
+  },
+  {
+    _type: 'Short Hook Context',
+    genericShortHookIndex: 3,
+    genericShortHookOriginal: '澤',
+    genericShortHookAlternative: '兌',
+    genericShortHookEnglish: 'Short Hook Swamp'
+  },
+  {
+    _type: 'Short Hook Context',
+    genericShortHookIndex: 4,
+    genericShortHookOriginal: '山',
+    genericShortHookAlternative: '艮',
+    genericShortHookEnglish: 'Short Hook Mountain'
+  },
+  {
+    _type: 'Short Hook Context',
+    genericShortHookIndex: 5,
+    genericShortHookOriginal: '火',
+    genericShortHookAlternative: '離',
+    genericShortHookEnglish: 'Short Hook Flame'
+  },
+  {
+    _type: 'Short Hook Context',
+    genericShortHookIndex: 6,
+    genericShortHookOriginal: '風',
+    genericShortHookAlternative: '巽',
+    genericShortHookEnglish: 'Short Hook Monsoon'
+  },
+  {
+    _type: 'Short Hook Context',
+    genericShortHookIndex: 7,
+    genericShortHookOriginal: '天',
+    genericShortHookAlternative: '乾',
+    genericShortHookEnglish: 'Short Hook Sky'
+  }
+]
 
 // Generic short hook alternative
 export const gshalo = '地雷水澤山火風天';

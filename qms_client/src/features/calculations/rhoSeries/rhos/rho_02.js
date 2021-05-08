@@ -8,7 +8,7 @@ import {
   gshoro
 } from './rho_01';
 
-const lhParagraph = R.join(',', [
+const longHookParagraph = R.join(',', [
   '乾為天,天風姤,天山遯,天地否,風地觀,山地剝,火地晉,地風升',
   '火天大有,坎為水,水澤節,水雷屯,水火既濟,澤火革,雷火豐',
   '地火明夷,地水師,艮為山,山火賁,山天大畜,山澤損,火澤睽',
@@ -49,8 +49,8 @@ const getRhoContextSet_1 = () => {
 
   const mapFn = sentence => {
 
-    let externalShortHookAlternate;
-    let internalShortHookAlternate;
+    let externalShortHookAlternative;
+    let internalShortHookAlternative;
     let longHookName;
 
     if(sentence == ''){
@@ -59,31 +59,31 @@ const getRhoContextSet_1 = () => {
     }
 
     if(sentence[1] == '為'){
-      externalShortHookAlternate = sentence[2];
-      internalShortHookAlternate = sentence[2];
+      externalShortHookAlternative = sentence[2];
+      internalShortHookAlternative = sentence[2];
       longHookName = '純' + sentence[0];
     }
     else {
-      externalShortHookAlternate = sentence[0];
-      internalShortHookAlternate = sentence[1];
+      externalShortHookAlternative = sentence[0];
+      internalShortHookAlternative = sentence[1];
       longHookName = R.drop(2, sentence);
     }
 
     E.checkNilWithString(
-      externalShortHookAlternate,
+      externalShortHookAlternative,
       'External short hook alternate'
     );
 
     E.checkNilWithString(
-      internalShortHookAlternate,
+      internalShortHookAlternative,
       'Internal short hook alternate'
     )
 
     const eshidx =
-      getGshalx(externalShortHookAlternate);
+      getGshalx(externalShortHookAlternative);
 
     const ishidx =
-      getGshalx(internalShortHookAlternate);
+      getGshalx(internalShortHookAlternative);
 
     const eshori =
       gshoro[eshidx];
@@ -96,8 +96,8 @@ const getRhoContextSet_1 = () => {
       ishidx;
 
     return {
-      externalShortHookAlternate,
-      internalShortHookAlternate,
+      externalShortHookAlternative,
+      internalShortHookAlternative,
       eshori,
       ishori,
       longHookName,
@@ -111,7 +111,7 @@ const getRhoContextSet_1 = () => {
     R.map(mapFn),
     R.split(',')
   )
-  (lhParagraph);
+  (longHookParagraph);
 
 }
 
