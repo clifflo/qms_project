@@ -61,16 +61,16 @@ const getRhoContextSet_8 = () => {
     }
     else {
 
-      const dpilcl = rhocxt.dpilcl;
+      const deltaPilotCrossList = rhocxt.deltaPilotCrossList;
       const dlhdfl = rhocxt.dlhdfl;
 
-      E.checkNilWithArray(dpilcl, 'dpilcl');
+      E.checkNilWithArray(deltaPilotCrossList, 'deltaPilotCrossList');
       E.checkNilWithArray(dlhdfl, 'dlhdfl');
 
       const lhcrsl =
         R.map(
           mapFn_1c(rhocxt.lhcrsl)(dlhdfl),
-          dpilcl);
+          deltaPilotCrossList);
 
       E.checkNilWithArray(lhcrsl, 'lhcrsl');
 

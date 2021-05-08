@@ -33,17 +33,17 @@ const getRhoContextSet_6 = () => {
     if(isLklh){
 
       // Delta pilot cross list
-      const dpilcl = R.find(
+      const deltaPilotCrossList = R.find(
         R.propEq('longHookName', '純' + rhocxt.rhlhn),
         rhocs_5).lhcrsl;
 
-      E.checkNilWithArray(dpilcl, 'dpilcl');
+      E.checkNilWithArray(deltaPilotCrossList, 'deltaPilotCrossList');
 
       return {
         ...rhocxt,
         isLklh,
         dlhdfl,
-        dpilcl,
+        deltaPilotCrossList,
         _type: 'rhocxt_8'
       }
     }
