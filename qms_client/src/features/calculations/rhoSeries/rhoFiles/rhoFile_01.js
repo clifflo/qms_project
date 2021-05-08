@@ -2,21 +2,13 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../../examiner';
 import {
-  utItem,
+  getCyclicItemFromList,
   utGetIdx
-} from '../../utils/util_01';
+} from '../../utilityFiles/utility_01';
 import {
   indexOfBranch,
   itemOfBranch
 } from '../../twigs/twig_01';
-
-export const rawNattoContextSet =
-  R.join(',', [
-    '乾金甲子壬順佈,坎水戊寅戊順佈',
-    '艮土丙辰丙順佈,震木庚子庚順佈',
-    '巽木辛丑辛逆佈,離火己卯己逆佈',
-    '坤土乙未癸逆佈,兌金丁巳丁逆佈',
-  ])
 
 export const shortHookContextSet = [
   {
