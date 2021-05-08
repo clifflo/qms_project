@@ -101,6 +101,3 @@ const buildBakedNattoSet = () => {
 }
 
 export const bakedNattoSet = buildBakedNattoSet();
-
-export const
-  getBakedNattoBy

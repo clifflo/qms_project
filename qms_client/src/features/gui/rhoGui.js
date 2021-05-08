@@ -1,8 +1,8 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
-import { getDlcxt_2 } from
-  '../calculations/rhoSeries/deltas/delta_06';
+import { bakedNattoSet } from
+  '../calculations/rhoSeries/rhoFiles/rhoFile_02';
 
 export default function RhoGui() {
-  return <JSONTree data={getDlcxt_2('純坤','明夷','丁')}/>
+  return <JSONTree data={bakedNattoSet}/>
 }
