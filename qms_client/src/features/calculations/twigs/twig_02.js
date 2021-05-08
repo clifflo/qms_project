@@ -7,7 +7,7 @@ import {
   isValidBranch,
   isValidTrunk,
   elementalOrder,
-  itemOfElem
+  itemOfElemental
 } from './twig_01';
 import {
   utGetIdx,
@@ -89,7 +89,7 @@ export const getTwigElemc = twig => {
   const getTelem = trunk => {
     const tki = indexOfTrunk(trunk);
     const elei = Math.floor(tki / 2) + 2;
-    return itemOfElem(elei);
+    return itemOfElemental(elei);
   }
 
   if(R.isNil(twig)){

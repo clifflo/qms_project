@@ -20,13 +20,13 @@ import {
 
 const getHdrcs = () => {
 
-  const mapFn_1n = (dpdtr, lhname) => {
+  const mapFn_1n = (dpdtr, longHookName) => {
 
     E.cknws(dpdtr, 'dpdtr');
-    E.cknws(lhname, 'lhname');
+    E.cknws(longHookName, 'longHookName');
 
     const dpebt = getDpebt(dpdtr);
-    const rhocxt_8 = getRcxt8ByLhn(lhname);
+    const rhocxt_8 = getRcxt8ByLhn(longHookName);
     const lhcrsl_1 = rhocxt_8.lhcrsl;
 
     const mapFn = idx => {
@@ -52,14 +52,14 @@ const getHdrcs = () => {
 
   const mapFn_1c = R.curry(mapFn_1n);
 
-  const lhnames = R.map(
-    R.prop('lhname'), rhocs_1);
+  const longHookNames = R.map(
+    R.prop('longHookName'), rhocs_1);
 
   const mapFn_2 = dpdtr => {
 
     // Hydrated mini rho context set
     const hmrcs = R.map(
-      mapFn_1c(dpdtr), lhnames);
+      mapFn_1c(dpdtr), longHookNames);
 
     return {
       dpdtr,
@@ -93,7 +93,7 @@ export const getDlcxt_1 = (wbllhn, dpdtr) => {
       utFindByPropEq('dpdtr', dpdtr, hdrcs);
 
     const dlcxt_0 =
-      utFindByPropEq('lhname', wbllhn, hdrcxt.hmrcs);
+      utFindByPropEq('longHookName', wbllhn, hdrcxt.hmrcs);
 
     const dlcxt_1 = {
       ...dlcxt_0,

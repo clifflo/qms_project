@@ -31,16 +31,16 @@ const getRhoContextSet_7 = () => {
         'RJKDI should not be nil.');
     }
 
-    const lhcdwi = lhcros.lhcdwi;
+    const longHookCrossDownwardIndex = lhcros.longHookCrossDownwardIndex;
 
-    if(R.isNil(lhcdwi)){
+    if(R.isNil(longHookCrossDownwardIndex)){
       throw new Error(
-        '[lhcdwi] should not be nil.');
+        '[longHookCrossDownwardIndex] should not be nil.');
     }
 
-    const isRhoJack = lhcdwi == rjkdi;
-    const isRqn = lhcdwi == rqndi;
-    const isRkg = lhcdwi == rkgdi;
+    const isRhoJack = longHookCrossDownwardIndex == rjkdi;
+    const isRqn = longHookCrossDownwardIndex == rqndi;
+    const isRkg = longHookCrossDownwardIndex == rkgdi;
 
     // Rho jack render text
     const rjkrt = isRhoJack ? '世' : '';

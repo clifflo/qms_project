@@ -23,29 +23,29 @@ export const getDcstl = (wbllhn, chelhn) => {
     E.cknwo(wblrct, 'wblrct');
     E.cknwo(cherct, 'cherct');
 
-    const isZeroOrOne = crsi => {
-      return (crsi == '0') || (crsi == '1');
+    const isZeroOrOne = crossSign => {
+      return (crossSign == '0') || (crossSign == '1');
     }
 
     const mapFn = cridx => {
 
-      const wcrsi = wblrct.lhcrsl[cridx].crsi;
-      const ccrsi = cherct.lhcrsl[cridx].crsi;
+      const wcrossSign = wblrct.lhcrsl[cridx].crossSign;
+      const ccrossSign = cherct.lhcrsl[cridx].crossSign;
 
-      E.cknws(wcrsi, 'wcrsi');
-      E.cknws(ccrsi, 'ccrsi');
+      E.cknws(wcrossSign, 'wcrossSign');
+      E.cknws(ccrossSign, 'ccrossSign');
 
-      if(!isZeroOrOne(wcrsi)){
+      if(!isZeroOrOne(wcrossSign)){
         throw new Error(
-          '[wcrsi] must be 1 or 0.');
+          '[wcrossSign] must be 1 or 0.');
       }
 
-      if(!isZeroOrOne(ccrsi)){
+      if(!isZeroOrOne(ccrossSign)){
         throw new Error(
-          '[ccrsi] must be 1 or 0.');
+          '[ccrossSign] must be 1 or 0.');
       }
 
-      return wcrsi != ccrsi;
+      return wcrossSign != ccrossSign;
     }
     return R.map(mapFn, R.range(0, 6));
   }

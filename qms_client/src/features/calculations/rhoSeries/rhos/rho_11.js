@@ -34,7 +34,7 @@ const getRhoContextSet_6 = () => {
 
       // Delta pilot cross list
       const dpilcl = R.find(
-        R.propEq('lhname', '純' + rhocxt.rhlhn),
+        R.propEq('longHookName', '純' + rhocxt.rhlhn),
         rhocs_5).lhcrsl;
 
       E.cknwa(dpilcl, 'dpilcl');
@@ -62,11 +62,11 @@ const getRhoContextSet_6 = () => {
 
 export const rhocs_6 = getRhoContextSet_6();
 
-export const getRcxt6ByLhn = lhname => {
+export const getRcxt6ByLhn = longHookName => {
 
   try {
     return getRcxtvByLhn(
-      lhname, rhocs_6, 6);
+      longHookName, rhocs_6, 6);
   }
   catch(err){
     console.error(err);

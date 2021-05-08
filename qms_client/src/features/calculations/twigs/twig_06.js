@@ -55,7 +55,7 @@ const getTkscSet = () => {
 
   const mapFn = i => {
     const celemIdx = i - 1;
-    const celem = itemOfElem(celemIdx);
+    const celem = itemOfElemental(celemIdx);
     const sTrunk = itemOfTrunk(i);
     const tTrunk = itemOfTrunk(i + 5);
 

@@ -53,8 +53,8 @@ export const getBakedNattos = () => {
 
     const genericShortHookOriginal = sentence[0];
     const genericShortHookElemental = sentence[1];
-    const externalShortHookBeanTrunk = sentence[4];
-    const ishbt = sentence[2];
+    const externalShortHookTrunk = sentence[4];
+    const internslShortHookTrunk = sentence[2];
     const bbssb = sentence[3];
     const bbscw = sentence[5] == '順';
     const fullSnapPea = getFullSnapPea(
@@ -70,8 +70,8 @@ export const getBakedNattos = () => {
       _type: 'bkdnto',
       genericShortHookOriginal,
       genericShortHookElemental,
-      externalShortHookBeanTrunk,
-      ishbt,
+      externalShortHookTrunk,
+      internslShortHookTrunk,
       ebbrs,
       ibbrs
     };

@@ -40,12 +40,12 @@ export const getTrnto = (
 
   if(isShetp){
 
-    E.cknws(natto.externalShortHookBeanTrunk, 'externalShortHookBeanTrunk');
+    E.cknws(natto.externalShortHookTrunk, 'externalShortHookTrunk');
     E.cknwa(natto.ebbrs, 'ebbrs');
     E.cknws(natto.genericShortHookElemental, 'genericShortHookElemental');
 
     // Displayed short hook bean trunk
-    const dshbt = natto.externalShortHookBeanTrunk;
+    const dshbt = natto.externalShortHookTrunk;
 
     // Displayed bean branch series
     const dbbrs = natto.ebbrs;
@@ -60,12 +60,12 @@ export const getTrnto = (
   }
   else {
 
-    E.cknws(natto.ishbt, 'externalShortHookBeanTrunk');
+    E.cknws(natto.internslShortHookTrunk, 'externalShortHookTrunk');
     E.cknwa(natto.ibbrs, 'ebbrs');
     E.cknws(natto.genericShortHookElemental, 'genericShortHookElemental');
 
     // Displayed short hook bean trunk
-    const dshbt = natto.ishbt;
+    const dshbt = natto.internslShortHookTrunk;
 
     // Displayed bean branch series
     const dbbrs = natto.ibbrs;
@@ -83,25 +83,28 @@ export const getTrnto = (
 
 export const buildCrosses = (
   fullSnapPea,
-  externalShortHookBeanTrunk,
-  ishbt,
-  crsi,
-  lhcdwi,
+  externalShortHookTrunk,
+  internslShortHookTrunk,
+  crossSign,
+  longHookCrossDownwardIndex,
   list) => {
 
-  const crtk = lhcdwi <= 2 ?
-    externalShortHookBeanTrunk : ishbt;
+  const crtk =
+    longHookCrossDownwardIndex <= 2 ?
+    externalShortHookTrunk :
+    internslShortHookTrunk;
 
-  const crossBranch = fullSnapPea[lhcdwi];
+  const crossBranch = fullSnapPea[
+    longHookCrossDownwardIndex];
 
   const crbelc = getTwigElemc(crossBranch);
   const crbele = elementContext[crbelc];
 
   return {
-    crsi,
+    crossSign,
     crtk,
     crossBranch,
     crbelc,
-    lhcdwi
+    longHookCrossDownwardIndex
   }
 }

@@ -19,15 +19,15 @@ export const buildRjkdi = rhogen => {
   }
 
   const lhcuwi = mapper[rhogen];
-  const lhcdwi = 5 - lhcuwi;
-  return lhcdwi;
+  const longHookCrossDownwardIndex = 5 - lhcuwi;
+  return longHookCrossDownwardIndex;
 }
 
 const getRhoContextSet_3 = () => {
 
   const mapFn_1 = (
     rlhsc,
-    lhname,
+    longHookName,
     rhogen) => {
 
     try{
@@ -43,7 +43,7 @@ const getRhoContextSet_3 = () => {
 
       return {
         _type: 'rhocxt_3',
-        lhname,
+        longHookName,
         rhlhn,
         rhogen,
         rjkdi,
@@ -91,21 +91,21 @@ const getRhoContextSet_3 = () => {
 
 export const rhocs_3 = getRhoContextSet_3();
 
-const getRcxt3ByLn = lhname => {
+const getRcxt3ByLn = longHookName => {
 
-  if(R.isNil(lhname)){
+  if(R.isNil(longHookName)){
     throw new Error(
       'Long hook name should not be nil '
       + 'for RHOCS_3.');
   }
 
   const rhocxt_3 = R.find(
-    R.propEq('lhname', lhname),
+    R.propEq('longHookName', longHookName),
     rhocs_3);
 
   if(R.isNil(rhocxt_3)){
     throw new Error(
-      `${lhname} is not a valid [lhname].`);
+      `${longHookName} is not a valid [longHookName].`);
   }
 
   return rhocxt_3;

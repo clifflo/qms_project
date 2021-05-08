@@ -29,16 +29,34 @@ export const elementalContext = {
   '土': 'Twig Soil'
 }
 
-export const getTwigEleme = elemc => {
-  return elementalContext[elemc];
+export const getTwigElementalEnglish =
+  elementalChinese => {
+  return elementalContext[elementalChinese];
 }
 
-export const isTwigMetal = eleme => {
-  return eleme == 'Twig Metal';
+export const isTwigMetal =
+  elementalEnglish => {
+  return elementalEnglish == 'Twig Metal';
 }
 
-export const isTwigFire = eleme => {
-  return eleme == 'Twig Fire';
+export const isTwigFire =
+  elementalEnglish => {
+  return elementalEnglish == 'Twig Fire';
+}
+
+export const isTwigWater =
+  elementalEnglish => {
+  return elementalEnglish == 'Twig Water';
+}
+
+export const isTwigEarth =
+  elementalEnglish => {
+  return elementalEnglish == 'Twig Earth';
+}
+
+export const isTwigWood =
+  elementalEnglish => {
+  return elementalEnglish == 'Twig Wood';
 }
 
 
@@ -73,7 +91,7 @@ export function itemOfBranch(index){
   return utItem(branchOrder, index);
 }
 
-export function itemOfElem(index){
+export function itemOfElemental(index){
   return utItem(elementalOrder, index);
 }
 

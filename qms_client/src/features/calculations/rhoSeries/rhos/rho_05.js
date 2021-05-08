@@ -58,7 +58,7 @@ export const getRcxtvByLhx = (
 }
 
 export const getRcxtvByLhn = (
-  lhname,
+  longHookName,
   rocsob,
   rocsvn) => {
 
@@ -82,18 +82,18 @@ export const getRcxtvByLhn = (
       'ROCSVN must be a number.');
   }
 
-  if(R.isNil(lhname)){
+  if(R.isNil(longHookName)){
     throw new Error(
       'LHNAME should not be nil.');
   }
 
   const rcxtob = R.find(
-    R.propEq('lhname', lhname),
+    R.propEq('longHookName', longHookName),
     rocsob);
 
   if(R.isNil(rcxtob)){
     throw new Error(
-      `${lhname} is not a valid long hook `
+      `${longHookName} is not a valid long hook `
       + `for rho context ${rocsvn}`);
   }
 
@@ -107,10 +107,10 @@ export const getRcxtvByLhn = (
   };
 }
 
-export const getRcxt1ByLhn = lhname => {
+export const getRcxt1ByLhn = longHookName => {
   try {
     return getRcxtvByLhn(
-      lhname, rhocs_1, 1);
+      longHookName, rhocs_1, 1);
   }
   catch(err){
     console.error(err);
@@ -129,10 +129,10 @@ export const getRcxt1ByLhx = lhidx => {
   }
 }
 
-export const getRcxt2ByLhn = lhname => {
+export const getRcxt2ByLhn = longHookName => {
   try {
     return getRcxtvByLhn(
-      lhname, rhocs_2, 2);
+      longHookName, rhocs_2, 2);
   }
   catch(err){
     console.error(err);

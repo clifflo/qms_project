@@ -104,7 +104,7 @@ const getRlhsl = () => {
       const rglhi = rgdecm ^ rhlix;
       const rglct1 = getRcxt1ByLhx(rglhi);
 
-      return rglct1.lhname;
+      return rglct1.longHookName;
     }
     catch(err){
       console.error(err);

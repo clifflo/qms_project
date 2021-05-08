@@ -26,7 +26,7 @@ const getRhoContextSet_8 = () => {
     E.cknwo(rpilcs, 'rpilcs');
     E.cknwa(dlhdfl, 'dlhdfl');
 
-    const lhcros = lhcrsl[rpilcs.lhcdwi];
+    const lhcros = lhcrsl[rpilcs.longHookCrossDownwardIndex];
     E.cknwo(lhcros);
 
     const dfccn = rpilcs.dfccn;
@@ -94,14 +94,14 @@ const getRhoContextSet_8 = () => {
 
 export const rhocs_8 = getRhoContextSet_8();
 
-export const getRcxt8ByLhn = lhname => {
+export const getRcxt8ByLhn = longHookName => {
   try {
     return getRcxtvByLhn(
-      lhname, rhocs_8, 8);
+      longHookName, rhocs_8, 8);
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get [rhocxt_8] by [lhname].')
+      'Cannot get [rhocxt_8] by [longHookName].')
   }
 }

@@ -39,7 +39,7 @@ export const getRhoContextSet_2 = () => {
       const ebbrs = eshcot.dbbrs;
 
       // External short hook bean trunk
-      const externalShortHookBeanTrunk = eshcot.dshbt;
+      const externalShortHookTrunk = eshcot.dshbt;
 
       const eshele = eshcot.genericShortHookElemental;
 
@@ -47,15 +47,15 @@ export const getRhoContextSet_2 = () => {
       const ibbrs = ishcot.dbbrs;
 
        // Internal short hook bean trunk
-      const ishbt = ishcot.dshbt;
+      const internslShortHookTrunk = ishcot.dshbt;
 
       const ishele = ishcot.genericShortHookElemental;
 
       E.cknwa(ebbrs, 'ebbrs');
-      E.cknws(externalShortHookBeanTrunk, 'externalShortHookBeanTrunk');
+      E.cknws(externalShortHookTrunk, 'externalShortHookTrunk');
       E.cknws(eshele, 'eshele');
       E.cknwa(ibbrs, 'ibbrs');
-      E.cknws(ishbt, 'ishbt');
+      E.cknws(internslShortHookTrunk, 'internslShortHookTrunk');
       E.cknws(ishele, 'ishele');
 
       const fullSnapPea = R.concat(ebbrs, ibbrs);
@@ -66,15 +66,15 @@ export const getRhoContextSet_2 = () => {
 
       const mapFn = R.curry(buildCrosses)
         (fullSnapPea)
-        (externalShortHookBeanTrunk)
-        (ishbt);
+        (externalShortHookTrunk)
+        (internslShortHookTrunk);
 
       const lhcrsl = RA.mapIndexed(
         mapFn,
         R.drop(1, lhBinary));
 
       return {
-        lhname: rhocxt.lhname,
+        longHookName: rhocxt.longHookName,
         eshori: rhocxt.eshori,
         ishori: rhocxt.ishori,
         ishele,

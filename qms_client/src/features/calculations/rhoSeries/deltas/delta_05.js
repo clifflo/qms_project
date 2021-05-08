@@ -20,10 +20,10 @@ export const getLnfbl = bilot => {
     const lhidx = binaryToDecimal(bilot);
     E.cknwn(lhidx);
 
-    const lhname = getRcxt1ByLhn(lhidx).lhname;
-    E.cknws(lhname);
+    const longHookName = getRcxt1ByLhn(lhidx).longHookName;
+    E.cknws(longHookName);
 
-    return lhname;
+    return longHookName;
   }
   catch(err){
     console.error(err);
@@ -44,5 +44,5 @@ export const getLnfol = oclot => {
   }
 
   const lhidx = octalToDecimal(oclot);
-  return getRcxt1ByLhn(lhidx).lhname;
+  return getRcxt1ByLhn(lhidx).longHookName;
 }

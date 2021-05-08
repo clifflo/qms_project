@@ -55,10 +55,10 @@ export const getDlcxt_2 =
   const chrgen = chrcxt.rhogen;
 
   const mapFn_1 = lhcros => {
-    const isStrike = dcstl[lhcros.lhcdwi];
+    const isStrike = dcstl[lhcros.longHookCrossDownwardIndex];
     if(isStrike){
       const strkcr =
-        chrcxt.lhcrsl[lhcros.lhcdwi];
+        chrcxt.lhcrsl[lhcros.longHookCrossDownwardIndex];
       return {
         ...lhcros,
         isStrike,
@@ -76,7 +76,7 @@ export const getDlcxt_2 =
   }
 
   const mapFn_2 = lhcros => {
-    const isStruck = dcstl[lhcros.lhcdwi];
+    const isStruck = dcstl[lhcros.longHookCrossDownwardIndex];
     return {
       ...lhcros,
       isStruck

@@ -23,7 +23,7 @@ const getRhoContextSet_4 = () => {
   const mapFn = rhocxt_3 => {
 
     const rhocxt_2 = R.find(
-      R.propEq('lhname', rhocxt_3.lhname),
+      R.propEq('longHookName', rhocxt_3.longHookName),
       rhocs_2);
 
     const natto = R.find(
@@ -67,10 +67,10 @@ const getRhoContextSet_4 = () => {
 
 export const rhocs_4 = getRhoContextSet_4();
 
-export const getRcxt4ByLhn = lhname => {
+export const getRcxt4ByLhn = longHookName => {
   try {
     return getRcxtvByLhn(
-      lhname, rhocs_4, 4);
+      longHookName, rhocs_4, 4);
   }
   catch(err){
     console.error(err);

@@ -49,9 +49,9 @@ const getRhoContextSet_1 = () => {
 
   const mapFn = sentence => {
 
-    let eshalt;
-    let ishalt;
-    let lhname;
+    let externalShortHookAlternate;
+    let internalShortHookAlternate;
+    let longHookName;
 
     if(sentence == ''){
       throw new Error(
@@ -59,31 +59,31 @@ const getRhoContextSet_1 = () => {
     }
 
     if(sentence[1] == '為'){
-      eshalt = sentence[2];
-      ishalt = sentence[2];
-      lhname = '純' + sentence[0];
+      externalShortHookAlternate = sentence[2];
+      internalShortHookAlternate = sentence[2];
+      longHookName = '純' + sentence[0];
     }
     else {
-      eshalt = sentence[0];
-      ishalt = sentence[1];
-      lhname = R.drop(2, sentence);
+      externalShortHookAlternate = sentence[0];
+      internalShortHookAlternate = sentence[1];
+      longHookName = R.drop(2, sentence);
     }
 
-    if(R.isNil(eshalt)){
+    if(R.isNil(externalShortHookAlternate)){
       throw new Error(
         'ESHALT should not be nil.');
     }
 
-    if(R.isNil(ishalt)){
+    if(R.isNil(internalShortHookAlternate)){
       throw new Error(
         'ISHALT should not be nil.');
     }
 
     const eshidx =
-      getGshalx(eshalt);
+      getGshalx(externalShortHookAlternate);
 
     const ishidx =
-      getGshalx(ishalt);
+      getGshalx(internalShortHookAlternate);
 
     const eshori =
       gshoro[eshidx];
@@ -96,11 +96,11 @@ const getRhoContextSet_1 = () => {
       ishidx;
 
     return {
-      eshalt,
-      ishalt,
+      externalShortHookAlternate,
+      internalShortHookAlternate,
       eshori,
       ishori,
-      lhname,
+      longHookName,
       eshidx,
       ishidx,
       lhidx
