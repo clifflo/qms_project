@@ -6,7 +6,7 @@ import {
   itemOfTrunk
 } from '../../twigs/twig_01';
 import {
-  bkntos
+  bakedNattos
 } from './rho_01';
 import {
   getRcxtvByLhn
@@ -28,7 +28,7 @@ const getRhoContextSet_4 = () => {
 
     const natto = R.find(
       R.propEq('genericShortHookOriginal', rhocxt_3.rhlhn),
-      bkntos);
+      bakedNattos);
 
     if(R.isNil(natto)){
       throw new Error(

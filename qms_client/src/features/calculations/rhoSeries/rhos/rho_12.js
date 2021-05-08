@@ -14,7 +14,7 @@ import {
   rhocs_1
 } from './rho_01';
 import {
-  getRcxt1ByLhn
+  getRhoContext1ByLongHookName
 } from './rho_05';
 import {
   getRcxt6ByLhn,
@@ -24,14 +24,14 @@ import {
 const getRhoContextSet_7 = () => {
 
   const mapFn_1n =
-    (rjkdi, rkgdi, rqndi, lhcros) => {
+    (rjkdi, rkgdi, rqndi, longHookCross) => {
 
     if(R.isNil(rjkdi)){
       throw new Error(
         'RJKDI should not be nil.');
     }
 
-    const longHookCrossDownwardIndex = lhcros.longHookCrossDownwardIndex;
+    const longHookCrossDownwardIndex = longHookCross.longHookCrossDownwardIndex;
 
     if(R.isNil(longHookCrossDownwardIndex)){
       throw new Error(
@@ -57,7 +57,7 @@ const getRhoContextSet_7 = () => {
     ]);
 
     return {
-      ...lhcros,
+      ...longHookCross,
       rfcrt,
       isRhoJack,
       isRqn,

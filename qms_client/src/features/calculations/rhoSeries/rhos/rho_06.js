@@ -15,7 +15,7 @@ import {
 } from '../../twigs/twig_01';
 import {
   getRcxtvByLhn,
-  getRcxt1ByLhn,
+  getRhoContext1ByLongHookName,
   getRcxt1ByLhx
 } from './rho_05';
 import {
@@ -37,7 +37,7 @@ const getRhgbs = () => {
   const mapFn = tlhna => {
 
     const tlhidx =
-      getRcxt1ByLhn(tlhna)
+      getRhoContext1ByLongHookName(tlhna)
       .lhidx;
 
     if(R.isNil(tlhidx)){
@@ -93,7 +93,7 @@ const getRlhsl = () => {
       const rgdecm = binaryToDecimal(rgbnry);
       const rhlhn = '純' + genericShortHookOriginal;
       const rhlix =
-        getRcxt1ByLhn(rhlhn)
+        getRhoContext1ByLongHookName(rhlhn)
         .lhidx;
 
       if(R.isNil(rhlix)){

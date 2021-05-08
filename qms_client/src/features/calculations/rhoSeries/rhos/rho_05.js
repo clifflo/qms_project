@@ -107,7 +107,7 @@ export const getRcxtvByLhn = (
   };
 }
 
-export const getRcxt1ByLhn = longHookName => {
+export const getRhoContext1ByLongHookName = longHookName => {
   try {
     return getRcxtvByLhn(
       longHookName, rhocs_1, 1);

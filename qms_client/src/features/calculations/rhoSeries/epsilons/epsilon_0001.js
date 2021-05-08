@@ -6,7 +6,7 @@ import {
   dhKing
 } from '../deltas/delta_07';
 import {
-  getErco,
+  getElementalCorrelation,
   isErcoEitherSeed
 } from '../../twigs/twig_02';
 
@@ -16,10 +16,10 @@ const epsl_0001t = dlcxt_2 => {
   const jackCross = dhJack(dhcxt_2);
   const kingCross = dhKing(dhcxt_2);
 
-  const erco = getErco(
+  const elementalCorrelation = getElementalCorrelation(
     jackCross.crbelc, kingCross.crbelc);
 
-  return isErcoEitherSeed(erco);
+  return isErcoEitherSeed(elementalCorrelation);
 }
 
 // 'd' id description.

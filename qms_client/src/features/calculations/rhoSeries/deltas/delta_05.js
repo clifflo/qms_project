@@ -20,7 +20,7 @@ export const getLnfbl = bilot => {
     const lhidx = binaryToDecimal(bilot);
     E.cknwn(lhidx);
 
-    const longHookName = getRcxt1ByLhn(lhidx).longHookName;
+    const longHookName = getRhoContext1ByLongHookName(lhidx).longHookName;
     E.cknws(longHookName);
 
     return longHookName;
@@ -44,5 +44,5 @@ export const getLnfol = oclot => {
   }
 
   const lhidx = octalToDecimal(oclot);
-  return getRcxt1ByLhn(lhidx).longHookName;
+  return getRhoContext1ByLongHookName(lhidx).longHookName;
 }

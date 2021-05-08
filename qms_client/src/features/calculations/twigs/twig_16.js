@@ -3,7 +3,7 @@ import {
 } from './twig_02';
 
 // Get element cooperation
-export const getErco = (selem, telem) => {
+export const getElementalCorrelation = (selem, telem) => {
 
   E.cknws(selem);
   E.cknws(telem);
@@ -32,10 +32,10 @@ export const getErco = (selem, telem) => {
 }
 
 export const isErcoEitherDraw =
-  erco => erco == 'Either Draw';
+  elementalCorrelation => elementalCorrelation == 'Either Draw';
 
 export const isErcoEitherSeed =
-  erco => erco == 'Either Seed';
+  elementalCorrelation => elementalCorrelation == 'Either Seed';
 
 export const isErcoEitherHacker =
-  erco => erco == 'Either Hacker';
+  elementalCorrelation => elementalCorrelation == 'Either Hacker';

@@ -16,23 +16,23 @@ import {
 
 const getRhoContextSet_5 = () => {
 
-  const mapFn_1n = (rhshel, _lhcros) => {
+  const mapFn_1n = (rhshel, _longHookCross) => {
 
     try{
 
       const rrawf = getElre(
-        rhshel, _lhcros.crbelc);
+        rhshel, _longHookCross.crbelc);
       E.cknws(rrawf);
 
       const dfcdi = R.find(
         R.propEq('rrawf', rrawf), dfcdl);
 
-      const lhcros = {
-        ..._lhcros,
+      const longHookCross = {
+        ..._longHookCross,
         ...dfcdi
       }
 
-      return lhcros;
+      return longHookCross;
     }
     catch(err){
       console.error(err);

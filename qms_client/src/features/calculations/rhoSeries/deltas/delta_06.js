@@ -54,20 +54,20 @@ export const getDlcxt_2 =
   // Cheese rho generation
   const chrgen = chrcxt.rhogen;
 
-  const mapFn_1 = lhcros => {
-    const isStrike = dcstl[lhcros.longHookCrossDownwardIndex];
+  const mapFn_1 = longHookCross => {
+    const isStrike = dcstl[longHookCross.longHookCrossDownwardIndex];
     if(isStrike){
       const strkcr =
-        chrcxt.lhcrsl[lhcros.longHookCrossDownwardIndex];
+        chrcxt.lhcrsl[longHookCross.longHookCrossDownwardIndex];
       return {
-        ...lhcros,
+        ...longHookCross,
         isStrike,
         strkcr
       }
     }
     else {
       return {
-        ...lhcros,
+        ...longHookCross,
         isStrike
       }
     }
@@ -75,10 +75,10 @@ export const getDlcxt_2 =
 
   }
 
-  const mapFn_2 = lhcros => {
-    const isStruck = dcstl[lhcros.longHookCrossDownwardIndex];
+  const mapFn_2 = longHookCross => {
+    const isStruck = dcstl[longHookCross.longHookCrossDownwardIndex];
     return {
-      ...lhcros,
+      ...longHookCross,
       isStruck
     }
   }

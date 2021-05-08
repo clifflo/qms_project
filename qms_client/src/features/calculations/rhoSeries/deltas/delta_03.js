@@ -30,12 +30,12 @@ const getHdrcs = () => {
     const lhcrsl_1 = rhocxt_8.lhcrsl;
 
     const mapFn = idx => {
-      const lhcros = lhcrsl_1[idx];
+      const longHookCross = lhcrsl_1[idx];
       const deltaPaladinChinese = dpebt.dpcst[idx];
       const deltaPaladinEnglish = getDplen(deltaPaladinChinese);
 
       return {
-        ...lhcros,
+        ...longHookCross,
         deltaPaladinChinese,
         deltaPaladinEnglish
       }

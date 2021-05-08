@@ -26,8 +26,8 @@ const getRhoContextSet_8 = () => {
     E.cknwo(rpilcs, 'rpilcs');
     E.cknwa(dlhdfl, 'dlhdfl');
 
-    const lhcros = lhcrsl[rpilcs.longHookCrossDownwardIndex];
-    E.cknwo(lhcros);
+    const longHookCross = lhcrsl[rpilcs.longHookCrossDownwardIndex];
+    E.cknwo(longHookCross);
 
     const dfccn = rpilcs.dfccn;
     E.cknws(dfccn, 'dfccn');
@@ -40,14 +40,14 @@ const getRhoContextSet_8 = () => {
     if(isRbxc){
       return {
         isRbxc,
-        ...lhcros,
+        ...longHookCross,
         rpilcs
       }
     }
     else {
       return {
         isRbxc,
-        ...lhcros
+        ...longHookCross
       }
     }
   }

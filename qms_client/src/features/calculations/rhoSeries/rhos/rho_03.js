@@ -26,7 +26,7 @@ export const getTrnto = (
 
   if(R.isNil(genericShortHookOriginal)){
     throw new Error(
-      '[genericShortHookOriginal] should not be nil.');
+      'Generic Short HookOriginal should not be nil.');
   }
 
   const natto = R.find(

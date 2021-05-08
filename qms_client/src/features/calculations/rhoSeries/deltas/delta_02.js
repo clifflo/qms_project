@@ -14,7 +14,7 @@ import {
 } from './delta_01';
 
 // Delta paladin start position map
-const dpspm = {
+const deltaPaladinStartPositionMap = {
   '甲': '丙青龍',
   '乙': '丙青龍',
   '丙': '丙朱雀',
@@ -52,7 +52,7 @@ const getDpevl = () => {
     }
 
     // Delta paladin start position
-    const dpstp = dpspm[dpdtr];
+    const dpstp = deltaPaladinStartPositionMap[dpdtr];
 
     // Delta Paladin Index
     const dpdix = utGetIdx(dpstp, dplco) + 1;
