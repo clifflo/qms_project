@@ -1,11 +1,11 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  utGetIdx
-} from '../../utils/util_01';
+  getIndexFromWordList
+} from '../../utilityFiles/utilityFile_01';
 import {
   shortHookContextSet
-} from './rho_01';
+} from './rhoFile_01';
 
 const longHookParagraph = R.join(',', [
   '乾為天,天風姤,天山遯,天地否,風地觀,山地剝,火地晉,地風升',
@@ -19,7 +19,7 @@ const longHookParagraph = R.join(',', [
   '澤水困,澤地萃,澤山咸,水山蹇,地山謙,雷山小過,雷澤歸妹'
 ]);
 
-const getGenericShortHookIndexByAlternative =
+const getShortHookContextByGenericShortHookAlternative =
   genericShortHookAlternative => {
 
   checkNilWithString(
@@ -32,31 +32,41 @@ const getGenericShortHookIndexByAlternative =
       R.prop('genericShortHookAlternative'),
       shortHookContextSet);
 
-  return shortHookContext.genericShortHookIndex;
+  return shortHookContext;
 }
 
 const getRhoContextSet_1 = () => {
 
-  const mapFn = sentence => {
+  const rhoContextMapFunction_1 =
+    longHookSentence => {
 
     let externalShortHookAlternative;
     let internalShortHookAlternative;
     let longHookName;
 
-    if(sentence == ''){
+    if(longHookSentence == ''){
       throw new Error(
         'Sentence should not be empty string.')
     }
 
-    if(sentence[1] == '為'){
-      externalShortHookAlternative = sentence[2];
-      internalShortHookAlternative = sentence[2];
-      longHookName = '純' + sentence[0];
+    if(longHookSentence[1] == '為'){
+
+      externalShortHookAlternative =
+        longHookSentence[2];
+
+      internalShortHookAlternative =
+        longHookSentence[2];
+
+      longHookName = '純' + longHookSentence[0];
     }
     else {
-      externalShortHookAlternative = sentence[0];
-      internalShortHookAlternative = sentence[1];
-      longHookName = R.drop(2, sentence);
+      externalShortHookAlternative =
+        longHookSentence[0];
+
+      internalShortHookAlternative =
+        longHookSentence[1];
+
+      longHookName = R.drop(2, longHookSentence);
     }
 
     E.checkNilWithString(
@@ -69,21 +79,23 @@ const getRhoContextSet_1 = () => {
       'Internal short hook alternate'
     )
 
-    const eshidx =
-      getGshalx(externalShortHookAlternative);
+    const externalShortHookIndex =
+      getGenericShortHookIndexByAlternative(
+        externalShortHookAlternative);
 
-    const ishidx =
-      getGshalx(internalShortHookAlternative);
+    const internalShortHookIndex =
+      getGenericShortHookIndexByAlternative(
+        internalShortHookAlternative);
 
     const eshori =
-      gshoro[eshidx];
+      gshoro[externalShortHookIndex];
 
     const ishori =
-      gshoro[ishidx];
+      gshoro[internalShortHookIndex];
 
     const lhidx =
-      (eshidx * 8) +
-      ishidx;
+      (externalShortHookIndex * 8) +
+      internalShortHookIndex;
 
     return {
       externalShortHookAlternative,
@@ -91,18 +103,19 @@ const getRhoContextSet_1 = () => {
       eshori,
       ishori,
       longHookName,
-      eshidx,
-      ishidx,
+      externalShortHookIndex,
+      internalShortHookIndex,
       lhidx
     }
   }
 
   return R.compose(
-    R.map(mapFn),
+    R.map(rhoContextMapFunction_1),
     R.split(',')
   )
   (longHookParagraph);
 
 }
 
-export const rhoContextSet_1 = getRhoContextSet_1();
+export const rhoContextSet_1 =
+  getRhoContextSet_1();
