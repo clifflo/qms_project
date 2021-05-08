@@ -65,7 +65,7 @@ export const dpldl = [
 
 export const getDplen = deltaPaladinChinese => {
 
-  E.cknws(deltaPaladinChinese, 'deltaPaladinChinese');
+  E.checkNilWithString(deltaPaladinChinese, 'deltaPaladinChinese');
 
   try{
     const result = R.find(

@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
 // Check by nil with string
-export const cknws = (varStr, varName) => {
+export const checkNilWithString = (varStr, varName) => {
 
   if(R.isNil(varStr)){
     throw new Error(`${varName} should not be nil.`);
@@ -37,7 +37,7 @@ export const cknwo = (varObj, varName) => {
   }
 }
 
-export const cknwa = (varArray, varName) => {
+export const checkNilWithArray = (varArray, varName) => {
 
   if(R.isNil(varArray)){
     throw new Error(

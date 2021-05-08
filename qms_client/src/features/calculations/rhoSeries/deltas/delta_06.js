@@ -16,9 +16,9 @@ import {
 export const getDlcxt_2 =
   (wbllhn, chelhn, dpdtr) => {
 
-  E.cknws(wbllhn, 'wbllhn');
-  E.cknws(chelhn, 'chelhn');
-  E.cknws(dpdtr, 'dpdtr');
+  E.checkNilWithString(wbllhn, 'wbllhn');
+  E.checkNilWithString(chelhn, 'chelhn');
+  E.checkNilWithString(dpdtr, 'dpdtr');
 
   const dlcxt_1 = getDlcxt_1(wbllhn, dpdtr);
   const dcstl = getDcstl(wbllhn, chelhn);

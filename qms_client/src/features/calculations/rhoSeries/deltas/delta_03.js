@@ -22,8 +22,8 @@ const getHdrcs = () => {
 
   const mapFn_1n = (dpdtr, longHookName) => {
 
-    E.cknws(dpdtr, 'dpdtr');
-    E.cknws(longHookName, 'longHookName');
+    E.checkNilWithString(dpdtr, 'dpdtr');
+    E.checkNilWithString(longHookName, 'longHookName');
 
     const dpebt = getDpebt(dpdtr);
     const rhocxt_8 = getRcxt8ByLhn(longHookName);

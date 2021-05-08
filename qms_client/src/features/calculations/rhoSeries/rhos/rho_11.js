@@ -37,7 +37,7 @@ const getRhoContextSet_6 = () => {
         R.propEq('longHookName', '純' + rhocxt.rhlhn),
         rhocs_5).lhcrsl;
 
-      E.cknwa(dpilcl, 'dpilcl');
+      E.checkNilWithArray(dpilcl, 'dpilcl');
 
       return {
         ...rhocxt,

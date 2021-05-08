@@ -22,7 +22,7 @@ const getRhoContextSet_5 = () => {
 
       const rrawf = getElre(
         rhshel, _longHookCross.crbelc);
-      E.cknws(rrawf);
+      E.checkNilWithString(rrawf);
 
       const dfcdi = R.find(
         R.propEq('rrawf', rrawf), dfcdl);

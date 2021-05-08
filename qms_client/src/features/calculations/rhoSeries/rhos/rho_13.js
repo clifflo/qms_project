@@ -22,15 +22,15 @@ const getRhoContextSet_8 = () => {
   const mapFn_1n =
     (lhcrsl, dlhdfl, rpilcs) => {
 
-    E.cknwa(lhcrsl, 'lhcrsl');
+    E.checkNilWithArray(lhcrsl, 'lhcrsl');
     E.cknwo(rpilcs, 'rpilcs');
-    E.cknwa(dlhdfl, 'dlhdfl');
+    E.checkNilWithArray(dlhdfl, 'dlhdfl');
 
     const longHookCross = lhcrsl[rpilcs.longHookCrossDownwardIndex];
     E.cknwo(longHookCross);
 
     const dfccn = rpilcs.dfccn;
-    E.cknws(dfccn, 'dfccn');
+    E.checkNilWithString(dfccn, 'dfccn');
 
     // Is rho boxed cross, i.e. a cross
     // with a hidden part.
@@ -64,15 +64,15 @@ const getRhoContextSet_8 = () => {
       const dpilcl = rhocxt.dpilcl;
       const dlhdfl = rhocxt.dlhdfl;
 
-      E.cknwa(dpilcl, 'dpilcl');
-      E.cknwa(dlhdfl, 'dlhdfl');
+      E.checkNilWithArray(dpilcl, 'dpilcl');
+      E.checkNilWithArray(dlhdfl, 'dlhdfl');
 
       const lhcrsl =
         R.map(
           mapFn_1c(rhocxt.lhcrsl)(dlhdfl),
           dpilcl);
 
-      E.cknwa(lhcrsl, 'lhcrsl');
+      E.checkNilWithArray(lhcrsl, 'lhcrsl');
 
       return {
         ...rhocxt,

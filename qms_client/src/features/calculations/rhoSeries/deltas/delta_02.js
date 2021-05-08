@@ -89,7 +89,7 @@ export const dpevl = getDpevl();
 // Get delta paladin envelop by trunk
 export const getDpebt = dpdtr => {
 
-  E.cknws(dpdtr, 'dpdtr');
+  E.checkNilWithString(dpdtr, 'dpdtr');
 
   if(!isValidTrunk(dpdtr)){
     throw new Error(

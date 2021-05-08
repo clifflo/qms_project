@@ -36,7 +36,7 @@ export const getRhoContextSet_2 = () => {
       E.cknwo(ishcot, 'eshcot');
 
       // External bean branch series
-      const ebbrs = eshcot.dbbrs;
+      const externalSnapPeass = eshcot.dbbrs;
 
       // External short hook bean trunk
       const externalShortHookTrunk = eshcot.dshbt;
@@ -51,21 +51,21 @@ export const getRhoContextSet_2 = () => {
 
       const ishele = ishcot.genericShortHookElemental;
 
-      E.cknwa(ebbrs, 'ebbrs');
-      E.cknws(externalShortHookTrunk, 'externalShortHookTrunk');
-      E.cknws(eshele, 'eshele');
-      E.cknwa(ibbrs, 'ibbrs');
-      E.cknws(internslShortHookTrunk, 'internslShortHookTrunk');
-      E.cknws(ishele, 'ishele');
+      E.checkNilWithArray(externalSnapPeass, 'externalSnapPeass');
+      E.checkNilWithString(externalShortHookTrunk, 'externalShortHookTrunk');
+      E.checkNilWithString(eshele, 'eshele');
+      E.checkNilWithArray(ibbrs, 'ibbrs');
+      E.checkNilWithString(internslShortHookTrunk, 'internslShortHookTrunk');
+      E.checkNilWithString(ishele, 'ishele');
 
-      const fullSnapPea = R.concat(ebbrs, ibbrs);
+      const fullSnapPeass = R.concat(externalSnapPeass, ibbrs);
 
       const lhBinary = decimalToBinary(
         rhocxt.lhidx,
         6);
 
       const mapFn = R.curry(buildCrosses)
-        (fullSnapPea)
+        (fullSnapPeass)
         (externalShortHookTrunk)
         (internslShortHookTrunk);
 

@@ -10,7 +10,7 @@ export const getLnfbl = bilot => {
 
   try{
 
-    E.cknws(bilot, 'bilot');
+    E.checkNilWithString(bilot, 'bilot');
 
     if(bilot.length != 7){
       throw new Error(
@@ -21,7 +21,7 @@ export const getLnfbl = bilot => {
     E.cknwn(lhidx);
 
     const longHookName = getRhoContext1ByLongHookName(lhidx).longHookName;
-    E.cknws(longHookName);
+    E.checkNilWithString(longHookName);
 
     return longHookName;
   }
@@ -36,7 +36,7 @@ export const getLnfbl = bilot => {
 // Get long hook name from octal lots
 export const getLnfol = oclot => {
 
-  E.cknws(oclot, 'oclot');
+  E.checkNilWithString(oclot, 'oclot');
 
   if(oclot.length != 5){
     throw new Error(

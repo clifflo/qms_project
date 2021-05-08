@@ -8,7 +8,7 @@ import {
   decimalToBinary
 } from '../../utils/util_02';
 import {
-  bkntos,
+  bakedNattos,
   gshoro
 } from './rho_01';
 import {
@@ -30,12 +30,18 @@ export const getTrnto = (
   }
 
   const natto = R.find(
-    R.propEq('genericShortHookOriginal', genericShortHookOriginal),
-    bkntos);
+    R.propEq(
+      'genericShortHookOriginal',
+      genericShortHookOriginal),
+    bakedNattos);
 
   if(!natto){
     throw new Error(
-      `Cannot find natto. ${genericShortHookOriginal} is not valid.`);
+      'Cannot find natto. '
+      + genericShortHookOriginal
+      + ' '
+      + 'is not a valid Generic '
+      + 'Short Hook Original.');
   }
 
   if(isShetp){

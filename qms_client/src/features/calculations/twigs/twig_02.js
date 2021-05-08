@@ -31,8 +31,8 @@ export const isElreDraw = elre => elre == 'Draw';
 
 export const getElre = (selem, telem) => {
 
-  E.cknws(selem);
-  E.cknws(telem);
+  E.checkNilWithString(selem);
+  E.checkNilWithString(telem);
 
   if(!isValidElem(selem)){
     throw new Error(

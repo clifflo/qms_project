@@ -10,7 +10,7 @@ import {
   itemOfBranch
 } from '../../twigs/twig_01';
 
-export const rawntos =
+export const rawNattos =
   R.join(',', [
     '乾金甲子壬順佈,坎水戊寅戊順佈',
     '艮土丙辰丙順佈,震木庚子庚順佈',
@@ -18,25 +18,24 @@ export const rawntos =
     '坤土乙未癸逆佈,兌金丁巳丁逆佈',
   ])
 
-// Full bean branch series
-export const getFullSnapPea = (bbssb, bbscw) => {
+export const getFullSnapPea = (beginningSnapPea, snapPeasRunClockwise) => {
 
   try{
 
-    E.cknws(bbssb, 'bbssb');
+    E.checkNilWithString(beginningSnapPea, 'beginningSnapPea');
 
-    const bbsbi = indexOfBranch(bbssb);
+    const bbsbi = indexOfBranch(beginningSnapPea);
     E.cknwn(bbsbi, 'bbsbi');
 
     const mapFn = idx => {
       const rawAdjustment = idx * 2;
-      const finalAdjustment = bbscw ?
+      const finalAdjustment = snapPeasRunClockwise ?
         rawAdjustment : (-rawAdjustment);
       return itemOfBranch(bbsbi + finalAdjustment);
     }
 
-    const fullSnapPea = R.map(mapFn, R.range(0, 6))
-    return fullSnapPea;
+    const fullSnapPeas = R.map(mapFn, R.range(0, 6))
+    return fullSnapPeas;
   }
   catch(err){
     console.error(err);
@@ -55,16 +54,16 @@ export const getBakedNattos = () => {
     const genericShortHookElemental = sentence[1];
     const externalShortHookTrunk = sentence[4];
     const internslShortHookTrunk = sentence[2];
-    const bbssb = sentence[3];
-    const bbscw = sentence[5] == '順';
-    const fullSnapPea = getFullSnapPea(
-      bbssb, bbscw);
+    const beginningSnapPea = sentence[3];
+    const snapPeasRunClockwise = sentence[5] == '順';
+    const fullSnapPeas = getFullSnapPea(
+      beginningSnapPea, snapPeasRunClockwise);
 
-    const ebbrs =
-      R.reverse(R.takeLast(3, fullSnapPea));
+    const externalSnapPeas =
+      R.reverse(R.takeLast(3, fullSnapPeas));
 
     const ibbrs =
-      R.reverse(R.take(3, fullSnapPea));
+      R.reverse(R.take(3, fullSnapPeas));
 
     return {
       _type: 'bkdnto',
@@ -72,7 +71,7 @@ export const getBakedNattos = () => {
       genericShortHookElemental,
       externalShortHookTrunk,
       internslShortHookTrunk,
-      ebbrs,
+      externalSnapPeas,
       ibbrs
     };
   }
@@ -80,7 +79,7 @@ export const getBakedNattos = () => {
   return R.compose(
     R.map(mapFn),
     R.split(','))
-    (rawntos);
+    (rawNattos);
 }
 
 export const bakedNattos = getBakedNattos();

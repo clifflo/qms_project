@@ -74,7 +74,7 @@ const getRhoContextSet_7 = () => {
 
     E.cknwn(rjkdi, 'rjkdi');
     E.cknwn(rkgdi, 'rkgdi');
-    E.cknwa(_lhcrsl, '_lhcrsl');
+    E.checkNilWithArray(_lhcrsl, '_lhcrsl');
 
     // Rho jack cross
     const rjkcr = _lhcrsl[rjkdi];
@@ -82,7 +82,7 @@ const getRhoContextSet_7 = () => {
 
     // Rho jack cross branch
     const rjkbh = rjkcr.crossBranch;
-    E.cknws(rjkbh, 'rjkbh');
+    E.checkNilWithString(rjkbh, 'rjkbh');
 
     if(!isValidBranch(rjkbh)){
       throw new Error(

@@ -5,13 +5,13 @@ import {
 // Get element cooperation
 export const getElementalCorrelation = (selem, telem) => {
 
-  E.cknws(selem);
-  E.cknws(telem);
+  E.checkNilWithString(selem);
+  E.checkNilWithString(telem);
 
   try{
 
     const elre = getElre(selem, telem);
-    E.cknws(elre, 'elre');
+    E.checkNilWithString(elre, 'elre');
 
     if(elre == 'Draw'){
       return 'Either Draw';

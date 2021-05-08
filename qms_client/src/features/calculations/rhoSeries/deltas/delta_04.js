@@ -32,8 +32,8 @@ export const getDcstl = (wbllhn, chelhn) => {
       const wcrossSign = wblrct.lhcrsl[cridx].crossSign;
       const ccrossSign = cherct.lhcrsl[cridx].crossSign;
 
-      E.cknws(wcrossSign, 'wcrossSign');
-      E.cknws(ccrossSign, 'ccrossSign');
+      E.checkNilWithString(wcrossSign, 'wcrossSign');
+      E.checkNilWithString(ccrossSign, 'ccrossSign');
 
       if(!isZeroOrOne(wcrossSign)){
         throw new Error(
