@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   longHookParagraph,
-  getShortHookContextByGenericShortHookAlternative
+  getShortHookContextByAlternative
 } from './rhoFile_04';
 
 const rhoContextMapFunction_1 =

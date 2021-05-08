@@ -20,8 +20,7 @@ export const longHookParagraph =
   '澤水困,澤地萃,澤山咸,水山蹇,地山謙,雷山小過,雷澤歸妹'
 ]);
 
-export const
-  getShortHookContextByGenericShortHookAlternative =
+export const getShortHookContextByAlternative =
   genericShortHookAlternative => {
 
   checkNilWithString(

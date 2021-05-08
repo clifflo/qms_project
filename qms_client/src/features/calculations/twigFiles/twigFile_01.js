@@ -18,20 +18,62 @@ export const trunkContext = {
   '癸': 'Lamda'
 }
 
-export const elementalOrder = '金水木火土';
-
 export const elementalContextSet = [
   {
     elementalIndex: 0,
     elementalChinese: '金',
     elementalEnglish: 'Twig Metal'
   },
-  {}
+  {
+    elementalIndex: 1,
+    elementalChinese: '水',
+    elementalEnglish: 'Twig Water'
+  },
+  {
+    elementalIndex: 2,
+    elementalChinese: '木',
+    elementalEnglish: 'Twig Wood'
+  },
+  {
+    elementalIndex: 3,
+    elementalChinese: '火',
+    elementalEnglish: 'Twig Fire'
+  },
+  {
+    elementalIndex: 4,
+    elementalChinese: '土',
+    elementalEnglish: 'Twig Earth'
+  }
+];
 
-]
-export const getTwigElementalEnglish =
+export const getTwigElementalContextByIndex =
+  elementalIndex => {
+
+  checkNilWithNumber(
+    elementalIndex,
+    'Elemental Index');
+
+  const elementalContext =
+    R.find(
+      R.propEq('elementalIndex', elementalIndex),
+      elementalContextSet));
+
+  return elementalContext;
+}
+
+export const getTwigElementalContextByChinese =
   elementalChinese => {
-  return elementalContext[elementalChinese];
+
+  checkNilWithString(
+    elementalChinese,
+    'Elemental Chinese');
+
+  const elementalContext =
+    R.find(
+      R.propEq('elementalChinese', elementalChinese),
+      elementalContextSet));
+
+  return elementalContext;
 }
 
 export const isTwigMetal =
