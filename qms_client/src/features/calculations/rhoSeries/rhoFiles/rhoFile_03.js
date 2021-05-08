@@ -7,7 +7,8 @@ import {
   shortHookContextSet
 } from './rhoFile_01';
 
-export const longHookParagraph = R.join(',', [
+export const longHookParagraph =
+  R.join(',', [
   '乾為天,天風姤,天山遯,天地否,風地觀,山地剝,火地晉,地風升',
   '火天大有,坎為水,水澤節,水雷屯,水火既濟,澤火革,雷火豐',
   '地火明夷,地水師,艮為山,山火賁,山天大畜,山澤損,火澤睽',

@@ -56,40 +56,51 @@ export const getFullSnapPeas =
   }
 }
 
-export const getBakedNattoSet = () => {
+const bakedNattoMapFunction = rawNatto => {
 
-  const bakedNattoMapFunction = sentence => {
+  const genericShortHookOriginal = rawNatto[0];
+  const genericShortHookElemental = rawNatto[1];
+  const externalShortHookTrunk = rawNatto[4];
+  const internslShortHookTrunk = rawNatto[2];
+  const beginningSnapPea = rawNatto[3];
+  const snapPeasRunClockwise = rawNatto[5] == '順';
+  const fullSnapPeas = getFullSnapPeas(
+    beginningSnapPea, snapPeasRunClockwise);
 
-    const genericShortHookOriginal = sentence[0];
-    const genericShortHookElemental = sentence[1];
-    const externalShortHookTrunk = sentence[4];
-    const internslShortHookTrunk = sentence[2];
-    const beginningSnapPea = sentence[3];
-    const snapPeasRunClockwise = sentence[5] == '順';
-    const fullSnapPeas = getFullSnapPeas(
-      beginningSnapPea, snapPeasRunClockwise);
+  const externalSnapPeas =
+    R.reverse(R.takeLast(3, fullSnapPeas));
 
-    const externalSnapPeas =
-      R.reverse(R.takeLast(3, fullSnapPeas));
+  const internalSnapPeas =
+    R.reverse(R.take(3, fullSnapPeas));
 
-    const internalSnapPeas =
-      R.reverse(R.take(3, fullSnapPeas));
-
-    return {
-      _type: 'Baked Natto',
-      genericShortHookOriginal,
-      genericShortHookElemental,
-      externalShortHookTrunk,
-      internslShortHookTrunk,
-      externalSnapPeas,
-      internalSnapPeas
-    };
-  }
-
-  return R.compose(
-    R.map(bakedNattoMapFunction),
-    R.split(','))
-    (rawNattoSet);
+  return {
+    _type: 'Baked Natto',
+    genericShortHookOriginal,
+    genericShortHookElemental,
+    externalShortHookTrunk,
+    internslShortHookTrunk,
+    externalSnapPeas,
+    internalSnapPeas
+  };
 }
 
-export const bakedNattoSet = getBakedNattoSet();
+const buildBakedNattoSet = () => {
+
+  try{
+    return R.compose(
+      R.map(bakedNattoMapFunction),
+      R.split(','))
+      (rawNattoSet);
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throw new Error(
+      'Cannot build Baked Natto Set.');
+  }
+
+}
+
+export const bakedNattoSet = buildBakedNattoSet();
+
+export const
+  getBakedNattoBy

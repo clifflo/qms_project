@@ -97,24 +97,3 @@ const rhoContextMapFunction_1 =
     internalShortHookEnglish
   }
 }
-
-const buildRhoContextSet_1 = () => {
-
-  try{
-    return R.compose(
-      R.map(rhoContextMapFunction_1),
-      R.split(',')
-    )
-    (longHookParagraph);
-  }
-  catch(errorMessage){
-    console.error(errorMessage);
-    throw new Error(
-      'Cannot build Rho Context Set 1.')
-  }
-
-
-}
-
-export const rhoContextSet_1 =
-  getRhoContextSet_1();
