@@ -39,9 +39,9 @@ export const getRhocs_2 = () => {
       const ebbrs = eshcot.dbbrs;
 
       // External short hook bean trunk
-      const eshbt = eshcot.dshbt;
+      const externalShortHookBeanTrunk = eshcot.dshbt;
 
-      const eshele = eshcot.gshele;
+      const eshele = eshcot.genericShortHookElemental;
 
       // Internal bean branch series
       const ibbrs = ishcot.dbbrs;
@@ -49,24 +49,24 @@ export const getRhocs_2 = () => {
        // Internal short hook bean trunk
       const ishbt = ishcot.dshbt;
 
-      const ishele = ishcot.gshele;
+      const ishele = ishcot.genericShortHookElemental;
 
       E.cknwa(ebbrs, 'ebbrs');
-      E.cknws(eshbt, 'eshbt');
+      E.cknws(externalShortHookBeanTrunk, 'externalShortHookBeanTrunk');
       E.cknws(eshele, 'eshele');
       E.cknwa(ibbrs, 'ibbrs');
       E.cknws(ishbt, 'ishbt');
       E.cknws(ishele, 'ishele');
 
-      const fbbrs = R.concat(ebbrs, ibbrs);
+      const fullSnapPea = R.concat(ebbrs, ibbrs);
 
       const lhBinary = decimalToBinary(
         rhocxt.lhidx,
         6);
 
       const mapFn = R.curry(buildCrosses)
-        (fbbrs)
-        (eshbt)
+        (fullSnapPea)
+        (externalShortHookBeanTrunk)
         (ishbt);
 
       const lhcrsl = RA.mapIndexed(

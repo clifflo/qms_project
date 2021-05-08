@@ -14,55 +14,55 @@ import {
 import {
   isValidElem,
   elementalOrder,
-  getTwigElemce
+  getTwigElemc
 } from '../../twigs/twig_01';
 import {
   getTwigElemc
 } from '../../twigs/twig_02';
 
 export const getTrnto = (
-  gshori,
+  genericShortHookOriginal,
   isShetp) => {
 
-  if(R.isNil(gshori)){
+  if(R.isNil(genericShortHookOriginal)){
     throw new Error(
-      '[gshori] should not be nil.');
+      '[genericShortHookOriginal] should not be nil.');
   }
 
   const natto = R.find(
-    R.propEq('gshori', gshori),
+    R.propEq('genericShortHookOriginal', genericShortHookOriginal),
     bkntos);
 
   if(!natto){
     throw new Error(
-      `Cannot find natto. ${gshori} is not valid.`);
+      `Cannot find natto. ${genericShortHookOriginal} is not valid.`);
   }
 
   if(isShetp){
 
-    E.cknws(natto.eshbt, 'eshbt');
+    E.cknws(natto.externalShortHookBeanTrunk, 'externalShortHookBeanTrunk');
     E.cknwa(natto.ebbrs, 'ebbrs');
-    E.cknws(natto.gshele, 'gshele');
+    E.cknws(natto.genericShortHookElemental, 'genericShortHookElemental');
 
     // Displayed short hook bean trunk
-    const dshbt = natto.eshbt;
+    const dshbt = natto.externalShortHookBeanTrunk;
 
     // Displayed bean branch series
     const dbbrs = natto.ebbrs;
 
-    const gshele = natto.gshele;
+    const genericShortHookElemental = natto.genericShortHookElemental;
 
     return {
       dshbt,
       dbbrs,
-      gshele
+      genericShortHookElemental
     }
   }
   else {
 
-    E.cknws(natto.ishbt, 'eshbt');
+    E.cknws(natto.ishbt, 'externalShortHookBeanTrunk');
     E.cknwa(natto.ibbrs, 'ebbrs');
-    E.cknws(natto.gshele, 'gshele');
+    E.cknws(natto.genericShortHookElemental, 'genericShortHookElemental');
 
     // Displayed short hook bean trunk
     const dshbt = natto.ishbt;
@@ -70,29 +70,29 @@ export const getTrnto = (
     // Displayed bean branch series
     const dbbrs = natto.ibbrs;
 
-    const gshele = natto.gshele;
+    const genericShortHookElemental = natto.genericShortHookElemental;
 
     return {
       dshbt,
       dbbrs,
-      gshele
+      genericShortHookElemental
     }
   }
 
 }
 
 export const buildCrosses = (
-  fbbrs,
-  eshbt,
+  fullSnapPea,
+  externalShortHookBeanTrunk,
   ishbt,
   crsi,
   lhcdwi,
   list) => {
 
   const crtk = lhcdwi <= 2 ?
-    eshbt : ishbt;
+    externalShortHookBeanTrunk : ishbt;
 
-  const crbh = fbbrs[lhcdwi];
+  const crbh = fullSnapPea[lhcdwi];
 
   const crbelc = getTwigElemc(crbh);
   const crbele = elementContext[crbelc];

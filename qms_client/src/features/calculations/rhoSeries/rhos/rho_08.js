@@ -27,7 +27,7 @@ const getRhocs_4 = () => {
       rhocs_2);
 
     const natto = R.find(
-      R.propEq('gshori', rhocxt_3.rhlhn),
+      R.propEq('genericShortHookOriginal', rhocxt_3.rhlhn),
       bkntos);
 
     if(R.isNil(natto)){
@@ -35,7 +35,7 @@ const getRhocs_4 = () => {
         'Natto should not be nil.');
     }
 
-    const rhshel = natto.gshele;
+    const rhshel = natto.genericShortHookElemental;
 
     if(R.isNil(rhshel)){
       throw new Error(

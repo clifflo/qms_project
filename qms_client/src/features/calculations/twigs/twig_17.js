@@ -1,13 +1,14 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
+
 export const getTrunkLiturgy = trunk => {
-  return (idxOfTrunk(trunk) % 2) == 0 ?
+  return (indexOfTrunk(trunk) % 2) == 0 ?
     'Alpha': 'Omega';
 }
 
 export const getBranchLiturgy = (branch) => {
-  return (idxOfBranch(branch) % 2) == 0 ?
+  return (indexOfBranch(branch) % 2) == 0 ?
     'Alpha': 'Omega';
 }
 

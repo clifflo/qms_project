@@ -19,7 +19,7 @@ export const rawntos =
   ])
 
 // Full bean branch series
-export const getFbbrs = (bbssb, bbscw) => {
+export const getFullSnapPea = (bbssb, bbscw) => {
 
   try{
 
@@ -35,8 +35,8 @@ export const getFbbrs = (bbssb, bbscw) => {
       return itemOfBranch(bbsbi + finalAdjustment);
     }
 
-    const fbbrs = R.map(mapFn, R.range(0, 6))
-    return fbbrs;
+    const fullSnapPea = R.map(mapFn, R.range(0, 6))
+    return fullSnapPea;
   }
   catch(err){
     console.error(err);
@@ -47,30 +47,30 @@ export const getFbbrs = (bbssb, bbscw) => {
 }
 
 // Baked nattos
-export const getBkntos = () => {
+export const getBakedNattos = () => {
 
   const mapFn = sentence => {
 
-    const gshori = sentence[0];
-    const gshele = sentence[1];
-    const eshbt = sentence[4];
+    const genericShortHookOriginal = sentence[0];
+    const genericShortHookElemental = sentence[1];
+    const externalShortHookBeanTrunk = sentence[4];
     const ishbt = sentence[2];
     const bbssb = sentence[3];
     const bbscw = sentence[5] == '順';
-    const fbbrs = getFbbrs(
+    const fullSnapPea = getFullSnapPea(
       bbssb, bbscw);
 
     const ebbrs =
-      R.reverse(R.takeLast(3, fbbrs));
+      R.reverse(R.takeLast(3, fullSnapPea));
 
     const ibbrs =
-      R.reverse(R.take(3, fbbrs));
+      R.reverse(R.take(3, fullSnapPea));
 
     return {
       _type: 'bkdnto',
-      gshori,
-      gshele,
-      eshbt,
+      genericShortHookOriginal,
+      genericShortHookElemental,
+      externalShortHookBeanTrunk,
       ishbt,
       ebbrs,
       ibbrs
@@ -83,7 +83,7 @@ export const getBkntos = () => {
     (rawntos);
 }
 
-export const bkntos = getBkntos();
+export const bkntos = getBakedNattos();
 
 // Generic short hook alternative
 export const gshalo = '地雷水澤山火風天';

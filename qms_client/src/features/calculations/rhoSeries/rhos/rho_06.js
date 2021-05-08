@@ -86,12 +86,12 @@ export const rhgbs = getRhgbs();
 const getRlhsl = () => {
 
   const mapFn_1 =
-    (gshori, rgbnry) => {
+    (genericShortHookOriginal, rgbnry) => {
 
     try{
 
       const rgdecm = binaryToDecimal(rgbnry);
-      const rhlhn = '純' + gshori;
+      const rhlhn = '純' + genericShortHookOriginal;
       const rhlix =
         getRcxt1ByLhn(rhlhn)
         .lhidx;
@@ -115,17 +115,17 @@ const getRlhsl = () => {
 
   const mapFn_1c = R.curry(mapFn_1);
 
-  const mapFn_2 = gshori => {
+  const mapFn_2 = genericShortHookOriginal => {
 
     const rlhst = RA.mapIndexed(
-      mapFn_1c(gshori), rhgbs);
+      mapFn_1c(genericShortHookOriginal), rhgbs);
 
     const rlhsf = R.prepend(
-      '純' + gshori, rlhst);
+      '純' + genericShortHookOriginal, rlhst);
 
     return {
       _type: 'rlhsc',
-      rhlhn: gshori,
+      rhlhn: genericShortHookOriginal,
       rlhsf: rlhsf
     }
   }

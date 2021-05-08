@@ -29,7 +29,7 @@ export const elementalContext = {
   '土': 'Twig Soil'
 }
 
-export const getTwigElele = elemc => {
+export const getTwigEleme = elemc => {
   return elementalContext[elemc];
 }
 
