@@ -29,7 +29,7 @@ export {
   isDeltaTiger,
   isDeltaPhoenix,
   isDeltaTurtle,
-  isDeltaUnicorn,
-  isDeltaDragon,
-  isDeltaCobra
+  isDeltaPaladinUnicorn,
+  isDeltaPaladinDragon,
+  isDeltaPaladinCobra
 } from './delta_01';

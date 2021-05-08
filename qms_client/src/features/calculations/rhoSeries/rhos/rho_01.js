@@ -18,11 +18,13 @@ export const rawNattos =
     '坤土乙未癸逆佈,兌金丁巳丁逆佈',
   ])
 
-export const getFullSnapPea = (beginningSnapPea, snapPeasRunClockwise) => {
+export const getFullSnapPeas = (beginningSnapPea, snapPeasRunClockwise) => {
 
   try{
 
-    E.checkNilWithString(beginningSnapPea, 'beginningSnapPea');
+    E.checkNilWithString(
+      beginningSnapPea,
+      'Beginning Snap Pea');
 
     const bbsbi = indexOfBranch(beginningSnapPea);
     E.cknwn(bbsbi, 'bbsbi');

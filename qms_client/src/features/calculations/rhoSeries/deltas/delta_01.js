@@ -31,11 +31,6 @@ export const dplco =
     R.split(','))
   ('丙青龍,丙朱雀,丙勾陳,丙螣蛇,丙白虎,丙玄武');
 
-// [dpldl] is delta paladin dictionary list
-// [deltaPaladinChinese] is delta paladin chinese name.
-// [deltaPaladinEnglish] is delta paladin nickname.
-// [deltaPaladinEnglish] is delta paladin full english name.
-// [dplsid] is delta paladin specification ID.
 export const dpldl = [
   {
     deltaPaladinChinese: '丙青龍',
@@ -65,11 +60,15 @@ export const dpldl = [
 
 export const getDplen = deltaPaladinChinese => {
 
-  E.checkNilWithString(deltaPaladinChinese, 'deltaPaladinChinese');
+  E.checkNilWithString(
+    deltaPaladinChinese,
+    'Delta Paladin Chinese');
 
   try{
     const result = R.find(
-      R.propEq('deltaPaladinChinese', deltaPaladinChinese),
+      R.propEq(
+        'deltaPaladinChinese',
+        deltaPaladinChinese),
       dpldl).deltaPaladinEnglish;
 
     return result;
@@ -81,19 +80,25 @@ export const getDplen = deltaPaladinChinese => {
 }
 
 export const isDeltaTiger =
-  deltaPaladinEnglish => deltaPaladinEnglish == 'Delta Tiger';
+  deltaPaladinEnglish =>
+  deltaPaladinEnglish == 'Delta Tiger';
 
 export const isDeltaPhoenix =
-  deltaPaladinEnglish => deltaPaladinEnglish == 'Delta Phoenix';
+  deltaPaladinEnglish =>
+  deltaPaladinEnglish == 'Delta Phoenix';
 
 export const isDeltaTurtle =
-  deltaPaladinEnglish => deltaPaladinEnglish == 'Delta Turtle';
+  deltaPaladinEnglish =>
+  deltaPaladinEnglish == 'Delta Turtle';
 
-export const isDeltaUnicorn =
-  deltaPaladinEnglish => deltaPaladinEnglish == 'Delta Unicorn';
+export const isDeltaPaladinUnicorn =
+  deltaPaladinEnglish =>
+  deltaPaladinEnglish == 'Delta Unicorn';
 
-export const isDeltaDragon =
-  deltaPaladinEnglish => deltaPaladinEnglish == 'Delta Dragon';
+export const isDeltaPaladinDragon =
+  deltaPaladinEnglish =>
+  deltaPaladinEnglish == 'Delta Dragon';
 
-export const isDeltaCobra =
-  deltaPaladinEnglish => deltaPaladinEnglish == 'Delta Cobra';
+export const isDeltaPaladinCobra =
+  deltaPaladinEnglish =>
+  deltaPaladinEnglish == 'Delta Cobra';
