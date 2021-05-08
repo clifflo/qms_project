@@ -4,11 +4,11 @@ import {
   decimalToBinary
 } from '../../utils/util_02';
 import {
-  rhocs_1,
+  rhoContextSet_1,
   nattos
 } from './rho_02';
 import {
-  rhocs_2
+  rhoContextSet_2
 } from './rho_04';
 import {
   getTwigElemc
@@ -110,7 +110,7 @@ export const getRcxtvByLhn = (
 export const getRhoContext1ByLongHookName = longHookName => {
   try {
     return getRcxtvByLhn(
-      longHookName, rhocs_1, 1);
+      longHookName, rhoContextSet_1, 1);
   }
   catch(err){
     console.error(err);
@@ -121,7 +121,7 @@ export const getRhoContext1ByLongHookName = longHookName => {
 export const getRcxt1ByLhx = lhidx => {
   try {
     return getRcxtvByLhx(
-      lhidx, rhocs_1, 1);
+      lhidx, rhoContextSet_1, 1);
   }
   catch(err){
     console.error(err);
@@ -132,7 +132,7 @@ export const getRcxt1ByLhx = lhidx => {
 export const getRcxt2ByLhn = longHookName => {
   try {
     return getRcxtvByLhn(
-      longHookName, rhocs_2, 2);
+      longHookName, rhoContextSet_2, 2);
   }
   catch(err){
     console.error(err);

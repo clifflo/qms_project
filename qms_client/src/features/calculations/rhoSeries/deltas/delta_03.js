@@ -5,10 +5,10 @@ import {
   utFindByPropEq
 } from '../../utils/util_04';
 import {
-  rhocs_1
+  rhoContextSet_1
 } from '../rhos/rho_02';
 import {
-  rhocs_8,
+  rhoContextSet_8,
   getRcxt8ByLhn
 } from '../rhos/rho_13';
 import {
@@ -53,7 +53,7 @@ const getHdrcs = () => {
   const mapFn_1c = R.curry(mapFn_1n);
 
   const longHookNames = R.map(
-    R.prop('longHookName'), rhocs_1);
+    R.prop('longHookName'), rhoContextSet_1);
 
   const mapFn_2 = dpdtr => {
 

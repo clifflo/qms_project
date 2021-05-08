@@ -5,7 +5,7 @@ import {
   decimalToBinary
 } from '../../utils/util_02';
 import {
-  rhocs_1
+  rhoContextSet_1
 } from './rho_02';
 import {
   getTrnto,
@@ -90,7 +90,7 @@ export const getRhoContextSet_2 = () => {
 
   }
 
-  return R.map(mapFn, rhocs_1)
+  return R.map(mapFn, rhoContextSet_1)
 }
 
-export const rhocs_2 = getRhoContextSet_2();
+export const rhoContextSet_2 = getRhoContextSet_2();

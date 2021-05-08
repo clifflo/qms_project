@@ -4,13 +4,13 @@ import {
   trunkOrder
 } from '../../twigs/twig_01';
 import {
-  rhocs_1
+  rhoContextSet_1
 } from './rho_01';
 import {
   getRcxtvByLhn
 } from './rho_05';
 import {
-  rhocs_7
+  rhoContextSet_7
 } from './rho_12';
 
 const getRhoContextSet_8 = () => {
@@ -83,7 +83,7 @@ const getRhoContextSet_8 = () => {
   }
 
   try {
-    return R.map(mapFn_2, rhocs_7);
+    return R.map(mapFn_2, rhoContextSet_7);
   }
   catch(err){
     console.error(err);
@@ -92,12 +92,12 @@ const getRhoContextSet_8 = () => {
   }
 }
 
-export const rhocs_8 = getRhoContextSet_8();
+export const rhoContextSet_8 = getRhoContextSet_8();
 
 export const getRcxt8ByLhn = longHookName => {
   try {
     return getRcxtvByLhn(
-      longHookName, rhocs_8, 8);
+      longHookName, rhoContextSet_8, 8);
   }
   catch(err){
     console.error(err);

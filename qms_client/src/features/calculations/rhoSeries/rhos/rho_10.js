@@ -5,7 +5,7 @@ import {
   utFindByPropEq
 } from '../../utils/util_04';
 import {
-  rhocs_4
+  rhoContextSet_4
 } from './rho_08';
 import {
   getElre
@@ -61,7 +61,7 @@ const getRhoContextSet_5 = () => {
     }
   }
 
-  return R.map(mapFn_2, rhocs_4);
+  return R.map(mapFn_2, rhoContextSet_4);
 }
 
-export const rhocs_5 = getRhoContextSet_5();
+export const rhoContextSet_5 = getRhoContextSet_5();

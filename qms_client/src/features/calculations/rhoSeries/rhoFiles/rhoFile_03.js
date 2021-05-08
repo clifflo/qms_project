@@ -4,8 +4,7 @@ import {
   utGetIdx
 } from '../../utils/util_01';
 import {
-  gshalo,
-  gshoro
+  shortHookContextSet
 } from './rho_01';
 
 const longHookParagraph = R.join(',', [
@@ -20,23 +19,20 @@ const longHookParagraph = R.join(',', [
   '澤水困,澤地萃,澤山咸,水山蹇,地山謙,雷山小過,雷澤歸妹'
 ]);
 
-const getGshalx = genericShortHookAlternative => {
+const getGenericShortHookIndexByAlternative =
+  genericShortHookAlternative => {
 
   checkNilWithString(
     genericShortHookAlternative,
     'Generic Short Hook Alternative'
   )
 
-  const gshalx = utGetIdx(
-    genericShortHookAlternative,
-    gshalo);
+  const shortHookContext =
+    R.find(
+      R.prop('genericShortHookAlternative'),
+      shortHookContextSet);
 
-  if(gshalx == -1){
-    throw new Error(
-      `${genericShortHookAlternative} is not a valid SHALT.`);
-  }
-
-  return gshalx;
+  return shortHookContext.genericShortHookIndex;
 }
 
 const getRhoContextSet_1 = () => {
@@ -109,4 +105,4 @@ const getRhoContextSet_1 = () => {
 
 }
 
-export const rhocs_1 = getRhoContextSet_1();
+export const rhoContextSet_1 = getRhoContextSet_1();

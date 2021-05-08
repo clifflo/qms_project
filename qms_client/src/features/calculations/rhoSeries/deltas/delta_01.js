@@ -13,7 +13,7 @@ import {
   getRcxtvByLhn
 } from '../rhos/rho_02'
 import {
-  rhocs_5,
+  rhoContextSet_5,
   rfcis
 } from '../rhos/rho_06';
 import {

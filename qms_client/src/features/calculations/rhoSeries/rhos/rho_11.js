@@ -5,7 +5,7 @@ import {
   dfcns
 } from './rho_09';
 import {
-  rhocs_5
+  rhoContextSet_5
 } from './rho_10';
 import {
   getRcxtvByLhn
@@ -35,7 +35,7 @@ const getRhoContextSet_6 = () => {
       // Delta pilot cross list
       const deltaPilotCrossList = R.find(
         R.propEq('longHookName', '純' + rhocxt.rhlhn),
-        rhocs_5).lhcrsl;
+        rhoContextSet_5).lhcrsl;
 
       E.checkNilWithArray(deltaPilotCrossList, 'deltaPilotCrossList');
 
@@ -57,16 +57,16 @@ const getRhoContextSet_6 = () => {
 
   }
 
-  return R.map(mapFn, rhocs_5)
+  return R.map(mapFn, rhoContextSet_5)
 }
 
-export const rhocs_6 = getRhoContextSet_6();
+export const rhoContextSet_6 = getRhoContextSet_6();
 
 export const getRcxt6ByLhn = longHookName => {
 
   try {
     return getRcxtvByLhn(
-      longHookName, rhocs_6, 6);
+      longHookName, rhoContextSet_6, 6);
   }
   catch(err){
     console.error(err);

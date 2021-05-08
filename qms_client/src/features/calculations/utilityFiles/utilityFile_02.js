@@ -36,5 +36,21 @@ export const getIndexFromWordList =
 export const getIndexFromString =
   (characterVariable, stringVariable) => {
 
+  checkNilWithString(
+    stringVariable,
+    'String Variable');
 
+  checkNilWithString(
+    characterVariable,
+    'Character Variable');
+
+  if(characterVariable.length != 1){
+    throw new Error(
+      'Character Variable must be just a '
+      + 'single character.');
+  }
+
+  return R.findIndex(
+    R.equals(wordVariable),
+    wordList);
 }

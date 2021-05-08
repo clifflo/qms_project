@@ -115,4 +115,4 @@ const getRhoContextSet_1 = () => {
 
 }
 
-export const rhocs_1 = getRhoContextSet_1();
+export const rhoContextSet_1 = getRhoContextSet_1();

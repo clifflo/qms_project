@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  rhocs_2
+  rhoContextSet_2
 } from './rho_02';
 import {
   nattos,

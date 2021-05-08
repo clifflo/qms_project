@@ -78,18 +78,18 @@ const getRhoContextSet_3 = () => {
   }
 
   try{
-    const rhocs_3a = R.map(mapFn_2, rlhsl);
-    const rhocs_3b = R.flatten(rhocs_3a);
-    return rhocs_3b;
+    const rhoContextSet_3a = R.map(mapFn_2, rlhsl);
+    const rhoContextSet_3b = R.flatten(rhoContextSet_3a);
+    return rhoContextSet_3b;
   }
   catch(err){
     console.error(err);
-    throw new Error('Cannot get [rhocs_3].');
+    throw new Error('Cannot get [rhoContextSet_3].');
   }
 
 }
 
-export const rhocs_3 = getRhoContextSet_3();
+export const rhoContextSet_3 = getRhoContextSet_3();
 
 const getRcxt3ByLn = longHookName => {
 
@@ -101,7 +101,7 @@ const getRcxt3ByLn = longHookName => {
 
   const rhocxt_3 = R.find(
     R.propEq('longHookName', longHookName),
-    rhocs_3);
+    rhoContextSet_3);
 
   if(R.isNil(rhocxt_3)){
     throw new Error(

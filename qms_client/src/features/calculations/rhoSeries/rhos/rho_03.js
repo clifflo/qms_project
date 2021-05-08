@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../../examiner';
 import {
-  rhocs_1
+  rhoContextSet_1
 } from './rho_02';
 import {
   decimalToBinary
