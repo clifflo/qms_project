@@ -32,3 +32,9 @@ export const getIndexFromWordList =
     R.equals(wordVariable),
     wordList);
 }
+
+export const getIndexFromString =
+  (characterVariable, stringVariable) => {
+
+
+}
