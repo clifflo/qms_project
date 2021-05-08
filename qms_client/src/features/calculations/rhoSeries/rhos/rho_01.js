@@ -62,7 +62,7 @@ export const getBakedNattos = () => {
     const externalSnapPeas =
       R.reverse(R.takeLast(3, fullSnapPeas));
 
-    const ibbrs =
+    const internalSnapPeas =
       R.reverse(R.take(3, fullSnapPeas));
 
     return {
@@ -72,7 +72,7 @@ export const getBakedNattos = () => {
       externalShortHookTrunk,
       internslShortHookTrunk,
       externalSnapPeas,
-      ibbrs
+      internalSnapPeas
     };
   }
 

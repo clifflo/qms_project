@@ -44,7 +44,7 @@ export const getRhoContextSet_2 = () => {
       const eshele = eshcot.genericShortHookElemental;
 
       // Internal bean branch series
-      const ibbrs = ishcot.dbbrs;
+      const internalSnapPeas = ishcot.dbbrs;
 
        // Internal short hook bean trunk
       const internslShortHookTrunk = ishcot.dshbt;
@@ -54,11 +54,11 @@ export const getRhoContextSet_2 = () => {
       E.checkNilWithArray(externalSnapPeass, 'externalSnapPeass');
       E.checkNilWithString(externalShortHookTrunk, 'externalShortHookTrunk');
       E.checkNilWithString(eshele, 'eshele');
-      E.checkNilWithArray(ibbrs, 'ibbrs');
+      E.checkNilWithArray(internalSnapPeas, 'internalSnapPeas');
       E.checkNilWithString(internslShortHookTrunk, 'internslShortHookTrunk');
       E.checkNilWithString(ishele, 'ishele');
 
-      const fullSnapPeass = R.concat(externalSnapPeass, ibbrs);
+      const fullSnapPeass = R.concat(externalSnapPeass, internalSnapPeas);
 
       const lhBinary = decimalToBinary(
         rhocxt.lhidx,

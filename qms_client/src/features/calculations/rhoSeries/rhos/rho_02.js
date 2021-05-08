@@ -69,15 +69,15 @@ const getRhoContextSet_1 = () => {
       longHookName = R.drop(2, sentence);
     }
 
-    if(R.isNil(externalShortHookAlternate)){
-      throw new Error(
-        'ESHALT should not be nil.');
-    }
+    E.checkNilWithString(
+      externalShortHookAlternate,
+      'External short hook alternate'
+    );
 
-    if(R.isNil(internalShortHookAlternate)){
-      throw new Error(
-        'ISHALT should not be nil.');
-    }
+    E.checkNilWithString(
+      internalShortHookAlternate,
+      'Internal short hook alternate'
+    )
 
     const eshidx =
       getGshalx(externalShortHookAlternate);
