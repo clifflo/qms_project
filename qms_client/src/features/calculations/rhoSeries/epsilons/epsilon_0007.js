@@ -10,7 +10,7 @@ const epsl_0007t = dlcxt => {
   const findFn = wbcros => {
     return R.allPass([
       isDeltaMoney(wbcros.dfcen),
-      isDeltaDragon(wbcros.dplen),
+      isDeltaDragon(wbcros.deltaPaladinEnglish),
       wbcros.isStrike,
       // has brake 唐符
       // do not have brakes 大耗 and 小耗

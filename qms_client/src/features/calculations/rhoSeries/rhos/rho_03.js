@@ -92,15 +92,15 @@ export const buildCrosses = (
   const crtk = lhcdwi <= 2 ?
     externalShortHookBeanTrunk : ishbt;
 
-  const crbh = fullSnapPea[lhcdwi];
+  const crossBranch = fullSnapPea[lhcdwi];
 
-  const crbelc = getTwigElemc(crbh);
+  const crbelc = getTwigElemc(crossBranch);
   const crbele = elementContext[crbelc];
 
   return {
     crsi,
     crtk,
-    crbh,
+    crossBranch,
     crbelc,
     lhcdwi
   }

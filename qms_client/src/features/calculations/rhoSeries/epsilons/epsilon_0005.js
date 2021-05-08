@@ -11,7 +11,7 @@ const epsl_0005t = dlcxt => {
     return R.allPass([
       isDeltaSon(wbcros.dfcen),
       wbcros.isStrike,
-      isDeltaDragon(wbcros.dplen)
+      isDeltaDragon(wbcros.deltaPaladinEnglish)
       // has brake 天喜, 天福
     ]);
   }

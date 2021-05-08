@@ -31,13 +31,13 @@ const getHdrcs = () => {
 
     const mapFn = idx => {
       const lhcros = lhcrsl_1[idx];
-      const dplcn = dpebt.dpcst[idx];
-      const dplen = getDplen(dplcn);
+      const deltaPaladinChinese = dpebt.dpcst[idx];
+      const deltaPaladinEnglish = getDplen(deltaPaladinChinese);
 
       return {
         ...lhcros,
-        dplcn,
-        dplen
+        deltaPaladinChinese,
+        deltaPaladinEnglish
       }
     }
 

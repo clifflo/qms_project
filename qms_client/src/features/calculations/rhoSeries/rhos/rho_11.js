@@ -11,7 +11,7 @@ import {
   getRcxtvByLhn
 } from './rho_05';
 
-const getRhocs_6 = () => {
+const getRhoContextSet_6 = () => {
 
   const mapFn = rhocxt => {
 
@@ -60,7 +60,7 @@ const getRhocs_6 = () => {
   return R.map(mapFn, rhocs_5)
 }
 
-export const rhocs_6 = getRhocs_6();
+export const rhocs_6 = getRhoContextSet_6();
 
 export const getRcxt6ByLhn = lhname => {
 

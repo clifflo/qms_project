@@ -4,7 +4,7 @@ import * as RA from 'ramda';
 // Delta handler Jack
 export const dhJack = dlcxt_2 => {
   return R.find(
-    R.prop('isRjk'), dlcxt_2.wbowcl);
+    R.prop('isRhoJack'), dlcxt_2.wbowcl);
 }
 
 export const dhKing = dlcxt_2 => {

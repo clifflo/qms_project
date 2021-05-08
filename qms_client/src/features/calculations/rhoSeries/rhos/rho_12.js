@@ -21,7 +21,7 @@ import {
   rhocs_6
 } from './rho_11';
 
-const getRhocs_7 = () => {
+const getRhoContextSet_7 = () => {
 
   const mapFn_1n =
     (rjkdi, rkgdi, rqndi, lhcros) => {
@@ -38,12 +38,12 @@ const getRhocs_7 = () => {
         '[lhcdwi] should not be nil.');
     }
 
-    const isRjk = lhcdwi == rjkdi;
+    const isRhoJack = lhcdwi == rjkdi;
     const isRqn = lhcdwi == rqndi;
     const isRkg = lhcdwi == rkgdi;
 
     // Rho jack render text
-    const rjkrt = isRjk ? '世' : '';
+    const rjkrt = isRhoJack ? '世' : '';
 
     // Rho queen render text
     const rqnrt = isRqn ? '身' : '';
@@ -59,7 +59,7 @@ const getRhocs_7 = () => {
     return {
       ...lhcros,
       rfcrt,
-      isRjk,
+      isRhoJack,
       isRqn,
       isRkg
     };
@@ -81,7 +81,7 @@ const getRhocs_7 = () => {
     E.cknwo(rjkcr, 'rjkcr');
 
     // Rho jack cross branch
-    const rjkbh = rjkcr.crbh;
+    const rjkbh = rjkcr.crossBranch;
     E.cknws(rjkbh, 'rjkbh');
 
     if(!isValidBranch(rjkbh)){
@@ -115,4 +115,4 @@ const getRhocs_7 = () => {
   }
 }
 
-export const rhocs_7 = getRhocs_7();
+export const rhocs_7 = getRhoContextSet_7();

@@ -23,7 +23,7 @@ export const buildRjkdi = rhogen => {
   return lhcdwi;
 }
 
-const getRhocs_3 = () => {
+const getRhoContextSet_3 = () => {
 
   const mapFn_1 = (
     rlhsc,
@@ -89,7 +89,7 @@ const getRhocs_3 = () => {
 
 }
 
-export const rhocs_3 = getRhocs_3();
+export const rhocs_3 = getRhoContextSet_3();
 
 const getRcxt3ByLn = lhname => {
 

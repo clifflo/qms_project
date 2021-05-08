@@ -32,68 +32,68 @@ export const dplco =
   ('丙青龍,丙朱雀,丙勾陳,丙螣蛇,丙白虎,丙玄武');
 
 // [dpldl] is delta paladin dictionary list
-// [dplcn] is delta paladin chinese name.
-// [dplen] is delta paladin nickname.
-// [dplen] is delta paladin full english name.
+// [deltaPaladinChinese] is delta paladin chinese name.
+// [deltaPaladinEnglish] is delta paladin nickname.
+// [deltaPaladinEnglish] is delta paladin full english name.
 // [dplsid] is delta paladin specification ID.
 export const dpldl = [
   {
-    dplcn: '丙青龍',
-    dplen: 'Delta Dragon'
+    deltaPaladinChinese: '丙青龍',
+    deltaPaladinEnglish: 'Delta Dragon'
   },
   {
-    dplcn: '丙朱雀',
-    dplen: 'Delta Phoenix'
+    deltaPaladinChinese: '丙朱雀',
+    deltaPaladinEnglish: 'Delta Phoenix'
   },
   {
-    dplcn: '丙勾陳',
-    dplen: 'Delta Unicorn'
+    deltaPaladinChinese: '丙勾陳',
+    deltaPaladinEnglish: 'Delta Unicorn'
   },
   {
-    dplcn: '丙螣蛇',
-    dplen: 'Delta Cobra'
+    deltaPaladinChinese: '丙螣蛇',
+    deltaPaladinEnglish: 'Delta Cobra'
   },
   {
-    dplcn: '丙白虎',
-    dplen: 'Delta Tiger'
+    deltaPaladinChinese: '丙白虎',
+    deltaPaladinEnglish: 'Delta Tiger'
   },
   {
-    dplcn: '丙玄武',
-    dplen: 'Delta Turtle'
+    deltaPaladinChinese: '丙玄武',
+    deltaPaladinEnglish: 'Delta Turtle'
   }
 ]
 
-export const getDplen = dplcn => {
+export const getDplen = deltaPaladinChinese => {
 
-  E.cknws(dplcn, 'dplcn');
+  E.cknws(deltaPaladinChinese, 'deltaPaladinChinese');
 
   try{
     const result = R.find(
-      R.propEq('dplcn', dplcn),
-      dpldl).dplen;
+      R.propEq('deltaPaladinChinese', deltaPaladinChinese),
+      dpldl).deltaPaladinEnglish;
 
     return result;
   }
   catch(err){
     console.error(err);
-    throw new Error('Cannot get [dplen].')
+    throw new Error('Cannot get [deltaPaladinEnglish].')
   }
 }
 
 export const isDeltaTiger =
-  dplen => dplen == 'Delta Tiger';
+  deltaPaladinEnglish => deltaPaladinEnglish == 'Delta Tiger';
 
 export const isDeltaPhoenix =
-  dplen => dplen == 'Delta Phoenix';
+  deltaPaladinEnglish => deltaPaladinEnglish == 'Delta Phoenix';
 
 export const isDeltaTurtle =
-  dplen => dplen == 'Delta Turtle';
+  deltaPaladinEnglish => deltaPaladinEnglish == 'Delta Turtle';
 
 export const isDeltaUnicorn =
-  dplen => dplen == 'Delta Unicorn';
+  deltaPaladinEnglish => deltaPaladinEnglish == 'Delta Unicorn';
 
 export const isDeltaDragon =
-  dplen => dplen == 'Delta Dragon';
+  deltaPaladinEnglish => deltaPaladinEnglish == 'Delta Dragon';
 
 export const isDeltaCobra =
-  dplen => dplen == 'Delta Cobra';
+  deltaPaladinEnglish => deltaPaladinEnglish == 'Delta Cobra';

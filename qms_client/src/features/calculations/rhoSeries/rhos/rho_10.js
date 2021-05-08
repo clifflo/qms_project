@@ -14,7 +14,7 @@ import {
   dfcdl
 } from './rho_09';
 
-const getRhocs_5 = () => {
+const getRhoContextSet_5 = () => {
 
   const mapFn_1n = (rhshel, _lhcros) => {
 
@@ -64,4 +64,4 @@ const getRhocs_5 = () => {
   return R.map(mapFn_2, rhocs_4);
 }
 
-export const rhocs_5 = getRhocs_5();
+export const rhocs_5 = getRhoContextSet_5();

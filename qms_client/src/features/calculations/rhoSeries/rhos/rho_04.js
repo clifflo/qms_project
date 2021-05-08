@@ -15,7 +15,7 @@ import {
   getTwigElemc
 } from '../../twigs/twig_02';
 
-export const getRhocs_2 = () => {
+export const getRhoContextSet_2 = () => {
 
   const mapFn = rhocxt => {
 
@@ -93,4 +93,4 @@ export const getRhocs_2 = () => {
   return R.map(mapFn, rhocs_1)
 }
 
-export const rhocs_2 = getRhocs_2();
+export const rhocs_2 = getRhoContextSet_2();

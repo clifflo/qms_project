@@ -45,7 +45,7 @@ const getGshalx = gshalt => {
   return gshalx;
 }
 
-const getRhocs_1 = () => {
+const getRhoContextSet_1 = () => {
 
   const mapFn = sentence => {
 
@@ -115,4 +115,4 @@ const getRhocs_1 = () => {
 
 }
 
-export const rhocs_1 = getRhocs_1();
+export const rhocs_1 = getRhoContextSet_1();

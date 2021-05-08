@@ -18,7 +18,7 @@ import {
   rhocs_3
 } from './rho_07';
 
-const getRhocs_4 = () => {
+const getRhoContextSet_4 = () => {
 
   const mapFn = rhocxt_3 => {
 
@@ -65,7 +65,7 @@ const getRhocs_4 = () => {
   }
 }
 
-export const rhocs_4 = getRhocs_4();
+export const rhocs_4 = getRhoContextSet_4();
 
 export const getRcxt4ByLhn = lhname => {
   try {

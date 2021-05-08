@@ -13,7 +13,7 @@ import {
   rhocs_7
 } from './rho_12';
 
-const getRhocs_8 = () => {
+const getRhoContextSet_8 = () => {
 
   // [rpilcs] stands for Rho pilot cross, i.e.
   // the cross referring to the rho pilot,
@@ -92,7 +92,7 @@ const getRhocs_8 = () => {
   }
 }
 
-export const rhocs_8 = getRhocs_8();
+export const rhocs_8 = getRhoContextSet_8();
 
 export const getRcxt8ByLhn = lhname => {
   try {
