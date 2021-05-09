@@ -2,7 +2,8 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   getTwigBranchContextByIndex,
-  getTwigBranchContextByChinese
+  getTwigBranchContextByChinese,
+  getTwigElementalContextByChinese
 } from '../../twigFiles/twigHub';
 import {
   checkNilWithString
@@ -44,26 +45,20 @@ const snapPeaMapFunction = (
   return targetSnapPeaBranchChinese;
 }
 
-export const getFullSnapPeas =
-  (beginningSnapPea, snapPeasRunClockwise) => {
+export const getFullSnapPeas =(
+  beginningSnapPeaBranchChinese,
+  snapPeasRunClockwise) => {
 
   try{
 
     checkNilWithString(
-      beginningSnapPea,
-      'Beginning snap pea');
-
-    const beginningSnapPeaBranchIndex =
-      indexOfBranch(beginningSnapPea);
-
-    checkNilWithNumber(
-      beginningSnapPeaBranchIndex,
-      'Beginning snap pea branch index');
+      beginningSnapPeaBranchChinese,
+      'Beginning snap pea branch chinese');
 
     const fullSnapPeas =
       R.map(
         R.curry(snapPeaMapFunction)
-        (beginningSnapPea)
+        (beginningSnapPeaBranchChinese)
         (snapPeasRunClockwise),
         R.range(0, 6));
 
@@ -89,10 +84,10 @@ export const bakedNattoMapFunction = rawNatto => {
       genericShortHookElementalChinese)
     .twigElementalEnglish;
 
-  const externalShortHookTrunk =
+  const externalShortHookTrunkChinese =
     rawNatto[4];
 
-  const internslShortHookTrunk =
+  const internslShortHookTrunkChinese =
     rawNatto[2];
 
   const beginningSnapPea =
@@ -114,9 +109,10 @@ export const bakedNattoMapFunction = rawNatto => {
   return {
     _type: 'Baked natto',
     genericShortHookOriginal,
-    genericShortHookElemental,
-    externalShortHookTrunk,
-    internslShortHookTrunk,
+    genericShortHookElementalChinese,
+    genericShortHookElementalEnglish,
+    externalShortHookTrunkChinese,
+    internslShortHookTrunkChinese,
     externalSnapPeas,
     internalSnapPeas
   };
