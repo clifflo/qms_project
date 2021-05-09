@@ -3,7 +3,8 @@ import * as RA from 'ramda-adjunct';
 import {
   getIndexFromWordList,
   checkNilWithString,
-  checkNilWithNumber
+  checkNilWithNumber,
+  getItemByStringFromList
 } from '../../utilityFiles/utilityHub';
 import {
   shortHookContextSet
@@ -35,9 +36,10 @@ export const getShortHookContextByAlternative =
   )
 
   const shortHookContext =
-    R.find(
-      R.prop('genericShortHookAlternative'),
-      shortHookContextSet);
+    getItemByStringFromList(
+      shortHookContextSet,
+      genericShortHookAlternative,
+      'genericShortHookAlternative');
 
   return shortHookContext;
 }

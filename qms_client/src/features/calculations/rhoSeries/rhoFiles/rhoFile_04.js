@@ -97,7 +97,9 @@ export const rhoContextMapFunction_1 =
     externalShortHookEnglish,
     internalShortHookOriginal,
     internalShortHookAlternative,
-    internalShortHookEnglish
+    internalShortHookEnglish,
+    internalShortHookIndex,
+    externalShortHookIndex
   }
 
   return rhoContext_1;

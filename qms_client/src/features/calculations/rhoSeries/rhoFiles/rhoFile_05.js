@@ -81,12 +81,15 @@ export const getNattoNoodle = (
         effectiveShortHookElementalChinese)
       .twigElementalEnglish;
 
-    return {
+    const nattoNoddle = {
+      _type: 'nattoNoddle',
       effectiveShortHookTrunk,
       effectiveSnapPeas,
       effectiveShortHookElementalChinese,
       effectiveShortHookElementalEnglish
     }
+
+    return nattoNoddle;
   }
   else {
 
@@ -116,12 +119,15 @@ export const getNattoNoodle = (
         effectiveShortHookElementalChinese)
       .twigElementalEnglish;
 
-    return {
-      effectiveShortHookTrunk,
-      effectiveSnapPeas,
-      effectiveShortHookElementalChinese,
-      effectiveShortHookElementalEnglish
-    }
+      const nattoNoddle = {
+        _type: 'nattoNoddle',
+        effectiveShortHookTrunk,
+        effectiveSnapPeas,
+        effectiveShortHookElementalChinese,
+        effectiveShortHookElementalEnglish
+      }
+
+      return nattoNoddle;
   }
 
 }
