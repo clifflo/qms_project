@@ -1,15 +1,21 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  longHookParagraph
+  longHookParagraph,
+  bakedNattoSet
 } from './rhoFile_03';
 import {
   rhoContextMapFunction_1,
 } from './rhoFile_04';
 import {
   checkNilWithArray,
-  checkNilWithString
-} from '../../utilityFiles/utilityFile_01';
+  checkNilWithString,
+  checkNilWithTypedObject
+} from '../../utilityFiles/utilityHub';
+import {
+  getTwigElementalContextByChinese,
+  getTwigTrunkContextByChinese
+} from '../../twigFiles/twigHub';
 
 const buildRhoContextSet_1 = () => {
 
@@ -38,7 +44,7 @@ export const getNattoNoodle = (
     R.propEq(
       'genericShortHookOriginal',
       genericShortHookOriginal),
-    bakedNattos);
+    bakedNattoSet);
 
   checkNilWithTypedObject(
     bakedNatto,
@@ -47,61 +53,74 @@ export const getNattoNoodle = (
   )
 
   checkNilWithString(
-    natto.genericShortHookElemental,
+    bakedNatto.genericShortHookElemental,
     'Generic short hook elemental');
 
   if(isShortHookExternal){
 
     checkNilWithString(
-      natto.externalShortHookTrunk,
+      bakedNatto.externalShortHookTrunk,
       'External short hook trunk of natto');
 
     checkNilWithArray(
-      natto.externalSnapPeas,
+      bakedNatto.externalSnapPeas,
       'External snap peas of natto');
 
     const effectiveShortHookTrunk =
-      natto.externalShortHookTrunk;
+      bakedNatto.externalShortHookTrunk;
 
     const effectiveSnapPeas =
-      natto.externalSnapPeas;
+      bakedNatto.externalSnapPeas;
 
     const effectiveShortHookElementalChinese =
-      natto.genericShortHookElemental;
+      bakedNatto
+      .genericShortHookElementalChinese;
+
+    const effectiveShortHookElementalEnglish =
+      getTwigElementalContextByChinese(
+        effectiveShortHookElementalChinese)
+      .twigElementalEnglish;
 
     return {
       effectiveShortHookTrunk,
       effectiveSnapPeas,
-      effectiveShortHookElemental
+      effectiveShortHookElementalChinese,
+      effectiveShortHookElementalEnglish
     }
   }
   else {
 
     checkNilWithString(
-      natto.internslShortHookTrunk,
+      bakedNatto.internslShortHookTrunk,
       'Internal short hook trunk of natto');
 
     checkNilWithArray(
-      natto.internalSnapPeas,
+      bakedNatto.internalSnapPeas,
       'Internal snap peas of natto');
 
     checkNilWithString(
-      natto.genericShortHookElemental,
+      bakedNatto.genericShortHookElemental,
       'Generic short hook elemental of natto');
 
     const effectiveShortHookTrunk =
-      natto.internslShortHookTrunk;
+      bakedNatto.internslShortHookTrunk;
 
     const effectiveSnapPeas =
-      natto.internalSnapPeas;
+      bakedNatto.internalSnapPeas;
 
-    const genericShortHookElemental =
-      natto.genericShortHookElemental;
+    const effectiveShortHookElementalChinese =
+      bakedNatto.genericShortHookElementalChinese;
+
+    const effectiveShortHookElementalEnglish =
+      getTwigTrunkContextByChinese(
+        effectiveShortHookElementalChinese)
+      .twigElementalEnglish;
 
     return {
       effectiveShortHookTrunk,
       effectiveSnapPeas,
-      genericShortHookElemental
+      effectiveShortHookElementalChinese,
+      effectiveShortHookElementalEnglish
     }
   }
 

@@ -3,6 +3,10 @@ import * as RA from 'ramda-adjunct';
 import {
   getShortHookContextByAlternative
 } from './rhoFile_03';
+import {
+  checkNilWithString,
+  checkNilWithNumber
+} from '../../utilityFiles/utilityHub';
 
 export const rhoContextMapFunction_1 =
   longHookSentence => {
@@ -37,12 +41,12 @@ export const rhoContextMapFunction_1 =
     longHookName = R.drop(2, longHookSentence);
   }
 
-  E.checkNilWithString(
+  checkNilWithString(
     externalShortHookAlternative,
     'External short hook alternate'
   );
 
-  E.checkNilWithString(
+  checkNilWithString(
     internalShortHookAlternative,
     'Internal short hook alternate'
   )
@@ -68,8 +72,8 @@ export const rhoContextMapFunction_1 =
     .genericShortHookOriginal;
 
   const internalShortHookOriginal =
-    intertalShortHookContext
-    .generticShortHookOriginal;
+    internalShortHookContext
+    .genericShortHookOriginal;
 
   const externalShortHookEnglish =
     externalShortHookContext

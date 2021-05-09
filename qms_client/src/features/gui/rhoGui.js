@@ -1,9 +1,9 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  bakedNattoSet
-} from '../calculations/rhoSeries/rhoFiles/rhoFile_03';
+  rhoContextSet_1
+} from '../calculations/rhoSeries/rhoSeriesHub';
 
 export default function RhoGui() {
-  return <JSONTree data={bakedNattoSet}/>
+  return <JSONTree data={rhoContextSet_1}/>
 }
