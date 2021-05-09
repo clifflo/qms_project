@@ -1,14 +1,27 @@
 import {
 } from './twigFile_01';
 
-export const itemOfTrunk = trunkIndex => {
-  return getCyclicItemFromList(
-    trunkOrder, trunkIndex);
+
+
+export const branchContext = {
+  '子': 'Psi',
+  '丑': 'Chi',
+  '寅': 'Phi',
+  '卯': 'Upsilon',
+  '辰': 'Tau',
+  '巳': 'Sigma',
+  '午': 'Rho',
+  '未': 'Pi',
+  '申': 'Omicron',
+  '酉': 'Xi',
+  '戌': 'Nu',
+  '亥': 'Mu',
 }
 
-export const itemOfBranch = branchIndex => {
-  return getCyclicItemFromList(branchOrder, index);
-}
+// Branch order
+export const branchOrder =
+  '子丑寅卯辰巳午未申酉戌亥';
+
 
 export function itemOfElemental(index){
   return getCyclicItemFromList(elementalOrder, index);

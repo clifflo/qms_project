@@ -5,81 +5,72 @@ import {
   getIndexFromString
 } from '../utils/util_01';
 
-export const elementalContextSet = [
+export const twigElementalContextSet = [
   {
-    elementalIndex: 0,
-    elementalChinese: '金',
-    elementalEnglish: 'Twig Metal'
+    twigElementalIndex: 0,
+    twigElementalChinese: '金',
+    twigElementalEnglish: 'Twig Metal'
   },
   {
-    elementalIndex: 1,
-    elementalChinese: '水',
-    elementalEnglish: 'Twig Water'
+    twigElementalIndex: 1,
+    twigElementalChinese: '水',
+    twigElementalEnglish: 'Twig Water'
   },
   {
-    elementalIndex: 2,
-    elementalChinese: '木',
-    elementalEnglish: 'Twig Wood'
+    twigElementalIndex: 2,
+    twigElementalChinese: '木',
+    twigElementalEnglish: 'Twig Wood'
   },
   {
-    elementalIndex: 3,
-    elementalChinese: '火',
-    elementalEnglish: 'Twig Fire'
+    twigElementalIndex: 3,
+    twigElementalChinese: '火',
+    twigElementalEnglish: 'Twig Fire'
   },
   {
-    elementalIndex: 4,
-    elementalChinese: '土',
-    elementalEnglish: 'Twig Earth'
+    twigElementalIndex: 4,
+    twigElementalChinese: '土',
+    twigElementalEnglish: 'Twig Earth'
   }
 ];
 
 export const getTwigElementalContextByIndex =
-  elementalIndex => {
+  twigElementalIndex => {
 
-  checkNilWithNumber(
-    elementalIndex,
-    'Elemental Index');
+  try{
+    checkNilWithNumber(
+      twigElementalIndex,
+      'Twig elemental index');
 
-  const elementalContext =
-    R.find(
-      R.propEq('elementalIndex', elementalIndex),
-      elementalContextSet));
+    const twigElementalContext =
+      getCyclicItemFromList(
+        twigElementalContextSet,
+        twigElementalIndex,
+        'twigElementalIndex'
+      );
 
-  return elementalContext;
+    return twigElementalContext;
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throw new Error(
+      'Cannot get twig elemental context by index.');
+  }
+
 }
 
 export const getTwigElementalContextByChinese =
-  elementalChinese => {
+  twigElementalChinese => {
 
   checkNilWithString(
-    elementalChinese,
+    twigElementalChinese,
     'Elemental Chinese');
 
-  const elementalContext =
+  const twigElementalContext =
     R.find(
-      R.propEq('elementalChinese', elementalChinese),
-      elementalContextSet));
+      R.propEq(
+        'twigElementalChinese',
+        twigElementalChinese),
+      twigElementalContextSet));
 
-  return elementalContext;
+  return twigElementalContext;
 }
-
-
-
-export const branchContext = {
-  '子': 'Psi',
-  '丑': 'Chi',
-  '寅': 'Phi',
-  '卯': 'Upsilon',
-  '辰': 'Tau',
-  '巳': 'Sigma',
-  '午': 'Rho',
-  '未': 'Pi',
-  '申': 'Omicron',
-  '酉': 'Xi',
-  '戌': 'Nu',
-  '亥': 'Mu',
-}
-
-// Branch order
-export const branchOrder =
-  '子丑寅卯辰巳午未申酉戌亥';

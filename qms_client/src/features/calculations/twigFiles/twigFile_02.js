@@ -1,3 +1,6 @@
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
+
 export const trunkContextSet = [
   {
     trunkIndex: 0,
@@ -57,5 +60,27 @@ export const isValidTrunkChinese =
   checkNilWithString(
     trunkChinese, 'Trunk Chinese');
 
-  
+  return R.any(
+    R.propEq('trunkChinese', trunkChinese),
+    trunkContextSet);
+}
+
+export const getTrunkContextByIndex =
+  trunkIndex => {
+
+  try{
+    checkNilWithNumber(
+      trunkIndex, 'Trunk index');
+
+    return getCyclicItemFromList(
+      trunkContextSet,
+      trunkIndex,
+      'trunkIndex'
+    );
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throw new Error(
+      'Cannot get trunk context by index.');
+  }
 }
