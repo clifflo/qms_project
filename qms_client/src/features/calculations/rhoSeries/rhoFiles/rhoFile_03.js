@@ -1,13 +1,16 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  getIndexFromWordList
-} from '../../utilityFiles/utilityFile_01';
+  getIndexFromWordList,
+  checkNilWithString,
+  checkNilWithNumber
+} from '../../utilityFiles/utilityHub';
 import {
   shortHookContextSet
 } from './rhoFile_01';
 import {
-  bakedNattoMapFunction
+  bakedNattoMapFunction,
+  rawNattoSet
 } from './rhoFile_02';
 
 export const longHookParagraph =

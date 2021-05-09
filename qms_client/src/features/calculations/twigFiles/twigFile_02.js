@@ -2,12 +2,11 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   checkNilWithString,
-  checkNilWithNumber
-} from '../utilityFiles/utilityFile_01';
-import {
+  checkNilWithNumber,
   isItemExistByStringFromList,
-  getCyclicItemFromList
-} from '../utilityFiles/utilityFile_02';
+  getCyclicItemFromList,
+  getItemByStringFromList
+} from '../utilityFiles/utilityHub';
 
 export const twigTrunkContextSet = [
   {

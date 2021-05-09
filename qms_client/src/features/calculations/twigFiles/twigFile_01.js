@@ -3,7 +3,9 @@ import * as RA from 'ramda-adjunct';
 import {
   getCyclicItemFromList,
   getItemByStringFromList,
-  getIndexFromString
+  getIndexFromString,
+  checkNilWithString,
+  checkNilWithNumber
 } from '../utilityFiles/utilityHub';
 
 export const twigElementalContextSet = [
