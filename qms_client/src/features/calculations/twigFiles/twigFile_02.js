@@ -1,5 +1,13 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import {
+  checkNilWithString,
+  checkNilWithNumber
+} from '../utilityFiles/utilityFile_01';
+import {
+  isItemExistByStringFromList,
+  getCyclicItemFromList
+} from '../utilityFiles/utilityFile_02';
 
 export const twigTrunkContextSet = [
   {
@@ -83,5 +91,34 @@ export const getTwigTrunkContextByIndex =
     console.error(errorMessage);
     throw new Error(
       'Cannot get twig trunk context by index.');
+  }
+}
+
+export const getTwigTrunkContextByChinese =
+  twigTrunkChinese => {
+
+  try{
+
+    checkNilWithString(
+      twigTrunkChinese,
+      'Twig trunk chinese');
+
+    const twigTrunkContext = getItemByStringFromList(
+      twigTrunkContextSet,
+      twigTrunkChinese,
+      'twigTrunkChinese');
+
+    if(R.isNil(twigTrunkContext)){
+      throw new Error(
+        twigTrunkChinese + ' '
+        + 'is not a valid twig trunk chinese.');
+    }
+
+    return twigTrunkContext;
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throw new Error(
+      'Cannot get twig trunk context by chinese.');
   }
 }

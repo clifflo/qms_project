@@ -1,30 +1,44 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  itemOfBranch
-} from '../../twigFiles/twigFile_02';
+  getTwigBranchContextByIndex,
+  getTwigBranchContextByChinese
+} from '../../twigFiles/twigFile_03';
 
 export const rawNattoSet =
   R.join(',', [
     '乾金甲子壬順佈,坎水戊寅戊順佈',
     '艮土丙辰丙順佈,震木庚子庚順佈',
     '巽木辛丑辛逆佈,離火己卯己逆佈',
-    '坤土乙未癸逆佈,兌金丁巳丁逆佈',
+    '坤土乙未癸逆佈,isValidTwigTrunkChinese兌金丁巳丁逆佈',
   ]);
 
 const snapPeaMapFunction = (
-  beginningSnapPea,
+  beginningSnapPeaBranchChinese,
   snapPeasRunClockwise,
-  crossDownwardIndex)  => {
+  snapPeaMovement)  => {
 
-  const rawAdjustment = crossDownwardIndex * 2;
+  const rawSnapPeaAdjustment = snapPeaMovement * 2;
 
-  const finalAdjustment = snapPeasRunClockwise ?
-    rawAdjustment : (-rawAdjustment);
+  const finalSnapPeaAdjustment =
+    snapPeasRunClockwise ?
+    rawSnapPeaAdjustment : (-rawSnapPeaAdjustment);
 
-  return itemOfBranch(
-    beginningSnapPeaBranchIndex
-    + finalAdjustment);
+  const beginningSnapPeaBranchIndex =
+    getTwigBranchContextByChinese(
+      beginningSnapPeaBranchChinese)
+    .twigBranchIndex;
+
+  const targetSnapPeaBranchContext =
+    getTwigBranchContextByIndex(
+      beginningSnapPeaBranchIndex
+      + finalSnapPeaAdjustment);
+
+  const targetSnapPeaBranchChinese =
+    targetSnapPeaBranchContext
+    .twigBranchChinese;
+
+  return targetSnapPeaBranchChinese;
 }
 
 export const getFullSnapPeas =

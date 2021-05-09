@@ -1,14 +1,6 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import * as E from '../../examiner';
-import {
-  getCyclicItemFromList,
-  utGetIdx
-} from '../../utilityFiles/utility_01';
-import {
-  indexOfBranch,
-  itemOfBranch
-} from '../../twigs/twig_01';
 
 export const shortHookContextSet = [
   {

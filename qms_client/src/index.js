@@ -12,7 +12,7 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getTwigElemcentById('root')
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -39,7 +39,7 @@ export const getShortHookContextByAlternative =
   return shortHookContext;
 }
 
-export const buildBakedNattoSet = () => {
+const buildBakedNattoSet = () => {
 
   try{
     return R.compose(
