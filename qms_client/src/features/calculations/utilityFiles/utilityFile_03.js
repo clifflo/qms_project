@@ -1,3 +1,6 @@
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
+
 export const checkNilWithTypedObject =
   (objectVariable, variableName, typeName) => {
 

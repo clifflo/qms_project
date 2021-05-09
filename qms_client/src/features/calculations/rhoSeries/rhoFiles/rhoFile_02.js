@@ -32,16 +32,16 @@ export const getFullSnapPeas =
 
   try{
 
-    E.checkNilWithString(
+    checkNilWithString(
       beginningSnapPea,
-      'Beginning Snap Pea');
+      'Beginning snap pea');
 
     const beginningSnapPeaBranchIndex =
       indexOfBranch(beginningSnapPea);
 
-    E.checkNilWithNumber(
+    checkNilWithNumber(
       beginningSnapPeaBranchIndex,
-      'Beginning Snap Pea Branch Index');
+      'Beginning snap pea branch index');
 
     const fullSnapPeas =
       R.map(
@@ -55,7 +55,7 @@ export const getFullSnapPeas =
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get Full Snap Peas.');
+      'Cannot get full snap peas.');
   }
 }
 
@@ -77,7 +77,7 @@ const bakedNattoMapFunction = rawNatto => {
     R.reverse(R.take(3, fullSnapPeas));
 
   return {
-    _type: 'Baked Natto',
+    _type: 'Baked natto',
     genericShortHookOriginal,
     genericShortHookElemental,
     externalShortHookTrunk,
