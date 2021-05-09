@@ -1,5 +1,71 @@
-import {
-} from './twigFile_01';
+
+export const branchContextSet = [
+  {
+    twigBranchIndex: -,
+    twigBranchChinese: '',
+    twigBranchEnglish: ''
+  },
+  {
+    twigBranchIndex: -,
+    twigBranchChinese: '',
+    twigBranchEnglish: ''
+  },
+  {
+    twigBranchIndex: -,
+    twigBranchChinese: '',
+    twigBranchEnglish: ''
+  },
+  {
+    twigBranchIndex: -,
+    twigBranchChinese: '',
+    twigBranchEnglish: ''
+  },
+  {
+    twigBranchIndex: -,
+    twigBranchChinese: '',
+    twigBranchEnglish: ''
+  },
+  {
+    twigBranchIndex: -,
+    twigBranchChinese: '',
+    twigBranchEnglish: ''
+  },
+  {
+    twigBranchIndex: -,
+    twigBranchChinese: '',
+    twigBranchEnglish: ''
+  },
+  {
+    twigBranchIndex: -,
+    twigBranchChinese: '',
+    twigBranchEnglish: ''
+  },
+  {
+    twigBranchIndex: -,
+    twigBranchChinese: '',
+    twigBranchEnglish: ''
+  },
+  {
+    twigBranchIndex: -,
+    twigBranchChinese: '',
+    twigBranchEnglish: ''
+  },
+  {
+    twigBranchIndex: -,
+    twigBranchChinese: '',
+    twigBranchEnglish: ''
+  },
+  {
+    twigBranchIndex: -,
+    twigBranchChinese: '',
+    twigBranchEnglish: ''
+  },
+  {
+    twigBranchIndex: -,
+    twigBranchChinese: '',
+    twigBranchEnglish: ''
+  }
+]
 
 
 

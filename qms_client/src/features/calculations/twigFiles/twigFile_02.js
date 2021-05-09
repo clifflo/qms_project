@@ -1,86 +1,86 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
-export const trunkContextSet = [
+export const twigTrunkContextSet = [
   {
-    trunkIndex: 0,
-    trunkChinese: '甲',
-    trunkEnglish: 'Beta'
+    twigTrunkIndex: 0,
+    twigTrunkChinese: '甲',
+    twigTrunkEnglish: 'Beta'
   },
   {
-    trunkIndex: 1,
-    trunkChinese: '乙',
-    trunkEnglish: 'Gamma'
+    twigTrunkIndex: 1,
+    twigTrunkChinese: '乙',
+    twigTrunkEnglish: 'Gamma'
   },
   {
-    trunkIndex: 2,
-    trunkChinese: '丙',
-    trunkEnglish: 'Delta'
+    twigTrunkIndex: 2,
+    twigTrunkChinese: '丙',
+    twigTrunkEnglish: 'Delta'
   },
   {
-    trunkIndex: 3,
-    trunkChinese: '丁',
-    trunkEnglish: 'Epsilon'
+    twigTrunkIndex: 3,
+    twigTrunkChinese: '丁',
+    twigTrunkEnglish: 'Epsilon'
   },
   {
-    trunkIndex: 4,
-    trunkChinese: '戊',
-    trunkEnglish: 'Zeta'
+    twigTrunkIndex: 4,
+    twigTrunkChinese: '戊',
+    twigTrunkEnglish: 'Zeta'
   },
   {
-    trunkIndex: 5,
-    trunkChinese: '己',
-    trunkEnglish: 'Eta'
+    twigTrunkIndex: 5,
+    twigTrunkChinese: '己',
+    twigTrunkEnglish: 'Eta'
   },
   {
-    trunkIndex: 6,
-    trunkChinese: '庚',
-    trunkEnglish: 'Theta'
+    twigTrunkIndex: 6,
+    twigTrunkChinese: '庚',
+    twigTrunkEnglish: 'Theta'
   },
   {
-    trunkIndex: 7,
-    trunkChinese: '辛',
-    trunkEnglish: 'Iota'
+    twigTrunkIndex: 7,
+    twigTrunkChinese: '辛',
+    twigTrunkEnglish: 'Iota'
   },
   {
-    trunkIndex: 8,
-    trunkChinese: '壬',
-    trunkEnglish: 'Kappa'
+    twigTrunkIndex: 8,
+    twigTrunkChinese: '壬',
+    twigTrunkEnglish: 'Kappa'
   },
   {
-    trunkIndex: 9,
-    trunkChinese: '癸',
-    trunkChinese : 'Lamda'
+    twigTrunkIndex: 9,
+    twigTrunkChinese: '癸',
+    twigTrunkChinese : 'Lamda'
   }
 ]
 
-export const isValidTrunkChinese =
-  trunkChinese => {
+export const isValidTwigTrunkChinese =
+  twigTrunkChinese => {
 
   checkNilWithString(
-    trunkChinese, 'Trunk Chinese');
+    twigTrunkChinese, 'Twig trunk chinese');
 
   return R.any(
-    R.propEq('trunkChinese', trunkChinese),
-    trunkContextSet);
+    R.propEq('twigTrunkChinese', twigTrunkChinese),
+    twigTrunkContextSet);
 }
 
 export const getTrunkContextByIndex =
-  trunkIndex => {
+  twigTrunkIndex => {
 
   try{
     checkNilWithNumber(
-      trunkIndex, 'Trunk index');
+      twigTrunkIndex, 'Twig trunk index');
 
     return getCyclicItemFromList(
-      trunkContextSet,
-      trunkIndex,
-      'trunkIndex'
+      twigTrunkContextSet,
+      twigTrunkIndex,
+      'twigTrunkIndex'
     );
   }
   catch(errorMessage){
     console.error(errorMessage);
     throw new Error(
-      'Cannot get trunk context by index.');
+      'Cannot get twig trunk context by index.');
   }
 }
