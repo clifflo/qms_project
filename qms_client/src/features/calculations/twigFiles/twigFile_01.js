@@ -2,8 +2,9 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   getCyclicItemFromList,
+  getItemByStringFromList,
   getIndexFromString
-} from '../utils/util_01';
+} from '../utilityFiles/utilityHub';
 
 export const twigElementalContextSet = [
   {
@@ -66,11 +67,11 @@ export const getTwigElementalContextByChinese =
     'Elemental Chinese');
 
   const twigElementalContext =
-    R.find(
-      R.propEq(
-        'twigElementalChinese',
-        twigElementalChinese),
-      twigElementalContextSet));
+    getItemByStringFromList(
+      twigElementalContextSet,
+      twigElementalChinese,
+      'twigElementalChinese'
+    );
 
   return twigElementalContext;
 }
