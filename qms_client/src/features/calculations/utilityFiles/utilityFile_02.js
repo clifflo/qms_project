@@ -51,6 +51,11 @@ export const getItemByStringFromList =
 
 }
 
+export const isItemExistByStringFromList =
+  R.compose(
+    RA.isNotNil,
+    R.curry(getItemByStringFromList));
+
 export const getIndexFromWordList =
   (wordVariable, wordList) => {
 

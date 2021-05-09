@@ -1,8 +1,9 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
-import { bakedNattoSet } from
-  '../calculations/rhoSeries/rhoFiles/rhoFile_03';
+import {
+  testIsValidTwigTrunkChinese_02
+} from '../calculations/twigFiles/twigTest_01';
 
 export default function RhoGui() {
-  return <JSONTree data={bakedNattoSet}/>
+  return <JSONTree data={testIsValidTwigTrunkChinese_02}/>
 }

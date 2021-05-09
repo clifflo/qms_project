@@ -1,118 +1,77 @@
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 
-export const branchContextSet = [
+export const twigBranchContextSet = [
   {
-    twigBranchIndex: -,
-    twigBranchChinese: '',
-    twigBranchEnglish: ''
+    twigBranchIndex: 0,
+    twigBranchChinese: '子',
+    twigBranchEnglish: 'Psi'
   },
   {
-    twigBranchIndex: -,
-    twigBranchChinese: '',
-    twigBranchEnglish: ''
+    twigBranchIndex: 1,
+    twigBranchChinese: '丑',
+    twigBranchEnglish: 'Chi'
   },
   {
-    twigBranchIndex: -,
-    twigBranchChinese: '',
-    twigBranchEnglish: ''
+    twigBranchIndex: 2,
+    twigBranchChinese: '寅',
+    twigBranchEnglish: 'Phi'
   },
   {
-    twigBranchIndex: -,
-    twigBranchChinese: '',
-    twigBranchEnglish: ''
+    twigBranchIndex: 3,
+    twigBranchChinese: '卯',
+    twigBranchEnglish: 'Upsilon'
   },
   {
-    twigBranchIndex: -,
-    twigBranchChinese: '',
-    twigBranchEnglish: ''
+    twigBranchIndex: 4,
+    twigBranchChinese: '辰',
+    twigBranchEnglish: 'Tau'
   },
   {
-    twigBranchIndex: -,
-    twigBranchChinese: '',
-    twigBranchEnglish: ''
+    twigBranchIndex: 5,
+    twigBranchChinese: '巳',
+    twigBranchEnglish: 'Sigma'
   },
   {
-    twigBranchIndex: -,
-    twigBranchChinese: '',
-    twigBranchEnglish: ''
+    twigBranchIndex: 6,
+    twigBranchChinese: '午',
+    twigBranchEnglish: 'Rho'
   },
   {
-    twigBranchIndex: -,
-    twigBranchChinese: '',
-    twigBranchEnglish: ''
+    twigBranchIndex: 7,
+    twigBranchChinese: '未',
+    twigBranchEnglish: 'Pi'
   },
   {
-    twigBranchIndex: -,
-    twigBranchChinese: '',
-    twigBranchEnglish: ''
+    twigBranchIndex: 8,
+    twigBranchChinese: '申',
+    twigBranchEnglish: 'Omicron'
   },
   {
-    twigBranchIndex: -,
-    twigBranchChinese: '',
-    twigBranchEnglish: ''
+    twigBranchIndex: 9,
+    twigBranchChinese: '酉',
+    twigBranchEnglish: 'Xi'
   },
   {
-    twigBranchIndex: -,
-    twigBranchChinese: '',
-    twigBranchEnglish: ''
+    twigBranchIndex: 10,
+    twigBranchChinese: '戌',
+    twigBranchEnglish: 'Nu'
   },
   {
-    twigBranchIndex: -,
-    twigBranchChinese: '',
-    twigBranchEnglish: ''
-  },
-  {
-    twigBranchIndex: -,
-    twigBranchChinese: '',
-    twigBranchEnglish: ''
+    twigBranchIndex: 11,
+    twigBranchChinese: '亥',
+    twigBranchEnglish: 'Mu'
   }
 ]
 
+export const isValidTwigBranchChinese =
+  twigBranchChinese => {
 
+  checkNilWithString(
+    twigBranchChinese, 'Twig trunk chinese');
 
-export const branchContext = {
-  '子': 'Psi',
-  '丑': 'Chi',
-  '寅': 'Phi',
-  '卯': 'Upsilon',
-  '辰': 'Tau',
-  '巳': 'Sigma',
-  '午': 'Rho',
-  '未': 'Pi',
-  '申': 'Omicron',
-  '酉': 'Xi',
-  '戌': 'Nu',
-  '亥': 'Mu',
-}
-
-// Branch order
-export const branchOrder =
-  '子丑寅卯辰巳午未申酉戌亥';
-
-
-export function itemOfElemental(index){
-  return getCyclicItemFromList(elementalOrder, index);
-}
-
-export const isValidBranch = branch => {
-  return R.includes(branch, branchOrder);
-}
-
-export function isValidTrunk(trunk){
-  return R.includes(trunk, trunkOrder);
-}
-
-export function isValidElem(elemental){
-  return R.includes(elemental, elementalOrder);
-}
-
-export const indexOfElemental = elemental => {
-  return getIndexFromString(elemental, elementalOrder)
-}
-
-export const indexOfBranch = branch => {
-  return getIndexFromString(branch, branchOrder)
-}
-
-export const indexOfTrunk = trunk => {
-  return getIndexFromString(trunk, trunkOrder)
+  return isItemExistByStringFromList(
+    twigBranchContextSet,
+    twigBranchChinese,
+    'twigBranchChinese');
 }

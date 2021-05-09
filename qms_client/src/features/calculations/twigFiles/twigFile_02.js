@@ -60,12 +60,13 @@ export const isValidTwigTrunkChinese =
   checkNilWithString(
     twigTrunkChinese, 'Twig trunk chinese');
 
-  return R.any(
-    R.propEq('twigTrunkChinese', twigTrunkChinese),
-    twigTrunkContextSet);
+  return isItemExistByStringFromList(
+    twigTrunkContextSet,
+    twigTrunkChinese,
+    'twigTrunkChinese');
 }
 
-export const getTrunkContextByIndex =
+export const getTwigTrunkContextByIndex =
   twigTrunkIndex => {
 
   try{
