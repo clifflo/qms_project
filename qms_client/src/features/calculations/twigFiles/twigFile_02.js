@@ -1,39 +1,61 @@
-import {
-} from './twigFile_01';
+export const trunkContextSet = [
+  {
+    trunkIndex: 0,
+    trunkChinese: '甲',
+    trunkEnglish: 'Beta'
+  },
+  {
+    trunkIndex: 1,
+    trunkChinese: '乙',
+    trunkEnglish: 'Gamma'
+  },
+  {
+    trunkIndex: 2,
+    trunkChinese: '丙',
+    trunkEnglish: 'Delta'
+  },
+  {
+    trunkIndex: 3,
+    trunkChinese: '丁',
+    trunkEnglish: 'Epsilon'
+  },
+  {
+    trunkIndex: 4,
+    trunkChinese: '戊',
+    trunkEnglish: 'Zeta'
+  },
+  {
+    trunkIndex: 5,
+    trunkChinese: '己',
+    trunkEnglish: 'Eta'
+  },
+  {
+    trunkIndex: 6,
+    trunkChinese: '庚',
+    trunkEnglish: 'Theta'
+  },
+  {
+    trunkIndex: 7,
+    trunkChinese: '辛',
+    trunkEnglish: 'Iota'
+  },
+  {
+    trunkIndex: 8,
+    trunkChinese: '壬',
+    trunkEnglish: 'Kappa'
+  },
+  {
+    trunkIndex: 9,
+    trunkChinese: '癸',
+    trunkChinese : 'Lamda'
+  }
+]
 
-export const itemOfTrunk = trunkIndex => {
-  return getCyclicItemFromList(
-    trunkOrder, trunkIndex);
-}
+export const isValidTrunkChinese =
+  trunkChinese => {
 
-export const itemOfBranch = branchIndex => {
-  return getCyclicItemFromList(branchOrder, index);
-}
+  checkNilWithString(
+    trunkChinese, 'Trunk Chinese');
 
-export function itemOfElemental(index){
-  return getCyclicItemFromList(elementalOrder, index);
-}
-
-export function isValidBranch(branch){
-  return R.includes(branch, branchOrder);
-}
-
-export function isValidTrunk(trunk){
-  return R.includes(trunk, trunkOrder);
-}
-
-export function isValidElem(elemental){
-  return R.includes(elemental, elementalOrder);
-}
-
-export const indexOfElemental = elemental => {
-  return getIndexFromString(elemental, elementalOrder)
-}
-
-export const indexOfBranch = branch => {
-  return getIndexFromString(branch, branchOrder)
-}
-
-export const indexOfTrunk = trunk => {
-  return getIndexFromString(trunk, trunkOrder)
+  
 }

@@ -5,19 +5,6 @@ import {
   getIndexFromString
 } from '../utils/util_01';
 
-export const trunkContext = {
-  '甲': 'Beta',
-  '乙': 'Gamma',
-  '丙': 'Delta',
-  '丁': 'Epsilon',
-  '戊': 'Zeta',
-  '己': 'Eta',
-  '庚': 'Theta',
-  '辛': 'Iota',
-  '壬': 'Kappa',
-  '癸': 'Lamda'
-}
-
 export const elementalContextSet = [
   {
     elementalIndex: 0,
@@ -76,33 +63,7 @@ export const getTwigElementalContextByChinese =
   return elementalContext;
 }
 
-export const isTwigMetal =
-  elementalEnglish => {
-  return elementalEnglish == 'Twig Metal';
-}
 
-export const isTwigFire =
-  elementalEnglish => {
-  return elementalEnglish == 'Twig Fire';
-}
-
-export const isTwigWater =
-  elementalEnglish => {
-  return elementalEnglish == 'Twig Water';
-}
-
-export const isTwigEarth =
-  elementalEnglish => {
-  return elementalEnglish == 'Twig Earth';
-}
-
-export const isTwigWood =
-  elementalEnglish => {
-  return elementalEnglish == 'Twig Wood';
-}
-
-export const trunkOrder
-  = '甲乙丙丁戊己庚辛壬癸';
 
 export const branchContext = {
   '子': 'Psi',

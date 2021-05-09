@@ -40,10 +40,11 @@ export const getNattoNoodle = (
       genericShortHookOriginal),
     bakedNattos);
 
-  if(!natto){
-    throw new Error(
-      'Cannot find baked natto.');
-  }
+  checkNilWithTypedObject(
+    bakedNatto,
+    'Baked natto',
+    'Baked natto' 
+  )
 
   checkNilWithString(
     natto.genericShortHookElemental,
