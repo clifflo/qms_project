@@ -12,27 +12,27 @@ export const twigElementalContextSet = [
   {
     twigElementalIndex: 0,
     twigElementalChinese: '金',
-    twigElementalEnglish: 'Twig Metal'
+    twigElementalEnglish: 'Twig elemental metal'
   },
   {
     twigElementalIndex: 1,
     twigElementalChinese: '水',
-    twigElementalEnglish: 'Twig Water'
+    twigElementalEnglish: 'Twig elemental water'
   },
   {
     twigElementalIndex: 2,
     twigElementalChinese: '木',
-    twigElementalEnglish: 'Twig Wood'
+    twigElementalEnglish: 'Twig elemental wood'
   },
   {
     twigElementalIndex: 3,
     twigElementalChinese: '火',
-    twigElementalEnglish: 'Twig Fire'
+    twigElementalEnglish: 'Twig elemental fire'
   },
   {
     twigElementalIndex: 4,
     twigElementalChinese: '土',
-    twigElementalEnglish: 'Twig Earth'
+    twigElementalEnglish: 'Twig elemental earth'
   }
 ];
 

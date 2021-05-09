@@ -12,52 +12,62 @@ export const twigTrunkContextSet = [
   {
     twigTrunkIndex: 0,
     twigTrunkChinese: '甲',
-    twigTrunkEnglish: 'Beta'
+    twigTrunkEnglish: 'Beta',
+    twigTrunkElementalChinese: '五行木'
   },
   {
     twigTrunkIndex: 1,
     twigTrunkChinese: '乙',
-    twigTrunkEnglish: 'Gamma'
+    twigTrunkEnglish: 'Gamma',
+    twigTrunkElementalChinese: '五行木'
   },
   {
     twigTrunkIndex: 2,
     twigTrunkChinese: '丙',
-    twigTrunkEnglish: 'Delta'
+    twigTrunkEnglish: 'Delta',
+    twigTrunkElementalChinese: '五行火',
   },
   {
     twigTrunkIndex: 3,
     twigTrunkChinese: '丁',
-    twigTrunkEnglish: 'Epsilon'
+    twigTrunkEnglish: 'Epsilon',
+    twigTrunkElementalChinese: '五行火',
   },
   {
     twigTrunkIndex: 4,
     twigTrunkChinese: '戊',
-    twigTrunkEnglish: 'Zeta'
+    twigTrunkEnglish: 'Zeta',
+    twigTrunkElementalChinese: '五行土',
   },
   {
     twigTrunkIndex: 5,
     twigTrunkChinese: '己',
-    twigTrunkEnglish: 'Eta'
+    twigTrunkEnglish: 'Eta',
+    twigTrunkElementalChinese: '五行土',
   },
   {
     twigTrunkIndex: 6,
     twigTrunkChinese: '庚',
-    twigTrunkEnglish: 'Theta'
+    twigTrunkEnglish: 'Theta',
+    twigTrunkElementalChinese: '五行金',
   },
   {
     twigTrunkIndex: 7,
     twigTrunkChinese: '辛',
-    twigTrunkEnglish: 'Iota'
+    twigTrunkEnglish: 'Iota',
+    twigTrunkElementalChinese: '五行金',
   },
   {
     twigTrunkIndex: 8,
     twigTrunkChinese: '壬',
-    twigTrunkEnglish: 'Kappa'
+    twigTrunkEnglish: 'Kappa',
+    twigTrunkElementalChinese: '五行水',
   },
   {
     twigTrunkIndex: 9,
     twigTrunkChinese: '癸',
-    twigTrunkChinese : 'Lamda'
+    twigTrunkChinese : 'Lamda',
+    twigTrunkElementalChinese: '五行水',
   }
 ]
 

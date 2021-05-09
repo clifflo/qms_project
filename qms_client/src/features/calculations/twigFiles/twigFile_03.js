@@ -12,27 +12,32 @@ export const twigBranchContextSet = [
   {
     twigBranchIndex: 0,
     twigBranchChinese: '子',
-    twigBranchEnglish: 'Psi'
+    twigBranchEnglish: 'Psi',
+    twigBranchElementalChinese: '水'
   },
   {
     twigBranchIndex: 1,
     twigBranchChinese: '丑',
-    twigBranchEnglish: 'Chi'
+    twigBranchEnglish: 'Chi',
+    twigBranchElementalChinese: '土'
   },
   {
     twigBranchIndex: 2,
     twigBranchChinese: '寅',
-    twigBranchEnglish: 'Phi'
+    twigBranchEnglish: 'Phi',
+    twigBranchElementalChinese: '木'
   },
   {
     twigBranchIndex: 3,
     twigBranchChinese: '卯',
-    twigBranchEnglish: 'Upsilon'
+    twigBranchEnglish: 'Upsilon',
+    twigBranchElementalChinese: '木'
   },
   {
     twigBranchIndex: 4,
     twigBranchChinese: '辰',
-    twigBranchEnglish: 'Tau'
+    twigBranchEnglish: 'Tau',
+    twigBranchElementalChinese: '土'
   },
   {
     twigBranchIndex: 5,

@@ -1,3 +1,6 @@
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
+
 export const getNattoNoodle = (
   genericShortHookOriginal,
   isShortHookExternal) => {
@@ -91,5 +94,4 @@ export const getNattoNoodle = (
 
       return nattoNoddle;
   }
-
 }
