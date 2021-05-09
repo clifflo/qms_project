@@ -6,6 +6,9 @@ import {
 import {
   shortHookContextSet
 } from './rhoFile_01';
+import {
+  bakedNattoMapFunction
+} from './rhoFile_02';
 
 export const longHookParagraph =
   R.join(',', [
@@ -35,3 +38,21 @@ export const getShortHookContextByAlternative =
 
   return shortHookContext;
 }
+
+export const buildBakedNattoSet = () => {
+
+  try{
+    return R.compose(
+      R.map(bakedNattoMapFunction),
+      R.split(','))
+      (rawNattoSet);
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throw new Error(
+      'Cannot build Baked natto set.');
+  }
+
+}
+
+export const bakedNattoSet = buildBakedNattoSet();

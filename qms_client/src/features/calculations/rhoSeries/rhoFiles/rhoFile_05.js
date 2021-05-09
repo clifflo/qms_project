@@ -43,12 +43,12 @@ export const getNattoNoodle = (
   checkNilWithTypedObject(
     bakedNatto,
     'Baked natto',
-    'Baked natto' 
+    'Baked natto'
   )
 
   checkNilWithString(
     natto.genericShortHookElemental,
-    'Generic Short Hook Elemental');
+    'Generic short hook elemental');
 
   if(isShortHookExternal){
 
@@ -60,14 +60,13 @@ export const getNattoNoodle = (
       natto.externalSnapPeas,
       'External snap peas of natto');
 
-
     const effectiveShortHookTrunk =
       natto.externalShortHookTrunk;
 
     const effectiveSnapPeas =
       natto.externalSnapPeas;
 
-    const effectiveShortHookElemental =
+    const effectiveShortHookElementalChinese =
       natto.genericShortHookElemental;
 
     return {
@@ -90,13 +89,14 @@ export const getNattoNoodle = (
       natto.genericShortHookElemental,
       'Generic short hook elemental of natto');
 
-    // Displayed short hook bean trunk
-    const effectiveShortHookTrunk = natto.internslShortHookTrunk;
+    const effectiveShortHookTrunk =
+      natto.internslShortHookTrunk;
 
-    // Displayed bean branch series
-    const effectiveSnapPeas = natto.internalSnapPeas;
+    const effectiveSnapPeas =
+      natto.internalSnapPeas;
 
-    const genericShortHookElemental = natto.genericShortHookElemental;
+    const genericShortHookElemental =
+      natto.genericShortHookElemental;
 
     return {
       effectiveShortHookTrunk,

@@ -59,16 +59,34 @@ export const getFullSnapPeas =
   }
 }
 
-const bakedNattoMapFunction = rawNatto => {
+export const bakedNattoMapFunction = rawNatto => {
 
-  const genericShortHookOriginal = rawNatto[0];
-  const genericShortHookElemental = rawNatto[1];
-  const externalShortHookTrunk = rawNatto[4];
-  const internslShortHookTrunk = rawNatto[2];
-  const beginningSnapPea = rawNatto[3];
-  const snapPeasRunClockwise = rawNatto[5] == '順';
+  const genericShortHookOriginal =
+    rawNatto[0];
+
+  const genericShortHookElementalChinese =
+    rawNatto[1];
+
+  const genericShortHookElementalEnglish =
+    getTwigElementalContextByChinese(
+      genericShortHookElementalChinese)
+    .twigElementalEnglish;
+
+  const externalShortHookTrunk =
+    rawNatto[4];
+
+  const internslShortHookTrunk =
+    rawNatto[2];
+
+  const beginningSnapPea =
+    rawNatto[3];
+
+  const snapPeasRunClockwise =
+    rawNatto[5] == '順';
+
   const fullSnapPeas = getFullSnapPeas(
-    beginningSnapPea, snapPeasRunClockwise);
+    beginningSnapPea,
+    snapPeasRunClockwise);
 
   const externalSnapPeas =
     R.reverse(R.takeLast(3, fullSnapPeas));
@@ -86,21 +104,3 @@ const bakedNattoMapFunction = rawNatto => {
     internalSnapPeas
   };
 }
-
-const buildBakedNattoSet = () => {
-
-  try{
-    return R.compose(
-      R.map(bakedNattoMapFunction),
-      R.split(','))
-      (rawNattoSet);
-  }
-  catch(errorMessage){
-    console.error(errorMessage);
-    throw new Error(
-      'Cannot build Baked Natto Set.');
-  }
-
-}
-
-export const bakedNattoSet = buildBakedNattoSet();
