@@ -6,57 +6,57 @@ export const shortHookContextSet = [
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 0,
-    genericShortHookOriginal: '地',
-    genericShortHookAlternative: '坤',
+    genericShortHookAlternative: '地',
+    genericShortHookOriginal: '坤',
     genericShortHookEnglish: 'Short Hook Earth'
   },
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 1,
-    genericShortHookOriginal: '雷',
-    genericShortHookAlternative: '震',
+    genericShortHookAlternative: '雷',
+    genericShortHookOriginal: '震',
     genericShortHookEnglish: 'Short Hook Thunder'
   },
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 2,
-    genericShortHookOriginal: '水',
-    genericShortHookAlternative: '坎',
+    genericShortHookAlternative: '水',
+    genericShortHookOriginal: '坎',
     genericShortHookEnglish: 'Short Hook Lake'
   },
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 3,
-    genericShortHookOriginal: '澤',
-    genericShortHookAlternative: '兌',
+    genericShortHookAlternative: '澤',
+    genericShortHookOriginal: '兌',
     genericShortHookEnglish: 'Short Hook Swamp'
   },
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 4,
-    genericShortHookOriginal: '山',
-    genericShortHookAlternative: '艮',
+    genericShortHookAlternative: '山',
+    genericShortHookOriginal: '艮',
     genericShortHookEnglish: 'Short Hook Mountain'
   },
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 5,
-    genericShortHookOriginal: '火',
-    genericShortHookAlternative: '離',
+    genericShortHookAlternative: '火',
+    genericShortHookOriginal: '離',
     genericShortHookEnglish: 'Short Hook Flame'
   },
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 6,
-    genericShortHookOriginal: '風',
-    genericShortHookAlternative: '巽',
+    genericShortHookAlternative: '風',
+    genericShortHookOriginal: '巽',
     genericShortHookEnglish: 'Short Hook Monsoon'
   },
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 7,
-    genericShortHookOriginal: '天',
-    genericShortHookAlternative: '乾',
+    genericShortHookAlternative: '天',
+    genericShortHookOriginal: '乾',
     genericShortHookEnglish: 'Short Hook Sky'
   }
 ]

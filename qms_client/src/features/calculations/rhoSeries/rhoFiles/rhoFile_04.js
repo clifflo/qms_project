@@ -89,7 +89,7 @@ export const rhoContextMapFunction_1 =
     internalShortHookContext
       .genericShortHookIndex;
 
-  return {
+  const rhoContext_1 = {
     longHookName,
     longHookIndex,
     externalShortHookOriginal,
@@ -99,4 +99,6 @@ export const rhoContextMapFunction_1 =
     internalShortHookAlternative,
     internalShortHookEnglish
   }
+
+  return rhoContext_1;
 }
