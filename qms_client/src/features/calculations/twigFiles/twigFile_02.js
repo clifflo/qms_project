@@ -1,5 +1,4 @@
 import {
-  
 } from './twigFile_01';
 
 export const itemOfTrunk = trunkIndex => {

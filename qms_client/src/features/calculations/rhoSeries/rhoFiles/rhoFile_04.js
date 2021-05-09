@@ -1,11 +1,10 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  longHookParagraph,
   getShortHookContextByAlternative
-} from './rhoFile_04';
+} from './rhoFile_03';
 
-const rhoContextMapFunction_1 =
+export const rhoContextMapFunction_1 =
   longHookSentence => {
 
   let externalShortHookAlternative;
@@ -49,11 +48,11 @@ const rhoContextMapFunction_1 =
   )
 
   const externalShortHookContext =
-    getShortHookContextByGenericShortHookAlternative(
+    getShortHookContextByAlternative(
       externalShortHookAlternative);
 
   const internalShortHookContext =
-    getShortHookContextByGenericShortHookAlternative(
+    getShortHookContextByAlternative(
       internalShortHookAlternative);
 
   const externalShortHookIndex =
