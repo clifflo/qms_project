@@ -8,7 +8,9 @@ import {
 } from './rhoFile_07';
 import {
   checkNilWithString,
-  getItemByStringFromList
+  checkNilWithNumber,
+  getItemByStringFromList,
+  getItemByNumberFromList
 } from './utilityHubShadowOfRhoFiles';
 
 export const getRhoContextByLongHookName_1 =
@@ -67,15 +69,16 @@ export const getRhoContextByLongHookIndex_1 =
   longHookIndex => {
 
   try{
-    checkNilWithString(
-      longHookName,
-      'Long hook name');
+
+    checkNilWithNumber(
+      longHookIndex,
+      'Long hook index');
 
     const rhoContext_1 =
-      getItemByStringFromList(
+      getItemByNumberFromList(
         rhoContextSet_1,
-        longHookName,
-        'longHookName');
+        longHookIndex,
+        'longHookIndex');
 
     return rhoContext_1;
   }
