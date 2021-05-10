@@ -1,91 +1,79 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  rhoB
-}
+  rawRhoGenerationContextList
+} from './rhoFile_09';
 
-const buildRhoCommonLongHookSeries = (
+const buildAugmentedRhoGenerationContext = (
   genericShortHookOriginal,
-  rawRhoLongHookGapBinaryDigits)  => {
+  rawRhoGenerationContext)  => {
+
+  const {
+    rawGapBinaryDigits,
+    rawRhoGenerationIndex
+  } = rawRhoGenerationContext;
 
   const rhoLongHookGapDecimal =
     binaryToDecimal(
       rawRhoLongHookGapBinaryDigits);
 
-  const rhoLongHookSeriesHeadName =
+  const rhoPureHookName =
     '純' + genericShortHookOriginal;
 
-  const rhoLongHookSeriesHeadContext_1 =
+  const rhoPureHookContext_1 =
     getRhoContextByLongHookName_1(
       rhoLongHookSeriesHeadName);
 
-  const rhoLongHookSeriesHeadIndex =
+  const rhoPureHookIndex =
     rhoLongHookSeriesHeadContext_1
     .longHookIndex;
 
-  const rhoLongHookSeriesStaffIndex =
+  const rhoImpureHookIndex =
     rhoLongHookGapDecimal ^
-    rhoLongHookSeriesHeadIndex;
-
-  const rhoLongHookSeriesStaffContext =
+    rhoPureHookIndex;
+rhoLongHookSeriesHeadName
+  const rhoImpureHookContext =
     getRhoContextByLongHookName_1(
       rhoLongHookSeriesStaffIndex);
 
-  return rhoLongHookSeriesStaffContext
+  const rhoImpureHookName =
+    rhoLongHookSeriesStaffContext
     .longHookName;
+
+  return {
+    _type: 'Augmented rho generation context',
+    rhoPureHookName,
+    rhoImpureHookName,
+    rhoGenerationIndex,
+    rawGapBinaryDigits
+  };
 }
 
-const getRhoGlobalLongHookSeriesSet = () => {
+const buildHookTrainContext =
+  genericShortHookOriginal => {
 
-  const mapFn_1 =
-    (genericShortHookOriginal, rgbnry) => {
+  const augmentedRhoGenerationContextSeries =
+    R.map(
+      buildAugmentedRhoGenerationContext,
+      rawRhoGenerationContextList);
 
-    try{
-
-      const rgdecm = binaryToDecimal(rgbnry);
-      const rhlhn = '純' + genericShortHookOriginal;
-      const rhlix =
-        getRhoContext1ByLongHookName(rhlhn)
-        .lhidx;
-
-      if(R.isNil(rhlix)){
-        throw new Error(
-          '[rhlix] should not be nil.');
-      }
-
-      const rglhi = rgdecm ^ rhlix;
-      const rglct1 = getRcxt1ByLhx(rglhi);
-
-      return rglct1.longHookName;
-    }
-    catch(err){
-      console.error(err);
-      throw new Error(
-        'Error in getting hook series.')
-    }
+  return {
+    _type: 'Hook train context',
+    hookTrainName: genericShortHookOriginal,
+    augmentedRhoGenerationContextSeries
   }
-
-  const mapFn_1c = R.curry(mapFn_1);
-
-  const mapFn_2 = genericShortHookOriginal => {
-
-    const rlhst = RA.mapIndexed(
-      mapFn_1c(genericShortHookOriginal), rhgbs);
-
-    const rlhsf = R.prepend(
-      '純' + genericShortHookOriginal, rlhst);
-
-    return {
-      _type: 'rlhsc',
-      rhlhn: genericShortHookOriginal,
-      rlhsf: rlhsf
-    }
-  }
-
-  const result = R.map(
-    mapFn_2, gshoro);
-
-  return result;
 }
 
-export const rlhsl = getRlhsl();
+const getHookTrainContextSet = () => {
+
+  const genericShortHookOriginalList =
+    R.map(
+      R.prop('genericShortHookOriginal'),
+      shortHookContextSet);
+
+  return R.map(buildHookTrainContext,
+    genericShortHookOriginalList);
+}
+
+export const hookTrainContextSet =
+  getHookTrainContextSet();
