@@ -9,7 +9,7 @@ import {
 } from './rhoFile_08';
 
 const rhoBaseLongHookSeries =
-  R.split(',', '乾,姤,遯,否,觀,剝,晉,大有');
+  R.split(',', '純乾,姤,遯,否,觀,剝,晉,大有');
 
 const rhoBaseLongHookGapBinaryMapFunction = (
   comparedLongHookName,
@@ -31,13 +31,13 @@ const rhoBaseLongHookGapBinaryMapFunction = (
   const bitwiseXoredGapDecimal =
     longHookPureSkyIndex ^ comparedLongHookIndex;
 
-  const rawGapBinaryDigits =
+  const rawRhoGapBinaryWhole =
     decimalToBinary(
       bitwiseXoredGapDecimal, 6);
 
   return {
     _type: 'Raw rho generation context',
-    rawGapBinaryDigits,
+    rawRhoGapBinaryWhole,
     rhoGenerationIndex
   }
 }

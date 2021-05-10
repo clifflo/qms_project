@@ -1,43 +1,52 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
+  shortHookContextSet
+} from './rhoMiniHub_01';
+import {
+  getRhoContextByLongHookName_1
+} from './rhoFile_08';
+import {
   rawRhoGenerationContextList
 } from './rhoFile_09';
+import {
+  binaryToDecimal
+} from './utilityHubShadowOfRhoFiles';
 
 const buildAugmentedRhoGenerationContext = (
   genericShortHookOriginal,
   rawRhoGenerationContext)  => {
 
   const {
-    rawGapBinaryDigits,
-    rawRhoGenerationIndex
+    rawRhoGapBinaryWhole,
+    rhoGenerationIndex
   } = rawRhoGenerationContext;
 
   const rhoLongHookGapDecimal =
     binaryToDecimal(
-      rawRhoLongHookGapBinaryDigits);
+      rawRhoGapBinaryWhole);
 
   const rhoPureHookName =
     '純' + genericShortHookOriginal;
 
   const rhoPureHookContext_1 =
     getRhoContextByLongHookName_1(
-      rhoLongHookSeriesHeadName);
+      rhoPureHookName);
 
   const rhoPureHookIndex =
-    rhoLongHookSeriesHeadContext_1
+    rhoPureHookContext_1
     .longHookIndex;
 
   const rhoImpureHookIndex =
     rhoLongHookGapDecimal ^
     rhoPureHookIndex;
-rhoLongHookSeriesHeadName
+
   const rhoImpureHookContext =
     getRhoContextByLongHookName_1(
-      rhoLongHookSeriesStaffIndex);
+      rhoImpureHookIndex);
 
   const rhoImpureHookName =
-    rhoLongHookSeriesStaffContext
+    rhoImpureHookContext
     .longHookName;
 
   return {
@@ -45,7 +54,7 @@ rhoLongHookSeriesHeadName
     rhoPureHookName,
     rhoImpureHookName,
     rhoGenerationIndex,
-    rawGapBinaryDigits
+    rawRhoGapBinaryWhole
   };
 }
 
@@ -54,7 +63,8 @@ const buildHookTrainContext =
 
   const augmentedRhoGenerationContextSeries =
     R.map(
-      buildAugmentedRhoGenerationContext,
+      R.curry(buildAugmentedRhoGenerationContext)
+      (genericShortHookOriginal),
       rawRhoGenerationContextList);
 
   return {

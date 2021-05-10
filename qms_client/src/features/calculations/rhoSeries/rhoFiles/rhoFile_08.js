@@ -14,32 +14,76 @@ import {
 export const getRhoContextByLongHookName_1 =
   longHookName => {
 
-  checkNilWithString(
-    longHookName,
-    'Long hook name');
+    try{
+      checkNilWithString(
+        longHookName,
+        'Long hook name');
 
-  const rhoContext_1 =
-    getItemByStringFromList(
-      rhoContextSet_1,
-      longHookName,
-      'longHookName');
+      const rhoContext_1 =
+        getItemByStringFromList(
+          rhoContextSet_1,
+          longHookName,
+          'longHookName');
 
-  return rhoContext_1;
+      return rhoContext_1;
+    }
+    catch(errorMessage){
+      console.error(errorMessage);
+      throw new Error(
+        'Cannot get rho context by '
+        + 'long hook name 1.');
+    }
 
 }
 
 export const getRhoContextByLongHookName_2 =
   longHookName => {
 
-  checkNilWithString(
-    longHookName,
-    'Long hook name');
-
-  const rhoContext_2 =
-    getItemByStringFromList(
-      rhoContextSet_2,
+  try{
+    checkNilWithString(
       longHookName,
-      'longHookName');
+      'Long hook name');
 
-  return rhoContext_2;
+    const rhoContext_2 =
+      getItemByStringFromList(
+        rhoContextSet_2,
+        longHookName,
+        'longHookName');
+
+    return rhoContext_2;
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throw new Error(
+      'Cannot get rho context by '
+      + 'long hook name 2.');
+  }
+
+
+
+}
+
+export const getRhoContextByLongHookIndex_1 =
+  longHookIndex => {
+
+  try{
+    checkNilWithString(
+      longHookName,
+      'Long hook name');
+
+    const rhoContext_1 =
+      getItemByStringFromList(
+        rhoContextSet_1,
+        longHookName,
+        'longHookName');
+
+    return rhoContext_1;
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throw new Error(
+      'Cannot get rho context by '
+      + 'long hook index 1.');
+  }
+
 }
