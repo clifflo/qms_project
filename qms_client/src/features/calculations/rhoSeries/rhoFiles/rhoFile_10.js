@@ -1,70 +1,91 @@
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 import {
-  rhoBaseLongHookGapBinaryDigitsList
-} from './rhoFile_10';
+  rhoB
+}
 
-const rhoJackPositionContextSet = [
-  {
-    rhoGeneration: 0,
-    rhoJackAtDownwardIndex: 5
-  },
-  {
-    rhoGeneration: 1,
-    rhoJackAtDownwardIndex: 0
-  },
-  {
-    rhoGeneration: 2,
-    rhoJackAtDownwardIndex: 1
-  },
-  {
-    rhoGeneration: 3,
-    rhoJackAtDownwardIndex: 2
-  },
-  {
-    rhoGeneration: 4,
-    rhoJackAtDownwardIndex: 3
-  },
-  {
-    rhoGeneration: 5,
-    rhoJackAtDownwardIndex: 4
-  },
-  {
-    rhoGeneration: 6,
-    rhoJackAtDownwardIndex: 3
-  },
-  {
-    rhoGeneration: 7,
-    rhoJackAtDownwardIndex: 2
+const buildRhoCommonLongHookSeries = (
+  genericShortHookOriginal,
+  rawRhoLongHookGapBinaryDigits)  => {
+
+  const rhoLongHookGapDecimal =
+    binaryToDecimal(
+      rawRhoLongHookGapBinaryDigits);
+
+  const rhoLongHookSeriesHeadName =
+    '純' + genericShortHookOriginal;
+
+  const rhoLongHookSeriesHeadContext_1 =
+    getRhoContextByLongHookName_1(
+      rhoLongHookSeriesHeadName);
+
+  const rhoLongHookSeriesHeadIndex =
+    rhoLongHookSeriesHeadContext_1
+    .longHookIndex;
+
+  const rhoLongHookSeriesStaffIndex =
+    rhoLongHookGapDecimal ^
+    rhoLongHookSeriesHeadIndex;
+
+  const rhoLongHookSeriesStaffContext =
+    getRhoContextByLongHookName_1(
+      rhoLongHookSeriesStaffIndex);
+
+  return rhoLongHookSeriesStaffContext
+    .longHookName;
+}
+
+const getRhoGlobalLongHookSeriesSet = () => {
+
+  const mapFn_1 =
+    (genericShortHookOriginal, rgbnry) => {
+
+    try{
+
+      const rgdecm = binaryToDecimal(rgbnry);
+      const rhlhn = '純' + genericShortHookOriginal;
+      const rhlix =
+        getRhoContext1ByLongHookName(rhlhn)
+        .lhidx;
+
+      if(R.isNil(rhlix)){
+        throw new Error(
+          '[rhlix] should not be nil.');
+      }
+
+      const rglhi = rgdecm ^ rhlix;
+      const rglct1 = getRcxt1ByLhx(rglhi);
+
+      return rglct1.longHookName;
+    }
+    catch(err){
+      console.error(err);
+      throw new Error(
+        'Error in getting hook series.')
+    }
   }
-];
 
-const getRhoJackAtDownwardIndex =
-  rhoGeneration => {
+  const mapFn_1c = R.curry(mapFn_1);
 
-  checkNilWithNumber(
-    rhoGeneration, 'Rho generation');
+  const mapFn_2 = genericShortHookOriginal => {
 
-  const rhoJackPositionContext =
-    getItemByNumberFromList(
-      rhoJackPositionContextSet,
-      rhoGeneration,
-      'rhoGeneration');
+    const rlhst = RA.mapIndexed(
+      mapFn_1c(genericShortHookOriginal), rhgbs);
 
-  const rhoJackAtDownwardIndex =
-    rhoJackPositionContext
-    .rhoJackAtDownwardIndex;
+    const rlhsf = R.prepend(
+      '純' + genericShortHookOriginal, rlhst);
 
-  return rhoJackAtDownwardIndex;
+    return {
+      _type: 'rlhsc',
+      rhlhn: genericShortHookOriginal,
+      rlhsf: rlhsf
+    }
+  }
+
+  const result = R.map(
+    mapFn_2, gshoro);
+
+  return result;
 }
 
-const longHongCrossContextMapFunction_2 =
-  longHookCrossContext_1 => {
-
-  const rhoJackAtDownwardIndex =
-    getRhoJackAtDownwardIndex(rhogen);
-  const rhoKingAtDownwardIndex =
-    (rhoJackAtDownwardIndex + 3) % 6;
-  const rhoCommonLongHookSeriesHeadHookName
-    = rlhsc.rhlhn;
-
-
-}
+export const rlhsl = getRlhsl();
