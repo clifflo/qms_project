@@ -42,37 +42,44 @@ export const twigBranchContextSet = [
   {
     twigBranchIndex: 5,
     twigBranchChinese: '巳',
-    twigBranchEnglish: 'Sigma'
+    twigBranchEnglish: 'Sigma',
+    twigBranchElementalChinese: '火'
   },
   {
     twigBranchIndex: 6,
     twigBranchChinese: '午',
-    twigBranchEnglish: 'Rho'
+    twigBranchEnglish: 'Rho',
+    twigBranchElementalChinese: '火'
   },
   {
     twigBranchIndex: 7,
     twigBranchChinese: '未',
-    twigBranchEnglish: 'Pi'
+    twigBranchEnglish: 'Pi',
+    twigBranchElementalChinese: '土'
   },
   {
     twigBranchIndex: 8,
     twigBranchChinese: '申',
-    twigBranchEnglish: 'Omicron'
+    twigBranchEnglish: 'Omicron',
+    twigBranchElementalChinese: '金'
   },
   {
     twigBranchIndex: 9,
     twigBranchChinese: '酉',
-    twigBranchEnglish: 'Xi'
+    twigBranchEnglish: 'Xi',
+    twigBranchElementalChinese: '金'
   },
   {
     twigBranchIndex: 10,
     twigBranchChinese: '戌',
-    twigBranchEnglish: 'Nu'
+    twigBranchEnglish: 'Nu',
+    twigBranchElementalChinese: '土' 
   },
   {
     twigBranchIndex: 11,
     twigBranchChinese: '亥',
-    twigBranchEnglish: 'Mu'
+    twigBranchEnglish: 'Mu',
+    twigBranchElementalChinese: '水'
   }
 ]
 

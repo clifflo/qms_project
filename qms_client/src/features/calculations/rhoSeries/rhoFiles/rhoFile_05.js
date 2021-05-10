@@ -14,7 +14,8 @@ import {
 } from '../../utilityFiles/utilityHub';
 import {
   getTwigElementalContextByChinese,
-  getTwigTrunkContextByChinese
+  getTwigTrunkContextByChinese,
+  getTwigBranchContextByChinese
 } from '../../twigFiles/twigHub';
 
 const buildRhoContextSet_1 = () => {
@@ -37,28 +38,40 @@ export const rhoContextSet_1 =
   buildRhoContextSet_1();
 
 export const buildLongHookCrossList = (
-  fullSnapPeas,
-  externalShortHookTrunk,
-  internslShortHookTrunk,
-  longHookCrossSign,
+  payloadForBuildLongHookCrossList,
   longHookCrossDownwardIndex) => {
 
-  const longHookCrossTrunk =
+  const [
+    externalShortHookTrunkChinese,
+    internslShortHookTrunkChinese,
+    longHookBinaryDigits,
+    combinedSnapPeas
+  ] = payloadForBuildLongHookCrossList;
+
+  const longHookCrossSign =
+    longHookBinaryDigits[
+      longHookCrossDownwardIndex];
+
+  const longHookCrossTrunkChinese =
     longHookCrossDownwardIndex <= 2 ?
-    externalShortHookTrunk :
-    internslShortHookTrunk;
+    externalShortHookTrunkChinese :
+    internslShortHookTrunkChinese;
 
   const longHookCrossBranchChinese =
-    fullSnapPeas[longHookCrossDownwardIndex];
+    combinedSnapPeas[
+      longHookCrossDownwardIndex];
 
-  const longHookCrossElementalChinese =
+  const longHookCrossBranchElementalChinese =
     getTwigBranchContextByChinese(
       longHookCrossBranchChinese)
     .twigBranchElementalChinese;
 
   return {
-    longHookCrossTrunk,
+    longHookCrossSign,
+    longHookCrossTrunkChinese,
     longHookCrossBranchChinese,
-    longHookCrossDownwardIndex
+    longHookCrossDownwardIndex,
+    longHookCrossSign,
+    longHookCrossBranchElementalChinese
   }
 }
