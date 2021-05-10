@@ -2,7 +2,7 @@ import * as RA from 'ramda-adjunct';
 import * as R from 'ramda';
 
 export const decimalToBinary =
-  (decimalNumber, numberOfDigits) => {
+  (decimalNumber, numberOfBinaryDigits) => {
 
   if(R.isNil(decimalNumber)){
     throw new Error(
@@ -28,7 +28,7 @@ export const decimalToBinary =
     decimalNumber.toString(2);
 
   const addedZeroLength =
-    numberOfBinaryDigits - rawBinary.length;
+    numberOfBinaryDigits - rawBinaryDigits.length;
 
   let addedZeroes = ''
 
@@ -39,7 +39,7 @@ export const decimalToBinary =
   return 'b' + addedZeroes + rawBinaryDigits;
 }
 
-export const binariesToDecimal = binaryNumber => {
+export const binaryToDecimal = binaryNumber => {
 
   if(!RA.isString(binaryNumber)){
     throw new Error(

@@ -4,8 +4,16 @@ import {
   decimalToBinary
 } from '../../utilityFiles/utilityHub';
 import {
-  getNattoNoodle
+  rhoContextSet_1,
+  buildLongHookCrossList
 } from './rhoMiniHub_01';
+import {
+  getNattoNoodle
+} from './rhoFile_06';
+import {
+  getTwigElementalContextByChinese,
+  getTwigTrunkContextByChinese
+} from '../../twigFiles/twigHub';
 
 const rhoContextMapFunction_2 = rhoContext_1 => {
 
@@ -57,16 +65,17 @@ const rhoContextMapFunction_2 = rhoContext_1 => {
     const combinedSnapPeas =
       R.concat(externalSnapPeas, internalSnapPeas);
 
-    const longHookBinaryDigits = R.drop(
-      decimalToBinary(
-      rhoContext_1.longHookIndex,
-      6));
+    const rawLongHookBinaryDigits =
+      decimalToBinary(rhoContext_1.longHookIndex, 6);
+
+    const truncatedLongHookBinaryDigits =
+      R.drop(1, rawLongHookBinaryDigits);
 
     const payloadForBuildLongHookCrossList = {
       combinedSnapPeas,
-      longHookBinaryDigits,
-      externalShortHookTrunk,
-      internalShortHookTrunk
+      truncatedLongHookBinaryDigits,
+      externalShortHookTrunkChinese,
+      internalShortHookTrunkChinese
     };
 
     const longHookCrossMapFunction_1 =
@@ -77,11 +86,22 @@ const rhoContextMapFunction_2 = rhoContext_1 => {
       longHookCrossMapFunction_1,
       R.range(0, 6));
 
+    return {
+      longHookCrossSet,
+      ...rhoContext_1
+    }
   }
   catch(errorMessage){
-
+    console.error(errorMessage);
+    throw new Error(
+      'Cannot get rho context 1.');
   }
 }
 
+const getRhoContextSet_2 = () => {
+  return R.map(
+    rhoContextMapFunction_2,
+    rhoContextSet_1);
+}
 
 export const rhoContextSet_2 = getRhoContextSet_2();

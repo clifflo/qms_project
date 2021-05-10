@@ -41,21 +41,21 @@ export const buildLongHookCrossList = (
   payloadForBuildLongHookCrossList,
   longHookCrossDownwardIndex) => {
 
-  const [
+  const {
     externalShortHookTrunkChinese,
-    internslShortHookTrunkChinese,
-    longHookBinaryDigits,
+    internalShortHookTrunkChinese,
+    truncatedLongHookBinaryDigits,
     combinedSnapPeas
-  ] = payloadForBuildLongHookCrossList;
+  } = payloadForBuildLongHookCrossList;
 
   const longHookCrossSign =
-    longHookBinaryDigits[
+    truncatedLongHookBinaryDigits[
       longHookCrossDownwardIndex];
 
   const longHookCrossTrunkChinese =
     longHookCrossDownwardIndex <= 2 ?
     externalShortHookTrunkChinese :
-    internslShortHookTrunkChinese;
+    internalShortHookTrunkChinese;
 
   const longHookCrossBranchChinese =
     combinedSnapPeas[
@@ -66,12 +66,18 @@ export const buildLongHookCrossList = (
       longHookCrossBranchChinese)
     .twigBranchElementalChinese;
 
+  const longHookCrossBranchElementalEnglish =
+    getTwigElementalContextByChinese(
+      longHookCrossBranchElementalChinese)
+    .twigElementalEnglish;
+
   return {
     longHookCrossSign,
     longHookCrossTrunkChinese,
     longHookCrossBranchChinese,
     longHookCrossDownwardIndex,
     longHookCrossSign,
-    longHookCrossBranchElementalChinese
+    longHookCrossBranchElementalChinese,
+    longHookCrossBranchElementalEnglish
   }
 }
