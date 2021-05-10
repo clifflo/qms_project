@@ -1,70 +1,36 @@
+import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 import {
-  rhoBaseLongHookGapBinaryDigitsList
-} from './rhoFile_10';
+  hookTrainContextSet
+} from './rhoMiniHub_02';
 
-const rhoJackPositionContextSet = [
-  {
-    rhoGeneration: 0,
-    rhoJackAtDownwardIndex: 5
-  },
-  {
-    rhoGeneration: 1,
-    rhoJackAtDownwardIndex: 0
-  },
-  {
-    rhoGeneration: 2,
-    rhoJackAtDownwardIndex: 1
-  },
-  {
-    rhoGeneration: 3,
-    rhoJackAtDownwardIndex: 2
-  },
-  {
-    rhoGeneration: 4,
-    rhoJackAtDownwardIndex: 3
-  },
-  {
-    rhoGeneration: 5,
-    rhoJackAtDownwardIndex: 4
-  },
-  {
-    rhoGeneration: 6,
-    rhoJackAtDownwardIndex: 3
-  },
-  {
-    rhoGeneration: 7,
-    rhoJackAtDownwardIndex: 2
-  }
-];
+const semiFinalRhoContextMapFunction_3 =
+  semiFinalRhoContext_3 => {
 
-const getRhoJackAtDownwardIndex =
-  rhoGeneration => {
-
-  checkNilWithNumber(
-    rhoGeneration, 'Rho generation');
-
-  const rhoJackPositionContext =
-    getItemByNumberFromList(
-      rhoJackPositionContextSet,
-      rhoGeneration,
-      'rhoGeneration');
-
-  const rhoJackAtDownwardIndex =
-    rhoJackPositionContext
-    .rhoJackAtDownwardIndex;
-
-  return rhoJackAtDownwardIndex;
+  return {
+    ...semiFinalRhoContext_3,
+    _type: 'Rho context 3'
+  };
 }
 
-const longHongCrossContextMapFunction_2 =
-  longHookCrossContext_1 => {
+const getRhoContextSet_3 = () => {
 
-  const rhoJackAtDownwardIndex =
-    getRhoJackAtDownwardIndex(rhogen);
+  const rawRhoContextSet_3 = R.map(
+    R.prop(
+    'augmentedRhoGenerationContextSeries'),
+    hookTrainContextSet);
 
-  const rhoKingAtDownwardIndex =
-    (rhoJackAtDownwardIndex + 3) % 6;
+  const semiFinalRhoContextSet_3 =
+    R.flatten(
+      rawRhoContextSet_3);
 
+  const grandFinalRhoContextSet_3 =
+    R.map(
+      semiFinalRhoContextMapFunction_3,
+      semiFinalRhoContextSet_3);
 
-
+  return grandFinalRhoContextSet_3;
 }
+
+export const rhoContextSet_3 =
+  getRhoContextSet_3();
