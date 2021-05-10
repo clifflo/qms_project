@@ -1,56 +1,43 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import {
+  checkNilWithNumber,
+  decimalToBinary
+} from './utilityHubShadowOfRhoFiles';
+import {
+  getRhoContextByLongHookName_1
+} from './rhoFile_08';
 
 const rhoBaseLongHookSeries =
   R.split(',', '姤,遯,否,觀,剝,晉,大有');
 
-const getRhgbs = () => {
+const rhoBaseLongHookGapBinaryDigitsMapFunction =
+  comparedLongHookName => {
 
-  const slhidx = 63;
+  const longHookPureSkyIndex = 63;
 
-  const mapFn = tlhna => {
+  const rhoContext_1 =
+    getRhoContextByLongHookName_1(
+      comparedLongHookName);
 
-    const tlhidx =
-      getRhoContext1ByLongHookName(tlhna)
-      .lhidx;
+  const comparedLongHookIndex =
+    rhoContext_1.longHookIndex;
 
-    if(R.isNil(tlhidx)){
-      throw new Error(
-        'TLHIDX should not be nil.');
-    }
+  checkNilWithNumber(
+    comparedLongHookIndex,
+    'Long hook index');
 
-    if(!RA.isNumber(tlhidx)){
-      throw new Error(
-        'How come the long hook '
-        + 'index becomes a string?');
-    }
+  const bitwiseXoredGapDecimal =
+    longHookPureSkyIndex ^ comparedLongHookIndex;
 
-    const rgbnry = decimalToBinary(
-      slhidx ^ tlhidx,
-      6);
+  const rawGapBinaryDigitSet =
+    decimalToBinary(
+      bitwiseXoredGapDecimal, 6);
 
-    return rgbnry;
-  }
-
-  try{
-
-    const rhgbs = R.compose(
-      R.uniq,
-      R.map(mapFn))
-    (rblhss)
-
-    if(rhgbs.length != 7){
-      throw new Error(
-        'It must have 7 unique rho hook '
-        + 'gap binaries only but now it has '
-        + rhgbs.length + '.');
-    }
-
-    return R.map(mapFn, rblhss);
-  }
-  catch(err){
-    console.error(err);
-    throw new Error(
-      'Cannot get Rho hook gap binaries set.');
-  }
+  return rawGapBinaryDigitSet;
 }
+
+export const rhoBaseLongHookGapBinaryDigitsList =
+  R.map(
+    rhoBaseLongHookGapBinaryDigitsMapFunction,
+    rhoBaseLongHookSeries);
