@@ -28,6 +28,30 @@ export const getCyclicItemFromList =
   return respectiveObject;
 }
 
+export const getItemByNumberFromList =
+  (objectList, numberPropValue, propForNumber) => {
+
+  try{
+
+    checkNilWithArray(
+      objectList,
+      'Object list');
+
+    const respectiveObject =
+      R.find(
+        R.propEq(propForNumber, numberPropValue),
+        objectList);
+
+    return respectiveObject;
+
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throw new Error(
+      'Cannot get item by number from list.');
+  }
+}
+
 export const getItemByStringFromList =
   (objectList, stringPropValue, propForString) => {
 

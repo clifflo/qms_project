@@ -11,8 +11,8 @@ import {
 const rhoBaseLongHookSeries =
   R.split(',', '姤,遯,否,觀,剝,晉,大有');
 
-const rhoBaseLongHookGapBinaryDigitsMapFunction =
-  comparedLongHookName => {
+const rhoBaseLongHookGapBinaryDigitsMapFunction
+  = (comparedLongHookName, rhoGeneration) => {
 
   const longHookPureSkyIndex = 63;
 
@@ -30,14 +30,17 @@ const rhoBaseLongHookGapBinaryDigitsMapFunction =
   const bitwiseXoredGapDecimal =
     longHookPureSkyIndex ^ comparedLongHookIndex;
 
-  const rawGapBinaryDigitSet =
+  const rawGapBinaryDigits =
     decimalToBinary(
       bitwiseXoredGapDecimal, 6);
 
-  return rawGapBinaryDigitSet;
+  return {
+    rawGapBinaryDigits,
+    rhoGeneration
+  }
 }
 
 export const rhoBaseLongHookGapBinaryDigitsList =
-  R.map(
+  RA.mapIndexed(
     rhoBaseLongHookGapBinaryDigitsMapFunction,
     rhoBaseLongHookSeries);
