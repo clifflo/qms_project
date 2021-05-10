@@ -5,7 +5,7 @@ import {
 } from '../../utilityFiles/utilityHub';
 import {
   rhoContextSet_1,
-  buildLongHookCrossList
+  buildLongHookCrossContextList_1
 } from './rhoMiniHub_01';
 import {
   getNattoNoodle
@@ -63,24 +63,28 @@ const rhoContextMapFunction_2 = rhoContext_1 => {
       .effectiveShortHookElementalEnglish;
 
     const combinedSnapPeas =
-      R.concat(externalSnapPeas, internalSnapPeas);
+      R.concat(
+        externalSnapPeas,
+        internalSnapPeas);
 
     const rawLongHookBinaryDigits =
-      decimalToBinary(rhoContext_1.longHookIndex, 6);
+      decimalToBinary(
+        rhoContext_1.longHookIndex, 6);
 
     const truncatedLongHookBinaryDigits =
       R.drop(1, rawLongHookBinaryDigits);
 
-    const payloadForBuildLongHookCrossList = {
-      combinedSnapPeas,
-      truncatedLongHookBinaryDigits,
-      externalShortHookTrunkChinese,
-      internalShortHookTrunkChinese
-    };
+    const payloadForBuildLongHookCrossContextList_1
+    = {
+        combinedSnapPeas,
+        truncatedLongHookBinaryDigits,
+        externalShortHookTrunkChinese,
+        internalShortHookTrunkChinese
+      };
 
     const longHookCrossMapFunction_1 =
-      R.curry(buildLongHookCrossList)
-      (payloadForBuildLongHookCrossList);
+      R.curry(buildLongHookCrossContextList_1)
+      (payloadForBuildLongHookCrossContextList_1);
 
     const longHookCrossSet = R.map(
       longHookCrossMapFunction_1,
@@ -88,7 +92,8 @@ const rhoContextMapFunction_2 = rhoContext_1 => {
 
     return {
       longHookCrossSet,
-      ...rhoContext_1
+      ...rhoContext_1,
+      _type: 'Rho context 2'
     }
   }
   catch(errorMessage){

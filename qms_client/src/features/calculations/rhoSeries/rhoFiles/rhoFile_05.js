@@ -37,8 +37,8 @@ const buildRhoContextSet_1 = () => {
 export const rhoContextSet_1 =
   buildRhoContextSet_1();
 
-export const buildLongHookCrossList = (
-  payloadForBuildLongHookCrossList,
+export const buildLongHookCrossContextList_1 = (
+  payloadForBuildLongHookCrossContextList_1,
   longHookCrossDownwardIndex) => {
 
   const {
@@ -46,7 +46,7 @@ export const buildLongHookCrossList = (
     internalShortHookTrunkChinese,
     truncatedLongHookBinaryDigits,
     combinedSnapPeas
-  } = payloadForBuildLongHookCrossList;
+  } = payloadForBuildLongHookCrossContextList_1;
 
   const longHookCrossSign =
     truncatedLongHookBinaryDigits[
@@ -72,6 +72,7 @@ export const buildLongHookCrossList = (
     .twigElementalEnglish;
 
   return {
+    _type: 'Long hook cross context 1',
     longHookCrossSign,
     longHookCrossTrunkChinese,
     longHookCrossBranchChinese,
