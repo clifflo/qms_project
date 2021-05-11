@@ -18,8 +18,7 @@ export const getDeltaLongHookContextByName_1 =
   return deltaLongHookContext_1;
 }
 
-export const
-  deltaLongHookContextMapFunction_2 =
+const deltaLongHookContextMapFunction_2 =
   deltaLongHookContext_1 => {
 
   const completeDeltaFocusEnglishSet =
@@ -42,8 +41,23 @@ export const
   const hasHiddenDeltaFocus =
     !R.isEmpty(hiddenDeltaFocusEnglishSet);
 
+  const rhoPureHookContext =
+    getDeltaLongHookContextByName_1(
+      deltaLongHookContext_1
+      .rhoPureHookName);
+
+  const rhoPureHookCrossContextSet =
+    rhoPureHookContext
+    .longHookCrossContextSet_2;
+
   return {
     ...deltaLongHookContext_1,
-    hiddenDeltaFocusEnglishSet
+    hiddenDeltaFocusEnglishSet,
+    rhoPureHookCrossContextSet
   };
 }
+
+export const deltaLongHookContextSet_2 =
+  R.map(
+    deltaLongHookContextMapFunction_2,
+    deltaLongHookContextSet_1);

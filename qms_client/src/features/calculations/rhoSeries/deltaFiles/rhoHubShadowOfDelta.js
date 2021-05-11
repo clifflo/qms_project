@@ -1,1 +1,1 @@
-export * from '../rhoHubShadowBase';
+export * from '../rhoHubCloneForSeries';
