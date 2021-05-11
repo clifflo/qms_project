@@ -55,7 +55,8 @@ const buildAugmentedRhoGenerationContext = (
     rhoPureHookName,
     rhoImpureHookName,
     rhoGenerationIndex,
-    rawRhoGapBinaryWhole
+    rawRhoGapBinaryWhole,
+    rhoShortHookPalace: genericShortHookOriginal
   };
 }
 

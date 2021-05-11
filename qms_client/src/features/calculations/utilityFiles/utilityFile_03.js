@@ -20,11 +20,13 @@ export const checkNilWithTypedObject =
         `The object is not of type ${variableName}.`);
     }
   }
-
-  if(objectVariable['_type'] != typeName){
-    throw new Error(
-      `The object is not of type ${typeName}.`);
+  else {
+    if(objectVariable['_type'] != typeName){
+      throw new Error(
+        `The object is not of type ${typeName}.`);
+    }
   }
+
 
 
 }

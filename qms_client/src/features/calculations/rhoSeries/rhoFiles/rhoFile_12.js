@@ -1,8 +1,10 @@
+import * as R from 'ramda';
 import {
-  rhoBaseLongHookGapBinaryDigitsList
-} from './rhoFile_10';
+  rhoContextSet_3
+} from './rhoFile_11';
 import {
-  checkNilWithTypedObject
+  checkNilWithTypedObject,
+  getItemByNumberFromList
 } from './utilityHubShadowOfRhoFiles';
 
 
@@ -51,7 +53,7 @@ const rhoContextMapFunction_4 =
   const rhoJackPositionContext =
     getItemByNumberFromList(
       rhoJackPositionContextSet,
-      rhoGeneration,
+      rhoContext_3.rhoGenerationIndex,
       'rhoGeneration');
 
   const rhoJackAtDownwardIndex =
@@ -70,3 +72,8 @@ const rhoContextMapFunction_4 =
 
   return rhoContext_4;
 }
+
+export const rhoContextSet_4 =
+  R.map(
+    rhoContextMapFunction_4,
+    rhoContextSet_3);
