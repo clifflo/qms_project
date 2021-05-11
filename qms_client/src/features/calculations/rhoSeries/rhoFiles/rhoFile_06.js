@@ -25,7 +25,7 @@ export const getNattoNoodle = (
 
   checkNilWithTypedObject(
     bakedNatto,
-    'Baked natto'
+    'Baked natto.'
   )
 
   checkNilWithString(

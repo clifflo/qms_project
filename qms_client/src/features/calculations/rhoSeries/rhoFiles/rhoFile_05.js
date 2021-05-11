@@ -76,7 +76,7 @@ export const buildLongHookCrossContextList_1 = (
     'Long hook cross branch elemental english');
 
   return {
-    _type: 'Long hook cross context 1',
+    _type: 'Long hook cross context 1.',
     longHookCrossSign,
     longHookCrossTrunkChinese,
     longHookCrossBranchChinese,

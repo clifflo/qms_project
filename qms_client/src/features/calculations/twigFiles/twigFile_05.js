@@ -10,7 +10,7 @@ import {
 } from './utilityHubShadowOfTwigFiles';
 
 export const
-  getTwigElementalViewingMyselfContextChinese = (
+  getTwigElementalViewingMyselfContextByChinese = (
   myselfTwigElementalChinese,
   opponentTwigElementalChinese) => {
 

@@ -7,35 +7,35 @@ export const deltaFocusContextSet = [
     deltaFocusChineseName: '丙官鬼',
     deltaFocusEnglishName: 'Delta focus ghost.',
     deltaFocusElementalViewingMyselfEnglish:
-      'Viewing myself as ghost.'
+      'Twig elemental viewing myself as ghost.'
   },
   {
     _type: 'Delta focus context',
     deltaFocusChineseName: '丙父母',
     deltaFocusEnglishName: 'Delta focus parent.',
     deltaFocusElementalViewingMyselfEnglish:
-      'Viewing myself as parent.'
+      'Twig elemental viewing myself as parent.'
   },
   {
     _type: 'Delta focus context',
     deltaFocusChineseName: '丙兄弟',
     deltaFocusEnglishName: 'Delta focus brother.',
     deltaFocusElementalViewingMyselfEnglish:
-      'Viewing myself as brother.'
+      'Twig elemental viewing myself as brother.'
   },
   {
     _type: 'Delta focus context.',
     deltaFocusChineseName: '丙妻財',
     deltaFocusEnglishName: 'Delta focus bank.',
     deltaFocusElementalViewingMyselfEnglish:
-      'Viewing myself as bank.'
+      'Twig elemental viewing myself as bank.'
   },
   {
     _type: 'Delta focus context.',
     deltaFocusChineseName: '丙子孫',
     deltaFocusEnglishName: 'Delta focus son.',
     deltaFocusElementalViewingMyselfEnglish:
-      'Viewing myself as son.'
+      'Twig elemental viewing myself as son.'
   }
 ]
 

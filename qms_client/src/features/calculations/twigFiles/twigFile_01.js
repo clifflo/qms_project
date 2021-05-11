@@ -42,7 +42,7 @@ export const twigVanillaElementalContextSet = [
     twigVanillaElementalIndex: 4,
     twigVanillaElementalChinese: '五行土',
     twigVanillaElementalEnglish:
-      'Twig vanilla elemental earth'
+      'Twig vanilla elemental earth.'
   }
 ];
 

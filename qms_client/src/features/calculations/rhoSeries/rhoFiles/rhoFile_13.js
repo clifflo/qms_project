@@ -11,7 +11,7 @@ import {
 } from './rhoFile_12';
 import {
   checkNilWithString
-} from './utilityHubShadowOfRhoFiles';
+} from './utilityHubShadowOfRho';
 
 const rhoLongHookContextMapFunction_5 =
   rhoLongHookContext_4 => {
