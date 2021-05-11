@@ -61,3 +61,12 @@ const buildBakedNattoSet = () => {
 }
 
 export const bakedNattoSet = buildBakedNattoSet();
+
+export const getBakedNattoByShortHookOriginal =
+  genericShortHookOriginal => {
+
+  return getItemByStringFromList(
+    bakedNattoSet,
+    genericShortHookOriginal,
+    'genericShortHookOriginal');
+}
