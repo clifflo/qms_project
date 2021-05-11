@@ -44,7 +44,7 @@ const rhoLongHookContextMapFunction_5 =
     ...rhoLongHookContext_4,
     nattoShortHookElementalChinese,
     nattoShortHookElementalEnglish,
-    _type: 'Rho context 5'
+    _type: 'Rho long hook context 5'
   };
 }
 

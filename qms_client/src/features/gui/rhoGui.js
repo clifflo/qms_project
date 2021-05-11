@@ -1,12 +1,10 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  getTwigElementalViewingMyselfContextChinese
-} from '../calculations/twigFiles/twigHub';
+  rhoLongHookContextSet_5
+} from '../calculations/rhoSeries/rhoFiles/rhoHub';
 
 export default function RhoGui() {
   return <JSONTree
-    data={getTwigElementalViewingMyselfContextChinese(
-      '五行金', '五行土'
-    )}/>
+    data={rhoLongHookContextSet_5}/>
 }

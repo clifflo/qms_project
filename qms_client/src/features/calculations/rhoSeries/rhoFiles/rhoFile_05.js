@@ -13,7 +13,7 @@ import {
   checkNilWithTypedObject
 } from '../../utilityFiles/utilityHub';
 import {
-  getTwigElementalContextByChinese,
+  getTwigVanillaElementalContextByChinese,
   getTwigTrunkContextByChinese,
   getTwigBranchContextByChinese
 } from '../../twigFiles/twigHub';
@@ -67,7 +67,7 @@ export const buildLongHookCrossContextList_1 = (
     .twigBranchElementalChinese;
 
   const longHookCrossBranchElementalEnglish =
-    getTwigElementalContextByChinese(
+    getTwigVanillaElementalContextByChinese(
       longHookCrossBranchElementalChinese)
     .twigElementalEnglish;
 

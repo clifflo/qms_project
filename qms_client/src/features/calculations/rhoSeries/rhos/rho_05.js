@@ -97,7 +97,7 @@ export const getRcxtvByLhn = (
       + `for rho context ${rocsvn}`);
   }
 
-  // Rho context filtered by
+  // Rho long hook context filtered by
   const rcfb = 'Long hook name';
 
   return {

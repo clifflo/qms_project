@@ -11,7 +11,7 @@ import {
   getNattoNoodle
 } from './rhoFile_06';
 import {
-  getTwigElementalContextByChinese,
+  getTwigVanillaElementalContextByChinese,
   getTwigTrunkContextByChinese
 } from '../../twigFiles/twigHub';
 
@@ -93,7 +93,7 @@ const rhoLongHookContextMapFunction_2 = rhoLongHookContext_1 => {
     return {
       longHookCrossSet,
       ...rhoLongHookContext_1,
-      _type: 'Rho context 2'
+      _type: 'Rho long hook context 2'
     }
   }
   catch(errorMessage){

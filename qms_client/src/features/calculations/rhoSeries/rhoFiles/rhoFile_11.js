@@ -9,7 +9,7 @@ const semiFinalRhoLongHookContextMapFunction_3 =
 
   return {
     ...semiFinalRhoLongHookContext_3,
-    _type: 'Rho context 3'
+    _type: 'Rho long hook context 3'
   };
 }
 

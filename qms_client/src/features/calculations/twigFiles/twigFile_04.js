@@ -5,7 +5,7 @@ import {
   getItemByNumberFromList
 } from './utilityHubShadowOfTwigFiles';
 import {
-  getTwigElementalContextByChinese
+  getTwigVanillaElementalContextByChinese
 } from './twigFile_01';
 
 export const

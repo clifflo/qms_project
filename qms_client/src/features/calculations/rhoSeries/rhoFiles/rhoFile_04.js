@@ -90,7 +90,7 @@ export const rhoLongHookContextMapFunction_1 =
       .genericShortHookIndex;
 
   const rhoLongHookContext_1 = {
-    _type: 'Rho context 1',
+    _type: 'Rho long hook context 1',
     longHookName,
     longHookIndex,
     externalShortHookOriginal,

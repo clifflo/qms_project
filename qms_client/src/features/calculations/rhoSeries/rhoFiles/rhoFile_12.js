@@ -48,7 +48,7 @@ const rhoLongHookContextMapFunction_4 =
 
   checkNilWithTypedObject(
     rhoLongHookContext_3,
-    'Rho context 3');
+    'Rho long hook context 3');
 
   const rhoJackPositionContext =
     getItemByNumberFromList(
@@ -67,7 +67,7 @@ const rhoLongHookContextMapFunction_4 =
     ...rhoLongHookContext_3,
     rhoJackAtDownwardIndex,
     rhoKingAtDownwardIndex,
-    _type: 'Rho context 4'
+    _type: 'Rho long hook context 4'
   };
 
   return rhoLongHookContext_4;

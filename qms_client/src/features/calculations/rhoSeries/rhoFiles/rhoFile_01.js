@@ -6,57 +6,57 @@ export const shortHookContextSet = [
   {
     _type: 'Short hook context',
     genericShortHookIndex: 0,
-    genericShortHookAlternative: '地',
-    genericShortHookOriginal: '坤',
+    genericShortHookAlternative: '卦象地',
+    genericShortHookOriginal: '短卦坤',
     genericShortHookEnglish: 'Short hook earth'
   },
   {
     _type: 'Short hook context',
     genericShortHookIndex: 1,
-    genericShortHookAlternative: '雷',
-    genericShortHookOriginal: '震',
+    genericShortHookAlternative: '卦象雷',
+    genericShortHookOriginal: '短卦震',
     genericShortHookEnglish: 'Short hook thunder'
   },
   {
     _type: 'Short hook context',
     genericShortHookIndex: 2,
-    genericShortHookAlternative: '水',
-    genericShortHookOriginal: '坎',
+    genericShortHookAlternative: '卦象水',
+    genericShortHookOriginal: '短卦坎',
     genericShortHookEnglish: 'Short hook lake'
   },
   {
     _type: 'Short hook context',
     genericShortHookIndex: 3,
-    genericShortHookAlternative: '澤',
-    genericShortHookOriginal: '兌',
+    genericShortHookAlternative: '卦象澤',
+    genericShortHookOriginal: '短卦兌',
     genericShortHookEnglish: 'Short hook swamp'
   },
   {
     _type: 'Short hook context',
     genericShortHookIndex: 4,
-    genericShortHookAlternative: '山',
-    genericShortHookOriginal: '艮',
+    genericShortHookAlternative: '卦象山',
+    genericShortHookOriginal: '短卦艮',
     genericShortHookEnglish: 'Short hook mountain'
   },
   {
     _type: 'Short hook context',
     genericShortHookIndex: 5,
-    genericShortHookAlternative: '火',
-    genericShortHookOriginal: '離',
+    genericShortHookAlternative: '卦象火',
+    genericShortHookOriginal: '短卦離',
     genericShortHookEnglish: 'Short hook flame'
   },
   {
     _type: 'Short hook context',
     genericShortHookIndex: 6,
-    genericShortHookAlternative: '風',
-    genericShortHookOriginal: '巽',
+    genericShortHookAlternative: '卦象風',
+    genericShortHookOriginal: '短卦巽',
     genericShortHookEnglish: 'Short hook monsoon'
   },
   {
     _type: 'Short hook context',
     genericShortHookIndex: 7,
-    genericShortHookAlternative: '天',
-    genericShortHookOriginal: '乾',
+    genericShortHookAlternative: '卦象天',
+    genericShortHookOriginal: '短卦乾',
     genericShortHookEnglish: 'Short hook sky'
   }
 ]
