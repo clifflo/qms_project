@@ -4,7 +4,7 @@ import {
   getBakedNattoByShortHookComplexOriginal
 } from './rhoMiniHub_01';
 import {
-  getRhoLongHookContextByLongHookName_2,
+  getRhoLongHookContextByName_2,
 } from './rhoMiniHub_02';
 import {
   rhoLongHookContextSet_4
@@ -24,7 +24,7 @@ const rhoLongHookContextMapFunction_5 =
     'Rho impure hook name');
 
   const rhoLongHookContext_2 =
-    getRhoLongHookContextByLongHookName_2(
+    getRhoLongHookContextByName_2(
       rhoImpureHookName);
 
   const rhoShortHookSimplePalace =

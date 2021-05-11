@@ -13,7 +13,8 @@ import {
   getItemByNumberFromList
 } from './utilityHubShadowOfRho';
 
-export const getRhoLongHookContextByLongHookName_1 =
+export const
+  getRhoLongHookContextByName_1 =
   longHookName => {
 
     try{
@@ -38,7 +39,7 @@ export const getRhoLongHookContextByLongHookName_1 =
 
 }
 
-export const getRhoLongHookContextByLongHookName_2 =
+export const getRhoLongHookContextByName_2 =
   longHookName => {
 
   try{
@@ -60,12 +61,9 @@ export const getRhoLongHookContextByLongHookName_2 =
       'Cannot get rho context by '
       + 'long hook name 2.');
   }
-
-
-
 }
 
-export const getRhoLongHookContextByLongHookIndex_1 =
+export const getRhoLongHookContextByIndex_1 =
   longHookIndex => {
 
   try{
@@ -95,7 +93,7 @@ export const isValidLongHookName =
   longHookName => {
 
   const rhoLongHookContext_1 =
-    getRhoLongHookContextByLongHookName_1(longHookName);
+    getRhoLongHookContextByName_1(longHookName);
 
   return RA.isNotNil(rhoLongHookContext_1);
 }

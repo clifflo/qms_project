@@ -4,8 +4,8 @@ import {
   shortHookContextSet
 } from './rhoMiniHub_01';
 import {
-  getRhoLongHookContextByLongHookName_1,
-  getRhoLongHookContextByLongHookIndex_1
+  getRhoLongHookContextByName_1,
+  getRhoLongHookContextByIndex_1
 } from './rhoFile_08';
 import {
   rawRhoGenerationContextList
@@ -31,7 +31,7 @@ const buildAugmentedRhoGenerationContext = (
     '純' + genericShortHookSimpleOriginal;
 
   const rhoPureHookContext_1 =
-    getRhoLongHookContextByLongHookName_1(
+    getRhoLongHookContextByName_1(
       rhoPureHookName);
 
   const rhoPureHookIndex =
@@ -43,7 +43,7 @@ const buildAugmentedRhoGenerationContext = (
     rhoPureHookIndex;
 
   const rhoImpureHookContext =
-    getRhoLongHookContextByLongHookIndex_1(
+    getRhoLongHookContextByIndex_1(
       rhoImpureHookIndex);
 
   const rhoImpureHookName =

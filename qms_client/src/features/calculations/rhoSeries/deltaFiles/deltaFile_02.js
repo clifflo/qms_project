@@ -15,8 +15,8 @@ import {
   rhoLongHookContextSet_5
 } from './rhoHubShadowOfDelta'
 
-const longHookCrossContextMapFunction_2 =
-  (nattoShortHookElementalChinese,
+const longHookCrossContextMapFunction_2 = (
+  nattoShortHookElementalChinese,
   longHookCrossContext_1) => {
 
   const longHookCrossBranchElementalChinese =
@@ -97,7 +97,7 @@ export const deltaLongHookContextMapFunction_1 =
 
 }
 
-export const deltaLongHookContextSet =
+export const deltaLongHookContextSet_1 =
   R.map(
     deltaLongHookContextMapFunction_1,
     rhoLongHookContextSet_5);
