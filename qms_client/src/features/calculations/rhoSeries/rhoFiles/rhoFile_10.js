@@ -77,7 +77,7 @@ const buildHookTrainContext =
       rawRhoGenerationContextList);
 
   return {
-    _type: 'Hook train context',
+    _type: 'Hook train context.',
     hookTrainName: genericShortHookSimpleOriginal,
     augmentedRhoGenerationContextSeries
   }

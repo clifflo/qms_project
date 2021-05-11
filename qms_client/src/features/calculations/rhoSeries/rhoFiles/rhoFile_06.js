@@ -58,7 +58,7 @@ export const getNattoNoodle = (
       .twigElementalEnglish;
 
     const nattoNoodle = {
-      _type: 'Natto noodle',
+      _type: 'Natto noodle.',
       effectiveShortHookTrunkChinese,
       effectiveSnapPeas,
       effectiveShortHookElementalChinese,
@@ -96,7 +96,7 @@ export const getNattoNoodle = (
       .twigVanillaElementalEnglish;
 
       const nattoNoodle = {
-        _type: 'Natto noodle',
+        _type: 'Natto noodle.',
         effectiveShortHookTrunkChinese,
         effectiveSnapPeas,
         effectiveShortHookElementalChinese,

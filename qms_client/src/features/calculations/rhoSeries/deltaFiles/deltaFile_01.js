@@ -5,7 +5,7 @@ export const deltaFocusContextSet = [
   {
     _type: 'Delta focus context.',
     deltaFocusChineseName: '丙官鬼',
-    deltaFocusEnglishName: 'Delta focus ghost',
+    deltaFocusEnglishName: 'Delta focus ghost.',
     deltaFocusElementalViewingMyselfEnglish:
       'Viewing myself as ghost.'
   },

@@ -49,8 +49,8 @@ const getRhoLongHookContextSet_1 = () => {
 
   const mapFn = sentence => {
 
-    let externalShortHookAlternative;
-    let internalShortHookAlternative;
+    let externalShortHookComplexAlternative;
+    let internalShortHookComplexAlternative;
     let longHookName;
 
     if(sentence == ''){
@@ -59,31 +59,31 @@ const getRhoLongHookContextSet_1 = () => {
     }
 
     if(sentence[1] == '為'){
-      externalShortHookAlternative = sentence[2];
-      internalShortHookAlternative = sentence[2];
+      externalShortHookComplexAlternative = sentence[2];
+      internalShortHookComplexAlternative = sentence[2];
       longHookName = '純' + sentence[0];
     }
     else {
-      externalShortHookAlternative = sentence[0];
-      internalShortHookAlternative = sentence[1];
+      externalShortHookComplexAlternative = sentence[0];
+      internalShortHookComplexAlternative = sentence[1];
       longHookName = R.drop(2, sentence);
     }
 
     E.checkNilWithString(
-      externalShortHookAlternative,
+      externalShortHookComplexAlternative,
       'External short hook alternate'
     );
 
     E.checkNilWithString(
-      internalShortHookAlternative,
+      internalShortHookComplexAlternative,
       'Internal short hook alternate'
     )
 
     const eshidx =
-      getGshalx(externalShortHookAlternative);
+      getGshalx(externalShortHookComplexAlternative);
 
     const ishidx =
-      getGshalx(internalShortHookAlternative);
+      getGshalx(internalShortHookComplexAlternative);
 
     const eshori =
       gshoro[eshidx];
@@ -96,8 +96,8 @@ const getRhoLongHookContextSet_1 = () => {
       ishidx;
 
     return {
-      externalShortHookAlternative,
-      internalShortHookAlternative,
+      externalShortHookComplexAlternative,
+      internalShortHookComplexAlternative,
       eshori,
       ishori,
       longHookName,

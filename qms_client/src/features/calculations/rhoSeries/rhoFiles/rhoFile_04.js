@@ -11,8 +11,8 @@ import {
 export const rhoLongHookContextMapFunction_1 =
   longHookSentence => {
 
-  let externalShortHookAlternative;
-  let internalShortHookAlternative;
+  let externalShortHookComplexAlternative;
+  let internalShortHookComplexAlternative;
   let longHookName;
 
   if(longHookSentence == ''){
@@ -22,42 +22,42 @@ export const rhoLongHookContextMapFunction_1 =
 
   if(longHookSentence[1] == '為'){
 
-    externalShortHookAlternative =
+    externalShortHookComplexAlternative =
       '卦象' + longHookSentence[2];
 
-    internalShortHookAlternative =
+    internalShortHookComplexAlternative =
       '卦象' + longHookSentence[2];
 
     longHookName = '純' + longHookSentence[0];
   }
   else {
 
-    externalShortHookAlternative =
+    externalShortHookComplexAlternative =
       '卦象' + longHookSentence[0];
 
-    internalShortHookAlternative =
+    internalShortHookComplexAlternative =
       '卦象' + longHookSentence[1];
 
     longHookName = R.drop(2, longHookSentence);
   }
 
   checkNilWithString(
-    externalShortHookAlternative,
+    externalShortHookComplexAlternative,
     'External short hook alternate'
   );
 
   checkNilWithString(
-    internalShortHookAlternative,
+    internalShortHookComplexAlternative,
     'Internal short hook alternate'
   )
 
   const externalShortHookContext =
     getShortHookContextByAlternative(
-      externalShortHookAlternative);
+      externalShortHookComplexAlternative);
 
   const internalShortHookContext =
     getShortHookContextByAlternative(
-      internalShortHookAlternative);
+      internalShortHookComplexAlternative);
 
   const externalShortHookIndex =
     externalShortHookContext
@@ -103,11 +103,11 @@ export const rhoLongHookContextMapFunction_1 =
     longHookIndex,
     externalShortHookComplexOriginal,
     externalShortHookSimpleOriginal,
-    externalShortHookAlternative,
+    externalShortHookComplexAlternative,
     externalShortHookEnglish,
     internalShortHookComplexOriginal,
     internalShortHookSimpleOriginal,
-    internalShortHookAlternative,
+    internalShortHookComplexAlternative,
     internalShortHookEnglish,
     internalShortHookIndex,
     externalShortHookIndex

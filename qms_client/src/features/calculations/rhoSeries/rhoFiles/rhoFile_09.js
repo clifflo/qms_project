@@ -36,7 +36,7 @@ const rhoBaseLongHookGapBinaryMapFunction = (
       bitwiseXoredGapDecimal, 6);
 
   return {
-    _type: 'Raw rho generation context',
+    _type: 'Raw rho generation context.',
     rawRhoGapBinaryWhole,
     rhoGenerationIndex
   }

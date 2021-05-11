@@ -110,7 +110,7 @@ export const bakedNattoMapFunction = rawNatto => {
     R.reverse(R.take(3, fullSnapPeas));
 
   return {
-    _type: 'Baked natto',
+    _type: 'Baked natto.',
     genericShortHookComplexOriginal,
     genericShortHookSimpleOriginal,
     genericShortHookElementalChinese,

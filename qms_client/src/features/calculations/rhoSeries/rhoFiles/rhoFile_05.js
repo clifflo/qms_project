@@ -69,7 +69,11 @@ export const buildLongHookCrossContextList_1 = (
   const longHookCrossBranchElementalEnglish =
     getTwigVanillaElementalContextByChinese(
       longHookCrossBranchElementalChinese)
-    .twigElementalEnglish;
+    .twigVanillaElementalEnglish;
+
+  checkNilWithString(
+    longHookCrossBranchElementalEnglish,
+    'Long hook cross branch elemental english');
 
   return {
     _type: 'Long hook cross context 1',
