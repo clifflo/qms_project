@@ -73,7 +73,10 @@ export const getFullSnapPeas =(
 
 export const bakedNattoMapFunction = rawNatto => {
 
-  const genericShortHookOriginal =
+  const genericShortHookComplexOriginal =
+    '短卦' + rawNatto[0];
+
+  const genericShortHookSimpleOriginal =
     rawNatto[0];
 
   const genericShortHookElementalChinese =
@@ -108,7 +111,8 @@ export const bakedNattoMapFunction = rawNatto => {
 
   return {
     _type: 'Baked natto',
-    genericShortHookOriginal,
+    genericShortHookComplexOriginal,
+    genericShortHookSimpleOriginal,
     genericShortHookElementalChinese,
     genericShortHookElementalEnglish,
     externalShortHookTrunkChinese,

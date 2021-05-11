@@ -21,24 +21,24 @@ import {
 } from '../../twigs/twig_02';
 
 export const getTrnto = (
-  genericShortHookOriginal,
+  genericShortHookComplexOriginal,
   isShetp) => {
 
-  if(R.isNil(genericShortHookOriginal)){
+  if(R.isNil(genericShortHookComplexOriginal)){
     throw new Error(
       'Generic Short HookOriginal should not be nil.');
   }
 
   const natto = R.find(
     R.propEq(
-      'genericShortHookOriginal',
-      genericShortHookOriginal),
+      'genericShortHookComplexOriginal',
+      genericShortHookComplexOriginal),
     bakedNattos);
 
   if(!natto){
     throw new Error(
       'Cannot find natto. '
-      + genericShortHookOriginal
+      + genericShortHookComplexOriginal
       + ' '
       + 'is not a valid Generic '
       + 'Short Hook Original.');

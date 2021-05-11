@@ -14,13 +14,13 @@ import {
 } from '../../twigFiles/twigHub';
 
 export const getNattoNoodle = (
-  genericShortHookOriginal,
+  genericShortHookComplexOriginal,
   isShortHookExternal) => {
 
   const bakedNatto = R.find(
     R.propEq(
-      'genericShortHookOriginal',
-      genericShortHookOriginal),
+      'genericShortHookComplexOriginal',
+      genericShortHookComplexOriginal),
     bakedNattoSet);
 
   checkNilWithTypedObject(

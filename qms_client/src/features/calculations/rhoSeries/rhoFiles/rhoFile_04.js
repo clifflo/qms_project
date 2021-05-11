@@ -23,20 +23,20 @@ export const rhoLongHookContextMapFunction_1 =
   if(longHookSentence[1] == '為'){
 
     externalShortHookAlternative =
-      longHookSentence[2];
+      '卦象' + longHookSentence[2];
 
     internalShortHookAlternative =
-      longHookSentence[2];
+      '卦象' + longHookSentence[2];
 
     longHookName = '純' + longHookSentence[0];
   }
   else {
 
     externalShortHookAlternative =
-      longHookSentence[0];
+      '卦象' + longHookSentence[0];
 
     internalShortHookAlternative =
-      longHookSentence[1];
+      '卦象' + longHookSentence[1];
 
     longHookName = R.drop(2, longHookSentence);
   }
@@ -69,11 +69,11 @@ export const rhoLongHookContextMapFunction_1 =
 
   const externalShortHookOriginal =
     externalShortHookContext
-    .genericShortHookOriginal;
+    .genericShortHookComplexOriginal;
 
   const internalShortHookOriginal =
     internalShortHookContext
-    .genericShortHookOriginal;
+    .genericShortHookComplexOriginal;
 
   const externalShortHookEnglish =
     externalShortHookContext

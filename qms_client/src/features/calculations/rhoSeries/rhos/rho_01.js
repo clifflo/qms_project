@@ -62,7 +62,7 @@ export const getBakedNattoSet = () => {
 
   const bakedNattoMapFunction = sentence => {
 
-    const genericShortHookOriginal = sentence[0];
+    const genericShortHookComplexOriginal = sentence[0];
     const genericShortHookElemental = sentence[1];
     const externalShortHookTrunk = sentence[4];
     const internslShortHookTrunk = sentence[2];
@@ -79,7 +79,7 @@ export const getBakedNattoSet = () => {
 
     return {
       _type: 'Baked Natto Context',
-      genericShortHookOriginal,
+      genericShortHookComplexOriginal,
       genericShortHookElemental,
       externalShortHookTrunk,
       internslShortHookTrunk,
@@ -100,56 +100,56 @@ export const shortHookContextSet = [
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 0,
-    genericShortHookOriginal: '地',
+    genericShortHookComplexOriginal: '地',
     genericShortHookAlternative: '坤',
     genericShortHookEnglish: 'Short Hook Earth'
   },
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 1,
-    genericShortHookOriginal: '雷',
+    genericShortHookComplexOriginal: '雷',
     genericShortHookAlternative: '震',
     genericShortHookEnglish: 'Short Hook Thunder'
   },
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 2,
-    genericShortHookOriginal: '水',
+    genericShortHookComplexOriginal: '水',
     genericShortHookAlternative: '坎',
     genericShortHookEnglish: 'Short Hook Lake'
   },
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 3,
-    genericShortHookOriginal: '澤',
+    genericShortHookComplexOriginal: '澤',
     genericShortHookAlternative: '兌',
     genericShortHookEnglish: 'Short Hook Swamp'
   },
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 4,
-    genericShortHookOriginal: '山',
+    genericShortHookComplexOriginal: '山',
     genericShortHookAlternative: '艮',
     genericShortHookEnglish: 'Short Hook Mountain'
   },
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 5,
-    genericShortHookOriginal: '火',
+    genericShortHookComplexOriginal: '火',
     genericShortHookAlternative: '離',
     genericShortHookEnglish: 'Short Hook Flame'
   },
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 6,
-    genericShortHookOriginal: '風',
+    genericShortHookComplexOriginal: '風',
     genericShortHookAlternative: '巽',
     genericShortHookEnglish: 'Short Hook Monsoon'
   },
   {
     _type: 'Short Hook Context',
     genericShortHookIndex: 7,
-    genericShortHookOriginal: '天',
+    genericShortHookComplexOriginal: '天',
     genericShortHookAlternative: '乾',
     genericShortHookEnglish: 'Short Hook Sky'
   }

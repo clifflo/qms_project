@@ -15,7 +15,7 @@ import {
 } from './utilityHubShadowOfRhoFiles';
 
 const buildAugmentedRhoGenerationContext = (
-  genericShortHookOriginal,
+  genericShortHookSimpleOriginal,
   rawRhoGenerationContext)  => {
 
   const {
@@ -28,7 +28,9 @@ const buildAugmentedRhoGenerationContext = (
       rawRhoGapBinaryWhole);
 
   const rhoPureHookName =
-    '純' + genericShortHookOriginal;
+    '純' + genericShortHookSimpleOriginal;
+
+  console.log(rhoPureHookName);
 
   const rhoPureHookContext_1 =
     getRhoLongHookContextByLongHookName_1(
@@ -50,41 +52,44 @@ const buildAugmentedRhoGenerationContext = (
     rhoImpureHookContext
     .longHookName;
 
+  const rhoShortHookPalace =
+    '午' + genericShortHookSimpleOriginal + '卦宮'
+
   return {
     _type: 'Augmented rho generation context',
     rhoPureHookName,
     rhoImpureHookName,
     rhoGenerationIndex,
     rawRhoGapBinaryWhole,
-    rhoShortHookPalace: genericShortHookOriginal
+    rhoShortHookPalace
   };
 }
 
 const buildHookTrainContext =
-  genericShortHookOriginal => {
+  genericShortHookSimpleOriginal => {
 
   const augmentedRhoGenerationContextSeries =
     R.map(
       R.curry(buildAugmentedRhoGenerationContext)
-      (genericShortHookOriginal),
+      (genericShortHookSimpleOriginal),
       rawRhoGenerationContextList);
 
   return {
     _type: 'Hook train context',
-    hookTrainName: genericShortHookOriginal,
+    hookTrainName: genericShortHookSimpleOriginal,
     augmentedRhoGenerationContextSeries
   }
 }
 
 const getHookTrainContextSet = () => {
 
-  const genericShortHookOriginalList =
+  const genericShortHookSimpleOriginalList =
     R.map(
-      R.prop('genericShortHookOriginal'),
+      R.prop('genericShortHookSimpleOriginal'),
       shortHookContextSet);
 
   return R.map(buildHookTrainContext,
-    genericShortHookOriginalList);
+    genericShortHookSimpleOriginalList);
 }
 
 export const hookTrainContextSet =

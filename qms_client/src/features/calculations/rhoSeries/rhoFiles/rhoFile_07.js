@@ -15,7 +15,8 @@ import {
   getTwigTrunkContextByChinese
 } from '../../twigFiles/twigHub';
 
-const rhoLongHookContextMapFunction_2 = rhoLongHookContext_1 => {
+const rhoLongHookContextMapFunction_2 =
+  rhoLongHookContext_1 => {
 
   try{
 

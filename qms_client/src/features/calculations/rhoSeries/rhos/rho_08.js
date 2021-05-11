@@ -27,7 +27,7 @@ const getRhoLongHookContextSet_4 = () => {
       rhoLongHookContextSet_2);
 
     const natto = R.find(
-      R.propEq('genericShortHookOriginal', rhocxt_3.rhlhn),
+      R.propEq('genericShortHookComplexOriginal', rhocxt_3.rhlhn),
       bakedNattos);
 
     if(R.isNil(natto)){
