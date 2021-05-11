@@ -41,7 +41,7 @@ export const twigVanillaElementalContextSet = [
   }
 ];
 
-export const getTwigElementalContextByIndex =
+export const getTwigVanillaElementalContextByIndex =
   twigElementalIndex => {
 
   try{
@@ -49,14 +49,14 @@ export const getTwigElementalContextByIndex =
       twigElementalIndex,
       'Twig elemental index');
 
-    const twigElementalContext =
+    const twigVanillaElementalContext =
       getCyclicItemFromList(
-        twigElementalContextSet,
+        twigVanillaElementalContextSet,
         twigElementalIndex,
         'twigElementalIndex'
       );
 
-    return twigElementalContext;
+    return twigVanillaElementalContext;
   }
   catch(errorMessage){
     console.error(errorMessage);
@@ -66,19 +66,20 @@ export const getTwigElementalContextByIndex =
 
 }
 
-export const getTwigElementalContextByChinese =
-  twigElementalChinese => {
+export const
+  getTwigVanillaElementalContextByChinese =
+  twigVanillaElementalChinese => {
 
   checkNilWithString(
-    twigElementalChinese,
+    twigVanillaElementalChinese,
     'Elemental Chinese');
 
-  const twigElementalContext =
+  const twigVanillaElementalContext =
     getItemByStringFromList(
-      twigElementalContextSet,
-      twigElementalChinese,
-      'twigElementalChinese'
+      twigVanillaElementalContextSet,
+      twigVanillaElementalChinese,
+      'twigVanillaElementalChinese'
     );
 
-  return twigElementalContext;
+  return twigVanillaElementalContext;
 }

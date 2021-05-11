@@ -9,35 +9,35 @@ import {
 } from './twigFile_01';
 
 export const
-  twigElementalViewOfMyselfContextSet = [
+  twigElementalViewingMyselfContextSet = [
   {
-    twigElementalViewOfMyselfChinese: '比和',
-    twigElementalViewOfMyselfEnglish:
-      'Twig elemental views me as brother.',
-    twigElementalTargetMinusSourceIndex: 0
+    twigElementalViewingMyselfChinese: '比和',
+    twigElementalViewingMyselfEnglish:
+      'Viewing myself as brother.',
+    twigElementalOpponentMinusMyselfIndex: 0
   },
   {
-    twigElementalViewOfMyselfChinese: '生他',
-    twigElementalViewOfMyselfEnglish:
-      'Twig elemental views me as parent.',
-    twigElementalTargetMinusSourceIndex: 1
+    twigElementalViewingMyselfChinese: '生他',
+    twigElementalViewingMyselfEnglish:
+      'Viewing myself as parent.',
+    twigElementalOpponentMinusMyselfIndex: 1
   },
   {
-    twigElementalViewOfMyselfChinese: '剋他',
-    twigElementalViewOfMyselfEnglish:
-      'Twig elemental views me as ghost.',
-    twigElementalTargetMinusSourceIndex: 2
+    twigElementalViewingMyselfChinese: '剋他',
+    twigElementalViewingMyselfEnglish:
+      'Viewing myself as ghost.',
+    twigElementalOpponentMinusMyselfIndex: 2
   },
   {
-    twigElementalViewOfMyselfChinese: '被剋',
-    twigElementalViewOfMyselfEnglish:
-      'Twig elemental views me as bank.',
-    twigElementalTargetMinusSourceIndex: 3
+    twigElementalViewingMyselfChinese: '被剋',
+    twigElementalViewingMyselfEnglish:
+      'Viewing myself as bank.',
+    twigElementalOpponentMinusMyselfIndex: 3
   },
   {
-    twigElementalViewOfMyselfChinese: '被生',
-    twigElementalViewOfMyselfEnglish:
-      'Twig elemental views me as son.',
-    twigElementalTargetMinusSourceIndex: 4
+    twigElementalViewingMyselfChinese: '被生',
+    twigElementalViewingMyselfEnglish:
+      'Viewing myself as son.',
+    twigElementalOpponentMinusMyselfIndex: 4
   }
 ]
