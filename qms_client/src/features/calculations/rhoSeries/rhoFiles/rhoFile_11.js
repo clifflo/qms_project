@@ -34,3 +34,9 @@ const getRhoContextSet_3 = () => {
 
 export const rhoContextSet_3 =
   getRhoContextSet_3();
+
+export const getRhoContextFromLongHookName_3 =
+  longHookName => {
+
+  
+}

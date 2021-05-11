@@ -90,3 +90,12 @@ export const getRhoContextByLongHookIndex_1 =
   }
 
 }
+
+export const isValidLongHookName =
+  longHookName => {
+
+  const rhoContext_1 =
+    getRhoContextByLongHookName_1(longHookName);
+
+  return RA.isNotNil(rhoContext_1);
+}

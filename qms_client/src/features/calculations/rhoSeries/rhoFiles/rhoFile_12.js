@@ -1,6 +1,10 @@
 import {
   rhoBaseLongHookGapBinaryDigitsList
 } from './rhoFile_10';
+import {
+  checkNilWithTypedObject
+} from './utilityHubShadowOfRhoFiles';
+
 
 const rhoJackPositionContextSet = [
   {
@@ -37,11 +41,12 @@ const rhoJackPositionContextSet = [
   }
 ];
 
-const getRhoJackAtDownwardIndex =
-  rhoGeneration => {
+const rhoContextMapFunction_4 =
+  rhoContext_3 => {
 
-  checkNilWithNumber(
-    rhoGeneration, 'Rho generation');
+  checkNilWithTypedObject(
+    rhoContext_3,
+    'Rho context 3');
 
   const rhoJackPositionContext =
     getItemByNumberFromList(
@@ -53,22 +58,15 @@ const getRhoJackAtDownwardIndex =
     rhoJackPositionContext
     .rhoJackAtDownwardIndex;
 
-  return rhoJackAtDownwardIndex;
-}
-
-const longHongCrossContextMapFunction_2 =
-  longHookCrossContext_1 => {
-
-  const rhoJackAtDownwardIndex =
-    getRhoJackAtDownwardIndex(rhogen);
-
   const rhoKingAtDownwardIndex =
     (rhoJackAtDownwardIndex + 3) % 6;
 
-  return {
-    ...longHookCrossContext_1,
+  const rhoContext_4 = {
+    ...rhoContext_3,
     rhoJackAtDownwardIndex,
-    rhoKingAtDownwardIndex
-  }
+    rhoKingAtDownwardIndex,
+    _type: 'Rho context 4'
+  };
 
+  return rhoContext_4;
 }

@@ -14,8 +14,17 @@ export const checkNilWithTypedObject =
       `${variableName} must be an object.`);
   }
 
+  if(R.isNil(typeName)){
+    if(objectVariable['_type'] != variableName){
+      throw new Error(
+        `The object is not of type ${variableName}.`);
+    }
+  }
+
   if(objectVariable['_type'] != typeName){
     throw new Error(
       `The object is not of type ${typeName}.`);
   }
+
+
 }
