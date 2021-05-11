@@ -5,7 +5,7 @@ import {
   decimalToBinary
 } from './utilityHubShadowOfRhoFiles';
 import {
-  getRhoContextByLongHookName_1
+  getRhoLongHookContextByLongHookName_1
 } from './rhoFile_08';
 
 const rhoBaseLongHookSeries =
@@ -17,12 +17,12 @@ const rhoBaseLongHookGapBinaryMapFunction = (
 
   const longHookPureSkyIndex = 63;
 
-  const rhoContext_1 =
-    getRhoContextByLongHookName_1(
+  const rhoLongHookContext_1 =
+    getRhoLongHookContextByLongHookName_1(
       comparedLongHookName);
 
   const comparedLongHookIndex =
-    rhoContext_1.longHookIndex;
+    rhoLongHookContext_1.longHookIndex;
 
   checkNilWithNumber(
     comparedLongHookIndex,

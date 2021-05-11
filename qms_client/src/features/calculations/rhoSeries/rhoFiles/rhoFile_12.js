@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import {
-  rhoContextSet_3
+  rhoLongHookContextSet_3
 } from './rhoFile_11';
 import {
   checkNilWithTypedObject,
@@ -43,17 +43,17 @@ const rhoJackPositionContextSet = [
   }
 ];
 
-const rhoContextMapFunction_4 =
-  rhoContext_3 => {
+const rhoLongHookContextMapFunction_4 =
+  rhoLongHookContext_3 => {
 
   checkNilWithTypedObject(
-    rhoContext_3,
+    rhoLongHookContext_3,
     'Rho context 3');
 
   const rhoJackPositionContext =
     getItemByNumberFromList(
       rhoJackPositionContextSet,
-      rhoContext_3.rhoGenerationIndex,
+      rhoLongHookContext_3.rhoGenerationIndex,
       'rhoGeneration');
 
   const rhoJackAtDownwardIndex =
@@ -63,17 +63,17 @@ const rhoContextMapFunction_4 =
   const rhoKingAtDownwardIndex =
     (rhoJackAtDownwardIndex + 3) % 6;
 
-  const rhoContext_4 = {
-    ...rhoContext_3,
+  const rhoLongHookContext_4 = {
+    ...rhoLongHookContext_3,
     rhoJackAtDownwardIndex,
     rhoKingAtDownwardIndex,
     _type: 'Rho context 4'
   };
 
-  return rhoContext_4;
+  return rhoLongHookContext_4;
 }
 
-export const rhoContextSet_4 =
+export const rhoLongHookContextSet_4 =
   R.map(
-    rhoContextMapFunction_4,
-    rhoContextSet_3);
+    rhoLongHookContextMapFunction_4,
+    rhoLongHookContextSet_3);

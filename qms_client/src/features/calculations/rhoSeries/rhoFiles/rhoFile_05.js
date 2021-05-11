@@ -5,7 +5,7 @@ import {
   bakedNattoSet
 } from './rhoFile_03';
 import {
-  rhoContextMapFunction_1,
+  rhoLongHookContextMapFunction_1,
 } from './rhoFile_04';
 import {
   checkNilWithArray,
@@ -18,11 +18,11 @@ import {
   getTwigBranchContextByChinese
 } from '../../twigFiles/twigHub';
 
-const buildRhoContextSet_1 = () => {
+const buildRhoLongHookContextSet_1 = () => {
 
   try{
     return R.compose(
-      R.map(rhoContextMapFunction_1),
+      R.map(rhoLongHookContextMapFunction_1),
       R.split(',')
     )
     (longHookParagraph);
@@ -34,8 +34,8 @@ const buildRhoContextSet_1 = () => {
   }
 }
 
-export const rhoContextSet_1 =
-  buildRhoContextSet_1();
+export const rhoLongHookContextSet_1 =
+  buildRhoLongHookContextSet_1();
 
 export const buildLongHookCrossContextList_1 = (
   payloadForBuildLongHookCrossContextList_1,

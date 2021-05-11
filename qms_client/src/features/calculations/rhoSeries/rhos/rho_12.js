@@ -11,17 +11,17 @@ import {
   octalToDecimal
 } from '../../utils/util_02';
 import {
-  rhoContextSet_1
+  rhoLongHookContextSet_1
 } from './rho_01';
 import {
-  getRhoContext1ByLongHookName
+  getRhoLongHookContext1ByLongHookName
 } from './rho_05';
 import {
   getRcxt6ByLhn,
-  rhoContextSet_6
+  rhoLongHookContextSet_6
 } from './rho_11';
 
-const getRhoContextSet_7 = () => {
+const getRhoLongHookContextSet_7 = () => {
 
   const mapFn_1n =
     (rjkdi, rkgdi, rqndi, longHookCross) => {
@@ -106,13 +106,13 @@ const getRhoContextSet_7 = () => {
   }
 
   try{
-    return R.map(mapFn_2, rhoContextSet_6);
+    return R.map(mapFn_2, rhoLongHookContextSet_6);
   }
   catch(err){
     console.error(err);
     throw new Error(
-      'Cannot get [rhoContextSet_7].');
+      'Cannot get [rhoLongHookContextSet_7].');
   }
 }
 
-export const rhoContextSet_7 = getRhoContextSet_7();
+export const rhoLongHookContextSet_7 = getRhoLongHookContextSet_7();

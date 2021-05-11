@@ -5,7 +5,7 @@ import {
   utFindByPropEq
 } from '../../utils/util_04';
 import {
-  rhoContextSet_4
+  rhoLongHookContextSet_4
 } from './rho_08';
 import {
   getElre
@@ -14,7 +14,7 @@ import {
   dfcdl
 } from './rho_09';
 
-const getRhoContextSet_5 = () => {
+const getRhoLongHookContextSet_5 = () => {
 
   const mapFn_1n = (rhshel, _longHookCross) => {
 
@@ -61,7 +61,7 @@ const getRhoContextSet_5 = () => {
     }
   }
 
-  return R.map(mapFn_2, rhoContextSet_4);
+  return R.map(mapFn_2, rhoLongHookContextSet_4);
 }
 
-export const rhoContextSet_5 = getRhoContextSet_5();
+export const rhoLongHookContextSet_5 = getRhoLongHookContextSet_5();

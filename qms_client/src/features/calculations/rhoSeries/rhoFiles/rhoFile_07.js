@@ -4,7 +4,7 @@ import {
   decimalToBinary
 } from '../../utilityFiles/utilityHub';
 import {
-  rhoContextSet_1,
+  rhoLongHookContextSet_1,
   buildLongHookCrossContextList_1
 } from './rhoMiniHub_01';
 import {
@@ -15,19 +15,19 @@ import {
   getTwigTrunkContextByChinese
 } from '../../twigFiles/twigHub';
 
-const rhoContextMapFunction_2 = rhoContext_1 => {
+const rhoLongHookContextMapFunction_2 = rhoLongHookContext_1 => {
 
   try{
 
     const externalNattoNoodle =
       getNattoNoodle(
-        rhoContext_1
+        rhoLongHookContext_1
         .externalShortHookOriginal,
         true);
 
     const internalNattoNoodle =
       getNattoNoodle(
-        rhoContext_1
+        rhoLongHookContext_1
         .internalShortHookOriginal,
         false);
 
@@ -69,7 +69,7 @@ const rhoContextMapFunction_2 = rhoContext_1 => {
 
     const rawLongHookBinaryDigits =
       decimalToBinary(
-        rhoContext_1.longHookIndex, 6);
+        rhoLongHookContext_1.longHookIndex, 6);
 
     const truncatedLongHookBinaryDigits =
       R.drop(1, rawLongHookBinaryDigits);
@@ -92,7 +92,7 @@ const rhoContextMapFunction_2 = rhoContext_1 => {
 
     return {
       longHookCrossSet,
-      ...rhoContext_1,
+      ...rhoLongHookContext_1,
       _type: 'Rho context 2'
     }
   }
@@ -103,10 +103,10 @@ const rhoContextMapFunction_2 = rhoContext_1 => {
   }
 }
 
-const getRhoContextSet_2 = () => {
+const getRhoLongHookContextSet_2 = () => {
   return R.map(
-    rhoContextMapFunction_2,
-    rhoContextSet_1);
+    rhoLongHookContextMapFunction_2,
+    rhoLongHookContextSet_1);
 }
 
-export const rhoContextSet_2 = getRhoContextSet_2();
+export const rhoLongHookContextSet_2 = getRhoLongHookContextSet_2();

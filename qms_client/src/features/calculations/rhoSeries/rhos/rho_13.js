@@ -4,16 +4,16 @@ import {
   trunkOrder
 } from '../../twigs/twig_01';
 import {
-  rhoContextSet_1
+  rhoLongHookContextSet_1
 } from './rho_01';
 import {
   getRcxtvByLhn
 } from './rho_05';
 import {
-  rhoContextSet_7
+  rhoLongHookContextSet_7
 } from './rho_12';
 
-const getRhoContextSet_8 = () => {
+const getRhoLongHookContextSet_8 = () => {
 
   // [rpilcs] stands for Rho pilot cross, i.e.
   // the cross referring to the rho pilot,
@@ -83,7 +83,7 @@ const getRhoContextSet_8 = () => {
   }
 
   try {
-    return R.map(mapFn_2, rhoContextSet_7);
+    return R.map(mapFn_2, rhoLongHookContextSet_7);
   }
   catch(err){
     console.error(err);
@@ -92,12 +92,12 @@ const getRhoContextSet_8 = () => {
   }
 }
 
-export const rhoContextSet_8 = getRhoContextSet_8();
+export const rhoLongHookContextSet_8 = getRhoLongHookContextSet_8();
 
 export const getRcxt8ByLhn = longHookName => {
   try {
     return getRcxtvByLhn(
-      longHookName, rhoContextSet_8, 8);
+      longHookName, rhoLongHookContextSet_8, 8);
   }
   catch(err){
     console.error(err);

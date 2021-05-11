@@ -3,39 +3,39 @@ import * as RA from 'ramda-adjunct';
 
 export const deltaFocusContextSet = [
   {
-    _type: 'Delta focus context',
+    _type: 'Delta focus context.',
     deltaFocusChineseName: '丙官鬼',
     deltaFocusEnglishName: 'Delta focus ghost',
-    deltaFocusElementalRelationEnglish:
-      'Twig elemental relation ghost'
+    deltaFocusElementalViewingMyselfEnglish:
+      'Viewing myself as ghost.'
   },
   {
     _type: 'Delta focus context',
     deltaFocusChineseName: '丙父母',
-    deltaFocusEnglishName: 'Delta focus parent',
-    deltaFocusElementalRelationEnglish:
-      'Twig elemental relation parent'
+    deltaFocusEnglishName: 'Delta focus parent.',
+    deltaFocusElementalViewingMyselfEnglish:
+      'Viewing myself as parent.'
   },
   {
     _type: 'Delta focus context',
     deltaFocusChineseName: '丙兄弟',
-    deltaFocusEnglishName: 'Delta focus brother',
-    deltaFocusElementalRelationEnglish:
-      'Twig elemental relation brother'
+    deltaFocusEnglishName: 'Delta focus brother.',
+    deltaFocusElementalViewingMyselfEnglish:
+      'Viewing myself as brother.'
   },
   {
-    _type: 'Delta focus context',
+    _type: 'Delta focus context.',
     deltaFocusChineseName: '丙妻財',
-    deltaFocusEnglishName: 'Delta focus bank',
-    deltaFocusElementalRelationEnglish:
-      'Twig elemental relation bank'
+    deltaFocusEnglishName: 'Delta focus bank.',
+    deltaFocusElementalViewingMyselfEnglish:
+      'Viewing myself as bank.'
   },
   {
-    _type: 'Delta focus context',
+    _type: 'Delta focus context.',
     deltaFocusChineseName: '丙子孫',
-    deltaFocusEnglishName: 'Delta focus son',
-    deltaFocusElementalRelationEnglish:
-      'Twig elemental relation son'
+    deltaFocusEnglishName: 'Delta focus son.',
+    deltaFocusElementalViewingMyselfEnglish:
+      'Viewing myself as son.'
   }
 ]
 

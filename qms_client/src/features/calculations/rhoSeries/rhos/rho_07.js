@@ -23,7 +23,7 @@ export const buildRjkdi = rhogen => {
   return longHookCrossDownwardIndex;
 }
 
-const getRhoContextSet_3 = () => {
+const getRhoLongHookContextSet_3 = () => {
 
   const mapFn_1 = (
     rlhsc,
@@ -78,18 +78,18 @@ const getRhoContextSet_3 = () => {
   }
 
   try{
-    const rhoContextSet_3a = R.map(mapFn_2, rlhsl);
-    const rhoContextSet_3b = R.flatten(rhoContextSet_3a);
-    return rhoContextSet_3b;
+    const rhoLongHookContextSet_3a = R.map(mapFn_2, rlhsl);
+    const rhoLongHookContextSet_3b = R.flatten(rhoLongHookContextSet_3a);
+    return rhoLongHookContextSet_3b;
   }
   catch(err){
     console.error(err);
-    throw new Error('Cannot get [rhoContextSet_3].');
+    throw new Error('Cannot get [rhoLongHookContextSet_3].');
   }
 
 }
 
-export const rhoContextSet_3 = getRhoContextSet_3();
+export const rhoLongHookContextSet_3 = getRhoLongHookContextSet_3();
 
 const getRcxt3ByLn = longHookName => {
 
@@ -101,7 +101,7 @@ const getRcxt3ByLn = longHookName => {
 
   const rhocxt_3 = R.find(
     R.propEq('longHookName', longHookName),
-    rhoContextSet_3);
+    rhoLongHookContextSet_3);
 
   if(R.isNil(rhocxt_3)){
     throw new Error(

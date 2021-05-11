@@ -8,7 +8,7 @@ import {
   checkNilWithNumber
 } from '../../utilityFiles/utilityHub';
 
-export const rhoContextMapFunction_1 =
+export const rhoLongHookContextMapFunction_1 =
   longHookSentence => {
 
   let externalShortHookAlternative;
@@ -89,7 +89,7 @@ export const rhoContextMapFunction_1 =
     internalShortHookContext
       .genericShortHookIndex;
 
-  const rhoContext_1 = {
+  const rhoLongHookContext_1 = {
     _type: 'Rho context 1',
     longHookName,
     longHookIndex,
@@ -103,5 +103,5 @@ export const rhoContextMapFunction_1 =
     externalShortHookIndex
   }
 
-  return rhoContext_1;
+  return rhoLongHookContext_1;
 }

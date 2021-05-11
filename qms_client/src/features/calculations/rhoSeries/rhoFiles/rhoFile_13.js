@@ -4,32 +4,32 @@ import {
   getBakedNattoByShortHookOriginal
 } from './rhoMiniHub_01';
 import {
-  getRhoContextByLongHookName_2,
+  getRhoLongHookContextByLongHookName_2,
 } from './rhoMiniHub_02';
 import {
-  rhoContextSet_4
+  rhoLongHookContextSet_4
 } from './rhoFile_12';
 import {
   checkNilWithString
 } from './utilityHubShadowOfRhoFiles';
 
-const rhoContextMapFunction_5 =
-  rhoContext_4 => {
+const rhoLongHookContextMapFunction_5 =
+  rhoLongHookContext_4 => {
 
   const rhoImpureHookName =
-    rhoContext_4.rhoImpureHookName;
+    rhoLongHookContext_4.rhoImpureHookName;
 
   checkNilWithString(
     rhoImpureHookName,
     'Rho impure hook name');
 
-  const rhoContext_2 =
-    getRhoContextByLongHookName_2(
+  const rhoLongHookContext_2 =
+    getRhoLongHookContextByLongHookName_2(
       rhoImpureHookName);
 
   const bakedNatto =
     getBakedNattoByShortHookOriginal(
-      rhoContext_4.rhoShortHookPalace);
+      rhoLongHookContext_4.rhoShortHookPalace);
 
   const nattoShortHookElementalChinese =
     bakedNatto
@@ -40,15 +40,15 @@ const rhoContextMapFunction_5 =
     .genericShortHookElementalEnglish;
 
   return {
-    ...rhoContext_2,
-    ...rhoContext_4,
+    ...rhoLongHookContext_2,
+    ...rhoLongHookContext_4,
     nattoShortHookElementalChinese,
     nattoShortHookElementalEnglish,
     _type: 'Rho context 5'
   };
 }
 
-export const rhoContextSet_5 =
+export const rhoLongHookContextSet_5 =
   R.map(
-    rhoContextMapFunction_5,
-    rhoContextSet_4);
+    rhoLongHookContextMapFunction_5,
+    rhoLongHookContextSet_4);

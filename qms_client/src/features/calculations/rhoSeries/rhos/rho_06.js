@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  rhoContextSet_2
+  rhoLongHookContextSet_2
 } from './rho_02';
 import {
   nattos,
@@ -15,7 +15,7 @@ import {
 } from '../../twigs/twig_01';
 import {
   getRcxtvByLhn,
-  getRhoContext1ByLongHookName,
+  getRhoLongHookContext1ByLongHookName,
   getRcxt1ByLhx
 } from './rho_05';
 import {
@@ -37,7 +37,7 @@ const getRhgbs = () => {
   const mapFn = tlhna => {
 
     const tlhidx =
-      getRhoContext1ByLongHookName(tlhna)
+      getRhoLongHookContext1ByLongHookName(tlhna)
       .lhidx;
 
     if(R.isNil(tlhidx)){
@@ -93,7 +93,7 @@ const getRlhsl = () => {
       const rgdecm = binaryToDecimal(rgbnry);
       const rhlhn = '純' + genericShortHookOriginal;
       const rhlix =
-        getRhoContext1ByLongHookName(rhlhn)
+        getRhoLongHookContext1ByLongHookName(rhlhn)
         .lhidx;
 
       if(R.isNil(rhlix)){

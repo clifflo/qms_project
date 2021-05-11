@@ -55,6 +55,7 @@ export const
   return {
     myselfTwigElementalChinese,
     opponentTwigElementalChinese,
-    twigElementalViewingMyselfContext
+    ...twigElementalViewingMyselfContext,
+    _type: 'Twig elemental viewing myself comparison'
   };
 }

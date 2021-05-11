@@ -1,10 +1,10 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  rhoContextSet_1
+  rhoLongHookContextSet_1
 } from './rhoMiniHub_01';
 import {
-  rhoContextSet_2
+  rhoLongHookContextSet_2
 } from './rhoFile_07';
 import {
   checkNilWithString,
@@ -13,7 +13,7 @@ import {
   getItemByNumberFromList
 } from './utilityHubShadowOfRhoFiles';
 
-export const getRhoContextByLongHookName_1 =
+export const getRhoLongHookContextByLongHookName_1 =
   longHookName => {
 
     try{
@@ -21,13 +21,13 @@ export const getRhoContextByLongHookName_1 =
         longHookName,
         'Long hook name');
 
-      const rhoContext_1 =
+      const rhoLongHookContext_1 =
         getItemByStringFromList(
-          rhoContextSet_1,
+          rhoLongHookContextSet_1,
           longHookName,
           'longHookName');
 
-      return rhoContext_1;
+      return rhoLongHookContext_1;
     }
     catch(errorMessage){
       console.error(errorMessage);
@@ -38,7 +38,7 @@ export const getRhoContextByLongHookName_1 =
 
 }
 
-export const getRhoContextByLongHookName_2 =
+export const getRhoLongHookContextByLongHookName_2 =
   longHookName => {
 
   try{
@@ -46,13 +46,13 @@ export const getRhoContextByLongHookName_2 =
       longHookName,
       'Long hook name');
 
-    const rhoContext_2 =
+    const rhoLongHookContext_2 =
       getItemByStringFromList(
-        rhoContextSet_2,
+        rhoLongHookContextSet_2,
         longHookName,
         'longHookName');
 
-    return rhoContext_2;
+    return rhoLongHookContext_2;
   }
   catch(errorMessage){
     console.error(errorMessage);
@@ -65,7 +65,7 @@ export const getRhoContextByLongHookName_2 =
 
 }
 
-export const getRhoContextByLongHookIndex_1 =
+export const getRhoLongHookContextByLongHookIndex_1 =
   longHookIndex => {
 
   try{
@@ -74,13 +74,13 @@ export const getRhoContextByLongHookIndex_1 =
       longHookIndex,
       'Long hook index');
 
-    const rhoContext_1 =
+    const rhoLongHookContext_1 =
       getItemByNumberFromList(
-        rhoContextSet_1,
+        rhoLongHookContextSet_1,
         longHookIndex,
         'longHookIndex');
 
-    return rhoContext_1;
+    return rhoLongHookContext_1;
   }
   catch(errorMessage){
     console.error(errorMessage);
@@ -94,8 +94,8 @@ export const getRhoContextByLongHookIndex_1 =
 export const isValidLongHookName =
   longHookName => {
 
-  const rhoContext_1 =
-    getRhoContextByLongHookName_1(longHookName);
+  const rhoLongHookContext_1 =
+    getRhoLongHookContextByLongHookName_1(longHookName);
 
-  return RA.isNotNil(rhoContext_1);
+  return RA.isNotNil(rhoLongHookContext_1);
 }

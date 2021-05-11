@@ -5,7 +5,7 @@ import {
   decimalToBinary
 } from '../../utils/util_02';
 import {
-  rhoContextSet_1
+  rhoLongHookContextSet_1
 } from './rho_02';
 import {
   getTrnto,
@@ -15,7 +15,7 @@ import {
   getTwigElemc
 } from '../../twigs/twig_02';
 
-export const getRhoContextSet_2 = () => {
+export const getRhoLongHookContextSet_2 = () => {
 
   const mapFn = rhocxt => {
 
@@ -90,7 +90,7 @@ export const getRhoContextSet_2 = () => {
 
   }
 
-  return R.map(mapFn, rhoContextSet_1)
+  return R.map(mapFn, rhoLongHookContextSet_1)
 }
 
-export const rhoContextSet_2 = getRhoContextSet_2();
+export const rhoLongHookContextSet_2 = getRhoLongHookContextSet_2();

@@ -12,19 +12,19 @@ import {
   getRcxtvByLhn
 } from './rho_05';
 import {
-  rhoContextSet_2
+  rhoLongHookContextSet_2
 } from './rho_04';
 import {
-  rhoContextSet_3
+  rhoLongHookContextSet_3
 } from './rho_07';
 
-const getRhoContextSet_4 = () => {
+const getRhoLongHookContextSet_4 = () => {
 
   const mapFn = rhocxt_3 => {
 
     const rhocxt_2 = R.find(
       R.propEq('longHookName', rhocxt_3.longHookName),
-      rhoContextSet_2);
+      rhoLongHookContextSet_2);
 
     const natto = R.find(
       R.propEq('genericShortHookOriginal', rhocxt_3.rhlhn),
@@ -52,12 +52,12 @@ const getRhoContextSet_4 = () => {
 
   try {
 
-    const rhoContextSet_4a = R.map(mapFn, rhoContextSet_3);
+    const rhoLongHookContextSet_4a = R.map(mapFn, rhoLongHookContextSet_3);
 
-    const rhoContextSet_4b = R.sortBy(
-      R.prop('rglhi'), rhoContextSet_4a);
+    const rhoLongHookContextSet_4b = R.sortBy(
+      R.prop('rglhi'), rhoLongHookContextSet_4a);
 
-    return rhoContextSet_4b;
+    return rhoLongHookContextSet_4b;
   }
   catch(err){
     console.error(err);
@@ -65,12 +65,12 @@ const getRhoContextSet_4 = () => {
   }
 }
 
-export const rhoContextSet_4 = getRhoContextSet_4();
+export const rhoLongHookContextSet_4 = getRhoLongHookContextSet_4();
 
 export const getRcxt4ByLhn = longHookName => {
   try {
     return getRcxtvByLhn(
-      longHookName, rhoContextSet_4, 4);
+      longHookName, rhoLongHookContextSet_4, 4);
   }
   catch(err){
     console.error(err);
