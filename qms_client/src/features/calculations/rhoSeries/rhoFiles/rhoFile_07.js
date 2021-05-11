@@ -110,4 +110,5 @@ const getRhoLongHookContextSet_2 = () => {
     rhoLongHookContextSet_1);
 }
 
-export const rhoLongHookContextSet_2 = getRhoLongHookContextSet_2();
+export const rhoLongHookContextSet_2 =
+  getRhoLongHookContextSet_2();

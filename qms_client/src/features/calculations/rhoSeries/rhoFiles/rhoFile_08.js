@@ -17,26 +17,25 @@ export const
   getRhoLongHookContextByName_1 =
   longHookName => {
 
-    try{
-      checkNilWithString(
+  try{
+    checkNilWithString(
+      longHookName,
+      'Long hook name');
+
+    const rhoLongHookContext_1 =
+      getItemByStringFromList(
+        rhoLongHookContextSet_1,
         longHookName,
-        'Long hook name');
+        'longHookName');
 
-      const rhoLongHookContext_1 =
-        getItemByStringFromList(
-          rhoLongHookContextSet_1,
-          longHookName,
-          'longHookName');
-
-      return rhoLongHookContext_1;
-    }
-    catch(errorMessage){
-      console.error(errorMessage);
-      throw new Error(
-        'Cannot get rho context by '
-        + 'long hook name 1.');
-    }
-
+    return rhoLongHookContext_1;
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throw new Error(
+      'Cannot get rho context by '
+      + 'long hook name 1.');
+  }
 }
 
 export const getRhoLongHookContextByName_2 =
@@ -67,7 +66,6 @@ export const getRhoLongHookContextByIndex_1 =
   longHookIndex => {
 
   try{
-
     checkNilWithNumber(
       longHookIndex,
       'Long hook index');

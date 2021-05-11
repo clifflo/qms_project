@@ -7,7 +7,7 @@ import {
   checkNilWithString,
   checkNilWithArray,
   getItemByStringFromList
-} from './utilityHubShadowOfDelta';
+} from './utilityHubCloneForDelta';
 import {
   deltaFocusContextSet
 } from './deltaFile_01';
@@ -53,7 +53,8 @@ const longHookCrossContextMapFunction_2 = (
     deltaFocusChineseName,
     deltaFocusEnglishName,
     nattoShortHookElementalChinese,
-    ...longHookCrossContext_1
+    ...longHookCrossContext_1,
+    _type: 'Long hook cross context 2.'
   };
 }
 

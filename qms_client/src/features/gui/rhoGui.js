@@ -1,10 +1,10 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  deltaLongHookContextSet
-} from '../calculations/rhoSeries/deltaFiles/deltaFile_02';
+  deltaLongHookContextSet_2
+} from '../calculations/rhoSeriesHubClone';
 
 export default function RhoGui() {
   return <JSONTree
-    data={deltaLongHookContextSet}/>
+    data={deltaLongHookContextSet_2}/>
 }
