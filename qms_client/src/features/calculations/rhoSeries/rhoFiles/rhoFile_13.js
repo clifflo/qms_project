@@ -27,10 +27,17 @@ const rhoLongHookContextMapFunction_5 =
     getRhoLongHookContextByLongHookName_2(
       rhoImpureHookName);
 
+  const rhoShortHookSimplePalace =
+    rhoLongHookContext_4
+    .rhoShortHookSimplePalace;
+
+  checkNilWithString(
+    rhoShortHookSimplePalace,
+    'Rho short hook simple palace');
+
   const bakedNatto =
     getBakedNattoByShortHookComplexOriginal(
-      rhoLongHookContext_4
-      .rhoShortHookSimplePalace);
+      '短卦' + rhoShortHookSimplePalace);
 
   const nattoShortHookElementalChinese =
     bakedNatto
