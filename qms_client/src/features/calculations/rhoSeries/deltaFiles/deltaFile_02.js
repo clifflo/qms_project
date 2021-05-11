@@ -89,9 +89,9 @@ export const deltaLongHookContextMapFunction_1 =
       rhoLongHookContext_5);
 
   const finalDeltaLongHookContext_1 = {
-      ...rawDeltaLongHookContext_1,
-      longHookCrossContextSet_2,
-      _type: 'Delta long hook context 1'
+    ...rawDeltaLongHookContext_1,
+    longHookCrossContextSet_2,
+    _type: 'Delta long hook context 1'
   };
 
   return finalDeltaLongHookContext_1;

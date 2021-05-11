@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 import {
   checkNilWithString,
+  checkNilWithArray,
   getItemByStringFromList
 } from './utilityHubCloneForDelta';
 import {
@@ -34,17 +35,29 @@ const deltaLongHookContextMapFunction_2 =
       R.prop('deltaFocusEnglishName'),
       deltaFocusContextSet);
 
+  checkNilWithArray(
+    completeDeltaFocusEnglishSet,
+    'Complete delta focus english set');
+
   const uniqueDeltaFocusEnglishSet =
     R.compose(
       R.uniq,
-      R.map(R.prop('deltaFocusEnglishName')),
-      deltaLongHookContext_1
-      .longHookCrossContextSet_2);
+      R.map(R.prop('deltaFocusEnglishName')))
+    (deltaLongHookContext_1
+    .longHookCrossContextSet_2);
+
+  checkNilWithArray(
+    uniqueDeltaFocusEnglishSet,
+    'Unique delta focus english set');
 
   const hiddenDeltaFocusEnglishSet =
     R.difference(
-      uniqueDeltaFocusEnglishSet,
-      completeDeltaFocusEnglishSet);
+      completeDeltaFocusEnglishSet,
+      uniqueDeltaFocusEnglishSet);
+
+  checkNilWithArray(
+    hiddenDeltaFocusEnglishSet,
+    'Hidden delta focus english set');
 
   const hasHiddenDeltaFocus =
     !R.isEmpty(hiddenDeltaFocusEnglishSet);
@@ -61,7 +74,8 @@ const deltaLongHookContextMapFunction_2 =
   return {
     ...deltaLongHookContext_1,
     hiddenDeltaFocusEnglishSet,
-    rhoPureHookCrossContextSet
+    rhoPureHookCrossContextSet,
+    hasHiddenDeltaFocus
   };
 }
 
