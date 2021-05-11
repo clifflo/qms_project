@@ -8,31 +8,36 @@ import {
   checkNilWithNumber
 } from '../utilityFiles/utilityHub';
 
-export const twigElementalContextSet = [
+export const twigVanillaElementalContextSet = [
   {
-    twigElementalIndex: 0,
-    twigElementalChinese: '金',
-    twigElementalEnglish: 'Twig elemental metal'
+    twigVanillaElementalIndex: 0,
+    twigVanillaElementalChinese: '五行金',
+    twigVanillaElementalEnglish:
+      'Twig vanilla elemental metal.'
   },
   {
-    twigElementalIndex: 1,
-    twigElementalChinese: '水',
-    twigElementalEnglish: 'Twig elemental water'
+    twigVanillaElementalIndex: 1,
+    twigVanillaElementalChinese: '五行水',
+    twigVanillaElementalEnglish:
+      'Twig vanilla elemental water.'
   },
   {
-    twigElementalIndex: 2,
-    twigElementalChinese: '木',
-    twigElementalEnglish: 'Twig elemental wood'
+    twigVanillaElementalIndex: 2,
+    twigVanillaElementalChinese: '五行木',
+    twigVanillaElementalEnglish:
+      'Twig vanilla elemental wood.'
   },
   {
-    twigElementalIndex: 3,
-    twigElementalChinese: '火',
-    twigElementalEnglish: 'Twig elemental fire'
+    twigVanillaElementalIndex: 3,
+    twigVanillaElementalChinese: '五行火',
+    twigVanillaElementalEnglish:
+      'Twig vanilla elemental fire.'
   },
   {
-    twigElementalIndex: 4,
-    twigElementalChinese: '土',
-    twigElementalEnglish: 'Twig elemental earth'
+    twigVanillaElementalIndex: 4,
+    twigVanillaElementalChinese: '五行土',
+    twigVanillaElementalEnglish:
+      'Twig vanilla elemental earth'
   }
 ];
 

@@ -1,36 +1,43 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import {
+  checkNilWithNumber,
+  getItemByNumberFromList
+} from './utilityHubShadowOfTwigFiles';
+import {
+  getTwigElementalContextByChinese
+} from './twigFile_01';
 
-export const twigElementalRelationContext = [
+export const
+  twigElementalViewOfMyselfContextSet = [
   {
-    twigElementalRelationChinese: '比和',
-    twigElementalRelationEnglish:
-      'Twig elemental relation draws with',
-    twigElementalRelationIndex: 0
+    twigElementalViewOfMyselfChinese: '比和',
+    twigElementalViewOfMyselfEnglish:
+      'Twig elemental views me as brother.',
+    twigElementalTargetMinusSourceIndex: 0
   },
   {
-    twigElementalRelationChinese: '生他',
-    twigElementalRelationEnglish:
-      'Twig elemental relation producing',
-    twigElementalRelationIndex: 1
+    twigElementalViewOfMyselfChinese: '生他',
+    twigElementalViewOfMyselfEnglish:
+      'Twig elemental views me as parent.',
+    twigElementalTargetMinusSourceIndex: 1
   },
   {
-    twigElementalRelationChinese: '剋他',
-    twigElementalRelationEnglish:
-      'Twig elemental relation hacking towards',
-    twigElementalRelationIndex: 2
-
+    twigElementalViewOfMyselfChinese: '剋他',
+    twigElementalViewOfMyselfEnglish:
+      'Twig elemental views me as ghost.',
+    twigElementalTargetMinusSourceIndex: 2
   },
   {
-    twigElementalRelationChinese: '被他剋',
-    twigElementalRelationEnglish:
-      'Twig elemental relation hacked by',
-    twigElementalRelationIndex: 3
+    twigElementalViewOfMyselfChinese: '被剋',
+    twigElementalViewOfMyselfEnglish:
+      'Twig elemental views me as bank.',
+    twigElementalTargetMinusSourceIndex: 3
   },
   {
-    twigElementalRelationChinese: '被他生',
-    twigElementalRelationEnglish:
-      'Twig elemental relation produced by',
-    twigElementalRelationIndex: 4
+    twigElementalViewOfMyselfChinese: '被生',
+    twigElementalViewOfMyselfEnglish:
+      'Twig elemental views me as son.',
+    twigElementalTargetMinusSourceIndex: 4
   }
 ]
