@@ -38,6 +38,3 @@ export const deltaFocusContextSet = [
       'Twig elemental viewing myself as son.'
   }
 ]
-
-export const
-  getDeltaFocusByTwigElementalRelationEnglish =

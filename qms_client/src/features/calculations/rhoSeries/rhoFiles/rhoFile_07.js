@@ -83,16 +83,16 @@ const rhoLongHookContextMapFunction_2 =
         internalShortHookTrunkChinese
       };
 
-    const longHookCrossMapFunction_1 =
+    const longHookCrossContextMapFunction_1 =
       R.curry(buildLongHookCrossContextList_1)
       (payloadForBuildLongHookCrossContextList_1);
 
-    const longHookCrossContextSet = R.map(
-      longHookCrossMapFunction_1,
+    const longHookCrossContextSet_1 = R.map(
+      longHookCrossContextMapFunction_1,
       R.range(0, 6));
 
     return {
-      longHookCrossContextSet,
+      longHookCrossContextSet_1,
       ...rhoLongHookContext_1,
       _type: 'Rho long hook context 2'
     }

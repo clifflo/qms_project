@@ -1,1 +1,1 @@
-export * from './twigHubShadowOfRhoSeries'
+export * from '../twigHubShadowOfRhoSeries'
