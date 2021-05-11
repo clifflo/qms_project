@@ -30,8 +30,6 @@ const buildAugmentedRhoGenerationContext = (
   const rhoPureHookName =
     '純' + genericShortHookSimpleOriginal;
 
-  console.log(rhoPureHookName);
-
   const rhoPureHookContext_1 =
     getRhoLongHookContextByLongHookName_1(
       rhoPureHookName);
@@ -52,8 +50,11 @@ const buildAugmentedRhoGenerationContext = (
     rhoImpureHookContext
     .longHookName;
 
-  const rhoShortHookPalace =
+  const rhoShortHookComplexPalace =
     '午' + genericShortHookSimpleOriginal + '卦宮'
+
+  const rhoShortHookSimplePalace =
+    genericShortHookSimpleOriginal
 
   return {
     _type: 'Augmented rho generation context',
@@ -61,7 +62,8 @@ const buildAugmentedRhoGenerationContext = (
     rhoImpureHookName,
     rhoGenerationIndex,
     rawRhoGapBinaryWhole,
-    rhoShortHookPalace
+    rhoShortHookSimplePalace,
+    rhoShortHookComplexPalace
   };
 }
 

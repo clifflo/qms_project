@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  getBakedNattoByShortHookOriginal
+  getBakedNattoByShortHookComplexOriginal
 } from './rhoMiniHub_01';
 import {
   getRhoLongHookContextByLongHookName_2,
@@ -28,8 +28,9 @@ const rhoLongHookContextMapFunction_5 =
       rhoImpureHookName);
 
   const bakedNatto =
-    getBakedNattoByShortHookOriginal(
-      rhoLongHookContext_4.rhoShortHookPalace);
+    getBakedNattoByShortHookComplexOriginal(
+      rhoLongHookContext_4
+      .rhoShortHookSimplePalace);
 
   const nattoShortHookElementalChinese =
     bakedNatto

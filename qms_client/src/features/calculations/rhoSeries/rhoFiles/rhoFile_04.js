@@ -67,13 +67,21 @@ export const rhoLongHookContextMapFunction_1 =
     internalShortHookContext
     .genericShortHookIndex;
 
-  const externalShortHookOriginal =
+  const externalShortHookComplexOriginal =
     externalShortHookContext
     .genericShortHookComplexOriginal;
 
-  const internalShortHookOriginal =
+  const internalShortHookComplexOriginal =
     internalShortHookContext
     .genericShortHookComplexOriginal;
+
+  const externalShortHookSimpleOriginal =
+    externalShortHookContext
+    .genericShortHookSimpleOriginal;
+
+  const internalShortHookSimpleOriginal =
+    internalShortHookContext
+    .genericShortHookSimpleOriginal;
 
   const externalShortHookEnglish =
     externalShortHookContext
@@ -93,10 +101,12 @@ export const rhoLongHookContextMapFunction_1 =
     _type: 'Rho long hook context 1',
     longHookName,
     longHookIndex,
-    externalShortHookOriginal,
+    externalShortHookComplexOriginal,
+    externalShortHookSimpleOriginal,
     externalShortHookAlternative,
     externalShortHookEnglish,
-    internalShortHookOriginal,
+    internalShortHookComplexOriginal,
+    internalShortHookSimpleOriginal,
     internalShortHookAlternative,
     internalShortHookEnglish,
     internalShortHookIndex,

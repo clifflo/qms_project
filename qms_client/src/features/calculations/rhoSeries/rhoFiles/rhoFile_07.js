@@ -23,13 +23,13 @@ const rhoLongHookContextMapFunction_2 =
     const externalNattoNoodle =
       getNattoNoodle(
         rhoLongHookContext_1
-        .externalShortHookOriginal,
+        .externalShortHookComplexOriginal,
         true);
 
     const internalNattoNoodle =
       getNattoNoodle(
         rhoLongHookContext_1
-        .internalShortHookOriginal,
+        .internalShortHookComplexOriginal,
         false);
 
     const externalSnapPeas =

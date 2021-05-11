@@ -17,7 +17,7 @@ export const shortHookContextSet = [
     genericShortHookAlternative: '卦象雷',
     genericShortHookComplexOriginal: '短卦震',
     genericShortHookEnglish: 'Short hook thunder',
-    genericShortHookSimpleOriginal: '雷'
+    genericShortHookSimpleOriginal: '震'
   },
   {
     _type: 'Short hook context',
@@ -25,7 +25,7 @@ export const shortHookContextSet = [
     genericShortHookAlternative: '卦象水',
     genericShortHookComplexOriginal: '短卦坎',
     genericShortHookEnglish: 'Short hook lake',
-    genericShortHookSimpleOriginal: '水'
+    genericShortHookSimpleOriginal: '坎'
   },
   {
     _type: 'Short hook context',
@@ -33,7 +33,7 @@ export const shortHookContextSet = [
     genericShortHookAlternative: '卦象澤',
     genericShortHookComplexOriginal: '短卦兌',
     genericShortHookEnglish: 'Short hook swamp',
-    genericShortHookSimpleOriginal: '澤'
+    genericShortHookSimpleOriginal: '兌'
   },
   {
     _type: 'Short hook context',
@@ -41,7 +41,7 @@ export const shortHookContextSet = [
     genericShortHookAlternative: '卦象山',
     genericShortHookComplexOriginal: '短卦艮',
     genericShortHookEnglish: 'Short hook mountain',
-    genericShortHookSimpleOriginal: '山'
+    genericShortHookSimpleOriginal: '艮'
   },
   {
     _type: 'Short hook context',
@@ -49,7 +49,7 @@ export const shortHookContextSet = [
     genericShortHookAlternative: '卦象火',
     genericShortHookComplexOriginal: '短卦離',
     genericShortHookEnglish: 'Short hook flame',
-    genericShortHookSimpleOriginal: '火'
+    genericShortHookSimpleOriginal: '離'
   },
   {
     _type: 'Short hook context',
@@ -57,7 +57,7 @@ export const shortHookContextSet = [
     genericShortHookAlternative: '卦象風',
     genericShortHookComplexOriginal: '短卦巽',
     genericShortHookEnglish: 'Short hook monsoon',
-    genericShortHookSimpleOriginal: '風'
+    genericShortHookSimpleOriginal: '巽'
   },
   {
     _type: 'Short hook context',
@@ -65,6 +65,6 @@ export const shortHookContextSet = [
     genericShortHookAlternative: '卦象天',
     genericShortHookComplexOriginal: '短卦乾',
     genericShortHookEnglish: 'Short hook sky',
-    genericShortHookSimpleOriginal: '天'
+    genericShortHookSimpleOriginal: '乾'
   }
 ]
