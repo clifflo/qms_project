@@ -5,6 +5,7 @@ import {
   checkNilWithArray
 } from './utilityHubCloneForDelta';
 
+
 const getRhoQueenIndexFromJackBranchIndex =
   rhoJackBranchIndex => {
 
