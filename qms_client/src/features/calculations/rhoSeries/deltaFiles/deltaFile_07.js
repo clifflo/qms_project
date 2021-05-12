@@ -42,6 +42,8 @@ const longHookCrossContextMapFunction_4 =
     deltaPaladinChineseForCross,
     deltaPaladinEnglishForCross
   }
+
+  return longHookCrossContext_4;
 }
 
 export const deltaDatedLongHookContextMapFunction =
@@ -70,7 +72,8 @@ export const deltaDatedLongHookContextMapFunction =
 
   const rawDeltaDatedLongHookContext =
     R.dissoc(
-      'longHookCrossContextSet_3');
+      'longHookCrossContextSet_3',
+      deltaLongHookContext_4);
 
   const finalDeltaDatedLongHookContext = {
     ...rawDeltaDatedLongHookContext,

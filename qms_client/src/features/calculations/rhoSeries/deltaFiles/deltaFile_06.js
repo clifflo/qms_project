@@ -63,7 +63,7 @@ export const
     'Asking day trunk index');
 
   const deltaPilotPaladinIndex =
-    5 - Math.floor(askingDayTrunkIndex / 2);
+    6 - Math.floor(askingDayTrunkIndex / 2);
 
   return deltaPilotPaladinIndex;
 }

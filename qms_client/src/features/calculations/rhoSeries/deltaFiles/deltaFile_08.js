@@ -24,7 +24,7 @@ export const getDeltaDatedLongHookContextSet =
   const deltaDatedLongHookContextSet =
     R.map(
       loadedDeltaDatedLongHookContextMapFunction,
-      deltaLongHookContextSet_4)
+      deltaLongHookContextSet_4);
 
   return deltaDatedLongHookContextSet;
 }
