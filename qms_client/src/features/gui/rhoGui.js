@@ -1,10 +1,10 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  getRhoLongHookContextByName_2
+  getStrikeCrossSignSet
 } from '../calculations/rhoSeriesHubClone';
 
 export default function RhoGui() {
   return <JSONTree
-    data={getRhoLongHookContextByName_2('隨')}/>
+    data={getStrikeCrossSignSet('純乾','復')}/>
 }
