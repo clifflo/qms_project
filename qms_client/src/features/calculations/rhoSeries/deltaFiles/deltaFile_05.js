@@ -4,12 +4,37 @@ import {
   checkNilWithNumber,
   checkNilWithArray
 } from './utilityHubCloneForDelta';
+import {
+  getTwigBranchContextByChinese
+} from './twigHubCloneOfDelta';
+import {
+  deltaLongHookContextSet_3
+} from './deltaFile_04';
 
+const
+  getRhoQueenCrossIndexFromJackCrossBranchChinese =
+  rhoJackCrossBranchChinese => {
 
-const getRhoQueenIndexFromJackBranchIndex =
-  rhoJackBranchIndex => {
+  checkNilWithString(
+    rhoJackCrossBranchChinese,
+    'Rho jack cross branch chinese');
 
-  
+  const rhoJackCrossBranchIndex =
+    getTwigBranchContextByChinese(
+      rhoJackCrossBranchChinese);
+
+  checkNilWithNumber(
+    rhoJackCrossBranchIndex,
+    'Rho jack cross branch index');
+
+  const rhoQueenCrossIndex =
+    5 - (rhoJackCrossBranchIndex % 6);
+
+  checkNilWithNumber(
+    rhoQueenCrossIndex,
+    'Rho queen cross index');
+
+  return rhoQueenCrossIndex;
 }
 
 const deltaLongHookContextMapFunction_4 =
@@ -35,4 +60,26 @@ const deltaLongHookContextMapFunction_4 =
   checkNilWithTypedObject(
     rhoJackCrossContext,
     'Long hook cross context 3.');
+
+  const rhoQueenCrossIndex =
+    getRhoQueenCrossIndexFromJackTwigBranchChinese(
+      rhoJackCrossContext
+      .longHookCrossBranchChinese);
+
+  checkNilWithNumber(
+    rhoQueenCrossIndex,
+    'Rho queen cross index');
+
+  const deltaLongHookContext_4 = {
+    ...deltaLongHookContext_3,
+    rhoQueenCrossIndex,
+    _type: 'Delta long hook context 4'
+  };
+
+  return deltaLongHookContext_4;
 }
+
+export const deltaLongHookContextSet_4 =
+  R.map(
+    deltaLongHookContextMapFunction_4,
+    deltaLongHookContextSet_3);
