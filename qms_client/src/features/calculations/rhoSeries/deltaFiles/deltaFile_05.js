@@ -2,7 +2,9 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   checkNilWithNumber,
-  checkNilWithArray
+  checkNilWithArray,
+  checkNilWithString,
+  checkNilWithTypedObject
 } from './utilityHubCloneForDelta';
 import {
   getTwigBranchContextByChinese
@@ -21,20 +23,21 @@ const
 
   const rhoJackCrossBranchIndex =
     getTwigBranchContextByChinese(
-      rhoJackCrossBranchChinese);
+      rhoJackCrossBranchChinese)
+    .twigBranchIndex;
 
   checkNilWithNumber(
     rhoJackCrossBranchIndex,
     'Rho jack cross branch index');
 
-  const rhoQueenCrossIndex =
+  const rhoQueenAtDownwardIndex =
     5 - (rhoJackCrossBranchIndex % 6);
 
   checkNilWithNumber(
-    rhoQueenCrossIndex,
-    'Rho queen cross index');
+    rhoQueenAtDownwardIndex,
+    'Rho queen at downward index');
 
-  return rhoQueenCrossIndex;
+  return rhoQueenAtDownwardIndex;
 }
 
 const deltaLongHookContextMapFunction_4 =
@@ -61,18 +64,18 @@ const deltaLongHookContextMapFunction_4 =
     rhoJackCrossContext,
     'Long hook cross context 3.');
 
-  const rhoQueenCrossIndex =
-    getRhoQueenCrossIndexFromJackTwigBranchChinese(
+  const rhoQueenAtDownwardIndex =
+    getRhoQueenCrossIndexFromJackCrossBranchChinese(
       rhoJackCrossContext
       .longHookCrossBranchChinese);
 
   checkNilWithNumber(
-    rhoQueenCrossIndex,
-    'Rho queen cross index');
+    rhoQueenAtDownwardIndex,
+    'Rho queen at downward index');
 
   const deltaLongHookContext_4 = {
     ...deltaLongHookContext_3,
-    rhoQueenCrossIndex,
+    rhoQueenAtDownwardIndex,
     _type: 'Delta long hook context 4'
   };
 

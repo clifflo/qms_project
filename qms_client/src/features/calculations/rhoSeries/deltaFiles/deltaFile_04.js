@@ -22,7 +22,7 @@ const longHookCrossContextMapFunction_3 = (
     hiddenDeltaFocusEnglishSet,
     rhoPureHookCrossContextSet
   } =
-  payloadForlongHookCrossContextMapFunction_3;
+  payloadForLongHookCrossContextMapFunction_3;
 
   const longHookCrossContext_2 =
     longHookCrossContextSet_2[
@@ -71,7 +71,7 @@ const deltaLongHookContextMapFunction_3 =
 
   const loadedLongHookCrossContextMapFunction_3
     = R.curry(longHookCrossContextMapFunction_3)
-    (payloadForlongHookCrossContextMapFunction_3);
+    (payloadForLongHookCrossContextMapFunction_3);
 
   const { longHookCrossContextSet_2 } =
     deltaLongHookContext_2;
