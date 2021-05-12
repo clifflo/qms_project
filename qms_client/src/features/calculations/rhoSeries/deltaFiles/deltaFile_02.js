@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   getTwigElementalViewingMyselfContextByChinese
-} from './twigHubShadowOfDelta';
+} from './twigHubCloneOfDelta';
 import {
   checkNilWithString,
   checkNilWithArray,
@@ -13,7 +13,7 @@ import {
 } from './deltaFile_01';
 import {
   rhoLongHookContextSet_5
-} from './rhoHubShadowOfDelta'
+} from './rhoHubCloneOfDelta'
 
 const longHookCrossContextMapFunction_2 = (
   nattoShortHookElementalChinese,
