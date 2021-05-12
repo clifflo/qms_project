@@ -1,5 +1,9 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import {
+  deltaLongHookContextSet_4,
+  getDeltaPilotPaladinIndexByAskingDayTrunkChinese
+} from './deltaMiniHub_02';
 
 const longHookCrossContextMapFunction_4 =
   (deltaPilotPaladinIndex,
@@ -20,13 +24,60 @@ const longHookCrossContextMapFunction_4 =
     getDeltaPaladinContextByIndex(
       deltaPaladinIndexForCross);
 
-  
+  const deltaPaladinChineseForCross =
+    deltaPaladinContextForCross
+    .deltaPaladinChinese;
 
+  const deltaPaladinEnglishForCross =
+    deltaPaladinContextForCross
+    .deltaPaladinEnglish;
+
+  const deltaPaladinIndexForCross =
+    deltaPaladinContextForCross
+    .deltaPaladinIndex;
+
+  const longHookCrossContext_4 = {
+    ...longHookCrossContext_3,
+    deltaPaladinChineseForCross,
+    deltaPaladinEnglishForCross,
+    deltaPaladinIndexForCross
+  }
 }
 
-const deltaDatedLongHookContextMapFunction_1 = (
-  askingDayTrunkChinese,
+const deltaDatedLongHookContextMapFunction =
+  (askingDayTrunkChinese,
   deltaLongHookContext_4) => {
 
+  checkNilWithString(
+    askingDayTrunkChinese,
+    'Asking day trunk chinese');
 
+  const deltaPilotPaladinIndex =
+    getDeltaPilotPaladinIndexByAskingDayTrunkChinese(
+      askingDayTrunkChinese);
+
+  const loadedLongHookCrossContextMapFunction_4 =
+    R.curry(longHookCrossContextMapFunction_4)
+    (deltaPilotPaladinIndex);
+
+  const { longHookCrossContextSet_3 } =
+    deltaLongHookContext_4;
+
+  const longHookCrossContextSet_4 =
+    R.map(
+      loadedLongHookCrossContextMapFunction_4,
+      longHookCrossContextSet_3);
+
+  const rawDeltaDatedLongHookContext =
+    R.dissoc(
+      'longHookCrossContextSet_3');
+
+  const finalDeltaDatedLongHookContext = {
+    ...rawDeltaDatedLongHookContext,
+    longHookCrossContextSet_4,
+    askingDayTrunkChinese,
+    _type: 'Delta dated long hook context.'
+  };
+
+  return finalDeltaDatedLongHookContext;
 }

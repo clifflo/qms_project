@@ -49,7 +49,7 @@ export const deltaPaladinContextSet = [
   }
 ]
 
-const
+export const
   getDeltaPilotPaladinIndexByAskingDayTrunkChinese =
   askingDayTrunkChinese => {
 
@@ -67,30 +67,3 @@ const
 
   return deltaPilotPaladinIndex;
 }
-
-const getDeltaPaladinContextByIndex =
-  deltaPaladinIndex => {
-
-  checkNilWithNumber(
-    deltaPaladinIndex,
-    'Delta paladin index');
-
-  const deltaPaladinContext =
-    getCyclicItemFromList(
-      deltaPaladinContextSet,
-      deltaPaladinIndex,
-      'deltaPaladinIndex');
-
-  checkNilWithTypedObject(
-    deltaPaladinContext,
-    'Delta paladin context.');
-
-  return deltaPaladinContext;
-}
-
-export const
-  getDeltaPilotPaladinContextByAskingDayTrunkChinese =
-  R.compose(
-    R.prop('deltaPaladinIndex'),
-    getDeltaPaladinContextByIndex,
-    getDeltaPilotPaladinIndexByAskingDayTrunkChinese);
