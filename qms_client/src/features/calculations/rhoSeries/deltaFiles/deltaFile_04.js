@@ -10,7 +10,7 @@ import {
 } from './utilityHubCloneForDelta';
 
 const longHookCrossContextMapFunction_3 = (
-  payloadForlongHookCrossContextMapFunction_3,
+  payloadForLongHookCrossContextMapFunction_3,
   longHookCrossDownwardIndex) => {
 
   checkNilWithNumber(
@@ -62,7 +62,7 @@ const longHookCrossContextMapFunction_3 = (
 const deltaLongHookContextMapFunction_3 =
   deltaLongHookContext_2 => {
 
-  const payloadForlongHookCrossContextMapFunction_3
+  const payloadForLongHookCrossContextMapFunction_3
   = R.pick([
     'longHookCrossContextSet_2',
     'hiddenDeltaFocusEnglishSet',
