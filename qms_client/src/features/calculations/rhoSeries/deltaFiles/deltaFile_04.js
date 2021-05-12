@@ -9,8 +9,8 @@ import {
   checkNilWithNumber
 } from './utilityHubCloneOfDelta';
 
-const longHookCrossContextMapFunction_3 = (
-  payloadForLongHookCrossContextMapFunction_3,
+const longHookCrossContextMapFunction_3 =
+  (payloadForLongHookCrossContextMapFunction_3,
   longHookCrossDownwardIndex) => {
 
   checkNilWithNumber(

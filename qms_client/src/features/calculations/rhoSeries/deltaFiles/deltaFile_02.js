@@ -15,8 +15,8 @@ import {
   rhoLongHookContextSet_5
 } from './rhoHubCloneOfDelta'
 
-const longHookCrossContextMapFunction_2 = (
-  nattoShortHookElementalChinese,
+const longHookCrossContextMapFunction_2 =
+  (nattoShortHookElementalChinese,
   longHookCrossContext_1) => {
 
   const longHookCrossBranchElementalChinese =

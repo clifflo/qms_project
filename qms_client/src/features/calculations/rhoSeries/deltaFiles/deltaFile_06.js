@@ -9,7 +9,7 @@ import {
   getItemByNumberFromList
 } from './utilityHubCloneOfDelta';
 
-const deltaPaladinContextSet = [
+export const deltaPaladinContextSet = [
   {
     _type: 'Delta paladin context.',
     deltaPaladinChinese: '丙玄武',

@@ -2,8 +2,8 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
 const longHookCrossContextMapFunction_4 =
-  deltaPilotPaladinIndex,
-  longHookCrossContext_3 => {
+  (deltaPilotPaladinIndex,
+  longHookCrossContext_3) => {
 
 
 }
