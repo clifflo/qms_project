@@ -6,7 +6,8 @@ import {
 import {
   checkNilWithNumber,
   checkNilWithTypedObject,
-  getItemByNumberFromList
+  getItemByNumberFromList,
+  getCyclicItemFromList
 } from './utilityHubCloneOfDelta';
 
 export const deltaPaladinContextSet = [
@@ -48,7 +49,8 @@ export const deltaPaladinContextSet = [
   }
 ]
 
-const getDeltaPaladinIndexByAskingDayTrunkChinese =
+const
+  getDeltaPilotPaladinIndexByAskingDayTrunkChinese =
   askingDayTrunkChinese => {
 
   const askingDayTrunkIndex =
@@ -60,10 +62,10 @@ const getDeltaPaladinIndexByAskingDayTrunkChinese =
     askingDayTrunkIndex,
     'Asking day trunk index');
 
-  const deltaPaladinIndex =
+  const deltaPilotPaladinIndex =
     5 - Math.floor(askingDayTrunkIndex / 2);
 
-  return deltaPaladinIndex;
+  return deltaPilotPaladinIndex;
 }
 
 const getDeltaPaladinContextByIndex =
@@ -74,7 +76,7 @@ const getDeltaPaladinContextByIndex =
     'Delta paladin index');
 
   const deltaPaladinContext =
-    getItemByNumberFromList(
+    getCyclicItemFromList(
       deltaPaladinContextSet,
       deltaPaladinIndex,
       'deltaPaladinIndex');
@@ -87,8 +89,8 @@ const getDeltaPaladinContextByIndex =
 }
 
 export const
-  getDeltaPilotPaladinIndexByAskingDayTrunkChinese =
+  getDeltaPilotPaladinContextByAskingDayTrunkChinese =
   R.compose(
     R.prop('deltaPaladinIndex'),
     getDeltaPaladinContextByIndex,
-    getDeltaPaladinIndexByAskingDayTrunkChinese);
+    getDeltaPilotPaladinIndexByAskingDayTrunkChinese);
