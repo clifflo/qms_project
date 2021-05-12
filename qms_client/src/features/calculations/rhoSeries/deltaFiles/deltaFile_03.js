@@ -75,7 +75,8 @@ const deltaLongHookContextMapFunction_2 =
     ...deltaLongHookContext_1,
     hiddenDeltaFocusEnglishSet,
     rhoPureHookCrossContextSet,
-    hasHiddenDeltaFocus
+    hasHiddenDeltaFocus,
+    _type: 'Delta long hook context 2'
   };
 }
 
