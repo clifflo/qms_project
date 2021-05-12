@@ -87,7 +87,8 @@ const getDeltaPaladinContextByIndex =
 }
 
 export const
-  getDeltaPaladinContextByAskingDayTrunkChinese =
+  getDeltaPilotPaladinIndexByAskingDayTrunkChinese =
   R.compose(
+    R.prop('deltaPaladinIndex'),
     getDeltaPaladinContextByIndex,
     getDeltaPaladinIndexByAskingDayTrunkChinese);
