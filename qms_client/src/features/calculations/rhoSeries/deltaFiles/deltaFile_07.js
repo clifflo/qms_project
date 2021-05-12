@@ -2,8 +2,13 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   deltaLongHookContextSet_4,
-  getDeltaPilotPaladinIndexByAskingDayTrunkChinese
+  getDeltaPilotPaladinIndexByAskingDayTrunkChinese,
+  getDeltaPaladinContextByIndex
 } from './deltaMiniHub_02';
+import {
+  checkNilWithNumber,
+  checkNilWithString
+} from './utilityHubCloneOfDelta';
 
 const longHookCrossContextMapFunction_4 =
   (deltaPilotPaladinIndex,
@@ -32,19 +37,14 @@ const longHookCrossContextMapFunction_4 =
     deltaPaladinContextForCross
     .deltaPaladinEnglish;
 
-  const deltaPaladinIndexForCross =
-    deltaPaladinContextForCross
-    .deltaPaladinIndex;
-
   const longHookCrossContext_4 = {
     ...longHookCrossContext_3,
     deltaPaladinChineseForCross,
-    deltaPaladinEnglishForCross,
-    deltaPaladinIndexForCross
+    deltaPaladinEnglishForCross
   }
 }
 
-const deltaDatedLongHookContextMapFunction =
+export const deltaDatedLongHookContextMapFunction =
   (askingDayTrunkChinese,
   deltaLongHookContext_4) => {
 

@@ -67,3 +67,24 @@ export const
 
   return deltaPilotPaladinIndex;
 }
+
+export const getDeltaPaladinContextByIndex =
+  deltaPaladinIndex => {
+
+  checkNilWithNumber(
+    deltaPaladinIndex,
+    'Delta paladin index');
+
+  const deltaPaladinContext =
+    getCyclicItemFromList(
+      deltaPaladinContextSet,
+      deltaPaladinIndex,
+      'deltaPaladinIndex');
+
+  checkNilWithTypedObject(
+    deltaPaladinContext,
+    'Delta paladin context.');
+
+  return deltaPaladinContext;
+
+}

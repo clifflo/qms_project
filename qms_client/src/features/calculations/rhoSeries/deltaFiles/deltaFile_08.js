@@ -1,5 +1,14 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import {
+  checkNilWithString
+} from './utilityHubCloneOfDelta';
+import {
+  deltaLongHookContextSet_4
+} from './deltaMiniHub_02';
+import {
+  deltaDatedLongHookContextMapFunction
+} from './deltaFile_07';
 
 export const getDeltaDatedLongHookContextSet =
   askingDayTrunkChinese => {
@@ -8,14 +17,13 @@ export const getDeltaDatedLongHookContextSet =
     askingDayTrunkChinese,
     'Asking day trunk chinese');
 
-  const
-  loadedDeltaDatedLongHookContextMapFunction_1 =
-  R.curry(deltaDatedLongHookContextMapFunction_1)
-  (askingDayTrunkChinese);
+  const loadedDeltaDatedLongHookContextMapFunction =
+    R.curry(deltaDatedLongHookContextMapFunction)
+    (askingDayTrunkChinese);
 
   const deltaDatedLongHookContextSet =
     R.map(
-      loadedDeltaDatedLongHookContextMapFunction_1,
+      loadedDeltaDatedLongHookContextMapFunction,
       deltaLongHookContextSet_4)
 
   return deltaDatedLongHookContextSet;
