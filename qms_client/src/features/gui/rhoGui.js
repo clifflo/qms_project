@@ -1,10 +1,10 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  getDeltaDatedLongHookContextSet
+  getRhoLongHookContextByName_2
 } from '../calculations/rhoSeriesHubClone';
 
 export default function RhoGui() {
   return <JSONTree
-    data={getDeltaDatedLongHookContextSet('丁')}/>
+    data={getRhoLongHookContextByName_2('隨')}/>
 }
