@@ -5,7 +5,7 @@ import {
   checkNilWithArray,
   checkNilWithString,
   checkNilWithTypedObject
-} from './utilityHubCloneForDelta';
+} from './utilityHubCloneOfDelta';
 import {
   getTwigBranchContextByChinese
 } from './twigHubCloneOfDelta';

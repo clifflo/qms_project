@@ -7,7 +7,7 @@ import {
   checkNilWithString,
   checkNilWithArray,
   getItemByStringFromList
-} from './utilityHubCloneForDelta';
+} from './utilityHubCloneOfDelta';
 import {
   deltaFocusContextSet
 } from './deltaFile_01';

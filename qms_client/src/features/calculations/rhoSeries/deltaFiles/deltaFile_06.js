@@ -3,6 +3,11 @@ import * as RA from 'ramda-adjunct';
 import {
   getTwigTrunkContextByChinese
 } from './twigHubCloneOfDelta';
+import {
+  checkNilWithNumber,
+  checkNilWithTypedObject,
+  getItemByNumberFromList
+} from './utilityHubCloneOfDelta';
 
 const deltaPaladinContextSet = [
   {
@@ -77,4 +82,12 @@ const getDeltaPaladinContextByIndex =
   checkNilWithTypedObject(
     deltaPaladinContext,
     'Delta paladin context.');
+
+  return deltaPaladinContext;
 }
+
+export const
+  getDeltaPaladinContextByAskingDayTrunkChinese =
+  R.compose(
+    getDeltaPaladinContextByIndex,
+    getDeltaPaladinIndexByAskingDayTrunkChinese);
