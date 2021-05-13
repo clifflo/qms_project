@@ -30,7 +30,7 @@ const crossInHookContextMapFunction_3 =
 
   checkNilWithTypedObject(
     crossInHookContext_2,
-    'Long hook cross context 2.');
+    'Cross in hook 2.');
 
   const hiddenCrossContext =
     rhoPureHookCrossContextSet[
@@ -47,14 +47,14 @@ const crossInHookContextMapFunction_3 =
       ...crossInHookContext_2,
       isCoveredCrossInHook,
       hiddenCrossContext,
-      _type: 'Long hook cross context 3.'
+      _type: 'Cross in hook 3.'
     }
   }
   else{
     return {
       ...crossInHookContext_2,
       isCoveredCrossInHook,
-      _type: 'Long hook cross context 3.'
+      _type: 'Cross in hook 3.'
     }
   }
 }
@@ -78,7 +78,7 @@ const deltaLongHookContextMapFunction_3 =
 
   checkNilWithArray(
     crossInHookContextSet_2,
-    'Long hook cross context set 2');
+    'Cross in hook set 2');
 
   const crossInHookContextSet_3 =
     R.map(

@@ -56,7 +56,7 @@ const crossInHookContextMapFunction_2 =
     deltaFocusEnglishName,
     nattoShortHookElementalChinese,
     ...crossInHookContext_1,
-    _type: 'Long hook cross context 2.'
+    _type: 'Cross in hook 2.'
   };
 }
 
@@ -77,7 +77,7 @@ export const deltaLongHookContextMapFunction_1 =
 
   checkNilWithArray(
     crossInHookContextSet_1,
-    'Long hook cross context set 1');
+    'Cross in hook set 1');
 
   const crossInHookContextSet_2 =
     R.map(
