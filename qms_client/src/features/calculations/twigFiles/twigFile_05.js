@@ -2,7 +2,7 @@ import {
   getTwigElementalContextByChinese
 } from './twigFile_01';
 import {
-  twigElementalViewingMyselfContextSet
+  twigElementalRelationContextSet
 } from './twigFile_04';
 import {
   getCyclicItemFromList,
@@ -10,7 +10,7 @@ import {
 } from './utilityHubCloneOfTwig';
 
 export const
-  getTwigElementalViewingMyselfContextByChinese = (
+  getTwigElementalRelationContextByChinese = (
   myselfTwigElementalChinese,
   opponentTwigElementalChinese) => {
 
@@ -38,24 +38,24 @@ export const
     opponentTwigElementalIndex,
     'Opponent twig elemental index');
 
-  const twigElementalOpponentMinusMyselfIndex =
+  const twigElementalRelationIndex =
     opponentTwigElementalIndex
     - myselfTwigElementalIndex;
 
   checkNilWithNumber(
-    twigElementalOpponentMinusMyselfIndex,
+    twigElementalRelationIndex,
     'Twig elemental opponent minus myself index');
 
-  const twigElementalViewingMyselfContext =
+  const twigElementalRelationContext =
     getCyclicItemFromList(
-      twigElementalViewingMyselfContextSet,
-      twigElementalOpponentMinusMyselfIndex,
-      'twigElementalOpponentMinusMyselfIndex');
+      twigElementalRelationContextSet,
+      twigElementalRelationIndex,
+      'twigElementalRelationIndex');
 
   return {
     myselfTwigElementalChinese,
     opponentTwigElementalChinese,
-    ...twigElementalViewingMyselfContext,
+    ...twigElementalRelationContext,
     _type: 'Twig elemental viewing myself comparison'
   };
 }

@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  getTwigElementalViewingMyselfContextByChinese
+  getTwigElementalRelationContextByChinese
 } from './twigHubCloneOfDelta';
 import {
   checkNilWithString,
@@ -27,22 +27,22 @@ const crossInHookContextMapFunction_2 =
     crossInHookBranchElementalChinese,
     'Long hook cross branch elemental chinese.');
 
-  const deltaFocusElementalViewingMyselfEnglish =
-    getTwigElementalViewingMyselfContextByChinese(
+  const deltaFocusElementalRelationEnglish =
+    getTwigElementalRelationContextByChinese(
       crossInHookBranchElementalChinese,
       nattoShortHookElementalChinese)
-    .twigElementalViewingMyselfEnglish;
+    .twigElementalRelationEnglish;
 
   checkNilWithString(
-    deltaFocusElementalViewingMyselfEnglish,
+    deltaFocusElementalRelationEnglish,
     'Delta focus elemental viewing myself english'
   )
 
   const deltaFocusContext =
     getItemByStringFromList(
       deltaFocusContextSet,
-      deltaFocusElementalViewingMyselfEnglish,
-      'deltaFocusElementalViewingMyselfEnglish');
+      deltaFocusElementalRelationEnglish,
+      'deltaFocusElementalRelationEnglish');
 
   const {
     deltaFocusChineseName,

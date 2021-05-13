@@ -8,36 +8,40 @@ import {
   getTwigElementalContextByChinese
 } from './twigFile_01';
 
+// Elemental relation index is defined as the
+// twig elemental index of opponent minus myself.
+// Relation in english is defined as opponent
+// viewing myself.
 export const
-  twigElementalViewingMyselfContextSet = [
+  twigElementalRelationContextSet = [
   {
-    twigElementalViewingMyselfChinese: '比和',
-    twigElementalViewingMyselfEnglish:
-      'Twig brother',
-    twigElementalOpponentMinusMyselfIndex: 0
+    twigElementalRelationChinese: '比和',
+    twigElementalRelationEnglish:
+      'Twig relation brother',
+    twigElementalRelationIndex: 0
   },
   {
-    twigElementalViewingMyselfChinese: '生他',
-    twigElementalViewingMyselfEnglish:
-      'Twig parent',
-    twigElementalOpponentMinusMyselfIndex: 1
+    twigElementalRelationChinese: '生他',
+    twigElementalRelationEnglish:
+      'Twig relation parent',
+    twigElementalRelationIndex: 1
   },
   {
-    twigElementalViewingMyselfChinese: '剋他',
-    twigElementalViewingMyselfEnglish:
-      'Twig ghost',
-    twigElementalOpponentMinusMyselfIndex: 2
+    twigElementalRelationChinese: '剋他',
+    twigElementalRelationEnglish:
+      'Twig relation ghost',
+    twigElementalRelationIndex: 2
   },
   {
-    twigElementalViewingMyselfChinese: '被剋',
-    twigElementalViewingMyselfEnglish:
-      'Twig bank',
-    twigElementalOpponentMinusMyselfIndex: 3
+    twigElementalRelationChinese: '被剋',
+    twigElementalRelationEnglish:
+      'Twig relation money',
+    twigElementalRelationIndex: 3
   },
   {
-    twigElementalViewingMyselfChinese: '被生',
-    twigElementalViewingMyselfEnglish:
-      'Twig son',
-    twigElementalOpponentMinusMyselfIndex: 4
+    twigElementalRelationChinese: '被生',
+    twigElementalRelationEnglish:
+      'Twig relation son',
+    twigElementalRelationIndex: 4
   }
 ]
