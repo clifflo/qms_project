@@ -10,6 +10,7 @@ import {
   checkNilWithString
 } from './utilityHubCloneOfDelta';
 
+
 const longHookCrossContextMapFunction_4 =
   (deltaPilotPaladinIndex,
   longHookCrossContext_3) => {
@@ -46,7 +47,8 @@ const longHookCrossContextMapFunction_4 =
   return longHookCrossContext_4;
 }
 
-export const deltaDatedLongHookContextMapFunction =
+export const
+  deltaLongHookContextMapFunction_5 =
   (askingDayTrunkChinese,
   deltaLongHookContext_4) => {
 
