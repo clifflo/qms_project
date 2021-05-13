@@ -12,39 +12,39 @@ import {
 
 export const deltaPaladinContextSet = [
   {
-    _type: 'Delta paladin context.',
+    _type: 'Delta paladin context',
     deltaPaladinChinese: '丙玄武',
-    deltaPaladinEnglish: 'Delta paladin turtle.',
+    deltaPaladinEnglish: 'Delta paladin turtle',
     deltaPaladinIndex: 0
   },
   {
-    _type: 'Delta paladin context.',
+    _type: 'Delta paladin context',
     deltaPaladinChinese: '丙白虎',
-    deltaPaladinEnglish: 'Delta paladin tiger.',
+    deltaPaladinEnglish: 'Delta paladin tiger',
     deltaPaladinIndex: 1
   },
   {
-    _type: 'Delta paladin context.',
+    _type: 'Delta paladin context',
     deltaPaladinChinese: '丙螣蛇',
-    deltaPaladinEnglish: 'Delta paladin cobra.',
+    deltaPaladinEnglish: 'Delta paladin cobra',
     deltaPaladinIndex: 2
   },
   {
-    _type: 'Delta paladin context.',
+    _type: 'Delta paladin context',
     deltaPaladinChinese: '丙勾陳',
-    deltaPaladinEnglish: 'Delta paladin unicorn.',
+    deltaPaladinEnglish: 'Delta paladin unicorn',
     deltaPaladinIndex: 3
   },
   {
-    _type: 'Delta paladin context.',
+    _type: 'Delta paladin context',
     deltaPaladinChinese: '丙朱雀',
-    deltaPaladinEnglish: 'Delta paladin phoenix.',
+    deltaPaladinEnglish: 'Delta paladin phoenix',
     deltaPaladinIndex: 4
   },
   {
-    _type: 'Delta paladin context.',
+    _type: 'Delta paladin context',
     deltaPaladinChinese: '丙青龍',
-    deltaPaladinEnglish: 'Delta paladin dragon.',
+    deltaPaladinEnglish: 'Delta paladin dragon',
     deltaPaladinIndex : 5
   }
 ]
@@ -83,7 +83,7 @@ export const getDeltaPaladinContextByIndex =
 
   checkNilWithTypedObject(
     deltaPaladinContext,
-    'Delta paladin context.');
+    'Delta paladin context');
 
   return deltaPaladinContext;
 
