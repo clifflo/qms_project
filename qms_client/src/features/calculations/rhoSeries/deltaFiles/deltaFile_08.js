@@ -10,7 +10,8 @@ import {
   deltaDatedLongHookContextMapFunction
 } from './deltaFile_07';
 
-export const getDeltaDatedLongHookContextSet =
+export const
+  getDeltaDatedLongHookContextSet =
   askingDayTrunkChinese => {
 
   checkNilWithString(

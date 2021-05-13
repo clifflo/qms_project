@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  deltaLongHookContextSet_5,
+  deltaLongHookContextSet_4,
   getDeltaPilotPaladinIndexByAskingDayTrunkChinese,
   getDeltaPaladinContextByIndex
 } from './deltaMiniHub_02';
@@ -48,7 +48,7 @@ const longHookCrossContextMapFunction_4 =
 
 export const deltaDatedLongHookContextMapFunction =
   (askingDayTrunkChinese,
-  deltaLongHookContext_5) => {
+  deltaLongHookContext_4) => {
 
   checkNilWithString(
     askingDayTrunkChinese,
@@ -63,7 +63,7 @@ export const deltaDatedLongHookContextMapFunction =
     (deltaPilotPaladinIndex);
 
   const { longHookCrossContextSet_3 } =
-    deltaLongHookContext_5;
+    deltaLongHookContext_4;
 
   const longHookCrossContextSet_4 =
     R.map(
@@ -73,7 +73,7 @@ export const deltaDatedLongHookContextMapFunction =
   const rawDeltaDatedLongHookContext =
     R.dissoc(
       'longHookCrossContextSet_3',
-      deltaLongHookContext_5);
+      deltaLongHookContext_4);
 
   const finalDeltaDatedLongHookContext = {
     ...rawDeltaDatedLongHookContext,

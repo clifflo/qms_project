@@ -6,7 +6,9 @@ import {
 } from './utilityFile_01';
 
 export const getCyclicItemFromList =
-  (objectList, objectIndex, propForIndex) => {
+  (objectList,
+  objectIndex,
+  propForIndex) => {
 
   const cycleLength = objectList.length;
 
@@ -29,7 +31,9 @@ export const getCyclicItemFromList =
 }
 
 export const getItemByNumberFromList =
-  (objectList, numberPropValue, propForNumber) => {
+  (objectList,
+  numberPropValue,
+  propForNumber) => {
 
   try{
 
@@ -53,7 +57,9 @@ export const getItemByNumberFromList =
 }
 
 export const getItemByStringFromList =
-  (objectList, stringPropValue, propForString) => {
+  (objectList,
+  stringPropValue,
+  propForString) => {
 
   try{
     checkNilWithString(
