@@ -33,11 +33,12 @@ export const
   return deltaDatedLongHookContextSet;
 }
 
-export const getDeltaLongHookContextByName_5 =
+export const getDeltaLongHookContext_5 =
   (askingDayTrunkChinese,
   wheatHookName) => {
 
   try{
+
     checkNilWithString(
       askingDayTrunkChinese,
       'Asking day trunk chinese');
@@ -53,12 +54,11 @@ export const getDeltaLongHookContextByName_5 =
     }
   }
   catch(errorMessage){
+
     console.error(errorMessage);
+
     throw new Error(
       'Cannot get delta long hook context '
       + 'by name 5.');
   }
-
-
-
 }

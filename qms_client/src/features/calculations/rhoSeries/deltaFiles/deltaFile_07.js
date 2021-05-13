@@ -10,20 +10,19 @@ import {
   checkNilWithString
 } from './utilityHubCloneOfDelta';
 
-
-const longHookCrossContextMapFunction_4 =
+const crossInHookContextMapFunction_4 =
   (deltaPilotPaladinIndex,
-  longHookCrossContext_3) => {
+  crossInHookContext_3) => {
 
-  const { longHookCrossDownwardIndex }
-    = longHookCrossContext_3;
+  const { crossInHookDownwardIndex }
+    = crossInHookContext_3;
 
   checkNilWithNumber(
-    longHookCrossDownwardIndex,
+    crossInHookDownwardIndex,
     'Long hook cross downward index');
 
   const deltaPaladinIndexForCross =
-    longHookCrossDownwardIndex
+    crossInHookDownwardIndex
     + deltaPilotPaladinIndex;
 
   const deltaPaladinContextForCross =
@@ -38,13 +37,13 @@ const longHookCrossContextMapFunction_4 =
     deltaPaladinContextForCross
     .deltaPaladinEnglish;
 
-  const longHookCrossContext_4 = {
-    ...longHookCrossContext_3,
+  const crossInHookContext_4 = {
+    ...crossInHookContext_3,
     deltaPaladinChineseForCross,
     deltaPaladinEnglishForCross
   }
 
-  return longHookCrossContext_4;
+  return crossInHookContext_4;
 }
 
 export const
@@ -60,26 +59,26 @@ export const
     getDeltaPilotPaladinIndexByAskingDayTrunkChinese(
       askingDayTrunkChinese);
 
-  const loadedLongHookCrossContextMapFunction_4 =
-    R.curry(longHookCrossContextMapFunction_4)
+  const loadedCrossInHookContextMapFunction_4 =
+    R.curry(crossInHookContextMapFunction_4)
     (deltaPilotPaladinIndex);
 
-  const { longHookCrossContextSet_3 } =
+  const { crossInHookContextSet_3 } =
     deltaLongHookContext_4;
 
-  const longHookCrossContextSet_4 =
+  const crossInHookContextSet_4 =
     R.map(
-      loadedLongHookCrossContextMapFunction_4,
-      longHookCrossContextSet_3);
+      loadedCrossInHookContextMapFunction_4,
+      crossInHookContextSet_3);
 
   const rawDeltaDatedLongHookContext =
     R.dissoc(
-      'longHookCrossContextSet_3',
+      'crossInHookContextSet_3',
       deltaLongHookContext_4);
 
   const finalDeltaDatedLongHookContext = {
     ...rawDeltaDatedLongHookContext,
-    longHookCrossContextSet_4,
+    crossInHookContextSet_4,
     askingDayTrunkChinese,
     _type: 'Delta dated long hook context'
   };

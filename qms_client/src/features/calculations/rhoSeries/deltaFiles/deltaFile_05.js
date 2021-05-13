@@ -45,7 +45,7 @@ const deltaLongHookContextMapFunction_4 =
 
   const {
     rhoJackAtDownwardIndex,
-    longHookCrossContextSet_3
+    crossInHookContextSet_3
   } = deltaLongHookContext_3;
 
   checkNilWithNumber(
@@ -53,11 +53,11 @@ const deltaLongHookContextMapFunction_4 =
     'Rho jack at downward index');
 
   checkNilWithArray(
-    longHookCrossContextSet_3,
+    crossInHookContextSet_3,
     'Long hook cross context set 3');
 
   const rhoJackCrossContext =
-    longHookCrossContextSet_3[
+    crossInHookContextSet_3[
       rhoJackAtDownwardIndex];
 
   checkNilWithTypedObject(
@@ -67,7 +67,7 @@ const deltaLongHookContextMapFunction_4 =
   const rhoQueenAtDownwardIndex =
     getRhoQueenCrossIndexFromJackCrossBranchChinese(
       rhoJackCrossContext
-      .longHookCrossBranchChinese);
+      .crossInHookBranchChinese);
 
   checkNilWithNumber(
     rhoQueenAtDownwardIndex,

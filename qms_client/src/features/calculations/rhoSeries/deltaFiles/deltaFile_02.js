@@ -15,21 +15,21 @@ import {
   rhoLongHookContextSet_5
 } from './rhoHubCloneOfDelta'
 
-const longHookCrossContextMapFunction_2 =
+const crossInHookContextMapFunction_2 =
   (nattoShortHookElementalChinese,
-  longHookCrossContext_1) => {
+  crossInHookContext_1) => {
 
-  const longHookCrossBranchElementalChinese =
-    longHookCrossContext_1
-    .longHookCrossBranchElementalChinese;
+  const crossInHookBranchElementalChinese =
+    crossInHookContext_1
+    .crossInHookBranchElementalChinese;
 
   checkNilWithString(
-    longHookCrossBranchElementalChinese,
+    crossInHookBranchElementalChinese,
     'Long hook cross branch elemental chinese.');
 
   const deltaFocusElementalViewingMyselfEnglish =
     getTwigElementalViewingMyselfContextByChinese(
-      longHookCrossBranchElementalChinese,
+      crossInHookBranchElementalChinese,
       nattoShortHookElementalChinese)
     .twigElementalViewingMyselfEnglish;
 
@@ -55,7 +55,7 @@ const longHookCrossContextMapFunction_2 =
     deltaFocusEnglishNameForCross:
     deltaFocusEnglishName,
     nattoShortHookElementalChinese,
-    ...longHookCrossContext_1,
+    ...crossInHookContext_1,
     _type: 'Long hook cross context 2.'
   };
 }
@@ -71,28 +71,28 @@ export const deltaLongHookContextMapFunction_1 =
     nattoShortHookElementalChinese,
     'Natto short hook elemental chinese');
 
-  const longHookCrossContextSet_1 =
+  const crossInHookContextSet_1 =
     rhoLongHookContext_5
-    .longHookCrossContextSet_1;
+    .crossInHookContextSet_1;
 
   checkNilWithArray(
-    longHookCrossContextSet_1,
+    crossInHookContextSet_1,
     'Long hook cross context set 1');
 
-  const longHookCrossContextSet_2 =
+  const crossInHookContextSet_2 =
     R.map(
-      R.curry(longHookCrossContextMapFunction_2)
+      R.curry(crossInHookContextMapFunction_2)
       (nattoShortHookElementalChinese),
-      longHookCrossContextSet_1);
+      crossInHookContextSet_1);
 
   const rawDeltaLongHookContext_1 =
     R.dissoc(
-      'longHookCrossContextSet_1',
+      'crossInHookContextSet_1',
       rhoLongHookContext_5);
 
   const finalDeltaLongHookContext_1 = {
     ...rawDeltaLongHookContext_1,
-    longHookCrossContextSet_2,
+    crossInHookContextSet_2,
     _type: 'Delta long hook context 1'
   };
 

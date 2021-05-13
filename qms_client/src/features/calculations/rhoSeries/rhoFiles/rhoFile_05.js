@@ -37,52 +37,52 @@ const buildRhoLongHookContextSet_1 = () => {
 export const rhoLongHookContextSet_1 =
   buildRhoLongHookContextSet_1();
 
-export const buildLongHookCrossContextList_1 = (
-  payloadForBuildLongHookCrossContextList_1,
-  longHookCrossDownwardIndex) => {
+export const buildCrossInHookContextList_1 = (
+  payloadForBuildCrossInHookContextList_1,
+  crossInHookDownwardIndex) => {
 
   const {
     externalShortHookTrunkChinese,
     internalShortHookTrunkChinese,
     truncatedLongHookBinaryDigits,
     combinedSnapPeas
-  } = payloadForBuildLongHookCrossContextList_1;
+  } = payloadForBuildCrossInHookContextList_1;
 
-  const longHookCrossSign =
+  const crossInHookSign =
     truncatedLongHookBinaryDigits[
-      longHookCrossDownwardIndex];
+      crossInHookDownwardIndex];
 
-  const longHookCrossTrunkChinese =
-    longHookCrossDownwardIndex <= 2 ?
+  const crossInHookTrunkChinese =
+    crossInHookDownwardIndex <= 2 ?
     externalShortHookTrunkChinese :
     internalShortHookTrunkChinese;
 
-  const longHookCrossBranchChinese =
+  const crossInHookBranchChinese =
     combinedSnapPeas[
-      longHookCrossDownwardIndex];
+      crossInHookDownwardIndex];
 
-  const longHookCrossBranchElementalChinese =
+  const crossInHookBranchElementalChinese =
     getTwigBranchContextByChinese(
-      longHookCrossBranchChinese)
+      crossInHookBranchChinese)
     .twigBranchElementalChinese;
 
-  const longHookCrossBranchElementalEnglish =
+  const crossInHookBranchElementalEnglish =
     getTwigVanillaElementalContextByChinese(
-      longHookCrossBranchElementalChinese)
+      crossInHookBranchElementalChinese)
     .twigVanillaElementalEnglish;
 
   checkNilWithString(
-    longHookCrossBranchElementalEnglish,
+    crossInHookBranchElementalEnglish,
     'Long hook cross branch elemental english');
 
   return {
     _type: 'Long hook cross context 1.',
-    longHookCrossSign,
-    longHookCrossTrunkChinese,
-    longHookCrossBranchChinese,
-    longHookCrossDownwardIndex,
-    longHookCrossSign,
-    longHookCrossBranchElementalChinese,
-    longHookCrossBranchElementalEnglish
+    crossInHookSign,
+    crossInHookTrunkChinese,
+    crossInHookBranchChinese,
+    crossInHookDownwardIndex,
+    crossInHookSign,
+    crossInHookBranchElementalChinese,
+    crossInHookBranchElementalEnglish
   }
 }

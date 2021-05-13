@@ -5,7 +5,7 @@ import {
 } from '../../utilityFiles/utilityHub';
 import {
   rhoLongHookContextSet_1,
-  buildLongHookCrossContextList_1
+  buildCrossInHookContextList_1
 } from './rhoMiniHub_01';
 import {
   getNattoNoodle
@@ -75,7 +75,7 @@ const rhoLongHookContextMapFunction_2 =
     const truncatedLongHookBinaryDigits =
       R.drop(1, rawLongHookBinaryDigits);
 
-    const payloadForBuildLongHookCrossContextList_1
+    const payloadForBuildCrossInHookContextList_1
     = {
         combinedSnapPeas,
         truncatedLongHookBinaryDigits,
@@ -83,16 +83,16 @@ const rhoLongHookContextMapFunction_2 =
         internalShortHookTrunkChinese
       };
 
-    const longHookCrossContextMapFunction_1 =
-      R.curry(buildLongHookCrossContextList_1)
-      (payloadForBuildLongHookCrossContextList_1);
+    const crossInHookContextMapFunction_1 =
+      R.curry(buildCrossInHookContextList_1)
+      (payloadForBuildCrossInHookContextList_1);
 
-    const longHookCrossContextSet_1 = R.map(
-      longHookCrossContextMapFunction_1,
+    const crossInHookContextSet_1 = R.map(
+      crossInHookContextMapFunction_1,
       R.range(0, 6));
 
     return {
-      longHookCrossContextSet_1,
+      crossInHookContextSet_1,
       ...rhoLongHookContext_1,
       _type: 'Rho long hook context 2'
     }

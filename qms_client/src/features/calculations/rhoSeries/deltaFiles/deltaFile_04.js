@@ -9,51 +9,51 @@ import {
   checkNilWithNumber
 } from './utilityHubCloneOfDelta';
 
-const longHookCrossContextMapFunction_3 =
-  (payloadForLongHookCrossContextMapFunction_3,
-  longHookCrossDownwardIndex) => {
+const crossInHookContextMapFunction_3 =
+  (payloadForCrossInHookContextMapFunction_3,
+  crossInHookDownwardIndex) => {
 
   checkNilWithNumber(
-    longHookCrossDownwardIndex,
+    crossInHookDownwardIndex,
     'Long hook cross downward index');
 
   const {
-    longHookCrossContextSet_2,
+    crossInHookContextSet_2,
     hiddenDeltaFocusEnglishSet,
     rhoPureHookCrossContextSet
   } =
-  payloadForLongHookCrossContextMapFunction_3;
+  payloadForCrossInHookContextMapFunction_3;
 
-  const longHookCrossContext_2 =
-    longHookCrossContextSet_2[
-      longHookCrossDownwardIndex];
+  const crossInHookContext_2 =
+    crossInHookContextSet_2[
+      crossInHookDownwardIndex];
 
   checkNilWithTypedObject(
-    longHookCrossContext_2,
+    crossInHookContext_2,
     'Long hook cross context 2.');
 
   const hiddenCrossContext =
     rhoPureHookCrossContextSet[
-      longHookCrossDownwardIndex];
+      crossInHookDownwardIndex];
 
-  const isCoveredLongHookCross =
+  const isCoveredCrossInHook =
     R.includes(
       hiddenCrossContext
       .deltaFocusEnglishName,
       hiddenDeltaFocusEnglishSet);
 
-  if(isCoveredLongHookCross){
+  if(isCoveredCrossInHook){
     return {
-      ...longHookCrossContext_2,
-      isCoveredLongHookCross,
+      ...crossInHookContext_2,
+      isCoveredCrossInHook,
       hiddenCrossContext,
       _type: 'Long hook cross context 3.'
     }
   }
   else{
     return {
-      ...longHookCrossContext_2,
-      isCoveredLongHookCross,
+      ...crossInHookContext_2,
+      isCoveredCrossInHook,
       _type: 'Long hook cross context 3.'
     }
   }
@@ -62,37 +62,37 @@ const longHookCrossContextMapFunction_3 =
 const deltaLongHookContextMapFunction_3 =
   deltaLongHookContext_2 => {
 
-  const payloadForLongHookCrossContextMapFunction_3
+  const payloadForCrossInHookContextMapFunction_3
   = R.pick([
-    'longHookCrossContextSet_2',
+    'crossInHookContextSet_2',
     'hiddenDeltaFocusEnglishSet',
     'rhoPureHookCrossContextSet'],
     deltaLongHookContext_2);
 
-  const loadedLongHookCrossContextMapFunction_3
-    = R.curry(longHookCrossContextMapFunction_3)
-    (payloadForLongHookCrossContextMapFunction_3);
+  const loadedCrossInHookContextMapFunction_3
+    = R.curry(crossInHookContextMapFunction_3)
+    (payloadForCrossInHookContextMapFunction_3);
 
-  const { longHookCrossContextSet_2 } =
+  const { crossInHookContextSet_2 } =
     deltaLongHookContext_2;
 
   checkNilWithArray(
-    longHookCrossContextSet_2,
+    crossInHookContextSet_2,
     'Long hook cross context set 2');
 
-  const longHookCrossContextSet_3 =
+  const crossInHookContextSet_3 =
     R.map(
-      loadedLongHookCrossContextMapFunction_3,
+      loadedCrossInHookContextMapFunction_3,
       R.range(0, 6));
 
   const rawDeltaLongHookContext_3 =
     R.dissoc(
-      'longHookCrossContextSet_2',
+      'crossInHookContextSet_2',
       deltaLongHookContext_2);
 
   const finalDeltaLongHookContext_3 = {
     ...rawDeltaLongHookContext_3,
-    longHookCrossContextSet_3,
+    crossInHookContextSet_3,
     _type: 'Delta Long hook context 3'
   };
 

@@ -11,7 +11,7 @@ import {
   deltaLongHookContextSet_1
 } from './deltaFile_02';
 
-export const getDeltaLongHookContextByName_1 =
+export const getDeltaLongHookContext_1 =
   longHookName => {
 
   checkNilWithString(
@@ -44,7 +44,7 @@ const deltaLongHookContextMapFunction_2 =
       R.uniq,
       R.map(R.prop('deltaFocusEnglishName')))
     (deltaLongHookContext_1
-    .longHookCrossContextSet_2);
+    .crossInHookContextSet_2);
 
   checkNilWithArray(
     uniqueDeltaFocusEnglishSet,
@@ -63,13 +63,13 @@ const deltaLongHookContextMapFunction_2 =
     !R.isEmpty(hiddenDeltaFocusEnglishSet);
 
   const rhoPureHookContext =
-    getDeltaLongHookContextByName_1(
+    getDeltaLongHookContext_1(
       deltaLongHookContext_1
       .rhoPureHookName);
 
   const rhoPureHookCrossContextSet =
     rhoPureHookContext
-    .longHookCrossContextSet_2;
+    .crossInHookContextSet_2;
 
   return {
     ...deltaLongHookContext_1,
