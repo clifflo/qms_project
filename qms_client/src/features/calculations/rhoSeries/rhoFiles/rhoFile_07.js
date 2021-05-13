@@ -94,7 +94,7 @@ const rhoLongHookContextMapFunction_2 =
     return {
       longHookCrossContextSet_1,
       ...rhoLongHookContext_1,
-      _type: 'Rho long hook context 2.'
+      _type: 'Rho long hook context 2'
     }
   }
   catch(errorMessage){
