@@ -13,31 +13,31 @@ export const
   {
     twigElementalViewingMyselfChinese: '比和',
     twigElementalViewingMyselfEnglish:
-      'Twig elemental viewing myself as brother.',
+      'Twig brother',
     twigElementalOpponentMinusMyselfIndex: 0
   },
   {
     twigElementalViewingMyselfChinese: '生他',
     twigElementalViewingMyselfEnglish:
-      'Twig elemental viewing myself as parent.',
+      'Twig parent',
     twigElementalOpponentMinusMyselfIndex: 1
   },
   {
     twigElementalViewingMyselfChinese: '剋他',
     twigElementalViewingMyselfEnglish:
-      'Twig elemental viewing myself as ghost.',
+      'Twig ghost',
     twigElementalOpponentMinusMyselfIndex: 2
   },
   {
     twigElementalViewingMyselfChinese: '被剋',
     twigElementalViewingMyselfEnglish:
-      'Twig elemental viewing myself as bank.',
+      'Twig bank',
     twigElementalOpponentMinusMyselfIndex: 3
   },
   {
     twigElementalViewingMyselfChinese: '被生',
     twigElementalViewingMyselfEnglish:
-      'Twig elemental viewing myself as son.',
+      'Twig son',
     twigElementalOpponentMinusMyselfIndex: 4
   }
 ]

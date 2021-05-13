@@ -39,12 +39,20 @@ const deltaLongHookContextMapFunction_2 =
     completeDeltaFocusEnglishSet,
     'Complete delta focus english set');
 
+  const duplicatedDeltaFocusEnglishSet =
+    R.map(
+      R.prop('deltaFocusEnglishName'),
+      deltaLongHookContext_1
+      .crossInHookContextSet_2);
+
   const uniqueDeltaFocusEnglishSet =
-    R.compose(
-      R.uniq,
-      R.map(R.prop('deltaFocusEnglishName')))
-    (deltaLongHookContext_1
-    .crossInHookContextSet_2);
+    R.uniq(duplicatedDeltaFocusEnglishSet);
+
+  if(uniqueDeltaFocusEnglishSet.length < 3){
+    throw new Error(
+      'Length of unique delta focus english '
+      + 'should not be less than 4.');
+  }
 
   checkNilWithArray(
     uniqueDeltaFocusEnglishSet,

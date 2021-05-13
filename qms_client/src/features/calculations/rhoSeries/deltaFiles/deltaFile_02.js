@@ -50,9 +50,7 @@ const crossInHookContextMapFunction_2 =
   } = deltaFocusContext
 
   return {
-    deltaFocusChineseNameForCross:
     deltaFocusChineseName,
-    deltaFocusEnglishNameForCross:
     deltaFocusEnglishName,
     nattoShortHookElementalChinese,
     ...crossInHookContext_1,
