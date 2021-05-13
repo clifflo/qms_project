@@ -22,7 +22,7 @@ export const
     'Asking day trunk chinese');
 
   const loadedDeltaDatedLongHookContextMapFunction =
-    R.curry(deltaDatedLongHookContextMapFunction)
+    R.curry(deltaLongHookContextMapFunction_5)
     (askingDayTrunkChinese);
 
   const deltaDatedLongHookContextSet =

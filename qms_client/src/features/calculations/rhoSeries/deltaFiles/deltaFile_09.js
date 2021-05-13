@@ -25,29 +25,29 @@ export const getDeltaLongHookContext_6 =
       cheeseHookName);
 
   checkNilWithTypedObject(
-    deltaWheatLongHookContext,
-    'Delta wheat long hook context 5');
+    deltaWheatHookContext,
+    'Delta long hook context 5');
 
   checkNilWithTypedObject(
     deltaCheeseHookContext,
-    'Delta cheese long hook context 4');
+    'Delta long hook context 4');
 
   const mapFunctionForBothCrossInHook =
     crossInHookDownwardIndex => {
 
     const wheatCrossInHook_0 =
-      deltaWheatLongHookContext
+      deltaWheatHookContext
       .crossInHookContextSet_4[
         crossInHookDownwardIndex];
 
     const cheeseCrossInHook_0 =
-      getDeltaLongHookContext_1
+      deltaCheeseHookContext
       .crossInHookContextSet_3[
         crossInHookDownwardIndex];
 
     const isStrikeCross =
-      wheatCrossInHook.crossInHookSign !=
-      cheeseCrossInHook.crossInHookSign;
+      wheatCrossInHook_0.crossInHookSign !=
+      cheeseCrossInHook_0.crossInHookSign;
 
     const cheeseCrossInHook_1 = {
       ...cheeseCrossInHook_0,
