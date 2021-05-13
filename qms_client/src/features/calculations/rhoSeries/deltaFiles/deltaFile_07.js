@@ -79,7 +79,7 @@ export const deltaDatedLongHookContextMapFunction =
     ...rawDeltaDatedLongHookContext,
     longHookCrossContextSet_4,
     askingDayTrunkChinese,
-    _type: 'Delta dated long hook context.'
+    _type: 'Delta dated long hook context'
   };
 
   return finalDeltaDatedLongHookContext;

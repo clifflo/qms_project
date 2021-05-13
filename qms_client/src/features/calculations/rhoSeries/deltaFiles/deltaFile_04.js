@@ -93,7 +93,7 @@ const deltaLongHookContextMapFunction_3 =
   const finalDeltaLongHookContext_3 = {
     ...rawDeltaLongHookContext_3,
     longHookCrossContextSet_3,
-    _type: 'Delta long hook context 3.'
+    _type: 'Delta Long hook context 3'
   };
 
   return finalDeltaLongHookContext_3;

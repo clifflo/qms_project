@@ -33,7 +33,7 @@ const getDifferenceOfCrossSignSet =
     R.range(0, 6));
 }
 
-export const getStrikeCrossSignSet =
+export const getCrossStrikeStatusSet =
   (wheatLongHookName,
   cheeseLongHookName) => {
 
