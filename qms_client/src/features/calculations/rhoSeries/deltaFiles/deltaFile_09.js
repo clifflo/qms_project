@@ -32,15 +32,15 @@ export const getDeltaLongHookContext_6 =
     deltaCheeseHookContext,
     'Delta cheese long hook context 4');
 
-  const mapFunctionForWheatCrossInHook =
+  const mapFunctionForBothCrossInHook =
     crossInHookDownwardIndex => {
 
-    const wheatCrossInHook =
+    const wheatCrossInHook_0 =
       deltaWheatLongHookContext
       .crossInHookContextSet_4[
         crossInHookDownwardIndex];
 
-    const cheeseCrossInHook =
+    const cheeseCrossInHook_0 =
       getDeltaLongHookContext_1
       .crossInHookContextSet_3[
         crossInHookDownwardIndex];
@@ -49,10 +49,40 @@ export const getDeltaLongHookContext_6 =
       wheatCrossInHook.crossInHookSign !=
       cheeseCrossInHook.crossInHookSign;
 
-    const strikeStatus =
-      isStrikeCross ? 'Strike cross'
-      : 'Silent cross';
+    const cheeseCrossInHook_1 = {
+      ...cheeseCrossInHook_0,
+      isStrikeCross,
+      _type: 'Delta cheese cross in hook 1'
+    };
 
-    const get
+    const getWheatCrossInHook_1 = () => {
+      if(isStrikeCross){
+        return {
+          ...wheatCrossInHook_0,
+          isStrikeCross,
+          referredCheeseCrossInHook_1:
+            cheeseCrossInHook_1,
+          _type: 'Delta wheat cross in hook 1'
+        }
+      }
+      else {
+        return {
+          ...wheatCrossInHook_0,
+          isStrikeCross,
+          _type: 'Delta wheat cross in hook 1'
+        }
+      }
+    }
+
+    const wheatCrossInHook_1 =
+      getWheatCrossInHook_1();
+
   }
+
+  const deltaLongHookContext_6 =
+    R.map(
+      mapFunctionForBothCrossInHook,
+      R.range(0, 6));
+
+  return deltaLongHookContext_6;
 }
