@@ -11,15 +11,14 @@ import {
 
 export const
   mapFunctionForWheatLongHookContext_4 =
-  (wheatLongHookCrossContextSet_4,
-  crossStrikeStatusSet,
+  (payloadOfMapFunctionForWheatLongHookContext_4,
   longHookDownwawrdIndex) => {
 
   const {
     wheatLongHookCrossContextSet_4,
     cheeseLongHookCrossContextSet_3,
     crossStrikeStatusSet
-  } = payloadForMapFunctionForWheatLongHookContext_4
+  } = payloadForMapFunctionOfWheatLongHookContext_4;
 
   checkNilWithArray(
     strikeCrossSignSet,
@@ -33,64 +32,58 @@ export const
     longHookDownwawrdIndex,
     'Long hook downward index');
 
-  const respectiveWheatLongHookCrossContext =
+  const respectiveWheatLongHookCrossContext_4 =
     wheatLongHookCrossContextSet_4[
       longHookDownwawrdIndex];
+
+  checkNilWithTypedObject(
+    respectiveWheatLongHookCrossContext_4,
+    'Respective wheat long hook cross context 4',
+    'Long hook cross context 4');
 
   const respectiveCrossStrikeStatus =
     crossStrikeStatusSet[
       longHookDownwawrdIndex];
 
-  const wheatLongHookCrossContext_5 = {
-    ...wheatLongHookCrossContextSet_4,
-    longHookCrossIsStrike:
-      respectiveCrossStrikeStatus
-  }
-}
+  checkNilWithNumber(
+    respectiveCrossStrikeStatus,
+    'Respecive cross strike status');
 
-const getDeltaFullLongHookContext =
-  (askingDayTrunkChinese,
-  wheatLongHookName,
-  cheeseLongHookName) => {
-
-  checkNilWithString(
-    wheatLongHookName,
-    'Wheat long hook name');
-
-  checkNilWithString(
-    cheeseLongHookName,
-    'Cheese long hook name');
-
-  const deltaDatedLongHookContextSet =
-    getDeltaDatedLongHookContextSet(
-      askingDayTrunkChinese);
-
-  checkNilWithArray(
-    deltaDatedLongHookContextSet,
-    'Delta dated long hook context set');
-
-  const wheatDeltaDatedLongHookContext =
-    getItemByStringFromList(
-      deltaDatedLongHookContextSet,
-      wheatLongHookName,
-      'longHookName');
+  const respectiveCheeseLongHookCrossContext_3 =
+    cheeseLongHookContextSet_3[
+      longHookDownwawrdIndex];
 
   checkNilWithTypedObject(
-    wheatDeltaDatedLongHookContext,
-    'Wheat delta dated long hook context',
-    'Delta dated long hook context'
-  )
+    respectiveCheeseLongHookCrossContext_3,
+    'Respective cheese long hook cross context 3',
+    'Long hook cross context 3');
 
-  const crossStrikeStatusSet =
-    getCrossStrikeStatusSet(
-      wheatLongHookName,
-      cheeseLongHookName);
+  const wheatLongHookCrossContextWithStrike_5 = {
+    ...wheatLongHookCrossContextSet_4,
+    longHookCrossStrikeStatus: 'Cross is strike.',
+    cheeseLongHookCrossContextAfterStrike_3:
+      respectiveCheeseLongHookCrossContext_3,
+    _type: 'Long hook cross context 5'
+  }
 
-  const cheeseDeltaLongHookContext_4 =
-    getItemByStringFromList(
-      deltaLongHookContextSet_4,
-      cheeseLongHookName,
-      'longHookName');
+  const wheatLongHookCrossContextWithoutStrike_5 = {
+    ...wheatLongHookCrossContextSet_4,
+    longHookCrossStrikeStatus: 'Cross is silent.',
+    _type: 'Long hook cross context 5'
+  }
 
-
+  if(respectiveCrossStrikeStatus ==
+    'Strike'){
+    return wheatLongHookCrossContextWithStrike_5;
+  }
+  else if(
+    respectiveCrossStrikeStatus ==
+    'Silent') {
+    return wheatLongHookCrossContextWithoutStrike_5;
+  }
+  else {
+    throw new Error(
+      'Respective cross strike status can only '
+      + 'have two situations: Silent and Strike.');
+  }
 }

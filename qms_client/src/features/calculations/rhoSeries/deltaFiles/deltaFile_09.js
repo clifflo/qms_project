@@ -23,8 +23,11 @@ const getDifferenceOfCrossSignSet =
       cheeseLongHookCrossSignSet[
         longHookCrossDownwardIndex];
 
-    return wheatLongHookCrossSign !=
-      cheeseLongHookCrossSign;
+    return
+      (wheatLongHookCrossSign ==
+      cheeseLongHookCrossSign) ?
+      'Cross is silent.' :
+      'Cross is strike.';
 
   }
 
