@@ -93,7 +93,7 @@ export const getNattoNoodle = (
     const effectiveShortHookElementalEnglish =
       getTwigVanillaElementalContextByChinese(
         effectiveShortHookElementalChinese)
-      .twigVanillaElementalEnglish;
+      .twigElementalEnglish;
 
       const nattoNoodle = {
         _type: 'Natto noodle.',

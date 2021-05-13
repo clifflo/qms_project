@@ -69,7 +69,7 @@ export const buildCrossInHookContextList_1 = (
   const crossInHookBranchElementalEnglish =
     getTwigVanillaElementalContextByChinese(
       crossInHookBranchElementalChinese)
-    .twigVanillaElementalEnglish;
+    .twigElementalEnglish;
 
   checkNilWithString(
     crossInHookBranchElementalEnglish,

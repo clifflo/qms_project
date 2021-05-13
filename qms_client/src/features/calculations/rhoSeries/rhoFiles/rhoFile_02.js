@@ -85,7 +85,7 @@ export const bakedNattoMapFunction = rawNatto => {
   const genericShortHookElementalEnglish =
     getTwigVanillaElementalContextByChinese(
       genericShortHookElementalChinese)
-    .twigVanillaElementalEnglish;
+    .twigElementalEnglish;
 
   const externalShortHookTrunkChinese =
     rawNatto[4];

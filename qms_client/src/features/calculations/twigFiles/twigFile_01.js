@@ -8,40 +8,40 @@ import {
   checkNilWithNumber
 } from '../utilityFiles/utilityHub';
 
-export const twigVanillaElementalContextSet = [
+export const twigElementalContextSet = [
   {
     _type: 'Twig vanilla elemental context',
-    twigVanillaElementalIndex: 0,
-    twigVanillaElementalChinese: '五行金',
-    twigVanillaElementalEnglish:
+    twigElementalIndex: 0,
+    twigElementalChinese: '五行金',
+    twigElementalEnglish:
       'Twig vanilla elemental metal.'
   },
   {
     _type: 'Twig vanilla elemental context',
-    twigVanillaElementalIndex: 1,
-    twigVanillaElementalChinese: '五行水',
-    twigVanillaElementalEnglish:
+    twigElementalIndex: 1,
+    twigElementalChinese: '五行水',
+    twigElementalEnglish:
       'Twig vanilla elemental water.'
   },
   {
     _type: 'Twig vanilla elemental context',
-    twigVanillaElementalIndex: 2,
-    twigVanillaElementalChinese: '五行木',
-    twigVanillaElementalEnglish:
+    twigElementalIndex: 2,
+    twigElementalChinese: '五行木',
+    twigElementalEnglish:
       'Twig vanilla elemental wood.'
   },
   {
     _type: 'Twig vanilla elemental context',
-    twigVanillaElementalIndex: 3,
-    twigVanillaElementalChinese: '五行火',
-    twigVanillaElementalEnglish:
+    twigElementalIndex: 3,
+    twigElementalChinese: '五行火',
+    twigElementalEnglish:
       'Twig vanilla elemental fire.'
   },
   {
     _type: 'Twig vanilla elemental context',
-    twigVanillaElementalIndex: 4,
-    twigVanillaElementalChinese: '五行土',
-    twigVanillaElementalEnglish:
+    twigElementalIndex: 4,
+    twigElementalChinese: '五行土',
+    twigElementalEnglish:
       'Twig vanilla elemental earth.'
   }
 ];
@@ -54,14 +54,14 @@ export const getTwigVanillaElementalContextByIndex =
       twigElementalIndex,
       'Twig elemental index');
 
-    const twigVanillaElementalContext =
+    const twigElementalContext =
       getCyclicItemFromList(
-        twigVanillaElementalContextSet,
+        twigElementalContextSet,
         twigElementalIndex,
         'twigElementalIndex'
       );
 
-    return twigVanillaElementalContext;
+    return twigElementalContext;
   }
   catch(errorMessage){
     console.error(errorMessage);
@@ -73,18 +73,18 @@ export const getTwigVanillaElementalContextByIndex =
 
 export const
   getTwigVanillaElementalContextByChinese =
-  twigVanillaElementalChinese => {
+  twigElementalChinese => {
 
   checkNilWithString(
-    twigVanillaElementalChinese,
+    twigElementalChinese,
     'Elemental Chinese');
 
-  const twigVanillaElementalContext =
+  const twigElementalContext =
     getItemByStringFromList(
-      twigVanillaElementalContextSet,
-      twigVanillaElementalChinese,
-      'twigVanillaElementalChinese'
+      twigElementalContextSet,
+      twigElementalChinese,
+      'twigElementalChinese'
     );
 
-  return twigVanillaElementalContext;
+  return twigElementalContext;
 }

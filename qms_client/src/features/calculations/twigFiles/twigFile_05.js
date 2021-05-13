@@ -24,7 +24,7 @@ export const
 
   const myselfTwigElementalIndex =
     myselfTwigVanillaElementalContext
-    .twigVanillaElementalIndex;
+    .twigElementalIndex;
 
   checkNilWithNumber(
     myselfTwigElementalIndex,
@@ -32,7 +32,7 @@ export const
 
   const opponentTwigElementalIndex =
     opponentTwigVanillaElementalContext
-    .twigVanillaElementalIndex;
+    .twigElementalIndex;
 
   checkNilWithNumber(
     opponentTwigElementalIndex,
