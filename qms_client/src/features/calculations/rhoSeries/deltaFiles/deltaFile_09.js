@@ -15,22 +15,34 @@ export const getDeltaLongHookContext_6 =
   wheatHookName,
   cheeseHookName) => {
 
-  const deltaWheatHookContext =
+  const rawDeltaWheatHookContext =
     getDeltaLongHookContext_5(
       askingDayTrunkChinese,
       wheatHookName);
 
-  const deltaCheeseHookContext =
+  const rawDeltaCheeseHookContext =
     getDeltaLongHookContext_4(
       cheeseHookName);
 
   checkNilWithTypedObject(
-    deltaWheatHookContext,
+    rawDeltaWheatHookContext,
     'Delta long hook context 5');
 
   checkNilWithTypedObject(
-    deltaCheeseHookContext,
+    rawDeltaCheeseHookContext,
     'Delta long hook context 4');
+
+  const finalDeltaWheatHookContext =
+    R.dissoc(
+      'crossInHookContextSet_4',
+      rawDeltaWheatHookContext);
+
+  const finalDeltaCheeseHookContext =
+    R.dissoc(
+      'crossInHookContextSet_3',
+      rawDeltaCheeseHookContext_1);
+
+
 
   const mapFunctionForBothCrossInHook =
     crossInHookDownwardIndex => {
@@ -77,12 +89,28 @@ export const getDeltaLongHookContext_6 =
     const wheatCrossInHook_1 =
       getWheatCrossInHook_1();
 
+    return {
+      wheatCrossInHook_1,
+      cheeseCrossInHook_1
+    }
   }
 
-  const deltaLongHookContext_6 =
+  const combinedCrossInHookSet =
     R.map(
       mapFunctionForBothCrossInHook,
       R.range(0, 6));
 
-  return deltaLongHookContext_6;
+  const wheatCrossInHookSet_1 =
+    R.map(
+      R.prop('wheatCrossInHook_1'),
+      combinedCrossInHookSet);
+
+  const cheeseCrossInHookSet_1 =
+    R.map(
+      R.prop('cheeseCrossInHook_1'),
+      combinedCrossInHookSet);
+
+  const deltaLongHookContext_6 = {
+    deltaWheatHookContext_1
+  }
 }

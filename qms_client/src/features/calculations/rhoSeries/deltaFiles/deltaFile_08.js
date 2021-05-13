@@ -1,7 +1,10 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  checkNilWithString
+  checkNilWithString,
+  checkNilWithArray,
+  getItemByStringFromList,
+  checkNilWithTypedObject
 } from './utilityHubCloneOfDelta';
 import {
   deltaLongHookContextSet_4
@@ -21,16 +24,16 @@ export const
     askingDayTrunkChinese,
     'Asking day trunk chinese');
 
-  const loadedDeltaDatedLongHookContextMapFunction =
+  const loadedDeltaLongHookContextMapFunction_5 =
     R.curry(deltaLongHookContextMapFunction_5)
     (askingDayTrunkChinese);
 
-  const deltaDatedLongHookContextSet =
+  const deltaLongHookContextSet_5 =
     R.map(
-      loadedDeltaDatedLongHookContextMapFunction,
+      loadedDeltaLongHookContextMapFunction_5,
       deltaLongHookContextSet_4);
 
-  return deltaDatedLongHookContextSet;
+  return deltaLongHookContextSet_5;
 }
 
 export const getDeltaLongHookContext_5 =
@@ -52,13 +55,32 @@ export const getDeltaLongHookContext_5 =
       throw new Error(
         'Asking day trunk is not valid.');
     }
+
+    const deltaLongHookContextSet_5 =
+      getDeltaLongHookContextSet_5(
+        askingDayTrunkChinese);
+
+    checkNilWithArray(
+      deltaLongHookContextSet_5,
+      'Delta long hook context set 5');
+
+    const deltaLongHookContext_5 =
+      getItemByStringFromList(
+        deltaLongHookContextSet_5,
+        wheatHookName,
+        'longHookName');
+
+    checkNilWithTypedObject(
+      deltaLongHookContext_5,
+      'Delta long hook context 5');
+
+    return deltaLongHookContext_5;
   }
   catch(errorMessage){
 
     console.error(errorMessage);
 
     throw new Error(
-      'Cannot get delta long hook context '
-      + 'by name 5.');
+      'Cannot get delta long hook context 5.');
   }
 }
