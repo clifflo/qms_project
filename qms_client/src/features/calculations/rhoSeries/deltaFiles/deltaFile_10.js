@@ -60,7 +60,7 @@ export const
 
   const wheatLongHookCrossContextWithStrike_5 = {
     ...wheatLongHookCrossContextSet_4,
-    longHookCrossStrikeStatus: 'Cross is strike.',
+    longHookCrossStrikeStatus: 'Strike cross',
     cheeseLongHookCrossContextAfterStrike_3:
       respectiveCheeseLongHookCrossContext_3,
     _type: 'Long hook cross context 5'
@@ -68,22 +68,23 @@ export const
 
   const wheatLongHookCrossContextWithoutStrike_5 = {
     ...wheatLongHookCrossContextSet_4,
-    longHookCrossStrikeStatus: 'Cross is silent.',
+    longHookCrossStrikeStatus: 'Silent cross',
     _type: 'Long hook cross context 5'
   }
 
   if(respectiveCrossStrikeStatus ==
-    'Strike'){
+    'Strike cross'){
     return wheatLongHookCrossContextWithStrike_5;
   }
   else if(
     respectiveCrossStrikeStatus ==
-    'Silent') {
+    'Silent cross') {
     return wheatLongHookCrossContextWithoutStrike_5;
   }
   else {
     throw new Error(
-      'Respective cross strike status can only '
-      + 'have two situations: Silent and Strike.');
+      "Respective cross strike status can only "
+      + "have two situations: 'Silent cross' "
+      + "and 'Strike cross'.");
   }
 }

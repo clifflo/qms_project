@@ -26,8 +26,7 @@ const getDifferenceOfCrossSignSet =
     return
       (wheatLongHookCrossSign ==
       cheeseLongHookCrossSign) ?
-      'Cross is silent.' :
-      'Cross is strike.';
+      'Silent cross' : 'Strike cross';
 
   }
 
