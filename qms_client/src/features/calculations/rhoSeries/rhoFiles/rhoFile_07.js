@@ -11,7 +11,7 @@ import {
   getNattoNoodle
 } from './rhoFile_06';
 import {
-  getTwigVanillaElementalContextByChinese,
+  getTwigElementalContextByChinese,
   getTwigTrunkContextByChinese
 } from '../../twigFiles/twigHub';
 

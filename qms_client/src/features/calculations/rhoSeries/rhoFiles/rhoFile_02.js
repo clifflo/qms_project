@@ -3,7 +3,7 @@ import * as RA from 'ramda-adjunct';
 import {
   getTwigBranchContextByIndex,
   getTwigBranchContextByChinese,
-  getTwigVanillaElementalContextByChinese
+  getTwigElementalContextByChinese
 } from '../../twigFiles/twigHub';
 import {
   checkNilWithString
@@ -83,7 +83,7 @@ export const bakedNattoMapFunction = rawNatto => {
     '五行' + rawNatto[1];
 
   const genericShortHookElementalEnglish =
-    getTwigVanillaElementalContextByChinese(
+    getTwigElementalContextByChinese(
       genericShortHookElementalChinese)
     .twigElementalEnglish;
 

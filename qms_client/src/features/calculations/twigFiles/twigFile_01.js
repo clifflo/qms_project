@@ -10,43 +10,38 @@ import {
 
 export const twigElementalContextSet = [
   {
-    _type: 'Twig vanilla elemental context',
+    _type: 'Twig elemental context',
     twigElementalIndex: 0,
     twigElementalChinese: '五行金',
-    twigElementalEnglish:
-      'Twig vanilla elemental metal.'
+    twigElementalEnglish: 'Twig metal'
   },
   {
-    _type: 'Twig vanilla elemental context',
+    _type: 'Twig elemental context',
     twigElementalIndex: 1,
     twigElementalChinese: '五行水',
-    twigElementalEnglish:
-      'Twig vanilla elemental water.'
+    twigElementalEnglish: 'Twig water'
   },
   {
-    _type: 'Twig vanilla elemental context',
+    _type: 'Twig elemental context',
     twigElementalIndex: 2,
     twigElementalChinese: '五行木',
-    twigElementalEnglish:
-      'Twig vanilla elemental wood.'
+    twigElementalEnglish: 'Twig wood'
   },
   {
-    _type: 'Twig vanilla elemental context',
+    _type: 'Twig elemental context',
     twigElementalIndex: 3,
     twigElementalChinese: '五行火',
-    twigElementalEnglish:
-      'Twig vanilla elemental fire.'
+    twigElementalEnglish: 'Twig fire'
   },
   {
-    _type: 'Twig vanilla elemental context',
+    _type: 'Twig elemental context',
     twigElementalIndex: 4,
     twigElementalChinese: '五行土',
-    twigElementalEnglish:
-      'Twig vanilla elemental earth.'
+    twigElementalEnglish: 'Twig earth'
   }
 ];
 
-export const getTwigVanillaElementalContextByIndex =
+export const getTwigElementalContextByIndex =
   twigElementalIndex => {
 
   try{
@@ -72,7 +67,7 @@ export const getTwigVanillaElementalContextByIndex =
 }
 
 export const
-  getTwigVanillaElementalContextByChinese =
+  getTwigElementalContextByChinese =
   twigElementalChinese => {
 
   checkNilWithString(

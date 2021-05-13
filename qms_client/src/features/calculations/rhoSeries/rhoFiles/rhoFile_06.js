@@ -9,7 +9,7 @@ import {
   bakedNattoSet
 } from './rhoMiniHub_01';
 import {
-  getTwigVanillaElementalContextByChinese,
+  getTwigElementalContextByChinese,
   getTwigTrunkContextByChinese
 } from '../../twigFiles/twigHub';
 
@@ -53,7 +53,7 @@ export const getNattoNoodle = (
       .genericShortHookElementalChinese;
 
     const effectiveShortHookElementalEnglish =
-      getTwigVanillaElementalContextByChinese(
+      getTwigElementalContextByChinese(
         effectiveShortHookElementalChinese)
       .twigElementalEnglish;
 
@@ -91,7 +91,7 @@ export const getNattoNoodle = (
       bakedNatto.genericShortHookElementalChinese;
 
     const effectiveShortHookElementalEnglish =
-      getTwigVanillaElementalContextByChinese(
+      getTwigElementalContextByChinese(
         effectiveShortHookElementalChinese)
       .twigElementalEnglish;
 

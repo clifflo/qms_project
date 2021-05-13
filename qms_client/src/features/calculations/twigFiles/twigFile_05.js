@@ -1,5 +1,5 @@
 import {
-  getTwigVanillaElementalContextByChinese
+  getTwigElementalContextByChinese
 } from './twigFile_01';
 import {
   twigElementalViewingMyselfContextSet
@@ -14,16 +14,16 @@ export const
   myselfTwigElementalChinese,
   opponentTwigElementalChinese) => {
 
-  const myselfTwigVanillaElementalContext =
-    getTwigVanillaElementalContextByChinese(
+  const myselfTwigElementalContext =
+    getTwigElementalContextByChinese(
       myselfTwigElementalChinese);
 
-  const opponentTwigVanillaElementalContext =
-    getTwigVanillaElementalContextByChinese(
+  const opponentTwigElementalContext =
+    getTwigElementalContextByChinese(
       opponentTwigElementalChinese);
 
   const myselfTwigElementalIndex =
-    myselfTwigVanillaElementalContext
+    myselfTwigElementalContext
     .twigElementalIndex;
 
   checkNilWithNumber(
@@ -31,7 +31,7 @@ export const
     'Myself twig elemental index');
 
   const opponentTwigElementalIndex =
-    opponentTwigVanillaElementalContext
+    opponentTwigElementalContext
     .twigElementalIndex;
 
   checkNilWithNumber(
