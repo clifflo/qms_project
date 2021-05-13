@@ -7,5 +7,5 @@ import {
 export default function RhoGui() {
   return <JSONTree
     data={getDeltaLongHookContext_6(
-      '丙', '隨', '復')}/>
+      '丙', '純坤', '復')}/>
 }

@@ -32,28 +32,36 @@ export const getDeltaLongHookContext_6 =
     rawDeltaCheeseHookContext,
     'Delta long hook context 4');
 
-  const finalDeltaWheatHookContext =
+  const middleDeltaWheatHookContext =
     R.dissoc(
       'crossInHookContextSet_4',
       rawDeltaWheatHookContext);
 
-  const finalDeltaCheeseHookContext =
+  const middleDeltaCheeseHookContext =
     R.dissoc(
       'crossInHookContextSet_3',
-      rawDeltaCheeseHookContext_1);
+      rawDeltaCheeseHookContext);
 
+  const finalDeltaWheatHookContext = {
+    ...middleDeltaWheatHookContext,
+    _type: 'Delta wheat hook context'
+  };
 
+  const finalDeltaCheeseHookContext = {
+    ...middleDeltaCheeseHookContext,
+    _type: 'Delta cheese hook context'
+  };
 
   const mapFunctionForBothCrossInHook =
     crossInHookDownwardIndex => {
 
     const wheatCrossInHook_0 =
-      deltaWheatHookContext
+      rawDeltaWheatHookContext
       .crossInHookContextSet_4[
         crossInHookDownwardIndex];
 
     const cheeseCrossInHook_0 =
-      deltaCheeseHookContext
+      rawDeltaCheeseHookContext
       .crossInHookContextSet_3[
         crossInHookDownwardIndex];
 
@@ -111,6 +119,13 @@ export const getDeltaLongHookContext_6 =
       combinedCrossInHookSet);
 
   const deltaLongHookContext_6 = {
-    deltaWheatHookContext_1
-  }
+    deltaWheatHookContext:
+      finalDeltaWheatHookContext,
+    deltaCheeseHookContext:
+      finalDeltaCheeseHookContext,
+    wheatCrossInHookSet_1,
+    cheeseCrossInHookSet_1
+  };
+
+  return deltaLongHookContext_6;
 }
