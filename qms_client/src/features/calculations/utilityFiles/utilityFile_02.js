@@ -2,7 +2,8 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   checkNilWithString,
-  checkNilWithArray
+  checkNilWithArray,
+  getCyclicIndex
 } from './utilityFile_01';
 
 export const getCyclicItemFromList =
@@ -10,17 +11,10 @@ export const getCyclicItemFromList =
   objectIndex,
   propForIndex) => {
 
-  const cycleLength = objectList.length;
-
-  const positiveIndex =
-    objectIndex % cycleLength;
-
-  const negativeIndex =
-    (objectIndex % cycleLength) + cycleLength;
-
   const effectiveIndex =
-    (objectIndex >= 0) ?
-    positiveIndex : negativeIndex
+    getCyclicIndex(
+      objectIndex,
+      objectList.length);
 
   const respectiveObject =
     R.find(

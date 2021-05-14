@@ -29,19 +29,8 @@ export const checkNilWithNumber =
   }
 }
 
-// Check by nil with object
-export const cknwo = (varObj, variableName) => {
-
-  if(R.isNil(varObj)){
-    throw new Error(`${variableName} should not be nil.`);
-  }
-
-  if(!RA.isPlainObject(varObj)){
-    throw new Error(`${variableName} must be an object.`);
-  }
-}
-
-export const checkNilWithArray = (varArray, variableName) => {
+export const checkNilWithArray =
+  (varArray, variableName) => {
 
   if(R.isNil(varArray)){
     throw new Error(
@@ -54,13 +43,23 @@ export const checkNilWithArray = (varArray, variableName) => {
   }
 }
 
-export const cknwb = (varBool, variableName) => {
+export const getCyclicIndex = (
+  rawIndex,
+  cycleLength) => {
 
-  if(R.isNil(varBool)){
-    throw new Error(`${variableName} should not be nil.`);
-  }
+  checkNilWithNumber(
+    rawIndex,
+    'Raw index');
 
-  if(!RA.isBoolean(varBool)){
-    throw new Error(`${variableName} must be a boolean.`);
-  }
+  const positiveIndex =
+    rawIndex % cycleLength;
+
+  const negativeIndex =
+    (rawIndex % cycleLength) + cycleLength;
+
+  const effectiveIndex =
+    (rawIndex >= 0) ?
+    positiveIndex : negativeIndex
+
+  return effectiveIndex;
 }

@@ -37,21 +37,23 @@ export const getTwigComboSetContextChinese =
     twigBranchChinesePart)
     .twigBranchIndex;
 
-  const rawTwigComboSetHeadBranchIndex =
-    twigBranchIndex - twigTrunkIndex;
+  const twigComboSetHeadBranchIndex =
+    getCyclicIndex(
+      twigBranchIndex - twigTrunkIndex,
+      12);
 
-  const isValidRawTwigComboSetHeadBranchIndex =
-    rawTwigComboSetHeadBranchIndex % 2 == 0;
+  const isValidTwigComboSetHeadBranchIndex =
+    twigComboSetHeadBranchIndex % 2 == 0;
 
-  if(isValidRawTwigComboSetHeadBranchIndex){
+  if(isValidTwigComboSetHeadBranchIndex){
     throw new Error(
-      'Invalid raw twig combo set '
+      'Invalid twig combo set '
       + 'head branch index.');
   }
 
   const twigComboSetHeadBranchChinese =
     getTwigBranchContextByIndex(
-      rawTwigComboHeadBranchIndex)
+      finalTwigComboSetHeadBranchIndex)
     .twigBranchChinese;
 
   const twigComboSetChinese =
@@ -59,12 +61,12 @@ export const getTwigComboSetContextChinese =
 
   const twigComboSetFirstVoidBranchChinese =
     getTwigBranchContextByIndex(
-      rawTwigComboHeadBranchIndex - 2)
+      twigComboSetHeadBranchIndex - 2)
     .twigBranchChinese;
 
   const twigComboSetSecondVoidBranchChinese =
     getTwigBranchContextByIndex(
-      rawTwigComboHeadBranchIndex - 1)
+      twigComboSetHeadBranchIndex - 1)
     .twigBranchChinese;
 
   const twigComboSetVoidBranchList = [
@@ -72,9 +74,15 @@ export const getTwigComboSetContextChinese =
     twigComboSetSecondVoidBranchChinese
   ];
 
+  const twigComboSetIndex =
+    ((12 - twigComboSetHeadBranchIndex) % 12)
+    / 2;
+
   const twigComboSetContext = {
     twigComboSetChinese,
-    twigComboSetVoidBranchList
+    twigComboSetVoidBranchList,
+    twigComboSetHeadBranchIndex,
+    twigComboSetIndex
   };
 
   return twigComboSetContext;
