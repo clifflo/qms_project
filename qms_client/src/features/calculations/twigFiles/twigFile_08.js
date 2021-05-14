@@ -5,7 +5,7 @@ export const twigChosenContextSet = [
   {
     _type: 'Twig chosen context',
     twigChosenChineseName: '長生',
-    twigChosenEnglishName: 'Twig chosen life',
+    twigChosenEnglishName: 'Twig chosen long live',
     twigChosenIndex: 0
   },
   {
@@ -17,61 +17,61 @@ export const twigChosenContextSet = [
   {
     _type: 'Twig chosen context',
     twigChosenChineseName: '冠帶',
-    twigChosenEnglishName: 'Twig chosenbelt',
+    twigChosenEnglishName: 'Twig chosen belt',
     twigChosenIndex: 2
   },
   {
     _type: 'Twig chosen context',
     twigChosenChineseName: '臨官',
-    twigChosenEnglishName: 'Twig chosenofficer',
+    twigChosenEnglishName: 'Twig chosen officer',
     twigChosenIndex: 3
   },
   {
     _type: 'Twig chosen context',
     twigChosenChineseName: '帝旺',
-    twigChosenEnglishName: 'Twig chosenemperor',
+    twigChosenEnglishName: 'Twig chosen emperor',
     twigChosenIndex: 4
   },
   {
     _type: 'Twig chosen context',
     twigChosenChineseName: '衰',
-    twigChosenEnglishName: 'Twig chosentired',
+    twigChosenEnglishName: 'Twig chosen tired',
     twigChosenIndex: 5
   },
   {
     _type: 'Twig chosen context',
     twigChosenChineseName: '病',
-    twigChosenEnglishName: 'Twig chosensick',
+    twigChosenEnglishName: 'Twig chosen sick',
     twigChosenIndex: 6
   },
   {
     _type: 'Twig chosen context',
     twigChosenChineseName: '長死',
-    twigChosenEnglishName: 'Twig chosendeath',
+    twigChosenEnglishName: 'Twig chosen long death',
     twigChosenIndex: 7
   },
   {
     _type: 'Twig chosen context',
     twigChosenChineseName: '墓',
-    twigChosenEnglishName: 'Twig chosengrave',
+    twigChosenEnglishName: 'Twig chosen grave',
     twigChosenIndex: 8
   },
   {
     _type: 'Twig chosen context',
     twigChosenChineseName: '絕',
-    twigChosenEnglishName: 'Twig chosenvanished',
+    twigChosenEnglishName: 'Twig chosen vanished',
     twigChosenIndex: 9
   },
   {
     _type: 'Twig chosen context',
     twigChosenChineseName: '胎',
-    twigChosenEnglishName: 'Twig chosenfetal',
+    twigChosenEnglishName: 'Twig chosen fetal',
     twigChosenIndex: 10
   },
   {
     _type: 'Twig chosen context',
     twigChosenChineseName: '養',
-    twigChosenEnglishName: 'Twig chosenbirth',
+    twigChosenEnglishName: 'Twig chosen birth',
     twigChosenIndex: 11
   }
 ];
@@ -81,30 +81,30 @@ export const twigChosenTypeOneRawEnvelopSet = [
     _type: 'Twig chosen type one raw envelop',
     twigChosenBranchElementalEnglish:
       'Twig elemental metal',
-    twigChosenTypeOneEnvelopStartIndex: 5
+    twigChosenTypeOneEnvelopStartIndex: 7
   },
   {
     _type: 'Twig chosen type one raw envelop',
     twigChosenBranchElementalEnglish:
       'Twig elemental wood',
-    twigChosenTypeOneEnvelopStartIndex: 11
+    twigChosenTypeOneEnvelopStartIndex: 1
   },
   {
     _type: 'Twig chosen type one raw envelop',
     twigChosenBranchElementalEnglish:
       'Twig elemental water',
-    twigChosenTypeOneEnvelopStartIndex: 8
+    twigChosenTypeOneEnvelopStartIndex: 4
   },
   {
     _type: 'Twig chosen type one raw envelop',
     twigChosenBranchElementalEnglish:
       'Twig elemental fire',
-    twigChosenTypeOneEnvelopStartIndex: 2
+    twigChosenTypeOneEnvelopStartIndex: 10
   },
   {
     _type: 'Twig chosen type one raw envelop',
     twigChosenBranchElementalEnglish:
       'Twig elemental earth',
-    twigChosenTypeOneEnvelopStartIndex: 2
+    twigChosenTypeOneEnvelopStartIndex: 10
   }
 ];

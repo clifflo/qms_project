@@ -1,10 +1,10 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  chosenTypeOneFinalEnvelopSet
+  twigChosenTypeOneFinalEnvelopSet
 } from '../calculations/twigHubCloneBase';
 
 export default function RhoGui() {
   return <JSONTree
-    data={chosenTypeOneFinalEnvelopSet}/>
+    data={twigChosenTypeOneFinalEnvelopSet}/>
 }

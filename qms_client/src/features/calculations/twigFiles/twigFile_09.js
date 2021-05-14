@@ -14,74 +14,74 @@ import {
 } from './twigFile_08';
 
 const mapFunctionOfChosenTypeOneContext =
-  (chosenTypeOneEnvelopStartIndex,
-  chosenForBranchIndex) => {
+  (twigChosenTypeOneEnvelopStartIndex,
+  twigChosenForBranchIndex) => {
 
-  const chosenIndex =
-    chosenTypeOneEnvelopStartIndex
-    + chosenForBranchIndex;
+  const twigChosenIndex =
+    twigChosenTypeOneEnvelopStartIndex
+    + twigChosenForBranchIndex;
 
   checkNilWithNumber(
-    chosenIndex,
-    'Chosen index');
+    twigChosenIndex,
+    'Twig chosen index');
 
-  const chosenTypeOneContext =
+  const twigChosenTypeOneContext =
     getCyclicItemFromList(
-      chosenContextSet,
-      chosenIndex,
-      'chosenIndex');
+      twigChosenContextSet,
+      twigChosenIndex,
+      'twigChosenIndex');
 
   checkNilWithTypedObject(
-    chosenTypeOneContext,
-    'Chosen type one context');
+    twigChosenTypeOneContext,
+    'Twig chosen context');
 
-  return chosenTypeOneContext;
+  return twigChosenTypeOneContext;
 }
 
-const mapFunctionOfChosenTypeOneFinalEnvelop =
-  chosenSourceBranchElementalEnglish => {
+const mapFunctionOfTwigChosenTypeOneFinalEnvelop =
+  twigChosenSourceBranchElementalEnglish => {
 
-  const chosenTypeOneRawEnvelop =
+  const twigChosenTypeOneRawEnvelop =
     getItemByStringFromList(
-      chosenTypeOneRawEnvelopSet,
-      chosenSourceBranchElementalEnglish,
-      'chosenBranchElementalEnglish');
+      twigChosenTypeOneRawEnvelopSet,
+      twigChosenSourceBranchElementalEnglish,
+      'twigChosenBranchElementalEnglish');
 
-  const { chosenTypeOneEnvelopStartIndex } =
-    chosenTypeOneRawEnvelop;
+  const { twigChosenTypeOneEnvelopStartIndex } =
+    twigChosenTypeOneRawEnvelop;
 
-  const loadedMapFunctionOfChosenTypeOneContext =
+  const loadedMapFunctionOfTwigChosenTypeOneContext =
     R.curry(mapFunctionOfChosenTypeOneContext)
-    (chosenTypeOneEnvelopStartIndex);
+    (twigChosenTypeOneEnvelopStartIndex);
 
-  const chosenTypeOneContextSet =
+  const twigChosenTypeOneContextSet =
     R.map(
-      loadedMapFunctionOfChosenTypeOneContext,
+      loadedMapFunctionOfTwigChosenTypeOneContext,
       R.range(0, 12));
 
-  const chosenTypeOneFinalEnvelop = {
-    chosenTypeOneContextSet,
-    ...chosenTypeOneRawEnvelop,
-    _type: 'Chosen type one final envelop'
+  const twigChosenTypeOneFinalEnvelop = {
+    twigChosenTypeOneContextSet,
+    ...twigChosenTypeOneRawEnvelop,
+    _type: 'Twig chosen type one final envelop'
   };
 
-  return chosenTypeOneFinalEnvelop;
+  return twigChosenTypeOneFinalEnvelop;
 }
 
-const getChosenTypeOneFinalEnvelopSet = () => {
+const getTwigChosenTypeOneFinalEnvelopSet = () => {
 
   const twigElementalEnglishSet =
     R.map(
       R.prop('twigElementalEnglish'),
       twigElementalContextSet);
 
-  const chosenTypeOneFinalEnvelopSet =
+  const twigChosenTypeOneFinalEnvelopSet =
     R.map(
-      mapFunctionOfChosenTypeOneFinalEnvelop,
+      mapFunctionOfTwigChosenTypeOneFinalEnvelop,
       twigElementalEnglishSet);
 
-  return chosenTypeOneFinalEnvelopSet;
+  return twigChosenTypeOneFinalEnvelopSet;
 }
 
-export const chosenTypeOneFinalEnvelopSet =
-  getChosenTypeOneFinalEnvelopSet();
+export const twigChosenTypeOneFinalEnvelopSet =
+  getTwigChosenTypeOneFinalEnvelopSet();
