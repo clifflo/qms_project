@@ -72,7 +72,7 @@ export const
       twigComboSetHeadBranchIndex - 1)
     .twigBranchChinese;
 
-  const twigComboSetVoidBranchList = [
+  const twigComboSetVoidBranchChineseList = [
     twigComboSetFirstVoidBranchChinese,
     twigComboSetSecondVoidBranchChinese
   ];
@@ -84,7 +84,7 @@ export const
   const twigComboSetContext = {
     _type: 'Twig combo set context',
     twigComboSetChinese,
-    twigComboSetVoidBranchList,
+    twigComboSetVoidBranchChineseList,
     twigComboSetHeadBranchIndex,
     twigComboSetIndex
   };
