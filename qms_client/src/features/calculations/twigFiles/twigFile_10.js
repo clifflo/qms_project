@@ -14,18 +14,19 @@ import {
   checkNilWithString
 } from './utilityHubCloneOfTwig';
 
-export const getTwigComboSetContextChinese =
-  twigComboFullChinese => {
+export const
+  getTwigComboSetContextByTwigFullComboChinese =
+  twigFullComboChinese => {
 
   checkNilWithString(
-    twigComboFullChinese,
-    'Twig combo full chinese');
+    twigFullComboChinese,
+    'Twig full combo chinese');
 
   const twigBranchChinesePart =
-    twigComboFullChinese[0];
+    twigFullComboChinese[0];
 
   const twigTrunkChinesePart =
-    twigComboFullChinese[1];
+    twigFullComboChinese[1];
 
   const twigTrunkIndex =
     getTwigTrunkContextByChinese(
@@ -79,6 +80,7 @@ export const getTwigComboSetContextChinese =
     / 2;
 
   const twigComboSetContext = {
+    _type: 'Twig combo set context',
     twigComboSetChinese,
     twigComboSetVoidBranchList,
     twigComboSetHeadBranchIndex,
