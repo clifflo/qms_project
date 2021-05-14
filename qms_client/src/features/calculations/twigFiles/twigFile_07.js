@@ -9,7 +9,6 @@ import {
   twigBranchContextSet
 } from './twigMiniHub_01';
 
-
 export const getTwigBranchContextByIndex =
   twigBranchIndex => {
 

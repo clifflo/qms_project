@@ -1,11 +1,10 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  getDeltaLongHookContext_7
-} from '../calculations/rhoSeriesHubClone';
+  chosenTypeOneFinalEnvelopSet
+} from '../calculations/twigHubCloneBase';
 
 export default function RhoGui() {
   return <JSONTree
-    data={getDeltaLongHookContext_7(
-      '丙子', '純坤', '復')}/>
+    data={chosenTypeOneFinalEnvelopSet}/>
 }

@@ -1,59 +1,75 @@
-import * as R from 'ramda';
 import {
-  getTwigTrunkContextByChinese,
-  getTwigComboSetContextChinese,
-  getTwigTrunkContextByIndex,
-  getTwigBranchContextByIndex
-} from './twigMiniHub_02';
+  getItemByStringFromList
+} from './utilityHubCloneOfTwig';
+import {
+  twigElementalContextSet
+} from './twigMiniHub_01';
+import {
+  chosenContextSet,
+  chosenTypeOneRawEnvelopSet
+} from './twigFile_08';
 
-export const getTwigFullComboChineseByIndex =
-  twigFullComboIndex => {
+const mapFunctionOfChosenTypeOneContext =
+  (chosenTypeOneEnvelopStartIndex,
+  chosenForBranchIndex) => {
 
-  const twigComboBranchHint_1 =
-    Math.floor(twigFullComboIndex / 10);
+  const chosenTypeOneIndex =
+    chosenTypeOneEnvelopStartIndex
+    + chosenForBranchIndex;
 
-  const twigComboBranchHint_2 =
-    12 - (twigComboBranchHint_1 * 2);
+  const chosenTypeOneContext =
+    getCyclicItemFromList(
+      chosenContextSet,
+      chosenTypeOneIndex,
+      'chosenTypeOneIndex');
 
-  const twigComboTrunkIndex =
-    twigFullComboIndex % 10;
-
-  const twigComboBranchIndex =
-    twigComboTrunkIndex
-    + twigComboBranchHint_2;
-
-  const twigComboTrunkChinese =
-    getTwigTrunkContextByIndex(
-      twigComboTrunkIndex)
-      .twigTrunkChinese;
-
-  const twigComboBranchChinese =
-    getTwigBranchContextByIndex(
-      twigComboBranchIndex)
-    .twigBranchChinese;
-
-  const twigFullComboChinese =
-    twigComboTrunkChinese
-    + twigComboBranchChinese;
-
-  return twigFullComboChinese;
+  return chosenTypeOneContext;
 }
 
-export const getTwigFullComboIndexByChinese =
-  twigFullComboChinese => {
+const mapFunctionOfChosenTypeOneFinalEnvelop =
+  chosenSourceTwigElementalEnglish => {
 
-  const twigComboSetIndex =
-    getTwigComboSetContextChinese(
-      twigFullComboChinese)
-      .twigComboSetIndex;
+  const chosenTypeOneRawEnvelop =
+    getItemByStringFromList(
+      chosenTypeOneRawEnvelopSet,
+      chosenBranchElementalEnglish,
+      'chosenBranchElementalEnglish');
 
-  const twigComboTrunkIndex =
-    getTwigTrunkContextByChinese(
-      twigFullComboChinese[0]);
+  const { chosenTypeOneEnvelopStartIndex } =
+    chosenTypeOneRawEnvelop;
 
-  const twigFullComboIndex =
-    (twigComboSetIndex * 10)
-    + twigComboTrunkIndex;
+  const loadedMapFunctionOfChosenTypeOneContext =
+    R.curry(mapFunctionOfChosenTypeOneContext)
+    (chosenTypeOneEnvelopStartIndex);
 
-  return twigFullComboIndex;
+  const chosenTypeOneContextSet =
+    R.map(
+      loadedMapFunctionOfChosenTypeOneContext,
+      R.range(0, 12));
+
+  const chosenTypeOneFinalEnvelop = {
+    chosenTypeOneContextSet,
+    ...chosenTypeOneRawEnvelop,
+    _type: 'Chosen type one final envelop'
+  };
+
+  return chosenTypeOneFinalEnvelop;
 }
+
+const getChosenTypeOneFinalEnvelopSet = () => {
+
+  const twigElementalEnglishSet =
+    R.map(
+      R.prop('twigElementalEnglish'),
+      twigElementalContextSet);
+
+  const chosenTypeOneFinalEnvelopSet =
+    R.map(
+      mapFunctionOfChosenTypeOneFinalEnvelop,
+      twigElementalEnglishSet);
+
+  return chosenTypeOneFinalEnvelopSet;
+}
+
+export const chosenTypeOneFinalEnvelopSet =
+  getChosenTypeOneFinalEnvelopSet();

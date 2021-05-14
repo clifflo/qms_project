@@ -75,26 +75,3 @@ export const chosenContextSet = [
     chosenIndex: 11
   }
 ];
-
-export const chosenTypeOneRawEnvelopSet = [
-  {
-    chosenBranchElementalChinese: '五行金',
-    chosenTypeOneEnvelopStartIndex: 5
-  },
-  {
-    chosenBranchElementalChinese: '五行木',
-    chosenTypeOneEnvelopStartIndex: 11
-  },
-  {
-    chosenBranchElementalChinese: '五行水',
-    chosenTypeOneEnvelopStartIndex: 8
-  },
-  {
-    chosenBranchElementalChinese: '五行火',
-    chosenTypeOneEnvelopStartIndex: 2
-  },
-  {
-    chosenBranchElementalChinese: '五行土',
-    chosenTypeOneEnvelopStartIndex: 2
-  },
-];
