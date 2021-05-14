@@ -64,6 +64,8 @@ export const getDeltaLongHookContext_7 =
 
   const finalDeltaLongHookContext_7 = {
     ...rawDeltaLongHookContext_7,
+    askingDayTwigFullComboChinese,
+    askingDayTwigComboSetVoidBranchChineseList,
     wheatCrossInHookSet_2,
     cheeseCrossInHookSet_2,
     _type: 'Delta long hook context 7'
