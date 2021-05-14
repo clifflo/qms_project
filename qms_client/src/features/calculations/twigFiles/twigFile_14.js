@@ -11,58 +11,58 @@ import {
 } from './utilityHubCloneOfTwig';
 
 const mapFunctionOfTwigBranchPauseContext =
-  twigBranchPauseHint => {
+  twigPauseHint => {
 
-  const twigBranchPauseFirstPartIndex =
-    twigBranchPauseHint * 2;
+  const twigPauseFirstPartIndex =
+    twigPauseHint * 2;
 
-  const twigBranchPauseSecondPartIndex =
-    twigBranchPauseFirstPartIndex - 3;
+  const twigPauseSecondPartIndex =
+    twigPauseFirstPartIndex - 3;
 
-  const twigBranchPauseFirstPartContext =
+  const twigPauseFirstPartContext =
     getTwigBranchContextByIndex(
-      twigBranchPauseFirstPartIndex);
+      twigPauseFirstPartIndex);
 
-  const twigBranchPauseSecondPartContext =
+  const twigPauseSecondPartContext =
     getTwigBranchContextByIndex(
-      twigBranchPauseSecondPartIndex);
+      twigPauseSecondPartIndex);
 
-  const twigBranchPauseFirstPartChinese =
-    twigBranchPauseFirstPartContext
+  const twigPauseFirstPartChinese =
+    twigPauseFirstPartContext
     .twigBranchChinese;
 
-  const twigBranchPauseSecondPartChinese =
-    twigBranchPauseSecondPartContext
+  const twigPauseSecondPartChinese =
+    twigPauseSecondPartContext
     .twigBranchChinese;
 
-  const twigBranchPauseFirstPartEnglish =
-    twigBranchPauseFirstPartContext
+  const twigPauseFirstPartEnglish =
+    twigPauseFirstPartContext
     .twigBranchEnglish;
 
-  const twigBranchPauseSecondPartEnglish =
-    twigBranchPauseSecondPartContext
+  const twigPauseSecondPartEnglish =
+    twigPauseSecondPartContext
     .twigBranchEnglish;
 
-  const twigBranchPauseChineseSet =
+  const twigPauseChineseSet =
   [
-    twigBranchPauseFirstPartChinese,
-    twigBranchPauseSecondPartChinese
+    twigPauseFirstPartChinese,
+    twigPauseSecondPartChinese
   ];
 
-  const twigBranchPauseEnglishSet =
+  const twigPauseEnglishSet =
   [
-    twigBranchPauseFirstPartEnglish,
-    twigBranchPauseSecondPartEnglish
+    twigPauseFirstPartEnglish,
+    twigPauseSecondPartEnglish
   ];
 
   return {
-    _type: 'Twig branch pause '
-    twigBranchPauseChineseSet,
-    twigBranchPauseEnglishSet
+    _type: 'Twig pause context',
+    twigPauseChineseSet,
+    twigPauseEnglishSet
   };
 }
 
-export const twigBranchPauseContextSet =
+export const twigPauseContextSet =
   R.map(
     mapFunctionOfTwigBranchPauseContext,
     R.range(0, 6));

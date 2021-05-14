@@ -37,19 +37,20 @@ const mapFunctionOfTwigFlushContext =
     twigFlushSecondBranchContext
     .twigBranchEnglish;
 
-  const twigFlushChineseSet =
+  const twigFlushBranchChineseSet =
   [
     twigFlushFirstBranchChinese,
     twigFlushSecondBranchChinese
   ];
 
-  const twigFlushEnglishSet =
+  const twigFlushBranchEnglishSet =
   [
     twigFlushFirstBranchEnglish,
     twigFlushSecondBranchEnglish
   ];
 
   return {
+    _type: 'Twig flush context',
     twigFlushBranchChineseSet,
     twigFlushBranchEnglishSet
   };

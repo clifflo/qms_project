@@ -10,52 +10,53 @@ import {
   checkNilWithString
 } from './utilityHubCloneOfTwig';
 
-const mapFunctionOfTwigBranchHitContext =
+const mapFunctionOfTwigHitContext =
   twigBranchIndex => {
 
-  const twigBranchHitFirstPartContext =
+  const twigHitFirstBranchContext =
     getTwigBranchContextByIndex(
       twigBranchIndex);
 
-  const twigBranchHitSecondPartContext =
+  const twigHitSecondBranchContext =
     getTwigBranchContextByIndex(
       7 - twigBranchIndex);
 
-  const twigBranchHitFirstPartChinese =
-    twigBranchHitFirstPartContext
+  const twigHitFirstBranchChinese =
+    twigHitFirstBranchContext
     .twigBranchChinese;
 
-  const twigBranchHitSecondPartChinese =
-    twigBranchHitSecondPartContext
+  const twigHitSecondBranchChinese =
+    twigHitSecondBranchContext
     .twigBranchChinese;
 
-  const twigBranchHitFirstPartEnglish =
-    twigBranchHitFirstPartContext
+  const twigHitFirstBranchEnglish =
+    twigHitFirstBranchContext
     .twigBranchEnglish;
 
-  const twigBranchHitSecondPartEnglish =
-    twigBranchHitSecondPartContext
+  const twigHitSecondBranchEnglish =
+    twigHitSecondBranchContext
     .twigBranchEnglish;
 
-  const twigBranchHitChineseSet =
+  const twigHitChineseSet =
   [
-    twigBranchHitFirstPartChinese,
-    twigBranchHitSecondPartChinese
+    twigHitFirstBranchChinese,
+    twigHitSecondBranchChinese
   ];
 
-  const twigBranchHitEnglishSet =
+  const twigHitEnglishSet =
   [
-    twigBranchHitFirstPartEnglish,
-    twigBranchHitSecondPartEnglish
+    twigHitFirstBranchEnglish,
+    twigHitSecondBranchEnglish
   ];
 
   return {
-    twigBranchHitChineseSet,
-    twigBranchHitEnglishSet
+    _type: 'Twig hit context',
+    twigHitChineseSet,
+    twigHitEnglishSet
   };
 }
 
-export const twigBranchHitContextSet =
+export const twigHitContextSet =
   R.map(
-    mapFunctionOfTwigBranchHitContext,
+    mapFunctionOfTwigHitContext,
     R.range(0, 6));
