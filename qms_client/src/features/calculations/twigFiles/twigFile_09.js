@@ -1,38 +1,50 @@
+import * as R from 'ramda';
 import {
-  getItemByStringFromList
+  getItemByStringFromList,
+  getCyclicItemFromList,
+  checkNilWithTypedObject,
+  checkNilWithNumber
 } from './utilityHubCloneOfTwig';
 import {
   twigElementalContextSet
 } from './twigMiniHub_01';
 import {
-  chosenContextSet,
-  chosenTypeOneRawEnvelopSet
+  twigChosenContextSet,
+  twigChosenTypeOneRawEnvelopSet
 } from './twigFile_08';
 
 const mapFunctionOfChosenTypeOneContext =
   (chosenTypeOneEnvelopStartIndex,
   chosenForBranchIndex) => {
 
-  const chosenTypeOneIndex =
+  const chosenIndex =
     chosenTypeOneEnvelopStartIndex
     + chosenForBranchIndex;
+
+  checkNilWithNumber(
+    chosenIndex,
+    'Chosen index');
 
   const chosenTypeOneContext =
     getCyclicItemFromList(
       chosenContextSet,
-      chosenTypeOneIndex,
-      'chosenTypeOneIndex');
+      chosenIndex,
+      'chosenIndex');
+
+  checkNilWithTypedObject(
+    chosenTypeOneContext,
+    'Chosen type one context');
 
   return chosenTypeOneContext;
 }
 
 const mapFunctionOfChosenTypeOneFinalEnvelop =
-  chosenSourceTwigElementalEnglish => {
+  chosenSourceBranchElementalEnglish => {
 
   const chosenTypeOneRawEnvelop =
     getItemByStringFromList(
       chosenTypeOneRawEnvelopSet,
-      chosenBranchElementalEnglish,
+      chosenSourceBranchElementalEnglish,
       'chosenBranchElementalEnglish');
 
   const { chosenTypeOneEnvelopStartIndex } =

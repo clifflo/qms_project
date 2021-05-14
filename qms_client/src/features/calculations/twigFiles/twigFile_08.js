@@ -1,77 +1,110 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
-export const chosenContextSet = [
+export const twigChosenContextSet = [
   {
-    _type: 'Chosen context',
-    chosenChineseName: '長生',
-    chosenEnglishName: 'Chosen life',
-    chosenIndex: 0
+    _type: 'Twig chosen context',
+    twigChosenChineseName: '長生',
+    twigChosenEnglishName: 'Twig chosen life',
+    twigChosenIndex: 0
   },
   {
-    _type: 'Chosen context',
-    chosenChineseName: '沐浴',
-    chosenEnglishName: 'Chosen bath',
-    chosenIndex: 1
+    _type: 'Twig chosen context',
+    twigChosenChineseName: '沐浴',
+    twigChosenEnglishName: 'Twig chosen bath',
+    twigChosenIndex: 1
   },
   {
-    _type: 'Chosen context',
-    chosenChineseName: '冠帶',
-    chosenEnglishName: 'Chosen belt',
-    chosenIndex: 2
+    _type: 'Twig chosen context',
+    twigChosenChineseName: '冠帶',
+    twigChosenEnglishName: 'Twig chosenbelt',
+    twigChosenIndex: 2
   },
   {
-    _type: 'Chosen context',
-    chosenChineseName: '臨官',
-    chosenEnglishName: 'Chosen officer',
-    chosenIndex: 3
+    _type: 'Twig chosen context',
+    twigChosenChineseName: '臨官',
+    twigChosenEnglishName: 'Twig chosenofficer',
+    twigChosenIndex: 3
   },
   {
-    _type: 'Chosen context',
-    chosenChineseName: '帝旺',
-    chosenEnglishName: 'Chosen emperor',
-    chosenIndex: 4
+    _type: 'Twig chosen context',
+    twigChosenChineseName: '帝旺',
+    twigChosenEnglishName: 'Twig chosenemperor',
+    twigChosenIndex: 4
   },
   {
-    _type: 'Chosen context',
-    chosenChineseName: '衰',
-    chosenEnglishName: 'Chosen tired',
-    chosenIndex: 5
+    _type: 'Twig chosen context',
+    twigChosenChineseName: '衰',
+    twigChosenEnglishName: 'Twig chosentired',
+    twigChosenIndex: 5
   },
   {
-    _type: 'Chosen context',
-    chosenChineseName: '病',
-    chosenEnglishName: 'Chosen sick',
-    chosenIndex: 6
+    _type: 'Twig chosen context',
+    twigChosenChineseName: '病',
+    twigChosenEnglishName: 'Twig chosensick',
+    twigChosenIndex: 6
   },
   {
-    _type: 'Chosen context',
-    chosenChineseName: '長死',
-    chosenEnglishName: 'Chosen death',
-    chosenIndex: 7
+    _type: 'Twig chosen context',
+    twigChosenChineseName: '長死',
+    twigChosenEnglishName: 'Twig chosendeath',
+    twigChosenIndex: 7
   },
   {
-    _type: 'Chosen context',
-    chosenChineseName: '墓',
-    chosenEnglishName: 'Chosen grave',
-    chosenIndex: 8
+    _type: 'Twig chosen context',
+    twigChosenChineseName: '墓',
+    twigChosenEnglishName: 'Twig chosengrave',
+    twigChosenIndex: 8
   },
   {
-    _type: 'Chosen context',
-    chosenChineseName: '絕',
-    chosenEnglishName: 'Chosen vanished',
-    chosenIndex: 9
+    _type: 'Twig chosen context',
+    twigChosenChineseName: '絕',
+    twigChosenEnglishName: 'Twig chosenvanished',
+    twigChosenIndex: 9
   },
   {
-    _type: 'Chosen context',
-    chosenChineseName: '胎',
-    chosenEnglishName: 'Chosen fetal',
-    chosenIndex: 10
+    _type: 'Twig chosen context',
+    twigChosenChineseName: '胎',
+    twigChosenEnglishName: 'Twig chosenfetal',
+    twigChosenIndex: 10
   },
   {
-    _type: 'Chosen context',
-    chosenChineseName: '養',
-    chosenEnglishName: 'Chosen birth',
-    chosenIndex: 11
+    _type: 'Twig chosen context',
+    twigChosenChineseName: '養',
+    twigChosenEnglishName: 'Twig chosenbirth',
+    twigChosenIndex: 11
+  }
+];
+
+export const twigChosenTypeOneRawEnvelopSet = [
+  {
+    _type: 'Twig chosen type one raw envelop',
+    twigChosenBranchElementalEnglish:
+      'Twig elemental metal',
+    twigChosenTypeOneEnvelopStartIndex: 5
+  },
+  {
+    _type: 'Twig chosen type one raw envelop',
+    twigChosenBranchElementalEnglish:
+      'Twig elemental wood',
+    twigChosenTypeOneEnvelopStartIndex: 11
+  },
+  {
+    _type: 'Twig chosen type one raw envelop',
+    twigChosenBranchElementalEnglish:
+      'Twig elemental water',
+    twigChosenTypeOneEnvelopStartIndex: 8
+  },
+  {
+    _type: 'Twig chosen type one raw envelop',
+    twigChosenBranchElementalEnglish:
+      'Twig elemental fire',
+    twigChosenTypeOneEnvelopStartIndex: 2
+  },
+  {
+    _type: 'Twig chosen type one raw envelop',
+    twigChosenBranchElementalEnglish:
+      'Twig elemental earth',
+    twigChosenTypeOneEnvelopStartIndex: 2
   }
 ];
