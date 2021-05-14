@@ -1,10 +1,13 @@
 import * as R from 'ramda';
+import {
+  getDeltaLongHookContext_6
+} from './deltaFile_10';
 
 export const mapFunctionForWheatCrossInHook_2 =
   (askingDayTwigComboSetVoidBranchList,
   wheatCrossInHook_1) => {
 
-  const crossInHookBranchChinese =
+  const wheatCrossInHookBranchChinese =
     wheatCrossInHook_1
     .crossInHookBranchChinese;
 
@@ -23,7 +26,7 @@ export const mapFunctionForCheeseCrossInHook_2 =
   (askingDayTwigComboSetVoidBranchList,
   cheeseCrossInHook_1) => {
 
-  const crossInHookBranchChinese =
+  const cheeseCrossInHookBranchChinese =
     cheeseCrossInHook_1
     .crossInHookBranchChinese;
 

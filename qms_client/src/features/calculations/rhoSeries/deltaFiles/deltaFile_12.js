@@ -2,7 +2,10 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   getTwigComboSetContextByTwigFullComboChinese
-} from './utilityHubCloneOfTwig';
+} from './twigHubCloneOfDelta';
+import {
+  getDeltaLongHookContext_6
+} from './deltaFile_10';
 import {
   mapFunctionForWheatCrossInHook_2,
   mapFunctionForCheeseCrossInHook_2
@@ -57,7 +60,7 @@ export const getDeltaLongHookContext_7 =
     R.compose(
       R.dissoc('wheatCrossInHookSet_1'),
       R.dissoc('cheeseCrossInHookSet_1'))
-    deltaLongHookContext_6;
+    (deltaLongHookContext_6);
 
   const finalDeltaLongHookContext_7 = {
     ...rawDeltaLongHookContext_7,

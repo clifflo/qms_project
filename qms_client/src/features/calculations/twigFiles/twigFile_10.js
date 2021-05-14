@@ -24,10 +24,10 @@ export const
     twigFullComboChinese,
     'Twig full combo chinese');
 
-  const twigBranchChinesePart =
+  const twigTrunkChinesePart =
     twigFullComboChinese[0];
 
-  const twigTrunkChinesePart =
+  const twigBranchChinesePart =
     twigFullComboChinese[1];
 
   const twigTrunkIndex =
@@ -48,7 +48,7 @@ export const
   const isValidTwigComboSetHeadBranchIndex =
     twigComboSetHeadBranchIndex % 2 == 0;
 
-  if(isValidTwigComboSetHeadBranchIndex){
+  if(!isValidTwigComboSetHeadBranchIndex){
     throw new Error(
       'Invalid twig combo set '
       + 'head branch index.');
