@@ -1,31 +1,42 @@
 import {
   getItemByStringFromList
 } from './utilityHubCloneOfTwig';
+import {
+  chosenContextSet,
+  chosenTypeOneRawEnvelopSet
+} from './twigFile_07';
 
-const mapFunctionOfChosenForBranchContext =
-  (chosenForBranchEnvelopStartIndex,
+const mapFunctionOfChosenTypeOneContext =
+  (chosenTypeOneEnvelopStartIndex,
   chosenForBranchIndex) => {
 
+  const chosenTypeOneIndex =
+    chosenTypeOneEnvelopStartIndex
+    + chosenForBranchIndex;
 
-}
+  const chosenContext =
+    getCyclicItemFromList(
+      chosenContextSet,
+      chosenTypeOneIndex,
+      'chosenTypeOneIndex');
 
 
 export const
-  mapFunctionOfChosenForBranchFinalEnvelop =
+  mapFunctionOfChosenTypeOneFinalEnvelop =
   chosenSourceTwigElementalEnglish => {
 
-  const chosenForBranchRawEnvelop =
+  const chosenTypeOneRawEnvelop =
     getItemByStringFromList(
-      chosenForBranchRawEnvelopSet,
+      chosenTypeOneRawEnvelopSet,
       chosenBranchElementalEnglish,
       'chosenBranchElementalEnglish');
 
-  const { chosenForBranchEnvelopStartIndex } =
-    chosenForBranchRawEnvelop
+  const { chosenTypeOneEnvelopStartIndex } =
+    chosenTypeOneRawEnvelop;
 
-  const loadedMapFunctionOfChosenForBranchContext =
-    R.curry(mapFunctionOfChosenForBranchContext)
-    (chosenForBranchEnvelopStartIndex);
+  const loadedMapFunctionOfChosenTypeOneContext =
+    R.curry(mapFunctionOfChosenTypeOneContext)
+    (chosenTypeOneEnvelopStartIndex);
 
 
 

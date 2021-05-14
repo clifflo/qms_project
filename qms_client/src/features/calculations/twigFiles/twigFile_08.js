@@ -76,25 +76,25 @@ export const chosenContextSet = [
   }
 ];
 
-export const chosenForBranchRawEnvelopSet = [
+export const chosenTypeOneRawEnvelopSet = [
   {
     chosenBranchElementalChinese: '五行金',
-    chosenForBranchEnvelopStartIndex: 5
+    chosenTypeOneEnvelopStartIndex: 5
   },
   {
     chosenBranchElementalChinese: '五行木',
-    chosenForBranchEnvelopStartIndex: 11
+    chosenTypeOneEnvelopStartIndex: 11
   },
   {
     chosenBranchElementalChinese: '五行水',
-    chosenForBranchEnvelopStartIndex: 8
+    chosenTypeOneEnvelopStartIndex: 8
   },
   {
     chosenBranchElementalChinese: '五行火',
-    chosenForBranchEnvelopStartIndex: 2
+    chosenTypeOneEnvelopStartIndex: 2
   },
   {
     chosenBranchElementalChinese: '五行土',
-    chosenForBranchEnvelopStartIndex: 2
+    chosenTypeOneEnvelopStartIndex: 2
   },
 ];
