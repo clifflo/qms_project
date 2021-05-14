@@ -71,17 +71,17 @@ export const
       loadedCrossInHookContextMapFunction_4,
       crossInHookContextSet_3);
 
-  const rawDeltaDatedLongHookContext =
+  const rawDeltaLongHookContext_5 =
     R.dissoc(
       'crossInHookContextSet_3',
       deltaLongHookContext_4);
 
-  const finalDeltaDatedLongHookContext = {
-    ...rawDeltaDatedLongHookContext,
+  const finalDeltaDatedLongHookContext_5 = {
+    ...rawDeltaLongHookContext_5,
     crossInHookContextSet_4,
     askingDayTrunkChinese,
     _type: 'Delta long hook context 5'
   };
 
-  return finalDeltaDatedLongHookContext;
+  return finalDeltaDatedLongHookContext_5;
 }

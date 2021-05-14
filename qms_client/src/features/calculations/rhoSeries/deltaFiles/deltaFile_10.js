@@ -83,7 +83,8 @@ export const getDeltaLongHookContext_6 =
       deltaCheeseHookContext:
         finalDeltaCheeseHookContext,
       wheatCrossInHookSet_1,
-      cheeseCrossInHookSet_1
+      cheeseCrossInHookSet_1,
+      _type: 'Delta long hook context 6'
     };
 
     return deltaLongHookContext_6;
