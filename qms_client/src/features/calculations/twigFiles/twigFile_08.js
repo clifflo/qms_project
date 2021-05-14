@@ -76,31 +76,25 @@ export const chosenContextSet = [
   }
 ];
 
-export const
-  chosenForBranchContextSet_1 = [
+export const chosenForBranchRawEnvelopSet = [
   {
-    chosenBranchElementalEnglish:
-      'Twig elemental metal',
-    chosenForBranchStartPosition: 7
+    chosenBranchElementalChinese: '五行金',
+    chosenForBranchEnvelopStartIndex: 5
   },
   {
-    chosenBranchElementalEnglish:
-      'Twig elemental wood',
-    chosenForBranchStartPosition: 1
+    chosenBranchElementalChinese: '五行木',
+    chosenForBranchEnvelopStartIndex: 11
   },
   {
-    chosenBranchElementalEnglish:
-      'Twig elemental water',
-    chosenForBranchStartPosition: 4
+    chosenBranchElementalChinese: '五行水',
+    chosenForBranchEnvelopStartIndex: 8
   },
   {
-    chosenBranchElementalEnglish:
-      'Twig elemental fire',
-    chosenForBranchStartPosition: 10
+    chosenBranchElementalChinese: '五行火',
+    chosenForBranchEnvelopStartIndex: 2
   },
   {
-    chosenBranchElementalEnglish:
-      'Twig elemental earth',
-    chosenForBranchStartPosition: 10
+    chosenBranchElementalChinese: '五行土',
+    chosenForBranchEnvelopStartIndex: 2
   },
 ];
