@@ -17,31 +17,31 @@ export const
   {
     twigElementalRelationChinese: '比和',
     twigElementalRelationEnglish:
-      'Twig relation brother',
+      'Twig elemental relation brother',
     twigElementalRelationIndex: 0
   },
   {
     twigElementalRelationChinese: '生他',
     twigElementalRelationEnglish:
-      'Twig relation parent',
+      'Twig elemental relation parent',
     twigElementalRelationIndex: 1
   },
   {
     twigElementalRelationChinese: '剋他',
     twigElementalRelationEnglish:
-      'Twig relation ghost',
+      'Twig elemental relation ghost',
     twigElementalRelationIndex: 2
   },
   {
     twigElementalRelationChinese: '被剋',
     twigElementalRelationEnglish:
-      'Twig relation money',
+      'Twig elemental relation money',
     twigElementalRelationIndex: 3
   },
   {
     twigElementalRelationChinese: '被生',
     twigElementalRelationEnglish:
-      'Twig relation son',
+      'Twig elemental relation son',
     twigElementalRelationIndex: 4
   }
 ]

@@ -1,19 +1,22 @@
 import * as R from 'ramda';
 import {
-  getTwigComboSetContextChinese
+  getTwigTrunkContextByChinese,
+  getTwigComboSetContextChinese,
+  getTwigTrunkContextByIndex,
+  getTwigBranchContextByIndex
 } from './twigMiniHub_02';
 
 export const getTwigFullComboChineseByIndex =
   twigFullComboIndex => {
 
   const twigComboBranchHint_1 =
-    Math.floor(twigComboIndex / 10);
+    Math.floor(twigFullComboIndex / 10);
 
   const twigComboBranchHint_2 =
-    12 - (twigComboBranchHint * 2);
+    12 - (twigComboBranchHint_1 * 2);
 
   const twigComboTrunkIndex =
-    twigComboIndex % 10;
+    twigFullComboIndex % 10;
 
   const twigComboBranchIndex =
     twigComboTrunkIndex
@@ -51,6 +54,6 @@ export const getTwigFullComboIndexByChinese =
   const twigFullComboIndex =
     (twigComboSetIndex * 10)
     + twigComboTrunkIndex;
-    
+
   return twigFullComboIndex;
 }

@@ -62,4 +62,4 @@ export const chosenContextSet = [
     chosenEnglishName: 'Chosen birth',
     chosenIndex: 11
   }
-]l
+];

@@ -25,7 +25,7 @@ const crossInHookContextMapFunction_2 =
 
   checkNilWithString(
     crossInHookBranchElementalChinese,
-    'Long hook cross branch elemental chinese.');
+    'Cross in hook branch elemental chinese.');
 
   const deltaFocusElementalRelationEnglish =
     getTwigElementalRelationContextByChinese(
@@ -35,7 +35,7 @@ const crossInHookContextMapFunction_2 =
 
   checkNilWithString(
     deltaFocusElementalRelationEnglish,
-    'Delta focus elemental viewing myself english'
+    'Delta focus elemental relation english'
   )
 
   const deltaFocusContext =

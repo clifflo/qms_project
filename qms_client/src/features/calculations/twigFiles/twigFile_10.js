@@ -2,16 +2,18 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   isValidTwigTrunkChinese,
-  isValidTwigBranchChinese
+  isValidTwigBranchChinese,
 } from './twigMiniHub_01';
 import {
   getTwigTrunkContextByChinese
 } from './twigFile_06';
 import {
-  getTwigBranchContextByChinese
+  getTwigBranchContextByChinese,
+  getTwigBranchContextByIndex
 } from './twigFile_07';
 import {
-  checkNilWithString
+  checkNilWithString,
+  getCyclicIndex
 } from './utilityHubCloneOfTwig';
 
 export const
@@ -54,7 +56,7 @@ export const
 
   const twigComboSetHeadBranchChinese =
     getTwigBranchContextByIndex(
-      finalTwigComboSetHeadBranchIndex)
+      twigComboSetHeadBranchIndex)
     .twigBranchChinese;
 
   const twigComboSetChinese =
