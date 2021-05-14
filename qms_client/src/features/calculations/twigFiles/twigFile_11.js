@@ -9,66 +9,66 @@ import {
   checkNilWithString
 } from './utilityHubCloneOfTwig';
 
-const twigBranchSmallCompoundParagraph =
+const twigSmallCompoundParagraph =
   '子丑合土,寅亥合木,卯戌合火,辰酉合金,巳申合水,午未合火';
 
-const mapFunctionOfTwigBranchSmallCompoundSentence =
-  twigBranchSmallCompoundSentence => {
+const mapFunctionOfTwigSmallCompoundSentence =
+  twigSmallCompoundSentence => {
 
-  const twigBranchSmallCompoundFirstPartChinese =
-    twigBranchSmallCompoundSentence[0];
+  const twigSmallCompoundFirstPartChinese =
+    twigSmallCompoundSentence[0];
 
-  const twigBranchSmallCompoundSecondPartChinese =
-    twigBranchSmallCompoundSentence[1];
+  const twigSmallCompoundSecondPartChinese =
+    twigSmallCompoundSentence[1];
 
-  const twigBranchSmallCompoundElementalChinese =
-    '五行' + twigBranchSmallCompoundSentence[3];
+  const twigSmallCompoundElementalChinese =
+    '五行' + twigSmallCompoundSentence[3];
 
-  const twigBranchSmallCompoundElementalEnglish =
+  const twigSmallCompoundElementalEnglish =
     getTwigElementalContextByChinese(
-      twigBranchSmallCompoundElementalChinese)
+      twigSmallCompoundElementalChinese)
     .twigElementalEnglish;
 
   checkNilWithString(
-    twigBranchSmallCompoundElementalEnglish,
+    twigSmallCompoundElementalEnglish,
     'Twig branch small compound '
     + 'elemental english');
 
-  const twigBranchSmallCompoundBranchChineseSet =
+  const twigSmallCompoundBranchChineseSet =
   [
-    twigBranchSmallCompoundFirstPartChinese,
-    twigBranchSmallCompoundSecondPartChinese
+    twigSmallCompoundFirstPartChinese,
+    twigSmallCompoundSecondPartChinese
   ];
 
-  const twigBranchSmallCompoundFirstPartEnglish =
+  const twigSmallCompoundFirstPartEnglish =
     getTwigBranchContextByChinese(
-      twigBranchSmallCompoundFirstPartChinese)
+      twigSmallCompoundFirstPartChinese)
     .twigBranchEnglish;
 
-  const twigBranchSmallCompoundSecondPartEnglish =
+  const twigSmallCompoundSecondPartEnglish =
     getTwigBranchContextByChinese(
-      twigBranchSmallCompoundSecondPartChinese)
+      twigSmallCompoundSecondPartChinese)
     .twigBranchEnglish;
 
-  const twigBranchSmallCompoundBranchEnglishSet =
+  const twigSmallCompoundBranchEnglishSet =
   [
-    twigBranchSmallCompoundFirstPartEnglish,
-    twigBranchSmallCompoundSecondPartEnglish
+    twigSmallCompoundFirstPartEnglish,
+    twigSmallCompoundSecondPartEnglish
   ];
 
   return {
     _type: 'Twig branch small compound context',
-    twigBranchSmallCompoundElementalChinese,
-    twigBranchSmallCompoundElementalEnglish,
-    twigBranchSmallCompoundBranchChineseSet,
-    twigBranchSmallCompoundBranchEnglishSet
+    twigSmallCompoundElementalChinese,
+    twigSmallCompoundElementalEnglish,
+    twigSmallCompoundBranchChineseSet,
+    twigSmallCompoundBranchEnglishSet
   }
 }
 
 export const
-  twigBranchSmallCompoundContextSet =
+  twigSmallCompoundContextSet =
   R.map(
-    mapFunctionOfTwigBranchSmallCompoundSentence,
+    mapFunctionOfTwigSmallCompoundSentence,
     R.split(
       ',',
-      twigBranchSmallCompoundParagraph));
+      twigSmallCompoundParagraph));

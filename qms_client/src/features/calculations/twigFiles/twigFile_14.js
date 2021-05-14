@@ -1,4 +1,14 @@
 import * as R from 'ramda';
+import {
+  getTwigElementalContextByChinese
+} from './twigMiniHub_01';
+import {
+  getTwigBranchContextByChinese,
+  getTwigBranchContextByIndex
+} from './twigMiniHub_02';
+import {
+  checkNilWithString
+} from './utilityHubCloneOfTwig';
 
 const mapFunctionOfTwigBranchPauseContext =
   twigBranchPauseHint => {
@@ -9,39 +19,46 @@ const mapFunctionOfTwigBranchPauseContext =
   const twigBranchPauseSecondPartIndex =
     twigBranchPauseFirstPartIndex - 3;
 
-  const twigBranchPauseFirstPartChinese =
+  const twigBranchPauseFirstPartContext =
     getTwigBranchContextByIndex(
       twigBranchPauseFirstPartIndex);
 
-  const twigBranchPauseSecondPartChinese =
+  const twigBranchPauseSecondPartContext =
     getTwigBranchContextByIndex(
       twigBranchPauseSecondPartIndex);
 
-  const twigBranchPauseBranchChineseSet =
+  const twigBranchPauseFirstPartChinese =
+    twigBranchPauseFirstPartContext
+    .twigBranchChinese;
+
+  const twigBranchPauseSecondPartChinese =
+    twigBranchPauseSecondPartContext
+    .twigBranchChinese;
+
+  const twigBranchPauseFirstPartEnglish =
+    twigBranchPauseFirstPartContext
+    .twigBranchEnglish;
+
+  const twigBranchPauseSecondPartEnglish =
+    twigBranchPauseSecondPartContext
+    .twigBranchEnglish;
+
+  const twigBranchPauseChineseSet =
   [
     twigBranchPauseFirstPartChinese,
     twigBranchPauseSecondPartChinese
   ];
 
-  const twigBranchPauseFirstPartEnglish =
-    getTwigBranchContextByChinese(
-      twigBranchPauseFirstPartChinese)
-    .twigBranchEnglish;
-
-  const twigBranchPauseSecondPartEnglish =
-    getTwigBranchContextByChinese(
-      twigBranchPauseSecondPartChinese)
-    .twigBranchEnglish;;
-
-  const twigBranchPauseBranchEnglishSet =
+  const twigBranchPauseEnglishSet =
   [
-    twigBranchPauseEnglishPartChinese,
-    twigBranchPauseEnglishPartChinese
+    twigBranchPauseFirstPartEnglish,
+    twigBranchPauseSecondPartEnglish
   ];
 
   return {
-    twigBranchPauseBranchChineseSet,
-    twigBranchPauseBranchEnglishSet
+    _type: 'Twig branch pause '
+    twigBranchPauseChineseSet,
+    twigBranchPauseEnglishSet
   };
 }
 

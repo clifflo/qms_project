@@ -1,10 +1,10 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  twigBranchSmallCompoundContextSet
+  twigBranchPauseContextSet
 } from '../calculations/twigHubCloneBase';
 
 export default function RhoGui() {
   return <JSONTree
-    data={twigBranchSmallCompoundContextSet}/>
+    data={twigBranchPauseContextSet}/>
 }

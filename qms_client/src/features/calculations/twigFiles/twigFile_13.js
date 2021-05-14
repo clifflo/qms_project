@@ -1,41 +1,57 @@
 import * as R from 'ramda';
+import {
+  getTwigElementalContextByChinese
+} from './twigMiniHub_01';
+import {
+  getTwigBranchContextByChinese,
+  getTwigBranchContextByIndex
+} from './twigMiniHub_02';
+import {
+  checkNilWithString
+} from './utilityHubCloneOfTwig';
 
 const mapFunctionOfTwigBranchHitContext =
   twigBranchIndex => {
 
-  const twigBranchHitFirstPartChinese =
+  const twigBranchHitFirstPartContext =
     getTwigBranchContextByIndex(
       twigBranchIndex);
 
-  const twigBranchHitSecondPartChinese =
+  const twigBranchHitSecondPartContext =
     getTwigBranchContextByIndex(
       7 - twigBranchIndex);
 
-  const twigBranchHitBranchChineseSet =
+  const twigBranchHitFirstPartChinese =
+    twigBranchHitFirstPartContext
+    .twigBranchChinese;
+
+  const twigBranchHitSecondPartChinese =
+    twigBranchHitSecondPartContext
+    .twigBranchChinese;
+
+  const twigBranchHitFirstPartEnglish =
+    twigBranchHitFirstPartContext
+    .twigBranchEnglish;
+
+  const twigBranchHitSecondPartEnglish =
+    twigBranchHitSecondPartContext
+    .twigBranchEnglish;
+
+  const twigBranchHitChineseSet =
   [
     twigBranchHitFirstPartChinese,
     twigBranchHitSecondPartChinese
   ];
 
-  const twigBranchHitFirstPartEnglish =
-    getTwigBranchContextByChinese(
-      twigBranchHitFirstPartChinese)
-    .twigBranchEnglish;
-
-  const twigBranchHitSecondPartEnglish =
-    getTwigBranchContextByChinese(
-      twigBranchHitSecondPartChinese)
-    .twigBranchEnglish;;
-
-  const twigBranchHitBranchEnglishSet =
+  const twigBranchHitEnglishSet =
   [
-    twigBranchHitEnglishPartChinese,
-    twigBranchHitEnglishPartChinese
+    twigBranchHitFirstPartEnglish,
+    twigBranchHitSecondPartEnglish
   ];
 
   return {
-    twigBranchHitBranchChineseSet,
-    twigBranchHitBranchEnglishSet
+    twigBranchHitChineseSet,
+    twigBranchHitEnglishSet
   };
 }
 

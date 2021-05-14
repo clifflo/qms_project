@@ -1,45 +1,61 @@
 import * as R from 'ramda';
+import {
+  getTwigElementalContextByChinese
+} from './twigMiniHub_01';
+import {
+  getTwigBranchContextByChinese,
+  getTwigBranchContextByIndex
+} from './twigMiniHub_02';
+import {
+  checkNilWithString
+} from './utilityHubCloneOfTwig';
 
-const mapFunctionOfTwigBranchFlushContext =
+const mapFunctionOfTwigFlushContext =
   twigBranchIndex => {
 
-  const twigBranchFlushFirstPartChinese =
+  const twigFlushFirstBranchContext =
     getTwigBranchContextByIndex(
       twigBranchIndex);
 
-  const twigBranchFlushSecondPartChinese =
+  const twigFlushSecondBranchContext =
     getTwigBranchContextByIndex(
       twigBranchIndex + 6);
 
-  const twigBranchFlushBranchChineseSet =
-  [
-    twigBranchFlushFirstPartChinese,
-    twigBranchFlushSecondPartChinese
-  ];
+  const twigFlushFirstBranchChinese =
+    twigFlushFirstBranchContext
+    .twigBranchChinese;
 
-  const twigBranchFlushFirstPartEnglish =
-    getTwigBranchContextByChinese(
-      twigBranchFlushFirstPartChinese)
+  const twigFlushSecondBranchChinese =
+    twigFlushSecondBranchContext
+    .twigBranchChinese;
+
+  const twigFlushFirstBranchEnglish =
+    twigFlushFirstBranchContext
     .twigBranchEnglish;
 
-  const twigBranchFlushSecondPartEnglish =
-    getTwigBranchContextByChinese(
-      twigBranchFlushSecondPartChinese)
-    .twigBranchEnglish;;
+  const twigFlushSecondBranchEnglish =
+    twigFlushSecondBranchContext
+    .twigBranchEnglish;
 
-  const twigBranchFlushBranchEnglishSet =
+  const twigFlushChineseSet =
   [
-    twigBranchFlushEnglishPartChinese,
-    twigBranchFlushEnglishPartChinese
+    twigFlushFirstBranchChinese,
+    twigFlushSecondBranchChinese
+  ];
+
+  const twigFlushEnglishSet =
+  [
+    twigFlushFirstBranchEnglish,
+    twigFlushSecondBranchEnglish
   ];
 
   return {
-    twigBranchFlushBranchChineseSet,
-    twigBranchFlushBranchEnglishSet
+    twigFlushBranchChineseSet,
+    twigFlushBranchEnglishSet
   };
 }
 
-export const twigBranchFlushContextSet =
+export const twigFlushContextSet =
   R.map(
-    mapFunctionOfTwigBranchFlushContext,
+    mapFunctionOfTwigFlushContext,
     R.range(0, 6));
