@@ -56,7 +56,7 @@ export const
 }
 
 export const
-  mapFunctionForWheatCrossInHookContext_3 =
+  mapFunctionForCheeseCrossInHookContext_3 =
   (askingDayTwigOpponentEnvelop,
   cheeseCrossInHookContext_2) => {
 
