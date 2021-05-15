@@ -39,7 +39,7 @@ const crossInHookContextMapFunction_3 =
   const isCoveredCrossInHook =
     R.includes(
       hiddenCrossContext
-      .deltaFocusEnglishName,
+      .deltaFocusEnglish,
       hiddenDeltaFocusEnglishSet);
 
   if(isCoveredCrossInHook){

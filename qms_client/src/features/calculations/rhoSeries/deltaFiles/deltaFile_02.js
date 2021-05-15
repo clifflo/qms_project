@@ -45,13 +45,13 @@ const crossInHookContextMapFunction_2 =
       'deltaFocusElementalRelationEnglish');
 
   const {
-    deltaFocusChineseName,
-    deltaFocusEnglishName
+    deltaFocusChinese,
+    deltaFocusEnglish
   } = deltaFocusContext
 
   return {
-    deltaFocusChineseName,
-    deltaFocusEnglishName,
+    deltaFocusChinese,
+    deltaFocusEnglish,
     nattoShortHookElementalChinese,
     ...crossInHookContext_1,
     _type: 'Cross in hook 2.'

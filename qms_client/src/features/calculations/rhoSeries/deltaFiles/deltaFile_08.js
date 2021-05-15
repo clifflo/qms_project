@@ -77,9 +77,7 @@ export const getDeltaLongHookContext_5 =
     return deltaLongHookContext_5;
   }
   catch(errorMessage){
-
     console.error(errorMessage);
-
     throw new Error(
       'Cannot get delta long hook context 5.');
   }

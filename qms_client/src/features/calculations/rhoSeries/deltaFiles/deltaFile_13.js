@@ -63,9 +63,8 @@ export const
   (askingDayTwigOpponentEnvelop,
   cheeseCrossInHookContext_2) => {
 
-  console.log('At cheese cross');
-
   try{
+    
     const crossInHookBranchChinese =
       cheeseCrossInHookContext_2
       .crossInHookBranchChinese;

@@ -32,7 +32,7 @@ const deltaLongHookContextMapFunction_2 =
 
   const completeDeltaFocusEnglishSet =
     R.map(
-      R.prop('deltaFocusEnglishName'),
+      R.prop('deltaFocusEnglish'),
       deltaFocusContextSet);
 
   checkNilWithArray(
@@ -41,7 +41,7 @@ const deltaLongHookContextMapFunction_2 =
 
   const duplicatedDeltaFocusEnglishSet =
     R.map(
-      R.prop('deltaFocusEnglishName'),
+      R.prop('deltaFocusEnglish'),
       deltaLongHookContext_1
       .crossInHookContextSet_2);
 
