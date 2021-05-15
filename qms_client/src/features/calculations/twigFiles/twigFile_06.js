@@ -39,10 +39,11 @@ export const getTwigTrunkContextByChinese =
       twigTrunkChinese,
       'Twig trunk chinese');
 
-    const twigTrunkContext = getItemByStringFromList(
-      twigTrunkContextSet,
-      twigTrunkChinese,
-      'twigTrunkChinese');
+    const twigTrunkContext =
+      getItemByStringFromList(
+        twigTrunkContextSet,
+        twigTrunkChinese,
+        'twigTrunkChinese');
 
     if(R.isNil(twigTrunkContext)){
       throw new Error(
