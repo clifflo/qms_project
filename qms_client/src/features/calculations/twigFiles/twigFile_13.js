@@ -38,13 +38,13 @@ const mapFunctionOfTwigHitContext =
     twigHitSecondBranchContext
     .twigBranchEnglish;
 
-  const twigHitChineseSet =
+  const twigHitBranchChineseSet =
   [
     twigHitFirstBranchChinese,
     twigHitSecondBranchChinese
   ];
 
-  const twigHitEnglishSet =
+  const twigHitBranchEnglishSet =
   [
     twigHitFirstBranchEnglish,
     twigHitSecondBranchEnglish
@@ -52,8 +52,8 @@ const mapFunctionOfTwigHitContext =
 
   return {
     _type: 'Twig hit context',
-    twigHitChineseSet,
-    twigHitEnglishSet
+    twigHitBranchChineseSet,
+    twigHitBranchEnglishSet
   };
 }
 

@@ -1,11 +1,20 @@
 import * as R from 'ramda';
 import {
+  getDeltaLongHookContext_7
+} from './deltaFile_12';
+import {
   mapFunctionForWheatCrossInHookContext_3,
-  mapFunctionForCheeseCrossInHookContext_3
+  mapFunctionForCheeseCrossInHookContext_3,
 } from './deltaFile_13';
+import {
+  getTwigFlushOpponentOfChinese,
+  getTwigHitOpponentOfChinese,
+  getTwigSmallAlloyOpponentOfChinese,
+  getTwigPauseOpponentOfChinese
+} from './twigHubCloneOfDelta';
 
-export const
-  buildDeltaLongHookContext_8 =
+
+const buildDeltaLongHookContext_8 =
   deltaLongHookContext_7 => {
 
   const askingDayBranchChinese =
@@ -31,7 +40,7 @@ export const
   const askingDayTwigOpponentEnvelop = {
     _type: 'Asking day twig opponent envelop',
     askingDayFlushOpponentChinese,
-    askingDayHitOpponentChinese
+    askingDayHitOpponentChinese,
     askingDayPauseOpponentChinese,
     askingDaySmallAlloyOpponentChinese
   };
@@ -64,6 +73,23 @@ export const
       loadedMapFunctionForCheeseCrossInHookContext_3,
       cheeseCrossInHookContextSet_2);
 
-  
+  const rawDeltaLongHookContext_8 =
+    R.compose(
+      R.dissoc('wheatCrossInHookContextSet_3'),
+      R.dissoc('cheeseCrossInHookContextSet_3'))
+    (deltaLongHookContext_7);
 
+  const finalDeltaLongHookContext_8 = {
+    ...rawDeltaLongHookContext_8,
+    wheatCrossInHookContextSet_3,
+    cheeseCrossInHookContextSet_3,
+    _type: 'Delta long hook context 8'
+  };
+
+  return finalDeltaLongHookContext_8;
 }
+
+export const getDeltaLongHookContext_8 =
+  R.compose(
+    buildDeltaLongHookContext_8,
+    getDeltaLongHookContext_7);

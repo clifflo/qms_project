@@ -14,52 +14,52 @@ import {
 const mapFunctionOfTwigBranchPauseContext =
   twigPauseHint => {
 
-  const twigPauseFirstPartIndex =
+  const twigPauseFirstBranchIndex =
     twigPauseHint * 2;
 
-  const twigPauseSecondPartIndex =
-    twigPauseFirstPartIndex - 3;
+  const twigPauseSecondBranchIndex =
+    twigPauseFirstBranchIndex - 3;
 
-  const twigPauseFirstPartContext =
+  const twigPauseFirstBranchContext =
     getTwigBranchContextByIndex(
-      twigPauseFirstPartIndex);
+      twigPauseFirstBranchIndex);
 
-  const twigPauseSecondPartContext =
+  const twigPauseSecondBranchContext =
     getTwigBranchContextByIndex(
-      twigPauseSecondPartIndex);
+      twigPauseSecondBranchIndex);
 
-  const twigPauseFirstPartChinese =
-    twigPauseFirstPartContext
+  const twigPauseFirstBranchChinese =
+    twigPauseFirstBranchContext
     .twigBranchChinese;
 
-  const twigPauseSecondPartChinese =
-    twigPauseSecondPartContext
+  const twigPauseSecondBranchChinese =
+    twigPauseSecondBranchContext
     .twigBranchChinese;
 
-  const twigPauseFirstPartEnglish =
-    twigPauseFirstPartContext
+  const twigPauseFirstBranchEnglish =
+    twigPauseFirstBranchContext
     .twigBranchEnglish;
 
-  const twigPauseSecondPartEnglish =
-    twigPauseSecondPartContext
+  const twigPauseSecondBranchEnglish =
+    twigPauseSecondBranchContext
     .twigBranchEnglish;
 
-  const twigPauseChineseSet =
+  const twigPauseBranchChineseSet =
   [
-    twigPauseFirstPartChinese,
-    twigPauseSecondPartChinese
+    twigPauseFirstBranchChinese,
+    twigPauseSecondBranchChinese
   ];
 
-  const twigPauseEnglishSet =
+  const twigPauseBranchEnglishSet =
   [
-    twigPauseFirstPartEnglish,
-    twigPauseSecondPartEnglish
+    twigPauseFirstBranchEnglish,
+    twigPauseSecondBranchEnglish
   ];
 
   return {
     _type: 'Twig pause context',
-    twigPauseChineseSet,
-    twigPauseEnglishSet
+    twigPauseBranchChineseSet,
+    twigPauseBranchEnglishSet
   };
 }
 

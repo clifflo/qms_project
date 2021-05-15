@@ -6,6 +6,9 @@ import {
   getTwigSmallAlloyOpponentOfChinese,
   getTwigPauseOpponentOfChinese
 } from './twigHubCloneOfDelta';
+import {
+  checkNilWithTypedObject
+} from './utilityHubCloneOfDelta'
 
 export const
   mapFunctionForWheatCrossInHookContext_3 =
@@ -22,7 +25,7 @@ export const
 
   const {
     askingDayFlushOpponentChinese,
-    askingDayHitOpponentChinese
+    askingDayHitOpponentChinese,
     askingDayPauseOpponentChinese,
     askingDaySmallAlloyOpponentChinese
   } = askingDayTwigOpponentEnvelop;
@@ -70,7 +73,7 @@ export const
 
   const {
     askingDayFlushOpponentChinese,
-    askingDayHitOpponentChinese
+    askingDayHitOpponentChinese,
     askingDayPauseOpponentChinese,
     askingDaySmallAlloyOpponentChinese
   } = askingDayTwigOpponentEnvelop;

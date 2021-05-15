@@ -58,7 +58,7 @@ const mapFunctionOfTwigSmallAlloySentence =
   ];
 
   return {
-    _type: 'Twig branch small alloy context',
+    _type: 'Twig small alloy context',
     twigSmallAlloyElementalChinese,
     twigSmallAlloyElementalEnglish,
     twigSmallAlloyBranchChineseSet,

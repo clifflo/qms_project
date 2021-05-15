@@ -10,7 +10,7 @@ import {
 
 export const twigElementalContextSet = [
   {
-    _type: 'Twig elemental co生肖ntext',
+    _type: 'Twig elemental context',
     twigElementalIndex: 0,
     twigElementalChinese: '五行金',
     twigElementalEnglish:
