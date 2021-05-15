@@ -7,12 +7,9 @@ import {
   getTwigPauseOpponentOfChinese
 } from './twigHubCloneOfDelta';
 
-export const buildDeltaLongHookContext_8 =
-  deltaLongHookContext_7 => {
+const mapFunctionForWheatCrossInHook_3 =
+  (askingDayTwigOpponentEnvelop,
+  wheatCrossInHookSet_2) => {
 
-  const askingDayBranchChinese =
-    deltaLongHookContext_7
-    .askingDayBranchChinese;
 
-  
 }
