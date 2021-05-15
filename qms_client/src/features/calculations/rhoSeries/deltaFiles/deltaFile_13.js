@@ -7,9 +7,98 @@ import {
   getTwigPauseOpponentOfChinese
 } from './twigHubCloneOfDelta';
 
-const mapFunctionForWheatCrossInHook_3 =
+export const
+  mapFunctionForWheatCrossInHookContext_3 =
   (askingDayTwigOpponentEnvelop,
-  wheatCrossInHook_2) => {
+  wheatCrossInHookContext_2) => {
 
-  
+  const crossInHookBranchChinese =
+    wheatCrossInHookContext_2
+    .crossInHookBranchChinese;
+
+  checkNilWithTypedObject(
+    askingDayTwigOpponentEnvelop,
+    'Asking day twig opponent envelop');
+
+  const {
+    askingDayFlushOpponentChinese,
+    askingDayHitOpponentChinese
+    askingDayPauseOpponentChinese,
+    askingDaySmallAlloyOpponentChinese
+  } = askingDayTwigOpponentEnvelop;
+
+  const matchAskingDayFlushOpponent =
+    askingDayFlushOpponentChinese ==
+    crossInHookBranchChinese;
+
+  const matchAskingDayHitOpponent =
+    askingDayHitOpponentChinese ==
+    crossInHookBranchChinese;
+
+  const matchAskingDayPauseOpponent =
+    askingDayPauseOpponentChinese ==
+    crossInHookBranchChinese;
+
+  const matchAskingDaySmallAlloyOpponent =
+    askingDaySmallAlloyOpponentChinese ==
+    crossInHookBranchChinese;
+
+  const wheatCrossInHookContext_3 = {
+    ...wheatCrossInHookContext_2,
+    matchAskingDayFlushOpponent,
+    matchAskingDayHitOpponent,
+    matchAskingDayPauseOpponent,
+    matchAskingDaySmallAlloyOpponent,
+    _type: 'Wheat cross in hook context 3'
+  };
+
+  return wheatCrossInHookContext_3;
+}
+
+export const
+  mapFunctionForWheatCrossInHookContext_3 =
+  (askingDayTwigOpponentEnvelop,
+  cheeseCrossInHookContext_2) => {
+
+  const crossInHookBranchChinese =
+    cheeseCrossInHookContext_2
+    .crossInHookBranchChinese;
+
+  checkNilWithTypedObject(
+    askingDayTwigOpponentEnvelop,
+    'Asking day twig opponent envelop');
+
+  const {
+    askingDayFlushOpponentChinese,
+    askingDayHitOpponentChinese
+    askingDayPauseOpponentChinese,
+    askingDaySmallAlloyOpponentChinese
+  } = askingDayTwigOpponentEnvelop;
+
+  const matchAskingDayFlushOpponent =
+    askingDayFlushOpponentChinese ==
+    crossInHookBranchChinese;
+
+  const matchAskingDayHitOpponent =
+    askingDayHitOpponentChinese ==
+    crossInHookBranchChinese;
+
+  const matchAskingDayPauseOpponent =
+    askingDayPauseOpponentChinese ==
+    crossInHookBranchChinese;
+
+  const matchAskingDaySmallAlloyOpponent =
+    askingDaySmallAlloyOpponentChinese ==
+    crossInHookBranchChinese;
+
+  const cheeseCrossInHookContext_3 = {
+    ...cheeseCrossInHookContext_2,
+    matchAskingDayFlushOpponent,
+    matchAskingDayHitOpponent,
+    matchAskingDayPauseOpponent,
+    matchAskingDaySmallAlloyOpponent,
+    _type: 'Cheese cross in hook context 3'
+  };
+
+  return cheeseCrossInHookContext_3;
 }
