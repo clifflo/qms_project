@@ -19,6 +19,9 @@ export const getDeltaLongHookContext_7 =
   const askingDayTrunkChinese =
     askingDayTwigFullComboChinese[0];
 
+  const askingDayBranchChinese =
+    askingDayTwigFullComboChinese[1];
+
   const deltaLongHookContext_6 =
     getDeltaLongHookContext_6(
       askingDayTrunkChinese,
@@ -65,6 +68,8 @@ export const getDeltaLongHookContext_7 =
   const finalDeltaLongHookContext_7 = {
     ...rawDeltaLongHookContext_7,
     askingDayTwigFullComboChinese,
+    askingDayTrunkChinese,
+    askingDayBranchChinese,
     askingDayTwigComboSetVoidBranchChineseList,
     wheatCrossInHookSet_2,
     cheeseCrossInHookSet_2,
