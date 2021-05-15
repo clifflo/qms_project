@@ -30,9 +30,9 @@ export const
     askingDaySmallAlloyOpponentChinese
   };
 
-  const wheatCrossInHookSet_2 =
+  const wheatCrossInHookContextSet_2 =
     deltaLongHookContext_7
-    .wheatCrossInHookSet_2;
+    .wheatCrossInHookContextSet_2;
 
 
 }

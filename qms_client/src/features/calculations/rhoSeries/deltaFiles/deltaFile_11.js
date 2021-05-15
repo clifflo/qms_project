@@ -2,13 +2,20 @@ import * as R from 'ramda';
 import {
   getDeltaLongHookContext_6
 } from './deltaFile_10';
+import {
+  checkNilWithTypedObject
+} from './utilityHubCloneOfDelta';
 
-export const mapFunctionForWheatCrossInHook_2 =
+export const mapFunctionForWheatCrossInHookContext_2 =
   (askingDayTwigComboSetVoidBranchList,
-  wheatCrossInHook_1) => {
+  wheatCrossInHookContext_1) => {
+
+  checkNilWithTypedObject(
+    wheatCrossInHookContext_1,
+    'Wheat cross in hook context 1');
 
   const wheatCrossInHookBranchChinese =
-    wheatCrossInHook_1
+    wheatCrossInHookContext_1
     .crossInHookBranchChinese;
 
   const isCrossInHookBranchAtVoid =
@@ -17,17 +24,18 @@ export const mapFunctionForWheatCrossInHook_2 =
       askingDayTwigComboSetVoidBranchList);
 
   return {
-    ...wheatCrossInHook_1,
+    ...wheatCrossInHookContext_1,
     isCrossInHookBranchAtVoid
   }
 }
 
-export const mapFunctionForCheeseCrossInHook_2 =
+export const
+  mapFunctionForCheeseCrossInHookContext_2 =
   (askingDayTwigComboSetVoidBranchList,
-  cheeseCrossInHook_1) => {
+  cheeseCrossInHookContext_1) => {
 
   const cheeseCrossInHookBranchChinese =
-    cheeseCrossInHook_1
+    cheeseCrossInHookContext_1
     .crossInHookBranchChinese;
 
   const isCrossInHookBranchAtVoid =
@@ -36,7 +44,7 @@ export const mapFunctionForCheeseCrossInHook_2 =
       askingDayTwigComboSetVoidBranchList);
 
   return {
-    ...cheeseCrossInHook_1,
+    ...cheeseCrossInHookContext_1,
     isCrossInHookBranchAtVoid
   }
 }

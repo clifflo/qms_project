@@ -64,14 +64,14 @@ export const getDeltaLongHookContext_6 =
         loadedMapFunctionForBothCrossInHook,
         R.range(0, 6));
 
-    const wheatCrossInHookSet_1 =
+    const wheatCrossInHookContextSet_1 =
       R.map(
-        R.prop('wheatCrossInHook_1'),
+        R.prop('wheatCrossInHookContext_1'),
         combinedCrossInHookSet);
 
-    const cheeseCrossInHookSet_1 =
+    const cheeseCrossInHookContextSet_1 =
       R.map(
-        R.prop('cheeseCrossInHook_1'),
+        R.prop('cheeseCrossInHookContext_1'),
         combinedCrossInHookSet);
 
     const deltaLongHookContext_6 = {
@@ -82,8 +82,8 @@ export const getDeltaLongHookContext_6 =
         finalDeltaWheatHookContext,
       deltaCheeseHookContext:
         finalDeltaCheeseHookContext,
-      wheatCrossInHookSet_1,
-      cheeseCrossInHookSet_1,
+      wheatCrossInHookContextSet_1,
+      cheeseCrossInHookContextSet_1,
       _type: 'Delta long hook context 6'
     };
 
