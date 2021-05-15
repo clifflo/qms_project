@@ -6,7 +6,8 @@ import {
   checkNilWithTypedObject
 } from './utilityHubCloneOfDelta';
 
-export const mapFunctionForWheatCrossInHookContext_2 =
+export const
+  mapFunctionForWheatCrossInHookContext_2 =
   (askingDayTwigComboSetVoidBranchList,
   wheatCrossInHookContext_1) => {
 

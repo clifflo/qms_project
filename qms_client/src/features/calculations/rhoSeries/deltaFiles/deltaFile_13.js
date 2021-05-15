@@ -63,45 +63,54 @@ export const
   (askingDayTwigOpponentEnvelop,
   cheeseCrossInHookContext_2) => {
 
-  const crossInHookBranchChinese =
-    cheeseCrossInHookContext_2
-    .crossInHookBranchChinese;
+  console.log('At cheese cross');
 
-  checkNilWithTypedObject(
-    askingDayTwigOpponentEnvelop,
-    'Asking day twig opponent envelop');
+  try{
+    const crossInHookBranchChinese =
+      cheeseCrossInHookContext_2
+      .crossInHookBranchChinese;
 
-  const {
-    askingDayFlushOpponentChinese,
-    askingDayHitOpponentChinese,
-    askingDayPauseOpponentChinese,
-    askingDaySmallAlloyOpponentChinese
-  } = askingDayTwigOpponentEnvelop;
+    checkNilWithTypedObject(
+      askingDayTwigOpponentEnvelop,
+      'Asking day twig opponent envelop');
 
-  const matchAskingDayFlushOpponent =
-    askingDayFlushOpponentChinese ==
-    crossInHookBranchChinese;
+    const {
+      askingDayFlushOpponentChinese,
+      askingDayHitOpponentChinese,
+      askingDayPauseOpponentChinese,
+      askingDaySmallAlloyOpponentChinese
+    } = askingDayTwigOpponentEnvelop;
 
-  const matchAskingDayHitOpponent =
-    askingDayHitOpponentChinese ==
-    crossInHookBranchChinese;
+    const matchAskingDayFlushOpponent =
+      askingDayFlushOpponentChinese ==
+      crossInHookBranchChinese;
 
-  const matchAskingDayPauseOpponent =
-    askingDayPauseOpponentChinese ==
-    crossInHookBranchChinese;
+    const matchAskingDayHitOpponent =
+      askingDayHitOpponentChinese ==
+      crossInHookBranchChinese;
 
-  const matchAskingDaySmallAlloyOpponent =
-    askingDaySmallAlloyOpponentChinese ==
-    crossInHookBranchChinese;
+    const matchAskingDayPauseOpponent =
+      askingDayPauseOpponentChinese ==
+      crossInHookBranchChinese;
 
-  const cheeseCrossInHookContext_3 = {
-    ...cheeseCrossInHookContext_2,
-    matchAskingDayFlushOpponent,
-    matchAskingDayHitOpponent,
-    matchAskingDayPauseOpponent,
-    matchAskingDaySmallAlloyOpponent,
-    _type: 'Cheese cross in hook context 3'
-  };
+    const matchAskingDaySmallAlloyOpponent =
+      askingDaySmallAlloyOpponentChinese ==
+      crossInHookBranchChinese;
 
-  return cheeseCrossInHookContext_3;
+    const cheeseCrossInHookContext_3 = {
+      ...cheeseCrossInHookContext_2,
+      matchAskingDayFlushOpponent,
+      matchAskingDayHitOpponent,
+      matchAskingDayPauseOpponent,
+      matchAskingDaySmallAlloyOpponent,
+      _type: 'Cheese cross in hook context 3'
+    };
+
+    return cheeseCrossInHookContext_3;
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throw new Error(
+      'Cannot get cheese cross in hook context 3.');
+  }
 }
