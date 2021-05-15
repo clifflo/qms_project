@@ -7,7 +7,8 @@ import {
   getTwigBranchContextByIndex
 } from './twigMiniHub_02';
 import {
-  checkNilWithString
+  checkNilWithString,
+  checkNilWithTypedObject
 } from './utilityHubCloneOfTwig';
 
 const mapFunctionOfTwigFlushContext =
@@ -88,7 +89,7 @@ export const getTwigFlushOpponentOfChinese =
 
   const matchTwigFlushOpponentChinese =
     R.reject(
-      R.equal(twigFlushSelfChinese),
+      R.equals(twigFlushSelfChinese),
       matchedTwigFlushContext
       .twigFlushBranchChineseSet)[0];
 

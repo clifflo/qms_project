@@ -2,6 +2,10 @@ import * as R from 'ramda';
 import {
   getTwigBranchContextByChinese
 } from './twigMiniHub_02';
+import {
+  checkNilWithString,
+  checkNilWithTypedObject
+} from './utilityHubCloneOfTwig';
 
 const rawTwigArrestmentDictionary = {
   '寅': '巳',
@@ -50,3 +54,8 @@ const mapFunctionForTwigArrestmentPair =
 
   return twigArrestmentContext;
 }
+
+export const twigArrestmentContextSet =
+  R.map(
+    mapFunctionForTwigArrestmentPair,
+    pairedTwigArrestmentDictionary);

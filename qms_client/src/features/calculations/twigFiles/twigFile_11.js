@@ -6,7 +6,8 @@ import {
   getTwigBranchContextByChinese
 } from './twigMiniHub_02';
 import {
-  checkNilWithString
+  checkNilWithString,
+  checkNilWithTypedObject
 } from './utilityHubCloneOfTwig';
 
 const twigSmallAlloyParagraph =
@@ -100,7 +101,7 @@ export const getTwigSmallAlloyOpponentOfChinese =
 
   const matchTwigSmallAlloyOpponentChinese =
     R.reject(
-      R.equal(twigSmallAlloySelfChinese),
+      R.equals(twigSmallAlloySelfChinese),
       matchedTwigSmallAlloyContext
       .twigSmallAlloyBranchChineseSet)[0];
 

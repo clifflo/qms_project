@@ -7,7 +7,8 @@ import {
   getTwigBranchContextByIndex
 } from './twigMiniHub_02';
 import {
-  checkNilWithString
+  checkNilWithString,
+  checkNilWithTypedObject
 } from './utilityHubCloneOfTwig';
 
 const mapFunctionOfTwigBranchPauseContext =
@@ -94,7 +95,7 @@ export const getTwigPauseOpponentOfChinese =
 
   const matchTwigPauseOpponentChinese =
     R.reject(
-      R.equal(twigPauseSelfChinese),
+      R.equals(twigPauseSelfChinese),
       matchedTwigPauseContext
       .twigPauseBranchChineseSet)[0];
 

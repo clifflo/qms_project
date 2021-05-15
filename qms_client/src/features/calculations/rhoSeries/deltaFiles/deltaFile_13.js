@@ -9,7 +9,7 @@ import {
 
 const mapFunctionForWheatCrossInHook_3 =
   (askingDayTwigOpponentEnvelop,
-  wheatCrossInHookSet_2) => {
+  wheatCrossInHook_2) => {
 
-
+  
 }
