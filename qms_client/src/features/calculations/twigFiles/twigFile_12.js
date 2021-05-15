@@ -60,3 +60,41 @@ export const twigFlushContextSet =
   R.map(
     mapFunctionOfTwigFlushContext,
     R.range(0, 6));
+
+export const getTwigFlushOpponentOfChinese =
+  twigFlushSelfChinese => {
+
+  checkNilWithString(
+    twigFlushSelfChinese,
+    'Twig flush self chinese');
+
+  const twigFlushContextFindFunction =
+    twigFlushContext => {
+    return R.includes(
+      twigFlushSelfChinese,
+      twigFlushContext
+      .twigFlushBranchChineseSet);
+  }
+
+  const matchedTwigFlushContext =
+    R.find(
+      twigFlushContextFindFunction,
+      twigFlushContextSet);
+
+  checkNilWithTypedObject(
+    matchedTwigFlushContext,
+    'Matched twig flush context',
+    'Twig flush context');
+
+  const matchTwigFlushOpponentChinese =
+    R.reject(
+      R.equal(twigFlushSelfChinese),
+      matchedTwigFlushContext
+      .twigFlushBranchChineseSet)[0];
+
+  checkNilWithString(
+    matchTwigFlushOpponentChinese,
+    'Match twig flush opponent chinese');
+
+  return matchTwigFlushOpponentChinese;
+}

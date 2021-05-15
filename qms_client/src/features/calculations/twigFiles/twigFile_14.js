@@ -66,3 +66,41 @@ export const twigPauseContextSet =
   R.map(
     mapFunctionOfTwigBranchPauseContext,
     R.range(0, 6));
+
+export const getTwigPauseOpponentOfChinese =
+  twigPauseSelfChinese => {
+
+  checkNilWithString(
+    twigPauseSelfChinese,
+    'Twig pause self chinese');
+
+  const twigPauseContextFindFunction =
+    twigPauseContext => {
+    return R.includes(
+      twigPauseSelfChinese,
+      twigPauseContext
+      .twigPauseBranchChineseSet);
+  }
+
+  const matchedTwigPauseContext =
+    R.find(
+      twigPauseContextFindFunction,
+      twigPauseContextSet);
+
+  checkNilWithTypedObject(
+    matchedTwigPauseContext,
+    'Matched twig pause context',
+    'Twig pause context');
+
+  const matchTwigPauseOpponentChinese =
+    R.reject(
+      R.equal(twigPauseSelfChinese),
+      matchedTwigPauseContext
+      .twigPauseBranchChineseSet)[0];
+
+  checkNilWithString(
+    matchTwigPauseOpponentChinese,
+    'Match twig pause opponent chinese');
+
+  return matchTwigPauseOpponentChinese;
+}

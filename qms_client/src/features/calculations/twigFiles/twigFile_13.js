@@ -60,3 +60,41 @@ export const twigHitContextSet =
   R.map(
     mapFunctionOfTwigHitContext,
     R.range(0, 6));
+
+export const getTwigHitOpponentOfChinese =
+  twigHitSelfChinese => {
+
+  checkNilWithString(
+    twigHitSelfChinese,
+    'Twig hit self chinese');
+
+  const twigHitContextFindFunction =
+    twigHitContext => {
+    return R.includes(
+      twigHitSelfChinese,
+      twigHitContext
+      .twigHitBranchChineseSet);
+  }
+
+  const matchedTwigHitContext =
+    R.find(
+      twigHitContextFindFunction,
+      twigHitContextSet);
+
+  checkNilWithTypedObject(
+    matchedTwigHitContext,
+    'Matched twig hit context',
+    'Twig hit context');
+
+  const matchTwigHitOpponentChinese =
+    R.reject(
+      R.equal(twigHitSelfChinese),
+      matchedTwigHitContext
+      .twigHitBranchChineseSet)[0];
+
+  checkNilWithString(
+    matchTwigHitOpponentChinese,
+    'Match twig hit opponent chinese');
+
+  return matchTwigHitOpponentChinese;
+}

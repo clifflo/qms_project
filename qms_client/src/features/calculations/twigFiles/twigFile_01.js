@@ -10,34 +10,39 @@ import {
 
 export const twigElementalContextSet = [
   {
-    _type: 'Twig elemental context',
+    _type: 'Twig elemental co生肖ntext',
     twigElementalIndex: 0,
     twigElementalChinese: '五行金',
-    twigElementalEnglish: 'Twig elemental metal'
+    twigElementalEnglish:
+      'Twig elemental metal'
   },
   {
     _type: 'Twig elemental context',
     twigElementalIndex: 1,
     twigElementalChinese: '五行水',
-    twigElementalEnglish: 'Twig elemental water'
+    twigElementalEnglish:
+      'Twig elemental water'
   },
   {
     _type: 'Twig elemental context',
     twigElementalIndex: 2,
     twigElementalChinese: '五行木',
-    twigElementalEnglish: 'Twig elemental wood'
+    twigElementalEnglish:
+      'Twig elemental wood'
   },
   {
     _type: 'Twig elemental context',
     twigElementalIndex: 3,
     twigElementalChinese: '五行火',
-    twigElementalEnglish: 'Twig elemental fire'
+    twigElementalEnglish:
+      'Twig elemental fire'
   },
   {
     _type: 'Twig elemental context',
     twigElementalIndex: 4,
     twigElementalChinese: '五行土',
-    twigElementalEnglish: 'Twig elemental earth'
+    twigElementalEnglish:
+      'Twig elemental earth'
   }
 ];
 
@@ -61,7 +66,8 @@ export const getTwigElementalContextByIndex =
   catch(errorMessage){
     console.error(errorMessage);
     throw new Error(
-      'Cannot get twig elemental context by index.');
+      'Cannot get twig elemental '
+      + 'context by index.');
   }
 
 }
@@ -72,7 +78,7 @@ export const
 
   checkNilWithString(
     twigElementalChinese,
-    'Elemental Chinese');
+    'Twig elemental Chinese');
 
   const twigElementalContext =
     getItemByStringFromList(
