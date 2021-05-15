@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import {
   checkNilWithString,
   checkNilWithArray,
-  getItemByStringFromList
+  findItemByStringFromList
 } from './utilityHubCloneOfDelta';
 import {
   deltaFocusContextSet
@@ -19,7 +19,7 @@ export const getDeltaLongHookContext_1 =
     'Long hook name');
 
   const deltaLongHookContext_1 =
-    getItemByStringFromList(
+    findItemByStringFromList(
       deltaLongHookContextSet_1,
       longHookName,
       'longHookName');

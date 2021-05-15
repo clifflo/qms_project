@@ -9,7 +9,7 @@ import {
 import {
   checkNilWithString,
   checkNilWithNumber,
-  getItemByStringFromList,
+  findItemByStringFromList,
   getItemByNumberFromList
 } from './utilityHubShadowOfRho';
 
@@ -23,7 +23,7 @@ export const
       'Long hook name');
 
     const rhoLongHookContext_1 =
-      getItemByStringFromList(
+      findItemByStringFromList(
         rhoLongHookContextSet_1,
         longHookName,
         'longHookName');
@@ -47,7 +47,7 @@ export const getRhoLongHookContextByName_2 =
       'Long hook name');
 
     const rhoLongHookContext_2 =
-      getItemByStringFromList(
+      findItemByStringFromList(
         rhoLongHookContextSet_2,
         longHookName,
         'longHookName');

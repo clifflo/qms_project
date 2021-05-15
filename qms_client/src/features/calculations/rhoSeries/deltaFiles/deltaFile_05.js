@@ -5,7 +5,7 @@ import {
   checkNilWithArray,
   checkNilWithString,
   checkNilWithTypedObject,
-  getItemByStringFromList
+  findItemByStringFromList
 } from './utilityHubCloneOfDelta';
 import {
   getTwigBranchContextByChinese
@@ -95,7 +95,7 @@ export const getDeltaLongHookContext_4 =
     longHookName,
     'Long hook name');
 
-  return getItemByStringFromList(
+  return findItemByStringFromList(
     deltaLongHookContextSet_4,
     longHookName,
     'longHookName');

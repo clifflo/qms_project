@@ -4,7 +4,7 @@ import {
   getIndexFromWordList,
   checkNilWithString,
   checkNilWithNumber,
-  getItemByStringFromList
+  findItemByStringFromList
 } from '../../utilityFiles/utilityHub';
 import {
   shortHookContextSet
@@ -36,7 +36,7 @@ export const getShortHookContextByAlternative =
   )
 
   const shortHookContext =
-    getItemByStringFromList(
+    findItemByStringFromList(
       shortHookContextSet,
       genericShortHookAlternative,
       'genericShortHookAlternative');
@@ -65,7 +65,7 @@ export const bakedNattoSet = buildBakedNattoSet();
 export const getBakedNattoByShortHookComplexOriginal =
   genericShortHookComplexOriginal => {
 
-  return getItemByStringFromList(
+  return findItemByStringFromList(
     bakedNattoSet,
     genericShortHookComplexOriginal,
     'genericShortHookComplexOriginal');

@@ -3,7 +3,7 @@ import * as RA from 'ramda-adjunct';
 import {
   checkNilWithString,
   checkNilWithArray,
-  getItemByStringFromList,
+  findItemByStringFromList,
   checkNilWithTypedObject
 } from './utilityHubCloneOfDelta';
 import {
@@ -65,7 +65,7 @@ export const getDeltaLongHookContext_5 =
       'Delta long hook context set 5');
 
     const deltaLongHookContext_5 =
-      getItemByStringFromList(
+      findItemByStringFromList(
         deltaLongHookContextSet_5,
         wheatHookName,
         'longHookName');

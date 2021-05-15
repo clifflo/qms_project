@@ -4,7 +4,7 @@ import {
   checkNilWithNumber,
   checkNilWithString,
   getCyclicItemFromList,
-  getItemByStringFromList
+  findItemByStringFromList
 } from './utilityHubCloneOfTwig';
 import {
   twigTrunkContextSet
@@ -40,7 +40,7 @@ export const getTwigTrunkContextByChinese =
       'Twig trunk chinese');
 
     const twigTrunkContext =
-      getItemByStringFromList(
+      findItemByStringFromList(
         twigTrunkContextSet,
         twigTrunkChinese,
         'twigTrunkChinese');

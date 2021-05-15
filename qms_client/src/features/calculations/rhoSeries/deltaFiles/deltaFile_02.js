@@ -6,7 +6,7 @@ import {
 import {
   checkNilWithString,
   checkNilWithArray,
-  getItemByStringFromList
+  findItemByStringFromList
 } from './utilityHubCloneOfDelta';
 import {
   deltaFocusContextSet
@@ -39,7 +39,7 @@ const crossInHookContextMapFunction_2 =
   )
 
   const deltaFocusContext =
-    getItemByStringFromList(
+    findItemByStringFromList(
       deltaFocusContextSet,
       deltaFocusElementalRelationEnglish,
       'deltaFocusElementalRelationEnglish');

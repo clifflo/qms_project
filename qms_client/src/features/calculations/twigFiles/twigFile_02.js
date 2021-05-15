@@ -5,7 +5,7 @@ import {
   checkNilWithNumber,
   isItemExistByStringFromList,
   getCyclicItemFromList,
-  getItemByStringFromList
+  findItemByStringFromList
 } from '../utilityFiles/utilityHub';
 
 export const twigTrunkContextSet = [

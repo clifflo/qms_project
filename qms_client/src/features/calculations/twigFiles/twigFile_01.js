@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   getCyclicItemFromList,
-  getItemByStringFromList,
+  findItemByStringFromList,
   getIndexFromString,
   checkNilWithString,
   checkNilWithNumber
@@ -81,7 +81,7 @@ export const
     'Twig elemental Chinese');
 
   const twigElementalContext =
-    getItemByStringFromList(
+    findItemByStringFromList(
       twigElementalContextSet,
       twigElementalChinese,
       'twigElementalChinese'

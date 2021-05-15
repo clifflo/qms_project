@@ -50,7 +50,7 @@ export const getItemByNumberFromList =
   }
 }
 
-export const getItemByStringFromList =
+export const findItemByStringFromList =
   (objectList,
   stringPropValue,
   propForString) => {
@@ -82,4 +82,4 @@ export const getItemByStringFromList =
 export const isItemExistByStringFromList =
   R.compose(
     RA.isNotNil,
-    R.curry(getItemByStringFromList));
+    R.curry(findItemByStringFromList));

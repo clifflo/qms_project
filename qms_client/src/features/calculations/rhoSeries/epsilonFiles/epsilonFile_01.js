@@ -1,27 +1,32 @@
 import * as R from 'ramda';
+import {
+  findItemByStringFromList
+} from './utilityHubCloneOfEpsilon';
 
-export const examineDeltaFocusToRhoJack =
-  (sourceDeltaFocusEnglish,
-  deltaLongHookContext_8,
-  elementalRelationWithDeltaFocusEnglish) => {
+const getEpsilonLongHookContext_1 =
+  deltaWheatHookContext_8 => {
 
-  const wheatRhoJackAtDownwardIndex =
-    deltaLongHookContext_8
-    .deltaWheatHookContext
-    .rhoJackAtDownwardIndex;
+  const {
+    rhoJackAtDownwardIndex,
+    rhoQueenAtDownwardIndex,
+    rhoKingAtDownwardIndex
+  } = deltaWheatHookContext_8;
 
-  const wheatRhoJackCrossContext_3 =
-    deltaLongHookContext_8
-    .wheatCrossInHookContextSet_3
+  const rawEpsilonJackCrossContext =
+    wheatCrossInHookContextSet_3
     [wheatRhoJackAtDownwardIndex];
 
-  const wheatRhoJackCrossBranchElementalChinese =
-    wheatRhoJackCrossContext_3
-    .crossInHookBranchElementalChinese;
+  const rawEpsilonQueenCrossContext =
+    wheatCrossInHookContextSet_3
+    [rhoQueenAtDownwardIndex];
 
-  const wheatCrossWithSourceDeltaFocusEnglish =
-    R.find(
-      R.propEq('deltaFocusEnglish'),
-      sourceDeltaFocusEnglish)
+  const rawEpsilonKingCrossContext =
+    wheatCrossInHookContextSet_3
+      [rhoKingAtDownwardIndex];
 
+  const rawEpsilonParentFocusCrossContextSet =
+    findItemByStringFromList(
+      wheatCrossInHookContextSet_3,
+      'Delta focus parent',
+      'deltaFocusEnglish');
 }

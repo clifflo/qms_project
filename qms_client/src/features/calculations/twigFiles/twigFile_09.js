@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import {
-  getItemByStringFromList,
+  findItemByStringFromList,
   getCyclicItemFromList,
   checkNilWithTypedObject,
   checkNilWithNumber
@@ -42,7 +42,7 @@ const mapFunctionOfTwigChosenTypeOneFinalEnvelop =
   twigChosenSourceBranchElementalEnglish => {
 
   const twigChosenTypeOneRawEnvelop =
-    getItemByStringFromList(
+    findItemByStringFromList(
       twigChosenTypeOneRawEnvelopSet,
       twigChosenSourceBranchElementalEnglish,
       'twigChosenBranchElementalEnglish');
