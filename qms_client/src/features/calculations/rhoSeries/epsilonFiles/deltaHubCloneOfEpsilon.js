@@ -1,1 +1,1 @@
-export * from '../deltaHubCloneOfSeries';
+export * from '../deltaHubCloneForSeries';

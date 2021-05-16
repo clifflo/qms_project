@@ -1,2 +1,3 @@
 export * from './rhoHubCloneForSeries';
-export * from './deltaHubCloneOfSeries';
+export * from './deltaHubCloneForSeries';
+export * from './epsilonHubCloneForSeries'
