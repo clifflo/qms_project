@@ -1,8 +1,8 @@
 import * as R from 'ramda';
 
 const getEpsilonFocusFaceRelation =
-  (deltaFocusElementalChinese,
-  rhoFaceElementalChinese) => {
+  (epsilonFocusCrossContextSet,
+  epsilonFaceCrossContext) => {
 
 
 }
@@ -15,19 +15,11 @@ const buildEpsilonDualLongHooksContext_3 =
     epsilonEnvelop_2
   } = epsilonDualLongHooksContext_2;
 
-  const {
-    epsilonJackCrossContext,
-    epsilonQueenCrossContext,
-    epsilonKingCrossContext
-  } = epsilonEnvelop_1;
+  const epsilonEnvelopValues_1 =
+    R.values(epsilonEnvelop_1);
 
-  const {
-    epsilonParentFocusCrossContextSet,
-    epsilonSonFocusCrossContextSet,
-    epsilonGhostFocusCrossContextSet,
-    epsilonMoneyFocusCrossContextSet,
-    epsilonBrotherFocusCrossContextSet
-  } = epsilonEnvelop_2;
+  const epsilonEnvelopValues_2 =
+    R.values(epsilonEnvelop_2);
 
 
 

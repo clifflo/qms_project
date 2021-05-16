@@ -58,7 +58,8 @@ const buildEpsilonDualLongHooksContext_1 =
 
     const finalEpsilonJackCrossContext = {
       ...rawEpsilonJackCrossContext,
-      _type: 'Epsilon face cross context'
+      _type: 'Epsilon face cross context',
+      epsilonFaceType: 'Epsilon jack'
     };
 
     const rawEpsilonQueenCrossContext =
@@ -72,7 +73,8 @@ const buildEpsilonDualLongHooksContext_1 =
 
     const finalEpsilonQueenCrossContext = {
       ...rawEpsilonQueenCrossContext,
-      _type: 'Epsilon face cross context'
+      _type: 'Epsilon face cross context',
+      epsilonFaceType: 'Epsilon queen'
     };
 
     const rawEpsilonKingCrossContext =
@@ -86,7 +88,8 @@ const buildEpsilonDualLongHooksContext_1 =
 
     const finalEpsilonKingCrossContext = {
       ...rawEpsilonKingCrossContext,
-      _type: 'Epsilon face cross context'
+      _type: 'Epsilon face cross context',
+      epsilonFaceType: 'Epsilon king'
     };
 
     // Please be noted that I only consider
