@@ -1,11 +1,24 @@
 import * as R from 'ramda';
 
-const getEpsilonFocusFaceRelation =
-  (epsilonFocusCrossContextSet,
-  epsilonFaceCrossContext) => {
+const getEpsilonFocusFaceRelationFunction_1 =
+  (epsilonFaceCrossContext,
+  epsilonFocusCrossContextSet) => {
 
 
 }
+
+const getEpsilonFocusFaceRelationFunction_2 =
+  epsilonFaceCrossContext => {
+
+  const loadedGetEpsilonFocusFaceRelationFunction_1 =
+    R.curry
+    (getEpsilonFocusFaceRelationFunction_1)
+    (epsilonFaceCrossContext);
+
+
+
+}
+
 
 const buildEpsilonDualLongHooksContext_3 =
   epsilonDualLongHooksContext_2 => {
