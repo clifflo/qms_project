@@ -7,6 +7,6 @@ import {
 export default function RhoGui() {
   return <JSONTree
     data={getEpsilonDualLongHooksContext_2(
-      '丙子', '純坤', '歸妹'
+      '丙子', '隨', '歸妹'
     )}/>
 }

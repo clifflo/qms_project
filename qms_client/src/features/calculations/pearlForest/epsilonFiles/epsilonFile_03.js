@@ -1,35 +1,34 @@
-export const examineDeltaFocusToRhoFace =
-  (sourceDeltaFocusEnglish,
-  rhoFaceType,
-  expectedElementalRelation,
-  deltaDualLongHooksContext_3) => {
+import * as R from 'ramda';
+
+const getEpsilonFocusFaceRelation =
+  (deltaFocusElementalChinese,
+  rhoFaceElementalChinese) => {
+
+
+}
+
+const buildEpsilonDualLongHooksContext_3 =
+  epsilonDualLongHooksContext_2 => {
 
   const {
-    wheatCrossInHookContextSet_3,
-    deltaWheatHookContext_8
-  } = deltaDualLongHooksContext_3;
+    epsilonEnvelop_1,
+    epsilonEnvelop_2
+  } = epsilonDualLongHooksContext_2;
 
-  const wheatRhoJackAtDownwardIndex =
-    deltaWheatHookContext_8
-    .rhoJackAtDownwardIndex;
+  const {
+    epsilonJackCrossContext,
+    epsilonQueenCrossContext,
+    epsilonKingCrossContext
+  } = epsilonEnvelop_1;
 
-  const wheatRhoJackCrossContext_3 =
-    wheatCrossInHookContextSet_3
-    [wheatRhoJackAtDownwardIndex];
+  const {
+    epsilonParentFocusCrossContextSet,
+    epsilonSonFocusCrossContextSet,
+    epsilonGhostFocusCrossContextSet,
+    epsilonMoneyFocusCrossContextSet,
+    epsilonBrotherFocusCrossContextSet
+  } = epsilonEnvelop_2;
 
-  const wheatRhoJackCrossBranchElementalChinese =
-    wheatRhoJackCrossContext_3
-    .crossInHookBranchElementalChinese;
-
-  const focusedWheatCrossContext_3 =
-    R.find(
-      R.propEq('deltaFocusEnglish'),
-      sourceDeltaFocusEnglish,
-      wheatCrossInHookContextSet_3);
-
-  const focusedBranchElementalChinese =
-    focusedWheatCrossContext_3
-    .crossInHookBranchElementalChinese;
 
 
 
