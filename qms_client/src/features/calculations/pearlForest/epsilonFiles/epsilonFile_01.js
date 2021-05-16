@@ -6,11 +6,11 @@ import {
 } from './utilityHubCloneOfEpsilon';
 import {
   isValidDeltaFocusEnglish,
-  getDeltaLongHookContext_8
+  getDeltaDualLongHooksContext_3
 } from './deltaHubCloneOfEpsilon';
 
 const buildEpsilonLongHookContext_1 =
-  deltaLongHookContext_8 => {
+  deltaDualLongHooksContext_3 => {
 
   try{
     const {
@@ -19,7 +19,7 @@ const buildEpsilonLongHookContext_1 =
       rhoKingAtDownwardIndex,
       wheatCrossInHookContextSet_3
     } =
-    deltaLongHookContext_8
+    deltaDualLongHooksContext_3
     .deltaWheatHookContext;
 
     const rawEpsilonJackCrossContext =
@@ -150,4 +150,4 @@ const buildEpsilonLongHookContext_1 =
 export const getEpsilonLongHookContext_1 =
   R.compose(
     buildEpsilonLongHookContext_1,
-    getDeltaLongHookContext_8);
+    getDeltaDualLongHooksContext_3);

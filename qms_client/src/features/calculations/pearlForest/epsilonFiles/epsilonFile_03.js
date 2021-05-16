@@ -2,12 +2,12 @@ export const examineDeltaFocusToRhoFace =
   (sourceDeltaFocusEnglish,
   rhoFaceType,
   expectedElementalRelation,
-  deltaLongHookContext_8) => {
+  deltaDualLongHooksContext_3) => {
 
   const {
     wheatCrossInHookContextSet_3,
     deltaWheatHookContext_8
-  } = deltaLongHookContext_8;
+  } = deltaDualLongHooksContext_3;
 
   const wheatRhoJackAtDownwardIndex =
     deltaWheatHookContext_8

@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import {
-  getDeltaLongHookContext_7
+  getDeltaDualLongHooksContext_2
 } from './deltaFile_12';
 import {
   mapFunctionForWheatCrossInHookContext_3,
@@ -17,13 +17,13 @@ import {
   checkNilWithString
 } from './utilityHubCloneOfDelta';
 
-const buildDeltaLongHookContext_8 =
-  deltaLongHookContext_7 => {
+const buildDeltaDualLongHooksContext_3 =
+  deltaDualLongHooksContext_2 => {
 
   try{
 
     const askingDayBranchChinese =
-      deltaLongHookContext_7
+      deltaDualLongHooksContext_2
       .askingDayBranchChinese;
 
     const askingDayFlushOpponentChinese =
@@ -55,11 +55,11 @@ const buildDeltaLongHookContext_8 =
     };
 
     const wheatCrossInHookContextSet_2 =
-      deltaLongHookContext_7
+      deltaDualLongHooksContext_2
       .wheatCrossInHookContextSet_2;
 
     const cheeseCrossInHookContextSet_2 =
-      deltaLongHookContext_7
+      deltaDualLongHooksContext_2
       .cheeseCrossInHookContextSet_2;
 
     checkNilWithArray(
@@ -90,21 +90,21 @@ const buildDeltaLongHookContext_8 =
         loadedMapFunctionForCheeseCrossInHookContext_3,
         cheeseCrossInHookContextSet_2);
 
-    const rawDeltaLongHookContext_8 =
+    const rawDeltaDualLongHooksContext_3 =
       R.compose(
         R.dissoc('wheatCrossInHookContextSet_2'),
         R.dissoc('cheeseCrossInHookContextSet_2'))
-      (deltaLongHookContext_7);
+      (deltaDualLongHooksContext_2);
 
-    const finalDeltaLongHookContext_8 = {
-      ...rawDeltaLongHookContext_8,
+    const finalDeltaDualLongHooksContext_3 = {
+      ...rawDeltaDualLongHooksContext_3,
       wheatCrossInHookContextSet_3,
       cheeseCrossInHookContextSet_3,
       askingDayTwigOpponentEnvelop,
-      _type: 'Delta long hook context 8'
+      _type: 'Delta dual long hooks context 3'
     };
 
-    return finalDeltaLongHookContext_8;
+    return finalDeltaDualLongHooksContext_3;
   }
   catch(errorMessage){
     console.error(errorMessage);
@@ -115,7 +115,7 @@ const buildDeltaLongHookContext_8 =
 
 }
 
-export const getDeltaLongHookContext_8 =
+export const getDeltaDualLongHooksContext_3 =
   R.compose(
-    buildDeltaLongHookContext_8,
-    getDeltaLongHookContext_7);
+    buildDeltaDualLongHooksContext_3,
+    getDeltaDualLongHooksContext_2);

@@ -4,14 +4,14 @@ import {
   getTwigComboSetContextByTwigFullComboChinese
 } from './twigHubCloneOfDelta';
 import {
-  getDeltaDualLongHooksContext
+  getDeltaDualLongHooksContext_1
 } from './deltaFile_10';
 import {
   mapFunctionForWheatCrossInHookContext_2,
   mapFunctionForCheeseCrossInHookContext_2
 } from './deltaFile_11';
 
-export const getDeltaLongHookContext_7 =
+export const getDeltaDualLongHooksContext_2 =
   (askingDayTwigFullComboChinese,
   wheatHookName,
   cheeseHookName) => {
@@ -23,8 +23,8 @@ export const getDeltaLongHookContext_7 =
     const askingDayBranchChinese =
       askingDayTwigFullComboChinese[1];
 
-    const deltaDualLongHooksContext =
-      getDeltaDualLongHooksContext(
+    const deltaDualLongHooksContext_1 =
+      getDeltaDualLongHooksContext_1(
         askingDayTrunkChinese,
         wheatHookName,
         cheeseHookName);
@@ -50,7 +50,7 @@ export const getDeltaLongHookContext_7 =
     const {
       wheatCrossInHookContextSet_1,
       cheeseCrossInHookContextSet_1
-    } = deltaDualLongHooksContext;
+    } = deltaDualLongHooksContext_1;
 
     const wheatCrossInHookContextSet_2 =
       R.map(
@@ -62,28 +62,28 @@ export const getDeltaLongHookContext_7 =
         loadedMapFunctionForCheeseCrossInHookContext_2,
         cheeseCrossInHookContextSet_1);
 
-    const rawDeltaLongHookContext_7 =
+    const rawDeltaDualLongHooksContext_2 =
       R.compose(
         R.dissoc('wheatCrossInHookContextSet_1'),
         R.dissoc('cheeseCrossInHookContextSet_1'))
-      (deltaDualLongHooksContext);
+      (deltaDualLongHooksContext_1);
 
-    const finalDeltaLongHookContext_7 = {
-      ...rawDeltaLongHookContext_7,
+    const finalDeltaDualLongHooksContext_2 = {
+      ...rawDeltaDualLongHooksContext_2,
       askingDayTwigFullComboChinese,
       askingDayTrunkChinese,
       askingDayBranchChinese,
       askingDayTwigComboSetVoidBranchChineseList,
       wheatCrossInHookContextSet_2,
       cheeseCrossInHookContextSet_2,
-      _type: 'Delta long hook context 7'
+      _type: 'Delta dual long hooks context 2'
     };
 
-    return finalDeltaLongHookContext_7;
+    return finalDeltaDualLongHooksContext_2;
   }
   catch(errorMessage){
     console.error(errorMessage);
     throw new Error(
-      'Cannot get delta long hook context 7.');
+      'Cannot get delta dual long hooks context 2.');
   }
 }
