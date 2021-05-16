@@ -76,7 +76,34 @@ export const findItemByStringFromList =
     throw new Error(
       'Cannot get item by string from list.');
   }
+}
 
+export const filterItemByStringFromList =
+  (objectList,
+  stringPropValue,
+  propForString) => {
+
+  try{
+    checkNilWithString(
+      stringPropValue,
+      'String prop value');
+
+    checkNilWithString(
+      propForString,
+      'Prop for string');
+
+    const respectiveObject =
+      R.filter(
+        R.propEq(propForString, stringPropValue),
+        objectList);
+
+    return respectiveObject;
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throw new Error(
+      'Cannot get item by string from list.');
+  }
 }
 
 export const isItemExistByStringFromList =

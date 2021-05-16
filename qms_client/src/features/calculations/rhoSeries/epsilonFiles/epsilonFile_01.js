@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import {
-  findItemByStringFromList
+  filterItemByStringFromList
 } from './utilityHubCloneOfEpsilon';
 
 const getEpsilonLongHookContext_1 =
@@ -24,8 +24,22 @@ const getEpsilonLongHookContext_1 =
     wheatCrossInHookContextSet_3
       [rhoKingAtDownwardIndex];
 
+  const getEpsilonCrossContextSetByFocus =
+    deltaFocusEnglish => {
+
+    checkNilWithString(
+      deltaFocusEnglish,
+      'Delta focus english');
+
+    const epsilonCrossContextSetByFocus =
+      filterItemByStringFromList(
+        wheatCrossInHookContextSet_3,
+        'Delta focus parent',
+        'deltaFocusEnglish');
+  }
+
   const rawEpsilonParentFocusCrossContextSet =
-    findItemByStringFromList(
+    filterItemByStringFromList(
       wheatCrossInHookContextSet_3,
       'Delta focus parent',
       'deltaFocusEnglish');
