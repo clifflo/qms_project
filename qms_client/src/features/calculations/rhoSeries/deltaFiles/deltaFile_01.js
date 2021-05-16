@@ -1,5 +1,9 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import {
+  checkNilWithString,
+  isItemExistByStringFromList
+} from './utilityHubCloneOfDelta';
 
 export const deltaFocusContextSet = [
   {
@@ -38,3 +42,16 @@ export const deltaFocusContextSet = [
       'Twig elemental relation son'
   }
 ]
+
+export const isValidDeltaFocusEnglish =
+  deltaFocusEnglish => {
+
+  checkNilWithString(
+    deltaFocusEnglish,
+    'Delta focus english');
+
+  return isItemExistByStringFromList(
+    deltaFocusContextSet,
+    deltaFocusEnglish,
+    'deltaFocusEnglish');
+}
