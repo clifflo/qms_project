@@ -1,7 +1,8 @@
 import * as R from 'ramda';
 import {
   filterItemByStringFromList,
-  checkNilWithTypedObject
+  checkNilWithTypedObject,
+  checkNilWithString
 } from './utilityHubCloneOfEpsilon';
 import {
   isValidDeltaFocusEnglish,
@@ -9,18 +10,21 @@ import {
 } from './deltaHubCloneOfEpsilon';
 
 const buildEpsilonLongHookContext_1 =
-  deltaWheatHookContext_8 => {
+  deltaLongHookContext_8 => {
 
   try{
     const {
       rhoJackAtDownwardIndex,
       rhoQueenAtDownwardIndex,
-      rhoKingAtDownwardIndex
-    } = deltaWheatHookContext_8;
+      rhoKingAtDownwardIndex,
+      wheatCrossInHookContextSet_3
+    } =
+    deltaLongHookContext_8
+    .deltaWheatHookContext;
 
     const rawEpsilonJackCrossContext =
       wheatCrossInHookContextSet_3
-      [wheatRhoJackAtDownwardIndex];
+      [rhoJackAtDownwardIndex];
 
     checkNilWithTypedObject(
       rawEpsilonJackCrossContext,
@@ -83,34 +87,32 @@ const buildEpsilonLongHookContext_1 =
           deltaFocusEnglish,
           'deltaFocusEnglish');
 
-      const
-      finalEpsilonCrossContextSetByFocusEnglish = {
+      const finalEpsilonCrossContextSetByFocusEnglish = {
         ...rawEpsilonCrossContextSetByFocusEnglish,
         _type: 'Epsilon cross context'
       };
 
-      return
-      finalEpsilonCrossContextSetByFocusEnglish;
+      return finalEpsilonCrossContextSetByFocusEnglish;
     }
 
     const epsilonParentFocusCrossContextSet =
-      getEpsilonCrossContextSetByDeltaFocusEnglish(
+      getEpsilonCrossContextSetByFocusEnglish(
         'Delta focus parent');
 
     const epsilonSonFocusCrossContextSet =
-      getEpsilonCrossContextSetByDeltaFocusEnglish(
+      getEpsilonCrossContextSetByFocusEnglish(
         'Delta focus son');
 
     const epsilonGhostFocusCrossContextSet =
-      getEpsilonCrossContextSetByDeltaFocusEnglish(
+      getEpsilonCrossContextSetByFocusEnglish(
         'Delta focus ghost');
 
     const epsilonMoneyFocusCrossContextSet =
-      getEpsilonCrossContextSetByDeltaFocusEnglish(
+      getEpsilonCrossContextSetByFocusEnglish(
         'Delta focus money');
 
     const epsilonBrotherFocusCrossContextSet =
-      getEpsilonCrossContextSetByDeltaFocusEnglish(
+      getEpsilonCrossContextSetByFocusEnglish(
         'Delta focus brother');
 
     const epsilonEnvelop_1 = {
@@ -149,5 +151,3 @@ export const getEpsilonLongHookContext_1 =
   R.compose(
     buildEpsilonLongHookContext_1,
     getDeltaLongHookContext_8);
-
-    
