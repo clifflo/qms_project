@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import {
-  getDeltaLongHookContext_6
+  getDeltaDualLongHooksContext
 } from './deltaFile_10';
 import {
   checkNilWithTypedObject

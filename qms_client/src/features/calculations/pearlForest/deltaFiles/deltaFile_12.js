@@ -4,7 +4,7 @@ import {
   getTwigComboSetContextByTwigFullComboChinese
 } from './twigHubCloneOfDelta';
 import {
-  getDeltaLongHookContext_6
+  getDeltaDualLongHooksContext
 } from './deltaFile_10';
 import {
   mapFunctionForWheatCrossInHookContext_2,
@@ -23,8 +23,8 @@ export const getDeltaLongHookContext_7 =
     const askingDayBranchChinese =
       askingDayTwigFullComboChinese[1];
 
-    const deltaLongHookContext_6 =
-      getDeltaLongHookContext_6(
+    const deltaDualLongHooksContext =
+      getDeltaDualLongHooksContext(
         askingDayTrunkChinese,
         wheatHookName,
         cheeseHookName);
@@ -50,7 +50,7 @@ export const getDeltaLongHookContext_7 =
     const {
       wheatCrossInHookContextSet_1,
       cheeseCrossInHookContextSet_1
-    } = deltaLongHookContext_6;
+    } = deltaDualLongHooksContext;
 
     const wheatCrossInHookContextSet_2 =
       R.map(
@@ -66,7 +66,7 @@ export const getDeltaLongHookContext_7 =
       R.compose(
         R.dissoc('wheatCrossInHookContextSet_1'),
         R.dissoc('cheeseCrossInHookContextSet_1'))
-      (deltaLongHookContext_6);
+      (deltaDualLongHooksContext);
 
     const finalDeltaLongHookContext_7 = {
       ...rawDeltaLongHookContext_7,

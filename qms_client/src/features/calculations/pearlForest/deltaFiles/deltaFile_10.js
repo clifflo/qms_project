@@ -11,7 +11,7 @@ import {
   checkNilWithTypedObject
 } from './utilityHubCloneOfDelta';
 
-export const getDeltaLongHookContext_6 =
+export const getDeltaDualLongHooksContext =
   (askingDayTrunkChinese,
   wheatHookName,
   cheeseHookName) => {
@@ -74,7 +74,7 @@ export const getDeltaLongHookContext_6 =
         R.prop('cheeseCrossInHookContext_1'),
         combinedCrossInHookSet);
 
-    const deltaLongHookContext_6 = {
+    const deltaDualLongHooksContext = {
       askingDayTrunkChinese,
       wheatHookName,
       cheeseHookName,
@@ -84,15 +84,15 @@ export const getDeltaLongHookContext_6 =
         finalDeltaCheeseHookContext,
       wheatCrossInHookContextSet_1,
       cheeseCrossInHookContextSet_1,
-      _type: 'Delta long hook context 6'
+      _type: 'Delta dual long hooks context 1'
     };
 
-    return deltaLongHookContext_6;
+    return deltaDualLongHooksContext;
   }
   catch(errorMessage){
     console.error(errorMessage);
     throw new Error(
-      'Cannot get delta long hook context 6.');
+      'Cannot get delta dual long hooks context 6.');
   }
 
 
