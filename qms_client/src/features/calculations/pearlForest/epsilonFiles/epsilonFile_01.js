@@ -2,29 +2,54 @@ import * as R from 'ramda';
 import {
   filterItemByStringFromList,
   checkNilWithTypedObject,
-  checkNilWithString
+  checkNilWithString,
+  checkNilWithNumber
 } from './utilityHubCloneOfEpsilon';
 import {
   isValidDeltaFocusEnglish,
   getDeltaDualLongHooksContext_3
 } from './deltaHubCloneOfEpsilon';
 
-const buildEpsilonLongHookContext_1 =
+const buildEpsilonDualLongHooksContext_1 =
   deltaDualLongHooksContext_3 => {
 
   try{
-    const {
-      rhoJackAtDownwardIndex,
-      rhoQueenAtDownwardIndex,
-      rhoKingAtDownwardIndex,
-      wheatCrossInHookContextSet_3
-    } =
-    deltaDualLongHooksContext_3
-    .deltaWheatHookContext;
+
+    const deltaWheatHookContext =
+      deltaDualLongHooksContext_3
+      .deltaWheatHookContext;
+
+    const wheatCrossInHookContextSet_3 =
+      deltaDualLongHooksContext_3
+      .wheatCrossInHookContextSet_3;
+
+    const wheatRhoJackAtDownwardIndex =
+      deltaWheatHookContext
+      .rhoJackAtDownwardIndex;
+
+    checkNilWithNumber(
+      wheatRhoJackAtDownwardIndex,
+      'Wheat rho jack at downward index');
+
+    const wheatRhoQueenAtDownwardIndex =
+      deltaWheatHookContext
+      .rhoQueenAtDownwardIndex;
+
+    checkNilWithNumber(
+      wheatRhoQueenAtDownwardIndex,
+      'Wheat rho queen at downward index');
+
+    const wheatRhoKingAtDownwardIndex =
+      deltaWheatHookContext
+      .rhoKingAtDownwardIndex;
+
+    checkNilWithNumber(
+      wheatRhoKingAtDownwardIndex,
+      'Wheat rho king at downward index');
 
     const rawEpsilonJackCrossContext =
       wheatCrossInHookContextSet_3
-      [rhoJackAtDownwardIndex];
+      [wheatRhoJackAtDownwardIndex];
 
     checkNilWithTypedObject(
       rawEpsilonJackCrossContext,
@@ -38,7 +63,7 @@ const buildEpsilonLongHookContext_1 =
 
     const rawEpsilonQueenCrossContext =
       wheatCrossInHookContextSet_3
-      [rhoQueenAtDownwardIndex];
+      [wheatRhoQueenAtDownwardIndex];
 
     checkNilWithTypedObject(
       rawEpsilonQueenCrossContext,
@@ -52,7 +77,7 @@ const buildEpsilonLongHookContext_1 =
 
     const rawEpsilonKingCrossContext =
       wheatCrossInHookContextSet_3
-      [rhoKingAtDownwardIndex];
+      [wheatRhoKingAtDownwardIndex];
 
     checkNilWithTypedObject(
       rawEpsilonKingCrossContext,
@@ -67,74 +92,20 @@ const buildEpsilonLongHookContext_1 =
     // Please be noted that I only consider
     // shown wheat crosses. Hidden wheat cross
     // are not considered.
-    const getEpsilonCrossContextSetByFocusEnglish =
-      deltaFocusEnglish => {
-
-      checkNilWithString(
-        deltaFocusEnglish,
-        'Delta focus english');
-
-      if(!isValidDeltaFocusEnglish(
-        deltaFocusEnglish)){
-        throw new Error(
-          'Invalid delta focus english: '
-          + deltaFocusEnglish);
-      }
-
-      const rawEpsilonCrossContextSetByFocusEnglish =
-        filterItemByStringFromList(
-          wheatCrossInHookContextSet_3,
-          deltaFocusEnglish,
-          'deltaFocusEnglish');
-
-      const finalEpsilonCrossContextSetByFocusEnglish = {
-        ...rawEpsilonCrossContextSetByFocusEnglish,
-        _type: 'Epsilon cross context'
-      };
-
-      return finalEpsilonCrossContextSetByFocusEnglish;
-    }
-
-    const epsilonParentFocusCrossContextSet =
-      getEpsilonCrossContextSetByFocusEnglish(
-        'Delta focus parent');
-
-    const epsilonSonFocusCrossContextSet =
-      getEpsilonCrossContextSetByFocusEnglish(
-        'Delta focus son');
-
-    const epsilonGhostFocusCrossContextSet =
-      getEpsilonCrossContextSetByFocusEnglish(
-        'Delta focus ghost');
-
-    const epsilonMoneyFocusCrossContextSet =
-      getEpsilonCrossContextSetByFocusEnglish(
-        'Delta focus money');
-
-    const epsilonBrotherFocusCrossContextSet =
-      getEpsilonCrossContextSetByFocusEnglish(
-        'Delta focus brother');
-
     const epsilonEnvelop_1 = {
       _type: 'Epsilon envelop 1',
-      ...deltaWheatHookContext_8,
       epsilonJackCrossContext:
         finalEpsilonJackCrossContext,
       epsilonQueenCrossContext:
         finalEpsilonQueenCrossContext,
       epsilonKingCrossContext:
         finalEpsilonKingCrossContext,
-      epsilonParentFocusCrossContextSet,
-      epsilonBrotherFocusCrossContextSet,
-      epsilonSonFocusCrossContextSet,
-      epsilonMoneyFocusCrossContextSet,
-      epsilonGhostFocusCrossContextSet
     }
 
     const epsilonLongHookContext_1 = {
-      ...deltaWheatHookContext_8,
+      ...deltaDualLongHooksContext_3,
       epsilonEnvelop_1,
-      _type: 'Epsilon long hook context 1'
+      _type: 'Epsilon dual long hooks context 1'
     }
 
     return epsilonLongHookContext_1;
@@ -147,7 +118,7 @@ const buildEpsilonLongHookContext_1 =
 
 }
 
-export const getEpsilonLongHookContext_1 =
+export const getEpsilonDualLongHooksContext_1 =
   R.compose(
-    buildEpsilonLongHookContext_1,
+    buildEpsilonDualLongHooksContext_1,
     getDeltaDualLongHooksContext_3);
