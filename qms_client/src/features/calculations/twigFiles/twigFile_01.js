@@ -89,3 +89,21 @@ export const
 
   return twigElementalContext;
 }
+
+export const
+  getTwigElementalContextByEnglish =
+  twigElementalEnglish => {
+
+  checkNilWithString(
+    twigElementalEnglish,
+    'Twig elemental English');
+
+  const twigElementalContext =
+    findItemByStringFromList(
+      twigElementalContextSet,
+      twigElementalEnglish,
+      'twigElementalEnglish'
+    );
+
+  return twigElementalContext;
+}
