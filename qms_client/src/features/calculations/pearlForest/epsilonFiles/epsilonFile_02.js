@@ -35,18 +35,13 @@ const buildEpsilonDualLongHooksContext_2 =
           + deltaFocusEnglish);
       }
 
-      const rawEpsilonCrossContextSetByFocusEnglish =
+      const epsilonCrossContextSetByFocusEnglish =
         filterItemByStringFromList(
           wheatCrossInHookContextSet_3,
           deltaFocusEnglish,
           'deltaFocusEnglish');
 
-      const finalEpsilonCrossContextSetByFocusEnglish = {
-        ...rawEpsilonCrossContextSetByFocusEnglish,
-        _type: 'Epsilon cross context'
-      };
-
-      return finalEpsilonCrossContextSetByFocusEnglish;
+      return epsilonCrossContextSetByFocusEnglish;
     }
 
     const epsilonParentFocusCrossContextSet =

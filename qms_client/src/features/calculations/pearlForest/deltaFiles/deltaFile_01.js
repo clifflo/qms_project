@@ -59,4 +59,4 @@ export const isValidDeltaFocusEnglish =
 export const deltaFocusEnglishSet =
   R.map(
     R.prop('deltaFocusEnglish'),
-    deltaFocusContextSet));
+    deltaFocusContextSet);

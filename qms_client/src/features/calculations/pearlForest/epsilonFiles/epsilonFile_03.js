@@ -5,10 +5,15 @@ import {
 import {
   deltaFocusEnglishSet
 } from './deltaHubCloneOfEpsilon';
+import {
+  checkNilWithString,
+  checkNilWithTypedObject,
+  checkNilWithArray
+} from './utilityHubCloneOfEpsilon';
 
 const getEpsilonFocusFaceReactionContext =
   (epsilonFaceCrossContext,
-  epsilonFocusCrossContext) => {
+  epsilonFocusCrossContextSet) => {
 
   try{
     if(R.isEmpty(epsilonFocusCrossContextSet)){
@@ -25,7 +30,7 @@ const getEpsilonFocusFaceReactionContext =
         'Epsilon face cross branch elemental english');
 
       const epsilonFocusCrossTypeEnglish =
-        epsilonFocusCrossContext
+        epsilonFocusCrossContextSet[0]
         .deltaFocusEnglish;
 
       const epsilonFocusCrossBranchElementalEnglish =
@@ -67,7 +72,7 @@ const getEpsilonFocusFaceReactionContext =
 }
 
 export const getEpsilonFocusFaceReactionContextSet =
-  (epsilonFocusCrossContextList,
+  (epsilonFocusCrossContextSetList,
   epsilonFaceCrossContext)   => {
 
   try{
@@ -83,7 +88,7 @@ export const getEpsilonFocusFaceReactionContextSet =
     const epsilonFocusFaceReactionContextSet =
       R.map(
         loadedGetEpsilonFocusFaceReactionContext,
-        epsilonFocusCrossContextList);
+        epsilonFocusCrossContextSetList);
 
     checkNilWithArray(
       epsilonFocusFaceReactionContextSet,
