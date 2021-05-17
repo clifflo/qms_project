@@ -40,16 +40,25 @@ const buildEpsilonDualLongHooksContext_3 =
     (getEpsilonFocusFaceReactionContextSet)
     (epsilonFocusCrossContextSetList);
 
-  const epsilonFocusToFaceEnvelop =
+  const rawEpsilonFocusToFaceEnvelop =
     R.map(
       loadedGetEpsilonFocusFaceReactionContextSet,
       epsilonFaceCrossContextSet);
 
-  return {
+  const finalEpsilonFocusToFaceEnvelop =
+    R.compose(
+      R.reject(R.isNil),
+      R.flatten)
+    (rawEpsilonFocusToFaceEnvelop);
+
+  const epsilonDualLongHooksContext_3 = {
     ...epsilonDualLongHooksContext_2,
-    epsilonFocusToFaceEnvelop,
+    epsilonFocusToFaceEnvelop:
+      finalEpsilonFocusToFaceEnvelop,
     _type: 'Epsilon dual long hooks context 3'
   };
+
+  return epsilonDualLongHooksContext_3;
 }
 
 export const getEpsilonDualLongHooksContext_3 =
