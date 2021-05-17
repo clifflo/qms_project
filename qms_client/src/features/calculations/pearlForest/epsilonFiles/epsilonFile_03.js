@@ -46,13 +46,17 @@ export const getEpsilonFocusToFaceRelationContext =
         epsilonFaceCrossBranchElementalEnglish,
         epsilonFocusCrossBranchElementalEnglish);
 
+      checkNilWithTypedObject(
+        deltaFocusToRhoFaceRelationContext,
+        'Twig elemental relation context');
+
       const epsilonFocusToFaceRelationEnglish =
-        epsilonFocusFaceRelationContext
+        deltaFocusToRhoFaceRelationContext
         .twigElementalRelationEnglish;
 
       checkNilWithString(
-        epsilonFocusFaceRelationEnglish,
-        'Epsilon focus face relation english');
+        epsilonFocusToFaceRelationEnglish,
+        'Epsilon focus to face relation english');
 
       const epsilonFaceType =
         epsilonFaceCrossContext
@@ -71,7 +75,7 @@ export const getEpsilonFocusToFaceRelationContext =
         epsilonFaceType,
         epsilonFocusType,
         deltaFocusEnglishOfRhoFaceType,
-        epsilonFocusFaceRelationEnglish,
+        epsilonFocusToFaceRelationEnglish,
         epsilonFaceCrossBranchElementalEnglish,
         epsilonFocusCrossBranchElementalEnglish,
       };
