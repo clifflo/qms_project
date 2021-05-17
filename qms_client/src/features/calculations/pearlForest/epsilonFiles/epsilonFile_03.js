@@ -63,7 +63,7 @@ const getEpsilonFocusToFaceRelationContext =
         .deltaFocusEnglish;
 
       const epsilonFocusToFaceRelationContext = {
-        _type: 'Epsilon focus to face context',
+        _type: 'Epsilon focus to face relation context',
         epsilonFaceType,
         epsilonFocusType,
         epsilonFocusFaceRelationEnglish,
