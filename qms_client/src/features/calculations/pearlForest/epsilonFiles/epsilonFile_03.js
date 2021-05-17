@@ -11,7 +11,7 @@ import {
   checkNilWithArray
 } from './utilityHubCloneOfEpsilon';
 
-const getEpsilonFocusFaceReactionContext =
+const getEpsilonFocusToFaceContext =
   (epsilonFaceCrossContext,
   epsilonFocusCrossContextSet) => {
 
@@ -62,7 +62,8 @@ const getEpsilonFocusFaceReactionContext =
         epsilonFocusCrossContextSet[0]
         .deltaFocusEnglish;
 
-      const epsilonFocusFaceReactionContext = {
+      const epsilonFocusToFaceContext = {
+        _type: 'Epsilon focus to face context',
         epsilonFaceType,
         epsilonFocusType,
         epsilonFocusFaceRelationEnglish,
@@ -70,18 +71,17 @@ const getEpsilonFocusFaceReactionContext =
         epsilonFocusCrossBranchElementalEnglish,
       };
 
-      return epsilonFocusFaceReactionContext;
+      return epsilonFocusToFaceContext;
     };
   }
   catch(errorMessage){
     console.error(errorMessage);
     throw new Error(
-      'Epsilon focus face reaction '
-      + 'function 1 is error.');
+      'Cannot get epsilon focus to face context');
   }
 }
 
-export const getEpsilonFocusFaceReactionContextSet =
+export const getEpsilonFocusToFaceContextSet =
   (epsilonFocusCrossContextSetList,
   epsilonFaceCrossContext)   => {
 
@@ -90,14 +90,14 @@ export const getEpsilonFocusFaceReactionContextSet =
       epsilonFaceCrossContext,
       'Epsilon face cross context');
 
-    const loadedGetEpsilonFocusFaceReactionContext =
+    const loadedGetEpsilonFocusToFaceContext =
       R.curry
-      (getEpsilonFocusFaceReactionContext)
+      (getEpsilonFocusToFaceContext)
       (epsilonFaceCrossContext);
 
     const epsilonFocusFaceReactionContextSet =
       R.map(
-        loadedGetEpsilonFocusFaceReactionContext,
+        loadedGetEpsilonFocusToFaceContext,
         epsilonFocusCrossContextSetList);
 
     checkNilWithArray(
@@ -110,7 +110,7 @@ export const getEpsilonFocusFaceReactionContextSet =
   catch(errorMessage){
     console.error(errorMessage);
     throw new Error(
-      'Epsilon focus face reaction '
-      + 'function 2 is error.');
+      'Cannot get epsilon focus to face '
+      + 'context set.');
   }
 }

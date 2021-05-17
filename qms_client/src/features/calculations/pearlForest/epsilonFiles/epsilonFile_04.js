@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import {
-  getEpsilonFocusFaceReactionContextSet,
+  getEpsilonFocusToFaceContextSet,
   getEpsilonDualLongHooksContext_2
 } from './epsilonMiniHub_01';
 import {
@@ -35,14 +35,14 @@ const buildEpsilonDualLongHooksContext_3 =
     epsilonFocusCrossContextSetList,
     'Epsilon focus cross context set list');
 
-  const loadedGetEpsilonFocusFaceReactionContextSet =
+  const loadedGetEpsilonFocusToFaceContextSet =
     R.curry
-    (getEpsilonFocusFaceReactionContextSet)
+    (getEpsilonFocusToFaceContextSet)
     (epsilonFocusCrossContextSetList);
 
   const rawEpsilonFocusToFaceEnvelop =
     R.map(
-      loadedGetEpsilonFocusFaceReactionContextSet,
+      loadedGetEpsilonFocusToFaceContextSet,
       epsilonFaceCrossContextSet);
 
   const finalEpsilonFocusToFaceEnvelop =
