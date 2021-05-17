@@ -55,3 +55,8 @@ export const isValidDeltaFocusEnglish =
     deltaFocusEnglish,
     'deltaFocusEnglish');
 }
+
+export const deltaFocusEnglishSet =
+  R.map(
+    R.prop('deltaFocusEnglish'),
+    deltaFocusContextSet));

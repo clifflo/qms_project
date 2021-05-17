@@ -1,5 +1,6 @@
 import {
-  getTwigElementalContextByChinese
+  getTwigElementalContextByChinese,
+  getTwigElementalContextByEnglish
 } from './twigFile_01';
 import {
   twigElementalRelationContextSet

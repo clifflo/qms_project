@@ -2,10 +2,13 @@ import * as R from 'ramda';
 import {
   getTwigElementalRelationContextByEnglish
 } from './twigHubCloneOfEpsilon';
+import {
+  deltaFocusEnglishSet
+} from './deltaHubCloneOfEpsilon';
 
-const getEpsilonFocusFaceReactionContextFunction_1 =
+const getEpsilonFocusFaceReactionContext =
   (epsilonFaceCrossContext,
-  epsilonFocusCrossContextSet) => {
+  epsilonFocusCrossContext) => {
 
   try{
     if(R.isEmpty(epsilonFocusCrossContextSet)){
@@ -46,11 +49,13 @@ const getEpsilonFocusFaceReactionContextFunction_1 =
         epsilonFocusFaceRelationEnglish,
         'Epsilon focus face relation english');
 
-      const  {
+      const epsilonFocusFaceReactionContext = {
         epsilonFocusFaceRelationEnglish,
         epsilonFaceCrossBranchElementalEnglish,
         epsilonFocusCrossBranchElementalEnglish,
       };
+
+      return epsilonFocusFaceReactionContext;
     };
   }
   catch(errorMessage){
@@ -61,18 +66,31 @@ const getEpsilonFocusFaceReactionContextFunction_1 =
   }
 }
 
-const getEpsilonFocusFaceReactionContextFunction_2 =
-  epsilonFaceCrossContext => {
+const getEpsilonFocusFaceReactionContextSet =
+  (epsilonFocusCrossContextList,
+  epsilonFaceCrossContext)   => {
 
   try{
     checkNilWithTypedObject(
       epsilonFaceCrossContext,
       'Epsilon face cross context');
 
-    const loadedGetEpsilonFocusFaceReactionFunction_1 =
+    const loadedGetEpsilonFocusFaceReactionContext =
       R.curry
-      (getEpsilonFocusFaceReactionFunction_1)
+      (getEpsilonFocusFaceReactionContext)
       (epsilonFaceCrossContext);
+
+    const epsilonFocusFaceReactionContextSet =
+      R.map(
+        loadedGetEpsilonFocusFaceReactionContext,
+        epsilonFocusCrossContextList);
+
+    checkNilWithArray(
+      epsilonFocusFaceReactionContextSet,
+      'Epsilon focus face reaction context set');
+
+    return epsilonFocusFaceReactionContextSet;
+
   }
   catch(errorMessage){
     console.error(errorMessage);
@@ -80,11 +98,6 @@ const getEpsilonFocusFaceReactionContextFunction_2 =
       'Epsilon focus face reaction '
       + 'function 2 is error.');
   }
-
-
-
-
-
 }
 
 const buildEpsilonDualLongHooksContext_3 =
@@ -101,7 +114,16 @@ const buildEpsilonDualLongHooksContext_3 =
   const epsilonEnvelopValues_2 =
     R.values(epsilonEnvelop_2);
 
+  const loadedGetEpsilonFocusFaceReactionContextSet =
+    R.curry
+    (getEpsilonFocusFaceReactionContextSet)
+    (epsilonEnvelop_2);
 
+  const epsilonEnvelop_3 =
+    R.map(
+      loadedGetEpsilonFocusFaceReactionContextSet,
+
+    )
 
 
 
