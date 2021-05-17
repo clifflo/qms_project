@@ -27,10 +27,6 @@ const buildEpsilonDualLongHooksContext_3 =
       R.dissoc('_type'))
     (epsilonFocusEnvelop);
 
-  console.log(epsilonFaceCrossContextSet);
-  console.log(epsilonFocusCrossContextSetList)
-
-
   checkNilWithArray(
     epsilonFaceCrossContextSet,
     'Epsilon face cross context set');
@@ -52,7 +48,7 @@ const buildEpsilonDualLongHooksContext_3 =
   return {
     ...epsilonDualLongHooksContext_2,
     epsilonFocusToFaceEnvelop,
-    _type: 'Epsilon focus to face envelop'
+    _type: 'Epsilon dual long hooks context 3'
   };
 }
 

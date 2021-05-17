@@ -21,7 +21,7 @@ const buildEpsilonDualLongHooksContext_2 =
       epsilonDualLongHooksContext_1
       .wheatCrossInHookContextSet_3;
 
-    const getEpsilonCrossContextSetByFocusEnglish =
+    const getEpsilonFocusCrossContextSet =
       deltaFocusEnglish => {
 
       checkNilWithString(
@@ -35,33 +35,46 @@ const buildEpsilonDualLongHooksContext_2 =
           + deltaFocusEnglish);
       }
 
-      const epsilonCrossContextSetByFocusEnglish =
+      const rawEpsilonFocusCrossContextSet =
         filterItemByStringFromList(
           wheatCrossInHookContextSet_3,
           deltaFocusEnglish,
           'deltaFocusEnglish');
 
-      return epsilonCrossContextSetByFocusEnglish;
+      const typeNameLens =
+        R.lens(R.prop('_type'), R.assoc('_type'));
+
+      const typeNameLensMapFunction =
+        R.set(
+          typeNameLens,
+          'Epsilon focus cross context');
+
+      const finalEpsilonFocusCrossContextSet =
+        R.map(
+          typeNameLensMapFunction,
+          rawEpsilonFocusCrossContextSet);
+
+      return finalEpsilonFocusCrossContextSet;
     }
 
     const epsilonParentFocusCrossContextSet =
-      getEpsilonCrossContextSetByFocusEnglish(
+      getEpsilonFocusCrossContextSet(
         'Delta focus parent');
 
     const epsilonSonFocusCrossContextSet =
-      getEpsilonCrossContextSetByFocusEnglish(
+      getEpsilonFocusCrossContextSet(
         'Delta focus son');
 
     const epsilonGhostFocusCrossContextSet =
-      getEpsilonCrossContextSetByFocusEnglish(
+      getEpsilonFocusCrossContextSet(
         'Delta focus ghost');
 
     const epsilonMoneyFocusCrossContextSet =
-      getEpsilonCrossContextSetByFocusEnglish(
+      getEpsilonFocusCrossContextSet(
         'Delta focus money');
 
     const epsilonBrotherFocusCrossContextSet =
-      getEpsilonCrossContextSetByFocusEnglish(
+      getEpsilonFocusCrossContextSet(
         'Delta focus brother');
 
     const epsilonFocusEnvelop = {
