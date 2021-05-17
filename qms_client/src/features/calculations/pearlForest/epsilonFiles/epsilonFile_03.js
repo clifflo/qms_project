@@ -58,6 +58,10 @@ const getEpsilonFocusToFaceRelationContext =
         epsilonFaceCrossContext
         .epsilonFaceType;
 
+      const epsilonFocusOfFaceType =
+        epsilonFaceCrossContext
+        .deltaFocusEnglish;
+
       const epsilonFocusType =
         epsilonFocusCrossContextSet[0]
         .deltaFocusEnglish;
@@ -66,6 +70,7 @@ const getEpsilonFocusToFaceRelationContext =
         _type: 'Epsilon focus to face relation context',
         epsilonFaceType,
         epsilonFocusType,
+        epsilonFocusOfFaceType,
         epsilonFocusFaceRelationEnglish,
         epsilonFaceCrossBranchElementalEnglish,
         epsilonFocusCrossBranchElementalEnglish,
