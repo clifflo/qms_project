@@ -45,7 +45,7 @@ export const
 
   checkNilWithNumber(
     twigElementalRelationIndex,
-    'Twig elemental opponent minus myself index');
+    'Twig elemental relation index');
 
   const twigElementalRelationContext =
     getCyclicItemFromList(
@@ -57,7 +57,7 @@ export const
     myselfTwigElementalChinese,
     opponentTwigElementalChinese,
     ...twigElementalRelationContext,
-    _type: 'Twig elemental viewing myself comparison'
+    _type: 'Twig elemental relation context'
   };
 }
 
@@ -96,7 +96,7 @@ export const
 
   checkNilWithNumber(
     twigElementalRelationIndex,
-    'Twig elemental opponent minus myself index');
+    'Twig elemental relation index');
 
   const twigElementalRelationContext =
     getCyclicItemFromList(
@@ -108,6 +108,6 @@ export const
     myselfTwigElementalEnglish,
     opponentTwigElementalEnglish,
     ...twigElementalRelationContext,
-    _type: 'Twig elemental viewing myself comparison'
+    _type: 'Twig elemental relation context'
   };
 }

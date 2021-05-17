@@ -12,7 +12,7 @@ export const
     const {
       epsilonFaceType,
       epsilonFocusType,
-      epsilonFocusFaceRelationEnglish,
+      epsilonFocusToFaceRelationEnglish,
       epsilonFaceCrossBranchElementalEnglish,
       epsilonFocusCrossBranchElementalEnglish
     } = epsilonFocusToFaceRelationContext;
@@ -26,15 +26,15 @@ export const
       'Epsilon focus type');
 
     checkNilWithString(
-      epsilonFocusFaceRelationEnglish,
-      'Epsilon focus face relation english');
+      epsilonFocusToFaceRelationEnglish,
+      'Epsilon focus to face relation english');
 
     let epsilonFocusToFaceCorrelationHacker;
     let epsilonFocusToFaceCorrelationHacked;
     let epsilonFocusToFaceCorrelationProducer;
     let epsilonFocusToFaceCorrelationProduct;
 
-    switch(epsilonFocusFaceRelationEnglish){
+    switch(epsilonFocusToFaceRelationEnglish){
       case 'Twig elemental relation money':
         epsilonFocusToFaceCorrelationHacker =
           epsilonFocusType;

@@ -1,5 +1,8 @@
 import * as R from 'ramda';
 import {
+  getEpsilonIntraFacesRelationContext
+} from './epsilonFile_07';
+import {
   getEpsilonIntraFacesCorrelationContext
 } from './epsilonFile_08';
 import {
@@ -56,10 +59,11 @@ const buildEpsilonDualLongHooksContext_5 =
 
   const epsilonDualLongHooksContext_5 = {
     ...epsilonDualLongHooksContext_4,
-    epsilonIntraFacesEnvelop
+    epsilonIntraFacesEnvelop,
+    _type: 'Epsilon dual long hooks context 5'
   };
 
-  return epsilonDualLongHooksContext_4;
+  return epsilonDualLongHooksContext_5;
 }
 
 export const getEpsilonDualLongHooksContext_5 =

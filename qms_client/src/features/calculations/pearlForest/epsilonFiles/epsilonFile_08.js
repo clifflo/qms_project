@@ -1,4 +1,7 @@
 import * as R from 'ramda';
+import {
+  checkNilWithString
+} from './utilityHubCloneOfEpsilon';
 
 export const
   getEpsilonIntraFacesCorrelationContext =
@@ -30,7 +33,7 @@ export const
     let epsilonIntraFacesCorrelationProducer;
     let epsilonIntraFacesCorrelationProduct;
 
-    switch(epsilonFocusFaceRelationEnglish){
+    switch(epsilonIntraFacesRelationEnglish){
       case 'Twig elemental relation money':
         epsilonIntraFacesCorrelationHacker =
           sourceEpsilonFaceType;
@@ -43,8 +46,8 @@ export const
           'Twig elemental correlation hacking',
           epsilonIntraFacesCorrelationHacker,
           epsilonIntraFacesCorrelationHacked,
-          epsilonFaceCrossBranchElementalEnglish,
-          epsilonFocusCrossBranchElementalEnglish
+          sourceEpsilonFaceBranchElementalEnglish,
+          targetEpsilonFaceBranchElementalEnglish
         };
       case 'Twig elemental relation ghost':
         epsilonIntraFacesCorrelationHacker =
@@ -59,8 +62,8 @@ export const
           'Twig elemental correlation hacking',
           epsilonIntraFacesCorrelationHacker,
           epsilonIntraFacesCorrelationHacked,
-          epsilonFaceCrossBranchElementalEnglish,
-          epsilonFocusCrossBranchElementalEnglish
+          sourceEpsilonFaceBranchElementalEnglish,
+          targetEpsilonFaceBranchElementalEnglish
         };
       case 'Twig elemental relation parent':
         epsilonIntraFacesCorrelationProducer =
@@ -74,8 +77,8 @@ export const
           'Twig elemental correlation producing',
           epsilonIntraFacesCorrelationProducer,
           epsilonIntraFacesCorrelationProduct,
-          epsilonFaceCrossBranchElementalEnglish,
-          epsilonFocusCrossBranchElementalEnglish
+          sourceEpsilonFaceBranchElementalEnglish,
+          targetEpsilonFaceBranchElementalEnglish
         };
       case 'Twig elemental relation son':
         epsilonIntraFacesCorrelationProducer =
@@ -89,12 +92,14 @@ export const
           'Twig elemental correlation producing',
           epsilonIntraFacesCorrelationProducer,
           epsilonIntraFacesCorrelationProduct,
-          epsilonFaceCrossBranchElementalEnglish,
-          epsilonFocusCrossBranchElementalEnglish
+          sourceEpsilonFaceBranchElementalEnglish,
+          targetEpsilonFaceBranchElementalEnglish
         };
       case 'Twig elemental relation brother':
-        const epsilonFaceParticipant = sourceEpsilonFaceType;
-        const epsilonTargetFaceParticipant = targetEpsilonFaceType;
+        const epsilonSourceFaceParticipant =
+          sourceEpsilonFaceType;
+        const epsilonTargetFaceParticipant =
+          targetEpsilonFaceType;
         const epsilonBothFacesCrossBranchElementalEnglish
         = sourceEpsilonFaceBranchElementalEnglish;
         return {
@@ -102,8 +107,8 @@ export const
           'Epsilon intra face correlation context',
           epsilonIntraFacesCorrelationType:
           'Twig elemental correlation partnership',
-          epsilonFocusParticipant,
-          epsilonFaceParticipant,
+          epsilonSourceFaceParticipant,
+          epsilonTargetFaceParticipant,
           epsilonBothFacesCrossBranchElementalEnglish
         };
       default:

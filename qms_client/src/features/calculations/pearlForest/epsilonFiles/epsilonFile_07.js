@@ -2,6 +2,9 @@ import * as R from 'ramda';
 import {
   getTwigElementalRelationContextByEnglish
 } from './twigHubCloneOfEpsilon';
+import {
+  checkNilWithString
+} from './utilityHubCloneOfEpsilon';
 
 export const getEpsilonIntraFacesRelationContext =
   (sourceEpsilonFocusCrossContext,
@@ -43,8 +46,8 @@ export const getEpsilonIntraFacesRelationContext =
 
   const rhoIntraFacesRelationContext =
     getTwigElementalRelationContextByEnglish(
-      epsilonSourceFaceBranchElementalEnglish,
-      epsilonTargetFaceBranchElementalEnglish);
+      sourceEpsilonFaceBranchElementalEnglish,
+      targetEpsilonFaceBranchElementalEnglish);
 
   const epsilonIntraFacesRelationEnglish =
     rhoIntraFacesRelationContext

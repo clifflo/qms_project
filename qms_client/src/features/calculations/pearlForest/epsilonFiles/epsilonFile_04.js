@@ -4,7 +4,8 @@ import {
   getEpsilonDualLongHooksContext_2
 } from './epsilonMiniHub_01';
 import {
-  checkNilWithArray
+  checkNilWithArray,
+  checkNilWithTypedObject
 } from './utilityHubCloneOfEpsilon';
 
 export const getEpsilonFocusToFaceRelationContextSubset =
