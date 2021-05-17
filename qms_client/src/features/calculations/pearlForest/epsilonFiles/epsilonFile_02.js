@@ -69,8 +69,8 @@ const buildEpsilonDualLongHooksContext_2 =
       getEpsilonCrossContextSetByFocusEnglish(
         'Delta focus brother');
 
-    const epsilonEnvelop_2 = {
-      _type: 'Epsilon envelop 2',
+    const epsilonFocusEnvelop = {
+      _type: 'Epsilon focus envelop',
       epsilonParentFocusCrossContextSet,
       epsilonSonFocusCrossContextSet,
       epsilonGhostFocusCrossContextSet,
@@ -80,7 +80,7 @@ const buildEpsilonDualLongHooksContext_2 =
 
     const epsilonDualLongHooksContext_2 = {
       ...epsilonDualLongHooksContext_1,
-      epsilonEnvelop_2,
+      epsilonFocusEnvelop,
       _type: 'Epsilon dual long hooks context 2'
     }
 

@@ -95,8 +95,8 @@ const buildEpsilonDualLongHooksContext_1 =
     // Please be noted that I only consider
     // shown wheat crosses. Hidden wheat cross
     // are not considered.
-    const epsilonEnvelop_1 = {
-      _type: 'Epsilon envelop 1',
+    const epsilonFaceEnvelop = {
+      _type: 'Epsilon face envelop',
       epsilonJackCrossContext:
         finalEpsilonJackCrossContext,
       epsilonQueenCrossContext:
@@ -107,7 +107,7 @@ const buildEpsilonDualLongHooksContext_1 =
 
     const epsilonLongHookContext_1 = {
       ...deltaDualLongHooksContext_3,
-      epsilonEnvelop_1,
+      epsilonFaceEnvelop,
       _type: 'Epsilon dual long hooks context 1'
     }
 
