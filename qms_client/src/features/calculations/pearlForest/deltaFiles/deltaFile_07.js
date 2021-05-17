@@ -53,7 +53,7 @@ export const
 
   checkNilWithString(
     askingDayTrunkChinese,
-    'Asking day trunk chinese');
+    'Asking day trunk Chinese');
 
   const deltaPilotPaladinIndex =
     getDeltaPilotPaladinIndexByAskingDayTrunkChinese(

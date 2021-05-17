@@ -73,7 +73,7 @@ export const buildCrossInHookContextList_1 = (
 
   checkNilWithString(
     crossInHookBranchElementalEnglish,
-    'Long hook cross branch elemental english');
+    'Long hook cross branch elemental English');
 
   return {
     _type: 'Cross in hook 1.',

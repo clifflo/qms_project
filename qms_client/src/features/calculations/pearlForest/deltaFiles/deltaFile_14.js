@@ -32,7 +32,7 @@ const buildDeltaDualLongHooksContext_3 =
 
     checkNilWithString(
       askingDayFlushOpponentChinese,
-      'Asking day flush opponent chinese');
+      'Asking day flush opponent Chinese');
 
     const askingDayHitOpponentChinese =
       getTwigHitOpponentOfChinese(

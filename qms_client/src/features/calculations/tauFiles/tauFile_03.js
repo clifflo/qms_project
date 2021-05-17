@@ -1,0 +1,30 @@
+
+const mapFunctionForTauMonthStartDate =
+  (rawSolarYear,
+  tauMonthStartDate) => {
+
+  const rawSolarMonth =
+    R.slice(0, 2, tauMonthStartDate);
+
+  const solarDay =
+    R.slice(3, 5, tauMonthStartDate);
+
+  let finalSolarYear;
+  let finalSolorMonth;
+
+  if(rawSolorMonth == '13'){
+    finalSolarYear =
+      (parseInt(rawSolarYear) + 1).toString();
+    finalSolarMonth = '01';
+  }
+  else {
+    finalSolorMonth = rawSolorMonth;
+    finalSolorYear = rawSolorYear;
+  }
+
+
+  if(rawWesternMonth == '13'){
+    yr_2 = (parseInt(yr_1) + 1).toString();
+    mo_3 = '01'
+  }
+}

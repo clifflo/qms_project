@@ -67,7 +67,7 @@ export const getTwigFlushOpponentOfChinese =
 
   checkNilWithString(
     twigFlushSelfChinese,
-    'Twig flush self chinese');
+    'Twig flush self Chinese');
 
   const twigFlushContextFindFunction =
     twigFlushContext => {
@@ -95,7 +95,7 @@ export const getTwigFlushOpponentOfChinese =
 
   checkNilWithString(
     matchTwigFlushOpponentChinese,
-    'Match twig flush opponent chinese');
+    'Match twig flush opponent Chinese');
 
   return matchTwigFlushOpponentChinese;
 }

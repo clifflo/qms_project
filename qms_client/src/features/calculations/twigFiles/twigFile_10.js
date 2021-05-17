@@ -22,7 +22,7 @@ export const
 
   checkNilWithString(
     twigFullComboChinese,
-    'Twig full combo chinese');
+    'Twig full combo Chinese');
 
   const twigTrunkChinesePart =
     twigFullComboChinese[0];

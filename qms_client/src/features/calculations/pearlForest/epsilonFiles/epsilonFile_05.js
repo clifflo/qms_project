@@ -27,7 +27,7 @@ export const
 
     checkNilWithString(
       epsilonFocusToFaceRelationEnglish,
-      'Epsilon focus to face relation english');
+      'Epsilon focus to face relation English');
 
     let epsilonFocusToFaceCorrelationHacker;
     let epsilonFocusToFaceCorrelationHacked;

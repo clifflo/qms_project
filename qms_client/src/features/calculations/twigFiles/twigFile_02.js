@@ -75,7 +75,7 @@ export const isValidTwigTrunkChinese =
   twigTrunkChinese => {
 
   checkNilWithString(
-    twigTrunkChinese, 'Twig trunk chinese');
+    twigTrunkChinese, 'Twig trunk Chinese');
 
   return isItemExistByStringFromList(
     twigTrunkContextSet,

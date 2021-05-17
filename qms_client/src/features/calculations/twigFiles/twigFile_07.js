@@ -36,7 +36,7 @@ export const getTwigBranchContextByChinese =
 
     checkNilWithString(
       twigBranchChinese,
-      'Twig branch chinese');
+      'Twig branch Chinese');
 
     const twigBranchContext = findItemByStringFromList(
       twigBranchContextSet,
@@ -46,7 +46,7 @@ export const getTwigBranchContextByChinese =
     if(R.isNil(twigBranchContext)){
       throw new Error(
         twigBranchChinese + ' '
-        + 'is not a valid twig branch chinese.');
+        + 'is not a valid twig branch Chinese.');
     }
 
     return twigBranchContext;
@@ -54,6 +54,6 @@ export const getTwigBranchContextByChinese =
   catch(errorMessage){
     console.error(errorMessage);
     throw new Error(
-      'Cannot get twig branch context by chinese.');
+      'Cannot get twig branch context by Chinese.');
   }
 }

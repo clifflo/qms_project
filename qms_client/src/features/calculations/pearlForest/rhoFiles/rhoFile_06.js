@@ -30,13 +30,13 @@ export const getNattoNoodle = (
 
   checkNilWithString(
     bakedNatto.genericShortHookElementalChinese,
-    'Generic short hook elemental chinese');
+    'Generic short hook elemental Chinese');
 
   if(isShortHookExternal){
 
     checkNilWithString(
       bakedNatto.externalShortHookTrunkChinese,
-      'External short hook trunk chinese of natto');
+      'External short hook trunk Chinese of natto');
 
     checkNilWithArray(
       bakedNatto.externalSnapPeas,
@@ -71,7 +71,7 @@ export const getNattoNoodle = (
 
     checkNilWithString(
       bakedNatto.internslShortHookTrunkChinese,
-      'Internal short hook trunk chinese of natto');
+      'Internal short hook trunk Chinese of natto');
 
     checkNilWithArray(
       bakedNatto.internalSnapPeas,
@@ -79,7 +79,7 @@ export const getNattoNoodle = (
 
     checkNilWithString(
       bakedNatto.genericShortHookElementalChinese,
-      'Generic short hook elemental chinese of natto');
+      'Generic short hook elemental Chinese of natto');
 
     const effectiveShortHookTrunkChinese =
       bakedNatto.internslShortHookTrunkChinese;

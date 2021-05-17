@@ -33,7 +33,7 @@ const mapFunctionOfTwigSmallAlloySentence =
   checkNilWithString(
     twigSmallAlloyElementalEnglish,
     'Twig branch small alloy '
-    + 'elemental english');
+    + 'elemental English');
 
   const twigSmallAlloyBranchChineseSet =
   [
@@ -79,7 +79,7 @@ export const getTwigSmallAlloyOpponentOfChinese =
 
   checkNilWithString(
     twigSmallAlloySelfChinese,
-    'Twig small alloy self chinese');
+    'Twig small alloy self Chinese');
 
   const twigSmallAlloyContextFindFunction =
     twigSmallAlloyContext => {
@@ -107,7 +107,7 @@ export const getTwigSmallAlloyOpponentOfChinese =
 
   checkNilWithString(
     matchTwigSmallAlloyOpponentChinese,
-    'Match twig small alloy opponent chinese');
+    'Match twig small alloy opponent Chinese');
 
   return matchTwigSmallAlloyOpponentChinese;
 }

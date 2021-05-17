@@ -22,7 +22,7 @@ export const
 
   checkNilWithString(
     askingDayTrunkChinese,
-    'Asking day trunk chinese');
+    'Asking day trunk Chinese');
 
   const loadedDeltaLongHookContextMapFunction_5 =
     R.curry(deltaLongHookContextMapFunction_5)
@@ -44,7 +44,7 @@ export const getDeltaLongHookContext_5 =
 
     checkNilWithString(
       askingDayTrunkChinese,
-      'Asking day trunk chinese');
+      'Asking day trunk Chinese');
 
     checkNilWithString(
       wheatHookName,

@@ -26,12 +26,12 @@ const buildEpsilonDualLongHooksContext_2 =
 
       checkNilWithString(
         deltaFocusEnglish,
-        'Delta focus english');
+        'Delta focus English');
 
       if(!isValidDeltaFocusEnglish(
         deltaFocusEnglish)){
         throw new Error(
-          'Invalid delta focus english: '
+          'Invalid delta focus English: '
           + deltaFocusEnglish);
       }
 

@@ -37,7 +37,7 @@ const deltaLongHookContextMapFunction_2 =
 
   checkNilWithArray(
     completeDeltaFocusEnglishSet,
-    'Complete delta focus english set');
+    'Complete delta focus English set');
 
   const duplicatedDeltaFocusEnglishSet =
     R.map(
@@ -50,13 +50,13 @@ const deltaLongHookContextMapFunction_2 =
 
   if(uniqueDeltaFocusEnglishSet.length < 3){
     throw new Error(
-      'Length of unique delta focus english '
+      'Length of unique delta focus English '
       + 'should not be less than 4.');
   }
 
   checkNilWithArray(
     uniqueDeltaFocusEnglishSet,
-    'Unique delta focus english set');
+    'Unique delta focus English set');
 
   const hiddenDeltaFocusEnglishSet =
     R.difference(
@@ -65,7 +65,7 @@ const deltaLongHookContextMapFunction_2 =
 
   checkNilWithArray(
     hiddenDeltaFocusEnglishSet,
-    'Hidden delta focus english set');
+    'Hidden delta focus English set');
 
   const hasHiddenDeltaFocus =
     !R.isEmpty(hiddenDeltaFocusEnglishSet);

@@ -48,7 +48,7 @@ export const isValidDeltaFocusEnglish =
 
   checkNilWithString(
     deltaFocusEnglish,
-    'Delta focus english');
+    'Delta focus English');
 
   return isItemExistByStringFromList(
     deltaFocusContextSet,

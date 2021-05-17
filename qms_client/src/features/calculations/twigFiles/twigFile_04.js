@@ -10,7 +10,7 @@ import {
 
 // Elemental relation index is defined as the
 // twig elemental index of opponent minus myself.
-// Relation in english is defined as opponent
+// Relation in English is defined as opponent
 // viewing myself.
 export const
   twigElementalRelationContextSet = [

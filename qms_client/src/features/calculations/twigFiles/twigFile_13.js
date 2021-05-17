@@ -67,7 +67,7 @@ export const getTwigHitOpponentOfChinese =
 
   checkNilWithString(
     twigHitSelfChinese,
-    'Twig hit self chinese');
+    'Twig hit self Chinese');
 
   const twigHitContextFindFunction =
     twigHitContext => {
@@ -95,7 +95,7 @@ export const getTwigHitOpponentOfChinese =
 
   checkNilWithString(
     matchTwigHitOpponentChinese,
-    'Match twig hit opponent chinese');
+    'Match twig hit opponent Chinese');
 
   return matchTwigHitOpponentChinese;
 }

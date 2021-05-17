@@ -73,7 +73,7 @@ export const getTwigPauseOpponentOfChinese =
 
   checkNilWithString(
     twigPauseSelfChinese,
-    'Twig pause self chinese');
+    'Twig pause self Chinese');
 
   const twigPauseContextFindFunction =
     twigPauseContext => {
@@ -101,7 +101,7 @@ export const getTwigPauseOpponentOfChinese =
 
   checkNilWithString(
     matchTwigPauseOpponentChinese,
-    'Match twig pause opponent chinese');
+    'Match twig pause opponent Chinese');
 
   return matchTwigPauseOpponentChinese;
 }

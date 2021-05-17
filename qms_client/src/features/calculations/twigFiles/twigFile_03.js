@@ -100,7 +100,7 @@ export const isValidTwigBranchChinese =
 
   checkNilWithString(
     twigBranchChinese,
-    'Twig branch chinese');
+    'Twig branch Chinese');
 
   return isItemExistByStringFromList(
     twigBranchContextSet,

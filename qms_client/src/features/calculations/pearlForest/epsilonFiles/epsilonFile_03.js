@@ -27,7 +27,7 @@ export const getEpsilonFocusToFaceRelationContext =
 
       checkNilWithString(
         epsilonFaceCrossBranchElementalEnglish,
-        'Epsilon face cross branch elemental english');
+        'Epsilon face cross branch elemental English');
 
       const epsilonFocusCrossTypeEnglish =
         epsilonFocusCrossContextSet[0]
@@ -39,7 +39,7 @@ export const getEpsilonFocusToFaceRelationContext =
 
       checkNilWithString(
         epsilonFocusCrossBranchElementalEnglish,
-        'Epsilon focus cross branch elemental english');
+        'Epsilon focus cross branch elemental English');
 
       const deltaFocusToRhoFaceRelationContext =
       getTwigElementalRelationContextByEnglish(
@@ -56,7 +56,7 @@ export const getEpsilonFocusToFaceRelationContext =
 
       checkNilWithString(
         epsilonFocusToFaceRelationEnglish,
-        'Epsilon focus to face relation english');
+        'Epsilon focus to face relation English');
 
       const epsilonFaceType =
         epsilonFaceCrossContext

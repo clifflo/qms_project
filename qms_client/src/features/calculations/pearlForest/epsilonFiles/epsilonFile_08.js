@@ -26,7 +26,7 @@ export const
 
     checkNilWithString(
       epsilonIntraFacesRelationEnglish,
-      'Epsilon intra faces relation english');
+      'Epsilon intra faces relation English');
 
     let epsilonIntraFacesCorrelationHacker;
     let epsilonIntraFacesCorrelationHacked;

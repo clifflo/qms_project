@@ -53,7 +53,7 @@ export const getFullSnapPeas =(
 
     checkNilWithString(
       beginningSnapPeaBranchChinese,
-      'Beginning snap pea branch chinese');
+      'Beginning snap pea branch Chinese');
 
     const fullSnapPeas =
       R.map(

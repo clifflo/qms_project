@@ -20,7 +20,7 @@ const
 
   checkNilWithString(
     rhoJackCrossBranchChinese,
-    'Rho jack cross branch chinese');
+    'Rho jack cross branch Chinese');
 
   const rhoJackCrossBranchIndex =
     getTwigBranchContextByChinese(

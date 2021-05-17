@@ -33,7 +33,7 @@ export const getEpsilonIntraFacesRelationContext =
   checkNilWithString(
     sourceEpsilonFaceBranchElementalEnglish,
     'Source epsilon face branch '
-    + 'elemental english');
+    + 'elemental English');
 
   const targetEpsilonFaceBranchElementalEnglish =
     targetEpsilonFocusCrossContext
@@ -42,7 +42,7 @@ export const getEpsilonIntraFacesRelationContext =
   checkNilWithString(
     targetEpsilonFaceBranchElementalEnglish,
     'Target epsilon face branch '
-    + 'elemental english');
+    + 'elemental English');
 
   const rhoIntraFacesRelationContext =
     getTwigElementalRelationContextByEnglish(

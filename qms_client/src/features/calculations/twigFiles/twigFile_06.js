@@ -37,7 +37,7 @@ export const getTwigTrunkContextByChinese =
 
     checkNilWithString(
       twigTrunkChinese,
-      'Twig trunk chinese');
+      'Twig trunk Chinese');
 
     const twigTrunkContext =
       findItemByStringFromList(
@@ -48,7 +48,7 @@ export const getTwigTrunkContextByChinese =
     if(R.isNil(twigTrunkContext)){
       throw new Error(
         twigTrunkChinese + ' '
-        + 'is not a valid twig trunk chinese.');
+        + 'is not a valid twig trunk Chinese.');
     }
 
     return twigTrunkContext;
@@ -56,6 +56,6 @@ export const getTwigTrunkContextByChinese =
   catch(errorMessage){
     console.error(errorMessage);
     throw new Error(
-      'Cannot get twig trunk context by chinese.');
+      'Cannot get twig trunk context by Chinese.');
   }
 }
