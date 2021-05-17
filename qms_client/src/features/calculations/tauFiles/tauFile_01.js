@@ -1,6 +1,6 @@
-export default tauContext_1 = [
+export const tauContext_1 = [
   {
-    'months': [
+    tauMonthFirstDates: [
       '02-12',
       '03-13',
       '04-12',
@@ -15,10 +15,10 @@ export default tauContext_1 = [
       '13-03',
       ''
     ],
-    'year': '2021'
+    solarYear: '2021'
   },
   {
-    'months': [
+    tauMonthFirstDates: [
       '02-01',
       '03-03',
       '04-01',
@@ -33,10 +33,10 @@ export default tauContext_1 = [
       '12-23',
       ''
     ],
-    'year': '2022'
+    solarYear: '2022'
   },
   {
-    'months': [
+    tauMonthFirstDates: [
       '01-22',
       '02-20',
       '04-20',
@@ -51,10 +51,10 @@ export default tauContext_1 = [
       '13-11',
       '二: 03-22'
     ],
-    'year': '2023'
+    solarYear: '2023'
   },
   {
-    'months': [
+    tauMonthFirstDates: [
       '02-10',
       '03-10',
       '04-09',
@@ -69,10 +69,10 @@ export default tauContext_1 = [
       '12-31',
       ''
     ],
-    'year': '2024'
+    solarYear: '2024'
   },
   {
-    'months': [
+    tauMonthFirstDates: [
       '01-29',
       '02-28',
       '03-29',
@@ -87,10 +87,10 @@ export default tauContext_1 = [
       '13-19',
       '六: 07-25'
     ],
-    'year': '2025'
+    solarYear: '2025'
   },
   {
-    'months': [
+    tauMonthFirstDates: [
       '02-17',
       '03-19',
       '04-17',
@@ -105,10 +105,10 @@ export default tauContext_1 = [
       '13-08',
       ''
     ],
-    'year': '2026'
+    solarYear: '2026'
   },
   {
-    'months': [
+    tauMonthFirstDates: [
       '02-06',
       '03-08',
       '04-07',
@@ -123,10 +123,10 @@ export default tauContext_1 = [
       '12-28',
       ''
     ],
-    'year': '2027'
+    solarYear: '2027'
   },
   {
-    'months': [
+    tauMonthFirstDates: [
       '01-26',
       '02-25',
       '03-26',
@@ -141,10 +141,10 @@ export default tauContext_1 = [
       '13-15',
       '五: 06-23'
     ],
-    'year': '2028'
+    solarYear: '2028'
   },
   {
-    'months': [
+    tauMonthFirstDates: [
       '02-13',
       '03-15',
       '04-14',
@@ -159,10 +159,10 @@ export default tauContext_1 = [
       '13-04',
       ''
     ],
-    'year': '2029'
+    solarYear: '2029'
   },
   {
-    'months': [
+    tauMonthFirstDates: [
       '02-03',
       '03-04',
       '04-03',
@@ -177,6 +177,6 @@ export default tauContext_1 = [
       '12-25',
       ''
     ],
-    'year': '2030'
+    solarYear: '2030'
   }
-]
+];

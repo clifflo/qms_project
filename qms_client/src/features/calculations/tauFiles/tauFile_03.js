@@ -1,6 +1,10 @@
+import {
+
+}
 
 const mapFunctionForTauMonthStartDate =
   (rawSolarYear,
+  tauMonthIndex,
   tauMonthStartDate) => {
 
   const rawSolarMonth =
@@ -20,11 +24,5 @@ const mapFunctionForTauMonthStartDate =
   else {
     finalSolorMonth = rawSolorMonth;
     finalSolorYear = rawSolorYear;
-  }
-
-
-  if(rawWesternMonth == '13'){
-    yr_2 = (parseInt(yr_1) + 1).toString();
-    mo_3 = '01'
   }
 }
