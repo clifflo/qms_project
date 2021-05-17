@@ -11,7 +11,7 @@ import {
   checkNilWithArray
 } from './utilityHubCloneOfEpsilon';
 
-const getEpsilonFocusToFaceRelationContext =
+export const getEpsilonFocusToFaceRelationContext =
   (epsilonFaceCrossContext,
   epsilonFocusCrossContextSet) => {
 
@@ -41,12 +41,12 @@ const getEpsilonFocusToFaceRelationContext =
         epsilonFocusCrossBranchElementalEnglish,
         'Epsilon focus cross branch elemental english');
 
-      const epsilonFocusFaceRelationContext =
+      const deltaFocusToRhoFaceRelationContext =
       getTwigElementalRelationContextByEnglish(
         epsilonFaceCrossBranchElementalEnglish,
         epsilonFocusCrossBranchElementalEnglish);
 
-      const epsilonFocusFaceRelationEnglish =
+      const epsilonFocusToFaceRelationEnglish =
         epsilonFocusFaceRelationContext
         .twigElementalRelationEnglish;
 
@@ -58,7 +58,7 @@ const getEpsilonFocusToFaceRelationContext =
         epsilonFaceCrossContext
         .epsilonFaceType;
 
-      const epsilonFocusOfFaceType =
+      const deltaFocusEnglishOfRhoFaceType =
         epsilonFaceCrossContext
         .deltaFocusEnglish;
 
@@ -70,7 +70,7 @@ const getEpsilonFocusToFaceRelationContext =
         _type: 'Epsilon focus to face relation context',
         epsilonFaceType,
         epsilonFocusType,
-        epsilonFocusOfFaceType,
+        deltaFocusEnglishOfRhoFaceType,
         epsilonFocusFaceRelationEnglish,
         epsilonFaceCrossBranchElementalEnglish,
         epsilonFocusCrossBranchElementalEnglish,
@@ -83,39 +83,5 @@ const getEpsilonFocusToFaceRelationContext =
     console.error(errorMessage);
     throw new Error(
       'Cannot get epsilon focus to face context');
-  }
-}
-
-export const getEpsilonFocusToFaceRelationContextSubset =
-  (epsilonFocusCrossContextSetList,
-  epsilonFaceCrossContext)   => {
-
-  try{
-    checkNilWithTypedObject(
-      epsilonFaceCrossContext,
-      'Epsilon face cross context');
-
-    const loadedGetEpsilonFocusToFaceContext =
-      R.curry
-      (getEpsilonFocusToFaceRelationContext)
-      (epsilonFaceCrossContext);
-
-    const epsilonFocusFaceReactionContextSubset =
-      R.map(
-        loadedGetEpsilonFocusToFaceContext,
-        epsilonFocusCrossContextSetList);
-
-    checkNilWithArray(
-      epsilonFocusFaceReactionContextSubset,
-      'Epsilon focus face reaction context subset');
-
-    return epsilonFocusFaceReactionContextSubset;
-
-  }
-  catch(errorMessage){
-    console.error(errorMessage);
-    throw new Error(
-      'Cannot get epsilon focus to face '
-      + 'context set.');
   }
 }

@@ -1,11 +1,46 @@
 import * as R from 'ramda';
 import {
-  getEpsilonFocusToFaceRelationContextSubset,
+  getEpsilonFocusToFaceRelationContext,
   getEpsilonDualLongHooksContext_2
 } from './epsilonMiniHub_01';
 import {
   checkNilWithArray
 } from './utilityHubCloneOfEpsilon';
+
+export const getEpsilonFocusToFaceRelationContextSubset =
+  (epsilonFocusCrossContextSetList,
+  epsilonFaceCrossContext) => {
+
+  try{
+    checkNilWithTypedObject(
+      epsilonFaceCrossContext,
+      'Epsilon face cross context');
+
+    const loadedGetEpsilonFocusToFaceContext =
+      R.curry
+      (getEpsilonFocusToFaceRelationContext)
+      (epsilonFaceCrossContext);
+
+    const epsilonFocusFaceReactionContextSubset =
+      R.map(
+        loadedGetEpsilonFocusToFaceContext,
+        epsilonFocusCrossContextSetList);
+
+    checkNilWithArray(
+      epsilonFocusFaceReactionContextSubset,
+      'Epsilon focus face reaction '
+      + 'context subset');
+
+    return epsilonFocusFaceReactionContextSubset;
+
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throw new Error(
+      'Cannot get epsilon focus to face '
+      + 'context set.');
+  }
+}
 
 const buildEpsilonDualLongHooksContext_3 =
   epsilonDualLongHooksContext_2 => {
