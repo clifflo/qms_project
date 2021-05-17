@@ -11,7 +11,7 @@ import {
   checkNilWithArray
 } from './utilityHubCloneOfEpsilon';
 
-const getEpsilonFocusToFaceContext =
+const getEpsilonFocusToFaceRelationContext =
   (epsilonFaceCrossContext,
   epsilonFocusCrossContextSet) => {
 
@@ -62,7 +62,7 @@ const getEpsilonFocusToFaceContext =
         epsilonFocusCrossContextSet[0]
         .deltaFocusEnglish;
 
-      const epsilonFocusToFaceContext = {
+      const epsilonFocusToFaceRelationContext = {
         _type: 'Epsilon focus to face context',
         epsilonFaceType,
         epsilonFocusType,
@@ -71,7 +71,7 @@ const getEpsilonFocusToFaceContext =
         epsilonFocusCrossBranchElementalEnglish,
       };
 
-      return epsilonFocusToFaceContext;
+      return epsilonFocusToFaceRelationContext;
     };
   }
   catch(errorMessage){
@@ -81,7 +81,7 @@ const getEpsilonFocusToFaceContext =
   }
 }
 
-export const getEpsilonFocusToFaceContextSet =
+export const getEpsilonFocusToFaceRelationContextSubset =
   (epsilonFocusCrossContextSetList,
   epsilonFaceCrossContext)   => {
 
@@ -92,19 +92,19 @@ export const getEpsilonFocusToFaceContextSet =
 
     const loadedGetEpsilonFocusToFaceContext =
       R.curry
-      (getEpsilonFocusToFaceContext)
+      (getEpsilonFocusToFaceRelationContext)
       (epsilonFaceCrossContext);
 
-    const epsilonFocusFaceReactionContextSet =
+    const epsilonFocusFaceReactionContextSubset =
       R.map(
         loadedGetEpsilonFocusToFaceContext,
         epsilonFocusCrossContextSetList);
 
     checkNilWithArray(
-      epsilonFocusFaceReactionContextSet,
-      'Epsilon focus face reaction context set');
+      epsilonFocusFaceReactionContextSubset,
+      'Epsilon focus face reaction context subset');
 
-    return epsilonFocusFaceReactionContextSet;
+    return epsilonFocusFaceReactionContextSubset;
 
   }
   catch(errorMessage){
