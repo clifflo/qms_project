@@ -1,14 +1,22 @@
 import * as R from 'ramda';
 
-export getEpsilonIntraFacesRelationContext =
+export const getEpsilonIntraFacesRelationContext =
   (sourceEpsilonFocusCrossContext,
   targetEpsilonFocusCrossContext) => {
 
-  const epsilonSourceFaceBranchElementalEnglish =
+  const sourceEpsilonFaceType =
+    sourceEpsilonFocusCrossContext
+    .epsilonFaceType;
+
+  const targetEpsilonFaceType =
+    targetEpsilonFocusCrossContext
+    .epsilonFaceType;
+
+  const sourceEpsilonFaceBranchElementalEnglish =
     sourceEpsilonFocusCrossContext
     .crossInHookBranchElementalEnglish;
 
-  const epsilonTargetFaceBranchElementalEnglish =
+  const targetEpsilonFaceBranchElementalEnglish =
     targetEpsilonFocusCrossContext
     .crossInHookBranchElementalEnglish;
 
@@ -21,9 +29,14 @@ export getEpsilonIntraFacesRelationContext =
     rhoIntraFacesRelationContext
     .twigElementalRelationEnglish;
 
-  return {
-    sourceEpsilonFocusCrossContext,
-    targetEpsilonFocusCrossContext,
+  const epsilonIntraFacesRelationContext = {
+    _type: 'Epsilon intra faces relation context',
+    sourceEpsilonFaceType,
+    targetEpsilonFaceType,
+    sourceEpsilonFaceBranchElementalEnglish,
+    targetEpsilonFaceBranchElementalEnglish,
     epsilonIntraFacesRelationEnglish
-  }
+  };
+
+  return epsilonIntraFacesRelationContext;
 }

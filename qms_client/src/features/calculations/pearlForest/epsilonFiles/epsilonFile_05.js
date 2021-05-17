@@ -120,5 +120,4 @@ export const
       'Cannot get epsilon focus to face '
       + 'correlation context.')
   }
-
 }
