@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-const getEpsilonFocusToFaceCorrelationContext =
+export const getEpsilonFocusToFaceCorrelationContext =
   epsilonFocusToFaceRelationContext => {
 
   const {
@@ -101,16 +101,4 @@ const getEpsilonFocusToFaceCorrelationContext =
     default:
       throw new Error('Wrong twig elemental.');
   }
-}
-
-const getEpsilonFocusToFaceCorrelationContextSet =
-  epsilonFocusToFaceRelationContext =>
-  R.map(
-    getEpsilonFocusToFaceCorrelationContext,
-    epsilonFocusToFaceRelationContext);
-
-const buildEpsilonDualLongHooksContext_4 =
-  epsilonDualLongHooksContext_3 => {
-
-  
 }
