@@ -2,8 +2,11 @@ import * as R from 'ramda';
 import {
   getTwigFullComboChineseByIndex
 } from './utilityHubCloneOfTwig';
+import {
+  mapFunctionOfTauContext_2
+} from './tauFile_03'
 
-const mapFunctionOfTauYearContext_1 =
+const mapFunctionOfTauYearContext_2 =
   tauYearContext_1 => {
 
   // Ground here stands for non leap
@@ -18,34 +21,29 @@ const mapFunctionOfTauYearContext_1 =
       tauYearContext_1
       .tauMonthStartDates);
 
-  const solarYear = tauYearContext_1.solarYear;
+  const rawSolarYear =
+    tauYearContext_1.rawSolarYear;
 
-  const twigComboIndex = (solarYear - 1984) % 60;
+  const twigComboIndex =
+    (rawSolarYear - 1984) % 60;
 
   const twigFullComboChinese =
     getTwigFullComboChineseByIndex(
       twigComboIndex);
 
-  const months_1 = RA.mapIndexed(
-    mapFn_1c(yrContext.year)(wybp),
-    mswl);
+  const {
+    rawSolarYear,
+    tauYearTwigFullComboChinese,
+    groundTauMonthStartDates
+  } = payloadForMapFunctionOfTauContext_2;
 
-  let months_2;
-  let leap_2;
+  const loadedMapFunctionOfTauMonthContext_2 =
+    R.curry(mapFunctionOfTauContext_2)
+    (payloadForMapFunctionOfTauContext_2);
 
-  if(leap_1 != '—'){
-    const leapSplit = R.split(':', leap_1);
-    leap_2 = year + '-' +
-      R.drop(1, R.take(6, leapSplit[1]));
-  }
-  else {
-    leap_2 = '---'
-  }
+  const tauMonthContextSet_2 =
+    R.map(
+      loadedMapFunctionOfTauMonthContext_2,
+      R.range(0, 6));
 
-  return {
-    year,
-    wybp,
-    months: months_1,
-    leap: leap_2
-  }
 }

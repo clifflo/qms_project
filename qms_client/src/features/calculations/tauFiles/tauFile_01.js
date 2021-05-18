@@ -15,7 +15,7 @@ export const tauYearContextSet_1 = [
       '13-03',
       ''
     ],
-    solarYear: 2021
+    rawSolarYear: 2021
   },
   {
     tauMonthFirstDates: [
@@ -33,7 +33,7 @@ export const tauYearContextSet_1 = [
       '12-23',
       ''
     ],
-    solarYear: 2022
+    rawSolarYear: 2022
   },
   {
     tauMonthFirstDates: [
@@ -51,7 +51,7 @@ export const tauYearContextSet_1 = [
       '13-11',
       '二: 03-22'
     ],
-    solarYear: 2023
+    rawSolarYear: 2023
   },
   {
     tauMonthFirstDates: [
@@ -69,7 +69,7 @@ export const tauYearContextSet_1 = [
       '12-31',
       ''
     ],
-    solarYear: 2024
+    rawSolarYear: 2024
   },
   {
     tauMonthFirstDates: [
@@ -87,7 +87,7 @@ export const tauYearContextSet_1 = [
       '13-19',
       '六: 07-25'
     ],
-    solarYear: 2025
+    rawSolarYear: 2025
   },
   {
     tauMonthFirstDates: [
@@ -105,7 +105,7 @@ export const tauYearContextSet_1 = [
       '13-08',
       ''
     ],
-    solarYear: 2026
+    rawSolarYear: 2026
   },
   {
     tauMonthFirstDates: [
@@ -123,7 +123,7 @@ export const tauYearContextSet_1 = [
       '12-28',
       ''
     ],
-    solarYear: 2027
+    rawSolarYear: 2027
   },
   {
     tauMonthFirstDates: [
@@ -141,7 +141,7 @@ export const tauYearContextSet_1 = [
       '13-15',
       '五: 06-23'
     ],
-    solarYear: 2028
+    rawSolarYear: 2028
   },
   {
     tauMonthFirstDates: [
@@ -159,7 +159,7 @@ export const tauYearContextSet_1 = [
       '13-04',
       ''
     ],
-    solarYear: 2029
+    rawSolarYear: 2029
   },
   {
     tauMonthFirstDates: [
@@ -177,6 +177,6 @@ export const tauYearContextSet_1 = [
       '12-25',
       ''
     ],
-    solarYear: 2030
+    rawSolarYear: 2030
   }
 ];

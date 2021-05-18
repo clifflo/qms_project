@@ -1,12 +1,19 @@
 import {
-  tauMonthContextSet_1
+  originalTauMonthContextSet
 } from './tauFile_02';
 
-export const mapFunctionForTauMonthStartDate =
-  (rawSolarYear,
-  tauMonthIndex,
-  tauMonthStartDate,
-  tauYearTwigFullComboChinese) => {
+export const mapFunctionOfTauMonthContext_2 =
+  (payloadForMapFunctionOfTauMonthContext_2,
+  tauMonthIndex) => {
+
+  const {
+    rawSolarYear,
+    tauYearTwigFullComboChinese,
+    groundTauMonthStartDates
+  } = payloadForMapFunctionOfTauContext_2;
+
+  const tauMonthStartDate =
+    groundTauMonthStartDates[tauMonthIndex];
 
   const rawSolarMonth =
     R.slice(0, 2, tauMonthStartDate);
@@ -27,7 +34,7 @@ export const mapFunctionForTauMonthStartDate =
     finalSolorYear = rawSolorYear;
   }
 
-  const tauMonthContext_1 =
+  const originalTauMonthContext =
     getItemByNumberFromList(
       tauMonthContextSet,
       tauMonthIndex,
@@ -35,12 +42,11 @@ export const mapFunctionForTauMonthStartDate =
 
   const tauMonthContext_2 = {
     _type: 'TauMonthContext_2',
-    ...tauMonthContext_1,
+    ...originalTauMonthContext,
     solarYear: finalSolarYear,
     solarMonth: finalSolarMonth,
     tauYearTwigFullComboChinese
   };
 
   return tauMonthContext_2;
-
 }
