@@ -61,7 +61,7 @@ const mapFunctionOfBuiltTauYearContext_1 =
     const builtTauMonthContextSet_1 =
       R.map(
         loadedMapFunctionOfBuiltTauMonthContext_1,
-        R.range(0, 6));
+        R.range(0, 12));
 
     const builtTauYearContext_1 = {
       _type: 'BuiltTauYearContext_1',
