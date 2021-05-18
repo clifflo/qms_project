@@ -6,23 +6,23 @@ import {
   mapFunctionOfTauContext_2
 } from './tauFile_03'
 
-const mapFunctionOfTauYearContext_2 =
-  tauYearContext_1 => {
+const mapFunctionOfBuiltTauYearContext_1 =
+  originalTauYearContextSet => {
 
   // Ground here stands for non leap
   // month start date
   const groundTauMonthStartDates =
     R.init(
-      tauYearContext_1
+      originalTauYearContextSet
       .tauMonthStartDates);
 
   const leapTauMonthStartDate =
     R.last(
-      tauYearContext_1
+      originalTauYearContextSet
       .tauMonthStartDates);
 
   const rawSolarYear =
-    tauYearContext_1.rawSolarYear;
+    originalTauYearContextSet.rawSolarYear;
 
   const twigComboIndex =
     (rawSolarYear - 1984) % 60;
@@ -35,15 +35,25 @@ const mapFunctionOfTauYearContext_2 =
     rawSolarYear,
     tauYearTwigFullComboChinese,
     groundTauMonthStartDates
-  } = payloadForMapFunctionOfBuiltbuiltTauMonthContext_1;
+  } = payloadForMapFunctionOfBuiltTauMonthContext_1;
 
-  const loadedMapFunctionOfBuiltbuiltTauMonthContext_1 =
+  const loadedMapFunctionOfBuiltTauMonthContext_1 =
     R.curry(mapFunctionOfTauContext_2)
-    (payloadForMapFunctionOfBuiltbuiltTauMonthContext_1);
+    (payloadForMapFunctionOfBuiltTauMonthContext_1);
 
-  const tauMonthContextSet_2 =
+  const tauMonthContextSet_1 =
     R.map(
-      loadedMapFunctionOfTauMonthContext_2,
+      loadedMapFunctionOfTauMonthContext_1,
       R.range(0, 6));
 
+  const builtTauYearContext_1 = {
+    _type: 'TauYearContext_1',
+    tauMonthContextSet_1,
+    rawSolarYear,
+    tauYearTwigFullComboChinese,
+    groundTauMonthStartDates
+    leapTauMonthStartDate,
+  };
+
+  return builtTauYearContext_1;
 }

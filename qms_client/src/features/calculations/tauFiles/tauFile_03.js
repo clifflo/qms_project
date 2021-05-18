@@ -2,15 +2,15 @@ import {
   originalTauMonthContextSet
 } from './tauFile_02';
 
-export const mapFunctionOfBuiltbuiltTauMonthContext_1 =
-  (payloadForMapFunctionOfBuiltbuiltTauMonthContext_1,
+export const mapFunctionOfBuiltTauMonthContext_1 =
+  (payloadForMapFunctionOfBuiltTauMonthContext_1,
   tauMonthIndex) => {
 
   const {
     rawSolarYear,
     tauYearTwigFullComboChinese,
     groundTauMonthStartDates
-  } = payloadForMapFunctionOfBuiltbuiltTauMonthContext_1;
+  } = payloadForMapFunctionOfBuiltTauMonthContext_1;
 
   const tauMonthStartDate =
     groundTauMonthStartDates[tauMonthIndex];
@@ -40,13 +40,13 @@ export const mapFunctionOfBuiltbuiltTauMonthContext_1 =
       tauMonthIndex,
       'tauMonthIndex');
 
-  const BuiltbuiltTauMonthContext_1 = {
-    _type: 'BuiltbuiltTauMonthContext_1',
+  const builtTauMonthContext_1 = {
+    _type: 'BuiltTauMonthContext_1',
     ...originalTauMonthContext,
     solarYear: finalSolarYear,
     solarMonth: finalSolarMonth,
     tauYearTwigFullComboChinese
   };
 
-  return BuiltbuiltTauMonthContext_1;
+  return builtTauMonthContext_1;
 }

@@ -1,4 +1,4 @@
-export const tauYearContextSet_1 = [
+export const originalTauYearContextSet = [
   {
     tauMonthFirstDates: [
       '02-12',
