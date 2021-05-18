@@ -16,17 +16,22 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
     const {
       rawSolarStartDateYear,
       tauYearTwigFullComboChinese,
-      groundtauMonthStartMonthDetailDates
+      groundTauMonthStartMiddleDetailDates
     } = payloadForMapFunctionOfBuiltTauMonthContext_1;
 
-    const tauMonthStartDate =
-      groundtauMonthStartMonthDetailDates[tauMonthIndex];
+
+    const tauMonthStartMiddleDetailDate =
+      groundTauMonthStartMiddleDetailDates[tauMonthIndex];
 
     const rawSolarStartDateMonth =
-      parseInt(R.take(2, tauMonthStartDate));
+      parseInt(
+        R.take(
+          2, tauMonthStartMiddleDetailDate));
 
     const solarStartDateDayOfMonth =
-      parseInt(R.takeLast(2, tauMonthStartDate));
+      parseInt(
+        R.takeLast(
+          2, tauMonthStartMiddleDetailDate));
 
     let finalSolarStartDateYear;
     let finalSolarStartDateMonth;
