@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-const mapFunctionOfBuiltTauMonthContext_2 =
+export const mapFunctionOfBuiltTauMonthContext_2 =
   (payloadForMapFunctionOfBuiltTauMonthContext_2,
   builtTauMonthContext_1) => {
 
