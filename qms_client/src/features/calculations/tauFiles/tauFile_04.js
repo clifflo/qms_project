@@ -73,7 +73,7 @@ const mapFunctionOfBuiltTauYearContext_1 =
       tauYearTwigFullComboChinese,
       groundTauMonthStartDateInMiddleDetailSet,
       leapTauMonthStartDateInMiddleDetail:
-        finalLeapTauMonthStartDateInMiddleDetail
+      finalLeapTauMonthStartDateInMiddleDetail
     };
 
     return builtTauYearContext_1;
