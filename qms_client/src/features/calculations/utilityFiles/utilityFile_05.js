@@ -23,7 +23,7 @@ export const throwFunctionalError =
     adjustVariableName(rawFunctionalErrorName);
 
   const errorMessage =
-    finalFunctionalErrorName + 'is error.';
+    finalFunctionalErrorName + ' is error.';
 
   throw new Error(errorMessage);
 }

@@ -3,7 +3,8 @@ import {
   originalTauMonthContextSet
 } from './tauFile_02';
 import {
-  getItemByNumberFromList
+  getItemByNumberFromList,
+  checkNilWithNumber
 } from './utilityHubCloneOfTau';
 
 export const mapFunctionOfBuiltTauMonthContext_1 =
@@ -11,7 +12,7 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
   tauMonthIndex) => {
 
   const {
-    rawSolarYear,
+    rawSolarStartDateYear,
     tauYearTwigFullComboChinese,
     groundTauMonthStartDates
   } = payloadForMapFunctionOfBuiltTauMonthContext_1;
@@ -19,32 +20,35 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
   const tauMonthStartDate =
     groundTauMonthStartDates[tauMonthIndex];
 
-  const rawSolarMonth =
-    parseInt(R.slice(0, 2, tauMonthStartDate));
+  const rawSolarStartDateMonth =
+    parseInt(R.take(2, tauMonthStartDate));
 
-  const solarDay =
-    R.slice(3, 5, tauMonthStartDate);
+  const solarStartDateDayOfMonth =
+    parseInt(R.takeLast(2, tauMonthStartDate));
 
-  let finalSolarYear;
-  let finalSolarMonth;
+  let finalSolarStartDateYear;
+  let finalSolarStartDateMonth;
 
-  if(rawSolarMonth == 13){
-    finalSolarYear =
-      (parseInt(rawSolarYear) + 1).toString();
-    finalSolarMonth = 1;
+  if(rawSolarStartDateMonth == 13){
+    finalSolarStartDateYear =
+      (parseInt(rawSolarStartDateYear) + 1)
+      .toString();
+    finalSolarStartDateMonth = 1;
   }
   else {
-    finalSolarMonth = rawSolarMonth;
-    finalSolarYear = rawSolarYear;
+    finalSolarStartDateMonth =
+      rawSolarStartDateMonth;
+    finalSolarStartDateYear =
+      rawSolarStartDateYear;
   }
 
   checkNilWithNumber(
-    finalSolarMonth,
-    'finalSolarMonth');
+    finalSolarStartDateMonth,
+    'finalSolarStartDateMonth');
 
   checkNilWithNumber(
-    finalSolarYear,
-    'finalSolarYear');
+    finalSolarStartDateYear,
+    'finalSolarStartDateYear');
 
   const originalTauMonthContext =
     getItemByNumberFromList(
@@ -53,11 +57,12 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
       'tauMonthIndex');
 
   const builtTauMonthContext_1 = {
-    _type: 'BuiltTauMonthContext_1',
     ...originalTauMonthContext,
-    solarYear: finalSolarYear,
-    solarMonth: finalSolarMonth,
-    tauYearTwigFullComboChinese
+    solarStartDateYear: finalSolarStartDateYear,
+    solarStartDateMonth: finalSolarStartDateMonth,
+    solarStartDateDayOfMonth,
+    tauYearTwigFullComboChinese,
+    _type: 'BuiltTauMonthContext_1'
   };
 
   return builtTauMonthContext_1;

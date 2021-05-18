@@ -18,30 +18,30 @@ const mapFunctionOfBuiltTauYearContext_1 =
 
   try{
 
-    const { tauMonthFirstDates } =
+    const { tauMonthStartDates } =
       originalTauYearContextSet;
 
     checkNilWithArray(
-      tauMonthFirstDates,
-      'tauMonthFirstDates');
+      tauMonthStartDates,
+      'tauMonthStartDates');
 
     // Ground here stands for non leap
     // month start date
     const groundTauMonthStartDates =
       R.init(
         originalTauYearContextSet
-        .tauMonthFirstDates);
+        .tauMonthStartDates);
 
     const leapTauMonthStartDate =
       R.last(
         originalTauYearContextSet
-        .tauMonthFirstDates);
+        .tauMonthStartDates);
 
-    const rawSolarYear =
-      originalTauYearContextSet.rawSolarYear;
+    const rawSolarStartDateYear =
+      originalTauYearContextSet.rawSolarStartDateYear;
 
     const twigComboIndex =
-      (rawSolarYear - 1984) % 60;
+      (rawSolarStartDateYear - 1984) % 60;
 
     const tauYearTwigFullComboChinese =
       getTwigFullComboChineseByIndex(
@@ -49,7 +49,7 @@ const mapFunctionOfBuiltTauYearContext_1 =
 
     const payloadForMapFunctionOfBuiltTauMonthContext_1 =
     {
-      rawSolarYear,
+      rawSolarStartDateYear,
       tauYearTwigFullComboChinese,
       groundTauMonthStartDates
     };
@@ -58,15 +58,15 @@ const mapFunctionOfBuiltTauYearContext_1 =
       R.curry(mapFunctionOfBuiltTauMonthContext_1)
       (payloadForMapFunctionOfBuiltTauMonthContext_1);
 
-    const tauMonthContextSet_1 =
+    const builtTauMonthContextSet_1 =
       R.map(
         loadedMapFunctionOfBuiltTauMonthContext_1,
         R.range(0, 6));
 
     const builtTauYearContext_1 = {
-      _type: 'TauYearContext_1',
-      tauMonthContextSet_1,
-      rawSolarYear,
+      _type: 'BuiltTauYearContext_1',
+      builtTauMonthContextSet_1,
+      rawSolarStartDateYear,
       tauYearTwigFullComboChinese,
       groundTauMonthStartDates,
       leapTauMonthStartDate
@@ -80,7 +80,6 @@ const mapFunctionOfBuiltTauYearContext_1 =
       'mapFunctionOfBuiltTauYearContext_1');
 
   }
-
 }
 
 export const builtTauYearContextSet_1 =
