@@ -1,4 +1,11 @@
 import * as R from 'ramda';
+import {
+  getCyclicIndex
+} from './utilityHubCloneOfTwig';
+import {
+  getTwigBranchContextByIndex,
+  getTwigTrunkContextByIndex
+} from './twigMiniHub_02';
 
 export const getTwigFullComboChineseByIndex =
   twigComboIndex => {
@@ -20,7 +27,7 @@ export const getTwigFullComboChineseByIndex =
     getCyclicIndex(rawTwigComboBranchIndex, 12);
 
   const twigComboTrunkChinese =
-    getTwigComboContextByIndex(
+    getTwigTrunkContextByIndex(
       twigComboTrunkIndex)
     .twigTrunkChinese;
 

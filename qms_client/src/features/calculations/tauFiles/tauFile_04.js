@@ -1,59 +1,87 @@
 import * as R from 'ramda';
 import {
   getTwigFullComboChineseByIndex
-} from './utilityHubCloneOfTwig';
+} from './twigHubCloneOfTau';
 import {
-  mapFunctionOfTauContext_2
-} from './tauFile_03'
+  originalTauYearContextSet
+} from './tauFile_01';
+import {
+  mapFunctionOfBuiltTauMonthContext_1
+} from './tauFile_03';
+import {
+  checkNilWithArray
+} from './utilityHubCloneOfTau';
 
 const mapFunctionOfBuiltTauYearContext_1 =
   originalTauYearContextSet => {
 
-  // Ground here stands for non leap
-  // month start date
-  const groundTauMonthStartDates =
-    R.init(
-      originalTauYearContextSet
-      .tauMonthStartDates);
+  try{
 
-  const leapTauMonthStartDate =
-    R.last(
-      originalTauYearContextSet
-      .tauMonthStartDates);
+    const { tauMonthFirstDates } =
+      originalTauYearContextSet;
 
-  const rawSolarYear =
-    originalTauYearContextSet.rawSolarYear;
+    checkNilWithArray(
+      tauMonthFirstDates,
+      'tauMonthFirstDates');
 
-  const twigComboIndex =
-    (rawSolarYear - 1984) % 60;
+    // Ground here stands for non leap
+    // month start date
+    const groundTauMonthStartDates =
+      R.init(
+        originalTauYearContextSet
+        .tauMonthFirstDates);
 
-  const twigFullComboChinese =
-    getTwigFullComboChineseByIndex(
-      twigComboIndex);
+    const leapTauMonthStartDate =
+      R.last(
+        originalTauYearContextSet
+        .tauMonthFirstDates);
 
-  const {
-    rawSolarYear,
-    tauYearTwigFullComboChinese,
-    groundTauMonthStartDates
-  } = payloadForMapFunctionOfBuiltTauMonthContext_1;
+    const rawSolarYear =
+      originalTauYearContextSet.rawSolarYear;
 
-  const loadedMapFunctionOfBuiltTauMonthContext_1 =
-    R.curry(mapFunctionOfTauContext_2)
-    (payloadForMapFunctionOfBuiltTauMonthContext_1);
+    const twigComboIndex =
+      (rawSolarYear - 1984) % 60;
 
-  const tauMonthContextSet_1 =
-    R.map(
-      loadedMapFunctionOfTauMonthContext_1,
-      R.range(0, 6));
+    const tauYearTwigFullComboChinese =
+      getTwigFullComboChineseByIndex(
+        twigComboIndex);
 
-  const builtTauYearContext_1 = {
-    _type: 'TauYearContext_1',
-    tauMonthContextSet_1,
-    rawSolarYear,
-    tauYearTwigFullComboChinese,
-    groundTauMonthStartDates
-    leapTauMonthStartDate,
-  };
+    const payloadForMapFunctionOfBuiltTauMonthContext_1 =
+    {
+      rawSolarYear,
+      tauYearTwigFullComboChinese,
+      groundTauMonthStartDates
+    };
 
-  return builtTauYearContext_1;
+    const loadedMapFunctionOfBuiltTauMonthContext_1 =
+      R.curry(mapFunctionOfBuiltTauMonthContext_1)
+      (payloadForMapFunctionOfBuiltTauMonthContext_1);
+
+    const tauMonthContextSet_1 =
+      R.map(
+        loadedMapFunctionOfBuiltTauMonthContext_1,
+        R.range(0, 6));
+
+    const builtTauYearContext_1 = {
+      _type: 'TauYearContext_1',
+      tauMonthContextSet_1,
+      rawSolarYear,
+      tauYearTwigFullComboChinese,
+      groundTauMonthStartDates,
+      leapTauMonthStartDate
+    };
+
+    return builtTauYearContext_1;
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throw new Error(
+      'mapFunctionOfBuiltTauYearContext_1 is error.')
+  }
+
 }
+
+export const builtTauYearContextSet_1 =
+  R.map(
+    mapFunctionOfBuiltTauYearContext_1,
+    originalTauYearContextSet);

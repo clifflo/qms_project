@@ -1,6 +1,10 @@
+import * as R from 'ramda';
 import {
   originalTauMonthContextSet
 } from './tauFile_02';
+import {
+  getItemByNumberFromList
+} from './utilityHubCloneOfTau';
 
 export const mapFunctionOfBuiltTauMonthContext_1 =
   (payloadForMapFunctionOfBuiltTauMonthContext_1,
@@ -22,21 +26,21 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
     R.slice(3, 5, tauMonthStartDate);
 
   let finalSolarYear;
-  let finalSolorMonth;
+  let finalSolarMonth;
 
-  if(rawSolorMonth == '13'){
+  if(rawSolarMonth == '13'){
     finalSolarYear =
       (parseInt(rawSolarYear) + 1).toString();
     finalSolarMonth = '01';
   }
   else {
-    finalSolorMonth = rawSolorMonth;
-    finalSolorYear = rawSolorYear;
+    finalSolarMonth = rawSolarMonth;
+    finalSolarYear = rawSolarYear;
   }
 
   const originalTauMonthContext =
     getItemByNumberFromList(
-      tauMonthContextSet,
+      originalTauMonthContextSet,
       tauMonthIndex,
       'tauMonthIndex');
 
