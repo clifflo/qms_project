@@ -1,5 +1,5 @@
 import {
-  tauMonthContextSet
+  tauMonthContextSet_1
 } from './tauFile_02';
 
 export const mapFunctionForTauMonthStartDate =
@@ -27,10 +27,19 @@ export const mapFunctionForTauMonthStartDate =
     finalSolorYear = rawSolorYear;
   }
 
-  const tauMonthContext =
+  const tauMonthContext_1 =
     getItemByNumberFromList(
       tauMonthContextSet,
       tauMonthIndex,
-      'rawTauMonthIndex');
+      'tauMonthIndex');
+
+  const tauMonthContext_2 = {
+    _type: 'tauMonthContext_2',
+    ...tauMonthContext_1,
+    solarYear: finalSolarYear,
+    solarMonth: finalSolarMonth
+  };
+
+  return tauMonthContext_2;
 
 }
