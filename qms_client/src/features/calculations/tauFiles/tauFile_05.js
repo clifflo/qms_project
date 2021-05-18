@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-export const mapFunctionOfBuiltTauMonthContext_2 =
+export const mapFunctionOfBuiltTauMonthContextWithLeap_2 =
   (payloadForMapFunctionOfBuiltTauMonthContext_2,
   builtTauMonthContext_1) => {
 
@@ -24,6 +24,7 @@ export const mapFunctionOfBuiltTauMonthContext_2 =
       finalLeapSolarStartDateMonth,
       finalLeapSolarStartDateDayOfMonth,
       tauMonthHasLeap: true,
+      tauYearHasLeap: true,
       _type: 'BuiltTauMonthContext_2'
     }
   }
@@ -31,9 +32,22 @@ export const mapFunctionOfBuiltTauMonthContext_2 =
     builtTauMonthContext_2 = {
       ...builtTauMonthContext_1,
       tauMonthHasLeap: false,
+      tauYearHasLeap: true,
       _type: 'BuiltTauMonthContext_2'
     }
   }
 
   return builtTauMonthContext_2;
+}
+
+export const
+  mapFunctionOfBuiltTauMonthContextWithoutLeap_2 =
+  builtTauMonthContext_1 => {
+
+  return {
+    ...builtTauMonthContext_1,
+    _type: 'BuiltTauMonthContext_2',
+    tauMonthHasLeap: false,
+    tauYearHasLeap: false
+  }
 }

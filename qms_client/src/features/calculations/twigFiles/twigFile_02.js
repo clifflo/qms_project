@@ -66,7 +66,7 @@ export const twigTrunkContextSet = [
   {
     twigTrunkIndex: 9,
     twigTrunkChinese: '癸',
-    twigTrunkChinese : 'Lamda',
+    twigTrunkEnglish : 'Lamda',
     twigTrunkElementalChinese: '五行水',
   }
 ]
