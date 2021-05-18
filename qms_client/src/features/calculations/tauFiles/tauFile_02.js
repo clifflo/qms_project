@@ -1,6 +1,6 @@
 import { tauContext_1 } from './tauFile_01';
 
-export const tauMonthContextSet = [
+export const rawTauMonthContextSet = [
   {
     tauMonthChinese: '正月',
     tauMonthEnglish: 'Tau January',

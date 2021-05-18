@@ -1,17 +1,27 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import {
+  sentenceCase
+} from 'change-case';
 
 export const checkNilWithString =
-  (stringVariable, variableName) => {
+  (stringVariable, rawVariableName) => {
+
+  const finalVariableName =
+    R.compose(
+      R.replace('chinese', 'Chinese'),
+      R.replace('english', 'English'),
+      sentenceCase)
+    (rawVariableName);
 
   if(R.isNil(stringVariable)){
     throw new Error(
-      `${variableName} should not be nil.`);
+      `${finalVariableName} should not be nil.`);
   }
 
   if(!RA.isString(stringVariable)){
     throw new Error(
-      `${variableName} must be a string.`);
+      `${finalVariableName} must be a string.`);
   }
 }
 
