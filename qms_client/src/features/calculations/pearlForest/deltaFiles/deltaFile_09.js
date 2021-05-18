@@ -1,4 +1,4 @@
-export const mapFunctionForBothCrossInHook =
+export const mapFunctionOfBothCrossInHook =
   (rawDeltaWheatHookContext,
   rawDeltaCheeseHookContext,
   crossInHookDownwardIndex) => {

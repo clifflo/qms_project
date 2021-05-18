@@ -5,7 +5,7 @@ import {
 } from './deltaMiniHub_02'
 import {
   getDeltaLongHookContext_5,
-  mapFunctionForBothCrossInHook
+  mapFunctionOfBothCrossInHook
 } from './deltaMiniHub_03';
 import {
   checkNilWithTypedObject
@@ -54,14 +54,14 @@ export const getDeltaDualLongHooksContext_1 =
       _type: 'Delta cheese hook context'
     };
 
-    const loadedMapFunctionForBothCrossInHook =
-      R.curry(mapFunctionForBothCrossInHook)
+    const loadedmapFunctionOfBothCrossInHook =
+      R.curry(mapFunctionOfBothCrossInHook)
       (rawDeltaWheatHookContext)
       (rawDeltaCheeseHookContext);
 
     const combinedCrossInHookSet =
       R.map(
-        loadedMapFunctionForBothCrossInHook,
+        loadedmapFunctionOfBothCrossInHook,
         R.range(0, 6));
 
     const wheatCrossInHookContextSet_1 =

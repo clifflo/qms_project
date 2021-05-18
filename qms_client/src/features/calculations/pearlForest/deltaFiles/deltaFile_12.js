@@ -7,8 +7,8 @@ import {
   getDeltaDualLongHooksContext_1
 } from './deltaFile_10';
 import {
-  mapFunctionForWheatCrossInHookContext_2,
-  mapFunctionForCheeseCrossInHookContext_2
+  mapFunctionOfWheatCrossInHookContext_2,
+  mapFunctionOfCheeseCrossInHookContext_2
 } from './deltaFile_11';
 
 export const getDeltaDualLongHooksContext_2 =
@@ -38,13 +38,13 @@ export const getDeltaDualLongHooksContext_2 =
       .twigComboSetVoidBranchChineseList;
 
     const
-      loadedMapFunctionForWheatCrossInHookContext_2 =
-      R.curry(mapFunctionForWheatCrossInHookContext_2)
+      loadedmapFunctionOfWheatCrossInHookContext_2 =
+      R.curry(mapFunctionOfWheatCrossInHookContext_2)
       (askingDayTwigComboSetVoidBranchChineseList);
 
     const
-      loadedMapFunctionForCheeseCrossInHookContext_2 =
-      R.curry(mapFunctionForCheeseCrossInHookContext_2)
+      loadedmapFunctionOfCheeseCrossInHookContext_2 =
+      R.curry(mapFunctionOfCheeseCrossInHookContext_2)
       (askingDayTwigComboSetVoidBranchChineseList);
 
     const {
@@ -54,12 +54,12 @@ export const getDeltaDualLongHooksContext_2 =
 
     const wheatCrossInHookContextSet_2 =
       R.map(
-        loadedMapFunctionForWheatCrossInHookContext_2,
+        loadedmapFunctionOfWheatCrossInHookContext_2,
         wheatCrossInHookContextSet_1);
 
     const cheeseCrossInHookContextSet_2 =
       R.map(
-        loadedMapFunctionForCheeseCrossInHookContext_2,
+        loadedmapFunctionOfCheeseCrossInHookContext_2,
         cheeseCrossInHookContextSet_1);
 
     const rawDeltaDualLongHooksContext_2 =

@@ -7,7 +7,7 @@ import {
 } from './utilityHubCloneOfDelta';
 
 export const
-  mapFunctionForWheatCrossInHookContext_2 =
+  mapFunctionOfWheatCrossInHookContext_2 =
   (askingDayTwigComboSetVoidBranchList,
   wheatCrossInHookContext_1) => {
 
@@ -31,7 +31,7 @@ export const
 }
 
 export const
-  mapFunctionForCheeseCrossInHookContext_2 =
+  mapFunctionOfCheeseCrossInHookContext_2 =
   (askingDayTwigComboSetVoidBranchList,
   cheeseCrossInHookContext_1) => {
 

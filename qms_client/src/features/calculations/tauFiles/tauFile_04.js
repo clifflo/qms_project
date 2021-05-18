@@ -1,6 +1,9 @@
 import * as R from 'ramda';
+import {
+  getTwigFullComboChineseByIndex
+} from './utilityHubCloneOfTwig';
 
-const mapFunctionForTauYearContext_1 =
+const mapFunctionOfTauYearContext_1 =
   tauYearContext_1 => {
 
   // Ground here stands for non leap
@@ -18,7 +21,10 @@ const mapFunctionForTauYearContext_1 =
   const solarYear = tauYearContext_1.solarYear;
 
   const twigComboIndex = (solarYear - 1984) % 60;
-  const wybp = itemOfBtp(bpix);
+
+  const twigFullComboChinese =
+    getTwigFullComboChineseByIndex(
+      twigComboIndex);
 
   const months_1 = RA.mapIndexed(
     mapFn_1c(yrContext.year)(wybp),

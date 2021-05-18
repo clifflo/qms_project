@@ -11,7 +11,7 @@ import {
 } from './utilityHubCloneOfDelta'
 
 export const
-  mapFunctionForWheatCrossInHookContext_3 =
+  mapFunctionOfWheatCrossInHookContext_3 =
   (askingDayTwigOpponentEnvelop,
   wheatCrossInHookContext_2) => {
 
@@ -59,7 +59,7 @@ export const
 }
 
 export const
-  mapFunctionForCheeseCrossInHookContext_3 =
+  mapFunctionOfCheeseCrossInHookContext_3 =
   (askingDayTwigOpponentEnvelop,
   cheeseCrossInHookContext_2) => {
 

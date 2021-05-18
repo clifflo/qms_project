@@ -25,7 +25,7 @@ const rawTwigArrestmentDictionary = {
 const pairedTwigArrestmentDictionary =
   R.toPairs(rawTwigArrestmentDictionary);
 
-const mapFunctionForTwigArrestmentPair =
+const mapFunctionOfTwigArrestmentPair =
   twigArrestmentPair => {
 
   const twigPoliceBranchChinese =
@@ -57,5 +57,5 @@ const mapFunctionForTwigArrestmentPair =
 
 export const twigArrestmentContextSet =
   R.map(
-    mapFunctionForTwigArrestmentPair,
+    mapFunctionOfTwigArrestmentPair,
     pairedTwigArrestmentDictionary);
