@@ -5,6 +5,7 @@ import {
 import {
   getItemByNumberFromList,
   checkNilWithNumber,
+  checkNilWithArray,
   throwFunctionalError
 } from './utilityHubCloneOfTau';
 
@@ -16,22 +17,26 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
     const {
       rawSolarStartDateYear,
       tauYearTwigFullComboChinese,
-      groundTauMonthStartMiddleDetailDates
+      groundTauMonthStartDateInMiddleDetailSet
     } = payloadForMapFunctionOfBuiltTauMonthContext_1;
 
+    checkNilWithArray(
+      groundTauMonthStartDateInMiddleDetailSet,
+      'groundTauMonthStartDateInMiddleDetailSet');
 
-    const tauMonthStartMiddleDetailDate =
-      groundTauMonthStartMiddleDetailDates[tauMonthIndex];
+    const tauMonthStartDateInMiddleDetail =
+      groundTauMonthStartDateInMiddleDetailSet[
+        tauMonthIndex];
 
     const rawSolarStartDateMonth =
       parseInt(
         R.take(
-          2, tauMonthStartMiddleDetailDate));
+          2, tauMonthStartDateInMiddleDetail));
 
     const solarStartDateDayOfMonth =
       parseInt(
         R.takeLast(
-          2, tauMonthStartMiddleDetailDate));
+          2, tauMonthStartDateInMiddleDetail));
 
     let finalSolarStartDateYear;
     let finalSolarStartDateMonth;

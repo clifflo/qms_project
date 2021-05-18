@@ -18,28 +18,26 @@ const mapFunctionOfBuiltTauYearContext_1 =
 
   try{
 
-    const { tauMonthStartMiddleDetailDates } =
+    const { tauMonthStartDateInMiddleDetailSet } =
       originalTauYearContextSet;
 
     checkNilWithArray(
-      tauMonthStartMiddleDetailDates,
-      'tauMonthStartMiddleDetailDates');
+      tauMonthStartDateInMiddleDetailSet,
+      'tauMonthStartDateInMiddleDetailSet');
 
     // Ground here stands for non leap
     // month start date
-    const groundTauMonthStartMiddleDetailDates =
+    const groundTauMonthStartDateInMiddleDetailSet =
       R.init(
-        originalTauYearContextSet
-        .tauMonthStartMiddleDetailDates);
+        tauMonthStartDateInMiddleDetailSet);
 
-    const rawLeapTauMonthMiddleDetailStartDate =
+    const rawLeapTauMonthStartDateInMiddleDetail =
       R.last(
-        originalTauYearContextSet
-        .tauMonthStartMiddleDetailDates);
+        tauMonthStartDateInMiddleDetailSet);
 
-    const finalLeapTauMonthStartDate =
-      R.isEmpty(rawLeapTauMonthMiddleDetailStartDate) ?
-      null : rawLeapTauMonthMiddleDetailStartDate;
+    const finalLeapTauMonthStartDateInMiddleDetail =
+      R.isEmpty(rawLeapTauMonthStartDateInMiddleDetail) ?
+      null : rawLeapTauMonthStartDateInMiddleDetail;
 
     const rawSolarStartDateYear =
       originalTauYearContextSet
@@ -56,7 +54,7 @@ const mapFunctionOfBuiltTauYearContext_1 =
     {
       rawSolarStartDateYear,
       tauYearTwigFullComboChinese,
-      groundTauMonthStartMiddleDetailDates
+      groundTauMonthStartDateInMiddleDetailSet
     };
 
     const loadedMapFunctionOfBuiltTauMonthContext_1 =
@@ -73,9 +71,9 @@ const mapFunctionOfBuiltTauYearContext_1 =
       builtTauMonthContextSet_1,
       rawSolarStartDateYear,
       tauYearTwigFullComboChinese,
-      groundTauMonthStartMiddleDetailDates,
-      leapTauMonthStartDate:
-        finalLeapTauMonthStartDate
+      groundTauMonthStartDateInMiddleDetailSet,
+      leapTauMonthStartDateInMiddleDetail:
+        finalLeapTauMonthStartDateInMiddleDetail
     };
 
     return builtTauYearContext_1;

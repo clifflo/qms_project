@@ -1,6 +1,6 @@
 export const originalTauYearContextSet = [
   {
-    tauMonthStartMiddleDetailDates: [
+    tauMonthStartDateInMiddleDetailSet: [
       '02-12',
       '03-13',
       '04-12',
@@ -18,7 +18,7 @@ export const originalTauYearContextSet = [
     rawSolarStartDateYear: 2021
   },
   {
-    tauMonthStartMiddleDetailDates: [
+    tauMonthStartDateInMiddleDetailSet: [
       '02-01',
       '03-03',
       '04-01',
@@ -36,7 +36,7 @@ export const originalTauYearContextSet = [
     rawSolarStartDateYear: 2022
   },
   {
-    tauMonthStartMiddleDetailDates: [
+    tauMonthStartDateInMiddleDetailSet: [
       '01-22',
       '02-20',
       '04-20',
@@ -54,7 +54,7 @@ export const originalTauYearContextSet = [
     rawSolarStartDateYear: 2023
   },
   {
-    tauMonthStartMiddleDetailDates: [
+    tauMonthStartDateInMiddleDetailSet: [
       '02-10',
       '03-10',
       '04-09',
@@ -72,7 +72,7 @@ export const originalTauYearContextSet = [
     rawSolarStartDateYear: 2024
   },
   {
-    tauMonthStartMiddleDetailDates: [
+    tauMonthStartDateInMiddleDetailSet: [
       '01-29',
       '02-28',
       '03-29',
@@ -90,7 +90,7 @@ export const originalTauYearContextSet = [
     rawSolarStartDateYear: 2025
   },
   {
-    tauMonthStartMiddleDetailDates: [
+    tauMonthStartDateInMiddleDetailSet: [
       '02-17',
       '03-19',
       '04-17',
@@ -108,7 +108,7 @@ export const originalTauYearContextSet = [
     rawSolarStartDateYear: 2026
   },
   {
-    tauMonthStartMiddleDetailDates: [
+    tauMonthStartDateInMiddleDetailSet: [
       '02-06',
       '03-08',
       '04-07',
@@ -126,7 +126,7 @@ export const originalTauYearContextSet = [
     rawSolarStartDateYear: 2027
   },
   {
-    tauMonthStartMiddleDetailDates: [
+    tauMonthStartDateInMiddleDetailSet: [
       '01-26',
       '02-25',
       '03-26',
@@ -144,7 +144,7 @@ export const originalTauYearContextSet = [
     rawSolarStartDateYear: 2028
   },
   {
-    tauMonthStartMiddleDetailDates: [
+    tauMonthStartDateInMiddleDetailSet: [
       '02-13',
       '03-15',
       '04-14',
@@ -162,7 +162,7 @@ export const originalTauYearContextSet = [
     rawSolarStartDateYear: 2029
   },
   {
-    tauMonthStartMiddleDetailDates: [
+    tauMonthStartDateInMiddleDetailSet: [
       '02-03',
       '03-04',
       '04-03',
