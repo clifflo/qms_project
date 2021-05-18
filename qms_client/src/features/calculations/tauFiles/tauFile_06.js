@@ -1,3 +1,8 @@
+import * as R from 'ramda';
+import {
+  mapFunctionOfBuiltTauMonthContext_2
+} from './tauFile_05';
+
 const mapFunctionOfBuiltTauYearContext_2 =
   builtTauMonthContext_2 => {
 
@@ -12,11 +17,22 @@ const mapFunctionOfBuiltTauYearContext_2 =
     matchedLeapTauMonthStartDateInMiddleDetail[0]
     + '月';
 
-  const rawLeapSolarStartDateMonth =
+  const finalLeapSolarStartDateMonth =
     matchedLeapTauMonthStartDateInMiddleDetail[1];
 
-  const rawLeapSolarStartDateDayOfMonth =
+  const finalLeapSolarStartDateDayOfMonth =
     matchedLeapTauMonthStartDateInMiddleDetail[2];
+
+  const payloadForMapFunctionOfBuiltTauMonthContext_2 =
+  {
+    leapTauMonthChinese,
+    finalLeapSolarStartDateMonth,
+    finalLeapSolarStartDateDayOfMonth
+  };
+
+  const loadedForMapFunctionOfBuiltTauMonthContext_2 =
+    R.curry(mapFunctionOfBuiltTauMonthContext_2)
+    (payloadForMapFunctionOfBuiltTauMonthContext_2);
 
   
 }
