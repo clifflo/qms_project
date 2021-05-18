@@ -6,14 +6,19 @@ const mapFunctionForTauYearContext_1 =
   // Ground here stands for non leap
   // month start date
   const groundTauMonthStartDates =
-    R.init(1, yrContext.months);
+    R.init(
+      tauYearContext_1
+      .tauMonthStartDates);
 
-  const leap_1 = R.takeLast(1, yrContext.months)[0];
+  const leapTauMonthStartDate =
+    R.last(
+      tauYearContext_1
+      .tauMonthStartDates);
 
-  const year = parseInt(yrContext.year);
+  const tauYear =
+    parseInt(tauYearContext_1.solarYearInString);
 
-  // Betapsi Index
-  const bpix = (year - 1984) % 60;
+  const twigComboIndex = (year - 1984) % 60;
   const wybp = itemOfBtp(bpix);
 
   const months_1 = RA.mapIndexed(

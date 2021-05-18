@@ -34,7 +34,7 @@ export const mapFunctionForTauMonthStartDate =
       'tauMonthIndex');
 
   const tauMonthContext_2 = {
-    _type: 'tauMonthContext_2',
+    _type: 'TauMonthContext_2',
     ...tauMonthContext_1,
     solarYear: finalSolarYear,
     solarMonth: finalSolarMonth
