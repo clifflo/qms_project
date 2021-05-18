@@ -12,9 +12,20 @@ export const mapFunctionOfBuiltTauMonthContextWithLeap_2 =
     finalLeapSolarStartDateDayOfMonth
   } = payloadForMapFunctionOfBuiltTauMonthContext_2;
 
+  const {
+    finalSolarStartDateDayOfMonth,
+    finalSolarStartDateMonth,
+    finalSolarStartDateYear
+  } = builtTauMonthContext_1
+
   const sameLeapTauMonth =
     builtTauMonthContext_1.tauMonthChinese
     == leapTauMonthChinese;
+
+  const tauMonthGlobalIndex =
+    finalLeapSolarStartDateDayOfMonth
+    + (finalSolarStartDateMonth * 100)
+    + (finalSolarStartDateYear * 10000);
 
   let builtTauMonthContext_2;
 
@@ -25,6 +36,7 @@ export const mapFunctionOfBuiltTauMonthContextWithLeap_2 =
       finalLeapSolarStartDateDayOfMonth,
       tauMonthHasLeap: true,
       tauYearHasLeap: true,
+      tauMonthGlobalIndex,
       _type: 'BuiltTauMonthContext_2'
     }
   }
@@ -33,6 +45,7 @@ export const mapFunctionOfBuiltTauMonthContextWithLeap_2 =
       ...builtTauMonthContext_1,
       tauMonthHasLeap: false,
       tauYearHasLeap: true,
+      tauMonthGlobalIndex,
       _type: 'BuiltTauMonthContext_2'
     }
   }
@@ -44,9 +57,21 @@ export const
   mapFunctionOfBuiltTauMonthContextWithoutLeap_2 =
   builtTauMonthContext_1 => {
 
+  const {
+    finalSolarStartDateDayOfMonth,
+    finalSolarStartDateMonth,
+    finalSolarStartDateYear
+  } = builtTauMonthContext_1;
+
+  const tauMonthGlobalIndex =
+    finalSolarStartDateDayOfMonth
+    + (finalSolarStartDateMonth * 100)
+    + (finalSolarStartDateYear * 10000);
+
   return {
     ...builtTauMonthContext_1,
     _type: 'BuiltTauMonthContext_2',
+    tauMonthGlobalIndex,
     tauMonthHasLeap: false,
     tauYearHasLeap: false
   }

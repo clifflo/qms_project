@@ -33,7 +33,7 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
         R.take(
           2, tauMonthStartDateInMiddleDetail));
 
-    const solarStartDateDayOfMonth =
+    const finalSolarStartDateDayOfMonth =
       parseInt(
         R.takeLast(
           2, tauMonthStartDateInMiddleDetail));
@@ -71,7 +71,7 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
       ...originalTauMonthContext,
       finalSolarStartDateYear,
       finalSolarStartDateMonth,
-      solarStartDateDayOfMonth,
+      finalSolarStartDateDayOfMonth,
       tauYearTwigFullComboChinese,
       _type: 'BuiltTauMonthContext_1'
     };
