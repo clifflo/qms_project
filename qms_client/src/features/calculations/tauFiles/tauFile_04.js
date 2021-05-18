@@ -35,11 +35,11 @@ const mapFunctionOfTauYearContext_2 =
     rawSolarYear,
     tauYearTwigFullComboChinese,
     groundTauMonthStartDates
-  } = payloadForMapFunctionOfTauContext_2;
+  } = payloadForMapFunctionOfBuiltbuiltTauMonthContext_1;
 
-  const loadedMapFunctionOfTauMonthContext_2 =
+  const loadedMapFunctionOfBuiltbuiltTauMonthContext_1 =
     R.curry(mapFunctionOfTauContext_2)
-    (payloadForMapFunctionOfTauContext_2);
+    (payloadForMapFunctionOfBuiltbuiltTauMonthContext_1);
 
   const tauMonthContextSet_2 =
     R.map(
