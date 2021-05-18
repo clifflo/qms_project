@@ -2,18 +2,28 @@ import * as R from 'ramda';
 import {
   sentenceCase
 } from 'change-case';
-import {
-  adjustVariableName
-} from './utilityMiniHub_01';
 
-export const throwGetterError =
-  rawGetterErrorName => {
+const adjustVariableName = rawVariableName => {
 
-  const finalGetterErrorName =
-    adjustVariableName(rawGetterErrorName);
+  const finalVariableName =
+    R.compose(
+      R.replace('chinese', 'Chinese'),
+      R.replace('english', 'English'),
+      R.replace('_', ' '),
+      sentenceCase)
+    (rawVariableName);
+
+  return finalVariableName;
+}
+
+export const throwFunctionalError =
+  rawFunctionalErrorName => {
+
+  const finalFunctionalErrorName =
+    adjustVariableName(rawFunctionalErrorName);
 
   const errorMessage =
-    'Cannot get ' + finalGetterErrorName;
+    finalFunctionalErrorName + 'is error.';
 
   throw new Error(errorMessage);
 }

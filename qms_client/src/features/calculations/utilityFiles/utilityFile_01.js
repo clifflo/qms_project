@@ -4,20 +4,6 @@ import {
   sentenceCase
 } from 'change-case';
 
-export const adjustVariableName =
-  rawVariableName => {
-
-  const finalVariableName =
-    R.compose(
-      R.replace('chinese', 'Chinese'),
-      R.replace('english', 'English'),
-      R.replace('_', ''),
-      sentenceCase)
-    (rawVariableName);
-
-  return finalVariableName;
-}
-
 export const checkNilWithString =
   (stringVariable, rawVariableName) => {
 

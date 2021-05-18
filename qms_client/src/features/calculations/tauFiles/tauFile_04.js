@@ -9,7 +9,8 @@ import {
   mapFunctionOfBuiltTauMonthContext_1
 } from './tauFile_03';
 import {
-  checkNilWithArray
+  checkNilWithArray,
+  throwFunctionalError
 } from './utilityHubCloneOfTau';
 
 const mapFunctionOfBuiltTauYearContext_1 =
@@ -75,8 +76,9 @@ const mapFunctionOfBuiltTauYearContext_1 =
   }
   catch(errorMessage){
     console.error(errorMessage);
-    throw new Error(
-      'mapFunctionOfBuiltTauYearContext_1 is error.')
+    throwFunctionalError(
+      'mapFunctionOfBuiltTauYearContext_1');
+
   }
 
 }

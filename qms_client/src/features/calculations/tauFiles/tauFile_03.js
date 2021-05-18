@@ -20,7 +20,7 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
     groundTauMonthStartDates[tauMonthIndex];
 
   const rawSolarMonth =
-    R.slice(0, 2, tauMonthStartDate);
+    parseInt(R.slice(0, 2, tauMonthStartDate));
 
   const solarDay =
     R.slice(3, 5, tauMonthStartDate);
@@ -28,15 +28,23 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
   let finalSolarYear;
   let finalSolarMonth;
 
-  if(rawSolarMonth == '13'){
+  if(rawSolarMonth == 13){
     finalSolarYear =
       (parseInt(rawSolarYear) + 1).toString();
-    finalSolarMonth = '01';
+    finalSolarMonth = 1;
   }
   else {
     finalSolarMonth = rawSolarMonth;
     finalSolarYear = rawSolarYear;
   }
+
+  checkNilWithNumber(
+    finalSolarMonth,
+    'finalSolarMonth');
+
+  checkNilWithNumber(
+    finalSolarYear,
+    'finalSolarYear');
 
   const originalTauMonthContext =
     getItemByNumberFromList(
