@@ -15,10 +15,9 @@ const mapFunctionForTauYearContext_1 =
       tauYearContext_1
       .tauMonthStartDates);
 
-  const tauYear =
-    parseInt(tauYearContext_1.solarYearInString);
+  const solarYear = tauYearContext_1.solarYear;
 
-  const twigComboIndex = (year - 1984) % 60;
+  const twigComboIndex = (solarYear - 1984) % 60;
   const wybp = itemOfBtp(bpix);
 
   const months_1 = RA.mapIndexed(

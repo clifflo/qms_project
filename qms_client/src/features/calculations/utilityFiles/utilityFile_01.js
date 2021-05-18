@@ -26,30 +26,44 @@ export const checkNilWithString =
 }
 
 export const checkNilWithNumber =
-  (numberVariable, variableName) => {
+  (numberVariable, rawVariableName) => {
+
+  const finalVariableName =
+    R.compose(
+      R.replace('chinese', 'Chinese'),
+      R.replace('english', 'English'),
+      sentenceCase)
+    (rawVariableName);
 
   if(R.isNil(numberVariable)){
     throw new Error(
-      `${variableName} should not be nil.`);
+      `${finalVariableName} should not be nil.`);
   }
 
   if(!RA.isNumber(numberVariable)){
     throw new Error(
-      `${variableName} must be a number.`);
+      `${finalVariableName} must be a number.`);
   }
 }
 
 export const checkNilWithArray =
-  (varArray, variableName) => {
+  (arrayVariable, rawVariableName) => {
 
-  if(R.isNil(varArray)){
+  const finalVariableName =
+    R.compose(
+      R.replace('chinese', 'Chinese'),
+      R.replace('english', 'English'),
+      sentenceCase)
+    (rawVariableName);
+
+  if(R.isNil(arrayVariable)){
     throw new Error(
-      `${variableName} should not be nil.`);
+      `${rawVariableName} should not be nil.`);
   }
 
-  if(!RA.isArray(varArray)){
+  if(!RA.isArray(arrayVariable)){
     throw new Error(
-      `${variableName} must be an array.`);
+      `${rawVariableName} must be an array.`);
   }
 }
 

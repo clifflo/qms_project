@@ -6,7 +6,7 @@ export const mapFunctionForTauMonthStartDate =
   (rawSolarYear,
   tauMonthIndex,
   tauMonthStartDate,
-  tauYearTwigFullCombo) => {
+  tauYearTwigFullComboChinese) => {
 
   const rawSolarMonth =
     R.slice(0, 2, tauMonthStartDate);
@@ -37,7 +37,8 @@ export const mapFunctionForTauMonthStartDate =
     _type: 'TauMonthContext_2',
     ...tauMonthContext_1,
     solarYear: finalSolarYear,
-    solarMonth: finalSolarMonth
+    solarMonth: finalSolarMonth,
+    tauYearTwigFullComboChinese
   };
 
   return tauMonthContext_2;

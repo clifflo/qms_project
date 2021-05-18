@@ -22,22 +22,22 @@ export const
 
   checkNilWithString(
     twigFullComboChinese,
-    'Twig full combo Chinese');
+    'twigFullComboChinese');
 
-  const twigTrunkChinesePart =
+  const twigComboTrunkChinese =
     twigFullComboChinese[0];
 
-  const twigBranchChinesePart =
+  const twigComboBranchChinese =
     twigFullComboChinese[1];
 
   const twigTrunkIndex =
     getTwigTrunkContextByChinese(
-      twigTrunkChinesePart)
+      twigComboTrunkChinese)
     .twigTrunkIndex;
 
   const twigBranchIndex =
     getTwigBranchContextByChinese(
-    twigBranchChinesePart)
+    twigComboBranchChinese)
     .twigBranchIndex;
 
   const twigComboSetHeadBranchIndex =
