@@ -22,7 +22,7 @@ export const getLuxonCarFromTauGlobalMonthContext_1 =
 
   const tauMonthGlobalContextSolarStartDateLuxonCar =
   DateTime.fromObject(
-    tauGlobalMonthContext_1);
+    tauMonthGlobalContextSolarStartDateLuxonBox);
 
   return tauMonthGlobalContextSolarStartDateLuxonCar;
 }

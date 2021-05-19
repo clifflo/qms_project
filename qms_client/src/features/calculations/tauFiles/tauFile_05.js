@@ -37,6 +37,7 @@ export const mapFunctionOfBuiltTauMonthContextWithLeap_2 =
       tauMonthHasLeap: true,
       tauYearHasLeap: true,
       tauMonthGlobalIndex,
+      leapTauMonthChinese,
       _type: 'BuiltTauMonthContext_2'
     }
   }
@@ -46,6 +47,7 @@ export const mapFunctionOfBuiltTauMonthContextWithLeap_2 =
       tauMonthHasLeap: false,
       tauYearHasLeap: true,
       tauMonthGlobalIndex,
+      leapTauMonthChinese,
       _type: 'BuiltTauMonthContext_2'
     }
   }

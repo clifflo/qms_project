@@ -28,7 +28,9 @@ const mapIndexedFunctionOfTauMonthGlobalContext_2 =
           currentTauMonthGlobalContextIndex_1 + 1);
 
       const nextTauMonthGlobalContext_1 =
-        R.view(lensIndexOfNextTauMonthGlobalContext_1);
+        R.view(
+          lensIndexOfNextTauMonthGlobalContext_1,
+          tauMonthGlobalContextSet_1);
 
       const
       currentTauMonthGlobalContextSolarStartDateLuxonCar =
@@ -64,6 +66,8 @@ const mapIndexedFunctionOfTauMonthGlobalContext_2 =
         finalSolarEndDateDay,
         _type: 'TauMonthGlobalContext_2'
       };
+
+      return tauMonthGlobalContext_2;
     }
     else {
       const tauMonthGlobalContext_2 = {
