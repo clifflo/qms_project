@@ -1,8 +1,16 @@
 import * as R from 'ramda';
+import {
+  originalTauMonthContextSet
+} from './tauFile_02';
+import {
+  findItemByStringFromList
+} from './utilityHubCloneOfTau';
 
 export const mapFunctionOfBuiltTauMonthContextWithLeap_2 =
   (payloadForMapFunctionOfBuiltTauMonthContext_2,
   builtTauMonthContext_1) => {
+
+  console.log(originalTauMonthContextSet);
 
   // As there will not be any sort of month 13
   // in leap month so no adjustments.
@@ -11,6 +19,13 @@ export const mapFunctionOfBuiltTauMonthContextWithLeap_2 =
     finalLeapSolarStartDateMonth,
     finalLeapSolarStartDateDay
   } = payloadForMapFunctionOfBuiltTauMonthContext_2;
+
+  const leapTauMonthEnglish =
+    findItemByStringFromList(
+      originalTauMonthContextSet,
+      leapTauMonthChinese,
+      'tauMonthChinese')
+    .tauMonthEnglish;
 
   const {
     finalSolarStartDateDay,
@@ -37,7 +52,7 @@ export const mapFunctionOfBuiltTauMonthContextWithLeap_2 =
       tauMonthHasLeap: true,
       tauYearHasLeap: true,
       tauMonthGlobalIndex,
-      leapTauMonthChinese,
+      leapTauMonthEnglish,
       _type: 'BuiltTauMonthContext_2'
     }
   }
@@ -47,7 +62,7 @@ export const mapFunctionOfBuiltTauMonthContextWithLeap_2 =
       tauMonthHasLeap: false,
       tauYearHasLeap: true,
       tauMonthGlobalIndex,
-      leapTauMonthChinese,
+      leapTauMonthEnglish,
       _type: 'BuiltTauMonthContext_2'
     }
   }

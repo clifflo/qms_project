@@ -4,7 +4,7 @@ import {
   builtTauYearContextSet_2
 } from './tauFile_06';
 import {
-  getLuxonCarFromTauGlobalMonthContext_1,
+  getLuxonCarFromTauGlobalMonthContext,
   tauMonthGlobalContextSet_1
 } from './tauFile_07';
 import {
@@ -34,12 +34,12 @@ const mapIndexedFunctionOfTauMonthGlobalContext_2 =
 
       const
       currentTauMonthGlobalContextSolarStartDateLuxonCar =
-      getLuxonCarFromTauGlobalMonthContext_1(
+      getLuxonCarFromTauGlobalMonthContext(
         currentTauMonthGlobalContext_1);
 
       const
       nextTauMonthGlobalContextSolarStartDateLuxonCar =
-      getLuxonCarFromTauGlobalMonthContext_1(
+      getLuxonCarFromTauGlobalMonthContext(
         nextTauMonthGlobalContext_1);
 
       const
