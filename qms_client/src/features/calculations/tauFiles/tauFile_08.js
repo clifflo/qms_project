@@ -1,4 +1,5 @@
 import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 import {
   builtTauYearContextSet_2
 } from './tauFile_06';
@@ -6,47 +7,86 @@ import {
   getLuxonCarFromTauGlobalMonthContext_1,
   tauMonthGlobalContextSet_1
 } from './tauFile_07';
+import {
+  throwFunctionalError
+} from './utilityHubCloneOfTau';
 
 const mapIndexedFunctionOfTauMonthGlobalContext_2 =
   (currentTauMonthGlobalContext_1,
   currentTauMonthGlobalContextIndex_1,
   tauMonthGlobalContextSet_1) => {
 
-  const tauMonthGlobalContextSetLength_1 =
-    tauMonthGlobalContextSet_1.length;
+  try{
+    const tauMonthGlobalContextSetLength_1 =
+      tauMonthGlobalContextSet_1.length;
 
-  if(tauMonthGlobalContextIndex_1
-    < tauMonthGlobalContextSetLength_1 - 2){
+    if(currentTauMonthGlobalContextIndex_1
+      < tauMonthGlobalContextSetLength_1 - 2){
 
-    const lensIndexOfNextTauMonthGlobalContext_1 =
-      R.lensIndex(
-        tauMonthGlobalContextIndex_1 + 1);
+      const lensIndexOfNextTauMonthGlobalContext_1 =
+        R.lensIndex(
+          currentTauMonthGlobalContextIndex_1 + 1);
 
-    const nextTauMonthGlobalContext_1 =
-      R.view(lensIndexOfNextTauMonthGlobalContext_1);
+      const nextTauMonthGlobalContext_1 =
+        R.view(lensIndexOfNextTauMonthGlobalContext_1);
 
-    const
-    currentTauMonthGlobalContextSolarStartDateLuxonCar =
-    getLuxonCarFromTauGlobalMonthContext_1(
-      currentTauMonthGlobalContext_1);
+      const
+      currentTauMonthGlobalContextSolarStartDateLuxonCar =
+      getLuxonCarFromTauGlobalMonthContext_1(
+        currentTauMonthGlobalContext_1);
 
-    const
-    nextTauMonthGlobalContextSolarStartDateLuxonCar =
-    getLuxonCarFromTauGlobalMonthContext_1(
-      nextTauMonthGlobalContext_1);
+      const
+      nextTauMonthGlobalContextSolarStartDateLuxonCar =
+      getLuxonCarFromTauGlobalMonthContext_1(
+        nextTauMonthGlobalContext_1);
 
-    const
-    currentTauMonthGlobalContextSolarEndDateLuxonCar =
-    nextTauMonthGlobalContextSolarStartDateLuxonCar
-    .minus({ days: 1 });
+      const
+      currentTauMonthGlobalContextSolarEndDateLuxonCar =
+      nextTauMonthGlobalContextSolarStartDateLuxonCar
+      .minus({ days: 1 });
 
-    const finalSolarEndDateYear =
-    currentTauMonthGlobalContextSolarEndDateLuxonCar
-    .year;
+      const finalSolarEndDateYear =
+      currentTauMonthGlobalContextSolarEndDateLuxonCar
+      .year;
 
-    const finalSolarEndDateMonth =
-    
+      const finalSolarEndDateMonth =
+      currentTauMonthGlobalContextSolarEndDateLuxonCar
+      .month;
 
+      const finalSolarEndDateDay =
+      currentTauMonthGlobalContextSolarEndDateLuxonCar
+      .day;
 
+      const tauMonthGlobalContext_2 = {
+        ...currentTauMonthGlobalContext_1,
+        finalSolarEndDateYear,
+        finalSolarEndDateMonth,
+        finalSolarEndDateDay,
+        _type: 'TauMonthGlobalContext_2'
+      };
+    }
+    else {
+      const tauMonthGlobalContext_2 = {
+        ...currentTauMonthGlobalContext_1,
+        finalSolarEndDateYear: 2030,
+        finalSolarEndDateMonth: 12,
+        finalSolarEndDateDay: 30,
+        _type: 'TauMonthGlobalContext_2'
+      };
+
+      return tauMonthGlobalContext_2;
+    }
   }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throwFunctionalError(
+      'mapIndexedFunctionOfTauMonthGlobalContext_2');
+  }
+
+
 };
+
+export const tauMonthGlobalContextSet_2 =
+  RA.mapIndexed(
+    mapIndexedFunctionOfTauMonthGlobalContext_2,
+    tauMonthGlobalContextSet_1);

@@ -1,5 +1,8 @@
 import * as R from 'ramda';
 import { DateTime } from 'luxon';
+import {
+  builtTauYearContextSet_2
+} from './tauFile_06';
 
 export const getLuxonCarFromTauGlobalMonthContext_1 =
   tauGlobalMonthContext_1 => {
@@ -8,7 +11,7 @@ export const getLuxonCarFromTauGlobalMonthContext_1 =
     finalSolarStartDateYear,
     finalSolarStartDateMonth,
     finalSolarStartDateDay
-  } = tauMonthGlobalContext_1;
+  } = tauGlobalMonthContext_1;
 
   const tauMonthGlobalContextSolarStartDateLuxonBox =
   {
@@ -19,7 +22,7 @@ export const getLuxonCarFromTauGlobalMonthContext_1 =
 
   const tauMonthGlobalContextSolarStartDateLuxonCar =
   DateTime.fromObject(
-    currentTauMonthGlobalContextSolarStartDateContext);
+    tauGlobalMonthContext_1);
 
   return tauMonthGlobalContextSolarStartDateLuxonCar;
 }
