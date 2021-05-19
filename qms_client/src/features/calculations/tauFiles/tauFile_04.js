@@ -18,26 +18,26 @@ const mapFunctionOfBuiltTauYearContext_1 =
 
   try{
 
-    const { tauMonthStartDateInMiddleDetailSet } =
+    const { tauMonthStartDateMonthdaySet } =
       originalTauYearContextSet;
 
     checkNilWithArray(
-      tauMonthStartDateInMiddleDetailSet,
-      'tauMonthStartDateInMiddleDetailSet');
+      tauMonthStartDateMonthdaySet,
+      'tauMonthStartDateMonthdaySet');
 
     // Ground here stands for non leap
     // month start date
-    const groundTauMonthStartDateInMiddleDetailSet =
+    const groundTauMonthStartDateMonthdaySet =
       R.init(
-        tauMonthStartDateInMiddleDetailSet);
+        tauMonthStartDateMonthdaySet);
 
-    const rawLeapTauMonthStartDateInMiddleDetail =
+    const rawLeapTauMonthStartDateMonthday =
       R.last(
-        tauMonthStartDateInMiddleDetailSet);
+        tauMonthStartDateMonthdaySet);
 
-    const finalLeapTauMonthStartDateInMiddleDetail =
-      R.isEmpty(rawLeapTauMonthStartDateInMiddleDetail) ?
-      null : rawLeapTauMonthStartDateInMiddleDetail;
+    const finalLeapTauMonthStartDateMonthday =
+      R.isEmpty(rawLeapTauMonthStartDateMonthday) ?
+      null : rawLeapTauMonthStartDateMonthday;
 
     const rawSolarStartDateYear =
       originalTauYearContextSet
@@ -54,7 +54,7 @@ const mapFunctionOfBuiltTauYearContext_1 =
     {
       rawSolarStartDateYear,
       tauYearTwigFullComboChinese,
-      groundTauMonthStartDateInMiddleDetailSet
+      groundTauMonthStartDateMonthdaySet
     };
 
     const loadedMapFunctionOfBuiltTauMonthContext_1 =
@@ -71,9 +71,9 @@ const mapFunctionOfBuiltTauYearContext_1 =
       builtTauMonthContextSet_1,
       rawSolarStartDateYear,
       tauYearTwigFullComboChinese,
-      groundTauMonthStartDateInMiddleDetailSet,
-      leapTauMonthStartDateInMiddleDetail:
-      finalLeapTauMonthStartDateInMiddleDetail
+      groundTauMonthStartDateMonthdaySet,
+      leapTauMonthStartDateMonthday:
+      finalLeapTauMonthStartDateMonthday
     };
 
     return builtTauYearContext_1;

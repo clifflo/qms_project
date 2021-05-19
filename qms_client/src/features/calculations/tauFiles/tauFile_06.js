@@ -8,36 +8,36 @@ import {
 export const mapFunctionOfBuiltTauYearContext_2 =
   builtTauYearContext_1 => {
 
-  const leapTauMonthStartDateInMiddleDetailPattern =
+  const leapTauMonthStartDateMonthdayPattern =
      /(.+): (.+)-(.+)/;
 
-  const { leapTauMonthStartDateInMiddleDetail } =
+  const { leapTauMonthStartDateMonthday } =
     builtTauYearContext_1;
 
-  if(leapTauMonthStartDateInMiddleDetail){
+  if(leapTauMonthStartDateMonthday){
 
-    const matchedLeapTauMonthStartDateInMiddleDetail =
-      leapTauMonthStartDateInMiddleDetail
-      .match(leapTauMonthStartDateInMiddleDetailPattern);
+    const matchedLeapTauMonthStartDateMonthday =
+      leapTauMonthStartDateMonthday
+      .match(leapTauMonthStartDateMonthdayPattern);
 
     const leapTauMonthChinese =
-      matchedLeapTauMonthStartDateInMiddleDetail[1]
+      matchedLeapTauMonthStartDateMonthday[1]
       + '月';
 
     const finalLeapSolarStartDateMonth =
       parseInt(
-        matchedLeapTauMonthStartDateInMiddleDetail[2]);
+        matchedLeapTauMonthStartDateMonthday[2]);
 
-    const finalLeapSolarStartDateDayOfMonth =
+    const finalLeapSolarStartDateDay =
       parseInt(
-        matchedLeapTauMonthStartDateInMiddleDetail[3]);
+        matchedLeapTauMonthStartDateMonthday[3]);
 
     const
     payloadForMapFunctionOfBuiltTauMonthContextWithLeap_2 =
     {
       leapTauMonthChinese,
       finalLeapSolarStartDateMonth,
-      finalLeapSolarStartDateDayOfMonth
+      finalLeapSolarStartDateDay
     };
 
     const

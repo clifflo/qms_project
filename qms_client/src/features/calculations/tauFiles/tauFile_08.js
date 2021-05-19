@@ -8,8 +8,8 @@ import {
 } from './tauFile_07';
 
 const mapIndexedFunctionOfTauMonthGlobalContext_2 =
-  (tauMonthGlobalContext_1,
-  tauMonthGlobalContextIndex_1,
+  (currentTauMonthGlobalContext_1,
+  currentTauMonthGlobalContextIndex_1,
   tauMonthGlobalContextSet_1) => {
 
   const tauMonthGlobalContextSetLength_1 =
@@ -27,13 +27,25 @@ const mapIndexedFunctionOfTauMonthGlobalContext_2 =
 
     const
     currentTauMonthGlobalContextSolarStartDateLuxonCar =
+    getLuxonCarFromTauGlobalMonthContext_1(
+      currentTauMonthGlobalContext_1);
 
+    const
+    nextTauMonthGlobalContextSolarStartDateLuxonCar =
+    getLuxonCarFromTauGlobalMonthContext_1(
+      nextTauMonthGlobalContext_1);
 
     const
     currentTauMonthGlobalContextSolarEndDateLuxonCar =
     nextTauMonthGlobalContextSolarStartDateLuxonCar
     .minus({ days: 1 });
 
+    const finalSolarEndDateYear =
+    currentTauMonthGlobalContextSolarEndDateLuxonCar
+    .year;
+
+    const finalSolarEndDateMonth =
+    
 
 
   }

@@ -7,14 +7,14 @@ export const getLuxonCarFromTauGlobalMonthContext_1 =
   const {
     finalSolarStartDateYear,
     finalSolarStartDateMonth,
-    finalSolarStartDateDayOfMonth
+    finalSolarStartDateDay
   } = tauMonthGlobalContext_1;
 
   const tauMonthGlobalContextSolarStartDateLuxonBox =
   {
     year: finalSolarStartDateYear,
     month: finalSolarStartDateMonth,
-    day: finalSolarStartDateDayOfMonth
+    day: finalSolarStartDateDay
   };
 
   const tauMonthGlobalContextSolarStartDateLuxonCar =

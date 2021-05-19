@@ -17,26 +17,26 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
     const {
       rawSolarStartDateYear,
       tauYearTwigFullComboChinese,
-      groundTauMonthStartDateInMiddleDetailSet
+      groundTauMonthStartDateMonthdaySet
     } = payloadForMapFunctionOfBuiltTauMonthContext_1;
 
     checkNilWithArray(
-      groundTauMonthStartDateInMiddleDetailSet,
-      'groundTauMonthStartDateInMiddleDetailSet');
+      groundTauMonthStartDateMonthdaySet,
+      'groundTauMonthStartDateMonthdaySet');
 
-    const tauMonthStartDateInMiddleDetail =
-      groundTauMonthStartDateInMiddleDetailSet[
+    const tauMonthStartDateMonthday =
+      groundTauMonthStartDateMonthdaySet[
         tauMonthIndex];
 
     const rawSolarStartDateMonth =
       parseInt(
         R.take(
-          2, tauMonthStartDateInMiddleDetail));
+          2, tauMonthStartDateMonthday));
 
-    const finalSolarStartDateDayOfMonth =
+    const finalSolarStartDateDay =
       parseInt(
         R.takeLast(
-          2, tauMonthStartDateInMiddleDetail));
+          2, tauMonthStartDateMonthday));
 
     let finalSolarStartDateYear;
     let finalSolarStartDateMonth;
@@ -71,7 +71,7 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
       ...originalTauMonthContext,
       finalSolarStartDateYear,
       finalSolarStartDateMonth,
-      finalSolarStartDateDayOfMonth,
+      finalSolarStartDateDay,
       tauYearTwigFullComboChinese,
       _type: 'BuiltTauMonthContext_1'
     };

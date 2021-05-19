@@ -9,11 +9,11 @@ export const mapFunctionOfBuiltTauMonthContextWithLeap_2 =
   const {
     leapTauMonthChinese,
     finalLeapSolarStartDateMonth,
-    finalLeapSolarStartDateDayOfMonth
+    finalLeapSolarStartDateDay
   } = payloadForMapFunctionOfBuiltTauMonthContext_2;
 
   const {
-    finalSolarStartDateDayOfMonth,
+    finalSolarStartDateDay,
     finalSolarStartDateMonth,
     finalSolarStartDateYear
   } = builtTauMonthContext_1
@@ -23,7 +23,7 @@ export const mapFunctionOfBuiltTauMonthContextWithLeap_2 =
     == leapTauMonthChinese;
 
   const tauMonthGlobalIndex =
-    finalLeapSolarStartDateDayOfMonth
+    finalLeapSolarStartDateDay
     + (finalSolarStartDateMonth * 100)
     + (finalSolarStartDateYear * 10000);
 
@@ -33,7 +33,7 @@ export const mapFunctionOfBuiltTauMonthContextWithLeap_2 =
     builtTauMonthContext_2 = {
       ...builtTauMonthContext_1,
       finalLeapSolarStartDateMonth,
-      finalLeapSolarStartDateDayOfMonth,
+      finalLeapSolarStartDateDay,
       tauMonthHasLeap: true,
       tauYearHasLeap: true,
       tauMonthGlobalIndex,
@@ -58,13 +58,13 @@ export const
   builtTauMonthContext_1 => {
 
   const {
-    finalSolarStartDateDayOfMonth,
+    finalSolarStartDateDay,
     finalSolarStartDateMonth,
     finalSolarStartDateYear
   } = builtTauMonthContext_1;
 
   const tauMonthGlobalIndex =
-    finalSolarStartDateDayOfMonth
+    finalSolarStartDateDay
     + (finalSolarStartDateMonth * 100)
     + (finalSolarStartDateYear * 10000);
 
