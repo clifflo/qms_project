@@ -1,4 +1,18 @@
 import * as R from 'ramda';
+import {
+  DateTime
+} from 'luxon';
+import {
+  getTauDayChineseByIndex,
+  tauDateMatchInTauMonthGlobalContext_2,
+  tauMonthGlobalContextSet_2
+} from './tauMiniHub_02';
+import {
+  getTwigFullComboChineseByIndex
+} from './twigHubCloneOfTau';
+import {
+  checkNilWithNumber
+} from './utilityHubCloneOfTau';
 
 export const getTauDateContextFromIso =
   sourceDateInIso => {
@@ -28,7 +42,12 @@ export const getTauDateContextFromIso =
   const differenceInDaysForCombo =
     sourceLuxonCar.diff(
       referenceTauLuxonCar,
-      'days');
+      'days')
+    .days;
+
+  checkNilWithNumber(
+    differenceInDaysForCombo,
+    'differenceInDaysForCombo');
 
   const tauMonthStartDateDay =
     matchedTauMonthGlobalContext_2
@@ -55,7 +74,7 @@ export const getTauDateContextFromIso =
   const differenceInDaysForDayOfMonth =
     sourceLuxonCar.diff(
       tauMonthStartDateLuxonCar,
-      'days');
+      'days').days;
 
   const tauDayChinese =
     getTauDayChineseByIndex(
@@ -63,7 +82,7 @@ export const getTauDateContextFromIso =
 
   const tauDayTwigFullComboChinese =
     getTwigFullComboChineseByIndex(
-      differenceInDays % 60);
+      differenceInDaysForCombo % 60);
 
   const tauDayContext = {
     ...matchedTauMonthGlobalContext_2,
@@ -74,5 +93,4 @@ export const getTauDateContextFromIso =
   };
 
   return tauDayContext;
-
 }

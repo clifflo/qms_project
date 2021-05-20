@@ -5,9 +5,16 @@ import {
 import {
   getTwigFullComboChineseByIndex
 } from './twigHubCloneOfTau';
+import {
+  checkNilWithNumber
+} from './utilityHubCloneOfTau';
 
-const getTauDayChineseByIndex =
+export const getTauDayChineseByIndex =
   tauDayIndex => {
+
+  checkNilWithNumber(
+    tauDayIndex,
+    'tauDayIndex');
 
   const chineseNumericalCharacters =
     '一二三四五六七八九十';

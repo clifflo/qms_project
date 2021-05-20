@@ -3,7 +3,7 @@ export const originalTauMonthContextSet = [
     _type: 'OriginalTauMonthContext',
     tauMonthChinese: '正月',
     tauMonthEnglish: 'Tau January',
-    tauMonthIndex: 0
+    tauMonthIndex: 0,
   },
   {
     _type: 'OriginalTauMonthContext',

@@ -50,11 +50,6 @@ const mapFunctionOfBuiltTauYearContext_1 =
       getTwigFullComboChineseByIndex(
         twigComboIndex);
 
-    if(rawSolarStartDateYear == 2021){
-        console.log(twigComboIndex);
-    }
-
-
     const payloadForMapFunctionOfBuiltTauMonthContext_1 =
     {
       rawSolarStartDateYear,

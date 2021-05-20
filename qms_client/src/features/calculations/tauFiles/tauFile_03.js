@@ -8,6 +8,9 @@ import {
   checkNilWithArray,
   throwFunctionalError
 } from './utilityHubCloneOfTau';
+import {
+  DateTime
+} from 'luxon';
 
 export const mapFunctionOfBuiltTauMonthContext_1 =
   (payloadForMapFunctionOfBuiltTauMonthContext_1,
@@ -67,12 +70,27 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
         tauMonthIndex,
         'tauMonthIndex');
 
+    const finalSolarStartDateLuxonBox = {
+      day: finalSolarStartDateDay,
+      month: finalSolarStartDateMonth,
+      year: finalSolarStartDateYear
+    };
+
+    const finalSolarStartDateLuxonCar =
+      DateTime.fromObject(
+        finalSolarStartDateLuxonBox);
+
+    const finalSolarStartDateInIso =
+      finalSolarStartDateLuxonCar
+      .toISODate();
+
     const builtTauMonthContext_1 = {
       ...originalTauMonthContext,
       finalSolarStartDateYear,
       finalSolarStartDateMonth,
       finalSolarStartDateDay,
       tauYearTwigFullComboChinese,
+      finalSolarStartDateInIso,
       _type: 'BuiltTauMonthContext_1'
     };
 
