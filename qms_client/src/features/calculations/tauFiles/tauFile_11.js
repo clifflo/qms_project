@@ -61,19 +61,19 @@ export const getTauDayContext_1 =
     matchedTauMonthGlobalContext_2
     .solarStartDateYearOfTauMonth;
 
-  const tauMonthStartDateLuxonBox = {
+  const tauMonthStartLuxonBox = {
     day: tauMonthStartDateDay,
     month: tauMonthStartDateMonth,
     year: tauMonthStartDateYear
   };
 
-  const tauMonthStartDateLuxonCar =
+  const tauMonthStartLuxonCar =
     DateTime.fromObject(
-      tauMonthStartDateLuxonBox);
+      tauMonthStartLuxonBox);
 
   const differenceInDaysForDayOfMonth =
     sourceLuxonCar.diff(
-      tauMonthStartDateLuxonCar,
+      tauMonthStartLuxonCar,
       'days').days;
 
   const tauDayChinese =
