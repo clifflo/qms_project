@@ -17,8 +17,8 @@ import {
   getTwigTrunkContextByIndex
 } from './twigHubCloneOfTau';
 
-export const mapFunctionOfBuiltTauMonthContext_1 =
-  (payloadForMapFunctionOfBuiltTauMonthContext_1,
+export const mapFunctionOfLocalTauMonthContext_1 =
+  (payloadForMapFunctionOfLocalTauMonthContext_1,
   tauMonthIndex) => {
 
   try{
@@ -26,7 +26,7 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
       rawSolarStartDateYear,
       tauYearTwigFullComboChinese,
       groundTauMonthStartDateMonthdaySet
-    } = payloadForMapFunctionOfBuiltTauMonthContext_1;
+    } = payloadForMapFunctionOfLocalTauMonthContext_1;
 
     checkNilWithArray(
       groundTauMonthStartDateMonthdaySet,
@@ -101,7 +101,7 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
 
     const tauMonthTwigFullComboChinese =
       tauMonthTrunkChinese
-      +  tauMonthBranchChinese;
+      + tauMonthBranchChinese;
 
     const finalSolarStartDateLuxonBox = {
       day: finalSolarStartDateDay,
@@ -117,7 +117,7 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
       finalSolarStartDateLuxonCar
       .toISODate();
 
-    const builtTauMonthContext_1 = {
+    const localTauMonthContext_1 = {
       ...originalTauMonthContext,
       finalSolarStartDateYear,
       finalSolarStartDateMonth,
@@ -125,15 +125,15 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
       tauYearTwigFullComboChinese,
       finalSolarStartDateInIso,
       tauMonthTwigFullComboChinese,
-      _type: 'BuiltTauMonthContext_1'
+      _type: 'LocalTauMonthContext_1'
     };
 
-    return builtTauMonthContext_1;
+    return localTauMonthContext_1;
   }
   catch(errorMessage){
     console.error(errorMessage);
     throwFunctionalError(
-      'mapFunctionOfBuiltTauMonthContext_1');
+      'mapFunctionOfLocalTauMonthContext_1');
   }
 
 }
