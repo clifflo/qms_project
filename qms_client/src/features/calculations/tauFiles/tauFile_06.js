@@ -32,6 +32,15 @@ export const mapFunctionOfBuiltTauYearContext_2 =
       parseInt(
         matchedLeapTauMonthStartDateMonthday[3]);
 
+    const { finalLeapSolarStartDateYear } =
+      builtTauYearContext_1;
+
+    const leapStartDateLuxonBus = {
+      day: finalLeapSolarStartDateDay,
+      month: finalLeapSolarStartDateMonth,
+      year: finalLeapSolarStartDateYear
+    };
+
     const
     payloadForMapFunctionOfBuiltTauMonthContextWithLeap_2 =
     {
