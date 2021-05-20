@@ -1,87 +1,50 @@
 import * as R from 'ramda';
-import {
-  DateTime
-} from 'luxon';
 
-export const getTauDayContextForPureMonth =
-  tauMonthGlobalContext_3 => {
-
-  const tauMonthStartDateDay =
-    tauMonthGlobalContext_3
-    .solarStartDateDay;
-
-  const tauMonthStartDateMonth =
-    tauMonthGlobalContext_3
-    .solarStartDateMonth;
-
-  const tauMonthStartDateYear =
-    tauMonthGlobalContext_3
-    .solarStartDateYear;
-
-  const tauMonthStartLuxonBox = {
-    day: tauMonthStartDateDay,
-    month: tauMonthStartDateMonth,
-    year: tauMonthStartDateYear
-  };
-
-  const tauMonthStartLuxonCar =
-    DateTime.fromObject(
-      tauMonthStartLuxonBox);
-
-  const differenceInDaysForDayOfMonth =
-    sourceLuxonCar.diff(
-      tauMonthStartLuxonCar,
-      'days').days;
-
-  const tauDayChinese =
-    getTauDayChineseByIndex(
-      differenceInDaysForDayOfMonth);
-
-  const tauDayTwigFullComboChinese =
-    getTwigFullComboChineseByIndex(
-      differenceInDaysForCombo % 60);
-
-  const tauDayContext = {
-    ...matchedTauMonthGlobalContext_3,
-    tauDayChinese,
-    tauDayTwigFullComboChinese,
-    sourceDateInIso,
-    _type: 'TauDayContext_1'
-  };
-
-  return tauDayContext;
-}
-
-export const getTauDayContextForActiveMonth =
+export const
+  getTauDayContextForAugmentedMonth =
   tauMonthGlobalContext_3 => {
 
   const {
-    flatMooncakeStartDateDay,
-    flatMooncakeStartDateMonth,
-    flatMooncakeStartDateYear,
-    leapMooncakeStartDateDay,
-    leapMooncakeStartDateMonth,
-    leapMooncakeStartDateYear,
-    leapMooncakeEndDateDay,
-    leapMooncakeEndDateMonth,
-    leapMooncakeEndDateYear,
+    flatMonthStartDateDay,
+    flatMonthStartDateMonth,
+    flatMonthStartDateYear,
+    leapMonthStartDateDay,
+    leapMonthStartDateMonth,
+    leapMonthStartDateYear,
+    leapMonthEndDateDay,
+    leapMonthEndDateMonth,
+    leapMonthEndDateYear,
   } = tauMonthGlobalContext_3;
 
-  const flatMooncakeStartLuxonBox = {
-    day: flatMooncakeStartDateDay,
-    month: flatMooncakeStartDateMonth,
-    year: flatMooncakeStartDateYear
+  const flatMonthStartLuxonBox = {
+    day: flatMonthStartDateDay,
+    month: flatMonthStartDateMonth,
+    year: flatMonthStartDateYear
   };
 
-  const flatMooncakeStartLuxonCar =
+  const flatMonthStartLuxonCar =
     DateTime.fromObject(
-      flatMooncakeStartLuxonCar);
+      flatMonthStartLuxonCar);
 
-  const leapMooncakeStartLuxonBox = {
-    day: leapMooncakeStartDateDay,
-    month: leapMooncakeStartDateMonth,
-    year: leapMooncakeStartDateYear
-  }
+  const leapMonthStartLuxonBox = {
+    day: leapMonthStartDateDay,
+    month: leapMonthStartDateMonth,
+    year: leapMonthStartDateYear
+  };
+
+  const leapMonthEndLuxonBox = {
+    day: leapMonthEndDateDay,
+    month: leapMonthEndDateMonth,
+    year: leapMonthEndDateYear
+  };
+
+  const leapMonthEndLuxonCar =
+    DateTime.fromObject(
+      leapMonthEndLuxonBox);
+
+  const nextSolarMonthStartLuxonCar =
+    leapMonthEndLuxonCar
+    .plus({ days: 1 });
 
 
 

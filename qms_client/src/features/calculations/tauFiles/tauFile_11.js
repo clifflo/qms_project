@@ -1,117 +1,143 @@
 import * as R from 'ramda';
 import {
-  DateTime
-} from 'luxon';
-import {
-  getTauDayChineseByIndex,
-  tauDateMatchInTauMonthGlobalContext_2,
-  tauMonthGlobalContextSet_2
-} from './tauMiniHub_02';
-import {
-  getTwigFullComboChineseByIndex
-} from './twigHubCloneOfTau';
-import {
   checkNilWithNumber,
-  checkNilWithTypedObject,
   throwFunctionalError
 } from './utilityHubCloneOfTau';
 import {
-  getTauMonthGlobalContext_3
-} from './tauFile_12';
+  DateTime
+} from 'luxon';
 
-export const getTauDayContext_1 =
-  sourceDateInIso => {
+export const getTauMonthGlobalContext_3 =
+  tauMonthGlobalContext_2 => {
 
   try{
-    const sourceLuxonCar =
-      DateTime.fromISO(sourceDateInIso);
 
-    const loadedTauDateMatchInTauMonthGlobalContext_2 =
-      R.curry
-      (tauDateMatchInTauMonthGlobalContext_2)
-      (sourceLuxonCar);
+    const { tauMonthHasLeap } =
+      tauMonthGlobalContext_2;
 
-    const matchedTauMonthGlobalContext_2 =
-      R.find(
-        loadedTauDateMatchInTauMonthGlobalContext_2,
-        tauMonthGlobalContextSet_2);
+    if(tauMonthHasLeap){
 
-    const matchedTauMonthGlobalContext_3 =
-      getTauMonthGlobalContext_3(
-        matchedTauMonthGlobalContext_2);
+      const {
+        solarStartDateDay,
+        solarStartDateMonth,
+        solarStartDateYear,
+        solarEndDateDay,
+        solarEndDateYear,
+        solarEndDateMonth,
+        leapMonthStartDateMonth,
+        leapMonthStartDateDay,
+      } = tauMonthGlobalContext_2;
 
-    checkNilWithTypedObject(
-      matchedTauMonthGlobalContext_3,
-      'matchedTauMonthGlobalContext_3',
-      'TauMonthGlobalContext_3');
+      const flatMonthStartLuxonBox = {
+        day: solarStartDateDay,
+        month: solarStartDateMonth,
+        year: solarStartDateYear
+      };
 
-    const referenceTauLuxonBox = {
-      day: 16,
-      month: 1,
-      year: 2021
-    };
+      const flatMonthStartLuxonCar =
+        DateTime.fromObject(
+          flatMonthStartLuxonBox);
 
-    const referenceTauLuxonCar =
-      DateTime.fromObject(referenceTauLuxonBox);
+      const leapMonthStartDateYear =
+        solarStartDateYear;
 
-    const differenceInDaysForCombo =
-      sourceLuxonCar.diff(
-        referenceTauLuxonCar,
-        'days')
-      .days;
+      const leapMonthStartLuxonBox = {
+        day: leapMonthStartDateDay,
+        month: leapMonthStartDateMonth,
+        year: leapMonthStartDateYear
+      };
 
-    checkNilWithNumber(
-      differenceInDaysForCombo,
-      'differenceInDaysForCombo');
+      const leapMonthStartLuxonCar =
+        DateTime.fromObject(
+          leapMonthStartLuxonBox);
 
-    const tauMonthStartDateDay =
-      matchedTauMonthGlobalContext_3
-      .solarStartDateDay;
+      const flatMonthEndLuxonBox =
+         leapMonthStartLuxonCar
+         .minus({ days: 1 });
 
-    const tauMonthStartDateMonth =
-      matchedTauMonthGlobalContext_3
-      .solarStartDateMonth;
+      const flatMonthStartDateDay =
+        solarStartDateDay;
 
-    const tauMonthStartDateYear =
-      matchedTauMonthGlobalContext_3
-      .solarStartDateYear;
+      checkNilWithNumber(
+        flatMonthStartDateDay,
+        'flatMonthStartDateDay');
 
-    const tauMonthStartLuxonBox = {
-      day: tauMonthStartDateDay,
-      month: tauMonthStartDateMonth,
-      year: tauMonthStartDateYear
-    };
+      const flatMonthStartDateMonth =
+        solarStartDateMonth;
 
-    const tauMonthStartLuxonCar =
-      DateTime.fromObject(
-        tauMonthStartLuxonBox);
+      checkNilWithNumber(
+        flatMonthStartDateMonth,
+        'flatMonthStartDateMonth');
 
-    const differenceInDaysForDayOfMonth =
-      sourceLuxonCar.diff(
-        tauMonthStartLuxonCar,
-        'days').days;
+      const flatMonthStartDateYear =
+        solarStartDateYear;
 
-    const tauDayChinese =
-      getTauDayChineseByIndex(
-        differenceInDaysForDayOfMonth);
+      checkNilWithNumber(
+        flatMonthStartDateYear,
+        'flatMonthStartDateYear');
 
-    const tauDayTwigFullComboChinese =
-      getTwigFullComboChineseByIndex(
-        differenceInDaysForCombo % 60);
+      const flatMonthEndDateDay =
+        flatMonthEndLuxonBox
+        .day;
 
-    const tauDayContext = {
-      ...matchedTauMonthGlobalContext_3,
-      tauDayChinese,
-      tauDayTwigFullComboChinese,
-      sourceDateInIso,
-      _type: 'TauDayContext'
-    };
+      checkNilWithNumber(
+        flatMonthEndDateDay,
+        'flatMonthEndDateDay');
 
-    return tauDayContext;
+      const flatMonthEndDateMonth =
+        flatMonthEndLuxonBox
+        .month;
+
+      checkNilWithNumber(
+        flatMonthEndDateMonth,
+        'flatMonthEndDateMonth');
+
+      const flatMonthEndDateYear =
+        solarStartDateYear;
+
+      checkNilWithNumber(
+        flatMonthEndDateYear,
+        'flatMonthEndDateYear');
+
+      const leapMonthEndDateDay =
+        solarEndDateDay;
+
+      const leapMonthEndDateMonth =
+        solarEndDateMonth;
+
+      const leapMonthEndDateYear =
+        solarEndDateYear;
+
+      const tauMonthGlobalContext_3 = {
+        ...tauMonthGlobalContext_2,
+        flatMonthStartDateDay,
+        flatMonthStartDateMonth,
+        flatMonthStartDateYear,
+        flatMonthEndDateDay,
+        flatMonthEndDateMonth,
+        flatMonthEndDateYear,
+        leapMonthStartDateDay,
+        leapMonthStartDateMonth,
+        leapMonthStartDateYear,
+        leapMonthEndDateDay,
+        leapMonthEndDateMonth,
+        leapMonthEndDateYear,
+        _type: 'TauMonthGlobalContext_3'
+      };
+
+      return tauMonthGlobalContext_3;
+    }
+    else {
+      return {
+        ...tauMonthGlobalContext_2,
+        _type: 'TauMonthGlobalContext_3'
+      }
+    }
   }
   catch(errorMessage){
     console.error(errorMessage);
     throwFunctionalError(
-      'getTauDayContext_1');
+      'getTauMonthGlobalContext_3');
   }
+
 }
