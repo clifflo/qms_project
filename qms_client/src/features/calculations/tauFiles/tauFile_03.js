@@ -17,8 +17,8 @@ import {
   getTwigTrunkContextByIndex
 } from './twigHubCloneOfTau';
 
-export const mapFunctionOfLocalTauMonthContext_1 =
-  (payloadForMapFunctionOfLocalTauMonthContext_1,
+export const mapFunctionOfTauLocalMonthContext_1 =
+  (payloadForMapFunctionOfTauLocalMonthContext_1,
   tauMonthIndex) => {
 
   try{
@@ -26,7 +26,7 @@ export const mapFunctionOfLocalTauMonthContext_1 =
       rawSolarStartDateYear,
       tauYearTwigFullComboChinese,
       groundTauMonthStartDateMonthdaySet
-    } = payloadForMapFunctionOfLocalTauMonthContext_1;
+    } = payloadForMapFunctionOfTauLocalMonthContext_1;
 
     checkNilWithArray(
       groundTauMonthStartDateMonthdaySet,
@@ -117,7 +117,7 @@ export const mapFunctionOfLocalTauMonthContext_1 =
       finalSolarStartDateLuxonCar
       .toISODate();
 
-    const localTauMonthContext_1 = {
+    const tauLocalMonthContext_1 = {
       ...originalTauMonthContext,
       finalSolarStartDateYear,
       finalSolarStartDateMonth,
@@ -125,15 +125,15 @@ export const mapFunctionOfLocalTauMonthContext_1 =
       tauYearTwigFullComboChinese,
       finalSolarStartDateInIso,
       tauMonthTwigFullComboChinese,
-      _type: 'LocalTauMonthContext_1'
+      _type: 'TauLocalMonthContext_1'
     };
 
-    return localTauMonthContext_1;
+    return tauLocalMonthContext_1;
   }
   catch(errorMessage){
     console.error(errorMessage);
     throwFunctionalError(
-      'mapFunctionOfLocalTauMonthContext_1');
+      'mapFunctionOfTauLocalMonthContext_1');
   }
 
 }

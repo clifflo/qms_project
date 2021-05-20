@@ -1,8 +1,8 @@
 import * as R from 'ramda';
 import {
   builtTauYearContextSet_1,
-  mapFunctionOfBuiltTauMonthContextWithLeap_2,
-  mapFunctionOfBuiltTauMonthContextWithoutLeap_2,
+  mapFunctionOfTauLocalMonthContextWithLeap_2,
+  mapFunctionOfTauLocalMonthContextWithoutLeap_2,
 } from './tauMiniHub_01';
 
 export const mapFunctionOfBuiltTauYearContext_2 =
@@ -24,73 +24,73 @@ export const mapFunctionOfBuiltTauYearContext_2 =
       matchedLeapTauMonthStartDateMonthday[1]
       + '月';
 
-    const finalLeapSolarStartDateMonth =
+    const finalLeapMooncakeStartDateMonth =
       parseInt(
         matchedLeapTauMonthStartDateMonthday[2]);
 
-    const finalLeapSolarStartDateDay =
+    const finalLeapMooncakeStartDateDay =
       parseInt(
         matchedLeapTauMonthStartDateMonthday[3]);
 
-    const { finalLeapSolarStartDateYear } =
+    const { finalLeapMooncakeStartDateYear } =
       builtTauYearContext_1;
 
     const leapStartDateLuxonBus = {
-      day: finalLeapSolarStartDateDay,
-      month: finalLeapSolarStartDateMonth,
-      year: finalLeapSolarStartDateYear
+      day: finalLeapMooncakeStartDateDay,
+      month: finalLeapMooncakeStartDateMonth,
+      year: finalLeapMooncakeStartDateYear
     };
 
     const
-    payloadForMapFunctionOfBuiltTauMonthContextWithLeap_2 =
+    payloadForMapFunctionOfTauLocalMonthContextWithLeap_2 =
     {
       leapTauMonthChinese,
-      finalLeapSolarStartDateMonth,
-      finalLeapSolarStartDateDay
+      finalLeapMooncakeStartDateMonth,
+      finalLeapMooncakeStartDateDay
     };
 
     const
-    loadedForMapFunctionOfBuiltTauMonthContextWithLeap_2 =
+    loadedForMapFunctionOfTauLocalMonthContextWithLeap_2 =
       R.curry
-      (mapFunctionOfBuiltTauMonthContextWithLeap_2)
-      (payloadForMapFunctionOfBuiltTauMonthContextWithLeap_2);
+      (mapFunctionOfTauLocalMonthContextWithLeap_2)
+      (payloadForMapFunctionOfTauLocalMonthContextWithLeap_2);
 
-    const builtTauMonthContextSet_2 =
+    const tauLocalMonthContextSet_2 =
       R.map(
-        loadedForMapFunctionOfBuiltTauMonthContextWithLeap_2,
+        loadedForMapFunctionOfTauLocalMonthContextWithLeap_2,
         builtTauYearContext_1
-        .builtTauMonthContextSet_1);
+        .tauLocalMonthContextSet_1);
 
     const rawBuiltTauYearContext_2 = {
       ...builtTauYearContext_1,
-      builtTauMonthContextSet_2,
+      tauLocalMonthContextSet_2,
       _type: 'BuiltTauYearContext_2'
     };
 
     const finalBuiltTauYearContext_2 =
       R.dissoc(
-        'builtTauMonthContextSet_1',
+        'tauLocalMonthContextSet_1',
         rawBuiltTauYearContext_2);
 
     return finalBuiltTauYearContext_2;
   }
   else{
 
-    const builtTauMonthContextSet_2 =
+    const tauLocalMonthContextSet_2 =
       R.map(
-        mapFunctionOfBuiltTauMonthContextWithoutLeap_2,
+        mapFunctionOfTauLocalMonthContextWithoutLeap_2,
         builtTauYearContext_1
-        .builtTauMonthContextSet_1);
+        .tauLocalMonthContextSet_1);
 
     const rawBuiltTauYearContext_2 = {
       ...builtTauYearContext_1,
-      builtTauMonthContextSet_2,
+      tauLocalMonthContextSet_2,
       _type: 'BuiltTauYearContext_2'
     };
 
     const finalBuiltTauYearContext_2 =
       R.dissoc(
-        'builtTauMonthContextSet_1',
+        'tauLocalMonthContextSet_1',
         rawBuiltTauYearContext_2);
 
     return finalBuiltTauYearContext_2;

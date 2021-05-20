@@ -6,9 +6,9 @@ import {
   findItemByStringFromList
 } from './utilityHubCloneOfTau';
 
-export const mapFunctionOfLocalTauMonthContextWithLeap_2 =
-  (payloadForMapFunctionOfLocalTauMonthContext_2,
-  localTauMonthContext_1) => {
+export const mapFunctionOfTauLocalMonthContextWithLeap_2 =
+  (payloadForMapFunctionOfTauLocalMonthContext_2,
+  tauLocalMonthContext_1) => {
 
   // As there will not be any sort of month 13
   // in leap month so no adjustments.
@@ -16,7 +16,7 @@ export const mapFunctionOfLocalTauMonthContextWithLeap_2 =
     leapTauMonthChinese,
     finalLeapMooncakeStartDateMonth,
     finalLeapMooncakeStartDateDay
-  } = payloadForMapFunctionOfLocalTauMonthContext_2;
+  } = payloadForMapFunctionOfTauLocalMonthContext_2;
 
   const leapTauMonthEnglish =
     findItemByStringFromList(
@@ -29,10 +29,10 @@ export const mapFunctionOfLocalTauMonthContextWithLeap_2 =
     finalSolarStartDateDay,
     finalSolarStartDateMonth,
     finalSolarStartDateYear
-  } = localTauMonthContext_1
+  } = tauLocalMonthContext_1
 
   const sameLeapTauMonth =
-    localTauMonthContext_1.tauMonthChinese
+    tauLocalMonthContext_1.tauMonthChinese
     == leapTauMonthChinese;
 
   const tauMonthGlobalIndex =
@@ -40,43 +40,43 @@ export const mapFunctionOfLocalTauMonthContextWithLeap_2 =
     + (finalSolarStartDateMonth * 100)
     + (finalSolarStartDateYear * 10000);
 
-  let localTauMonthContext_2;
+  let tauLocalMonthContext_2;
 
   if(sameLeapTauMonth){
-    localTauMonthContext_2 = {
-      ...localTauMonthContext_1,
+    tauLocalMonthContext_2 = {
+      ...tauLocalMonthContext_1,
       finalLeapMooncakeStartDateMonth,
       finalLeapMooncakeStartDateDay,
       tauMonthHasLeap: true,
       tauYearHasLeap: true,
       tauMonthGlobalIndex,
       leapTauMonthEnglish,
-      _type: 'LocalTauMonthContext_2'
+      _type: 'TauLocalMonthContext_2'
     }
   }
   else {
-    localTauMonthContext_2 = {
-      ...localTauMonthContext_1,
+    tauLocalMonthContext_2 = {
+      ...tauLocalMonthContext_1,
       tauMonthHasLeap: false,
       tauYearHasLeap: true,
       tauMonthGlobalIndex,
       leapTauMonthEnglish,
-      _type: 'LocalTauMonthContext_2'
+      _type: 'TauLocalMonthContext_2'
     }
   }
 
-  return localTauMonthContext_2;
+  return tauLocalMonthContext_2;
 }
 
 export const
-  mapFunctionOfLocalTauMonthContextWithoutLeap_2 =
-  localTauMonthContext_1 => {
+  mapFunctionOfTauLocalMonthContextWithoutLeap_2 =
+  tauLocalMonthContext_1 => {
 
   const {
     finalSolarStartDateDay,
     finalSolarStartDateMonth,
     finalSolarStartDateYear
-  } = localTauMonthContext_1;
+  } = tauLocalMonthContext_1;
 
   const tauMonthGlobalIndex =
     finalSolarStartDateDay
@@ -84,8 +84,8 @@ export const
     + (finalSolarStartDateYear * 10000);
 
   return {
-    ...localTauMonthContext_1,
-    _type: 'LocalTauMonthContext_2',
+    ...tauLocalMonthContext_1,
+    _type: 'TauLocalMonthContext_2',
     tauMonthGlobalIndex,
     tauMonthHasLeap: false,
     tauYearHasLeap: false

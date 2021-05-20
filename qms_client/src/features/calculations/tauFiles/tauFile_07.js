@@ -38,5 +38,5 @@ export const tauMonthGlobalContextSet_1 =
     mapFunctionOfTauMonthGlobalContext_1,
     R.sortBy(R.prop('tauMonthGlobalIndex')),
     R.flatten,
-    R.map(R.prop('localTauMonthContextSet_2')))
+    R.map(R.prop('tauLocalMonthContextSet_2')))
   (builtTauYearContextSet_2);

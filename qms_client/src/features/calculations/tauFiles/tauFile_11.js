@@ -14,7 +14,7 @@ import {
   checkNilWithNumber
 } from './utilityHubCloneOfTau';
 
-export const getTauDateContextFromIso_1 =
+export const getTauDayContext_1 =
   sourceDateInIso => {
 
   const sourceLuxonCar =

@@ -12,8 +12,9 @@ export const buildTauMonthContext_3 =
       finalSolarStartDateMonth,
       finalSolarStartDateDay,
       finalLeapMooncakeStartDateMonth,
-      finalLeapMooncakeStartDateDay,
-    } = tauMonthContext_2;
+      finalLeapMooncakeStartDateDay
+    } = tauMonthGlobalContext_2;
+
 
 
   }

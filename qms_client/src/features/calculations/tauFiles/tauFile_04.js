@@ -6,7 +6,7 @@ import {
   originalTauYearContextSet
 } from './tauFile_01';
 import {
-  mapFunctionOfLocalTauMonthContext_1
+  mapFunctionOfTauLocalMonthContext_1
 } from './tauFile_03';
 import {
   checkNilWithArray,
@@ -50,25 +50,25 @@ const mapFunctionOfBuiltTauYearContext_1 =
       getTwigFullComboChineseByIndex(
         twigComboIndex);
 
-    const payloadForMapFunctionOfLocalTauMonthContext_1 =
+    const payloadForMapFunctionOfTauLocalMonthContext_1 =
     {
       rawSolarStartDateYear,
       tauYearTwigFullComboChinese,
       groundTauMonthStartDateMonthdaySet
     };
 
-    const loadedMapFunctionOfLocalTauMonthContext_1 =
-      R.curry(mapFunctionOfLocalTauMonthContext_1)
-      (payloadForMapFunctionOfLocalTauMonthContext_1);
+    const loadedMapFunctionOfTauLocalMonthContext_1 =
+      R.curry(mapFunctionOfTauLocalMonthContext_1)
+      (payloadForMapFunctionOfTauLocalMonthContext_1);
 
-    const localTauMonthContextSet_1 =
+    const tauLocalMonthContextSet_1 =
       R.map(
-        loadedMapFunctionOfLocalTauMonthContext_1,
+        loadedMapFunctionOfTauLocalMonthContext_1,
         R.range(0, 12));
 
     const builtTauYearContext_1 = {
       _type: 'BuiltTauYearContext_1',
-      localTauMonthContextSet_1,
+      tauLocalMonthContextSet_1,
       rawSolarStartDateYear,
       tauYearTwigFullComboChinese,
       groundTauMonthStartDateMonthdaySet,
