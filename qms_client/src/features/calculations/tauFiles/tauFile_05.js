@@ -26,9 +26,9 @@ export const mapFunctionOfTauLocalMonthContextWithLeap_2 =
     .tauMonthEnglish;
 
   const {
-    finalSolarStartDateDay,
-    finalSolarStartDateMonth,
-    finalSolarStartDateYear
+    solarStartDateDay,
+    solarStartDateMonth,
+    solarStartDateYear
   } = tauLocalMonthContext_1
 
   const sameLeapTauMonth =
@@ -37,8 +37,8 @@ export const mapFunctionOfTauLocalMonthContextWithLeap_2 =
 
   const tauMonthGlobalIndex =
     finalLeapMooncakeStartDateDay
-    + (finalSolarStartDateMonth * 100)
-    + (finalSolarStartDateYear * 10000);
+    + (solarStartDateMonth * 100)
+    + (solarStartDateYear * 10000);
 
   let tauLocalMonthContext_2;
 
@@ -73,15 +73,15 @@ export const
   tauLocalMonthContext_1 => {
 
   const {
-    finalSolarStartDateDay,
-    finalSolarStartDateMonth,
-    finalSolarStartDateYear
+    solarStartDateDay,
+    solarStartDateMonth,
+    solarStartDateYear
   } = tauLocalMonthContext_1;
 
   const tauMonthGlobalIndex =
-    finalSolarStartDateDay
-    + (finalSolarStartDateMonth * 100)
-    + (finalSolarStartDateYear * 10000);
+    solarStartDateDay
+    + (solarStartDateMonth * 100)
+    + (solarStartDateYear * 10000);
 
   return {
     ...tauLocalMonthContext_1,

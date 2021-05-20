@@ -15,7 +15,7 @@ export const originalTauYearContextSet = [
       '13-03',
       ''
     ],
-    rawSolarStartDateYear: 2021
+    solarStartDateWrappedYear: 2021
   },
   {
     tauMonthStartDateMonthdaySet: [
@@ -33,7 +33,7 @@ export const originalTauYearContextSet = [
       '12-23',
       ''
     ],
-    rawSolarStartDateYear: 2022
+    solarStartDateWrappedYear: 2022
   },
   {
     tauMonthStartDateMonthdaySet: [
@@ -51,7 +51,7 @@ export const originalTauYearContextSet = [
       '13-11',
       '二: 03-22'
     ],
-    rawSolarStartDateYear: 2023
+    solarStartDateWrappedYear: 2023
   },
   {
     tauMonthStartDateMonthdaySet: [
@@ -69,7 +69,7 @@ export const originalTauYearContextSet = [
       '12-31',
       ''
     ],
-    rawSolarStartDateYear: 2024
+    solarStartDateWrappedYear: 2024
   },
   {
     tauMonthStartDateMonthdaySet: [
@@ -87,7 +87,7 @@ export const originalTauYearContextSet = [
       '13-19',
       '六: 07-25'
     ],
-    rawSolarStartDateYear: 2025
+    solarStartDateWrappedYear: 2025
   },
   {
     tauMonthStartDateMonthdaySet: [
@@ -105,7 +105,7 @@ export const originalTauYearContextSet = [
       '13-08',
       ''
     ],
-    rawSolarStartDateYear: 2026
+    solarStartDateWrappedYear: 2026
   },
   {
     tauMonthStartDateMonthdaySet: [
@@ -123,7 +123,7 @@ export const originalTauYearContextSet = [
       '12-28',
       ''
     ],
-    rawSolarStartDateYear: 2027
+    solarStartDateWrappedYear: 2027
   },
   {
     tauMonthStartDateMonthdaySet: [
@@ -141,7 +141,7 @@ export const originalTauYearContextSet = [
       '13-15',
       '五: 06-23'
     ],
-    rawSolarStartDateYear: 2028
+    solarStartDateWrappedYear: 2028
   },
   {
     tauMonthStartDateMonthdaySet: [
@@ -159,7 +159,7 @@ export const originalTauYearContextSet = [
       '13-04',
       ''
     ],
-    rawSolarStartDateYear: 2029
+    solarStartDateWrappedYear: 2029
   },
   {
     tauMonthStartDateMonthdaySet: [
@@ -177,6 +177,6 @@ export const originalTauYearContextSet = [
       '12-25',
       ''
     ],
-    rawSolarStartDateYear: 2030
+    solarStartDateWrappedYear: 2030
   }
 ];

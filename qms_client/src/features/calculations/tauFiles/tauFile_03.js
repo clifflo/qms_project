@@ -23,7 +23,7 @@ export const mapFunctionOfTauLocalMonthContext_1 =
 
   try{
     const {
-      rawSolarStartDateYear,
+      solarStartDateWrappedYear,
       tauYearTwigFullComboChinese,
       groundTauMonthStartDateMonthdaySet
     } = payloadForMapFunctionOfTauLocalMonthContext_1;
@@ -41,33 +41,33 @@ export const mapFunctionOfTauLocalMonthContext_1 =
         R.take(
           2, tauMonthStartDateMonthday));
 
-    const finalSolarStartDateDay =
+    const solarStartDateDay =
       parseInt(
         R.takeLast(
           2, tauMonthStartDateMonthday));
 
-    let finalSolarStartDateYear;
-    let finalSolarStartDateMonth;
+    let solarStartDateYear;
+    let solarStartDateMonth;
 
     if(rawSolarStartDateMonth == 13){
-      finalSolarStartDateYear =
-        parseInt(rawSolarStartDateYear) + 1;
-      finalSolarStartDateMonth = 1;
+      solarStartDateYear =
+        parseInt(solarStartDateWrappedYear) + 1;
+      solarStartDateMonth = 1;
     }
     else {
-      finalSolarStartDateMonth =
+      solarStartDateMonth =
         parseInt(rawSolarStartDateMonth);
-      finalSolarStartDateYear =
-        parseInt(rawSolarStartDateYear);
+      solarStartDateYear =
+        parseInt(solarStartDateWrappedYear);
     }
 
     checkNilWithNumber(
-      finalSolarStartDateMonth,
-      'finalSolarStartDateMonth');
+      solarStartDateMonth,
+      'solarStartDateMonth');
 
     checkNilWithNumber(
-      finalSolarStartDateYear,
-      'finalSolarStartDateYear');
+      solarStartDateYear,
+      'solarStartDateYear');
 
     const originalTauMonthContext =
       getItemByNumberFromList(
@@ -103,27 +103,27 @@ export const mapFunctionOfTauLocalMonthContext_1 =
       tauMonthTrunkChinese
       + tauMonthBranchChinese;
 
-    const finalSolarStartDateLuxonBox = {
-      day: finalSolarStartDateDay,
-      month: finalSolarStartDateMonth,
-      year: finalSolarStartDateYear
+    const solarStartDateLuxonBox = {
+      day: solarStartDateDay,
+      month: solarStartDateMonth,
+      year: solarStartDateYear
     };
 
-    const finalSolarStartDateLuxonCar =
+    const solarStartDateLuxonCar =
       DateTime.fromObject(
-        finalSolarStartDateLuxonBox);
+        solarStartDateLuxonBox);
 
-    const finalSolarStartDateInIso =
-      finalSolarStartDateLuxonCar
+    const solarStartDateInIso =
+      solarStartDateLuxonCar
       .toISODate();
 
     const tauLocalMonthContext_1 = {
       ...originalTauMonthContext,
-      finalSolarStartDateYear,
-      finalSolarStartDateMonth,
-      finalSolarStartDateDay,
+      solarStartDateYear,
+      solarStartDateMonth,
+      solarStartDateDay,
       tauYearTwigFullComboChinese,
-      finalSolarStartDateInIso,
+      solarStartDateInIso,
       tauMonthTwigFullComboChinese,
       _type: 'TauLocalMonthContext_1'
     };

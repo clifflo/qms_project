@@ -8,20 +8,20 @@ export const buildTauMonthContext_3 =
   if(tauMonthHasLeap){
 
     const {
-      finalSolarStartDateDay,
-      finalSolarStartDateMonth,
-      finalSolarStartDateYear,
-      finalSolarEndDateDay,
-      finalSolarEndDateYear,
-      finalSolarEndDateMonth,
+      solarStartDateDay,
+      solarStartDateMonth,
+      solarStartDateYear,
+      solarEndDateDay,
+      solarEndDateYear,
+      solarEndDateMonth,
       finalLeapMooncakeStartDateMonth,
       finalLeapMooncakeStartDateDay,
     } = tauMonthGlobalContext_2;
 
     const flatMooncakeStartDateLuxonBox = {
-      day: finalSolarStartDateDay,
-      month: finalSolarStartDateMonth,
-      year: finalSolarStartDateYear
+      day: solarStartDateDay,
+      month: solarStartDateMonth,
+      year: solarStartDateYear
     };
 
     const flatMooncakeStartDateLuxonCar =
@@ -31,7 +31,7 @@ export const buildTauMonthContext_3 =
     const leapMooncakeStartDateLuxonBox = {
       day: finalLeapMooncakeStartDateDay,
       month: finalLeapMooncakeStartDateMonth,
-      year: finalSolarStartDateYear
+      year: solarStartDateYear
     };
 
     const leapMooncakeStartDateLuxonCar =
@@ -43,13 +43,13 @@ export const buildTauMonthContext_3 =
        .minus({ days: 1 });
 
     const flatMooncakeStartDateDay =
-      finalSolarStartDateDay;
+      solarStartDateDay;
 
     const flatMooncakeStartDateMonth =
-      finalSolarStartDateMonth;
+      solarStartDateMonth;
 
     const flatMooncakeStartDateYear =
-      finalSolarStartDateYear;
+      solarStartDateYear;
 
     const flatMooncakeEndDateDay =
       flatMooncakeEndDateDay.day;
@@ -61,13 +61,13 @@ export const buildTauMonthContext_3 =
       flatMooncakeEndDateDay.year;
 
     const leapMooncakeEndDateDay =
-      finalSolarEndDateDay;
+      solarEndDateDay;
 
     const leapMooncakeEndDateMonth =
-      finalSolarEndDateMonth;
+      solarEndDateMonth;
 
     const leapMooncakeEndDateYear =
-      finalSolarEndDateYear;
+      solarEndDateYear;
 
 
 

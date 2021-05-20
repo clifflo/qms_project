@@ -39,12 +39,12 @@ const mapFunctionOfBuiltTauYearContext_1 =
       R.isEmpty(rawLeapTauMonthStartDateMonthday) ?
       null : rawLeapTauMonthStartDateMonthday;
 
-    const rawSolarStartDateYear =
+    const solarStartDateWrappedYear =
       originalTauYearContextSet
-      .rawSolarStartDateYear;
+      .solarStartDateWrappedYear;
 
     const twigComboIndex =
-      (rawSolarStartDateYear - 1984) % 60;
+      (solarStartDateWrappedYear - 1984) % 60;
 
     const tauYearTwigFullComboChinese =
       getTwigFullComboChineseByIndex(
@@ -52,7 +52,7 @@ const mapFunctionOfBuiltTauYearContext_1 =
 
     const payloadForMapFunctionOfTauLocalMonthContext_1 =
     {
-      rawSolarStartDateYear,
+      solarStartDateWrappedYear,
       tauYearTwigFullComboChinese,
       groundTauMonthStartDateMonthdaySet
     };
@@ -69,7 +69,7 @@ const mapFunctionOfBuiltTauYearContext_1 =
     const builtTauYearContext_1 = {
       _type: 'BuiltTauYearContext_1',
       tauLocalMonthContextSet_1,
-      rawSolarStartDateYear,
+      solarStartDateWrappedYear,
       tauYearTwigFullComboChinese,
       groundTauMonthStartDateMonthdaySet,
       leapTauMonthStartDateMonthday:
