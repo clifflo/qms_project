@@ -21,6 +21,11 @@ const tauDateMatchInTauMonthGlobalContext_2 =
     const sourceLuxonCar =
       DateTime.fromISO(sourceDateInIso);
 
+    if(!sourceLuxonCar.isValid){
+      throw new Error(
+        'Source luxon car is invalid.');
+    }
+
     const {
       finalSolarStartDateYear,
       finalSolarStartDateMonth,
@@ -31,7 +36,7 @@ const tauDateMatchInTauMonthGlobalContext_2 =
     } = tauMonthGlobalContext_2;
 
     const targetStartLuxonBox = {
-      day: finalSolarStartDateYear,
+      day: finalSolarStartDateDay,
       month: finalSolarStartDateMonth,
       year: finalSolarStartDateYear
     };
@@ -39,14 +44,25 @@ const tauDateMatchInTauMonthGlobalContext_2 =
     const targetStartLuxonCar =
       DateTime.fromObject(targetStartLuxonBox);
 
+    if(!targetStartLuxonCar.isValid){
+      throw new Error(
+        'Target start luxon car is invalid.');
+    }
+
     const targetEndLuxonBox = {
-      day: finalSolarEndDateYear,
+      day: finalSolarEndDateDay,
       month: finalSolarEndDateMonth,
       year: finalSolarEndDateYear
     };
 
-    const targetEndLuxorCar =
+    const targetEndLuxonCar =
       DateTime.fromObject(targetEndLuxonBox);
+
+    if(!targetEndLuxonCar.isValid){
+      throw new Error(
+        'Target end luxon car is invalid.');
+    }
+
 
     // The 'fromDateTimes' function creates
     // an interval including the start date
@@ -56,7 +72,7 @@ const tauDateMatchInTauMonthGlobalContext_2 =
     const targetLuxonCarPark =
       Interval.fromDateTimes(
         targetStartLuxonCar,
-        targetEndLuxorCar.plus({ days: 1 }));
+        targetEndLuxonCar.plus({ days: 1 }));
 
     const sourceLuxonCarInTargetCarPark =
       targetLuxonCarPark

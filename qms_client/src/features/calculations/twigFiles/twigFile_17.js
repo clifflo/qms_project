@@ -23,9 +23,6 @@ export const getTwigFullComboChineseByIndex =
     twigComboTrunkIndex -
     twigComboTrunkBranchDifference;
 
-  const finalTwigComboBranchIndex =
-    getCyclicIndex(rawTwigComboBranchIndex, 12);
-
   const twigComboTrunkChinese =
     getTwigTrunkContextByIndex(
       twigComboTrunkIndex)
@@ -33,7 +30,7 @@ export const getTwigFullComboChineseByIndex =
 
   const twigComboBranchChinese =
     getTwigBranchContextByIndex(
-      twigComboTrunkIndex)
+      rawTwigComboBranchIndex)
     .twigBranchChinese;
 
   const twigFullComboChinese =
