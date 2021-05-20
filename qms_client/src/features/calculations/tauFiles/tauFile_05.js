@@ -10,8 +10,6 @@ export const mapFunctionOfBuiltTauMonthContextWithLeap_2 =
   (payloadForMapFunctionOfBuiltTauMonthContext_2,
   builtTauMonthContext_1) => {
 
-  console.log(originalTauMonthContextSet);
-
   // As there will not be any sort of month 13
   // in leap month so no adjustments.
   const {

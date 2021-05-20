@@ -1,10 +1,10 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  tauMonthGlobalContextSet_2
+  getTauDateContextFromIso
 } from '../calculations/tauHubCloneBase';
 
 export default function RhoGui() {
   return <JSONTree
-    data={tauMonthGlobalContextSet_2}/>
+    data={getTauDateContextFromIso('2020-5-20')}/>
 }
