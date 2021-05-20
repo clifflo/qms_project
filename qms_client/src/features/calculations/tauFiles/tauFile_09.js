@@ -13,13 +13,12 @@ import {
   throwFunctionalError
 } from './utilityHubCloneOfTau';
 
-const tauDateMatchInTauMonthGlobalContext_2 =
-  (sourceDateInIso,
+export const
+  tauDateMatchInTauMonthGlobalContext_2 =
+  (sourceLuxonCar,
   tauMonthGlobalContext_2) => {
 
   try{
-    const sourceLuxonCar =
-      DateTime.fromISO(sourceDateInIso);
 
     if(!sourceLuxonCar.isValid){
       throw new Error(
@@ -63,7 +62,6 @@ const tauDateMatchInTauMonthGlobalContext_2 =
         'Target end luxon car is invalid.');
     }
 
-
     // The 'fromDateTimes' function creates
     // an interval including the start date
     // but not including the end date,
@@ -85,22 +83,4 @@ const tauDateMatchInTauMonthGlobalContext_2 =
     throwFunctionalError(
       'tauDateMatchInTauMonthGlobalContext_2');
   }
-
-
-}
-
-export const getTauDateContextFromIso =
-  sourceDateInIso => {
-
-  const loadedTauDateMatchInTauMonthGlobalContext_2 =
-    R.curry
-    (tauDateMatchInTauMonthGlobalContext_2)
-    (sourceDateInIso);
-
-  const matchedTauMonthGlobalContext_2 =
-    R.find(
-      loadedTauDateMatchInTauMonthGlobalContext_2,
-      tauMonthGlobalContextSet_2);
-
-  return matchedTauMonthGlobalContext_2;
 }
