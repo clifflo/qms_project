@@ -121,7 +121,9 @@ export const getTauMonthGlobalContext_3 =
         leapMooncakeEndDateMonth,
         leapMooncakeEndDateYear,
         _type: 'TauMonthGlobalContext_3'
-      }
+      };
+
+      return tauMonthGlobalContext_3;
     }
     else {
       return {

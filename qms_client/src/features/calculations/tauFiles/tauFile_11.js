@@ -42,8 +42,8 @@ export const getTauDayContext_1 =
 
     checkNilWithTypedObject(
       matchedTauMonthGlobalContext_3,
-      'TauMonthGlobalContext_3',
-      'matchedTauMonthGlobalContext_3');
+      'matchedTauMonthGlobalContext_3',
+      'TauMonthGlobalContext_3');
 
     const referenceTauLuxonBox = {
       day: 16,
