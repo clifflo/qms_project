@@ -26,18 +26,18 @@ export const
     }
 
     const {
-      solarStartDateYear,
-      solarStartDateMonth,
-      solarStartDateDay,
-      solarEndDateYear,
-      solarEndDateMonth,
-      solarEndDateDay
+      solarStartDateYearOfTauMonth,
+      solarStartDateMonthOfTauMonth,
+      solarStartDateDayOfTauMonth,
+      solarEndDateYearOfTauMonth,
+      solarEndDateMonthOfTauMonth,
+      solarEndDateDayOfTauMonth
     } = tauMonthGlobalContext_2;
 
     const targetStartLuxonBox = {
-      day: solarStartDateDay,
-      month: solarStartDateMonth,
-      year: solarStartDateYear
+      day: solarStartDateDayOfTauMonth,
+      month: solarStartDateMonthOfTauMonth,
+      year: solarStartDateYearOfTauMonth
     };
 
     const targetStartLuxonCar =
@@ -49,9 +49,9 @@ export const
     }
 
     const targetEndLuxonBox = {
-      day: solarEndDateDay,
-      month: solarEndDateMonth,
-      year: solarEndDateYear
+      day: solarEndDateDayOfTauMonth,
+      month: solarEndDateMonthOfTauMonth,
+      year: solarEndDateYearOfTauMonth
     };
 
     const targetEndLuxonCar =

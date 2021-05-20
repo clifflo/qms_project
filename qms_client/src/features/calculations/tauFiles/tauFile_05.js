@@ -14,8 +14,8 @@ export const mapFunctionOfTauLocalMonthContextWithLeap_2 =
   // in leap month so no adjustments.
   const {
     leapTauMonthChinese,
-    finalLeapMooncakeStartDateMonth,
-    finalLeapMooncakeStartDateDay
+    leapMooncakeStartDateMonthOTauMonth,
+    leapMooncakeStartDateDayOfTauMonth
   } = payloadForMapFunctionOfTauLocalMonthContext_2;
 
   const leapTauMonthEnglish =
@@ -26,9 +26,9 @@ export const mapFunctionOfTauLocalMonthContextWithLeap_2 =
     .tauMonthEnglish;
 
   const {
-    solarStartDateDay,
-    solarStartDateMonth,
-    solarStartDateYear
+    solarStartDateDayOfTauMonth,
+    solarStartDateMonthOfTauMonth,
+    solarStartDateYearOfTauMonth
   } = tauLocalMonthContext_1
 
   const sameLeapTauMonth =
@@ -36,17 +36,17 @@ export const mapFunctionOfTauLocalMonthContextWithLeap_2 =
     == leapTauMonthChinese;
 
   const tauMonthGlobalIndex =
-    finalLeapMooncakeStartDateDay
-    + (solarStartDateMonth * 100)
-    + (solarStartDateYear * 10000);
+    leapMooncakeStartDateDayOfTauMonth
+    + (solarStartDateMonthOfTauMonth * 100)
+    + (solarStartDateYearOfTauMonth * 10000);
 
   let tauLocalMonthContext_2;
 
   if(sameLeapTauMonth){
     tauLocalMonthContext_2 = {
       ...tauLocalMonthContext_1,
-      finalLeapMooncakeStartDateMonth,
-      finalLeapMooncakeStartDateDay,
+      leapMooncakeStartDateMonthOTauMonth,
+      leapMooncakeStartDateDayOfTauMonth,
       tauMonthHasLeap: true,
       tauYearHasLeap: true,
       tauMonthGlobalIndex,
@@ -73,15 +73,15 @@ export const
   tauLocalMonthContext_1 => {
 
   const {
-    solarStartDateDay,
-    solarStartDateMonth,
-    solarStartDateYear
+    solarStartDateDayOfTauMonth,
+    solarStartDateMonthOfTauMonth,
+    solarStartDateYearOfTauMonth
   } = tauLocalMonthContext_1;
 
   const tauMonthGlobalIndex =
-    solarStartDateDay
-    + (solarStartDateMonth * 100)
-    + (solarStartDateYear * 10000);
+    solarStartDateDayOfTauMonth
+    + (solarStartDateMonthOfTauMonth * 100)
+    + (solarStartDateYearOfTauMonth * 10000);
 
   return {
     ...tauLocalMonthContext_1,

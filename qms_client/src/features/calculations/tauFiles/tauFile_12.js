@@ -8,20 +8,20 @@ export const buildTauMonthContext_3 =
   if(tauMonthHasLeap){
 
     const {
-      solarStartDateDay,
-      solarStartDateMonth,
-      solarStartDateYear,
-      solarEndDateDay,
-      solarEndDateYear,
-      solarEndDateMonth,
-      finalLeapMooncakeStartDateMonth,
-      finalLeapMooncakeStartDateDay,
+      solarStartDateDayOfTauMonth,
+      solarStartDateMonthOfTauMonth,
+      solarStartDateYearOfTauMonth,
+      solarEndDateDayOfTauMonth,
+      solarEndDateYearOfTauMonth,
+      solarEndDateMonthOfTauMonth,
+      leapMooncakeStartDateMonthOTauMonth,
+      leapMooncakeStartDateDayOfTauMonth,
     } = tauMonthGlobalContext_2;
 
     const flatMooncakeStartDateLuxonBox = {
-      day: solarStartDateDay,
-      month: solarStartDateMonth,
-      year: solarStartDateYear
+      day: solarStartDateDayOfTauMonth,
+      month: solarStartDateMonthOfTauMonth,
+      year: solarStartDateYearOfTauMonth
     };
 
     const flatMooncakeStartDateLuxonCar =
@@ -29,9 +29,9 @@ export const buildTauMonthContext_3 =
         flatMooncakeStartDateLuxonBox);
 
     const leapMooncakeStartDateLuxonBox = {
-      day: finalLeapMooncakeStartDateDay,
-      month: finalLeapMooncakeStartDateMonth,
-      year: solarStartDateYear
+      day: leapMooncakeStartDateDayOfTauMonth,
+      month: leapMooncakeStartDateMonthOTauMonth,
+      year: solarStartDateYearOfTauMonth
     };
 
     const leapMooncakeStartDateLuxonCar =
@@ -43,13 +43,13 @@ export const buildTauMonthContext_3 =
        .minus({ days: 1 });
 
     const flatMooncakeStartDateDay =
-      solarStartDateDay;
+      solarStartDateDayOfTauMonth;
 
     const flatMooncakeStartDateMonth =
-      solarStartDateMonth;
+      solarStartDateMonthOfTauMonth;
 
     const flatMooncakeStartDateYear =
-      solarStartDateYear;
+      solarStartDateYearOfTauMonth;
 
     const flatMooncakeEndDateDay =
       flatMooncakeEndDateDay.day;
@@ -61,13 +61,13 @@ export const buildTauMonthContext_3 =
       flatMooncakeEndDateDay.year;
 
     const leapMooncakeEndDateDay =
-      solarEndDateDay;
+      solarEndDateDayOfTauMonth;
 
     const leapMooncakeEndDateMonth =
-      solarEndDateMonth;
+      solarEndDateMonthOfTauMonth;
 
     const leapMooncakeEndDateYear =
-      solarEndDateYear;
+      solarEndDateYearOfTauMonth;
 
 
 

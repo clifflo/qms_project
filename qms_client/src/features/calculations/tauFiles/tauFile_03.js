@@ -41,33 +41,33 @@ export const mapFunctionOfTauLocalMonthContext_1 =
         R.take(
           2, tauMonthStartDateMonthday));
 
-    const solarStartDateDay =
+    const solarStartDateDayOfTauMonth =
       parseInt(
         R.takeLast(
           2, tauMonthStartDateMonthday));
 
-    let solarStartDateYear;
-    let solarStartDateMonth;
+    let solarStartDateYearOfTauMonth;
+    let solarStartDateMonthOfTauMonth;
 
     if(rawSolarStartDateMonth == 13){
-      solarStartDateYear =
+      solarStartDateYearOfTauMonth =
         parseInt(solarStartDateWrappedYear) + 1;
-      solarStartDateMonth = 1;
+      solarStartDateMonthOfTauMonth = 1;
     }
     else {
-      solarStartDateMonth =
+      solarStartDateMonthOfTauMonth =
         parseInt(rawSolarStartDateMonth);
-      solarStartDateYear =
+      solarStartDateYearOfTauMonth =
         parseInt(solarStartDateWrappedYear);
     }
 
     checkNilWithNumber(
-      solarStartDateMonth,
-      'solarStartDateMonth');
+      solarStartDateMonthOfTauMonth,
+      'solarStartDateMonthOfTauMonth');
 
     checkNilWithNumber(
-      solarStartDateYear,
-      'solarStartDateYear');
+      solarStartDateYearOfTauMonth,
+      'solarStartDateYearOfTauMonth');
 
     const originalTauMonthContext =
       getItemByNumberFromList(
@@ -104,9 +104,9 @@ export const mapFunctionOfTauLocalMonthContext_1 =
       + tauMonthBranchChinese;
 
     const solarStartDateLuxonBox = {
-      day: solarStartDateDay,
-      month: solarStartDateMonth,
-      year: solarStartDateYear
+      day: solarStartDateDayOfTauMonth,
+      month: solarStartDateMonthOfTauMonth,
+      year: solarStartDateYearOfTauMonth
     };
 
     const solarStartDateLuxonCar =
@@ -119,9 +119,9 @@ export const mapFunctionOfTauLocalMonthContext_1 =
 
     const tauLocalMonthContext_1 = {
       ...originalTauMonthContext,
-      solarStartDateYear,
-      solarStartDateMonth,
-      solarStartDateDay,
+      solarStartDateYearOfTauMonth,
+      solarStartDateMonthOfTauMonth,
+      solarStartDateDayOfTauMonth,
       tauYearTwigFullComboChinese,
       solarStartDateInIso,
       tauMonthTwigFullComboChinese,
