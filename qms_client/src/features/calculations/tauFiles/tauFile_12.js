@@ -1,4 +1,7 @@
 import * as R from 'ramda';
+import {
+  checkNilWithNumber
+} from './utilityHubCloneOfTau';
 
 export const buildTauMonthContext_3 =
   tauMonthGlobalContext_2 => {
@@ -14,56 +17,79 @@ export const buildTauMonthContext_3 =
       solarEndDateDayOfTauMonth,
       solarEndDateYearOfTauMonth,
       solarEndDateMonthOfTauMonth,
-      leapMooncakeStartDateMonthOTauMonth,
-      leapMooncakeStartDateDayOfTauMonth,
+      leapMooncakeStartDateMonth,
+      leapMooncakeStartDateDay,
     } = tauMonthGlobalContext_2;
 
-    const flatMooncakeStartDateLuxonBox = {
+    const flatMooncakeStartDateOfTauMonthLuxonBox = {
       day: solarStartDateDayOfTauMonth,
       month: solarStartDateMonthOfTauMonth,
       year: solarStartDateYearOfTauMonth
     };
 
-    const flatMooncakeStartDateLuxonCar =
+    const flatMooncakeStartDateOfTauMonthLuxonCar =
       DateTime.fromObject(
-        flatMooncakeStartDateLuxonBox);
+        flatMooncakeStartDateLuxonBoxOfTauMonth);
 
-    const leapMooncakeStartDateLuxonBox = {
-      day: leapMooncakeStartDateDayOfTauMonth,
+    const leapMooncakeStartDateOfTauMonthLuxonBox = {
+      day: leapMooncakeStartDateDay,
       month: leapMooncakeStartDateMonthOTauMonth,
       year: solarStartDateYearOfTauMonth
     };
 
-    const leapMooncakeStartDateLuxonCar =
+    const leapMooncakeStartDateOfTauMonthLuxonCar =
       DateTime.fromObject(
         leapMooncakeStartDateLuxonBox);
 
     const flatMooncakeEndDateLuxonBox =
-       leapMooncakeStartDateLuxonCar
+       leapMooncakeStartDateOfTauMonthLuxonCar
        .minus({ days: 1 });
 
     const flatMooncakeStartDateDay =
       solarStartDateDayOfTauMonth;
 
+    checkNilWithNumber(
+      flatMooncakeStartDateDay,
+      'flatMooncakeStartDateDay');
+
     const flatMooncakeStartDateMonth =
       solarStartDateMonthOfTauMonth;
+
+    checkNilWithNumber(
+      flatMooncakeStartDateMonth,
+      'flatMooncakeStartDateMonth');
 
     const flatMooncakeStartDateYear =
       solarStartDateYearOfTauMonth;
 
+    checkNilWithNumber(
+      flatMooncakeStartDateYear,
+      'flatMooncakeStartDateYear');
+
     const flatMooncakeEndDateDay =
-      flatMooncakeEndDateDay.day;
+      flatMooncakeEndDateLuxonBox
+      .day;
 
-    const flatMooncakeEndDateMonth =
-      flatMooncakeEndDateDay.month;
+    checkNilWithNumber(
+      flatMooncakeEndDateDay,
+      'flatMooncakeEndDateDay');
 
-    const flatMooncakeEndDateYear =
-      flatMooncakeEndDateDay.year;
+    const flatMooncakeEndDateMonthOfTauMonth =
+      flatMooncakeEndDateLuxonBox
+      .month;
 
-    const leapMooncakeEndDateDay =
+    const flatMooncakeEndDateYearOfTauMonth =
+      flatMooncakeEndDateLuxonBox
+      .year;
+
+    const leapMooncakeStartDateYearOfTauMonth =
+      flatMooncakeEndDateLuxonBox
+      .year;
+
+    const leapMooncakeEndDateDayOfTauMonth =
       solarEndDateDayOfTauMonth;
 
-    const leapMooncakeEndDateMonth =
+    const leapMooncakeEndDateMonthOfTauMonth =
       solarEndDateMonthOfTauMonth;
 
     const leapMooncakeEndDateYear =
