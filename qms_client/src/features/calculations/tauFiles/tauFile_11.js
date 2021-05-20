@@ -99,21 +99,19 @@ export const getTauDayContext_1 =
       getTwigFullComboChineseByIndex(
         differenceInDaysForCombo % 60);
 
-    const tauDayContext_1 = {
+    const tauDayContext = {
       ...matchedTauMonthGlobalContext_3,
       tauDayChinese,
       tauDayTwigFullComboChinese,
       sourceDateInIso,
-      _type: 'TauDayContext_1'
+      _type: 'TauDayContext'
     };
 
-    return tauDayContext_1;
+    return tauDayContext;
   }
   catch(errorMessage){
     console.error(errorMessage);
     throwFunctionalError(
       'getTauDayContext_1');
   }
-
-
 }
