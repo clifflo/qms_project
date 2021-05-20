@@ -66,15 +66,15 @@ export const getTauDayContext_1 =
 
     const tauMonthStartDateDay =
       matchedTauMonthGlobalContext_3
-      .solarStartDateDayOfTauMonth;
+      .solarStartDateDay;
 
     const tauMonthStartDateMonth =
       matchedTauMonthGlobalContext_3
-      .solarStartDateMonthOfTauMonth;
+      .solarStartDateMonth;
 
     const tauMonthStartDateYear =
       matchedTauMonthGlobalContext_3
-      .solarStartDateYearOfTauMonth;
+      .solarStartDateYear;
 
     const tauMonthStartLuxonBox = {
       day: tauMonthStartDateDay,

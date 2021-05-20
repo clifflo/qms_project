@@ -8,16 +8,16 @@ export const getLuxonCarFromTauGlobalMonthContext =
   tauGlobalMonthContext => {
 
   const {
-    solarStartDateYearOfTauMonth,
-    solarStartDateMonthOfTauMonth,
-    solarStartDateDayOfTauMonth
+    solarStartDateYear,
+    solarStartDateMonth,
+    solarStartDateDay
   } = tauGlobalMonthContext;
 
   const tauMonthGlobalContextSolarStartDateLuxonBox =
   {
-    year: solarStartDateYearOfTauMonth,
-    month: solarStartDateMonthOfTauMonth,
-    day: solarStartDateDayOfTauMonth
+    year: solarStartDateYear,
+    month: solarStartDateMonth,
+    day: solarStartDateDay
   };
 
   const tauMonthGlobalContextSolarStartDateLuxonCar =

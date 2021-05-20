@@ -11,14 +11,16 @@ export const getTauMonthGlobalContext_3 =
   tauMonthGlobalContext_2 => {
 
   try{
-    const { tauMonthHasLeap } = tauMonthGlobalContext_2;
+
+    const { tauMonthHasLeap } =
+      tauMonthGlobalContext_2;
 
     if(tauMonthHasLeap){
 
       const {
-        solarStartDateDayOfTauMonth,
-        solarStartDateMonthOfTauMonth,
-        solarStartDateYearOfTauMonth,
+        solarStartDateDay,
+        solarStartDateMonth,
+        solarStartDateYear,
         solarEndDateDayOfTauMonth,
         solarEndDateYearOfTauMonth,
         solarEndDateMonthOfTauMonth,
@@ -27,9 +29,9 @@ export const getTauMonthGlobalContext_3 =
       } = tauMonthGlobalContext_2;
 
       const flatMooncakeStartLuxonBox = {
-        day: solarStartDateDayOfTauMonth,
-        month: solarStartDateMonthOfTauMonth,
-        year: solarStartDateYearOfTauMonth
+        day: solarStartDateDay,
+        month: solarStartDateMonth,
+        year: solarStartDateYear
       };
 
       const flatMooncakeStartLuxonCar =
@@ -37,7 +39,7 @@ export const getTauMonthGlobalContext_3 =
           flatMooncakeStartLuxonBox);
 
       const leapMooncakeStartDateYear =
-        solarStartDateYearOfTauMonth;
+        solarStartDateYear;
 
       const leapMooncakeStartLuxonBox = {
         day: leapMooncakeStartDateDay,
@@ -54,21 +56,21 @@ export const getTauMonthGlobalContext_3 =
          .minus({ days: 1 });
 
       const flatMooncakeStartDateDay =
-        solarStartDateDayOfTauMonth;
+        solarStartDateDay;
 
       checkNilWithNumber(
         flatMooncakeStartDateDay,
         'flatMooncakeStartDateDay');
 
       const flatMooncakeStartDateMonth =
-        solarStartDateMonthOfTauMonth;
+        solarStartDateMonth;
 
       checkNilWithNumber(
         flatMooncakeStartDateMonth,
         'flatMooncakeStartDateMonth');
 
       const flatMooncakeStartDateYear =
-        solarStartDateYearOfTauMonth;
+        solarStartDateYear;
 
       checkNilWithNumber(
         flatMooncakeStartDateYear,
@@ -91,7 +93,7 @@ export const getTauMonthGlobalContext_3 =
         'flatMooncakeEndDateMonth');
 
       const flatMooncakeEndDateYear =
-        solarStartDateYearOfTauMonth;
+        solarStartDateYear;
 
       checkNilWithNumber(
         flatMooncakeEndDateYear,
