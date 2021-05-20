@@ -42,7 +42,34 @@ export const buildTauMonthContext_3 =
        leapMooncakeStartDateLuxonCar
        .minus({ days: 1 });
 
-    const leapMooncakeEndDate
+    const flatMooncakeStartDateDay =
+      finalSolarStartDateDay;
+
+    const flatMooncakeStartDateMonth =
+      finalSolarStartDateMonth;
+
+    const flatMooncakeStartDateYear =
+      finalSolarStartDateYear;
+
+    const flatMooncakeEndDateDay =
+      flatMooncakeEndDateDay.day;
+
+    const flatMooncakeEndDateMonth =
+      flatMooncakeEndDateDay.month;
+
+    const flatMooncakeEndDateYear =
+      flatMooncakeEndDateDay.year;
+
+    const leapMooncakeEndDateDay =
+      finalSolarEndDateDay;
+
+    const leapMooncakeEndDateMonth =
+      finalSolarEndDateMonth;
+
+    const leapMooncakeEndDateYear =
+      finalSolarEndDateYear;
+
+
 
 
 
