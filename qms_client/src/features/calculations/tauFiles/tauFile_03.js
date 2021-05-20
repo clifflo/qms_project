@@ -11,6 +11,11 @@ import {
 import {
   DateTime
 } from 'luxon';
+import {
+  getTwigBranchContextByIndex,
+  getTwigTrunkContextByChinese,
+  getTwigTrunkContextByIndex
+} from './twigHubCloneOfTau';
 
 export const mapFunctionOfBuiltTauMonthContext_1 =
   (payloadForMapFunctionOfBuiltTauMonthContext_1,
@@ -70,6 +75,34 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
         tauMonthIndex,
         'tauMonthIndex');
 
+    const tauMonthBranchChinese =
+      getTwigBranchContextByIndex(
+        tauMonthIndex + 2)
+      .twigBranchChinese;
+
+    const tauYearTrunkIndex =
+      getTwigTrunkContextByChinese(
+        tauYearTwigFullComboChinese[0])
+      .twigTrunkIndex;
+
+    checkNilWithNumber(
+      tauYearTrunkIndex,
+      'tauYearTrunkIndex');
+
+    const tauMonthTrunkIndex =
+      ((tauYearTrunkIndex % 5) * 2)
+      + 2
+      + tauMonthIndex;
+
+    const tauMonthTrunkChinese =
+      getTwigTrunkContextByIndex(
+        tauMonthTrunkIndex)
+      .twigTrunkChinese;
+
+    const tauMonthTwigFullComboChinese =
+      tauMonthTrunkChinese
+      +  tauMonthBranchChinese;
+
     const finalSolarStartDateLuxonBox = {
       day: finalSolarStartDateDay,
       month: finalSolarStartDateMonth,
@@ -91,6 +124,7 @@ export const mapFunctionOfBuiltTauMonthContext_1 =
       finalSolarStartDateDay,
       tauYearTwigFullComboChinese,
       finalSolarStartDateInIso,
+      tauMonthTwigFullComboChinese,
       _type: 'BuiltTauMonthContext_1'
     };
 

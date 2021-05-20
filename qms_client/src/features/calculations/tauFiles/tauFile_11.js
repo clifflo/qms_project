@@ -14,7 +14,7 @@ import {
   checkNilWithNumber
 } from './utilityHubCloneOfTau';
 
-export const getTauDateContextFromIso =
+export const getTauDateContextFromIso_1 =
   sourceDateInIso => {
 
   const sourceLuxonCar =
@@ -84,13 +84,13 @@ export const getTauDateContextFromIso =
     getTwigFullComboChineseByIndex(
       differenceInDaysForCombo % 60);
 
-  const tauDayContext = {
+  const tauDayContext_1 = {
     ...matchedTauMonthGlobalContext_2,
     tauDayChinese,
     tauDayTwigFullComboChinese,
     sourceDateInIso,
-    _type: 'TauDayContext'
+    _type: 'TauDayContext_1'
   };
 
-  return tauDayContext;
+  return tauDayContext_1;
 }
