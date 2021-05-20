@@ -3,7 +3,7 @@ import {
   checkNilWithNumber
 } from './utilityHubCloneOfTau';
 
-export const buildTauMonthContext_3 =
+export const getTauMonthContext_3 =
   tauMonthGlobalContext_2 => {
 
   const { tauMonthHasLeap } = tauMonthGlobalContext_2;
@@ -21,7 +21,7 @@ export const buildTauMonthContext_3 =
       leapMooncakeStartDateDay,
     } = tauMonthGlobalContext_2;
 
-    const flatMooncakeStartDateOfTauMonthLuxonBox = {
+    const flatMooncakeStartLuxonBox = {
       day: solarStartDateDayOfTauMonth,
       month: solarStartDateMonthOfTauMonth,
       year: solarStartDateYearOfTauMonth
@@ -31,10 +31,13 @@ export const buildTauMonthContext_3 =
       DateTime.fromObject(
         flatMooncakeStartLuxonBoxOfTauMonth);
 
-    const leapMooncakeStartDateOfTauMonthLuxonBox = {
+    const leapMooncakeStartDateYear =
+      solarStartDateYear;
+
+    const leapMooncakeStartDateLuxonBox = {
       day: leapMooncakeStartDateDay,
-      month: leapMooncakeStartDateMonthOTauMonth,
-      year: solarStartDateYearOfTauMonth
+      month: leapMooncakeStartDateMonth,
+      year: leapMooncakeStartDateYear
     };
 
     const leapMooncakeStartLuxonCar =
@@ -93,18 +96,38 @@ export const buildTauMonthContext_3 =
       flatMooncakeEndLuxonBox
       .year;
 
-    const leapMooncakeEndDateDayOfTauMonth =
+    const leapMooncakeEndDateDay =
       solarEndDateDayOfTauMonth;
 
-    const leapMooncakeEndDateMonthOfTauMonth =
+    const leapMooncakeEndDateMonth =
       solarEndDateMonthOfTauMonth;
 
     const leapMooncakeEndDateYear =
       solarEndDateYearOfTauMonth;
 
+    const tauMonthContext_3 = {
+      ...tauMonthContext_2,
+      flatMooncakeStartDateDay,
+      flatMooncakeStartDateMonth,
+      flatMooncakeStartDateYear,
+      flatMooncakeEndDateDay,
+      flatMooncakeEndDateMonth,
+      flatMooncakeEndDateYear,
+      leapMooncakeStartDateDay,
+      leapMooncakeStartDateMonth,
+      leapMooncakeStartDateYear,
+      leapMooncakeEndDateDay,
+      leapMooncakeEndDateMonth,
+      leapMooncakeEndDateYear
+    }
 
 
 
-
+  }
+  else {
+    return {
+      ...tauMonthGlobalContext_2,
+      _type: 'TauMonthGlobalContext_3'
+    }
   }
 }

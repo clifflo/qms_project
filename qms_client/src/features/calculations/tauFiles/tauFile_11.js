@@ -13,6 +13,9 @@ import {
 import {
   checkNilWithNumber
 } from './utilityHubCloneOfTau';
+import {
+  buildTauMonthContext_3
+} from './tauFile_12';
 
 export const getTauDayContext_1 =
   sourceDateInIso => {
@@ -29,6 +32,10 @@ export const getTauDayContext_1 =
     R.find(
       loadedTauDateMatchInTauMonthGlobalContext_2,
       tauMonthGlobalContextSet_2);
+
+  const matchedTauMonthGlobalContext_3 =
+    getTauMonthContext_3(
+      matchedTauMonthGlobalContext_2);
 
   const referenceTauLuxonBox = {
     day: 16,
@@ -50,15 +57,15 @@ export const getTauDayContext_1 =
     'differenceInDaysForCombo');
 
   const tauMonthStartDateDay =
-    matchedTauMonthGlobalContext_2
+    matchedTauMonthGlobalContext_3
     .solarStartDateDayOfTauMonth;
 
   const tauMonthStartDateMonth =
-    matchedTauMonthGlobalContext_2
+    matchedTauMonthGlobalContext_3
     .solarStartDateMonthOfTauMonth;
 
   const tauMonthStartDateYear =
-    matchedTauMonthGlobalContext_2
+    matchedTauMonthGlobalContext_3
     .solarStartDateYearOfTauMonth;
 
   const tauMonthStartLuxonBox = {
@@ -85,7 +92,7 @@ export const getTauDayContext_1 =
       differenceInDaysForCombo % 60);
 
   const tauDayContext_1 = {
-    ...matchedTauMonthGlobalContext_2,
+    ...matchedTauMonthGlobalContext_3,
     tauDayChinese,
     tauDayTwigFullComboChinese,
     sourceDateInIso,
