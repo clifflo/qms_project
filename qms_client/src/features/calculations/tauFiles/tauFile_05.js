@@ -14,7 +14,7 @@ export const mapFunctionOfTauLocalMonthContextWithLeap_2 =
   // in leap month so no adjustments.
   const {
     leapTauMonthChinese,
-    leapMooncakeStartDateMonthOTauMonth,
+    leapMooncakeStartDateMonth,
     leapMooncakeStartDateDay
   } = payloadForMapFunctionOfTauLocalMonthContext_2;
 
@@ -45,7 +45,7 @@ export const mapFunctionOfTauLocalMonthContextWithLeap_2 =
   if(sameLeapTauMonth){
     tauLocalMonthContext_2 = {
       ...tauLocalMonthContext_1,
-      leapMooncakeStartDateMonthOTauMonth,
+      leapMooncakeStartDateMonth,
       leapMooncakeStartDateDay,
       tauMonthHasLeap: true,
       tauYearHasLeap: true,

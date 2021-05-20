@@ -11,93 +11,109 @@ import {
   getTwigFullComboChineseByIndex
 } from './twigHubCloneOfTau';
 import {
-  checkNilWithNumber
+  checkNilWithNumber,
+  checkNilWithTypedObject,
+  throwFunctionalError
 } from './utilityHubCloneOfTau';
 import {
-  buildTauMonthContext_3
+  getTauMonthGlobalContext_3
 } from './tauFile_12';
 
 export const getTauDayContext_1 =
   sourceDateInIso => {
 
-  const sourceLuxonCar =
-    DateTime.fromISO(sourceDateInIso);
+  try{
+    const sourceLuxonCar =
+      DateTime.fromISO(sourceDateInIso);
 
-  const loadedTauDateMatchInTauMonthGlobalContext_2 =
-    R.curry
-    (tauDateMatchInTauMonthGlobalContext_2)
-    (sourceLuxonCar);
+    const loadedTauDateMatchInTauMonthGlobalContext_2 =
+      R.curry
+      (tauDateMatchInTauMonthGlobalContext_2)
+      (sourceLuxonCar);
 
-  const matchedTauMonthGlobalContext_2 =
-    R.find(
-      loadedTauDateMatchInTauMonthGlobalContext_2,
-      tauMonthGlobalContextSet_2);
+    const matchedTauMonthGlobalContext_2 =
+      R.find(
+        loadedTauDateMatchInTauMonthGlobalContext_2,
+        tauMonthGlobalContextSet_2);
 
-  const matchedTauMonthGlobalContext_3 =
-    getTauMonthContext_3(
-      matchedTauMonthGlobalContext_2);
+    const matchedTauMonthGlobalContext_3 =
+      getTauMonthGlobalContext_3(
+        matchedTauMonthGlobalContext_2);
 
-  const referenceTauLuxonBox = {
-    day: 16,
-    month: 1,
-    year: 2021
-  };
+    checkNilWithTypedObject(
+      matchedTauMonthGlobalContext_3,
+      'TauMonthGlobalContext_3',
+      'matchedTauMonthGlobalContext_3');
 
-  const referenceTauLuxonCar =
-    DateTime.fromObject(referenceTauLuxonBox);
+    const referenceTauLuxonBox = {
+      day: 16,
+      month: 1,
+      year: 2021
+    };
 
-  const differenceInDaysForCombo =
-    sourceLuxonCar.diff(
-      referenceTauLuxonCar,
-      'days')
-    .days;
+    const referenceTauLuxonCar =
+      DateTime.fromObject(referenceTauLuxonBox);
 
-  checkNilWithNumber(
-    differenceInDaysForCombo,
-    'differenceInDaysForCombo');
+    const differenceInDaysForCombo =
+      sourceLuxonCar.diff(
+        referenceTauLuxonCar,
+        'days')
+      .days;
 
-  const tauMonthStartDateDay =
-    matchedTauMonthGlobalContext_3
-    .solarStartDateDayOfTauMonth;
+    checkNilWithNumber(
+      differenceInDaysForCombo,
+      'differenceInDaysForCombo');
 
-  const tauMonthStartDateMonth =
-    matchedTauMonthGlobalContext_3
-    .solarStartDateMonthOfTauMonth;
+    const tauMonthStartDateDay =
+      matchedTauMonthGlobalContext_3
+      .solarStartDateDayOfTauMonth;
 
-  const tauMonthStartDateYear =
-    matchedTauMonthGlobalContext_3
-    .solarStartDateYearOfTauMonth;
+    const tauMonthStartDateMonth =
+      matchedTauMonthGlobalContext_3
+      .solarStartDateMonthOfTauMonth;
 
-  const tauMonthStartLuxonBox = {
-    day: tauMonthStartDateDay,
-    month: tauMonthStartDateMonth,
-    year: tauMonthStartDateYear
-  };
+    const tauMonthStartDateYear =
+      matchedTauMonthGlobalContext_3
+      .solarStartDateYearOfTauMonth;
 
-  const tauMonthStartLuxonCar =
-    DateTime.fromObject(
-      tauMonthStartLuxonBox);
+    const tauMonthStartLuxonBox = {
+      day: tauMonthStartDateDay,
+      month: tauMonthStartDateMonth,
+      year: tauMonthStartDateYear
+    };
 
-  const differenceInDaysForDayOfMonth =
-    sourceLuxonCar.diff(
-      tauMonthStartLuxonCar,
-      'days').days;
+    const tauMonthStartLuxonCar =
+      DateTime.fromObject(
+        tauMonthStartLuxonBox);
 
-  const tauDayChinese =
-    getTauDayChineseByIndex(
-      differenceInDaysForDayOfMonth);
+    const differenceInDaysForDayOfMonth =
+      sourceLuxonCar.diff(
+        tauMonthStartLuxonCar,
+        'days').days;
 
-  const tauDayTwigFullComboChinese =
-    getTwigFullComboChineseByIndex(
-      differenceInDaysForCombo % 60);
+    const tauDayChinese =
+      getTauDayChineseByIndex(
+        differenceInDaysForDayOfMonth);
 
-  const tauDayContext_1 = {
-    ...matchedTauMonthGlobalContext_3,
-    tauDayChinese,
-    tauDayTwigFullComboChinese,
-    sourceDateInIso,
-    _type: 'TauDayContext_1'
-  };
+    const tauDayTwigFullComboChinese =
+      getTwigFullComboChineseByIndex(
+        differenceInDaysForCombo % 60);
 
-  return tauDayContext_1;
+    const tauDayContext_1 = {
+      ...matchedTauMonthGlobalContext_3,
+      tauDayChinese,
+      tauDayTwigFullComboChinese,
+      sourceDateInIso,
+      _type: 'TauDayContext_1'
+    };
+
+    return tauDayContext_1;
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throwFunctionalError(
+      'getTauDayContext_1');
+  }
+
+
 }
