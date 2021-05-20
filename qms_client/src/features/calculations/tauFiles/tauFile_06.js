@@ -24,11 +24,11 @@ export const mapFunctionOfBuiltTauYearContext_2 =
       matchedLeapTauMonthStartDateMonthday[1]
       + '月';
 
-    const leapMooncakeStartDateMonth =
+    const leapMonthStartDateMonth =
       parseInt(
         matchedLeapTauMonthStartDateMonthday[2]);
 
-    const leapMooncakeStartDateDay =
+    const leapMonthStartDateDay =
       parseInt(
         matchedLeapTauMonthStartDateMonthday[3]);
 
@@ -36,8 +36,8 @@ export const mapFunctionOfBuiltTauYearContext_2 =
       builtTauYearContext_1;
 
     const leapStartDateLuxonBus = {
-      day: leapMooncakeStartDateDay,
-      month: leapMooncakeStartDateMonth,
+      day: leapMonthStartDateDay,
+      month: leapMonthStartDateMonth,
       year: finalLeapMooncakeStartDateYear
     };
 
@@ -45,8 +45,8 @@ export const mapFunctionOfBuiltTauYearContext_2 =
     payloadForMapFunctionOfTauLocalMonthContextWithLeap_2 =
     {
       leapTauMonthChinese,
-      leapMooncakeStartDateMonth,
-      leapMooncakeStartDateDay
+      leapMonthStartDateMonth,
+      leapMonthStartDateDay
     };
 
     const
