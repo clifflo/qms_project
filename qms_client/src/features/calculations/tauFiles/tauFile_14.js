@@ -46,9 +46,6 @@ export const
     DateTime.fromObject(
       leapMonthEndLuxonBox);
 
-  const nextSolarMonthStartLuxonCar =
-    leapMonthEndLuxonCar
-    .plus({ days: 1 });
 
 
 
