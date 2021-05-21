@@ -36,7 +36,7 @@ export const getTauDayContextFromIso =
         loadedTauDateMatchInTauMonthGlobalContext_2,
         tauMonthGlobalContextSet_2);
 
-    const matchedTauMonthGlobalContext_3 =
+    const matchedTauMonthActiveContext_3 =
       getTauMonthGlobalContext_3(
         matchedTauMonthGlobalContext_2);
 

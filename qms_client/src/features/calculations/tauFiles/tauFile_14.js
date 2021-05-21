@@ -1,4 +1,7 @@
 import * as R from 'ramda';
+import {
+  DateTime
+} from 'luxon';
 
 export const
   getTauDayContextForAugmentedMonth =
@@ -15,7 +18,7 @@ export const
     leapMonthEndDateDay,
     leapMonthEndDateMonth,
     leapMonthEndDateYear,
-  } = tauMonthGlobalContext_3;
+  } = tauMonthActiveContext;
 
   const flatMonthStartLuxonBox = {
     day: flatMonthStartDateDay,
