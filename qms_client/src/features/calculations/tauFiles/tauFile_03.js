@@ -87,7 +87,7 @@ export const mapFunctionOfTauLocalMonthContext_1 =
       DateTime.fromObject(
         solarStartDateLuxonBox);
 
-    const solarStartDateInIso =
+    const solarStartDateInISO =
       solarStartDateLuxonCar
       .toISODate();
 
@@ -97,7 +97,7 @@ export const mapFunctionOfTauLocalMonthContext_1 =
       solarStartDateMonth,
       solarStartDateDay,
       tauYearTwigFullComboChinese,
-      solarStartDateInIso,
+      solarStartDateInISO,
       tauMonthTwigFullComboChinese,
       _type: 'TauLocalMonthContext_1'
     };

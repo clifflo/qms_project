@@ -48,7 +48,7 @@ const mapIndexedFunctionOfTauMonthGlobalContext_2 =
       .minus({ days: 1 });
 
       const
-      solarEndDateInIso =
+      solarEndDateInISO =
       currentTauMonthGlobalContextSolarEndDateLuxonCar
       .toISODate();
 
@@ -69,7 +69,7 @@ const mapIndexedFunctionOfTauMonthGlobalContext_2 =
         solarEndDateYear,
         solarEndDateMonth,
         solarEndDateDay,
-        solarEndDateInIso,
+        solarEndDateInISO,
         _type: 'TauMonthGlobalContext_2'
       };
 
@@ -81,7 +81,7 @@ const mapIndexedFunctionOfTauMonthGlobalContext_2 =
         solarEndDateYear: 2030,
         solarEndDateMonth: 12,
         solarEndDateDay: 30,
-        solarEndDateInIso:
+        solarEndDateInISO:
         '2030-12-30',
         _type: 'TauMonthGlobalContext_2'
       };

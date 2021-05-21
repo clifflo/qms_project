@@ -13,11 +13,11 @@ import {
 } from './utilityHubCloneOfTau';
 
 export const getTauDayContextForCleanMonth =
-  (sourceDateInIso,
+  (sourceDateInISO,
   tauMonthActiveContext) => {
 
   const sourceLuxonCar =
-    DateTime.fromISO(sourceDateInIso);
+    DateTime.fromISO(sourceDateInISO);
 
   const tauMonthStartDateDay =
     tauMonthActiveContext
@@ -76,7 +76,7 @@ export const getTauDayContextForCleanMonth =
     ...tauMonthActiveContext,
     tauDayChinese,
     tauDayTwigFullComboChinese,
-    sourceDateInIso,
+    sourceDateInISO,
     _type: 'TauDayContext'
   };
 

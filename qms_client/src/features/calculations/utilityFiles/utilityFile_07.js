@@ -10,16 +10,6 @@ export const getIntervalWithEndInclusive =
   (startLuxonBox,
   endLuxonBox) => {
 
-  checkNilWithTypedObject(
-    startLuxonBox,
-    'LuxonBox',
-    'startLuxonBox');
-
-  checkNilWithTypedObject(
-    endLuxonBox,
-    'LuxonBox',
-    'endLuxonBox');
-
   const startLuxonCar =
     DateTime.fromObject(startLuxonBox);
 

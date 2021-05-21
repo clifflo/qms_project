@@ -15,13 +15,13 @@ import {
 
 export const
   getTauDayContextForAugmentedMonth =
-  (sourceDateInIso,
+  (sourceDateInISO,
   tauMonthActiveContext) => {
 
   try{
 
     const sourceLuxonCar =
-      DateTime.fromISO(sourceDateInIso);
+      DateTime.fromISO(sourceDateInISO);
 
     const {
       flatMonthStartDateDay,
@@ -39,14 +39,12 @@ export const
     } = tauMonthActiveContext;
 
     const flatMonthStartLuxonBox = {
-      _type: 'LuxonBox',
       day: flatMonthStartDateDay,
       month: flatMonthStartDateMonth,
       year: flatMonthStartDateYear
     };
 
     const flatMonthEndLuxonBox = {
-      _type: 'LuxonBox',
       day: flatMonthEndDateDay,
       month: flatMonthEndDateMonth,
       year: flatMonthEndDateYear
@@ -58,18 +56,22 @@ export const
         flatMonthEndLuxonBox);
 
     const leapMonthStartLuxonBox = {
-      _type: 'LuxonBox',
       day: leapMonthStartDateDay,
       month: leapMonthStartDateMonth,
       year: leapMonthStartDateYear
     };
 
     const leapMonthEndLuxonBox = {
-      _type: 'LuxonBox',
       day: leapMonthEndDateDay,
       month: leapMonthEndDateMonth,
       year: leapMonthEndDateYear
     };
+
+    const leapMonthStartLuxonCar =
+      DateTime.fromObject(leapMonthStartLuxonBox);
+
+    const leapMonthStartDateInISO =
+      leapMonthStartLuxonCar.toISO();
 
     const leapMonthInterval =
       getIntervalWithEndInclusive(
@@ -84,7 +86,7 @@ export const
       flatMonthInterval
       .contains(sourceLuxonCar);
 
-    if(!(dayWithinLeapMonth == dayWithinFlatMonth)) {
+    if(dayWithinLeapMonth == dayWithinFlatMonth) {
       throw new Error(
         'The source day must be in either leap month '
         + 'or flat month.');
@@ -94,21 +96,18 @@ export const
 
     if(dayWithinLeapMonth){
 
-      const leapMonthStartLuxonCar =
-        DateTime.fromObject(leapMonthStartLuxonCar);
-
       differenceInDaysForDayOfMonth =
         sourceLuxonCar.diff(
-          leapMonthStartLuxonCar, 'days');
+          leapMonthStartLuxonCar, 'days').days;
     }
     else {
 
       const flatMonthStartLuxonCar =
-        DateTime.fromObject(flatMonthStartLuxonCar);
+        DateTime.fromObject(flatMonthStartLuxonBox);
 
       differenceInDaysForDayOfMonth =
         sourceLuxonCar.diff(
-          flatMonthStartLuxonCar, 'days');
+          flatMonthStartLuxonCar, 'days').days;
     }
 
     const referenceTauLuxonBox = {
@@ -137,7 +136,7 @@ export const
       ...tauMonthActiveContext,
       tauDayChinese,
       tauDayTwigFullComboChinese,
-      sourceDateInIso,
+      sourceDateInISO,
       dayWithinLeapMonth,
       _type: 'TauDayContext'
       };

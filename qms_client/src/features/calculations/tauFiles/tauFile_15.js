@@ -27,12 +27,12 @@ import {
 } from './tauFile_13';
 
 export const getTauDayContextFromIso =
-  sourceDateInIso => {
+  sourceDateInISO => {
 
   try{
 
     const sourceLuxonCar =
-      DateTime.fromISO(sourceDateInIso);
+      DateTime.fromISO(sourceDateInISO);
 
     const loadedTauDateMatchInTauMonthGlobalContext_2 =
       R.curry
@@ -63,7 +63,7 @@ export const getTauDayContextFromIso =
 
       const tauDayContextForAugmentedMonth =
         getTauDayContextForAugmentedMonth(
-          sourceDateInIso,
+          sourceDateInISO,
           matchedTauMonthActiveContext);
 
       return tauDayContextForAugmentedMonth;
@@ -72,7 +72,7 @@ export const getTauDayContextFromIso =
 
       const tauDayContextForCleanMonth =
         getTauDayContextForCleanMonth(
-          sourceDateInIso,
+          sourceDateInISO,
           matchedTauMonthActiveContext);
 
       return tauDayContextForCleanMonth;
