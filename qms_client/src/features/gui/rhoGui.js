@@ -6,5 +6,5 @@ import {
 
 export default function RhoGui() {
   return <JSONTree
-    data={getTauDayContextFromIso('2023-03-28')}/>
+    data={getTauDayContextFromIso('2021-05-22')}/>
 }

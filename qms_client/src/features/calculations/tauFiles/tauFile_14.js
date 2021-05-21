@@ -4,7 +4,8 @@ import {
 } from 'luxon';
 import {
   getIntervalWithEndInclusive,
-  throwFunctionalError
+  throwFunctionalError,
+  checkNilWithString
 } from './utilityHubCloneOfTau';
 import {
   getTauDayChineseByIndex
@@ -36,6 +37,7 @@ export const
       leapMonthEndDateDay,
       leapMonthEndDateMonth,
       leapMonthEndDateYear,
+      tauMonthChinese
     } = tauMonthActiveContext;
 
     const flatMonthStartLuxonBox = {
@@ -44,11 +46,31 @@ export const
       year: flatMonthStartDateYear
     };
 
+    const flatMonthStartLuxonCar =
+      DateTime.fromObject(flatMonthStartLuxonBox);
+
+    const flatMonthStartDateInISO =
+      flatMonthStartLuxonCar.toISODate();
+
+    checkNilWithString(
+      flatMonthStartDateInISO,
+      'flatMonthStartDateInISO');
+
     const flatMonthEndLuxonBox = {
       day: flatMonthEndDateDay,
       month: flatMonthEndDateMonth,
       year: flatMonthEndDateYear
     };
+
+    const flatMonthEndLuxonCar =
+      DateTime.fromObject(flatMonthEndLuxonBox);
+
+    const flatMonthEndDateInISO =
+      flatMonthEndLuxonCar.toISODate();
+
+    checkNilWithString(
+      flatMonthEndDateInISO,
+      'flatMonthEndDateInISO');
 
     const flatMonthInterval =
       getIntervalWithEndInclusive(
@@ -61,17 +83,31 @@ export const
       year: leapMonthStartDateYear
     };
 
+    const leapMonthStartLuxonCar =
+      DateTime.fromObject(leapMonthStartLuxonBox);
+
+    const leapMonthStartDateInISO =
+      leapMonthStartLuxonCar.toISODate();
+
+    checkNilWithString(
+      leapMonthStartDateInISO,
+      'leapMonthStartDateInISO');
+
     const leapMonthEndLuxonBox = {
       day: leapMonthEndDateDay,
       month: leapMonthEndDateMonth,
       year: leapMonthEndDateYear
     };
 
-    const leapMonthStartLuxonCar =
-      DateTime.fromObject(leapMonthStartLuxonBox);
+    const leapMonthEndLuxonCar =
+      DateTime.fromObject(leapMonthEndLuxonBox);
 
-    const leapMonthStartDateInISO =
-      leapMonthStartLuxonCar.toISO();
+    const leapMonthEndDateInISO =
+      leapMonthEndLuxonCar.toISODate();
+
+    checkNilWithString(
+      leapMonthEndDateInISO,
+      'leapMonthEndDateInISO');
 
     const leapMonthInterval =
       getIntervalWithEndInclusive(
@@ -132,12 +168,28 @@ export const
       getTwigFullComboChineseByIndex(
         differenceInDaysForCombo % 60);
 
+    let finalTauMonthChineseForDay;
+
+    if(dayWithinLeapMonth){
+      finalTauMonthChineseForDay =
+        '閏' + tauMonthChinese;
+    }
+    else {
+      finalTauMonthChineseForDay =
+        '平' + tauMonthChinese;
+    }
+
     const tauDayContext = {
       ...tauMonthActiveContext,
       tauDayChinese,
       tauDayTwigFullComboChinese,
       sourceDateInISO,
       dayWithinLeapMonth,
+      leapMonthStartDateInISO,
+      leapMonthEndDateInISO,
+      flatMonthStartDateInISO,
+      flatMonthEndDateInISO,
+      finalTauMonthChineseForDay,
       _type: 'TauDayContext'
       };
 
@@ -148,7 +200,4 @@ export const
     throwFunctionalError(
       'getTauDayContextForAugmentedMonth');
   }
-
-
-
 }

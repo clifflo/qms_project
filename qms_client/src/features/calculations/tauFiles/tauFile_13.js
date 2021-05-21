@@ -72,8 +72,12 @@ export const getTauDayContextForCleanMonth =
     getTwigFullComboChineseByIndex(
       differenceInDaysForCombo % 60);
 
+  const finalTauMonthChineseForDay =
+    '淨' + tauMonthActiveContext.tauMonthChinese;
+
   const tauDayContext = {
     ...tauMonthActiveContext,
+    finalTauMonthChineseForDay,
     tauDayChinese,
     tauDayTwigFullComboChinese,
     sourceDateInISO,
