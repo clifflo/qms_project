@@ -121,7 +121,7 @@ export const
       leapMonthEndDateYear,
       'leapMonthEndDateYear');
 
-    const tauMonthGlobalContext_3 = {
+    const tauMonthActiveContext = {
       ...tauMonthGlobalContext_2,
       flatMonthStartDateDay,
       flatMonthStartDateMonth,
@@ -135,15 +135,15 @@ export const
       leapMonthEndDateDay,
       leapMonthEndDateMonth,
       leapMonthEndDateYear,
-      _type: 'TauMonthGlobalContext_3',
-      _subType: 'AugmentedTauMonthGlobalContext_3'
+      _type: 'TauMonthActiveContext',
+      _subType: 'AugmentedTauMonthActiveContext'
     };
 
-    return tauMonthGlobalContext_3;
+    return tauMonthActiveContext;
   }
   catch(errorMessage){
     console.error(errorMessage);
     throwFunctionalError(
-      'getAugmentedTauMonthGlobalContext_3');
+      'getAugmentedTauMonthActiveContext');
   }
 }

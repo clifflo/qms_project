@@ -30,7 +30,7 @@ export const
 
       const cleanTauMonthActiveContext = {
         ...tauMonthGlobalContext_2,
-        _type: 'TauMonthGlobalContext_3',
+        _type: 'TauMonthActiveContext',
         _subType: 'CleanTauMonthActiveContext'
       };
 

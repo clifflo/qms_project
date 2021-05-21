@@ -19,25 +19,39 @@ import {
 import {
   getGenericTauMonthActiveContext
 } from './tauFile_12';
+import {
+  getTauDayContextForAugmentedMonth
+} from './tauFile_14';
+import {
+  getTauDayContextForCleanMonth
+} from './tauFile_13';
 
 export const getTauDayContextFromIso =
   sourceDateInIso => {
 
   try{
 
+    const sourceLuxonCar =
+      DateTime.fromISO(sourceDateInIso);
+
     const loadedTauDateMatchInTauMonthGlobalContext_2 =
-     R.curry
-     (tauDateMatchInTauMonthGlobalContext_2)
-     (sourceLuxonCar);
+      R.curry
+      (tauDateMatchInTauMonthGlobalContext_2)
+      (sourceLuxonCar);
 
     const matchedTauMonthGlobalContext_2 =
-    R.find(
-      loadedTauDateMatchInTauMonthGlobalContext_2,
-      tauMonthGlobalContextSet_2);
+      R.find(
+        loadedTauDateMatchInTauMonthGlobalContext_2,
+        tauMonthGlobalContextSet_2);
+
+    checkNilWithTypedObject(
+      matchedTauMonthGlobalContext_2,
+      'matchedTauMonthGlobalContext_2',
+      'TauMonthGlobalContext_2');
 
     const matchedTauMonthActiveContext =
       getGenericTauMonthActiveContext(
-        matchedTauMonthActiveContext);
+        matchedTauMonthGlobalContext_2);
 
     checkNilWithTypedObject(
       matchedTauMonthActiveContext,
@@ -66,6 +80,6 @@ export const getTauDayContextFromIso =
   }
   catch(errorMessage){
     console.error(errorMessage);
-    throwFunctionalError('getTauDayContext_1');
+    throwFunctionalError('getTauDayContext');
   }
 }
