@@ -38,6 +38,10 @@ export const
     const leapMonthStartDateYear =
       solarStartDateYear;
 
+    checkNilWithNumber(
+      leapMonthStartDateYear,
+      'leapMonthStartDateYear');
+
     const leapMonthStartLuxonBox = {
       day: leapMonthStartDateDay,
       month: leapMonthStartDateMonth,
@@ -99,11 +103,23 @@ export const
     const leapMonthEndDateDay =
       solarEndDateDay;
 
+    checkNilWithNumber(
+      leapMonthEndDateDay,
+      'leapMonthEndDateDay');
+
     const leapMonthEndDateMonth =
       solarEndDateMonth;
 
+    checkNilWithNumber(
+      leapMonthEndDateMonth,
+      'leapMonthEndDateMonth');
+
     const leapMonthEndDateYear =
       solarEndDateYear;
+
+    checkNilWithNumber(
+      leapMonthEndDateYear,
+      'leapMonthEndDateYear');
 
     const tauMonthGlobalContext_3 = {
       ...tauMonthGlobalContext_2,

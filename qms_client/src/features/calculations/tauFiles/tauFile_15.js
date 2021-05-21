@@ -16,8 +16,8 @@ import {
   throwFunctionalError
 } from './utilityHubCloneOfTau';
 import {
-  getTauMonthActiveContext
-} from './tauFile_13';
+  getGenericTauMonthActiveContext
+} from './tauFile_12';
 
 export const getTauDayContextFromIso =
   sourceDateInIso => {
@@ -36,13 +36,13 @@ export const getTauDayContextFromIso =
         loadedTauDateMatchInTauMonthGlobalContext_2,
         tauMonthGlobalContextSet_2);
 
-    const matchedTauMonthActiveContext_3 =
-      getTauMonthGlobalContext_3(
+    const matchedGenericTauMonthActiveContext =
+      getGenericTauMonthActiveContext(
         matchedTauMonthGlobalContext_2);
 
     checkNilWithTypedObject(
-      matchedTauMonthGlobalContext_3,
-      'matchedTauMonthGlobalContext_3',
+      matchedGenericTauMonthActiveContext,
+      'matchedGenericTauMonthActiveContext',
       'TauMonthGlobalContext_3');
 
     const referenceTauLuxonBox = {
@@ -65,15 +65,15 @@ export const getTauDayContextFromIso =
       'differenceInDaysForCombo');
 
     const tauMonthStartDateDay =
-      matchedTauMonthGlobalContext_3
+      matchedGenericTauMonthActiveContext
       .solarStartDateDay;
 
     const tauMonthStartDateMonth =
-      matchedTauMonthGlobalContext_3
+      matchedGenericTauMonthActiveContext
       .solarStartDateMonth;
 
     const tauMonthStartDateYear =
-      matchedTauMonthGlobalContext_3
+      matchedGenericTauMonthActiveContext
       .solarStartDateYear;
 
     const tauMonthStartLuxonBox = {
@@ -100,7 +100,7 @@ export const getTauDayContextFromIso =
         differenceInDaysForCombo % 60);
 
     const tauDayContext = {
-      ...matchedTauMonthGlobalContext_3,
+      ...matchedGenericTauMonthActiveContext,
       tauDayChinese,
       tauDayTwigFullComboChinese,
       sourceDateInIso,

@@ -52,23 +52,23 @@ const mapIndexedFunctionOfTauMonthGlobalContext_2 =
       currentTauMonthGlobalContextSolarEndDateLuxonCar
       .toISODate();
 
-      const solarEndDateYearOfTauMonth =
+      const solarEndDateYear =
       currentTauMonthGlobalContextSolarEndDateLuxonCar
       .year;
 
-      const solarEndDateMonthOfTauMonth =
+      const solarEndDateMonth =
       currentTauMonthGlobalContextSolarEndDateLuxonCar
       .month;
 
-      const solarEndDateDayOfTauMonth =
+      const solarEndDateDay =
       currentTauMonthGlobalContextSolarEndDateLuxonCar
       .day;
 
       const tauMonthGlobalContext_2 = {
         ...currentTauMonthGlobalContext_1,
-        solarEndDateYearOfTauMonth,
-        solarEndDateMonthOfTauMonth,
-        solarEndDateDayOfTauMonth,
+        solarEndDateYear,
+        solarEndDateMonth,
+        solarEndDateDay,
         solarEndDateInIso,
         _type: 'TauMonthGlobalContext_2'
       };
@@ -78,9 +78,9 @@ const mapIndexedFunctionOfTauMonthGlobalContext_2 =
     else {
       const tauMonthGlobalContext_2 = {
         ...currentTauMonthGlobalContext_1,
-        solarEndDateYearOfTauMonth: 2030,
-        solarEndDateMonthOfTauMonth: 12,
-        solarEndDateDayOfTauMonth: 30,
+        solarEndDateYear: 2030,
+        solarEndDateMonth: 12,
+        solarEndDateDay: 30,
         solarEndDateInIso:
         '2030-12-30',
         _type: 'TauMonthGlobalContext_2'

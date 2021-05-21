@@ -10,7 +10,8 @@ import {
   getAugmentedTauMonthActiveContext
 } from './tauFile_11';
 
-export const getTauMonthActiveContext =
+export const
+  getGenericTauMonthActiveContext =
   tauMonthGlobalContext_2 => {
 
   try{
