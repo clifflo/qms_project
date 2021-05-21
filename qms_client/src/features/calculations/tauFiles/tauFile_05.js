@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import {
-  originalTauMonthContextSet
+  tauRawMonthContextSet
 } from './tauFile_01';
 import {
   findItemByStringFromList
@@ -21,7 +21,7 @@ export const
 
   const leapTauMonthEnglish =
     findItemByStringFromList(
-      originalTauMonthContextSet,
+      tauRawMonthContextSet,
       leapTauMonthChinese,
       'tauMonthChinese')
     .tauMonthEnglish;

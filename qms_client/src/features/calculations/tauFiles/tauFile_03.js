@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import {
-  originalTauMonthContextSet
+  tauRawMonthContextSet
 } from './tauFile_01';
 import {
   getItemByNumberFromList,
@@ -27,9 +27,7 @@ export const mapFunctionOfTauLocalMonthContext_1 =
   try{
 
     const {
-      solarStartDateWrappedYear,
       tauYearTwigFullComboChinese,
-      groundTauMonthStartDateMonthdaySet
     } = payloadForMapFunctionOfTauLocalMonthContext_1;
 
     const solarStartDateUnwrappedContext =
@@ -41,9 +39,9 @@ export const mapFunctionOfTauLocalMonthContext_1 =
       solarStartDateMonth
     } = solarStartDateUnwrappedContext;
 
-    const originalTauMonthContext =
+    const tauRawMonthContext =
       getItemByNumberFromList(
-        originalTauMonthContextSet,
+        tauRawMonthContextSet,
         tauMonthIndex,
         'tauMonthIndex');
 
@@ -89,7 +87,7 @@ export const mapFunctionOfTauLocalMonthContext_1 =
       .toISODate();
 
     const tauLocalMonthContext_1 = {
-      ...originalTauMonthContext,
+      ...tauRawMonthContext,
       solarStartDateYear,
       solarStartDateMonth,
       solarStartDateDay,

@@ -8,7 +8,6 @@ export const getSolarStartDateUnwrappedContext =
 
   const {
     solarStartDateWrappedYear,
-    tauYearTwigFullComboChinese,
     groundTauMonthStartDateMonthdaySet
   } = payloadForMapFunctionOfTauLocalMonthContext_1;
 

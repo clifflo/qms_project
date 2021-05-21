@@ -13,7 +13,7 @@ import {
   throwFunctionalError
 } from './utilityHubCloneOfTau';
 
-const mapFunctionOfBuiltTauYearContext_1 =
+const mapFunctionOfTauLocalYearContext_1 =
   originalTauYearContextSet => {
 
   try{
@@ -67,7 +67,7 @@ const mapFunctionOfBuiltTauYearContext_1 =
         R.range(0, 12));
 
     const builtTauYearContext_1 = {
-      _type: 'BuiltTauYearContext_1',
+      _type: 'TauLocalYearContext_1',
       tauLocalMonthContextSet_1,
       solarStartDateWrappedYear,
       tauYearTwigFullComboChinese,
@@ -81,12 +81,12 @@ const mapFunctionOfBuiltTauYearContext_1 =
   catch(errorMessage){
     console.error(errorMessage);
     throwFunctionalError(
-      'mapFunctionOfBuiltTauYearContext_1');
+      'mapFunctionOfTauLocalYearContext_1');
 
   }
 }
 
 export const builtTauYearContextSet_1 =
   R.map(
-    mapFunctionOfBuiltTauYearContext_1,
+    mapFunctionOfTauLocalYearContext_1,
     originalTauYearContextSet);

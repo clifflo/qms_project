@@ -6,7 +6,7 @@ import {
 } from './tauMiniHub_01';
 
 export const
-  mapFunctionOfBuiltTauYearContext_2 =
+  mapFunctionOfTauLocalYearContext_2 =
   builtTauYearContext_1 => {
 
   const leapTauMonthStartDateMonthdayPattern =
@@ -62,18 +62,18 @@ export const
         builtTauYearContext_1
         .tauLocalMonthContextSet_1);
 
-    const rawBuiltTauYearContext_2 = {
+    const rawTauLocalYearContext_2 = {
       ...builtTauYearContext_1,
       tauLocalMonthContextSet_2,
-      _type: 'BuiltTauYearContext_2'
+      _type: 'TauLocalYearContext_2'
     };
 
-    const finalBuiltTauYearContext_2 =
+    const finalTauLocalYearContext_2 =
       R.dissoc(
         'tauLocalMonthContextSet_1',
-        rawBuiltTauYearContext_2);
+        rawTauLocalYearContext_2);
 
-    return finalBuiltTauYearContext_2;
+    return finalTauLocalYearContext_2;
   }
   else{
 
@@ -83,22 +83,22 @@ export const
         builtTauYearContext_1
         .tauLocalMonthContextSet_1);
 
-    const rawBuiltTauYearContext_2 = {
+    const rawTauLocalYearContext_2 = {
       ...builtTauYearContext_1,
       tauLocalMonthContextSet_2,
-      _type: 'BuiltTauYearContext_2'
+      _type: 'TauLocalYearContext_2'
     };
 
-    const finalBuiltTauYearContext_2 =
+    const finalTauLocalYearContext_2 =
       R.dissoc(
         'tauLocalMonthContextSet_1',
-        rawBuiltTauYearContext_2);
+        rawTauLocalYearContext_2);
 
-    return finalBuiltTauYearContext_2;
+    return finalTauLocalYearContext_2;
   }
 }
 
 export const builtTauYearContextSet_2 =
   R.map(
-    mapFunctionOfBuiltTauYearContext_2,
+    mapFunctionOfTauLocalYearContext_2,
     builtTauYearContextSet_1);
