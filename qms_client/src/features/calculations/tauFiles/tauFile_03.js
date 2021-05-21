@@ -17,7 +17,7 @@ import {
   getTwigTrunkContextByIndex
 } from './twigHubCloneOfTau';
 import {
-  getSolarStartDateUnwrappedYear
+  getSolarStartDateUnwrappedContext
 } from './tauFile_02';
 
 export const mapFunctionOfTauLocalMonthContext_1 =
@@ -28,15 +28,20 @@ export const mapFunctionOfTauLocalMonthContext_1 =
 
     const {
       tauYearTwigFullComboChinese,
+      solarStartDateWrappedYear,
+      groundTauMonthStartDateMonthdaySet,
     } = payloadForMapFunctionOfTauLocalMonthContext_1;
 
     const solarStartDateUnwrappedContext =
       getSolarStartDateUnwrappedContext(
-        payloadForMapFunctionOfTauLocalMonthContext_1);
+        solarStartDateWrappedYear,
+        groundTauMonthStartDateMonthdaySet,
+        tauMonthIndex);
 
     const {
       solarStartDateYear,
-      solarStartDateMonth
+      solarStartDateMonth,
+      solarStartDateDay
     } = solarStartDateUnwrappedContext;
 
     const tauRawMonthContext =

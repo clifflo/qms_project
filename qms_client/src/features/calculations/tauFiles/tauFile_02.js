@@ -1,15 +1,13 @@
 import * as R from 'ramda';
 import {
-  checkNilWithArray
+  checkNilWithArray,
+  checkNilWithNumber
 } from './utilityHubCloneOfTau';
 
 export const getSolarStartDateUnwrappedContext =
-  payloadForMapFunctionOfTauLocalMonthContext_1 => {
-
-  const {
-    solarStartDateWrappedYear,
-    groundTauMonthStartDateMonthdaySet
-  } = payloadForMapFunctionOfTauLocalMonthContext_1;
+  (solarStartDateWrappedYear,
+  groundTauMonthStartDateMonthdaySet,
+  tauMonthIndex) => {
 
   checkNilWithArray(
     groundTauMonthStartDateMonthdaySet,
@@ -24,10 +22,18 @@ export const getSolarStartDateUnwrappedContext =
       R.take(
         2, tauMonthStartDateMonthday));
 
+  checkNilWithNumber(
+    rawSolarStartDateMonth,
+    'rawSolarStartDateMonth');
+
   const solarStartDateDay =
     parseInt(
       R.takeLast(
         2, tauMonthStartDateMonthday));
+
+  checkNilWithNumber(
+    solarStartDateDay,
+    'solarStartDateDay');
 
   let solarStartDateYear;
   let solarStartDateMonth;
@@ -53,9 +59,10 @@ export const getSolarStartDateUnwrappedContext =
     'solarStartDateYear');
 
   const solarStartDateUnwrappedContext = {
-    _type: 'SolarStartDateUnwrappedContext'
+    _type: 'SolarStartDateUnwrappedContext',
     solarStartDateYear,
-    solarStartDateMonth
+    solarStartDateMonth,
+    solarStartDateDay
   };
 
   return solarStartDateUnwrappedContext;

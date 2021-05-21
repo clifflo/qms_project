@@ -3,7 +3,7 @@ import {
   DateTime
 } from 'luxon';
 
-export const getTauDayContextForPureMonth =
+export const getTauDayContextForCleanMonth =
   (sourceLuxonCar,
   tauMonthActiveContext) => {
 
