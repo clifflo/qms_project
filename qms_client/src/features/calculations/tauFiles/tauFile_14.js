@@ -5,8 +5,11 @@ import {
 
 export const
   getTauDayContextForAugmentedMonth =
-  (sourceLuxonCar,
+  (sourceDateInIso,
   tauMonthActiveContext) => {
+
+  const sourceLuxonCar =
+    DateTime.fromISO(sourceDateInIso);
 
   const {
     flatMonthStartDateDay,

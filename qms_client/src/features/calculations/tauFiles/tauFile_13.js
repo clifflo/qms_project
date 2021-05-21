@@ -14,8 +14,10 @@ import {
 
 export const getTauDayContextForCleanMonth =
   (sourceDateInIso,
-  sourceLuxonCar,
   tauMonthActiveContext) => {
+
+  const sourceLuxonCar =
+    DateTime.fromISO(sourceDateInIso);
 
   const tauMonthStartDateDay =
     tauMonthActiveContext

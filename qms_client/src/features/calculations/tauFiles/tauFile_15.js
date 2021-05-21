@@ -25,9 +25,6 @@ export const getTauDayContextFromIso =
 
   try{
 
-    const sourceLuxonCar =
-      DateTime.fromISO(sourceDateInIso);
-
     const loadedTauDateMatchInTauMonthGlobalContext_2 =
      R.curry
      (tauDateMatchInTauMonthGlobalContext_2)
@@ -47,11 +44,28 @@ export const getTauDayContextFromIso =
       'matchedTauMonthActiveContext',
       'TauMonthActiveContext');
 
-     return tauDayContext;
+    if(matchedTauMonthActiveContext
+      .tauMonthIsAugmented){
+
+      const tauDayContextForAugmentedMonth =
+        getTauDayContextForAugmentedMonth(
+          sourceDateInIso,
+          matchedTauMonthActiveContext);
+
+      return tauDayContextForAugmentedMonth;
+    }
+    else {
+
+      const tauDayContextForCleanMonth =
+        getTauDayContextForCleanMonth(
+          sourceDateInIso,
+          matchedTauMonthActiveContext);
+
+      return tauDayContextForCleanMonth;
+    }
   }
   catch(errorMessage){
     console.error(errorMessage);
-    throwFunctionalError(
-      'getTauDayContext_1');
+    throwFunctionalError('getTauDayContext_1');
   }
 }
