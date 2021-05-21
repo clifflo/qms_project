@@ -3,7 +3,7 @@ import * as R from 'ramda';
 export const
   getTauDayContextForAugmentedMonth =
   (sourceLuxonCar,
-  tauMonthGlobalContext_3) => {
+  tauMonthActiveContext) => {
 
   const {
     flatMonthStartDateDay,

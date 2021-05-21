@@ -16,7 +16,7 @@ import {
   throwFunctionalError
 } from './utilityHubCloneOfTau';
 import {
-  getTauMonthGlobalContext_3
+  getTauMonthActiveContext
 } from './tauFile_13';
 
 export const getTauDayContextFromIso =

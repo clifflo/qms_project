@@ -5,18 +5,18 @@ import {
 
 export const getTauDayContextForPureMonth =
   (sourceLuxonCar,
-  tauMonthGlobalContext_3) => {
+  tauMonthActiveContext) => {
 
   const tauMonthStartDateDay =
-    tauMonthGlobalContext_3
+    tauMonthActiveContext
     .solarStartDateDay;
 
   const tauMonthStartDateMonth =
-    tauMonthGlobalContext_3
+    tauMonthActiveContext
     .solarStartDateMonth;
 
   const tauMonthStartDateYear =
-    tauMonthGlobalContext_3
+    tauMonthActiveContext
     .solarStartDateYear;
 
   const tauMonthStartLuxonBox = {

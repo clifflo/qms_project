@@ -13,7 +13,6 @@ import {
   throwFunctionalError
 } from './utilityHubCloneOfTau';
 
-
 export const
   tauDateMatchInTauMonthGlobalContext_2 =
   (sourceLuxonCar,

@@ -10,7 +10,7 @@ import {
   getAugmentedTauMonthActiveContext
 } from './tauFile_11';
 
-export const buildTauMonthActiveContext =
+export const getTauMonthActiveContext =
   tauMonthGlobalContext_2 => {
 
   try{
@@ -26,15 +26,19 @@ export const buildTauMonthActiveContext =
       return augmentedTauMonthActiveContext;
     }
     else {
-      return {
+
+      const cleanTauMonthActiveContext = {
         ...tauMonthGlobalContext_2,
-        _type: 'TauMonthGlobalContext_3'
-      }
+        _type: 'TauMonthGlobalContext_3',
+        _subType: 'CleanTauMonthActiveContext'
+      };
+
+      return cleanTauMonthActiveContext;
     }
   }
   catch(errorMessage){
     console.error(errorMessage);
     throwFunctionalError(
-      'getTauMonthGlobalContext_3');
+      'buildTauMonthActiveContext');
   }
 }
