@@ -6,8 +6,11 @@ import {
 import {
   DateTime
 } from 'luxon';
+import {
+  getAugmentedTauMonthActiveContext
+} from './tauFile_11';
 
-export const buildTauMonthGlobalContext_3 =
+export const buildTauMonthActiveContext =
   tauMonthGlobalContext_2 => {
 
   try{
@@ -16,115 +19,11 @@ export const buildTauMonthGlobalContext_3 =
 
     if(tauMonthHasLeap){
 
-      const {
-        solarStartDateDay,
-        solarStartDateMonth,
-        solarStartDateYear,
-        solarEndDateDay,
-        solarEndDateYear,
-        solarEndDateMonth,
-        leapMonthStartDateMonth,
-        leapMonthStartDateDay,
-      } = tauMonthGlobalContext_2;
+      const augmentedTauMonthActiveContext =
+        getAugmentedTauMonthActiveContext(
+          tauMonthGlobalContext_2);
 
-      const flatMonthStartLuxonBox = {
-        day: solarStartDateDay,
-        month: solarStartDateMonth,
-        year: solarStartDateYear
-      };
-
-      const flatMonthStartLuxonCar =
-        DateTime.fromObject(
-          flatMonthStartLuxonBox);
-
-      const leapMonthStartDateYear =
-        solarStartDateYear;
-
-      const leapMonthStartLuxonBox = {
-        day: leapMonthStartDateDay,
-        month: leapMonthStartDateMonth,
-        year: leapMonthStartDateYear
-      };
-
-      const leapMonthStartLuxonCar =
-        DateTime.fromObject(
-          leapMonthStartLuxonBox);
-
-      const flatMonthEndLuxonBox =
-         leapMonthStartLuxonCar
-         .minus({ days: 1 });
-
-      const flatMonthStartDateDay =
-        solarStartDateDay;
-
-      checkNilWithNumber(
-        flatMonthStartDateDay,
-        'flatMonthStartDateDay');
-
-      const flatMonthStartDateMonth =
-        solarStartDateMonth;
-
-      checkNilWithNumber(
-        flatMonthStartDateMonth,
-        'flatMonthStartDateMonth');
-
-      const flatMonthStartDateYear =
-        solarStartDateYear;
-
-      checkNilWithNumber(
-        flatMonthStartDateYear,
-        'flatMonthStartDateYear');
-
-      const flatMonthEndDateDay =
-        flatMonthEndLuxonBox
-        .day;
-
-      checkNilWithNumber(
-        flatMonthEndDateDay,
-        'flatMonthEndDateDay');
-
-      const flatMonthEndDateMonth =
-        flatMonthEndLuxonBox
-        .month;
-
-      checkNilWithNumber(
-        flatMonthEndDateMonth,
-        'flatMonthEndDateMonth');
-
-      const flatMonthEndDateYear =
-        solarStartDateYear;
-
-      checkNilWithNumber(
-        flatMonthEndDateYear,
-        'flatMonthEndDateYear');
-
-      const leapMonthEndDateDay =
-        solarEndDateDay;
-
-      const leapMonthEndDateMonth =
-        solarEndDateMonth;
-
-      const leapMonthEndDateYear =
-        solarEndDateYear;
-
-      const tauMonthGlobalContext_3 = {
-        ...tauMonthGlobalContext_2,
-        flatMonthStartDateDay,
-        flatMonthStartDateMonth,
-        flatMonthStartDateYear,
-        flatMonthEndDateDay,
-        flatMonthEndDateMonth,
-        flatMonthEndDateYear,
-        leapMonthStartDateDay,
-        leapMonthStartDateMonth,
-        leapMonthStartDateYear,
-        leapMonthEndDateDay,
-        leapMonthEndDateMonth,
-        leapMonthEndDateYear,
-        _type: 'TauMonthGlobalContext_3'
-      };
-
-      return tauMonthGlobalContext_3;
+      return augmentedTauMonthActiveContext;
     }
     else {
       return {

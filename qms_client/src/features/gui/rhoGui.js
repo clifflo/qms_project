@@ -1,7 +1,7 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  getTauDayContext_1
+  getTauDayContextFromIso
 } from '../calculations/tauHubCloneBase';
 
 export default function RhoGui() {
