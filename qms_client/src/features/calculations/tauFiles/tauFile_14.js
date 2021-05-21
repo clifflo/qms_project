@@ -190,8 +190,9 @@ export const
       flatMonthStartDateInISO,
       flatMonthEndDateInISO,
       finalTauMonthChineseForDay,
-      _type: 'TauDayContext'
-      };
+      _type: 'TauDayContext',
+      _subType: 'AugmentedMonthTauDayContext'
+    };
 
     return tauDayContext;
   }

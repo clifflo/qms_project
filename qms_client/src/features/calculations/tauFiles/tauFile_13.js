@@ -81,7 +81,8 @@ export const getTauDayContextForCleanMonth =
     tauDayChinese,
     tauDayTwigFullComboChinese,
     sourceDateInISO,
-    _type: 'TauDayContext'
+    _type: 'TauDayContext',
+    _subType: 'CleanMonthTauDayContext'
   };
 
   return tauDayContext;
