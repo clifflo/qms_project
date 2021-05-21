@@ -6,7 +6,8 @@ import {
   findItemByStringFromList
 } from './utilityHubCloneOfTau';
 
-export const mapFunctionOfTauLocalMonthContextWithLeap_2 =
+export const
+  mapFunctionOfTauLocalMonthContextWithLeap_2 =
   (payloadForMapFunctionOfTauLocalMonthContext_2,
   tauLocalMonthContext_1) => {
 

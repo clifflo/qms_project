@@ -16,58 +16,30 @@ import {
   getTwigTrunkContextByChinese,
   getTwigTrunkContextByIndex
 } from './twigHubCloneOfTau';
+import {
+  getSolarStartDateUnwrappedYear
+} from './tauFile_02';
 
 export const mapFunctionOfTauLocalMonthContext_1 =
   (payloadForMapFunctionOfTauLocalMonthContext_1,
   tauMonthIndex) => {
 
   try{
+
     const {
       solarStartDateWrappedYear,
       tauYearTwigFullComboChinese,
       groundTauMonthStartDateMonthdaySet
     } = payloadForMapFunctionOfTauLocalMonthContext_1;
 
-    checkNilWithArray(
-      groundTauMonthStartDateMonthdaySet,
-      'groundTauMonthStartDateMonthdaySet');
+    const solarStartDateUnwrappedContext =
+      getSolarStartDateUnwrappedContext(
+        payloadForMapFunctionOfTauLocalMonthContext_1);
 
-    const tauMonthStartDateMonthday =
-      groundTauMonthStartDateMonthdaySet[
-        tauMonthIndex];
-
-    const rawSolarStartDateMonth =
-      parseInt(
-        R.take(
-          2, tauMonthStartDateMonthday));
-
-    const solarStartDateDay =
-      parseInt(
-        R.takeLast(
-          2, tauMonthStartDateMonthday));
-
-    let solarStartDateYear;
-    let solarStartDateMonth;
-
-    if(rawSolarStartDateMonth == 13){
-      solarStartDateYear =
-        parseInt(solarStartDateWrappedYear) + 1;
-      solarStartDateMonth = 1;
-    }
-    else {
-      solarStartDateMonth =
-        parseInt(rawSolarStartDateMonth);
-      solarStartDateYear =
-        parseInt(solarStartDateWrappedYear);
-    }
-
-    checkNilWithNumber(
-      solarStartDateMonth,
-      'solarStartDateMonth');
-
-    checkNilWithNumber(
+    const {
       solarStartDateYear,
-      'solarStartDateYear');
+      solarStartDateMonth
+    } = solarStartDateUnwrappedContext;
 
     const originalTauMonthContext =
       getItemByNumberFromList(
@@ -91,8 +63,7 @@ export const mapFunctionOfTauLocalMonthContext_1 =
 
     const tauMonthTrunkIndex =
       ((tauYearTrunkIndex % 5) * 2)
-      + 2
-      + tauMonthIndex;
+      + 2 + tauMonthIndex;
 
     const tauMonthTrunkChinese =
       getTwigTrunkContextByIndex(
@@ -135,5 +106,4 @@ export const mapFunctionOfTauLocalMonthContext_1 =
     throwFunctionalError(
       'mapFunctionOfTauLocalMonthContext_1');
   }
-
 }

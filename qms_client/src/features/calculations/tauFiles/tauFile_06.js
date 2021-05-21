@@ -5,7 +5,8 @@ import {
   mapFunctionOfTauLocalMonthContextWithoutLeap_2,
 } from './tauMiniHub_01';
 
-export const mapFunctionOfBuiltTauYearContext_2 =
+export const
+  mapFunctionOfBuiltTauYearContext_2 =
   builtTauYearContext_1 => {
 
   const leapTauMonthStartDateMonthdayPattern =
