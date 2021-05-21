@@ -15,10 +15,10 @@ export const
   tauMonthGlobalContext_2 => {
 
   try{
-    const { tauMonthHasLeap } =
+    const { tauMonthIsAugmented } =
       tauMonthGlobalContext_2;
 
-    if(tauMonthHasLeap){
+    if(tauMonthIsAugmented){
 
       const augmentedTauMonthActiveContext =
         getAugmentedTauMonthActiveContext(

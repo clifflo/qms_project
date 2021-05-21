@@ -48,7 +48,7 @@ export const
       ...tauLocalMonthContext_1,
       leapMonthStartDateMonth,
       leapMonthStartDateDay,
-      tauMonthHasLeap: true,
+      tauMonthIsAugmented: true,
       tauYearHasLeap: true,
       tauMonthGlobalIndex,
       leapTauMonthEnglish,
@@ -58,7 +58,7 @@ export const
   else {
     tauLocalMonthContext_2 = {
       ...tauLocalMonthContext_1,
-      tauMonthHasLeap: false,
+      tauMonthIsAugmented: false,
       tauYearHasLeap: true,
       tauMonthGlobalIndex,
       leapTauMonthEnglish,
@@ -88,7 +88,7 @@ export const
     ...tauLocalMonthContext_1,
     _type: 'TauLocalMonthContext_2',
     tauMonthGlobalIndex,
-    tauMonthHasLeap: false,
+    tauMonthIsAugmented: false,
     tauYearHasLeap: false
   }
 }
