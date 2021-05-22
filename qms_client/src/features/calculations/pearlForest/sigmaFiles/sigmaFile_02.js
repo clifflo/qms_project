@@ -40,7 +40,7 @@ const getSigmaBrakeBuiltContext_1 =
       + sigmaBoardBranchChineseSet
       + sigmaTrunkChineseSet
       + sigmaSeasonChineseSet
-      + '月，'
+      + '月日，'
 
     const sigmaBrakeBuiltFullSentence =
       R.compose(

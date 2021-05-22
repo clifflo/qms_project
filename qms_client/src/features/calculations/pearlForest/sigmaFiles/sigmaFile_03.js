@@ -34,6 +34,9 @@ const determineSigmaBrakeCharacterType =
   const brakeCharacterIsMoon =
     sigmaBrakeCharacter == '月';
 
+  const brakeCharacterIsSun =
+    sigmaBrakeCharacter == '日';
+
   if(brakeCharacterIsSigmaTrunk){
     return 'Trunk';
   }
@@ -49,13 +52,12 @@ const determineSigmaBrakeCharacterType =
   else if(brakeCharacterIsMoon){
     return 'Moon';
   }
+  else if(brakeCharacterIsSun){
+    return 'Sun';
+  }
   else {
     throw new Error('Invalid brake character.');
   }
-
-
-
-
 }
 
 export const getSigmaBrakeSentenceType =
@@ -80,10 +82,30 @@ export const getSigmaBrakeSentenceType =
       cursorSigmaBrakeCharacterType !=
       firstSigmaBrakeCharacterType
 
+    let changedSigmaBrakeCharacterTypeIsRunning;
+
     if(changedSigmaBrakeCharacterType){
+      if(cursorSigmaBrakeCharacterType == 'Moon'){
+        changedSigmaBrakeCharacterTypeIsRunning =
+        true;
+      }
+      else if(cursorSigmaBrakeCharacterType == 'Sun'){
+        console.log('hit sun');
+        changedSigmaBrakeCharacterTypeIsRunning =
+        true;
+      }
+      else {
+        changedSigmaBrakeCharacterTypeIsRunning =
+        false;
+      }
+    }
+    else{
+      changedSigmaBrakeCharacterTypeIsRunning = true;
+    }
+
+    if(!changedSigmaBrakeCharacterTypeIsRunning){
       comingSigmaBrakeCharacterType =
       cursorSigmaBrakeCharacterType;
-      break;
     }
   }
 
