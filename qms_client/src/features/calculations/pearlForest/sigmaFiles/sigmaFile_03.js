@@ -1,9 +1,10 @@
 import * as R from 'ramda';
-
-const sigmaMonthChineseSet =
-  '正二三四五六七八九十霜臘';
-
-
+import {
+  sigmaMonthChineseSet,
+  sigmaBoardBranchChineseSet,
+  sigmaTrunkChineseSet,
+  sigmaSeasonChineseSet
+} from './sigmaFile_02';
 
 const determineSigmaBrakeCharacterType =
   sigmaBrakeCharacter => {

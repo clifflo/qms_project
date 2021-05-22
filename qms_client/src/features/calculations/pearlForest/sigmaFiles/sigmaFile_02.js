@@ -4,6 +4,18 @@ import {
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 
+export const sigmaMonthChineseSet =
+  '正二三四五六七八九十霜臘';
+
+export const sigmaBoardBranchChineseSet =
+  '子丑寅卯辰巳午未申酉戌亥鼠牛虎兔龍蛇馬羊猴雞狗豬';
+
+export const sigmaTrunkChineseSet =
+  '甲乙丙丁戊己庚辛壬癸';
+
+export const sigmaSeasonChineseSet =
+  '春夏秋冬';
+
 const getSigmaBrakeBuiltContext_1 =
   sigmaBrakeRawContext => {
 
@@ -17,12 +29,14 @@ const getSigmaBrakeBuiltContext_1 =
     R.compose(
       R.replace('十二', '臘'),
       R.replace('十一', '霜'),
-      R.replace('、', '，'))
     (sigmaBrakeRawSentence);
 
   const relevantCharacterSet =
-    '正二三四五六七八九十霜臘子丑寅卯辰巳午未申酉戌亥春夏秋冬'
-    + '鼠牛虎兔龍蛇馬羊猴雞狗犬豬甲乙丙丁戊己庚辛壬癸月，'
+    sigmaMonthChineseSet
+    + sigmaBosigmaBoardBranchChineseSetardBranchChineseSet
+    + sigmaTrunkChineseSet
+    + sigmaSeasonChineseSet
+    + '月，'
 
   const sigmaBrakeBuiltSentence =
     R.compose(

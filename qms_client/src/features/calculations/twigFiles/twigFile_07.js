@@ -48,16 +48,23 @@ export const getTwigBranchContextByChinese =
       boardTwigBranchChinese)){
 
       const twigBranchContext =
-          findItemByStringFromList(
-            twigBranchContextSet,
-            twigBranchChinese,
-            'twigBranchChinese');
+        findItemByStringFromList(
+          twigBranchContextSet,
+          boardTwigBranchChinese,
+          'twigBranchChinese');
 
-
-        return twigBranchContext;
+      return twigBranchContext;
     }
+    else {
 
+      const twigBranchContext =
+        findItemByStringFromList(
+          twigBranchContextSet,
+          '生肖' + boardTwigBranchChinese,
+          'twigAnimalSimpleChinese');
 
+      return twigBranchContext;
+    }
   }
   catch(errorMessage){
     console.error(errorMessage);
