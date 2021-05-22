@@ -13,11 +13,6 @@ const getSigmaBrakeBuiltContext_2 =
     sigmaBrakeBuiltContext_1
     .sigmaBrakeBuiltFullSentence
 
-  if(sigmaBrakeBuiltContext_1.sigmaBrakeRawName
-  == '巳驛馬'){
-    console.log('Begin for horse.');
-  }
-
   const sigmaBrakeBuiltPartialRoughSentenceSet =
     R.split('，', sigmaBrakeBuiltFullSentence);
 
@@ -46,3 +41,5 @@ export const sigmaBrakeBuiltContextSet_2 =
   R.map(
     getSigmaBrakeBuiltContext_2,
     sigmaBrakeBuiltContextSet_1);
+
+console.log(sigmaBrakeBuiltContextSet_2);

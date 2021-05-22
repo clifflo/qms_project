@@ -68,44 +68,36 @@ export const getSigmaBrakeSentenceType =
       sigmaBrakeBuiltPartialSentence[0]);
 
   let comingSigmaBrakeCharacterType;
+  let throughMoonOrSun;
 
   for(let i = 1;
     i < sigmaBrakeBuiltPartialSentence.length;
     i++)
   {
-
     const cursorSigmaBrakeCharacterType =
       determineSigmaBrakeCharacterType(
         sigmaBrakeBuiltPartialSentence[i]);
 
-    const changedSigmaBrakeCharacterType =
+    const cursorDifferentThanFirst =
       cursorSigmaBrakeCharacterType !=
       firstSigmaBrakeCharacterType
 
-    let changedSigmaBrakeCharacterTypeIsRunning;
+    const cursorIsMoonOrSun =
+      (cursorSigmaBrakeCharacterType == 'Moon')
+      || (cursorSigmaBrakeCharacterType == 'Sun');
 
-    if(changedSigmaBrakeCharacterType){
-      if(cursorSigmaBrakeCharacterType == 'Moon'){
-        changedSigmaBrakeCharacterTypeIsRunning =
-        true;
-      }
-      else if(cursorSigmaBrakeCharacterType == 'Sun'){
-        console.log('hit sun');
-        changedSigmaBrakeCharacterTypeIsRunning =
-        true;
-      }
-      else {
-        changedSigmaBrakeCharacterTypeIsRunning =
-        false;
-      }
-    }
-    else{
-      changedSigmaBrakeCharacterTypeIsRunning = true;
+    if(cursorIsMoonOrSun){
+      throughMoonOrSun = true;
     }
 
-    if(!changedSigmaBrakeCharacterTypeIsRunning){
+    const sigmaBrakeSecondCharacterTypeHit =
+      cursorDifferentThanFirst
+      && !cursorIsMoonOrSun;
+
+    if(sigmaBrakeSecondCharacterTypeHit){
       comingSigmaBrakeCharacterType =
       cursorSigmaBrakeCharacterType;
+      break;
     }
   }
 
