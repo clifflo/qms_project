@@ -16,12 +16,13 @@ const getSigmaBrakeBuiltContext_1 =
   const sigmaBrakeReplacedSentence =
     R.compose(
       R.replace('十二', '臘'),
-      R.replace('十一', '霜'))
+      R.replace('十一', '霜'),
+      R.replace('、', '，'))
     (sigmaBrakeRawSentence);
 
   const relevantCharacterSet =
     '正二三四五六七八九十霜臘子丑寅卯辰巳午未申酉戌亥春夏秋冬'
-    + '鼠牛虎兔龍蛇馬羊猴雞狗犬豬甲乙丙丁戊己庚辛壬癸月'
+    + '鼠牛虎兔龍蛇馬羊猴雞狗犬豬甲乙丙丁戊己庚辛壬癸月，'
 
   const sigmaBrakeBuiltSentence =
     R.compose(
