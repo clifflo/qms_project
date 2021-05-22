@@ -3,6 +3,9 @@ import {
 } from './sigmaFile_01';
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
+import {
+  throwFunctionException
+} from './ut'
 
 export const sigmaMonthChineseSet =
   '正二三四五六七八九十霜臘';
@@ -19,36 +22,44 @@ export const sigmaSeasonChineseSet =
 const getSigmaBrakeBuiltContext_1 =
   sigmaBrakeRawContext => {
 
-  const sigmaBrakeRawName =
-    sigmaBrakeRawContext[0];
+  try{
+    const sigmaBrakeRawName =
+      sigmaBrakeRawContext[0];
 
-  const sigmaBrakeRawSentence =
-    sigmaBrakeRawContext[1];
+    const sigmaBrakeRawSentence =
+      sigmaBrakeRawContext[1];
 
-  const sigmaBrakeReplacedSentence =
-    R.compose(
-      R.replace('十二', '臘'),
-      R.replace('十一', '霜'),
-    (sigmaBrakeRawSentence);
+    const sigmaBrakeReplacedSentence =
+      R.compose(
+        R.replace('十二', '臘'),
+        R.replace('十一', '霜'))
+      (sigmaBrakeRawSentence);
 
-  const relevantCharacterSet =
-    sigmaMonthChineseSet
-    + sigmaBosigmaBoardBranchChineseSetardBranchChineseSet
-    + sigmaTrunkChineseSet
-    + sigmaSeasonChineseSet
-    + '月，'
+    const relevantCharacterSet =
+      sigmaMonthChineseSet
+      + sigmaBosigmaBoardBranchChineseSetardBranchChineseSet
+      + sigmaTrunkChineseSet
+      + sigmaSeasonChineseSet
+      + '月，'
 
-  const sigmaBrakeBuiltSentence =
-    R.compose(
-      RA.concatAll,
-      R.filter(R.flip(R.includes)(relevantCharacterSet)))
-    (sigmaBrakeReplacedSentence)
+    const sigmaBrakeBuiltSentence =
+      R.compose(
+        RA.concatAll,
+        R.filter(R.flip(R.includes)(relevantCharacterSet)))
+      (sigmaBrakeReplacedSentence);
 
-  return {
-    _type: 'SigmaBrakeBuiltContext_1',
-    sigmaBrakeRawName,
-    sigmaBrakeBuiltSentence
-  };
+    const sigmaBrakeBuiltContext_1 = {
+      _type: 'SigmaBrakeBuiltContext_1',
+      sigmaBrakeRawName,
+      sigmaBrakeBuiltSentence
+    };
+
+    return sigmaBrakeBuiltContext_1;
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throwFunctionException
+  }
 }
 
 export const sigmaBrakeBuiltContextSet_1 =
