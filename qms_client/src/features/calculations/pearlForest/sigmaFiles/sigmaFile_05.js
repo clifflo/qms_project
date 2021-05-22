@@ -1,4 +1,4 @@
-export const adjustedSigmaBrakeBuiltContext_2 = [
+export const sigmaBrakeHandfulContextSet_1 = [
   {
       "firstSigmaBrakeCharacterType": "Trunk",
       "comingSigmaBrakeCharacterType": "Branch",
@@ -9,6 +9,7 @@ export const adjustedSigmaBrakeBuiltContext_2 = [
   {
       "firstSigmaBrakeCharacterType": "Branch",
       "comingSigmaBrakeCharacterType": "Branch",
+      "delimiter": "Sun",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳驛馬",
       "sigmaBrakeBuiltFullSentence": "寅午戌日申，申子辰日寅，巳酉丑日亥，亥卯未日巳"
@@ -25,7 +26,7 @@ export const adjustedSigmaBrakeBuiltContext_2 = [
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳福星貴人",
-      "sigmaBrakeBuiltFullSentence": "甲虎乙豬牛，丙狗鼠，丁雞戊猴，己羊庚馬，辛蛇癸兔，壬日龍"
+      "sigmaBrakeBuiltFullSentence": "甲虎乙豬牛，丙狗鼠，丁雞戊猴，己羊庚馬，辛蛇癸兔，壬龍"
   },
   {
       "firstSigmaBrakeCharacterType": "Month",
@@ -37,6 +38,7 @@ export const adjustedSigmaBrakeBuiltContext_2 = [
   {
       "firstSigmaBrakeCharacterType": "Branch",
       "comingSigmaBrakeCharacterType": "Trunk",
+      "delimiter": "Moon",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳月德貴人--凡有所占，轉凶為吉",
       "sigmaBrakeBuiltFullSentence": "寅午戌月丙，申子辰月壬，亥卯未月甲，巳酉丑月庚"
@@ -137,7 +139,7 @@ export const adjustedSigmaBrakeBuiltContext_2 = [
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳月解神--占訟官事散，占病病人重病也離身",
-      "sigmaBrakeBuiltFullSentence": "正二申，三四酉，五六月戌，七八亥，九十月午，霜臘月未，，"
+      "sigmaBrakeBuiltFullSentence": "正二申，三四酉，五六戌，七八亥，九十午，霜臘未"
   },
   {
       "firstSigmaBrakeCharacterType": "Trunk",
@@ -151,7 +153,7 @@ export const adjustedSigmaBrakeBuiltContext_2 = [
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳內解神--占訟官事散",
-      "sigmaBrakeBuiltFullSentence": "甲乙蛇，戊己寅，庚辛酉，丙丁申，壬癸卯，"
+      "sigmaBrakeBuiltFullSentence": "甲乙巳，戊己寅，庚辛酉，丙丁申，壬癸卯"
   },
   {
       "firstSigmaBrakeCharacterType": "Month",
@@ -165,7 +167,7 @@ export const adjustedSigmaBrakeBuiltContext_2 = [
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳解脫神",
-      "sigmaBrakeBuiltFullSentence": "甲己日亥，乙庚申，丙辛日丑，丁壬未，戊癸辰，"
+      "sigmaBrakeBuiltFullSentence": "甲己日亥，乙庚申，丙辛日丑，丁壬未，戊癸辰"
   },
   {
       "firstSigmaBrakeCharacterType": "Month",
@@ -179,21 +181,21 @@ export const adjustedSigmaBrakeBuiltContext_2 = [
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳喝散神--占訟官事散",
-      "sigmaBrakeBuiltFullSentence": "春巳，夏申，秋豬，冬寅，，"
+      "sigmaBrakeBuiltFullSentence": "春巳，夏申，秋豬，冬寅"
   },
   {
       "firstSigmaBrakeCharacterType": "Trunk",
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳日喝散--婚姻忌",
-      "sigmaBrakeBuiltFullSentence": "甲己寅，乙庚申，丙辛，戊癸蛇，丁壬亥，"
+      "sigmaBrakeBuiltFullSentence": "甲己寅，乙庚申，丙辛，戊癸巳，丁壬亥"
   },
   {
       "firstSigmaBrakeCharacterType": "Season",
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳開獄神",
-      "sigmaBrakeBuiltFullSentence": "夏馬，春兔，秋雞，冬鼠，，"
+      "sigmaBrakeBuiltFullSentence": "夏馬，春兔，秋雞，冬鼠"
   },
   {
       "firstSigmaBrakeCharacterType": "Month",
@@ -207,7 +209,7 @@ export const adjustedSigmaBrakeBuiltContext_2 = [
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳天哭殺--占病大忌",
-      "sigmaBrakeBuiltFullSentence": "正五九羊，二六十月猴，三七霜雞，四八臘狗"
+      "sigmaBrakeBuiltFullSentence": "正五九羊，二六十猴，三七霜雞，四八臘狗"
   },
   {
       "firstSigmaBrakeCharacterType": "Month",
@@ -235,7 +237,7 @@ export const adjustedSigmaBrakeBuiltContext_2 = [
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳四季小殺--占病忌之",
-      "sigmaBrakeBuiltFullSentence": "春羊，夏龍，秋牛，冬狗，，"
+      "sigmaBrakeBuiltFullSentence": "春羊，夏龍，秋牛，冬狗"
   },
   {
       "firstSigmaBrakeCharacterType": "Trunk",
@@ -249,21 +251,21 @@ export const adjustedSigmaBrakeBuiltContext_2 = [
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳天狗殺--凡事忌之",
-      "sigmaBrakeBuiltFullSentence": "正卯，二申，三丑，四午，五亥，六辰，七酉，八寅，九未，十鼠，子巳，丑狗"
+      "sigmaBrakeBuiltFullSentence": "正卯，二申，三丑，四午，五亥，六辰，七酉，八寅，九未，十子，霜巳，臘戌"
   },
   {
       "firstSigmaBrakeCharacterType": "Season",
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳三坵五墓--占病大忌",
-      "sigmaBrakeBuiltFullSentence": "春丑，夏辰，秋未，三冬戌三，五，"
+      "sigmaBrakeBuiltFullSentence": "春丑，夏辰，秋未，冬戌"
   },
   {
       "firstSigmaBrakeCharacterType": "Season",
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳喪車殺--占病大忌",
-      "sigmaBrakeBuiltFullSentence": "春雞夏鼠，秋兔冬馬，，"
+      "sigmaBrakeBuiltFullSentence": "春雞夏鼠，秋兔冬馬"
   },
   {
       "firstSigmaBrakeCharacterType": "Season",
@@ -277,18 +279,20 @@ export const adjustedSigmaBrakeBuiltContext_2 = [
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳關鎖殺--占訟忌之",
-      "sigmaBrakeBuiltFullSentence": "春牛蛇，夏月龍猴，秋豬羊，冬狗虎"
+      "sigmaBrakeBuiltFullSentence": "春牛蛇，夏龍猴，秋豬羊，冬狗虎"
   },
   {
       "firstSigmaBrakeCharacterType": "Branch",
-      "comingSigmaBrakeCharacterType": "Animal",
+      "comingSigmaBrakeCharacterType": "Branch",
+      "delimiter": "Sun",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳劫殺--凡事忌之",
       "sigmaBrakeBuiltFullSentence": "申子辰日蛇，亥卯未日猴，寅午戌日豬，巳酉丑日虎"
   },
   {
       "firstSigmaBrakeCharacterType": "Branch",
-      "comingSigmaBrakeCharacterType": "Animal",
+      "comingSigmaBrakeCharacterType": "Branch",
+      "delimiter": "Sun",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳咸池殺--占婚大忌主婦人淫亂",
       "sigmaBrakeBuiltFullSentence": "寅午戌日兔，巳酉丑日馬，申子辰日雞，亥卯未日鼠"
@@ -303,6 +307,7 @@ export const adjustedSigmaBrakeBuiltContext_2 = [
   {
       "firstSigmaBrakeCharacterType": "Branch",
       "comingSigmaBrakeCharacterType": "Branch",
+      "delimiter": "Sun",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳孤辰寡宿--婚姻犯之主無子",
       "sigmaBrakeBuiltFullSentence": "亥子丑日寅戌，寅卯辰日巳丑，巳午未日申辰申，酉戌日亥未"
@@ -365,22 +370,24 @@ export const adjustedSigmaBrakeBuiltContext_2 = [
   },
   {
       "firstSigmaBrakeCharacterType": "Branch",
+      "comingSigmaBrakeCharacterType": "Branch",
+      "delimiter": "Sun",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳破碎殺",
-      "sigmaBrakeBuiltFullSentence": "子午卯酉蛇，辰戌丑未牛，寅申巳亥雞，"
+      "sigmaBrakeBuiltFullSentence": "子午卯酉日蛇，辰戌丑未日牛，寅申巳亥日雞"
   },
   {
       "firstSigmaBrakeCharacterType": "Season",
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳旌旗殺--占病大忌",
-      "sigmaBrakeBuiltFullSentence": "春卯，夏子，秋酉，冬午，"
+      "sigmaBrakeBuiltFullSentence": "春卯，夏子，秋酉，冬午"
   },
   {
       "firstSigmaBrakeCharacterType": "Branch",
       "comingSigmaBrakeCharacterType": "Season",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳暴敗殺--占婚姻大忌男剋婦女傷夫",
-      "sigmaBrakeBuiltFullSentence": "豬羊狗春三月，蛇鼠龍夏月，申酉丑秋，虎馬兔冬"
+      "sigmaBrakeBuiltFullSentence": "豬羊狗春，蛇鼠龍夏，申酉丑秋，虎馬兔冬"
   }
 ]
