@@ -30,26 +30,34 @@ export const getTwigBranchContextByIndex =
 }
 
 export const getTwigBranchContextByChinese =
-  twigBranchChinese => {
+  boardTwigBranchChinese => {
 
   try{
 
     checkNilWithString(
-      twigBranchChinese,
-      'Twig branch Chinese');
+      boardTwigBranchChinese,
+      'boardTwigBranchChinese');
 
-    const twigBranchContext = findItemByStringFromList(
-      twigBranchContextSet,
-      twigBranchChinese,
-      'twigBranchChinese');
-
-    if(R.isNil(twigBranchContext)){
+    if(!isValidBoardTwigBranchChinese(
+      boardTwigBranchChinese)){
       throw new Error(
-        twigBranchChinese + ' '
-        + 'is not a valid twig branch Chinese.');
+        'Invalid board twig branch Chinese.')
     }
 
-    return twigBranchContext;
+    if(isValidTwigBranchChinese(
+      boardTwigBranchChinese)){
+
+      const twigBranchContext =
+          findItemByStringFromList(
+            twigBranchContextSet,
+            twigBranchChinese,
+            'twigBranchChinese');
+
+
+        return twigBranchContext;
+    }
+
+
   }
   catch(errorMessage){
     console.error(errorMessage);
