@@ -41,5 +41,3 @@ export const sigmaBrakeBuiltContextSet_2 =
   R.map(
     getSigmaBrakeBuiltContext_2,
     sigmaBrakeBuiltContextSet_1);
-
-console.log(sigmaBrakeBuiltContextSet_2);

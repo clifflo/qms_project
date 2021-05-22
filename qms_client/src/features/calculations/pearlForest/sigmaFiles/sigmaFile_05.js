@@ -359,14 +359,14 @@ export const sigmaBrakeHandfulContextSet_1 = [
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳大耗--占田蠢六畜大忌發動",
-      "sigmaBrakeBuiltFullSentence": "正申二酉三戌，四亥五子六牛，七寅八卯九辰，十巳子馬丑羊"
+      "sigmaBrakeBuiltFullSentence": "正申二酉三戌，四亥五子六牛，七寅八卯九辰，十巳霜馬臘羊"
   },
   {
       "firstSigmaBrakeCharacterType": "Month",
       "comingSigmaBrakeCharacterType": "Branch",
       "_type": "SigmaBuiltContext_2",
       "sigmaBrakeRawName": "巳小耗--遇此發動損害田禾",
-      "sigmaBrakeBuiltFullSentence": "正未，二申，三月酉，四戌，五亥，六子，七丑，八寅，九卯，十辰，子巳，丑午"
+      "sigmaBrakeBuiltFullSentence": "正未，二申，三月酉，四戌，五亥，六子，七丑，八寅，九卯，十辰，霜巳，臘午"
   },
   {
       "firstSigmaBrakeCharacterType": "Branch",

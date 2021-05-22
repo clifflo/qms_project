@@ -1,3 +1,7 @@
+import * as R from 'ramda';
+import {
+  sigmaBrakeHandfulContextSet_1
+} from './sigmaFile_05';
 
 export const getSigmaBrakeHandfulContextSet_2 =
   sigmaBrakeHandfulContext_1 => {
@@ -7,7 +11,7 @@ export const getSigmaBrakeHandfulContextSet_2 =
     comingSigmaBrakeCharacterType,
     delimiter,
     sigmaBrakeBuiltFullSentence
-  } = sigmaBrakeBuiltContext_3;
+  } = sigmaBrakeHandfulContext_1;
 
   const sigmaTypeText =
     firstSigmaBrakeCharacterType + '-'
@@ -30,6 +34,11 @@ export const getSigmaBrakeHandfulContextSet_2 =
     sigmaRegex =
     trunkRegex + branchRegex;
   }
+  if(sigmaTypeText == 'Branch-Trunk'
+    && delimiter == 'Month'){
+    sigmaRegex =
+    branchRegex + '月' + trunkRegex;
+  }
   else if(sigmaTypeText == 'Branch-Branch'
   && delimiter == 'Sun'){
     sigmaRegex =
@@ -48,6 +57,10 @@ export const getSigmaBrakeHandfulContextSet_2 =
     sigmaRegex =
     monthRegex + '(.*?)' + trunkRegex;
   }
+  else if(sigmaTypeText == 'Month-Branch'){
+    sigmaRegex =
+    monthRegex + branchRegex;
+  }
   else if(sigmaTypeText == 'Season-Branch'){
     sigmaRegex =
     seasonRegex + branchRegex;
@@ -60,9 +73,10 @@ export const getSigmaBrakeHandfulContextSet_2 =
   var patt = new RegExp(sigmaRegex, "g");
   var result = sigmaBrakeBuiltFullSentence.match(patt);
 
-  console.log(result);
-
-  return result;
+  return {
+    ...sigmaBrakeHandfulContext_1,
+    result
+  }
 }
 
 export const sigmaBrakeHandfulContextSet_2 =
