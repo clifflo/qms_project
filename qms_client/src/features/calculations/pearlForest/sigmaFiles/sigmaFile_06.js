@@ -71,15 +71,22 @@ export const getSigmaBrakeHandfulContextSet_2 =
   }
 
   var patt = new RegExp(sigmaRegex, "g");
-  var result = sigmaBrakeBuiltFullSentence.match(patt);
+  const result = [
+    ...sigmaBrakeBuiltFullSentence.matchAll(patt)];
 
-  return {
+  const sigmaBrakeHandfulContext_2 = {
     ...sigmaBrakeHandfulContext_1,
-    result
+    result,
+    sigmaRegex,
+    _type: 'SigmaBrakeHandfulContext_2'
   }
+
+  return sigmaBrakeHandfulContext_2;
 }
 
 export const sigmaBrakeHandfulContextSet_2 =
   R.map(
     getSigmaBrakeHandfulContextSet_2,
     sigmaBrakeHandfulContextSet_1);
+
+console.log(sigmaBrakeHandfulContextSet_2);
