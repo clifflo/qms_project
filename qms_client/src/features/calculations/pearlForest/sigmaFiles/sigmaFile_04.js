@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 import {
-  getSigmaBrakePartialSentenceType
+  getSigmaBrakeSentenceType
 } from './sigmaFile_03';
 import {
   sigmaBrakeBuiltContextSet_1
@@ -9,13 +9,27 @@ import {
 const getSigmaBrakeBuiltContext_2 =
   sigmaBrakeBuiltContext_1 => {
 
-  const sigmaBrakePartialSentenceType =
-    getSigmaBrakePartialSentenceType(
-      R.split(sigmaBrakeBuiltContext_1, '，')
-      [0]);
+  const sigmaBrakeBuiltFullSentence =
+    sigmaBrakeBuiltContext_1
+    .sigmaBrakeBuiltFullSentence
+
+  const sigmaBrakeBuiltPartialRoughSentenceSet =
+    R.split('，', sigmaBrakeBuiltFullSentence);
+
+  const sigmaBrakeBuiltPartialEffectiveSentenceSet =
+    R.reject(
+      R.equals(''),
+      sigmaBrakeBuiltPartialRoughSentenceSet);
+
+  const sigmaBrakeBuiltFirstPartialSentence =
+    sigmaBrakeBuiltPartialEffectiveSentenceSet[0];
+
+  const sigmaBrakeSentenceType =
+    getSigmaBrakeSentenceType(
+      sigmaBrakeBuiltFirstPartialSentence);
 
   const sigmaBrakeBuiltContext_2 = {
-    ...sigmaBrakePartialSentenceType,
+    ...sigmaBrakeSentenceType,
     ...sigmaBrakeBuiltContext_1,
     _type: 'SigmaBuiltContext_2'
   };

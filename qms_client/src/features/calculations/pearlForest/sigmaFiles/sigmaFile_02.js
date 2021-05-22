@@ -42,7 +42,7 @@ const getSigmaBrakeBuiltContext_1 =
       + sigmaSeasonChineseSet
       + '月，'
 
-    const sigmaBrakeBuiltSentence =
+    const sigmaBrakeBuiltFullSentence =
       R.compose(
         RA.concatAll,
         R.filter(R.flip(R.includes)(relevantCharacterSet)))
@@ -51,7 +51,7 @@ const getSigmaBrakeBuiltContext_1 =
     const sigmaBrakeBuiltContext_1 = {
       _type: 'SigmaBrakeBuiltContext_1',
       sigmaBrakeRawName,
-      sigmaBrakeBuiltSentence
+      sigmaBrakeBuiltFullSentence
     };
 
     return sigmaBrakeBuiltContext_1;

@@ -31,6 +31,9 @@ const determineSigmaBrakeCharacterType =
     brakeCharacterIncludesFunction(
       sigmaSeasonChineseSet);
 
+  const brakeCharacterIsMoon =
+    sigmaBrakeCharacter == '月';
+
   if(brakeCharacterIsSigmaTrunk){
     return 'Trunk';
   }
@@ -43,6 +46,9 @@ const determineSigmaBrakeCharacterType =
   else if(brakeCharacterIsSigmaSeason){
     return 'Season';
   }
+  else if(brakeCharacterIsMoon){
+    return 'Moon';
+  }
   else {
     throw new Error('Invalid brake character.');
   }
@@ -52,7 +58,7 @@ const determineSigmaBrakeCharacterType =
 
 }
 
-export const getSigmaBrakePartialSentenceType =
+export const getSigmaBrakeSentenceType =
   sigmaBrakeBuiltPartialSentence => {
 
   const firstSigmaBrakeCharacterType =
