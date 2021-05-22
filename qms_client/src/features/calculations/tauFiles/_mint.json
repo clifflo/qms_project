@@ -1,0 +1,11 @@
+[
+  {
+    "name": "tauRawMonthContextSet",
+    "description": [
+      "This is the set of Tau raw month.",
+      "For a tau raw month it stands for a",
+      "農曆月 but without any sort of start",
+      "date or end date."
+    ]
+  }
+]

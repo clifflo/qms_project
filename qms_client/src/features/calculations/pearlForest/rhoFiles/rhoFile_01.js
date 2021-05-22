@@ -56,7 +56,7 @@ export const shortHookContextSet = [
     genericShortHookIndex: 6,
     genericShortHookAlternative: '卦象風',
     genericShortHookComplexOriginal: '短卦巽',
-    genericShortHookEnglish: 'Short hook monsoon.',
+    genericShortHookEnglish: 'Short hook monsoon',
     genericShortHookSimpleOriginal: '巽'
   },
   {
@@ -64,7 +64,7 @@ export const shortHookContextSet = [
     genericShortHookIndex: 7,
     genericShortHookAlternative: '卦象天',
     genericShortHookComplexOriginal: '短卦乾',
-    genericShortHookEnglish: 'Short hook sky.',
+    genericShortHookEnglish: 'Short hook sky',
     genericShortHookSimpleOriginal: '乾'
   }
 ]
