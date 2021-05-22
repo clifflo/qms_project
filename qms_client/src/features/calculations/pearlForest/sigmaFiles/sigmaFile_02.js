@@ -5,7 +5,7 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   throwFunctionException
-} from './ut'
+} from './utilityHubCloneOfSigma';
 
 export const sigmaMonthChineseSet =
   '正二三四五六七八九十霜臘';

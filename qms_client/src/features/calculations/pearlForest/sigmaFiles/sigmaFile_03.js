@@ -52,7 +52,7 @@ const determineSigmaBrakeCharacterType =
 
 }
 
-export const determineSigmaBrakePartialSentenceType =
+export const getSigmaBrakePartialSentenceType =
   sigmaBrakeBuiltPartialSentence => {
 
   const firstSigmaBrakeCharacterType =
