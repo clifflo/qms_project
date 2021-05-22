@@ -62,7 +62,7 @@ export const getSigmaBrakePartialSentenceType =
   let comingSigmaBrakeCharacterType;
 
   for(let i = 1;
-    i < sigmaBrakeBuiltPartialSentence.length,
+    i < sigmaBrakeBuiltPartialSentence.length;
     i++)
   {
 

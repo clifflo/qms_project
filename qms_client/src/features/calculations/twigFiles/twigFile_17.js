@@ -1,6 +1,8 @@
 import * as R from 'ramda';
 import {
-  getCyclicIndex
+  getCyclicIndex,
+  checkNilWithString,
+  isItemExistByStringFromList
 } from './utilityHubCloneOfTwig';
 import {
   getTwigBranchContextByIndex,

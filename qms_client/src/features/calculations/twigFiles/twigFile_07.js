@@ -6,7 +6,9 @@ import {
   findItemByStringFromList
 } from './utilityHubCloneOfTwig';
 import {
-  twigBranchContextSet
+  twigBranchContextSet,
+  isValidBoardTwigBranchChinese,
+  isValidTwigBranchChinese
 } from './twigMiniHub_01';
 
 export const getTwigBranchContextByIndex =

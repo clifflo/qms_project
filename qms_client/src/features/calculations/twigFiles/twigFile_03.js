@@ -117,7 +117,7 @@ export const isValidTwigAnimalSimpleChinese =
 
   return isItemExistByStringFromList(
     twigBranchContextSet,
-    '生肖' + twigSimpleAnimalChinese,
+    '生肖' + twigAnimalSimpleChinese,
     'twigAnimalFullChinese');
 }
 

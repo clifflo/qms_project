@@ -4,7 +4,7 @@ import {
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  throwFunctionException
+  throwFunctionalError
 } from './utilityHubCloneOfSigma';
 
 export const sigmaMonthChineseSet =
@@ -37,7 +37,7 @@ const getSigmaBrakeBuiltContext_1 =
 
     const relevantCharacterSet =
       sigmaMonthChineseSet
-      + sigmaBosigmaBoardBranchChineseSetardBranchChineseSet
+      + sigmaBoardBranchChineseSet
       + sigmaTrunkChineseSet
       + sigmaSeasonChineseSet
       + '月，'
@@ -58,7 +58,8 @@ const getSigmaBrakeBuiltContext_1 =
   }
   catch(errorMessage){
     console.error(errorMessage);
-    throwFunctionException
+    throwFunctionalError(
+      'getSigmaBrakeBuiltContext_1');
   }
 }
 
