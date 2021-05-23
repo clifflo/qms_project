@@ -54,8 +54,8 @@ export const sigmaBrake_03 = {
   sigmaBrakeSource: 'Sigma day trunk',
   sigmaBrakeTarget: 'Sigma cross branch',
   sigmaBrakeOriginalSentence: [
-    '甲戊兼牛羊，乙己鼠猴鄉，丙丁豬雞位，'
-    + '壬癸兔蛇藏，庚辛逢馬虎，此是貴人方。'
+    '甲戊兼牛羊，乙己鼠猴鄉，丙丁豬雞位，',
+    '壬癸兔蛇藏，庚辛逢馬虎，此是貴人方。'
   ],
   sigmaBrakeContext: {
     '甲': '丑未',
