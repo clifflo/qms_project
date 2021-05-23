@@ -119,22 +119,3 @@ export const sigmaBrake_05 = {
     '十二': '庚'
   }
 }
-
-export const sigmaBrake_06 = {
-  sigmaBrakeIndex: 6,
-  sigmaBrakeName: '午天德貴人',
-  sigmaBrakeDescription:
-    '求仕用之。此處只取福星貴人之天干故加‘午’字以標示之。',
-  sigmaBrakeSource: 'Sigma month',
-  sigmaBrakeTarget: 'Sigma branch or trunk for cross',
-  sigmaBrakeOriginalSentence: [
-    '正丁、二申宮，三壬、四辛同，五亥、'
-    '六甲上，七癸、八寅逢，九丙、十歸乙，',
-    '子己、丑庚中。'
-  ],
-  sigmaBrakeContext: {
-    '二': '申',
-    '五': '亥',
-    '八': '寅'
-  }
-}

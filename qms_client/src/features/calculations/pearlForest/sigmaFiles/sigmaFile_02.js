@@ -1,10 +1,31 @@
+import * as R from 'ramda';
+
+export const sigmaBrake_06 = {
+  sigmaBrakeIndex: 6,
+  sigmaBrakeName: '午天德貴人',
+  sigmaBrakeDescription:
+    '求仕用之。此處只取福星貴人之天干故加‘午’字以標示之。',
+  sigmaBrakeSource: 'Sigma month',
+  sigmaBrakeTarget: 'Sigma branch or trunk for cross',
+  sigmaBrakeOriginalSentence: [
+    '正丁、二申宮，三壬、四辛同，五亥、'
+    '六甲上，七癸、八寅逢，九丙、十歸乙，',
+    '子己、丑庚中。'
+  ],
+  sigmaBrakeContext: {
+    '二': '申',
+    '五': '亥',
+    '八': '寅'
+  }
+}
+
 export const sigmaBrake_07 = {
   sigmaBrakeIndex: 7,
   sigmaBrakeName: '巳月德貴人',
   sigmaBrakeDescription: '凡有所占，轉凶為吉。',
   sigmaBrakeTopics: [],
-  sigmaBrakeSource: 'Sigma month',
-  sigmaBrakeTarget: 'Sigma trunk for cross',
+  sigmaBrakeSource: 'Sigma month original',
+  sigmaBrakeTarget: 'Sigma cross trunk',
   sigmaBrakeOriginalSentence: [
     '寅午戌月丙，申子辰月壬，亥卯未月甲，巳酉丑月庚。'
   ],
@@ -53,7 +74,7 @@ export const sigmaBrake_09 = {
   sigmaBrakeIndex: 9,
   sigmaBrakeName: '巳天福貴人',
   sigmaBrakeSource: 'Sigma day trunk',
-  sigmaBrakeTarget: 'Sigma branch',
+  sigmaBrakeTarget: 'Sigma cross branch',
   sigmaBrakeDescription:
     '占身命遇之，一生福祿綿綿。',
   sigmaBrakeTopics: [
