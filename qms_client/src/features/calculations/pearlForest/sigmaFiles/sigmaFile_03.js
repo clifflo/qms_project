@@ -32,8 +32,8 @@ export const sigmaBrake_12 = {
   sigmaBrakeName: '巳唐符',
   sigmaBrakeDescription:
     '此出自卜筮正宗與易隱之‘丁唐符’並不相同是也。',
-    '占仕宦若持身世，大吉之兆。其地支則第一字則為巳唐符',
-    '而第二字則為巳國印是也。',
+    '占仕宦若持身世，大吉之兆。此煞本名‘唐符國印’，',
+    '其地支則第一字則為唐符而第二字則為國印是也。',
   sigmaBrakeTopics: [
     'Examination'
   ],
@@ -63,10 +63,11 @@ export const sigmaBrake_12 = {
 export const sigmaBrake_13 = {
   sigmaBrakeIndex: 13,
   sigmaBrakeName: '巳國印',
-  sigmaBrakeDescription:
+  sigmaBrakeDescription: [
     '此出自卜筮正宗與易隱之‘丁國印’並不相同是也。',
-    '占仕宦若持身世，大吉之兆。其地支則第一字則為巳唐符',
-    '而第二字則為巳國印是也。',
+    '占仕宦若持身世，大吉之兆。此煞本名‘唐符國印’，',
+    '其地支則第一字則為唐符而第二字則為國印是也。',
+  ],
   sigmaBrakeTopics: [
     'Examination'
   ],
