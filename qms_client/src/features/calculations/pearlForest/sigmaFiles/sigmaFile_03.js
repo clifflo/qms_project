@@ -96,8 +96,9 @@ export const sigmaBrake_13 = {
 export const sigmaBrake_14 = {
   sigmaBrakeIndex: 14,
   sigmaBrakeName: '巳天醫',
-  sigmaBrakeDescription:
-    '占病遇此爻，動雖凶有救。',
+  sigmaBrakeDescription: [
+    '占病遇此爻，動雖凶有救。'
+  ],
   sigmaBrakeTopics: [
     'Illness'
   ],
@@ -126,9 +127,11 @@ export const sigmaBrake_14 = {
 
 export const sigmaBrake_15 = {
   sigmaBrakeIndex: 15,
-  sigmaBrakeName: '巳天赦',
-  sigmaBrakeDescription:
-    '獄訟遇之，大吉。',
+  sigmaBrakeName: '巳月天赦',
+  sigmaBrakeDescription: [
+    '獄訟遇之，大吉。本名曰‘天赦’，然因欲與‘十干天赦’區分故',
+    '改為‘巳月天赦’而‘十干天赦’則改為‘巳日天赦’。'
+  ],
   sigmaBrakeTopics: [
     'Lawsuit'
   ],
