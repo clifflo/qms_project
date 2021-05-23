@@ -94,26 +94,32 @@ export const sigmaBrake_12 = {
 }
 
 export const sigmaBrake_13 = {
-  sigmaBrakeIndex: 8,
-  sigmaBrakeName: '巳月德合',
-  sigmaBrakeDescription: '凡有所占，轉凶為吉。',
-  sigmaBrakeSource: 'Sigma month branch',
+  sigmaBrakeIndex: 13,
+  sigmaBrakeName: '巳天醫',
+  sigmaBrakeDescription:
+    '占病遇此爻，動雖凶有救。',
+  sigmaBrakeTopics: [
+    'Illness'
+  ],
+  sigmaBrakeSource: 'Sigma month original',
   sigmaBrakeTarget: 'Sigma cross trunk',
   sigmaBrakeOriginalSentence: [
-    '寅午戌月辛，申子辰月丁，亥卯未月己，巳酉丑月乙。'
+    '天醫正卯、二豬臨，三月隨丑、四未尋，五蛇、六兔、',
+    '七居亥，八丑、九羊、十巳存，十一再來尋卯上，',
+    '十二亥上作醫人。'
   ],
   sigmaBrakeContext: {
-    '子': '丁',
-    '丑': '乙',
-    '寅': '辛',
-    '卯': '己',
-    '辰': '丁',
-    '巳': '乙',
-    '午': '辛',
-    '未': '己',
-    '申': '丁',
-    '酉': '乙',
-    '戌': '辛',
-    '亥': '己'
+    '正': '卯',
+    '二': '亥',
+    '三': '丑',
+    '四': '未',
+    '五': '巳',
+    '六': '卯',
+    '七': '亥',
+    '八': '丑',
+    '九': '未',
+    '十': '巳',
+    '十一': '卯',
+    '十二': '亥'
   }
 }

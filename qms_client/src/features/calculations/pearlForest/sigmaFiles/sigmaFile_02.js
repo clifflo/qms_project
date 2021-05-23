@@ -24,7 +24,7 @@ export const sigmaBrake_07 = {
   sigmaBrakeName: '巳月德貴人',
   sigmaBrakeDescription: '凡有所占，轉凶為吉。',
   sigmaBrakeTopics: [],
-  sigmaBrakeSource: 'Sigma month original',
+  sigmaBrakeSource: 'Sigma month branch',
   sigmaBrakeTarget: 'Sigma cross trunk',
   sigmaBrakeOriginalSentence: [
     '寅午戌月丙，申子辰月壬，亥卯未月甲，巳酉丑月庚。'
