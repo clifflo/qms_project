@@ -27,8 +27,8 @@ export const sigmaBrake_11 = {
   }
 }
 
-export const sigmaBrake_11 = {
-  sigmaBrakeIndex: 11,
+export const sigmaBrake_12 = {
+  sigmaBrakeIndex: 12,
   sigmaBrakeName: '巳唐符',
   sigmaBrakeDescription:
     '此出自卜筮正宗與易隱之‘丁唐符’並不相同是也。',
@@ -60,8 +60,8 @@ export const sigmaBrake_11 = {
   }
 }
 
-export const sigmaBrake_12 = {
-  sigmaBrakeIndex: 12,
+export const sigmaBrake_13 = {
+  sigmaBrakeIndex: 13,
   sigmaBrakeName: '巳國印',
   sigmaBrakeDescription:
     '此出自卜筮正宗與易隱之‘丁國印’並不相同是也。',
@@ -93,8 +93,8 @@ export const sigmaBrake_12 = {
   }
 }
 
-export const sigmaBrake_13 = {
-  sigmaBrakeIndex: 13,
+export const sigmaBrake_14 = {
+  sigmaBrakeIndex: 14,
   sigmaBrakeName: '巳天醫',
   sigmaBrakeDescription:
     '占病遇此爻，動雖凶有救。',
@@ -121,5 +121,36 @@ export const sigmaBrake_13 = {
     '十': '巳',
     '十一': '卯',
     '十二': '亥'
+  }
+}
+
+export const sigmaBrake_15 = {
+  sigmaBrakeIndex: 15,
+  sigmaBrakeName: '巳天赦',
+  sigmaBrakeDescription:
+    '獄訟遇之，大吉。',
+  sigmaBrakeTopics: [
+    'Lawsuit'
+  ],
+  sigmaBrakeSource: 'Sigma month original',
+  sigmaBrakeTarget: 'Sigma cross trunk',
+  sigmaBrakeOriginalSentence: [
+    '正五九月在戌方，二六十月到於羊，',
+    '三七十一居龍位，四八十二在牛場，',
+    '卦中臨應仍搖動，獄訟勾連竟不妨。'
+  ],
+  sigmaBrakeContext: {
+    '正': '戌',
+    '二': '未',
+    '三': '辰',
+    '四': '丑',
+    '五': '戌',
+    '六': '未',
+    '七': '辰',
+    '八': '丑',
+    '九': '戌',
+    '十': '未',
+    '十一': '辰',
+    '十二': '丑'
   }
 }
