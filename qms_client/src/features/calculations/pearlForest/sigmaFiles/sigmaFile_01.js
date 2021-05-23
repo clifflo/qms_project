@@ -72,7 +72,7 @@ export const sigmaBrake_03 = {
 }
 
 export const sigmaBrake_04 = {
-  sigmaBrakeIndex: 3,
+  sigmaBrakeIndex: 4,
   sigmaBrakeName: '巳福星貴人',
   sigmaBrakeDescription: '求仕用之。',
   sigmaBrakeSource: 'Sigma day trunk',
@@ -95,29 +95,46 @@ export const sigmaBrake_04 = {
   }
 }
 
-export const sigmaBrake_04 = {
-  sigmaBrakeIndex: 3,
-  sigmaBrakeName: '巳福星貴人',
-  sigmaBrakeDescription: '求仕用之。',
+export const sigmaBrake_05 = {
+  sigmaBrakeIndex: 5,
+  sigmaBrakeName: '巳天德貴人',
+  sigmaBrakeDescription:
+    '求仕用之。此處只取天干故加‘巳’字以標示之。',
   sigmaBrakeSource: 'Sigma month',
   sigmaBrakeTarget: 'Sigma branch or trunk for cross',
   sigmaBrakeOriginalSentence: [
     '正丁、二申宮，三壬、四辛同，五亥、'
-    + '六甲上，七癸、八寅逢，九丙、'
-    + '十歸乙，子己、丑庚中。'
+    '六甲上，七癸、八寅逢，九丙、十歸乙，',
+    '子己、丑庚中。'
   ],
   sigmaBrakeContext: {
     '正': '丁',
-    '二': '申',
     '三': '壬',
     '四': '辛',
-    '五': '亥',
     '六': '甲',
     '七': '癸',
-    '八': '寅',
     '九': '丙',
     '十': '乙',
     '十一': '己',
     '十二': '庚'
+  }
+}
+
+export const sigmaBrake_06 = {
+  sigmaBrakeIndex: 6,
+  sigmaBrakeName: '午天德貴人',
+  sigmaBrakeDescription:
+    '求仕用之。此處只取福星貴人之天干故加‘午’字以標示之。',
+  sigmaBrakeSource: 'Sigma month',
+  sigmaBrakeTarget: 'Sigma branch or trunk for cross',
+  sigmaBrakeOriginalSentence: [
+    '正丁、二申宮，三壬、四辛同，五亥、'
+    '六甲上，七癸、八寅逢，九丙、十歸乙，',
+    '子己、丑庚中。'
+  ],
+  sigmaBrakeContext: {
+    '二': '申',
+    '五': '亥',
+    '八': '寅'
   }
 }
