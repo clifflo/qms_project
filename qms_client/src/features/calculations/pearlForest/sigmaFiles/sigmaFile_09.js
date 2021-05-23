@@ -93,9 +93,31 @@ export const sigmaBrake_44 = {
     '喪車春雞夏鼠來，秋兔冬馬好安排。'
   ],
   sigmaBrakeContext: {
-    '春': '丑',
-    '夏': '辰',
-    '秋': '未',
-    '冬': '戌'
+    '春': '酉',
+    '夏': '子',
+    '秋': '卯',
+    '冬': '午'
+  }
+}
+
+export const sigmaBrake_45 = {
+  sigmaBrakeIndex: 45,
+  sigmaBrakeName: '巳沐浴殺',
+  sigmaBrakeDescription: [
+    '沐浴殺難當。是殺動，病人亡。'
+  ],
+  sigmaBrakeTopics: [
+    'Illness'
+  ],
+  sigmaBrakeSource: 'Sigma season',
+  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeOriginalSentence: [
+    '春辰、夏未殃，秋戌、冬丑。'
+  ],
+  sigmaBrakeContext: {
+    '春': '辰',
+    '夏': '未',
+    '秋': '戌',
+    '冬': '丑'
   }
 }

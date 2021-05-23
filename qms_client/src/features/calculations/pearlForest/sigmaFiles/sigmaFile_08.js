@@ -143,7 +143,7 @@ export const sigmaBrake_40 = {
     '春忌羊兮、夏忌龍，秋牛、冬犬哭重重。'
   ],
   sigmaBrakeContext: {
-    '春': '未',
+    '春': '戌未',
     '夏': '辰',
     '秋': '丑',
     '冬': '戌'
