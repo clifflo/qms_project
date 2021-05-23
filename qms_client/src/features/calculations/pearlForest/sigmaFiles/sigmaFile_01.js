@@ -76,7 +76,7 @@ export const sigmaBrake_04 = {
   sigmaBrakeName: '巳福星貴人',
   sigmaBrakeDescription: '求仕用之。',
   sigmaBrakeSource: 'Sigma day trunk',
-  sigmaBrakeTarget: 'Sigma branch for cross',
+  sigmaBrakeTarget: 'Sigma cross branch',
   sigmaBrakeOriginalSentence: [
     '甲虎乙豬牛，丙同犬鼠遊，丁雞戊猴走，'
     + '己羊庚馬頭，辛蛇癸愛兔，壬日占龍樓。'

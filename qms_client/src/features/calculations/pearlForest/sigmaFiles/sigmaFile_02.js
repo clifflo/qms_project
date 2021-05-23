@@ -5,8 +5,8 @@ export const sigmaBrake_06 = {
   sigmaBrakeName: '午天德貴人',
   sigmaBrakeDescription:
     '求仕用之。此處只取福星貴人之天干故加‘午’字以標示之。',
-  sigmaBrakeSource: 'Sigma month',
-  sigmaBrakeTarget: 'Sigma branch or trunk for cross',
+  sigmaBrakeSource: 'Sigma month original',
+  sigmaBrakeTarget: 'Sigma cross branch',
   sigmaBrakeOriginalSentence: [
     '正丁、二申宮，三壬、四辛同，五亥、'
     '六甲上，七癸、八寅逢，九丙、十歸乙，',
