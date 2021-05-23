@@ -2,9 +2,9 @@ import * as R from 'ramda';
 
 export const sigmaBrake_06 = {
   sigmaBrakeIndex: 6,
-  sigmaBrakeName: '午天德貴人',
+  sigmaBrakeName: '丁天德貴人',
   sigmaBrakeDescription:
-    '求仕用之。此處只取福星貴人之天干故加‘午’字以標示之。',
+    '求仕用之。此處只取福星貴人之天干故加‘丁’字以標示之。',
   sigmaBrakeSource: 'Sigma month original',
   sigmaBrakeTarget: 'Sigma cross branch',
   sigmaBrakeOriginalSentence: [

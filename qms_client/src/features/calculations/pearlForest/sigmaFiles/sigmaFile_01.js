@@ -3,7 +3,7 @@ export const sigmaBrake_01 = {
   sigmaBrakeName: '巳天元祿',
   sigmaBrakeDescription: '凡事遇之大吉。',
   sigmaBrakeSource: 'Sigma day trunk',
-  sigmaBrakeTarget: 'Sigma branch for cross',
+  sigmaBrakeTarget: 'Sigma cross branch',
   sigmaBrakeOriginalSentence: [
     '甲祿在寅，乙祿在卯，丙戊祿在巳，丁己祿居午，',
     '庚祿居申，辛祿在酉，壬祿在亥，癸祿在子。'

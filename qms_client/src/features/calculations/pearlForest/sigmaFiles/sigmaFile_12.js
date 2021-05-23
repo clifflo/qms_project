@@ -130,15 +130,14 @@ export const sigmaBrake_60 = {
   sigmaBrakeSource: 'Sigma day branch',
   sigmaBrakeTarget: 'Sigma branch for cross',
   sigmaBrakeDescription: [
-    '此煞本名孤辰寡宿。其地支則第一字為孤辰而第',
-    '二字為寡宿是也。婚姻犯之主無子。'
+    '占資財忌。'
   ],
   sigmaBrakeOriginalSentence: [
     '子午卯酉在蛇頭，辰戌丑未屬于牛，',
     '寅申巳亥雞頭碎，破耗資財件件憂。'
   ],
   sigmaBrakeTopics: [
-    'Marriage'
+    'Business'
   ],
   sigmaBrakeContext: {
     '子': '巳',
