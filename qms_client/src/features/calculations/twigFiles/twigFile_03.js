@@ -108,6 +108,11 @@ export const isValidTwigBranchChinese =
     'twigBranchChinese');
 }
 
+export const twigBranchChineseSet =
+  R.map(
+    R.prop('twigBranchChinese'),
+    twigBranchContextSet);
+
 export const isValidTwigAnimalSimpleChinese =
   twigAnimalSimpleChinese => {
 

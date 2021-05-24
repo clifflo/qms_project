@@ -82,3 +82,8 @@ export const isValidTwigTrunkChinese =
     twigTrunkChinese,
     'twigTrunkChinese');
 }
+
+export const twigTrunkChineseSet =
+  R.map(
+    R.prop('twigTrunkChinese'),
+    twigTrunkContextSet);
