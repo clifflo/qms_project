@@ -5,7 +5,7 @@ import {
 import {
   checkNilWithTypedObject,
   getItemByNumberFromList
-} from './utilityHubCloneOfRho';
+} from './_utilityHubCloneOfRho';
 
 
 const rhoJackPositionContextSet = [

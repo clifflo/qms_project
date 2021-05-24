@@ -5,10 +5,10 @@ import {
   getTwigHitOpponentOfChinese,
   getTwigSmallAlloyOpponentOfChinese,
   getTwigPauseOpponentOfChinese
-} from './twigHubCloneOfDelta';
+} from './_twigHubByDelta';
 import {
   checkNilWithTypedObject
-} from './utilityHubCloneOfDelta'
+} from './_utilityHubByDelta'
 
 export const
   mapFunctionOfWheatCrossInHookContext_3 =

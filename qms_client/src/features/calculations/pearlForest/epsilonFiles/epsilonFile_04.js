@@ -6,7 +6,7 @@ import {
 import {
   checkNilWithArray,
   checkNilWithTypedObject
-} from './utilityHubCloneOfEpsilon';
+} from './_utilityHubByEpsilon';
 
 export const getEpsilonFocusToFaceRelationContextSubset =
   (epsilonFocusCrossContextSetList,

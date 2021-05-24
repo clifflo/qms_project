@@ -3,7 +3,7 @@ import * as RA from 'ramda-adjunct';
 import {
   checkNilWithString,
   isItemExistByStringFromList
-} from './utilityHubCloneOfDelta';
+} from './_utilityHubByDelta';
 
 export const deltaFocusContextSet = [
   {

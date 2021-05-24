@@ -4,7 +4,7 @@ import {
 } from './deltaFile_10';
 import {
   checkNilWithTypedObject
-} from './utilityHubCloneOfDelta';
+} from './_utilityHubByDelta';
 
 export const
   mapFunctionOfWheatCrossInHookContext_2 =

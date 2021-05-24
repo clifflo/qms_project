@@ -12,7 +12,7 @@ import {
 } from './rhoFile_09';
 import {
   binaryToDecimal
-} from './utilityHubCloneOfRho';
+} from './_utilityHubCloneOfRho';
 
 const buildAugmentedRhoGenerationContext = (
   genericShortHookSimpleOriginal,

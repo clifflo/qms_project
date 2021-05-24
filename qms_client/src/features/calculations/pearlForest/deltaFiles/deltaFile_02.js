@@ -2,18 +2,18 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   getTwigElementalRelationContextByChinese
-} from './twigHubCloneOfDelta';
+} from './_twigHubByDelta';
 import {
   checkNilWithString,
   checkNilWithArray,
   findItemByStringFromList
-} from './utilityHubCloneOfDelta';
+} from './_utilityHubByDelta';
 import {
   deltaFocusContextSet
 } from './deltaFile_01';
 import {
   rhoLongHookContextSet_5
-} from './rhoHubCloneOfDelta'
+} from './_rhoHubByDelta'
 
 const crossInHookContextMapFunction_2 =
   (nattoShortHookElementalChinese,

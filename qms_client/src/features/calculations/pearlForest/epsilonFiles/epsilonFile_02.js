@@ -3,11 +3,11 @@ import {
   filterItemByStringFromList,
   checkNilWithTypedObject,
   checkNilWithString
-} from './utilityHubCloneOfEpsilon';
+} from './_utilityHubByEpsilon';
 import {
   isValidDeltaFocusEnglish,
   getDeltaDualLongHooksContext_3
-} from './deltaHubCloneOfEpsilon';
+} from './_deltaHubByEpsilon';
 import {
   getEpsilonDualLongHooksContext_1
 } from './epsilonFile_01';

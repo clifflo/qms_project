@@ -3,7 +3,7 @@ import * as RA from 'ramda-adjunct';
 import {
   checkNilWithNumber,
   decimalToBinary
-} from './utilityHubCloneOfRho';
+} from './_utilityHubCloneOfRho';
 import {
   getRhoLongHookContextByName_1
 } from './rhoFile_08';

@@ -9,7 +9,7 @@ import {
 } from './deltaMiniHub_03';
 import {
   checkNilWithTypedObject
-} from './utilityHubCloneOfDelta';
+} from './_utilityHubByDelta';
 
 export const getDeltaDualLongHooksContext_1 =
   (askingDayTrunkChinese,

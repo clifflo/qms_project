@@ -2,13 +2,13 @@ import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
   getTwigTrunkContextByChinese
-} from './twigHubCloneOfDelta';
+} from './_twigHubByDelta';
 import {
   checkNilWithNumber,
   checkNilWithTypedObject,
   getItemByNumberFromList,
   getCyclicItemFromList
-} from './utilityHubCloneOfDelta';
+} from './_utilityHubByDelta';
 
 export const deltaPaladinContextSet = [
   {

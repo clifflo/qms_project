@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import {
   checkNilWithString
-} from './utilityHubCloneOfEpsilon';
+} from './_utilityHubByEpsilon';
 
 export const
   getEpsilonIntraFacesCorrelationContext =

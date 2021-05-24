@@ -11,11 +11,11 @@ import {
   getTwigHitOpponentOfChinese,
   getTwigSmallAlloyOpponentOfChinese,
   getTwigPauseOpponentOfChinese
-} from './twigHubCloneOfDelta';
+} from './_twigHubByDelta';
 import {
   checkNilWithArray,
   checkNilWithString
-} from './utilityHubCloneOfDelta';
+} from './_utilityHubByDelta';
 
 const buildDeltaDualLongHooksContext_3 =
   deltaDualLongHooksContext_2 => {

@@ -1,15 +1,15 @@
 import * as R from 'ramda';
 import {
   getTwigElementalRelationContextByEnglish
-} from './twigHubCloneOfEpsilon';
+} from './_twigHubByEpsilon';
 import {
   deltaFocusEnglishSet
-} from './deltaHubCloneOfEpsilon';
+} from './_deltaHubByEpsilon';
 import {
   checkNilWithString,
   checkNilWithTypedObject,
   checkNilWithArray
-} from './utilityHubCloneOfEpsilon';
+} from './_utilityHubByEpsilon';
 
 export const getEpsilonFocusToFaceRelationContext =
   (epsilonFaceCrossContext,

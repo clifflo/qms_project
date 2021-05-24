@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import {
   checkNilWithArray,
   checkNilWithString
-} from './utilityHubCloneOfEpsilon';
+} from './_utilityHubByEpsilon';
 
 export const
   getEpsilonFocusToFaceCorrelationContext =

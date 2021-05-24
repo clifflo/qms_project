@@ -11,7 +11,7 @@ import {
   checkNilWithNumber,
   findItemByStringFromList,
   getItemByNumberFromList
-} from './utilityHubCloneOfRho';
+} from './_utilityHubCloneOfRho';
 
 export const
   getRhoLongHookContextByName_1 =

@@ -6,10 +6,10 @@ import {
   checkNilWithString,
   checkNilWithTypedObject,
   findItemByStringFromList
-} from './utilityHubCloneOfDelta';
+} from './_utilityHubByDelta';
 import {
   getTwigBranchContextByChinese
-} from './twigHubCloneOfDelta';
+} from './_twigHubByDelta';
 import {
   deltaLongHookContextSet_3
 } from './deltaFile_04';

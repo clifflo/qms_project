@@ -5,7 +5,7 @@ import {
   checkNilWithArray,
   findItemByStringFromList,
   checkNilWithTypedObject
-} from './utilityHubCloneOfDelta';
+} from './_utilityHubByDelta';
 import {
   deltaLongHookContextSet_4
 } from './deltaMiniHub_02';
@@ -14,7 +14,7 @@ import {
 } from './deltaFile_07';
 import {
   isValidTwigTrunkChinese
-} from './twigHubCloneOfDelta';
+} from './_twigHubByDelta';
 
 export const
   getDeltaLongHookContextSet_5 =

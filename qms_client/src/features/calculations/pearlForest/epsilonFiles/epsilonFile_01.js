@@ -4,11 +4,11 @@ import {
   checkNilWithTypedObject,
   checkNilWithString,
   checkNilWithNumber
-} from './utilityHubCloneOfEpsilon';
+} from './_utilityHubByEpsilon';
 import {
   isValidDeltaFocusEnglish,
   getDeltaDualLongHooksContext_3
-} from './deltaHubCloneOfEpsilon';
+} from './_deltaHubByEpsilon';
 
 const buildEpsilonDualLongHooksContext_1 =
   deltaDualLongHooksContext_3 => {
