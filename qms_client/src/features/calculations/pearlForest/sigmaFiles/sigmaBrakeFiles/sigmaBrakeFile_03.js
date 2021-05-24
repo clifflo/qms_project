@@ -30,10 +30,11 @@ export const sigmaBrake_11 = {
 export const sigmaBrake_12 = {
   sigmaBrakeIndex: 12,
   sigmaBrakeName: '巳唐符',
-  sigmaBrakeDescription:
+  sigmaBrakeDescription:[
     '此出自卜筮正宗與易隱之‘丁唐符’並不相同是也。',
     '占仕宦若持身世，大吉之兆。此煞本名‘唐符國印’，',
-    '其地支則第一字則為唐符而第二字則為國印是也。',
+    '其地支則第一字則為唐符而第二字則為國印是也。'
+  ],
   sigmaBrakeTopics: [
     'Examination'
   ],

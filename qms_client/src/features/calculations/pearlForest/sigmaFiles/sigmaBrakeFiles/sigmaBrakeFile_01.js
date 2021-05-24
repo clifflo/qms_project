@@ -25,7 +25,9 @@ export const sigmaBrake_01 = {
 export const sigmaBrake_02 = {
   sigmaBrakeIndex: 2,
   sigmaBrakeName: '巳驛馬',
-  sigmaBrakeDescription: '出行及占行人俱要看之。',
+  sigmaBrakeDescription: [
+    '出行及占行人俱要看之。'
+  ],
   sigmaBrakeSource: 'Sigma day branch',
   sigmaBrakeTarget: 'Sigma cross branch',
   sigmaBrakeOriginalSentence: [
@@ -78,8 +80,8 @@ export const sigmaBrake_04 = {
   sigmaBrakeSource: 'Sigma day trunk',
   sigmaBrakeTarget: 'Sigma cross branch',
   sigmaBrakeOriginalSentence: [
-    '甲虎乙豬牛，丙同犬鼠遊，丁雞戊猴走，'
-    + '己羊庚馬頭，辛蛇癸愛兔，壬日占龍樓。'
+    '甲虎乙豬牛，丙同犬鼠遊，丁雞戊猴走，',
+    '己羊庚馬頭，辛蛇癸愛兔，壬日占龍樓。'
   ],
   sigmaBrakeContext: {
     '甲': '寅',
@@ -100,10 +102,10 @@ export const sigmaBrake_05 = {
   sigmaBrakeName: '巳天德貴人',
   sigmaBrakeDescription:
     '求仕用之。此處只取天干故加‘巳’字以標示之。',
-  sigmaBrakeSource: 'Sigma month',
-  sigmaBrakeTarget: 'Sigma cross trunk',
+  sigmaBrakeSource: 'Sigma month original',
+  sigmaBrakeTarget: 'Sigma day trunk',
   sigmaBrakeOriginalSentence: [
-    '正丁、二申宮，三壬、四辛同，五亥、'
+    '正丁、二申宮，三壬、四辛同，五亥、',
     '六甲上，七癸、八寅逢，九丙、十歸乙，',
     '子己、丑庚中。'
   ],

@@ -8,7 +8,7 @@ export const sigmaBrake_06 = {
   sigmaBrakeSource: 'Sigma month original',
   sigmaBrakeTarget: 'Sigma cross branch',
   sigmaBrakeOriginalSentence: [
-    '正丁、二申宮，三壬、四辛同，五亥、'
+    '正丁、二申宮，三壬、四辛同，五亥、',
     '六甲上，七癸、八寅逢，九丙、十歸乙，',
     '子己、丑庚中。'
   ],

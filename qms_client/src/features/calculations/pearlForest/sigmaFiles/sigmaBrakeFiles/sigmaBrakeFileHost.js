@@ -1,3 +1,4 @@
+import * as RA from 'ramda-adjunct'
 import {
   sigmaBrakeSubset_01
 } from './sigmaBrakeFile_01';
