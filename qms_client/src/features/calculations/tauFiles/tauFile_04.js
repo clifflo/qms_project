@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import {
   getTwigFullComboChineseByIndex
-} from './twigHubCloneOfTau';
+} from './_twigHubByTau';
 import {
   originalTauYearContextSet
 } from './tauDataFile';
@@ -11,7 +11,7 @@ import {
 import {
   checkNilWithArray,
   throwFunctionalError
-} from './utilityHubCloneOfTau';
+} from './_utilityHubByTau';
 
 const mapFunctionOfTauLocalYearContext_1 =
   originalTauYearContextSet => {

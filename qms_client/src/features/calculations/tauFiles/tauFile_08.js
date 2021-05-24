@@ -9,7 +9,7 @@ import {
 } from './tauFile_07';
 import {
   throwFunctionalError
-} from './utilityHubCloneOfTau';
+} from './_utilityHubByTau';
 
 const mapIndexedFunctionOfTauMonthGlobalContext_2 =
   (currentTauMonthGlobalContext_1,

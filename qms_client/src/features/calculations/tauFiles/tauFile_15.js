@@ -9,13 +9,13 @@ import {
 } from './tauMiniHub_02';
 import {
   getTwigFullComboChineseByIndex
-} from './twigHubCloneOfTau';
+} from './_twigHubByTau';
 import {
   checkNilWithNumber,
   checkNilWithTypedObject,
   throwFunctionalError,
   getIntervalWithEndInclusive
-} from './utilityHubCloneOfTau';
+} from './_utilityHubByTau';
 import {
   getGenericTauMonthActiveContext
 } from './tauFile_12';

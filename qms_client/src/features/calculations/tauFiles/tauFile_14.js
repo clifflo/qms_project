@@ -6,13 +6,13 @@ import {
   getIntervalWithEndInclusive,
   throwFunctionalError,
   checkNilWithString
-} from './utilityHubCloneOfTau';
+} from './_utilityHubByTau';
 import {
   getTauDayChineseByIndex
 } from './tauMiniHub_02';
 import {
   getTwigFullComboChineseByIndex
-} from './twigHubCloneOfTau';
+} from './_twigHubByTau';
 
 export const
   getTauDayContextForAugmentedMonth =

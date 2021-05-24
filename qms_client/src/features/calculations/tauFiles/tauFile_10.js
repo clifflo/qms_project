@@ -4,10 +4,10 @@ import {
 } from './tauFile_09';
 import {
   getTwigFullComboChineseByIndex
-} from './twigHubCloneOfTau';
+} from './_twigHubByTau';
 import {
   checkNilWithNumber
-} from './utilityHubCloneOfTau';
+} from './_utilityHubByTau';
 
 export const getTauDayChineseByIndex =
   tauDayIndex => {

@@ -7,7 +7,7 @@ import {
   checkNilWithNumber,
   checkNilWithArray,
   throwFunctionalError
-} from './utilityHubCloneOfTau';
+} from './_utilityHubByTau';
 import {
   DateTime
 } from 'luxon';
@@ -15,7 +15,7 @@ import {
   getTwigBranchContextByIndex,
   getTwigTrunkContextByChinese,
   getTwigTrunkContextByIndex
-} from './twigHubCloneOfTau';
+} from './_twigHubByTau';
 import {
   getSolarStartDateUnwrappedContext
 } from './tauFile_02';

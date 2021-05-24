@@ -7,10 +7,10 @@ import {
 } from './tauMiniHub_02';
 import {
   getTwigFullComboChineseByIndex
-} from './twigHubCloneOfTau';
+} from './_twigHubByTau';
 import {
   checkNilWithNumber
-} from './utilityHubCloneOfTau';
+} from './_utilityHubByTau';
 
 export const getTauDayContextForCleanMonth =
   (sourceDateInISO,
