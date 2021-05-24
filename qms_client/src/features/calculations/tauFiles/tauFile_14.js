@@ -37,7 +37,7 @@ export const
       leapMonthEndDateDay,
       leapMonthEndDateMonth,
       leapMonthEndDateYear,
-      tauMonthChinese
+      tauMonthOriginalChinese
     } = tauMonthActiveContext;
 
     const flatMonthStartLuxonBox = {
@@ -172,11 +172,11 @@ export const
 
     if(dayWithinLeapMonth){
       finalTauMonthChineseForDay =
-        '閏' + tauMonthChinese;
+        '閏' + tauMonthOriginalChinese;
     }
     else {
       finalTauMonthChineseForDay =
-        '平' + tauMonthChinese;
+        '平' + tauMonthOriginalChinese;
     }
 
     const tauDayContext = {

@@ -73,7 +73,7 @@ export const getTauDayContextForCleanMonth =
       differenceInDaysForCombo % 60);
 
   const finalTauMonthChineseForDay =
-    '淨' + tauMonthActiveContext.tauMonthChinese;
+    '淨' + tauMonthActiveContext.tauMonthOriginalChinese;
 
   const tauDayContext = {
     ...tauMonthActiveContext,

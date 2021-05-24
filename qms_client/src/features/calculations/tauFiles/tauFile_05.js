@@ -23,7 +23,7 @@ export const
     findItemByStringFromList(
       tauRawMonthContextSet,
       leapTauMonthChinese,
-      'tauMonthChinese')
+      'tauMonthOriginalChinese')
     .tauMonthEnglish;
 
   const {
@@ -33,7 +33,7 @@ export const
   } = tauLocalMonthContext_1
 
   const sameLeapTauMonth =
-    tauLocalMonthContext_1.tauMonthChinese
+    tauLocalMonthContext_1.tauMonthOriginalChinese
     == leapTauMonthChinese;
 
   const tauMonthGlobalIndex =
