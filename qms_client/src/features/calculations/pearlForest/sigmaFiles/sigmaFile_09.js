@@ -70,7 +70,7 @@ const getSigmaClutchContextOfDayTrunk =
   }
 }
 
-export const sigmaClutchContextOfDayTrunk =
+export const sigmaClutchContextSetOfDayTrunk =
   R.map(
     getSigmaClutchContextOfDayTrunk,
     sigmaBrakeContextPartialSetOfDayTrunk);

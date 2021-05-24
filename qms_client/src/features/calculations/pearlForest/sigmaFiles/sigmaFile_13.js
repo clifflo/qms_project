@@ -11,7 +11,7 @@ import {
 } from './sigmaMiniHub_01';
 import {
   handleSigmaBoltOfYearBranch
-} from './sigmaMiniHub_04';
+} from './sigmaFile_12';
 
 const getSigmaClutchContextOfYearBranch =
   sigmaBrakeContextOfYearBranch => {
@@ -70,7 +70,7 @@ const getSigmaClutchContextOfYearBranch =
   }
 }
 
-export const sigmaClutchContextOfYearBranch =
+export const sigmaClutchContextSetOfYearBranch =
   R.map(
     getSigmaClutchContextOfYearBranch,
     sigmaBrakeContextPartialSetOfYearBranch);
