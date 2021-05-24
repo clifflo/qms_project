@@ -20,6 +20,11 @@ const getSigmaBrakePartialSet =
 }
 
 export const
+  sigmaBrakeContextPartialSetOfDayTrunk =
+  getSigmaBrakePartialSet(
+    'sigma-brake-source-day-trunk');
+
+export const
   sigmaBrakeContextPartialSetOfDayBranch =
   getSigmaBrakePartialSet(
     'sigma-brake-source-day-branch');

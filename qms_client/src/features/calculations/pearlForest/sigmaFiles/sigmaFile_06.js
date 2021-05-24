@@ -54,7 +54,7 @@ export const handleSigmaBoltOfSeason =
       const finalSigmaBoltContextOfSeasonForCrossBranch =
       {
         ...rawSigmaBoltContextOfSeason,
-        sigmaTargetCrossBranchNutForMonth:
+        sigmaTargetCrossBranchNutForSeason:
         sigmaTargetNutOfSeason
       };
 
