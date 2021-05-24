@@ -1,6 +1,6 @@
 import {
   findItemByStringFromList,
-  checkNilByString
+  checkNilWithString
 } from './_utilityHubByTau';
 
 export const tauRawMonthContextSet = [
@@ -103,7 +103,7 @@ export const getTauMonthOriginalChineseFromBranch =
     tauRawMonthContext.
     tauMonthOriginalChinese;
 
-  checkNilByString(
+  checkNilWithString(
     tauMonthOriginalChinese,
     'tauMonthOriginalChinese');
 

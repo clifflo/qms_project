@@ -1,5 +1,5 @@
 export const sigmaBrakeContext_31 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 31,
   sigmaBrakeName: '巳喝散神',
   sigmaBrakeDescription: [
@@ -22,7 +22,7 @@ export const sigmaBrakeContext_31 = {
 }
 
 export const sigmaBrakeContext_32 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 32,
   sigmaBrakeName: '巳日喝散',
   sigmaBrakeDescription: [
@@ -53,7 +53,7 @@ export const sigmaBrakeContext_32 = {
 }
 
 export const sigmaBrakeContext_33 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 33,
   sigmaBrakeName: '巳開獄神',
   sigmaBrakeDescription: [
@@ -76,7 +76,7 @@ export const sigmaBrakeContext_33 = {
 }
 
 export const sigmaBrakeContext_34 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 34,
   sigmaBrakeName: '巳活曜星',
   sigmaBrakeDescription: [
@@ -109,7 +109,7 @@ export const sigmaBrakeContext_34 = {
 }
 
 export const sigmaBrakeContext_35 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 35,
   sigmaBrakeName: '巳活曜星',
   sigmaBrakeDescription: [

@@ -1,5 +1,5 @@
 export const sigmaBrakeContext_51 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 51,
   sigmaBrakeName: '巳孤辰',
   sigmaBrakeSource: 'sigma-day-branch',
@@ -32,7 +32,7 @@ export const sigmaBrakeContext_51 = {
 }
 
 export const sigmaBrakeContext_52 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 52,
   sigmaBrakeName: '巳寡宿',
   sigmaBrakeSource: 'sigma-day-branch',
@@ -65,7 +65,7 @@ export const sigmaBrakeContext_52 = {
 }
 
 export const sigmaBrakeContext_53 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 53,
   sigmaBrakeName: '巳搥門官符',
   sigmaBrakeDescription: [
@@ -98,7 +98,7 @@ export const sigmaBrakeContext_53 = {
 }
 
 export const sigmaBrakeContext_54 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 54,
   sigmaBrakeName: '巳勾陳殺',
   sigmaBrakeDescription: [
@@ -132,7 +132,7 @@ export const sigmaBrakeContext_54 = {
 }
 
 export const sigmaBrakeContext_55 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 55,
   sigmaBrakeName: '巳白虎殺',
   sigmaBrakeDescription: [

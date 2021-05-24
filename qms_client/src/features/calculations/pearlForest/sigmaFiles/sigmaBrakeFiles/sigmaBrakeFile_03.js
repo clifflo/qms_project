@@ -1,5 +1,5 @@
 export const sigmaBrakeContext_11 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 11,
   sigmaBrakeName: '巳天馬',
   sigmaBrakeDescription: '凡占仕宦，遇此必有陞遷之兆。',
@@ -29,7 +29,7 @@ export const sigmaBrakeContext_11 = {
 }
 
 export const sigmaBrakeContext_12 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 12,
   sigmaBrakeName: '巳唐符',
   sigmaBrakeDescription:[
@@ -64,7 +64,7 @@ export const sigmaBrakeContext_12 = {
 }
 
 export const sigmaBrakeContext_13 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 13,
   sigmaBrakeName: '巳國印',
   sigmaBrakeDescription: [
@@ -99,7 +99,7 @@ export const sigmaBrakeContext_13 = {
 }
 
 export const sigmaBrakeContext_14 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 14,
   sigmaBrakeName: '巳天醫',
   sigmaBrakeDescription: [
@@ -132,7 +132,7 @@ export const sigmaBrakeContext_14 = {
 }
 
 export const sigmaBrakeContext_15 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 15,
   sigmaBrakeName: '巳月天赦',
   sigmaBrakeDescription: [

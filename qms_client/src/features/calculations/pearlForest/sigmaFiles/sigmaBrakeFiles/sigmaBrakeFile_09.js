@@ -1,5 +1,5 @@
 export const sigmaBrakeContext_41 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 41,
   sigmaBrakeName: '巳日下大殺',
   sigmaBrakeSource: 'sigma-day-trunk',
@@ -26,7 +26,7 @@ export const sigmaBrakeContext_41 = {
 }
 
 export const sigmaBrakeContext_42 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 42,
   sigmaBrakeName: '巳天狗殺',
   sigmaBrakeDescription: [
@@ -59,7 +59,7 @@ export const sigmaBrakeContext_42 = {
 }
 
 export const sigmaBrakeContext_43 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 43,
   sigmaBrakeName: '巳三坵五墓',
   sigmaBrakeDescription: [
@@ -82,7 +82,7 @@ export const sigmaBrakeContext_43 = {
 }
 
 export const sigmaBrakeContext_44 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 44,
   sigmaBrakeName: '巳喪車殺',
   sigmaBrakeDescription: [
@@ -105,7 +105,7 @@ export const sigmaBrakeContext_44 = {
 }
 
 export const sigmaBrakeContext_45 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 45,
   sigmaBrakeName: '巳沐浴殺',
   sigmaBrakeDescription: [

@@ -1,5 +1,5 @@
 export const sigmaBrakeContext_26 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 26,
   sigmaBrakeName: '巳日解神',
   sigmaBrakeDescription: [
@@ -30,7 +30,7 @@ export const sigmaBrakeContext_26 = {
 }
 
 export const sigmaBrakeContext_27 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 27,
   sigmaBrakeName: '巳內解神',
   sigmaBrakeDescription: [
@@ -60,7 +60,7 @@ export const sigmaBrakeContext_27 = {
 }
 
 export const sigmaBrakeContext_28 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 28,
   sigmaBrakeName: '巳外解神',
   sigmaBrakeDescription: [
@@ -92,7 +92,7 @@ export const sigmaBrakeContext_28 = {
 }
 
 export const sigmaBrakeContext_29 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 29,
   sigmaBrakeName: '巳解脫神',
   sigmaBrakeDescription: [
@@ -123,7 +123,7 @@ export const sigmaBrakeContext_29 = {
 }
 
 export const sigmaBrakeContext_30 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 30,
   sigmaBrakeName: '巳雷火神',
   sigmaBrakeDescription: [

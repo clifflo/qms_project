@@ -1,5 +1,5 @@
 export const sigmaBrakeContext_61 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 61,
   sigmaBrakeName: '巳旌旗殺',
   sigmaBrakeDescription: [
@@ -22,7 +22,7 @@ export const sigmaBrakeContext_61 = {
 }
 
 export const sigmaBrakeContext_62 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 62,
   sigmaBrakeName: '巳暴敗殺',
   sigmaBrakeDescription: [
@@ -46,7 +46,7 @@ export const sigmaBrakeContext_62 = {
 }
 
 export const sigmaBrakeContext_63 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 63,
   sigmaBrakeName: '巳天元祿',
   sigmaBrakeDescription: '凡事遇之大吉。',

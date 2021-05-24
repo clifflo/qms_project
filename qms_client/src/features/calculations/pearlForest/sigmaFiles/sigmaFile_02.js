@@ -1,5 +1,10 @@
 import * as R from 'ramda';
-
+import {
+  sigmaBrakeContextPartialSetOfMonthBranch
+} from './sigmaFile_01';
+import {
+  checkNilWithString
+} from './_utilityHubByTau';
 
 const handleSigmaBoltOfMonthBranchToOriginal =
   sigmaBoltOfMonthBranch => {
@@ -7,7 +12,7 @@ const handleSigmaBoltOfMonthBranchToOriginal =
   const sigmaSourceNutOfMonthBranch =
     sigmaBoltOfMonthBranch[0];
 
-  checkNilByString(
+  checkNilWithString(
     sigmaSourceNutOfMonthBranch,
     'sigmaSourceNutOfMonthBranch');
 

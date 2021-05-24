@@ -1,5 +1,5 @@
 export const sigmaBrakeContext_16 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 16,
   sigmaBrakeName: '巳皇恩大赦',
   sigmaBrakeDescription:
@@ -28,7 +28,7 @@ export const sigmaBrakeContext_16 = {
 }
 
 export const sigmaBrakeContext_17 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 17,
   sigmaBrakeName: '巳赦文',
   sigmaBrakeDescription:
@@ -57,7 +57,7 @@ export const sigmaBrakeContext_17 = {
 }
 
 export const sigmaBrakeContext_18 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 18,
   sigmaBrakeName: '巳日天赦',
   sigmaBrakeDescription: [
@@ -85,7 +85,7 @@ export const sigmaBrakeContext_18 = {
 }
 
 export const sigmaBrakeContext_19 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 19,
   sigmaBrakeName: '巳四季天赦',
   sigmaBrakeDescription: [
@@ -105,7 +105,7 @@ export const sigmaBrakeContext_19 = {
 }
 
 export const sigmaBrakeContext_20 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 20,
   sigmaBrakeName: '巳天耳',
   sigmaBrakeDescription: [

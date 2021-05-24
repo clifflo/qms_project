@@ -1,5 +1,5 @@
 export const sigmaBrakeContext_36 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 36,
   sigmaBrakeName: '巳天哭殺',
   sigmaBrakeDescription: [
@@ -31,7 +31,7 @@ export const sigmaBrakeContext_36 = {
 }
 
 export const sigmaBrakeContext_37 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 37,
   sigmaBrakeName: '巳天獄殺',
   sigmaBrakeDescription: [
@@ -63,7 +63,7 @@ export const sigmaBrakeContext_37 = {
 }
 
 export const sigmaBrakeContext_38 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 38,
   sigmaBrakeName: '巳天賊',
   sigmaBrakeDescription: [
@@ -98,7 +98,7 @@ export const sigmaBrakeContext_38 = {
 }
 
 export const sigmaBrakeContext_39 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 39,
   sigmaBrakeName: '丁天賊',
   sigmaBrakeDescription: [
@@ -133,7 +133,7 @@ export const sigmaBrakeContext_39 = {
 }
 
 export const sigmaBrakeContext_40 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 40,
   sigmaBrakeName: '巳四季小殺',
   sigmaBrakeDescription: [

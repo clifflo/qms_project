@@ -1,5 +1,5 @@
 export const sigmaBrakeContext_56 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 56,
   sigmaBrakeName: '巳受死',
   sigmaBrakeDescription: [
@@ -32,7 +32,7 @@ export const sigmaBrakeContext_56 = {
 }
 
 export const sigmaBrakeContext_57 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 57,
   sigmaBrakeName: '巳隔神',
   sigmaBrakeDescription: [
@@ -64,7 +64,7 @@ export const sigmaBrakeContext_57 = {
 }
 
 export const sigmaBrakeContext_58 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 58,
   sigmaBrakeName: '巳大耗',
   sigmaBrakeDescription: [
@@ -97,7 +97,7 @@ export const sigmaBrakeContext_58 = {
 }
 
 export const sigmaBrakeContext_59 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 59,
   sigmaBrakeName: '巳小耗',
   sigmaBrakeDescription: [
@@ -129,7 +129,7 @@ export const sigmaBrakeContext_59 = {
 }
 
 export const sigmaBrakeContext_60 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 60,
   sigmaBrakeName: '巳寡宿',
   sigmaBrakeSource: 'sigma-day-branch',

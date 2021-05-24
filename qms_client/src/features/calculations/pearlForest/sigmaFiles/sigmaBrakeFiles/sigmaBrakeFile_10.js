@@ -1,5 +1,5 @@
 export const sigmaBrakeContext_46 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 46,
   sigmaBrakeName: '巳關殺',
   sigmaBrakeDescription: [
@@ -24,7 +24,7 @@ export const sigmaBrakeContext_46 = {
 }
 
 export const sigmaBrakeContext_47 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 47,
   sigmaBrakeName: '巳鎖殺',
   sigmaBrakeDescription: [
@@ -49,7 +49,7 @@ export const sigmaBrakeContext_47 = {
 }
 
 export const sigmaBrakeContext_48 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 48,
   sigmaBrakeName: '巳劫殺',
   sigmaBrakeSource: 'sigma-day-branch',
@@ -78,7 +78,7 @@ export const sigmaBrakeContext_48 = {
 }
 
 export const sigmaBrakeContext_49 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 49,
   sigmaBrakeName: '巳咸池殺',
   sigmaBrakeSource: 'sigma-day-branch',
@@ -107,7 +107,7 @@ export const sigmaBrakeContext_49 = {
 }
 
 export const sigmaBrakeContext_50 = {
-  	_type:'SigmaBrakeContext',
+  _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 50,
   sigmaBrakeName: '巳鰥寡殺',
   sigmaBrakeDescription: [
