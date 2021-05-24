@@ -155,7 +155,7 @@ export const sigmaBrakeContext_60 = {
   }
 }
 
-export const sigmaBrakeSubset_12 = [
+export const sigmaBrakeContextSubset_12 = [
   sigmaBrakeContext_56,
   sigmaBrakeContext_57,
   sigmaBrakeContext_58,
