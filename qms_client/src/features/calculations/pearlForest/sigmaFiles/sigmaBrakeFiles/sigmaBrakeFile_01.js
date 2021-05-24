@@ -108,7 +108,7 @@ export const sigmaBrakeContext_05 = {
   sigmaBrakeDescription:
     '求仕用之。此處只取天干故加‘巳’字以標示之。',
   sigmaBrakeSource: 'sigma-brake-source-month-original',
-  sigmaBrakeTarget: 'sigma-day-trunk',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-trunk',
   sigmaBrakeOriginalSentence: [
     '正丁、二申宮，三壬、四辛同，五亥、',
     '六甲上，七癸、八寅逢，九丙、十歸乙，',

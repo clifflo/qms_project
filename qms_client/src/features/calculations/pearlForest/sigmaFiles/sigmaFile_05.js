@@ -2,11 +2,12 @@ import * as R from 'ramda';
 import {
   checkNilWithUntypedObject,
   checkNilWithArray,
-  throwFunctionalError
+  throwFunctionalError,
+  checkNilWithString
 } from './_utilityHubBySigma';
 import {
   sigmaBrakeContextPartialSetOfMonthOriginal
-} from './sigmaFile_01';
+} from './sigmaMiniHub_01';
 import {
   handleSigmaBoltOfMonthOriginal
 } from './sigmaFile_04';
@@ -18,7 +19,7 @@ export const
   try{
 
     const sigmaBoltDictionaryOfMonthOriginal =
-      sigmaBrakeContextOfMonthBranch
+      sigmaBrakeContextOfMonthOriginal
       .sigmaBoltDictionary;
 
     checkNilWithUntypedObject(
@@ -26,19 +27,19 @@ export const
       'sigmaBoltDictionaryOfMonthOriginal');
 
     const sigmaBrakeTargetOfMonthOriginal =
-      sigmaBrakeContextOfMonthBranch
+      sigmaBrakeContextOfMonthOriginal
       .sigmaBrakeTarget;
 
     checkNilWithString(
       sigmaBrakeTargetOfMonthOriginal,
       'sigmaBrakeTargetOfMonthOriginal');
 
-    const sigmaBoltPairsOfMonthBranch =
-      R.toPairs(sigmaBoltDictionaryOfMonthBranch);
+    const sigmaBoltPairsOfMonthOriginal =
+      R.toPairs(sigmaBoltDictionaryOfMonthOriginal);
 
     checkNilWithArray(
-      sigmaBoltPairsOfMonthBranch,
-      'sigmaBoltPairsOfMonthBranch');
+      sigmaBoltPairsOfMonthOriginal,
+      'sigmaBoltPairsOfMonthOriginal');
 
     const loadedHandleSigmaBoltOfMonthOriginal =
       R.curry
@@ -48,28 +49,28 @@ export const
     const sigmaBoltContextSetOfMonth =
       R.map(
         loadedHandleSigmaBoltOfMonthOriginal,
-        sigmaBoltPairsOfMonthBranch);
+        sigmaBoltPairsOfMonthOriginal);
 
     checkNilWithArray(
       sigmaBoltContextSetOfMonth,
       'sigmaBoltContextSetOfMonth');
 
-    const sigmaClutchContextOfMonthBranch = {
+    const sigmaClutchContextOfMonthOriginal = {
       sigmaBoltContextSetOfMonth,
-      ...sigmaBrakeContextOfMonthBranch,
+      ...sigmaBrakeContextOfMonthOriginal,
       _type: 'SigmaClutchContextOfMonth'
     };
 
-    return sigmaClutchContextOfMonthBranch;
+    return sigmaClutchContextOfMonthOriginal;
   }
   catch(errorMessage){
     console.error(errorMessage);
     throwFunctionalError(
-      'getSigmaClutchContextOfMonthBranch');
+      'getSigmaClutchContextOfMonthOriginal');
   }
 }
 
-export const sigmaClutchContextOfMonthBranch =
+export const sigmaClutchContextOfMonthOriginal =
   R.map(
-    getSigmaClutchContextOfMonthBranch,
-    sigmaBrakeContextPartialSetOfMonthBranch);
+    getSigmaClutchContextOfMonthOriginal,
+    sigmaBrakeContextPartialSetOfMonthOriginal);

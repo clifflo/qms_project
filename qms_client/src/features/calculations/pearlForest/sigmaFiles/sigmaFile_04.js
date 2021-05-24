@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import {
   sigmaBrakeContextPartialSetOfMonthBranch
-} from './sigmaFile_01';
+} from './sigmaMiniHub_01';
 import {
   checkNilWithString,
   checkNilWithUntypedObject,
@@ -16,61 +16,70 @@ export const handleSigmaBoltOfMonthOriginal =
   (sigmaBrakeTargetOfMonthOriginal,
   sigmaBoltOfMonthBranch) => {
 
-  const sigmaSourceNutOfMonthOriginal =
-    sigmaBoltOfMonthBranch[0] + '月';
+  try{
 
-  const sigmaSourceNutOfMonthBranch =
-    getTauMonthBranchChineseFromOriginal(
-      sigmaSourceNutOfMonthOriginal);
+    const sigmaSourceNutOfMonthOriginal =
+      sigmaBoltOfMonthBranch[0] + '月';
 
-  checkNilWithString(
-    sigmaSourceNutOfMonthBranch,
-    'sigmaSourceNutOfMonthBranch');
+    const sigmaSourceNutOfMonthBranch =
+      getTauMonthBranchChineseFromOriginal(
+        sigmaSourceNutOfMonthOriginal);
 
-  checkNilWithString(
-    sigmaSourceNutOfMonthOriginal,
-    'sigmaSourceNutOfMonthOriginal');
+    checkNilWithString(
+      sigmaSourceNutOfMonthBranch,
+      'sigmaSourceNutOfMonthBranch');
 
-  const sigmaTargetNutOfMonthBranch =
-    sigmaBoltOfMonthBranch[1];
+    checkNilWithString(
+      sigmaSourceNutOfMonthOriginal,
+      'sigmaSourceNutOfMonthOriginal');
 
-  checkNilWithString(
-    sigmaTargetNutOfMonthBranch,
-    'sigmaTargetNutOfMonthBranch');
+    const sigmaTargetNutOfMonthBranch =
+      sigmaBoltOfMonthBranch[1];
 
-  const rawSigmaBoltContextOfMonth = {
-    _type: 'SigmaBoltContextOfMonth',
-    sigmaSourceNutOfMonthBranch,
-    sigmaSourceNutOfMonthOriginal
-  };
+    checkNilWithString(
+      sigmaTargetNutOfMonthBranch,
+      'sigmaTargetNutOfMonthBranch');
 
-  if(sigmaBrakeTargetOfMonthBranch
-    == 'sigma-brake-target-cross-branch'){
-    const
-    finalSigmaBoltContextOfMonthForCrossBranch =
-    {
-      ...rawSigmaBoltContextOfMonth,
-      sigmaTargetCrossBranchNutForMonth:
-      sigmaTargetNutOfMonthBranch
+    const rawSigmaBoltContextOfMonth = {
+      _type: 'SigmaBoltContextOfMonth',
+      sigmaSourceNutOfMonthBranch,
+      sigmaSourceNutOfMonthOriginal
     };
 
-    return finalSigmaBoltContextOfMonthForCrossBranch;
-  }
-  else if(sigmaBrakeTargetOfMonthBranch
-    == 'sigma-brake-target-cross-trunk'){
-    const
-    finalSigmaBoltContextOfMonthForCrossTrunk =
-    {
-      ...rawSigmaBoltContextOfMonth,
-      sigmaTargetCrossTrunkNutForMonth:
-      sigmaTargetNutOfMonthBranch
-    }
+    if(sigmaBrakeTargetOfMonthOriginal
+      == 'sigma-brake-target-cross-branch'){
+      const
+      finalSigmaBoltContextOfMonthForCrossBranch =
+      {
+        ...rawSigmaBoltContextOfMonth,
+        sigmaTargetCrossBranchNutForMonth:
+        sigmaTargetNutOfMonthBranch
+      };
 
-    return finalSigmaBoltContextOfMonthForCrossTrunk;
+      return finalSigmaBoltContextOfMonthForCrossBranch;
+    }
+    else if(sigmaBrakeTargetOfMonthOriginal
+      == 'sigma-brake-target-cross-trunk'){
+      const
+      finalSigmaBoltContextOfMonthForCrossTrunk =
+      {
+        ...rawSigmaBoltContextOfMonth,
+        sigmaTargetCrossTrunkNutForMonth:
+        sigmaTargetNutOfMonthBranch
+      }
+
+      return finalSigmaBoltContextOfMonthForCrossTrunk;
+    }
+    else{
+      throw new Error(
+        'The sigma target should be just '
+        + 'cross trunk or cross branch.');
+    }
   }
-  else{
-    throw new Error(
-      'The sigma target should be just '
-      + 'cross trunk or cross branch.');
+  catch(errorMessage){
+    console.error(errorMessage);
+    throwFunctionalError(
+      'handleSigmaBoltOfMonthOriginal');
   }
+
 }
