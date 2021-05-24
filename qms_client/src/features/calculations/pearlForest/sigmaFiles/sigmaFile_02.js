@@ -120,3 +120,11 @@ export const sigmaBrake_10 = {
     '未': '亥'
   }
 }
+
+export const sigmaBrakeSet_02 = [
+  sigmaBrake_06,
+  sigmaBrake_07,
+  sigmaBrake_08,
+  sigmaBrake_09,
+  sigmaBrake_10
+];

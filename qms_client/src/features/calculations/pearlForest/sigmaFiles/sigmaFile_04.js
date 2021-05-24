@@ -107,7 +107,7 @@ export const sigmaBrake_20 = {
     '占尋人看之耳則有音信。'
   ],
   sigmaBrakeSource: 'Sigma month original',
-  sigmaBrakeTarget: 'Sigma cross twig combo',
+  sigmaBrakeTarget: 'Sigma cross branch',
   sigmaBrakeOriginalSentence: [
     '春天耳巳、目從亥，夏天耳寅、目居申，',
     '秋天耳亥、目從巳，冬天耳申、目居寅。'
@@ -119,3 +119,11 @@ export const sigmaBrake_20 = {
     '冬': '申'
   }
 }
+
+export const sigmaBrakeSet_04 = [
+  sigmaBrake_16,
+  sigmaBrake_17,
+  sigmaBrake_18,
+  sigmaBrake_19,
+  sigmaBrake_20
+];

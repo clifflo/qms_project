@@ -135,3 +135,11 @@ export const sigmaBrake_25 = {
     '十二': '未'
   }
 }
+
+export const sigmaBrakeSet_05 = [
+  sigmaBrake_21,
+  sigmaBrake_22,
+  sigmaBrake_23,
+  sigmaBrake_24,
+  sigmaBrake_25
+];

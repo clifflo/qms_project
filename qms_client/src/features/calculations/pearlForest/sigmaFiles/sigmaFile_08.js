@@ -149,3 +149,11 @@ export const sigmaBrake_40 = {
     '冬': '戌'
   }
 }
+
+export const sigmaBrakeSet_08 = [
+  sigmaBrake_36,
+  sigmaBrake_37,
+  sigmaBrake_38,
+  sigmaBrake_39,
+  sigmaBrake_40
+];

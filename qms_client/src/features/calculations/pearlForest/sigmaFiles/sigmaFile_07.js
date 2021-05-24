@@ -135,3 +135,11 @@ export const sigmaBrake_35 = {
     '十二': '寅'
   }
 }
+
+export const sigmaBrakeSet_07 = [
+  sigmaBrake_31,
+  sigmaBrake_32,
+  sigmaBrake_33,
+  sigmaBrake_34,
+  sigmaBrake_35
+];
