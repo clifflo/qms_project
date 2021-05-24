@@ -8,7 +8,7 @@ import {
   sigmaBrakeContextPartialSetOfMonthBranch
 } from './sigmaFile_01';
 import {
-  handleSigmaBoltOfMonthBranchToOriginal
+  handleSigmaBoltOfMonthBranch
 } from './sigmaFile_02';
 
 export const
@@ -35,14 +35,14 @@ export const
       sigmaBoltPairsOfMonthBranch,
       'sigmaBoltPairsOfMonthBranch');
 
-    const loadedHandleSigmaBoltOfMonthBranchToOriginal =
+    const loadedHandleSigmaBoltOfMonthBranch =
       R.curry
-      (handleSigmaBoltOfMonthBranchToOriginal)
+      (handleSigmaBoltOfMonthBranch)
       (sigmaBrakeTargetOfMonthBranch);
 
     const sigmaBoltContextSetOfMonth =
       R.map(
-        loadedHandleSigmaBoltOfMonthBranchToOriginal,
+        loadedHandleSigmaBoltOfMonthBranch,
         sigmaBoltPairsOfMonthBranch);
 
     checkNilWithArray(

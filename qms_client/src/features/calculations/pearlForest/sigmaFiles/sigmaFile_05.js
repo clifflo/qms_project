@@ -5,28 +5,33 @@ import {
   throwFunctionalError
 } from './_utilityHubBySigma';
 import {
-  sigmaBrakeContextPartialSetOfMonthBranch
+  sigmaBrakeContextPartialSetOfMonthOriginal
 } from './sigmaFile_01';
 import {
-  handleSigmaBoltOfMonthBranchToOriginal
-} from './sigmaFile_02';
+  handleSigmaBoltOfMonthOriginal
+} from './sigmaFile_04';
 
 export const
   getSigmaClutchContextOfMonthOriginal =
   sigmaBrakeContextOfMonthOriginal => {
 
   try{
-    const sigmaBoltDictionaryOfMonthBranch =
-      sigmaBrakeContextOfMonthBranch
-      .sigmaBoltDictionary
 
-    const sigmaBrakeTargetOfMonthBranch =
+    const sigmaBoltDictionaryOfMonthOriginal =
+      sigmaBrakeContextOfMonthBranch
+      .sigmaBoltDictionary;
+
+    checkNilWithUntypedObject(
+      sigmaBoltDictionaryOfMonthOriginal,
+      'sigmaBoltDictionaryOfMonthOriginal');
+
+    const sigmaBrakeTargetOfMonthOriginal =
       sigmaBrakeContextOfMonthBranch
       .sigmaBrakeTarget;
 
-    checkNilWithUntypedObject(
-      sigmaBoltDictionaryOfMonthBranch,
-      'sigmaBoltDictionaryOfMonthBranch');
+    checkNilWithString(
+      sigmaBrakeTargetOfMonthOriginal,
+      'sigmaBrakeTargetOfMonthOriginal');
 
     const sigmaBoltPairsOfMonthBranch =
       R.toPairs(sigmaBoltDictionaryOfMonthBranch);
@@ -35,14 +40,14 @@ export const
       sigmaBoltPairsOfMonthBranch,
       'sigmaBoltPairsOfMonthBranch');
 
-    const loadedHandleSigmaBoltOfMonthBranchToOriginal =
+    const loadedHandleSigmaBoltOfMonthOriginal =
       R.curry
-      (handleSigmaBoltOfMonthBranchToOriginal)
-      (sigmaBrakeTargetOfMonthBranch);
+      (handleSigmaBoltOfMonthOriginal)
+      (sigmaBrakeTargetOfMonthOriginal);
 
     const sigmaBoltContextSetOfMonth =
       R.map(
-        loadedHandleSigmaBoltOfMonthBranchToOriginal,
+        loadedHandleSigmaBoltOfMonthOriginal,
         sigmaBoltPairsOfMonthBranch);
 
     checkNilWithArray(

@@ -12,7 +12,7 @@ import {
   getTauMonthOriginalChineseFromBranch
 } from './_tauHubBySigma';
 
-export const handleSigmaBoltOfMonthBranchToOriginal =
+export const handleSigmaBoltOfMonthBranch =
   (sigmaBrakeTargetOfMonthBranch,
   sigmaBoltOfMonthBranch) => {
 
