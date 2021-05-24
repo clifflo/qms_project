@@ -10,35 +10,35 @@ import {
 
 export const twigElementalContextSet = [
   {
-    _type: 'Twig elemental context',
+    _type: 'TwigElementalContext',
     twigElementalIndex: 0,
     twigElementalChinese: '五行金',
     twigElementalEnglish:
       'Twig elemental metal'
   },
   {
-    _type: 'Twig elemental context',
+    _type: 'TwigElementalContext',
     twigElementalIndex: 1,
     twigElementalChinese: '五行水',
     twigElementalEnglish:
       'Twig elemental water'
   },
   {
-    _type: 'Twig elemental context',
+    _type: 'TwigElementalContext',
     twigElementalIndex: 2,
     twigElementalChinese: '五行木',
     twigElementalEnglish:
       'Twig elemental wood'
   },
   {
-    _type: 'Twig elemental context',
+    _type: 'TwigElementalContext',
     twigElementalIndex: 3,
     twigElementalChinese: '五行火',
     twigElementalEnglish:
       'Twig elemental fire'
   },
   {
-    _type: 'Twig elemental context',
+    _type: 'TwigElementalContext',
     twigElementalIndex: 4,
     twigElementalChinese: '五行土',
     twigElementalEnglish:

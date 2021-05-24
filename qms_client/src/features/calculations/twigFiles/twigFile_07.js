@@ -16,7 +16,8 @@ export const getTwigBranchContextByIndex =
 
   try{
     checkNilWithNumber(
-      twigBranchIndex, 'Twig branch index');
+      twigBranchIndex,
+      'twigBranchIndex');
 
     return getCyclicItemFromList(
       twigBranchContextSet,

@@ -1,4 +1,5 @@
 import * as R from 'ramda';
+import * as RA from 'ramda-adjunct';
 import {
   checkNilWithUntypedObject,
   checkNilWithArray,
@@ -6,7 +7,8 @@ import {
   checkNilWithString
 } from './_utilityHubBySigma';
 import {
-  sigmaBrakeContextPartialSetOfMonthOriginal
+  sigmaBrakeContextPartialSetOfMonthOriginal,
+  sigmaClutchContextOfMonthBranch
 } from './sigmaMiniHub_01';
 import {
   handleSigmaBoltOfMonthOriginal
@@ -74,3 +76,9 @@ export const sigmaClutchContextOfMonthOriginal =
   R.map(
     getSigmaClutchContextOfMonthOriginal,
     sigmaBrakeContextPartialSetOfMonthOriginal);
+
+export const sigmaClutchContextOfGenericMonth =
+  RA.concatAll([
+    sigmaClutchContextOfMonthOriginal,
+    sigmaClutchContextOfMonthBranch
+  ]);

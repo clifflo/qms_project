@@ -1,6 +1,6 @@
 import {
   sigmaBrakeTotalSet
-} from './sigmaBrakeFiles/sigmaBrakeFileHost';
+} from '../sigmaBrakeFiles/sigmaBrakeFileHost';
 import {
   filterItemByStringFromList,
   checkNilByArray,

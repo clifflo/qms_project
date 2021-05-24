@@ -40,7 +40,7 @@ export const sigmaBrakeContext_12 = {
   sigmaBrakeTopics: [
     'Examination'
   ],
-  sigmaBrakeSource: 'sigma-year-branch',
+  sigmaBrakeSource: 'sigma-brake-source-year-branch',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '寅申之年巳亥為，巳亥之年寅申覓，',
@@ -75,7 +75,7 @@ export const sigmaBrakeContext_13 = {
   sigmaBrakeTopics: [
     'Examination'
   ],
-  sigmaBrakeSource: 'sigma-year-branch',
+  sigmaBrakeSource: 'sigma-brake-source-year-branch',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '寅申之年巳亥為，巳亥之年寅申覓，',
