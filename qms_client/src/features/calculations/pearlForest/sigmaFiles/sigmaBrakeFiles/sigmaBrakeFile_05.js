@@ -5,7 +5,7 @@ export const sigmaBrakeContext_21 = {
   sigmaBrakeDescription: [
     '占尋人看之目則見面。'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeSource: 'sigma-brake-source-season',
   sigmaBrakeTarget: 'sigma-cross-twig-combo',
   sigmaBrakeOriginalSentence: [
     '春天耳巳、目從亥，夏天耳寅、目居申，',
