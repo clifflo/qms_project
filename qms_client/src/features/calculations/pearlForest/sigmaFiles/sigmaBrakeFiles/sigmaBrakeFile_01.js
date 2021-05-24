@@ -1,4 +1,4 @@
-export const sigmaBrake_01 = {
+export const sigmaBrakeContext_01 = {
   sigmaBrakeIndex: 1,
   sigmaBrakeName: '巳天元祿',
   sigmaBrakeDescription: '凡事遇之大吉。',
@@ -22,7 +22,7 @@ export const sigmaBrake_01 = {
   }
 }
 
-export const sigmaBrake_02 = {
+export const sigmaBrakeContext_02 = {
   sigmaBrakeIndex: 2,
   sigmaBrakeName: '巳驛馬',
   sigmaBrakeDescription: [
@@ -50,7 +50,7 @@ export const sigmaBrake_02 = {
   }
 }
 
-export const sigmaBrake_03 = {
+export const sigmaBrakeContext_03 = {
   sigmaBrakeIndex: 3,
   sigmaBrakeName: '巳天乙貴人',
   sigmaBrakeSource: 'Sigma day trunk',
@@ -73,7 +73,7 @@ export const sigmaBrake_03 = {
   }
 }
 
-export const sigmaBrake_04 = {
+export const sigmaBrakeContext_04 = {
   sigmaBrakeIndex: 4,
   sigmaBrakeName: '巳福星貴人',
   sigmaBrakeDescription: '求仕用之。',
@@ -97,7 +97,7 @@ export const sigmaBrake_04 = {
   }
 }
 
-export const sigmaBrake_05 = {
+export const sigmaBrakeContext_05 = {
   sigmaBrakeIndex: 5,
   sigmaBrakeName: '巳天德貴人',
   sigmaBrakeDescription:
@@ -123,9 +123,9 @@ export const sigmaBrake_05 = {
 }
 
 export const sigmaBrakeSubset_01 = [
-  sigmaBrake_01,
-  sigmaBrake_02,
-  sigmaBrake_03,
-  sigmaBrake_04,
-  sigmaBrake_05
+  sigmaBrakeContext_01,
+  sigmaBrakeContext_02,
+  sigmaBrakeContext_03,
+  sigmaBrakeContext_04,
+  sigmaBrakeContext_05
 ];

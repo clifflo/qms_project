@@ -1,4 +1,4 @@
-export const sigmaBrake_21 = {
+export const sigmaBrakeContext_21 = {
   sigmaBrakeIndex: 21,
   sigmaBrakeName: '巳天目',
   sigmaBrakeDescription: [
@@ -18,7 +18,7 @@ export const sigmaBrake_21 = {
   }
 }
 
-export const sigmaBrake_22 = {
+export const sigmaBrakeContext_22 = {
   sigmaBrakeIndex: 22,
   sigmaBrakeName: '丁天福貴人',
   sigmaBrakeDescription: [
@@ -48,7 +48,7 @@ export const sigmaBrake_22 = {
   }
 }
 
-export const sigmaBrake_23 = {
+export const sigmaBrakeContext_23 = {
   sigmaBrakeIndex: 23,
   sigmaBrakeName: '巳天解神',
   sigmaBrakeDescription: [
@@ -71,7 +71,7 @@ export const sigmaBrake_23 = {
   }
 }
 
-export const sigmaBrake_24 = {
+export const sigmaBrakeContext_24 = {
   sigmaBrakeIndex: 24,
   sigmaBrakeName: '巳地解神',
   sigmaBrakeDescription: [
@@ -103,7 +103,7 @@ export const sigmaBrake_24 = {
   }
 }
 
-export const sigmaBrake_25 = {
+export const sigmaBrakeContext_25 = {
   sigmaBrakeIndex: 25,
   sigmaBrakeName: '巳月解神',
   sigmaBrakeDescription: [
@@ -137,9 +137,9 @@ export const sigmaBrake_25 = {
 }
 
 export const sigmaBrakeSubset_05 = [
-  sigmaBrake_21,
-  sigmaBrake_22,
-  sigmaBrake_23,
-  sigmaBrake_24,
-  sigmaBrake_25
+  sigmaBrakeContext_21,
+  sigmaBrakeContext_22,
+  sigmaBrakeContext_23,
+  sigmaBrakeContext_24,
+  sigmaBrakeContext_25
 ];

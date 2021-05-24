@@ -1,4 +1,4 @@
-export const sigmaBrake_51 = {
+export const sigmaBrakeContext_51 = {
   sigmaBrakeIndex: 51,
   sigmaBrakeName: '巳孤辰',
   sigmaBrakeSource: 'Sigma day branch',
@@ -30,7 +30,7 @@ export const sigmaBrake_51 = {
   }
 }
 
-export const sigmaBrake_52 = {
+export const sigmaBrakeContext_52 = {
   sigmaBrakeIndex: 52,
   sigmaBrakeName: '巳寡宿',
   sigmaBrakeSource: 'Sigma day branch',
@@ -62,7 +62,7 @@ export const sigmaBrake_52 = {
   }
 }
 
-export const sigmaBrake_53 = {
+export const sigmaBrakeContext_53 = {
   sigmaBrakeIndex: 53,
   sigmaBrakeName: '巳搥門官符',
   sigmaBrakeDescription: [
@@ -94,7 +94,7 @@ export const sigmaBrake_53 = {
   }
 }
 
-export const sigmaBrake_54 = {
+export const sigmaBrakeContext_54 = {
   sigmaBrakeIndex: 54,
   sigmaBrakeName: '巳勾陳殺',
   sigmaBrakeDescription: [
@@ -127,7 +127,7 @@ export const sigmaBrake_54 = {
   }
 }
 
-export const sigmaBrake_55 = {
+export const sigmaBrakeContext_55 = {
   sigmaBrakeIndex: 55,
   sigmaBrakeName: '巳白虎殺',
   sigmaBrakeDescription: [
@@ -161,9 +161,9 @@ export const sigmaBrake_55 = {
 }
 
 export const sigmaBrakeSubset_11 = [
-  sigmaBrake_51,
-  sigmaBrake_52,
-  sigmaBrake_53,
-  sigmaBrake_54,
-  sigmaBrake_55
+  sigmaBrakeContext_51,
+  sigmaBrakeContext_52,
+  sigmaBrakeContext_53,
+  sigmaBrakeContext_54,
+  sigmaBrakeContext_55
 ];

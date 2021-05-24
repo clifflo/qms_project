@@ -1,4 +1,4 @@
-export const sigmaBrake_11 = {
+export const sigmaBrakeContext_11 = {
   sigmaBrakeIndex: 11,
   sigmaBrakeName: '巳天馬',
   sigmaBrakeDescription: '凡占仕宦，遇此必有陞遷之兆。',
@@ -27,7 +27,7 @@ export const sigmaBrake_11 = {
   }
 }
 
-export const sigmaBrake_12 = {
+export const sigmaBrakeContext_12 = {
   sigmaBrakeIndex: 12,
   sigmaBrakeName: '巳唐符',
   sigmaBrakeDescription:[
@@ -61,7 +61,7 @@ export const sigmaBrake_12 = {
   }
 }
 
-export const sigmaBrake_13 = {
+export const sigmaBrakeContext_13 = {
   sigmaBrakeIndex: 13,
   sigmaBrakeName: '巳國印',
   sigmaBrakeDescription: [
@@ -95,7 +95,7 @@ export const sigmaBrake_13 = {
   }
 }
 
-export const sigmaBrake_14 = {
+export const sigmaBrakeContext_14 = {
   sigmaBrakeIndex: 14,
   sigmaBrakeName: '巳天醫',
   sigmaBrakeDescription: [
@@ -127,7 +127,7 @@ export const sigmaBrake_14 = {
   }
 }
 
-export const sigmaBrake_15 = {
+export const sigmaBrakeContext_15 = {
   sigmaBrakeIndex: 15,
   sigmaBrakeName: '巳月天赦',
   sigmaBrakeDescription: [
@@ -161,9 +161,9 @@ export const sigmaBrake_15 = {
 }
 
 export const sigmaBrakeSubset_03 = [
-  sigmaBrake_11,
-  sigmaBrake_12,
-  sigmaBrake_13,
-  sigmaBrake_14,
-  sigmaBrake_15
+  sigmaBrakeContext_11,
+  sigmaBrakeContext_12,
+  sigmaBrakeContext_13,
+  sigmaBrakeContext_14,
+  sigmaBrakeContext_15
 ];

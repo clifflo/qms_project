@@ -1,4 +1,4 @@
-export const sigmaBrake_41 = {
+export const sigmaBrakeContext_41 = {
   sigmaBrakeIndex: 41,
   sigmaBrakeName: '巳日下大殺',
   sigmaBrakeSource: 'Sigma day trunk',
@@ -24,7 +24,7 @@ export const sigmaBrake_41 = {
   }
 }
 
-export const sigmaBrake_42 = {
+export const sigmaBrakeContext_42 = {
   sigmaBrakeIndex: 42,
   sigmaBrakeName: '巳天狗殺',
   sigmaBrakeDescription: [
@@ -56,7 +56,7 @@ export const sigmaBrake_42 = {
   }
 }
 
-export const sigmaBrake_43 = {
+export const sigmaBrakeContext_43 = {
   sigmaBrakeIndex: 43,
   sigmaBrakeName: '巳三坵五墓',
   sigmaBrakeDescription: [
@@ -78,7 +78,7 @@ export const sigmaBrake_43 = {
   }
 }
 
-export const sigmaBrake_44 = {
+export const sigmaBrakeContext_44 = {
   sigmaBrakeIndex: 44,
   sigmaBrakeName: '巳喪車殺',
   sigmaBrakeDescription: [
@@ -100,7 +100,7 @@ export const sigmaBrake_44 = {
   }
 }
 
-export const sigmaBrake_45 = {
+export const sigmaBrakeContext_45 = {
   sigmaBrakeIndex: 45,
   sigmaBrakeName: '巳沐浴殺',
   sigmaBrakeDescription: [
@@ -123,9 +123,9 @@ export const sigmaBrake_45 = {
 }
 
 export const sigmaBrakeSubset_09 = [
-  sigmaBrake_41,
-  sigmaBrake_42,
-  sigmaBrake_43,
-  sigmaBrake_44,
-  sigmaBrake_45
+  sigmaBrakeContext_41,
+  sigmaBrakeContext_42,
+  sigmaBrakeContext_43,
+  sigmaBrakeContext_44,
+  sigmaBrakeContext_45
 ];

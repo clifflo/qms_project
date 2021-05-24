@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-export const sigmaBrake_06 = {
+export const sigmaBrakeContext_06 = {
   sigmaBrakeIndex: 6,
   sigmaBrakeName: '丁天德貴人',
   sigmaBrakeDescription:
@@ -19,7 +19,7 @@ export const sigmaBrake_06 = {
   }
 }
 
-export const sigmaBrake_07 = {
+export const sigmaBrakeContext_07 = {
   sigmaBrakeIndex: 7,
   sigmaBrakeName: '巳月德貴人',
   sigmaBrakeDescription: '凡有所占，轉凶為吉。',
@@ -45,7 +45,7 @@ export const sigmaBrake_07 = {
   }
 }
 
-export const sigmaBrake_08 = {
+export const sigmaBrakeContext_08 = {
   sigmaBrakeIndex: 8,
   sigmaBrakeName: '巳月德合',
   sigmaBrakeDescription: '凡有所占，轉凶為吉。',
@@ -70,7 +70,7 @@ export const sigmaBrake_08 = {
   }
 }
 
-export const sigmaBrake_09 = {
+export const sigmaBrakeContext_09 = {
   sigmaBrakeIndex: 9,
   sigmaBrakeName: '巳天福貴人',
   sigmaBrakeSource: 'Sigma day trunk',
@@ -98,7 +98,7 @@ export const sigmaBrake_09 = {
   }
 }
 
-export const sigmaBrake_10 = {
+export const sigmaBrakeContext_10 = {
   sigmaBrakeIndex: 10,
   sigmaBrakeName: '巳天喜',
   sigmaBrakeSource: 'Sigma seaon',
@@ -122,9 +122,9 @@ export const sigmaBrake_10 = {
 }
 
 export const sigmaBrakeSubset_02 = [
-  sigmaBrake_06,
-  sigmaBrake_07,
-  sigmaBrake_08,
-  sigmaBrake_09,
-  sigmaBrake_10
+  sigmaBrakeContext_06,
+  sigmaBrakeContext_07,
+  sigmaBrakeContext_08,
+  sigmaBrakeContext_09,
+  sigmaBrakeContext_10
 ];

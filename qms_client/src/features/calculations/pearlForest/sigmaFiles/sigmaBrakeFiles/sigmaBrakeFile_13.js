@@ -1,4 +1,4 @@
-export const sigmaBrake_61 = {
+export const sigmaBrakeContext_61 = {
   sigmaBrakeIndex: 61,
   sigmaBrakeName: '巳旌旗殺',
   sigmaBrakeDescription: [
@@ -20,7 +20,7 @@ export const sigmaBrake_61 = {
   }
 }
 
-export const sigmaBrake_62 = {
+export const sigmaBrakeContext_62 = {
   sigmaBrakeIndex: 62,
   sigmaBrakeName: '巳暴敗殺',
   sigmaBrakeDescription: [
@@ -43,7 +43,7 @@ export const sigmaBrake_62 = {
   }
 }
 
-export const sigmaBrake_63 = {
+export const sigmaBrakeContext_63 = {
   sigmaBrakeIndex: 63,
   sigmaBrakeName: '巳天元祿',
   sigmaBrakeDescription: '凡事遇之大吉。',
@@ -69,7 +69,7 @@ export const sigmaBrake_63 = {
 }
 
 export const sigmaBrakeSubset_13 = [
-  sigmaBrake_61,
-  sigmaBrake_62,
-  sigmaBrake_63
+  sigmaBrakeContext_61,
+  sigmaBrakeContext_62,
+  sigmaBrakeContext_63
 ];
