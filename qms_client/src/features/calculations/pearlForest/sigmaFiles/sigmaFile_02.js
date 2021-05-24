@@ -38,8 +38,8 @@ export const handleSigmaBoltOfMonthBranchToOriginal =
     sigmaTargetNutOfMonthBranch,
     'sigmaTargetNutOfMonthBranch');
 
-  const rawSigmaBoltContextOfMonthBranch = {
-    _type: 'SigmaBoltContextOfMonthBranch',
+  const rawSigmaBoltContextOfMonth = {
+    _type: 'SigmaBoltContextOfMonth',
     sigmaSourceNutOfMonthBranch,
     sigmaSourceNutOfMonthOriginal
   };
@@ -48,26 +48,26 @@ export const handleSigmaBoltOfMonthBranchToOriginal =
     == 'sigma-brake-target-cross-branch'){
 
     const
-    finalSigmaBoltContextOfMonthBranchForCrossBranch =
+    finalSigmaBoltContextOfMonthForCrossBranch =
     {
-      ...rawSigmaBoltContextOfMonthBranch,
+      ...rawSigmaBoltContextOfMonth,
       sigmaTargetCrossBranchForMonthOriginal:
       sigmaTargetNutOfMonthBranch
     };
 
-    return finalSigmaBoltContextOfMonthBranchForCrossBranch;
+    return finalSigmaBoltContextOfMonthForCrossBranch;
   }
   else if(sigmaBrakeTargetOfMonthBranch
     == 'sigma-brake-target-cross-trunk'){
     const
-    finalSigmaBoltContextOfMonthBranchForCrossTrunk =
+    finalSigmaBoltContextOfMonthForCrossTrunk =
     {
-      ...rawSigmaBoltContextOfMonthBranch,
+      ...rawSigmaBoltContextOfMonth,
       sigmaTargetCrossTrunkForMonthOriginal:
       sigmaTargetNutOfMonthBranch
     }
 
-    return finalSigmaBoltContextOfMonthBranchForCrossTrunk;
+    return finalSigmaBoltContextOfMonthForCrossTrunk;
   }
   else{
     throw new Error(

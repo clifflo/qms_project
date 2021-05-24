@@ -12,7 +12,7 @@ import {
 } from './sigmaFile_02';
 
 export const
-  convertSigmaClutchContextOfMonthBranchToOriginal =
+  convertSigmaClutchContextOfMonthToOriginal =
   sigmaBrakeContextOfMonthBranch => {
 
   try{
@@ -40,19 +40,19 @@ export const
       (handleSigmaBoltOfMonthBranchToOriginal)
       (sigmaBrakeTargetOfMonthBranch);
 
-    const sigmaBoltContextSetOfMonthBranch =
+    const sigmaBoltContextSetOfMonth =
       R.map(
         loadedHandleSigmaBoltOfMonthBranchToOriginal,
         sigmaBoltPairsOfMonthBranch);
 
     checkNilWithArray(
-      sigmaBoltContextSetOfMonthBranch,
-      'sigmaBoltContextSetOfMonthBranch');
+      sigmaBoltContextSetOfMonth,
+      'sigmaBoltContextSetOfMonth');
 
     const sigmaClutchContextOfMonthBranch = {
-      sigmaBoltContextSetOfMonthBranch,
+      sigmaBoltContextSetOfMonth,
       ...sigmaBrakeContextOfMonthBranch,
-      _type: 'SigmaClutchContextOfMonthBranch'
+      _type: 'SigmaClutchContextOfMonth'
     };
 
     return sigmaClutchContextOfMonthBranch;
@@ -60,11 +60,11 @@ export const
   catch(errorMessage){
     console.error(errorMessage);
     throwFunctionalError(
-      'convertSigmaClutchContextOfMonthBranchToOriginal');
+      'convertSigmaClutchContextOfMonthToOriginal');
   }
 }
 
 export const sigmaClutchContextOfMonthBranch =
   R.map(
-    convertSigmaClutchContextOfMonthBranchToOriginal,
+    convertSigmaClutchContextOfMonthToOriginal,
     sigmaBrakeContextPartialSetOfMonthBranch);
