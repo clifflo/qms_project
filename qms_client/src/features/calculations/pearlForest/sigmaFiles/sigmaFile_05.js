@@ -12,8 +12,8 @@ import {
 } from './sigmaFile_02';
 
 export const
-  getSigmaClutchContextOfMonthBranch =
-  sigmaBrakeContextOfMonthBranch => {
+  getSigmaClutchContextOfMonthOriginal =
+  sigmaBrakeContextOfMonthOriginal => {
 
   try{
     const sigmaBoltDictionaryOfMonthBranch =
