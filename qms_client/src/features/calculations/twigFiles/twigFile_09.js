@@ -33,7 +33,7 @@ const mapFunctionOfChosenTypeOneContext =
 
   checkNilWithTypedObject(
     twigChosenTypeOneContext,
-    'Twig chosen context');
+    'TwigChosenContext');
 
   return twigChosenTypeOneContext;
 }

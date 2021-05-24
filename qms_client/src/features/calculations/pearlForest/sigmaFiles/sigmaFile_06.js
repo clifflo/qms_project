@@ -11,6 +11,9 @@ import {
 import {
   getTauMonthBranchChineseFromOriginal
 } from './_tauHubBySigma';
+import {
+  isValidTwigSeasonChinese
+} from './_twigHubBySigma';
 
 export const handleSigmaBoltOfSeason =
   (sigmaBrakeTargetOfSeason,
@@ -51,20 +54,20 @@ export const handleSigmaBoltOfSeason =
       const
       finalSigmaBoltContextOfSeasonForCrossBranch =
       {
-        ...rawSigmaBoltContextOfMonth,
+        ...rawSigmaBoltContextOfSeason,
         sigmaTargetCrossBranchNutForMonth:
         sigmaTargetNutOfSeason
       };
 
       return finalSigmaBoltContextOfSeasonForCrossBranch;
     }
-    else if(sigmaBrakeTargetOfMonthOriginal
+    else if(sigmaBrakeTargetOfSeason
       == 'sigma-brake-target-cross-trunk'){
       const
       finalSigmaBoltContextOfSeasonForCrossTrunk =
       {
-        ...rawSigmaBoltContextOfMonth,
-        sigmaTargetCrossTrunkNutForMonth:
+        ...rawSigmaBoltContextOfSeason,
+        sigmaTargetCrossTrunkNutForSeason:
         sigmaTargetNutOfSeason
       }
 
