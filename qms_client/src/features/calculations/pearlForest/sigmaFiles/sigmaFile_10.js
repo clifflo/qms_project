@@ -71,21 +71,10 @@ export const handleSigmaBoltOfDayBranch =
 
       return finalSigmaBoltContextOfDayBranchForCrossTrunk;
     }
-    else if(sigmaBrakeTargetOfDayBranch
-      == 'sigma-brake-target-cross-twig-combo'){
-      const finalSigmaBoltContextOfDayBranchForCrossTwigCombo =
-      {
-        ...rawSigmaBoltContextOfDayBranch,
-        sigmaTargetCrossTwigComboNutForDayBranch:
-        sigmaTargetNutOfDayBranch
-      }
-
-      return finalSigmaBoltContextOfDayBranchForCrossTwigCombo;
-    }
     else{
       throw new Error(
-        'The sigma target should be just '
-        + 'cross trunk, cross branch or '
+        'The sigma target for day branch should '
+        + 'be just cross trunk, cross branch or '
         + 'cross twig combo.');
     }
   }

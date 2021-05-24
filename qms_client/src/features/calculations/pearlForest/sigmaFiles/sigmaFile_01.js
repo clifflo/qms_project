@@ -43,3 +43,8 @@ export const
   sigmaBrakeContextPartialSetOfSeason =
   getSigmaBrakePartialSet(
     'sigma-brake-source-season');
+
+export const
+  sigmaBrakeContextPartialSetOfYearBranch =
+  getSigmaBrakePartialSet(
+    'sigma-brake-source-year-branch');
