@@ -17,7 +17,7 @@ export const handleSigmaBoltOfMonthBranchToOriginal =
   sigmaBoltOfMonthBranch) => {
 
   const sigmaSourceNutOfMonthBranch =
-    sigmaBoltOfMonthBranch[0];
+    sigmaBoltOfMonthBranch[0] + '月';
 
   const sigmaSourceNutOfMonthOriginal =
     getTauMonthOriginalChineseFromBranch(
