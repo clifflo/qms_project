@@ -4,7 +4,7 @@ export const sigmaBrakeContext_01 = {
   sigmaBrakeName: '巳天元祿',
   sigmaBrakeDescription: '凡事遇之大吉。',
   sigmaBrakeSource: 'sigma-day-trunk',
-  sigmaBrakeTarget: 'sigma-cross-branch',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '甲祿在寅，乙祿在卯，丙戊祿在巳，丁己祿居午，',
     '庚祿居申，辛祿在酉，壬祿在亥，癸祿在子。'
@@ -31,7 +31,7 @@ export const sigmaBrakeContext_02 = {
     '出行及占行人俱要看之。'
   ],
   sigmaBrakeSource: 'sigma-day-branch',
-  sigmaBrakeTarget: 'sigma-cross-branch',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '寅午戌馬居申，申子辰馬居寅，',
     '巳酉丑馬在亥，亥卯未馬在巳。'
@@ -57,7 +57,7 @@ export const sigmaBrakeContext_03 = {
   sigmaBrakeIndex: 3,
   sigmaBrakeName: '巳天乙貴人',
   sigmaBrakeSource: 'sigma-day-trunk',
-  sigmaBrakeTarget: 'sigma-cross-branch',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '甲戊兼牛羊，乙己鼠猴鄉，丙丁豬雞位，',
     '壬癸兔蛇藏，庚辛逢馬虎，此是貴人方。'
@@ -82,7 +82,7 @@ export const sigmaBrakeContext_04 = {
   sigmaBrakeName: '巳福星貴人',
   sigmaBrakeDescription: '求仕用之。',
   sigmaBrakeSource: 'sigma-day-trunk',
-  sigmaBrakeTarget: 'sigma-cross-branch',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '甲虎乙豬牛，丙同犬鼠遊，丁雞戊猴走，',
     '己羊庚馬頭，辛蛇癸愛兔，壬日占龍樓。'
@@ -107,7 +107,7 @@ export const sigmaBrakeContext_05 = {
   sigmaBrakeName: '巳天德貴人',
   sigmaBrakeDescription:
     '求仕用之。此處只取天干故加‘巳’字以標示之。',
-  sigmaBrakeSource: 'sigma-month-original',
+  sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'sigma-day-trunk',
   sigmaBrakeOriginalSentence: [
     '正丁、二申宮，三壬、四辛同，五亥、',

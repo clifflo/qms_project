@@ -1,7 +1,15 @@
 import * as R from 'ramda';
 import {
-  checkNilWithUntypedObject
+  checkNilWithUntypedObject,
+  checkNilWithArray,
+  throwFunctionalError
 } from './_utilityHubBySigma';
+import {
+  sigmaBrakeContextPartialSetOfMonthBranch
+} from './sigmaFile_01';
+import {
+  handleSigmaBoltOfMonthBranchToOriginal
+} from './sigmaFile_02';
 
 export const
   convertSigmaClutchContextOfMonthBranchToOriginal =
@@ -29,7 +37,7 @@ export const
 
     const loadedHandleSigmaBoltOfMonthBranchToOriginal =
       R.curry
-      (loadedHandleSigmaBoltOfMonthBranchToOriginal)
+      (handleSigmaBoltOfMonthBranchToOriginal)
       (sigmaBrakeTargetOfMonthBranch);
 
     const sigmaBoltContextSetOfMonthBranch =

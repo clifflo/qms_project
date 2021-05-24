@@ -9,8 +9,8 @@ export const sigmaBrakeContext_46 = {
   sigmaBrakeTopics: [
     'Illness'
   ],
-  sigmaBrakeSource: 'sigma-season',
-  sigmaBrakeTarget: 'sigma-cross-branch',
+  sigmaBrakeSource: 'sigma-brake-source-season',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '春關牛與蛇，夏月龍猴嗟，',
     '秋忌豬羊位，冬犬虎交加。'
@@ -34,8 +34,8 @@ export const sigmaBrakeContext_47 = {
   sigmaBrakeTopics: [
     'Illness'
   ],
-  sigmaBrakeSource: 'sigma-season',
-  sigmaBrakeTarget: 'sigma-cross-branch',
+  sigmaBrakeSource: 'sigma-brake-source-season',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '春關牛與蛇，夏月龍猴嗟，',
     '秋忌豬羊位，冬犬虎交加。'
@@ -116,8 +116,8 @@ export const sigmaBrakeContext_50 = {
   sigmaBrakeTopics: [
     'Marriage'
   ],
-  sigmaBrakeSource: 'sigma-season',
-  sigmaBrakeTarget: 'sigma-cross-branch',
+  sigmaBrakeSource: 'sigma-brake-source-season',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '春牛不下田，夏龍飛上天，',
     '秋羊艸枯死，冬犬厭殘年。'

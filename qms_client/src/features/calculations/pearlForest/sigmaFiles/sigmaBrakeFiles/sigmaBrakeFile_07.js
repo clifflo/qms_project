@@ -8,8 +8,8 @@ export const sigmaBrakeContext_31 = {
   sigmaBrakeTopics: [
     'Lawsuit'
   ],
-  sigmaBrakeSource: 'sigma-season',
-  sigmaBrakeTarget: 'sigma-cross-branch',
+  sigmaBrakeSource: 'sigma-brake-source-season',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '春巳、夏居申，秋豬、冬到寅。'
   ],
@@ -33,7 +33,7 @@ export const sigmaBrakeContext_32 = {
     'Marriage'
   ],
   sigmaBrakeSource: 'sigma-day-trunk',
-  sigmaBrakeTarget: 'sigma-cross-branch',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '甲己逢寅、乙庚申，丙辛、',
     '戊癸向蛇尋，丁壬亥上。'
@@ -62,8 +62,8 @@ export const sigmaBrakeContext_33 = {
   sigmaBrakeTopics: [
     'Lawsuit'
   ],
-  sigmaBrakeSource: 'sigma-season',
-  sigmaBrakeTarget: 'sigma-cross-branch',
+  sigmaBrakeSource: 'sigma-brake-source-season',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '獄神夏馬、春兔挨，秋雞、冬鼠獄門開。'
   ],
@@ -85,8 +85,8 @@ export const sigmaBrakeContext_34 = {
   sigmaBrakeTopics: [
     'Illness'
   ],
-  sigmaBrakeSource: 'sigma-month-original',
-  sigmaBrakeTarget: 'sigma-cross-branch',
+  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '正卯、二辰、三月巳，四午、五未、',
     '六居申，七酉、八戌、九亥上，十子、',
@@ -118,8 +118,8 @@ export const sigmaBrakeContext_35 = {
   sigmaBrakeTopics: [
     'Illness'
   ],
-  sigmaBrakeSource: 'sigma-month-original',
-  sigmaBrakeTarget: 'sigma-cross-branch',
+  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '正卯、二辰、三月巳，四午、五未、',
     '六居申，七酉、八戌、九亥上，十子、',

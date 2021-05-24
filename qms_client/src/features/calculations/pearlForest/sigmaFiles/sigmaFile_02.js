@@ -55,8 +55,7 @@ export const handleSigmaBoltOfMonthBranchToOriginal =
       sigmaTargetNutOfMonthBranch
     };
 
-    return
-    finalSigmaBoltContextOfMonthBranchForCrossBranch;
+    return finalSigmaBoltContextOfMonthBranchForCrossBranch;
   }
   else if(sigmaBrakeTargetOfMonthBranch
     == 'sigma-target-cross-trunk'){
@@ -68,14 +67,11 @@ export const handleSigmaBoltOfMonthBranchToOriginal =
       sigmaTargetNutOfMonthBranch
     }
 
-    return
-    finalSigmaBoltContextOfMonthBranchForCrossTrunk;
+    return finalSigmaBoltContextOfMonthBranchForCrossTrunk;
   }
   else{
     throw new Error(
       'The sigma target should be just '
       + 'cross trunk or cross branch.');
   }
-
-  return sigmaBoltContextOfMonthBranch;
 }
