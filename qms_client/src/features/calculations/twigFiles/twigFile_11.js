@@ -8,7 +8,7 @@ import {
 import {
   checkNilWithString,
   checkNilWithTypedObject
-} from './utilityHubCloneOfTwig';
+} from './_utilityHubByTwig';
 
 const twigSmallAlloyParagraph =
   '子丑合土,寅亥合木,卯戌合火,辰酉合金,巳申合水,午未合火';

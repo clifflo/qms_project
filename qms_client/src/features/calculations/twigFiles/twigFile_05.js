@@ -8,7 +8,7 @@ import {
 import {
   getCyclicItemFromList,
   checkNilWithNumber
-} from './utilityHubCloneOfTwig';
+} from './_utilityHubByTwig';
 
 export const
   getTwigElementalRelationContextByChinese = (
