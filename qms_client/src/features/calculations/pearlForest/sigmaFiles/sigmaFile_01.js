@@ -29,19 +29,42 @@ export const sigmaBrakeContextPartialSetOfMonthOriginal =
 export const sigmaBrakeContextPartialSetOfMonthBranch =
   getSigmaBrakePartialSet('sigma-month-branch');
 
+const handleSigmaBoltOfMonthBranchToOriginal =
+  sigmaBoltOfMonthBranch => {
+
+  const sigmaSourceNutOfMonthBranch =
+    sigmaBoltOfMonthBranch[0];
+
+  checkNilByString(
+    sigmaSourceNutOfMonthBranch,
+    'sigmaSourceNutOfMonthBranch');
+
+  const sigmaTargetNutOfMonthBranch =
+    sigmaBoltOfMonthBranch[1];
+
+  const sigmaBoltContextOfMonthBranch = {
+    _type: 'SigmaBoltContext',
+    sigmaSourceNutOfMonthBranch,
+    sigmaTargetNutOfMonthBranch
+  };
+
+}
+
 const convertSigmaClutchContextOfMonthBranchToOriginal =
   sigmaBrakeContextOfMonthBranch => {
 
-  const { sigmaBrakeDetailDictionary } =
+  const { sigmaBoltDictionary } =
     sigmaBrakeContextOfMonthBranch;
 
   checkNilWithUntypedObject(
-    sigmaBrakeDetailDictionary,
-    'sigmaBrakeDetailDictionary');
+    sigmaBoltDictionary,
+    'sigmaBoltDictionary');
 
-  const sigmaBrakeDetailPairs =
-    R.toPairs(sigmaBrakeDetailDictionary);
+  const sigmaBoltPairs =
+    R.toPairs(sigmaBoltDictionary);
 
-  
+
+
+
 
 }
