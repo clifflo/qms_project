@@ -132,7 +132,7 @@ export const sigmaBrakeContext_60 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 60,
   sigmaBrakeName: '巳寡宿',
-  sigmaBrakeSource: 'sigma-day-branch',
+  sigmaBrakeSource: 'sigma-brake-source-day-branch',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeDescription: [
     '占資財忌。'

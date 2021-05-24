@@ -79,7 +79,7 @@ export const sigmaBrakeContext_09 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 9,
   sigmaBrakeName: '巳天福貴人',
-  sigmaBrakeSource: 'sigma-day-trunk',
+  sigmaBrakeSource: 'sigma-brake-source-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeDescription:
     '占身命遇之，一生福祿綿綿。',

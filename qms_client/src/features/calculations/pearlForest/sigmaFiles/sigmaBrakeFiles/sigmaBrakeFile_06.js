@@ -9,7 +9,7 @@ export const sigmaBrakeContext_26 = {
     'Lawsuit',
     'Illness'
   ],
-  sigmaBrakeSource: 'sigma-day-trunk',
+  sigmaBrakeSource: 'sigma-brake-source-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '甲己逢蛇、乙庚猴，丙辛逢虎、',
@@ -39,7 +39,7 @@ export const sigmaBrakeContext_27 = {
   sigmaBrakeTopics: [
     'Lawsuit'
   ],
-  sigmaBrakeSource: 'sigma-day-trunk',
+  sigmaBrakeSource: 'sigma-brake-source-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '甲乙蛇頭、戊己寅，庚辛酉位、',
@@ -102,7 +102,7 @@ export const sigmaBrakeContext_29 = {
     'Lawsuit',
     'Illness'
   ],
-  sigmaBrakeSource: 'sigma-day-trunk',
+  sigmaBrakeSource: 'sigma-brake-source-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '甲己日亥、乙庚申，丙辛日丑、',

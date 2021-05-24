@@ -50,7 +50,7 @@ export const sigmaBrakeContext_63 = {
 	sigmaBrakeIndex: 63,
   sigmaBrakeName: '巳天元祿',
   sigmaBrakeDescription: '凡事遇之大吉。',
-  sigmaBrakeSource: 'sigma-day-trunk',
+  sigmaBrakeSource: 'sigma-brake-source-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '甲己申酉最為愁，乙庚午未不須求，',

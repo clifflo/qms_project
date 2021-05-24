@@ -52,8 +52,8 @@ export const sigmaBrakeContext_48 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 48,
   sigmaBrakeName: '巳劫殺',
-  sigmaBrakeSource: 'sigma-day-branch',
-  sigmaBrakeTarget: 'Sigma branch for cross',
+  sigmaBrakeSource: 'sigma-brake-source-day-branch',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeDescription: [
     '凡事忌之。'
   ],
@@ -81,8 +81,8 @@ export const sigmaBrakeContext_49 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 49,
   sigmaBrakeName: '巳咸池殺',
-  sigmaBrakeSource: 'sigma-day-branch',
-  sigmaBrakeTarget: 'Sigma branch for cross',
+  sigmaBrakeSource: 'sigma-brake-source-day-branch',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeDescription: [
     '占婚大忌主婦人淫亂。'
   ],

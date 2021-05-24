@@ -2,8 +2,8 @@ export const sigmaBrakeContext_51 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 51,
   sigmaBrakeName: '巳孤辰',
-  sigmaBrakeSource: 'sigma-day-branch',
-  sigmaBrakeTarget: 'Sigma branch for cross',
+  sigmaBrakeSource: 'sigma-brake-source-day-branch',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeDescription: [
     '此煞本名孤辰寡宿。其地支則第一字為孤辰而第',
     '二字為寡宿是也。婚姻犯之主無子。'
@@ -35,7 +35,7 @@ export const sigmaBrakeContext_52 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 52,
   sigmaBrakeName: '巳寡宿',
-  sigmaBrakeSource: 'sigma-day-branch',
+  sigmaBrakeSource: 'sigma-brake-source-day-branch',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeDescription: [
     '此煞本名孤辰寡宿。其地支則第一字為孤辰而第',

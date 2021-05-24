@@ -29,7 +29,7 @@ export const sigmaBrakeContext_22 = {
   sigmaBrakeTopics: [
     'Examination'
   ],
-  sigmaBrakeSource: 'sigma-day-trunk',
+  sigmaBrakeSource: 'sigma-brake-source-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '甲丙相邀入虎鄉，更逢子穴最高強，',

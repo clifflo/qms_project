@@ -32,7 +32,7 @@ export const sigmaBrakeContext_32 = {
     'Lawsuit',
     'Marriage'
   ],
-  sigmaBrakeSource: 'sigma-day-trunk',
+  sigmaBrakeSource: 'sigma-brake-source-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
     '甲己逢寅、乙庚申，丙辛、',
