@@ -1,5 +1,6 @@
 export const sigmaBrakeContext_56 = {
-  sigmaBrakeIndex: 56,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 56,
   sigmaBrakeName: '巳受死',
   sigmaBrakeDescription: [
     '凡事忌之。'
@@ -31,7 +32,8 @@ export const sigmaBrakeContext_56 = {
 }
 
 export const sigmaBrakeContext_57 = {
-  sigmaBrakeIndex: 57,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 57,
   sigmaBrakeName: '巳隔神',
   sigmaBrakeDescription: [
     '占失物忌爻。'
@@ -62,7 +64,8 @@ export const sigmaBrakeContext_57 = {
 }
 
 export const sigmaBrakeContext_58 = {
-  sigmaBrakeIndex: 58,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 58,
   sigmaBrakeName: '巳大耗',
   sigmaBrakeDescription: [
     '占田蠢六畜大忌發動。'
@@ -94,7 +97,8 @@ export const sigmaBrakeContext_58 = {
 }
 
 export const sigmaBrakeContext_59 = {
-  sigmaBrakeIndex: 59,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 59,
   sigmaBrakeName: '巳小耗',
   sigmaBrakeDescription: [
     '遇此發動損害田禾。'
@@ -125,7 +129,8 @@ export const sigmaBrakeContext_59 = {
 }
 
 export const sigmaBrakeContext_60 = {
-  sigmaBrakeIndex: 60,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 60,
   sigmaBrakeName: '巳寡宿',
   sigmaBrakeSource: 'Sigma day branch',
   sigmaBrakeTarget: 'Sigma cross branch',

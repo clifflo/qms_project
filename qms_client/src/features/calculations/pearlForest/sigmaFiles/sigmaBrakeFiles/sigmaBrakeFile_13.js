@@ -1,5 +1,6 @@
 export const sigmaBrakeContext_61 = {
-  sigmaBrakeIndex: 61,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 61,
   sigmaBrakeName: '巳旌旗殺',
   sigmaBrakeDescription: [
     '占病忌之。'
@@ -21,7 +22,8 @@ export const sigmaBrakeContext_61 = {
 }
 
 export const sigmaBrakeContext_62 = {
-  sigmaBrakeIndex: 62,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 62,
   sigmaBrakeName: '巳暴敗殺',
   sigmaBrakeDescription: [
     '婚姻大忌男剋婦女傷夫。'
@@ -44,7 +46,8 @@ export const sigmaBrakeContext_62 = {
 }
 
 export const sigmaBrakeContext_63 = {
-  sigmaBrakeIndex: 63,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 63,
   sigmaBrakeName: '巳天元祿',
   sigmaBrakeDescription: '凡事遇之大吉。',
   sigmaBrakeSource: 'Sigma day trunk',

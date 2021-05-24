@@ -1,5 +1,6 @@
 export const sigmaBrakeContext_11 = {
-  sigmaBrakeIndex: 11,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 11,
   sigmaBrakeName: '巳天馬',
   sigmaBrakeDescription: '凡占仕宦，遇此必有陞遷之兆。',
   sigmaBrakeTopics: [
@@ -28,7 +29,8 @@ export const sigmaBrakeContext_11 = {
 }
 
 export const sigmaBrakeContext_12 = {
-  sigmaBrakeIndex: 12,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 12,
   sigmaBrakeName: '巳唐符',
   sigmaBrakeDescription:[
     '此出自卜筮正宗與易隱之‘丁唐符’並不相同是也。',
@@ -62,7 +64,8 @@ export const sigmaBrakeContext_12 = {
 }
 
 export const sigmaBrakeContext_13 = {
-  sigmaBrakeIndex: 13,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 13,
   sigmaBrakeName: '巳國印',
   sigmaBrakeDescription: [
     '此出自卜筮正宗與易隱之‘丁國印’並不相同是也。',
@@ -96,7 +99,8 @@ export const sigmaBrakeContext_13 = {
 }
 
 export const sigmaBrakeContext_14 = {
-  sigmaBrakeIndex: 14,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 14,
   sigmaBrakeName: '巳天醫',
   sigmaBrakeDescription: [
     '占病遇此爻，動雖凶有救。'
@@ -128,7 +132,8 @@ export const sigmaBrakeContext_14 = {
 }
 
 export const sigmaBrakeContext_15 = {
-  sigmaBrakeIndex: 15,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 15,
   sigmaBrakeName: '巳月天赦',
   sigmaBrakeDescription: [
     '獄訟遇之，大吉。本名曰‘天赦’，然因欲與‘十干天赦’區分故',

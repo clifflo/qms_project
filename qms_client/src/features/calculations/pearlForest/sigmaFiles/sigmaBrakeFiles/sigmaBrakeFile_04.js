@@ -1,5 +1,6 @@
 export const sigmaBrakeContext_16 = {
-  sigmaBrakeIndex: 16,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 16,
   sigmaBrakeName: '巳皇恩大赦',
   sigmaBrakeDescription:
     '諸事遇之吉。',
@@ -27,7 +28,8 @@ export const sigmaBrakeContext_16 = {
 }
 
 export const sigmaBrakeContext_17 = {
-  sigmaBrakeIndex: 17,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 17,
   sigmaBrakeName: '巳赦文',
   sigmaBrakeDescription:
     '諸事遇之吉。',
@@ -55,7 +57,8 @@ export const sigmaBrakeContext_17 = {
 }
 
 export const sigmaBrakeContext_18 = {
-  sigmaBrakeIndex: 18,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 18,
   sigmaBrakeName: '巳日天赦',
   sigmaBrakeDescription: [
     '諸事遇之吉。本名曰‘十干天赦’，然因欲與‘天赦’區分故',
@@ -82,7 +85,8 @@ export const sigmaBrakeContext_18 = {
 }
 
 export const sigmaBrakeContext_19 = {
-  sigmaBrakeIndex: 19,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 19,
   sigmaBrakeName: '巳四季天赦',
   sigmaBrakeDescription: [
     '凡占百事凶中化吉'
@@ -101,7 +105,8 @@ export const sigmaBrakeContext_19 = {
 }
 
 export const sigmaBrakeContext_20 = {
-  sigmaBrakeIndex: 20,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 20,
   sigmaBrakeName: '巳天耳',
   sigmaBrakeDescription: [
     '占尋人看之耳則有音信。'

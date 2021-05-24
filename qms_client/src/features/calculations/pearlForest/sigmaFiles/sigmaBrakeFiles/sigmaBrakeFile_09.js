@@ -1,5 +1,6 @@
 export const sigmaBrakeContext_41 = {
-  sigmaBrakeIndex: 41,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 41,
   sigmaBrakeName: '巳日下大殺',
   sigmaBrakeSource: 'Sigma day trunk',
   sigmaBrakeTarget: 'Sigma cross branch',
@@ -25,7 +26,8 @@ export const sigmaBrakeContext_41 = {
 }
 
 export const sigmaBrakeContext_42 = {
-  sigmaBrakeIndex: 42,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 42,
   sigmaBrakeName: '巳天狗殺',
   sigmaBrakeDescription: [
     '凡事忌之。'
@@ -57,7 +59,8 @@ export const sigmaBrakeContext_42 = {
 }
 
 export const sigmaBrakeContext_43 = {
-  sigmaBrakeIndex: 43,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 43,
   sigmaBrakeName: '巳三坵五墓',
   sigmaBrakeDescription: [
     '占病大忌。'
@@ -79,7 +82,8 @@ export const sigmaBrakeContext_43 = {
 }
 
 export const sigmaBrakeContext_44 = {
-  sigmaBrakeIndex: 44,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 44,
   sigmaBrakeName: '巳喪車殺',
   sigmaBrakeDescription: [
     '人來占病無他斷，教君作急買棺材。'
@@ -101,7 +105,8 @@ export const sigmaBrakeContext_44 = {
 }
 
 export const sigmaBrakeContext_45 = {
-  sigmaBrakeIndex: 45,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 45,
   sigmaBrakeName: '巳沐浴殺',
   sigmaBrakeDescription: [
     '沐浴殺難當。是殺動，病人亡。'

@@ -1,5 +1,6 @@
 export const sigmaBrakeContext_51 = {
-  sigmaBrakeIndex: 51,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 51,
   sigmaBrakeName: '巳孤辰',
   sigmaBrakeSource: 'Sigma day branch',
   sigmaBrakeTarget: 'Sigma branch for cross',
@@ -31,7 +32,8 @@ export const sigmaBrakeContext_51 = {
 }
 
 export const sigmaBrakeContext_52 = {
-  sigmaBrakeIndex: 52,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 52,
   sigmaBrakeName: '巳寡宿',
   sigmaBrakeSource: 'Sigma day branch',
   sigmaBrakeTarget: 'Sigma cross branch',
@@ -63,7 +65,8 @@ export const sigmaBrakeContext_52 = {
 }
 
 export const sigmaBrakeContext_53 = {
-  sigmaBrakeIndex: 53,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 53,
   sigmaBrakeName: '巳搥門官符',
   sigmaBrakeDescription: [
     '依易隱所言主官訟猝至。'
@@ -95,7 +98,8 @@ export const sigmaBrakeContext_53 = {
 }
 
 export const sigmaBrakeContext_54 = {
-  sigmaBrakeIndex: 54,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 54,
   sigmaBrakeName: '巳勾陳殺',
   sigmaBrakeDescription: [
     '占病及訟大忌。'
@@ -128,7 +132,8 @@ export const sigmaBrakeContext_54 = {
 }
 
 export const sigmaBrakeContext_55 = {
-  sigmaBrakeIndex: 55,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 55,
   sigmaBrakeName: '巳白虎殺',
   sigmaBrakeDescription: [
     '占病大忌。'

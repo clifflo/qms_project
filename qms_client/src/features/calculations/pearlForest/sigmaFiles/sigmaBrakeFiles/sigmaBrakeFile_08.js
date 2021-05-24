@@ -1,5 +1,6 @@
 export const sigmaBrakeContext_36 = {
-  sigmaBrakeIndex: 36,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 36,
   sigmaBrakeName: '巳天哭殺',
   sigmaBrakeDescription: [
     '占病大忌。'
@@ -30,7 +31,8 @@ export const sigmaBrakeContext_36 = {
 }
 
 export const sigmaBrakeContext_37 = {
-  sigmaBrakeIndex: 37,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 37,
   sigmaBrakeName: '巳天獄殺',
   sigmaBrakeDescription: [
     '占訟大忌。'
@@ -61,7 +63,8 @@ export const sigmaBrakeContext_37 = {
 }
 
 export const sigmaBrakeContext_38 = {
-  sigmaBrakeIndex: 38,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 38,
   sigmaBrakeName: '巳天賊',
   sigmaBrakeDescription: [
     '出行與求財俱忌。此煞之本名為‘天賊’而和‘四季天賊’有',
@@ -95,7 +98,8 @@ export const sigmaBrakeContext_38 = {
 }
 
 export const sigmaBrakeContext_39 = {
-  sigmaBrakeIndex: 39,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 39,
   sigmaBrakeName: '丁天賊',
   sigmaBrakeDescription: [
     '出行與求財俱忌。此煞之本名為‘四季天賊’而和‘天賊’有',
@@ -129,7 +133,8 @@ export const sigmaBrakeContext_39 = {
 }
 
 export const sigmaBrakeContext_40 = {
-  sigmaBrakeIndex: 40,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 40,
   sigmaBrakeName: '巳四季小殺',
   sigmaBrakeDescription: [
     '卦中值此臨身命，任是輕災也見凶。'

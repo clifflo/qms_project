@@ -1,5 +1,6 @@
 export const sigmaBrakeContext_01 = {
-  sigmaBrakeIndex: 1,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 1,
   sigmaBrakeName: '巳天元祿',
   sigmaBrakeDescription: '凡事遇之大吉。',
   sigmaBrakeSource: 'Sigma day trunk',
@@ -22,7 +23,8 @@ export const sigmaBrakeContext_01 = {
   }
 }
 
-export const sigmaBrakeContext_02 = {
+ex	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex:BrakeContext_02 = {
   sigmaBrakeIndex: 2,
   sigmaBrakeName: '巳驛馬',
   sigmaBrakeDescription: [
@@ -49,7 +51,8 @@ export const sigmaBrakeContext_02 = {
     '亥': '巳'
   }
 }
-
+	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex:
 export const sigmaBrakeContext_03 = {
   sigmaBrakeIndex: 3,
   sigmaBrakeName: '巳天乙貴人',
@@ -71,7 +74,8 @@ export const sigmaBrakeContext_03 = {
     '壬': '卯巳',
     '癸': '卯巳'
   }
-}
+}	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex:
 
 export const sigmaBrakeContext_04 = {
   sigmaBrakeIndex: 4,
@@ -94,7 +98,8 @@ export const sigmaBrakeContext_04 = {
     '辛': '巳',
     '壬': '辰',
     '癸': '卯'
-  }
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex:
 }
 
 export const sigmaBrakeContext_05 = {

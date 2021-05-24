@@ -1,7 +1,8 @@
 import * as R from 'ramda';
 
 export const sigmaBrakeContext_06 = {
-  sigmaBrakeIndex: 6,
+  _type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 6,
   sigmaBrakeName: '丁天德貴人',
   sigmaBrakeDescription:
     '求仕用之。此處只取福星貴人之天干故加‘丁’字以標示之。',
@@ -20,7 +21,8 @@ export const sigmaBrakeContext_06 = {
 }
 
 export const sigmaBrakeContext_07 = {
-  sigmaBrakeIndex: 7,
+  _type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 7,
   sigmaBrakeName: '巳月德貴人',
   sigmaBrakeDescription: '凡有所占，轉凶為吉。',
   sigmaBrakeTopics: [],
@@ -46,7 +48,8 @@ export const sigmaBrakeContext_07 = {
 }
 
 export const sigmaBrakeContext_08 = {
-  sigmaBrakeIndex: 8,
+  _type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 8,
   sigmaBrakeName: '巳月德合',
   sigmaBrakeDescription: '凡有所占，轉凶為吉。',
   sigmaBrakeSource: 'Sigma month branch',
@@ -71,7 +74,8 @@ export const sigmaBrakeContext_08 = {
 }
 
 export const sigmaBrakeContext_09 = {
-  sigmaBrakeIndex: 9,
+  _type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 9,
   sigmaBrakeName: '巳天福貴人',
   sigmaBrakeSource: 'Sigma day trunk',
   sigmaBrakeTarget: 'Sigma cross branch',
@@ -99,7 +103,8 @@ export const sigmaBrakeContext_09 = {
 }
 
 export const sigmaBrakeContext_10 = {
-  sigmaBrakeIndex: 10,
+  _type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 10,
   sigmaBrakeName: '巳天喜',
   sigmaBrakeSource: 'Sigma seaon',
   sigmaBrakeTarget: 'Sigma cross branch',

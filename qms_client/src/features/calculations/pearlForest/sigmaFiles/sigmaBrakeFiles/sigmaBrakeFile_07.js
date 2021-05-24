@@ -1,5 +1,6 @@
 export const sigmaBrakeContext_31 = {
-  sigmaBrakeIndex: 31,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 31,
   sigmaBrakeName: '巳喝散神',
   sigmaBrakeDescription: [
     '官事若發動，喝散不由人。'
@@ -21,7 +22,8 @@ export const sigmaBrakeContext_31 = {
 }
 
 export const sigmaBrakeContext_32 = {
-  sigmaBrakeIndex: 32,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 32,
   sigmaBrakeName: '巳日喝散',
   sigmaBrakeDescription: [
     '遇之婚姻忌，官司卻不成。'
@@ -51,7 +53,8 @@ export const sigmaBrakeContext_32 = {
 }
 
 export const sigmaBrakeContext_33 = {
-  sigmaBrakeIndex: 33,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 33,
   sigmaBrakeName: '巳開獄神',
   sigmaBrakeDescription: [
     '卦中若得此爻動，長久囚人放出來。'
@@ -73,7 +76,8 @@ export const sigmaBrakeContext_33 = {
 }
 
 export const sigmaBrakeContext_34 = {
-  sigmaBrakeIndex: 34,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 34,
   sigmaBrakeName: '巳活曜星',
   sigmaBrakeDescription: [
     '孕婦胎動則產疾病，遇此辰發動則痊。'
@@ -105,7 +109,8 @@ export const sigmaBrakeContext_34 = {
 }
 
 export const sigmaBrakeContext_35 = {
-  sigmaBrakeIndex: 35,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 35,
   sigmaBrakeName: '巳活曜星',
   sigmaBrakeDescription: [
     '孕婦胎動則產疾病，遇此辰發動則痊。'

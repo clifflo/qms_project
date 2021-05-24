@@ -1,5 +1,6 @@
 export const sigmaBrakeContext_46 = {
-  sigmaBrakeIndex: 46,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 46,
   sigmaBrakeName: '巳關殺',
   sigmaBrakeDescription: [
     '此煞本名關鎖殺也而其可拆之而成關殺及',
@@ -23,7 +24,8 @@ export const sigmaBrakeContext_46 = {
 }
 
 export const sigmaBrakeContext_47 = {
-  sigmaBrakeIndex: 47,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 47,
   sigmaBrakeName: '巳鎖殺',
   sigmaBrakeDescription: [
     '此煞本名關鎖殺也而其可拆之而成關殺及',
@@ -47,7 +49,8 @@ export const sigmaBrakeContext_47 = {
 }
 
 export const sigmaBrakeContext_48 = {
-  sigmaBrakeIndex: 48,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 48,
   sigmaBrakeName: '巳劫殺',
   sigmaBrakeSource: 'Sigma day branch',
   sigmaBrakeTarget: 'Sigma branch for cross',
@@ -75,7 +78,8 @@ export const sigmaBrakeContext_48 = {
 }
 
 export const sigmaBrakeContext_49 = {
-  sigmaBrakeIndex: 49,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 49,
   sigmaBrakeName: '巳咸池殺',
   sigmaBrakeSource: 'Sigma day branch',
   sigmaBrakeTarget: 'Sigma branch for cross',
@@ -103,7 +107,8 @@ export const sigmaBrakeContext_49 = {
 }
 
 export const sigmaBrakeContext_50 = {
-  sigmaBrakeIndex: 50,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 50,
   sigmaBrakeName: '巳鰥寡殺',
   sigmaBrakeDescription: [
     '占姻事忌之。'

@@ -1,5 +1,6 @@
 export const sigmaBrakeContext_21 = {
-  sigmaBrakeIndex: 21,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 21,
   sigmaBrakeName: '巳天目',
   sigmaBrakeDescription: [
     '占尋人看之目則見面。'
@@ -19,7 +20,8 @@ export const sigmaBrakeContext_21 = {
 }
 
 export const sigmaBrakeContext_22 = {
-  sigmaBrakeIndex: 22,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 22,
   sigmaBrakeName: '丁天福貴人',
   sigmaBrakeDescription: [
     '求官用之此首出天玄賦。'
@@ -49,7 +51,8 @@ export const sigmaBrakeContext_22 = {
 }
 
 export const sigmaBrakeContext_23 = {
-  sigmaBrakeIndex: 23,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 23,
   sigmaBrakeName: '巳天解神',
   sigmaBrakeDescription: [
     '解神官事俱看之。'
@@ -72,7 +75,8 @@ export const sigmaBrakeContext_23 = {
 }
 
 export const sigmaBrakeContext_24 = {
-  sigmaBrakeIndex: 24,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 24,
   sigmaBrakeName: '巳地解神',
   sigmaBrakeDescription: [
     '解神官事俱看之。'
@@ -104,7 +108,8 @@ export const sigmaBrakeContext_24 = {
 }
 
 export const sigmaBrakeContext_25 = {
-  sigmaBrakeIndex: 25,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 25,
   sigmaBrakeName: '巳月解神',
   sigmaBrakeDescription: [
     '若值此辰官事散，縱然重病也離身。'

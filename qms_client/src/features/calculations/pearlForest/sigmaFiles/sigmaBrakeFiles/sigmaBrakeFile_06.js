@@ -1,5 +1,6 @@
 export const sigmaBrakeContext_26 = {
-  sigmaBrakeIndex: 26,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 26,
   sigmaBrakeName: '巳日解神',
   sigmaBrakeDescription: [
     '如值此煞官事散，病人無藥不須憂。'
@@ -29,7 +30,8 @@ export const sigmaBrakeContext_26 = {
 }
 
 export const sigmaBrakeContext_27 = {
-  sigmaBrakeIndex: 27,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 27,
   sigmaBrakeName: '巳內解神',
   sigmaBrakeDescription: [
     '遇之官非消散。'
@@ -58,7 +60,8 @@ export const sigmaBrakeContext_27 = {
 }
 
 export const sigmaBrakeContext_28 = {
-  sigmaBrakeIndex: 28,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 28,
   sigmaBrakeName: '巳外解神',
   sigmaBrakeDescription: [
     '若值此辰官事散。'
@@ -89,7 +92,8 @@ export const sigmaBrakeContext_28 = {
 }
 
 export const sigmaBrakeContext_29 = {
-  sigmaBrakeIndex: 29,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 29,
   sigmaBrakeName: '巳解脫神',
   sigmaBrakeDescription: [
     '如值此煞官訟消，病人不必生憂慮。'
@@ -119,7 +123,8 @@ export const sigmaBrakeContext_29 = {
 }
 
 export const sigmaBrakeContext_30 = {
-  sigmaBrakeIndex: 30,
+  	_type:'SigmaBrakeContext',
+	sigmaBrakeIndex: 30,
   sigmaBrakeName: '巳雷火神',
   sigmaBrakeDescription: [
     '占訟若與日辰相合旺動主官事消散。'
