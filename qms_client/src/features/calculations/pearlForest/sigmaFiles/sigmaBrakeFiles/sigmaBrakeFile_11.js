@@ -2,7 +2,7 @@ export const sigmaBrakeContext_51 = {
   	_type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 51,
   sigmaBrakeName: '巳孤辰',
-  sigmaBrakeSource: 'Sigma day branch',
+  sigmaBrakeSource: 'sigma-day-branch',
   sigmaBrakeTarget: 'Sigma branch for cross',
   sigmaBrakeDescription: [
     '此煞本名孤辰寡宿。其地支則第一字為孤辰而第',
@@ -35,8 +35,8 @@ export const sigmaBrakeContext_52 = {
   	_type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 52,
   sigmaBrakeName: '巳寡宿',
-  sigmaBrakeSource: 'Sigma day branch',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-day-branch',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeDescription: [
     '此煞本名孤辰寡宿。其地支則第一字為孤辰而第',
     '二字為寡宿是也。婚姻犯之主無子。'
@@ -74,8 +74,8 @@ export const sigmaBrakeContext_53 = {
   sigmaBrakeTopics: [
     'Lawsuit'
   ],
-  sigmaBrakeSource: 'Sigma month original',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-month-original',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '正七虎行村，二八鼠當門，三九居戌位，',
     '四十弄猴孫，五十一逢騎馬走，',
@@ -108,8 +108,8 @@ export const sigmaBrakeContext_54 = {
     'Lawsuit',
     'Illness'
   ],
-  sigmaBrakeSource: 'Sigma month original',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-month-original',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '正辰、二卯、三月寅，四丑、五子、',
     '六亥程，七犬、八酉、九申位，十羊、',
@@ -142,8 +142,8 @@ export const sigmaBrakeContext_55 = {
     'Lawsuit',
     'Illness'
   ],
-  sigmaBrakeSource: 'Sigma month original',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-month-original',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '正申、二酉、三戌鄉，四亥、五子、',
     '六丑傷，七寅、八卯、九辰上，十巳、',

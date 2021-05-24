@@ -8,8 +8,8 @@ export const sigmaBrakeContext_36 = {
   sigmaBrakeTopics: [
     'Illness'
   ],
-  sigmaBrakeSource: 'Sigma month original',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-month-original',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '哭聲正五九居羊，二六十月在猴鄉，',
     '三七十一雞啼叫，四八十二犬猖狂。'
@@ -40,8 +40,8 @@ export const sigmaBrakeContext_37 = {
   sigmaBrakeTopics: [
     'Lawsuit'
   ],
-  sigmaBrakeSource: 'Sigma month original',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-month-original',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '正五九月居亥位，二六十月在申藏，',
     '三七十一飛巳上，四八十二到寅方。'
@@ -74,8 +74,8 @@ export const sigmaBrakeContext_38 = {
     'Travel',
     'Business'
   ],
-  sigmaBrakeSource: 'Sigma month original',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-month-original',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '正丑、二子、三月亥，四戌、五酉、',
     '六居申，七未、八午、九蛇地，十辰、',
@@ -109,8 +109,8 @@ export const sigmaBrakeContext_39 = {
     'Travel',
     'Business'
   ],
-  sigmaBrakeSource: 'Sigma month original',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-month-original',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '正辰、二酉、三虎鄉，四未、五子、',
     '六蛇藏，七犬、八兔、九申位，十牛、',
@@ -142,8 +142,8 @@ export const sigmaBrakeContext_40 = {
   sigmaBrakeTopics: [
     'Life'
   ],
-  sigmaBrakeSource: 'Sigma season',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-season',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '春忌羊兮、夏忌龍，秋牛、冬犬哭重重。'
   ],

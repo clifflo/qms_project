@@ -4,8 +4,8 @@ export const sigmaBrakeContext_16 = {
   sigmaBrakeName: '巳皇恩大赦',
   sigmaBrakeDescription:
     '諸事遇之吉。',
-  sigmaBrakeSource: 'Sigma month original',
-  sigmaBrakeTarget: 'Sigma cross trunk',
+  sigmaBrakeSource: 'sigma-month-original',
+  sigmaBrakeTarget: 'sigma-cross-trunk',
   sigmaBrakeOriginalSentence: [
     '正月戌兮、二月丑，三月虎兮、四蛇走，',
     '五月酉兮、六卯位，七鼠、八馬各看守，',
@@ -33,8 +33,8 @@ export const sigmaBrakeContext_17 = {
   sigmaBrakeName: '巳赦文',
   sigmaBrakeDescription:
     '諸事遇之吉。',
-  sigmaBrakeSource: 'Sigma month original',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-month-original',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '正戌、二丑、三辰昌，四未、五酉、六卯強，',
     '七子、八午、九寅位，十月巳上大吉祥，',
@@ -64,8 +64,8 @@ export const sigmaBrakeContext_18 = {
     '諸事遇之吉。本名曰‘十干天赦’，然因欲與‘天赦’區分故',
     '改為‘巳日天赦’而‘天赦’則改為‘巳月天赦’。'
   ],
-  sigmaBrakeSource: 'Sigma month original',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-month-original',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '甲己東方兔，乙庚亥上求，丙辛居酉位，',
     '丁壬未上流，戊癸蛇作伴，萬事不須憂。'
@@ -91,8 +91,8 @@ export const sigmaBrakeContext_19 = {
   sigmaBrakeDescription: [
     '凡占百事凶中化吉'
   ],
-  sigmaBrakeSource: 'Sigma month original',
-  sigmaBrakeTarget: 'Sigma cross twig combo',
+  sigmaBrakeSource: 'sigma-month-original',
+  sigmaBrakeTarget: 'sigma-cross-twig-combo',
   sigmaBrakeOriginalSentence: [
     '春戊寅、夏甲午，秋戊申、冬甲子。'
   ],
@@ -111,8 +111,8 @@ export const sigmaBrakeContext_20 = {
   sigmaBrakeDescription: [
     '占尋人看之耳則有音信。'
   ],
-  sigmaBrakeSource: 'Sigma month original',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-month-original',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '春天耳巳、目從亥，夏天耳寅、目居申，',
     '秋天耳亥、目從巳，冬天耳申、目居寅。'

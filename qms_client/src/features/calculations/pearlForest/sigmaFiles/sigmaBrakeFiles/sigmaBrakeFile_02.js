@@ -6,8 +6,8 @@ export const sigmaBrakeContext_06 = {
   sigmaBrakeName: '丁天德貴人',
   sigmaBrakeDescription:
     '求仕用之。此處只取福星貴人之天干故加‘丁’字以標示之。',
-  sigmaBrakeSource: 'Sigma month original',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-month-original',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '正丁、二申宮，三壬、四辛同，五亥、',
     '六甲上，七癸、八寅逢，九丙、十歸乙，',
@@ -26,8 +26,8 @@ export const sigmaBrakeContext_07 = {
   sigmaBrakeName: '巳月德貴人',
   sigmaBrakeDescription: '凡有所占，轉凶為吉。',
   sigmaBrakeTopics: [],
-  sigmaBrakeSource: 'Sigma month branch',
-  sigmaBrakeTarget: 'Sigma cross trunk',
+  sigmaBrakeSource: 'sigma-month-branch',
+  sigmaBrakeTarget: 'sigma-cross-trunk',
   sigmaBrakeOriginalSentence: [
     '寅午戌月丙，申子辰月壬，亥卯未月甲，巳酉丑月庚。'
   ],
@@ -52,8 +52,8 @@ export const sigmaBrakeContext_08 = {
 	sigmaBrakeIndex: 8,
   sigmaBrakeName: '巳月德合',
   sigmaBrakeDescription: '凡有所占，轉凶為吉。',
-  sigmaBrakeSource: 'Sigma month branch',
-  sigmaBrakeTarget: 'Sigma cross trunk',
+  sigmaBrakeSource: 'sigma-month-branch',
+  sigmaBrakeTarget: 'sigma-cross-trunk',
   sigmaBrakeOriginalSentence: [
     '寅午戌月辛，申子辰月丁，亥卯未月己，巳酉丑月乙。'
   ],
@@ -77,8 +77,8 @@ export const sigmaBrakeContext_09 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 9,
   sigmaBrakeName: '巳天福貴人',
-  sigmaBrakeSource: 'Sigma day trunk',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-day-trunk',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeDescription:
     '占身命遇之，一生福祿綿綿。',
   sigmaBrakeTopics: [
@@ -107,7 +107,7 @@ export const sigmaBrakeContext_10 = {
 	sigmaBrakeIndex: 10,
   sigmaBrakeName: '巳天喜',
   sigmaBrakeSource: 'Sigma seaon',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeTopics: [
     'Pregnant'
   ],

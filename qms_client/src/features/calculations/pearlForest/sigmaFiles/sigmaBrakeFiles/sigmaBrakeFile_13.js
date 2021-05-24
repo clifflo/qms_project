@@ -8,8 +8,8 @@ export const sigmaBrakeContext_61 = {
   sigmaBrakeTopics: [
     'Illness'
   ],
-  sigmaBrakeSource: 'Sigma season',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-season',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '春卯、夏子、秋酉、冬午'
   ],
@@ -31,8 +31,8 @@ export const sigmaBrakeContext_62 = {
   sigmaBrakeTopics: [
     'Marriage'
   ],
-  sigmaBrakeSource: 'Sigma season',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-season',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '豬羊犬吠春三月，蛇鼠龍憂夏月當，',
     '申酉丑逢秋必敗，虎馬兔兮冬季防。'
@@ -50,8 +50,8 @@ export const sigmaBrakeContext_63 = {
 	sigmaBrakeIndex: 63,
   sigmaBrakeName: '巳天元祿',
   sigmaBrakeDescription: '凡事遇之大吉。',
-  sigmaBrakeSource: 'Sigma day trunk',
-  sigmaBrakeTarget: 'Sigma cross branch',
+  sigmaBrakeSource: 'sigma-day-trunk',
+  sigmaBrakeTarget: 'sigma-cross-branch',
   sigmaBrakeOriginalSentence: [
     '甲己申酉最為愁，乙庚午未不須求，',
     '丙辛辰巳君休去，丁壬寅卯一場憂，',

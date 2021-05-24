@@ -19,15 +19,15 @@ const getSigmaBrakePartialSet =
 
 export const sigmaDayBranchBrakePartialSet =
   getSigmaBrakePartialSet(
-    'Sigma day branch');
+    'sigma-day-branch');
 
 export const sigmaMonthOriginalBrakePartialSet =
   getSigmaBrakePartialSet(
-    'Sigma month original');
+    'sigma-month-original');
 
 export const sigmaMonthBranchBrakePartialSet =
   getSigmaBrakePartialSet(
-    'Sigma month branch');
+    'sigma-month-branch');
 
 const convertSigmaMonthBranchToOriginalBrake =
   sigmaMonthBranchBrake => {
