@@ -122,7 +122,7 @@ export const sigmaBrake_45 = {
   }
 }
 
-export const sigmaBrakeSet_09 = [
+export const sigmaBrakeSubset_09 = [
   sigmaBrake_41,
   sigmaBrake_42,
   sigmaBrake_43,

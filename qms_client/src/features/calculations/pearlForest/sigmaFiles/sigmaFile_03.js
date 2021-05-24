@@ -158,3 +158,11 @@ export const sigmaBrake_15 = {
     '十二': '丑'
   }
 }
+
+export const sigmaBrakeSubset_03 = [
+  sigmaBrake_11,
+  sigmaBrake_12,
+  sigmaBrake_13,
+  sigmaBrake_14,
+  sigmaBrake_15
+];
