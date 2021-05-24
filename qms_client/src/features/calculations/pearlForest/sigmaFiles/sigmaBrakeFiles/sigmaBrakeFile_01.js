@@ -27,7 +27,7 @@ export const sigmaBrake_02 = {
   sigmaBrakeName: '巳驛馬',
   sigmaBrakeDescription: '出行及占行人俱要看之。',
   sigmaBrakeSource: 'Sigma day branch',
-  sigmaBrakeTarget: 'Sigma branch for cross',
+  sigmaBrakeTarget: 'Sigma cross branch',
   sigmaBrakeOriginalSentence: [
     '寅午戌馬居申，申子辰馬居寅，',
     '巳酉丑馬在亥，亥卯未馬在巳。'
@@ -101,7 +101,7 @@ export const sigmaBrake_05 = {
   sigmaBrakeDescription:
     '求仕用之。此處只取天干故加‘巳’字以標示之。',
   sigmaBrakeSource: 'Sigma month',
-  sigmaBrakeTarget: 'Sigma branch or trunk for cross',
+  sigmaBrakeTarget: 'Sigma cross trunk',
   sigmaBrakeOriginalSentence: [
     '正丁、二申宮，三壬、四辛同，五亥、'
     '六甲上，七癸、八寅逢，九丙、十歸乙，',

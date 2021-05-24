@@ -12,7 +12,7 @@ export const sigmaBrake_16 = {
   ],
   sigmaBrakeContext: {
     '正': '戌',
-    '二': '丑，',
+    '二': '丑',
     '三': '寅',
     '四': '巳',
     '五': '酉',

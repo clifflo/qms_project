@@ -6,7 +6,7 @@ export const sigmaBrake_11 = {
     'Examination'
   ],
   sigmaBrakeSource: 'Sigma month branch',
-  sigmaBrakeTarget: 'Sigma branch for cross',
+  sigmaBrakeTarget: 'Sigma cross branch',
   sigmaBrakeOriginalSentence: [
     '寅申月在午，卯酉月在申，辰戌月在戊，',
     '巳亥月在子，子午月在寅，丑未月在辰。'
