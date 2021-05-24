@@ -13,7 +13,7 @@ export const sigmaBrakeContext_06 = {
     '六甲上，七癸、八寅逢，九丙、十歸乙，',
     '子己、丑庚中。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '二': '申',
     '五': '亥',
     '八': '寅'
@@ -33,7 +33,7 @@ export const sigmaBrakeContext_07 = {
   sigmaBrakeOriginalSentence: [
     '寅午戌月丙，申子辰月壬，亥卯未月甲，巳酉丑月庚。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '子': '壬',
     '丑': '庚',
     '寅': '丙',
@@ -59,7 +59,7 @@ export const sigmaBrakeContext_08 = {
   sigmaBrakeOriginalSentence: [
     '寅午戌月辛，申子辰月丁，亥卯未月己，巳酉丑月乙。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '子': '丁',
     '丑': '乙',
     '寅': '辛',
@@ -90,7 +90,7 @@ export const sigmaBrakeContext_09 = {
     '甲愛金雞、乙愛猴，丁豬、丙鼠、己寅頭，',
     '戊尋玉兔、庚壬馬，辛癸逢蛇福自優。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '甲': '酉',
     '乙': '申',
     '丙': '子',
@@ -120,7 +120,7 @@ export const sigmaBrakeContext_10 = {
     '冬未二三指，世上遇此必懽忻，',
     '百事得之皆有理。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '春': '戌',
     '夏': '丑',
     '秋': '辰',

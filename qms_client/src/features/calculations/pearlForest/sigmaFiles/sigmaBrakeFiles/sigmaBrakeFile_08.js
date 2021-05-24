@@ -14,7 +14,7 @@ export const sigmaBrakeContext_36 = {
     '哭聲正五九居羊，二六十月在猴鄉，',
     '三七十一雞啼叫，四八十二犬猖狂。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '正': '未',
     '二': '申',
     '三': '酉',
@@ -46,7 +46,7 @@ export const sigmaBrakeContext_37 = {
     '正五九月居亥位，二六十月在申藏，',
     '三七十一飛巳上，四八十二到寅方。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '正': '亥',
     '二': '申',
     '三': '巳',
@@ -81,7 +81,7 @@ export const sigmaBrakeContext_38 = {
     '六居申，七未、八午、九蛇地，十辰、',
     '十一卯、十二寅。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '正': '丑',
     '二': '子',
     '三': '亥',
@@ -116,7 +116,7 @@ export const sigmaBrakeContext_39 = {
     '六蛇藏，七犬、八兔、九申位，十牛、',
     '子馬、丑豬忙。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '正': '辰',
     '二': '酉',
     '三': '寅',
@@ -147,7 +147,7 @@ export const sigmaBrakeContext_40 = {
   sigmaBrakeOriginalSentence: [
     '春忌羊兮、夏忌龍，秋牛、冬犬哭重重。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '春': '戌未',
     '夏': '辰',
     '秋': '丑',

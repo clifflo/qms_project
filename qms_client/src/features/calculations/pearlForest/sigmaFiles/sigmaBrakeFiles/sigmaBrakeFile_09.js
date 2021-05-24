@@ -11,7 +11,7 @@ export const sigmaBrakeContext_41 = {
     '甲乙豬兮、丙丁羊，戊己犬見、',
     '庚辛虎，壬癸蛇。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '甲': '亥',
     '乙': '亥',
     '丙': '未',
@@ -42,7 +42,7 @@ export const sigmaBrakeContext_42 = {
     '六辰藏，七酉、八寅、九未的，十鼠、',
     '子巳、丑犬防。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '正': '卯',
     '二': '申',
     '三': '丑',
@@ -73,7 +73,7 @@ export const sigmaBrakeContext_43 = {
   sigmaBrakeOriginalSentence: [
     '春丑、夏辰、秋即未，三冬逢戌。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '春': '丑',
     '夏': '辰',
     '秋': '未',
@@ -96,7 +96,7 @@ export const sigmaBrakeContext_44 = {
   sigmaBrakeOriginalSentence: [
     '喪車春雞夏鼠來，秋兔冬馬好安排。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '春': '酉',
     '夏': '子',
     '秋': '卯',
@@ -119,7 +119,7 @@ export const sigmaBrakeContext_45 = {
   sigmaBrakeOriginalSentence: [
     '春辰、夏未殃，秋戌、冬丑。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '春': '辰',
     '夏': '未',
     '秋': '戌',

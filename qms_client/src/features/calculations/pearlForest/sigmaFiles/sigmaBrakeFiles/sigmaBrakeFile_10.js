@@ -15,7 +15,7 @@ export const sigmaBrakeContext_46 = {
     '春關牛與蛇，夏月龍猴嗟，',
     '秋忌豬羊位，冬犬虎交加。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '春': '丑',
     '夏': '辰',
     '秋': '亥',
@@ -40,7 +40,7 @@ export const sigmaBrakeContext_47 = {
     '春關牛與蛇，夏月龍猴嗟，',
     '秋忌豬羊位，冬犬虎交加。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '春': '巳',
     '夏': '申',
     '秋': '未',
@@ -61,7 +61,7 @@ export const sigmaBrakeContext_48 = {
     '申子辰兮蛇開口，亥卯未兮猴速走，',
     '寅午戌嫌豬面黑，巳酉丑兮虎哮吼。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '子': '巳',
     '丑': '寅',
     '寅': '亥',
@@ -90,7 +90,7 @@ export const sigmaBrakeContext_49 = {
     '寅午戌兔從茆裡出，巳酉丑躍馬南方走，',
     '申子辰雞叫亂人倫，亥卯未鼠子當頭忌。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '子': '酉',
     '丑': '午',
     '寅': '卯',
@@ -122,7 +122,7 @@ export const sigmaBrakeContext_50 = {
     '春牛不下田，夏龍飛上天，',
     '秋羊艸枯死，冬犬厭殘年。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '春': '丑',
     '夏': '辰',
     '秋': '未',

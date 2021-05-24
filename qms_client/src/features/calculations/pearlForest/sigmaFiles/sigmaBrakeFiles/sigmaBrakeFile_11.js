@@ -15,7 +15,7 @@ export const sigmaBrakeContext_51 = {
   sigmaBrakeTopics: [
     'Marriage'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '子': '寅',
     '丑': '寅',
     '寅': '巳',
@@ -48,7 +48,7 @@ export const sigmaBrakeContext_52 = {
   sigmaBrakeTopics: [
     'Marriage'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '子': '戌',
     '丑': '戌',
     '寅': '丑',
@@ -81,7 +81,7 @@ export const sigmaBrakeContext_53 = {
     '四十弄猴孫，五十一逢騎馬走，',
     '六十二月透龍門。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '正': '寅',
     '二': '子',
     '三': '戌',
@@ -115,7 +115,7 @@ export const sigmaBrakeContext_54 = {
     '六亥程，七犬、八酉、九申位，十羊、',
     '子馬、丑蛇行。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '正': '辰',
     '二': '卯',
     '三': '寅',
@@ -149,7 +149,7 @@ export const sigmaBrakeContext_55 = {
     '六丑傷，七寅、八卯、九辰上，十巳、',
     '十一馬、十二羊。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '正': '申',
     '二': '酉',
     '三': '戌',

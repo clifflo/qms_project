@@ -11,7 +11,7 @@ export const sigmaBrakeContext_16 = {
     '五月酉兮、六卯位，七鼠、八馬各看守，',
     '九亥、十辰、十一申，十二未上君知否。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '正': '戌',
     '二': '丑',
     '三': '寅',
@@ -40,7 +40,7 @@ export const sigmaBrakeContext_17 = {
     '七子、八午、九寅位，十月巳上大吉祥，',
     '十一申上、十二亥，此神持世永無妨。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '正': '戌',
     '二': '丑',
     '三': '辰',
@@ -70,7 +70,7 @@ export const sigmaBrakeContext_18 = {
     '甲己東方兔，乙庚亥上求，丙辛居酉位，',
     '丁壬未上流，戊癸蛇作伴，萬事不須憂。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '甲': '卯',
     '乙': '亥',
     '丙': '酉',
@@ -96,7 +96,7 @@ export const sigmaBrakeContext_19 = {
   sigmaBrakeOriginalSentence: [
     '春戊寅、夏甲午，秋戊申、冬甲子。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '春': '戊寅',
     '夏': '甲午',
     '秋': '戊申',
@@ -117,7 +117,7 @@ export const sigmaBrakeContext_20 = {
     '春天耳巳、目從亥，夏天耳寅、目居申，',
     '秋天耳亥、目從巳，冬天耳申、目居寅。'
   ],
-  sigmaBrakeContext: {
+  sigmaBoltDictionary {
     '春': '巳',
     '夏': '寅',
     '秋': '亥',
