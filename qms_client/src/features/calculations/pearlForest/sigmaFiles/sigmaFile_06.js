@@ -51,8 +51,7 @@ export const handleSigmaBoltOfSeason =
 
     if(sigmaBrakeTargetOfSeason
       == 'sigma-brake-target-cross-branch'){
-      const
-      finalSigmaBoltContextOfSeasonForCrossBranch =
+      const finalSigmaBoltContextOfSeasonForCrossBranch =
       {
         ...rawSigmaBoltContextOfSeason,
         sigmaTargetCrossBranchNutForMonth:
@@ -63,8 +62,7 @@ export const handleSigmaBoltOfSeason =
     }
     else if(sigmaBrakeTargetOfSeason
       == 'sigma-brake-target-cross-trunk'){
-      const
-      finalSigmaBoltContextOfSeasonForCrossTrunk =
+      const finalSigmaBoltContextOfSeasonForCrossTrunk =
       {
         ...rawSigmaBoltContextOfSeason,
         sigmaTargetCrossTrunkNutForSeason:
@@ -73,10 +71,22 @@ export const handleSigmaBoltOfSeason =
 
       return finalSigmaBoltContextOfSeasonForCrossTrunk;
     }
+    else if(sigmaBrakeTargetOfSeason
+      == 'sigma-brake-target-cross-twig-combo'){
+      const finalSigmaBoltContextOfSeasonForCrossTwigCombo =
+      {
+        ...rawSigmaBoltContextOfSeason,
+        sigmaTargetCrossTwigComboNutForSeason:
+        sigmaTargetNutOfSeason
+      }
+
+      return finalSigmaBoltContextOfSeasonForCrossTwigCombo;
+    }
     else{
       throw new Error(
         'The sigma target should be just '
-        + 'cross trunk or cross branch.');
+        + 'cross trunk, cross branch or '
+        + 'cross twig combo.');
     }
   }
   catch(errorMessage){

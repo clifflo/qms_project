@@ -92,7 +92,7 @@ export const sigmaBrakeContext_19 = {
     '凡占百事凶中化吉'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
-  sigmaBrakeTarget: 'sigma-cross-twig-combo',
+  sigmaBrakeTarget: 'sigma-brake-target-cross-twig-combo',
   sigmaBrakeOriginalSentence: [
     '春戊寅、夏甲午，秋戊申、冬甲子。'
   ],
