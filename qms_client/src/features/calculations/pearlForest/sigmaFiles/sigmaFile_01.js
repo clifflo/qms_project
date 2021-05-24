@@ -1,5 +1,5 @@
 import {
-  sigmaBrakeSet
+  sigmaBrakeTotalSet
 } from './sigmaBrakeFiles/sigmaBrakeFileHost';
 import {
   filterItemByStringFromList,
@@ -28,43 +28,3 @@ export const sigmaBrakeContextPartialSetOfMonthOriginal =
 
 export const sigmaBrakeContextPartialSetOfMonthBranch =
   getSigmaBrakePartialSet('sigma-month-branch');
-
-const handleSigmaBoltOfMonthBranchToOriginal =
-  sigmaBoltOfMonthBranch => {
-
-  const sigmaSourceNutOfMonthBranch =
-    sigmaBoltOfMonthBranch[0];
-
-  checkNilByString(
-    sigmaSourceNutOfMonthBranch,
-    'sigmaSourceNutOfMonthBranch');
-
-  const sigmaTargetNutOfMonthBranch =
-    sigmaBoltOfMonthBranch[1];
-
-  const sigmaBoltContextOfMonthBranch = {
-    _type: 'SigmaBoltContext',
-    sigmaSourceNutOfMonthBranch,
-    sigmaTargetNutOfMonthBranch
-  };
-
-}
-
-const convertSigmaClutchContextOfMonthBranchToOriginal =
-  sigmaBrakeContextOfMonthBranch => {
-
-  const { sigmaBoltDictionary } =
-    sigmaBrakeContextOfMonthBranch;
-
-  checkNilWithUntypedObject(
-    sigmaBoltDictionary,
-    'sigmaBoltDictionary');
-
-  const sigmaBoltPairs =
-    R.toPairs(sigmaBoltDictionary);
-
-
-
-
-
-}

@@ -39,7 +39,7 @@ import {
   sigmaBrakeContextSubset_13
 } from './sigmaBrakeFile_13';
 
-export const sigmaBrakeSet =
+export const sigmaBrakeTotalSet =
   RA.concatAll([
     sigmaBrakeContextSubset_01,
     sigmaBrakeContextSubset_02,
