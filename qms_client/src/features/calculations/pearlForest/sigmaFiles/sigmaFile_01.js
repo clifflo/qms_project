@@ -2,7 +2,9 @@ import {
   sigmaBrakeSet
 } from './sigmaBrakeFiles/sigmaBrakeFileHost';
 import {
-  filterItemByStringFromList
+  filterItemByStringFromList,
+  checkNilByArray,
+  checkNilWithUntypedObject
 } from './_utilityHubBySigma';
 import {
   getTauMonthOriginalChineseFromBranch
@@ -17,13 +19,29 @@ const getSigmaBrakePartialSet =
     'sigmaBrakeSource');
 }
 
-export const
-  sigmaBrakeContextOfDayBranchPartialSet =
+export const sigmaBrakeContextPartialSetOfDayBranch =
   getSigmaBrakePartialSet(
     'sigma-day-branch');
 
-const sigmaBrakeContextOfMonthOriginalPartialSet =
+export const sigmaBrakeContextPartialSetOfMonthOriginal =
   getSigmaBrakePartialSet('sigma-month-original');
 
-const sigmaBrakeContextOfMonthBranchPartialSet =
+export const sigmaBrakeContextPartialSetOfMonthBranch =
   getSigmaBrakePartialSet('sigma-month-branch');
+
+const convertSigmaClutchContextOfMonthBranchToOriginal =
+  sigmaBrakeContextOfMonthBranch => {
+
+  const { sigmaBrakeDetailDictionary } =
+    sigmaBrakeContextOfMonthBranch;
+
+  checkNilWithUntypedObject(
+    sigmaBrakeDetailDictionary,
+    'sigmaBrakeDetailDictionary');
+
+  const sigmaBrakeDetailPairs =
+    R.toPairs(sigmaBrakeDetailDictionary);
+
+  
+
+}

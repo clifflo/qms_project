@@ -30,3 +30,17 @@ export const checkNilWithTypedObject =
 
 
 }
+
+export const checkNilWithUntypedObject =
+  (objectVariable, variableName) => {
+
+  if(R.isNil(objectVariable)){
+    throw new Error(
+      `${variableName} should not be nil.`);
+  }
+
+  if(!RA.isPlainObject(objectVariable)){
+    throw new Error(
+      `${variableName} must be an object.`);
+  }
+}
