@@ -5,14 +5,29 @@ import {
   filterItemByStringFromList
 } from './_utilityHubBySigma';
 
-export const sigmaDayBranchPartialSet =
-  filterItemByStringFromList(
-    sigmaBrakeSet,
-    'Sigma day branch',
-    'sigmaBrakeSource');
+const getSigmaBrakePartialSet =
+  sigmaBrakeSource => {
 
-export const sigmaMonthOriginalPartialSet =
-  filterItemByStringFromList(
+  return filterItemByStringFromList(
     sigmaBrakeSet,
-    'Sigma month original',
+    sigmaBrakeSource,
     'sigmaBrakeSource');
+}
+
+export const sigmaDayBranchBrakePartialSet =
+  getSigmaBrakePartialSet(
+    'Sigma day branch');
+
+export const sigmaMonthOriginalBrakePartialSet =
+  getSigmaBrakePartialSet(
+    'Sigma month original');
+
+export const sigmaMonthBranchBrakePartialSet =
+  getSigmaBrakePartialSet(
+    'Sigma month branch');
+
+const convertSigmaMonthBranchToOriginalBrake =
+  sigmaMonthBranchBrake => {
+
+    
+}

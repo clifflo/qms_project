@@ -84,3 +84,10 @@ export const tauRawMonthContextSet = [
     tauBranchChinese: '丑'
   }
 ];
+
+export const getTauMonthChineseFromBranch =
+  tauBranchChinese => {
+
+  const tauMonthContext =
+
+}
