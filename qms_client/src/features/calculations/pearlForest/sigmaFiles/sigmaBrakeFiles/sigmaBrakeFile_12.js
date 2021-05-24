@@ -15,7 +15,7 @@ export const sigmaBrakeContext_56 = {
     '六午宮，七丑、八未、九羊是，十申，',
     '子卯、丑酉逢。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '正': '戌',
     '二': '辰',
     '三': '亥',
@@ -47,7 +47,7 @@ export const sigmaBrakeContext_57 = {
     '正七從亥二八酉，三九羊頭四十蛇，',
     '五十一月尋卯上，六十二午定吁嗟。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '正': '亥',
     '二': '酉',
     '三': '未',
@@ -80,7 +80,7 @@ export const sigmaBrakeContext_58 = {
     '正申二酉三戌邊，四亥五子六牛聯，',
     '七寅八卯九辰位，十巳子馬丑羊眠。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '正': '申',
     '二': '酉',
     '三': '戌',
@@ -112,7 +112,7 @@ export const sigmaBrakeContext_59 = {
     '正未、二申、三月酉，四戌、五亥、六子遊，',
     '七丑、八寅、九卯上、十辰、子巳、丑午流。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '正': '未',
     '二': '申',
     '三': '酉',
@@ -144,7 +144,7 @@ export const sigmaBrakeContext_60 = {
   sigmaBrakeTopics: [
     'Business'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '子': '巳',
     '丑': '丑',
     '寅': '酉',

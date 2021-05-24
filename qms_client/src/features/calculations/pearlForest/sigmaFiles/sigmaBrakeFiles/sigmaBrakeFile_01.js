@@ -9,7 +9,7 @@ export const sigmaBrakeContext_01 = {
     '甲祿在寅，乙祿在卯，丙戊祿在巳，丁己祿居午，',
     '庚祿居申，辛祿在酉，壬祿在亥，癸祿在子。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '甲': '寅',
     '乙': '卯',
     '丙': '巳',
@@ -36,7 +36,7 @@ export const sigmaBrakeContext_02 = {
     '寅午戌馬居申，申子辰馬居寅，',
     '巳酉丑馬在亥，亥卯未馬在巳。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '子': '寅',
     '丑': '亥',
     '寅': '申',
@@ -62,7 +62,7 @@ export const sigmaBrakeContext_03 = {
     '甲戊兼牛羊，乙己鼠猴鄉，丙丁豬雞位，',
     '壬癸兔蛇藏，庚辛逢馬虎，此是貴人方。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '甲': '丑未',
     '乙': '子申',
     '丙': '亥酉',
@@ -87,7 +87,7 @@ export const sigmaBrakeContext_04 = {
     '甲虎乙豬牛，丙同犬鼠遊，丁雞戊猴走，',
     '己羊庚馬頭，辛蛇癸愛兔，壬日占龍樓。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '甲': '寅',
     '乙': '亥丑',
     '丙': '戌子',
@@ -114,7 +114,7 @@ export const sigmaBrakeContext_05 = {
     '六甲上，七癸、八寅逢，九丙、十歸乙，',
     '子己、丑庚中。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '正': '丁',
     '三': '壬',
     '四': '辛',

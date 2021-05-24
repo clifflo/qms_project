@@ -13,7 +13,7 @@ export const sigmaBrakeContext_61 = {
   sigmaBrakeOriginalSentence: [
     '春卯、夏子、秋酉、冬午'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '春': '卯',
     '夏': '子',
     '秋': '酉',
@@ -37,7 +37,7 @@ export const sigmaBrakeContext_62 = {
     '豬羊犬吠春三月，蛇鼠龍憂夏月當，',
     '申酉丑逢秋必敗，虎馬兔兮冬季防。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '春': '亥未戌',
     '夏': '巳子辰',
     '秋': '申酉丑',
@@ -57,7 +57,7 @@ export const sigmaBrakeContext_63 = {
     '丙辛辰巳君休去，丁壬寅卯一場憂，',
     '戊癸子丑高堂坐，時犯空亡萬事休。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '甲': '申酉',
     '乙': '午未',
     '丙': '辰巳',

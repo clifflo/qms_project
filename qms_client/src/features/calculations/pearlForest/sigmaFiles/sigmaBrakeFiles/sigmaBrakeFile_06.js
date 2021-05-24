@@ -15,7 +15,7 @@ export const sigmaBrakeContext_26 = {
     '甲己逢蛇、乙庚猴，丙辛逢虎、',
     '丁壬牛，戊癸雞啼。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '甲': '巳',
     '乙': '申',
     '丙': '寅',
@@ -45,7 +45,7 @@ export const sigmaBrakeContext_27 = {
     '甲乙蛇頭、戊己寅，庚辛酉位、',
     '丙丁申，壬癸但從卯位是。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '甲': '巳',
     '乙': '巳',
     '丙': '申',
@@ -75,7 +75,7 @@ export const sigmaBrakeContext_28 = {
     '正五九月居子上，二六十月在巳宮，',
     '三七十一辰位是，四八十二居申中。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '正': '子',
     '二': '巳',
     '三': '辰',
@@ -108,7 +108,7 @@ export const sigmaBrakeContext_29 = {
     '甲己日亥、乙庚申，丙辛日丑、',
     '丁壬未，戊癸辰。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '甲': '亥',
     '乙': '申',
     '丙': '丑',
@@ -138,7 +138,7 @@ export const sigmaBrakeContext_30 = {
     '正五九月火居寅，二六十月亥宮存，',
     '三七十一從申位，四八十二巳宮輪。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '正': '寅',
     '二': '亥',
     '三': '申',

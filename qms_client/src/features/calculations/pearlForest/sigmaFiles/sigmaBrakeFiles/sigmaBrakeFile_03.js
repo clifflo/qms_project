@@ -12,7 +12,7 @@ export const sigmaBrakeContext_11 = {
     '寅申月在午，卯酉月在申，辰戌月在戊，',
     '巳亥月在子，子午月在寅，丑未月在辰。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '子': '寅',
     '丑': '辰',
     '寅': '午',
@@ -47,7 +47,7 @@ export const sigmaBrakeContext_12 = {
     '子午之年卯酉求，卯酉之年子午出，',
     '辰戌之年丑未方，丑未之年在辰戌，'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '子': '卯',
     '丑': '辰',
     '寅': '巳',
@@ -82,7 +82,7 @@ export const sigmaBrakeContext_13 = {
     '子午之年卯酉求，卯酉之年子午出，',
     '辰戌之年丑未方，丑未之年在辰戌，'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '子': '酉',
     '丑': '戌',
     '寅': '亥',
@@ -115,7 +115,7 @@ export const sigmaBrakeContext_14 = {
     '七居亥，八丑、九羊、十巳存，十一再來尋卯上，',
     '十二亥上作醫人。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '正': '卯',
     '二': '亥',
     '三': '丑',
@@ -149,7 +149,7 @@ export const sigmaBrakeContext_15 = {
     '三七十一居龍位，四八十二在牛場，',
     '卦中臨應仍搖動，獄訟勾連竟不妨。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '正': '戌',
     '二': '未',
     '三': '辰',

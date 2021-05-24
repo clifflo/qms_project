@@ -13,7 +13,7 @@ export const sigmaBrakeContext_31 = {
   sigmaBrakeOriginalSentence: [
     '春巳、夏居申，秋豬、冬到寅。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '春': '巳',
     '夏': '申',
     '秋': '亥',
@@ -38,7 +38,7 @@ export const sigmaBrakeContext_32 = {
     '甲己逢寅、乙庚申，丙辛、',
     '戊癸向蛇尋，丁壬亥上。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '甲': '寅',
     '乙': '申',
     '丙': '巳',
@@ -67,7 +67,7 @@ export const sigmaBrakeContext_33 = {
   sigmaBrakeOriginalSentence: [
     '獄神夏馬、春兔挨，秋雞、冬鼠獄門開。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '春': '卯',
     '夏': '午',
     '秋': '酉',
@@ -92,7 +92,7 @@ export const sigmaBrakeContext_34 = {
     '六居申，七酉、八戌、九亥上，十子、',
     '十一丑、十二寅。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '正': '卯',
     '二': '辰',
     '三': '巳',
@@ -125,7 +125,7 @@ export const sigmaBrakeContext_35 = {
     '六居申，七酉、八戌、九亥上，十子、',
     '十一丑、十二寅。'
   ],
-  sigmaBoltDictionary {
+  sigmaBoltDictionary: {
     '正': '卯',
     '二': '辰',
     '三': '巳',
