@@ -34,7 +34,7 @@ export const handleSigmaBoltOfYearBranch =
 
     if(!validTwigBranchChinese){
       throw new Error(
-        'Sigma source nut of day branch is not valid.');
+        'Sigma source nut of year branch is not valid.');
     }
 
     const sigmaTargetNutOfYearBranch =
@@ -73,9 +73,8 @@ export const handleSigmaBoltOfYearBranch =
     }
     else{
       throw new Error(
-        'The sigma target for day branch should '
-        + 'be just cross trunk, cross branch or '
-        + 'cross twig combo.');
+        'The sigma target for year branch should '
+        + 'be just cross trunk or cross branch');
     }
   }
   catch(errorMessage){

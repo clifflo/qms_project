@@ -1,10 +1,10 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  sigmaClutchContextOfDayBranch
+  sigmaClutchContextOfYearBranch
 } from '../calculations/calculationsHub';
 
 export default function RhoGui() {
   return <JSONTree
-    data={sigmaClutchContextOfDayBranch}/>
+    data={sigmaClutchContextOfYearBranch}/>
 }
