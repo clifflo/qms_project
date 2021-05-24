@@ -34,7 +34,7 @@ export const sigmaBrake_52 = {
   sigmaBrakeIndex: 52,
   sigmaBrakeName: '巳寡宿',
   sigmaBrakeSource: 'Sigma day branch',
-  sigmaBrakeTarget: 'Sigma branch for cross',
+  sigmaBrakeTarget: 'Sigma cross branch',
   sigmaBrakeDescription: [
     '此煞本名孤辰寡宿。其地支則第一字為孤辰而第',
     '二字為寡宿是也。婚姻犯之主無子。'
@@ -159,3 +159,11 @@ export const sigmaBrake_55 = {
     '十二': '未'
   }
 }
+
+export const sigmaBrakeSet_11 = [
+  sigmaBrake_51,
+  sigmaBrake_52,
+  sigmaBrake_53,
+  sigmaBrake_54,
+  sigmaBrake_55
+];

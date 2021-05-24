@@ -128,7 +128,7 @@ export const sigmaBrake_60 = {
   sigmaBrakeIndex: 60,
   sigmaBrakeName: '巳寡宿',
   sigmaBrakeSource: 'Sigma day branch',
-  sigmaBrakeTarget: 'Sigma branch for cross',
+  sigmaBrakeTarget: 'Sigma cross branch',
   sigmaBrakeDescription: [
     '占資財忌。'
   ],
@@ -154,3 +154,11 @@ export const sigmaBrake_60 = {
     '亥': '酉'
   }
 }
+
+export const sigmaBrakeSet_12 = [
+  sigmaBrake_56,
+  sigmaBrake_57,
+  sigmaBrake_58,
+  sigmaBrake_59,
+  sigmaBrake_60
+];

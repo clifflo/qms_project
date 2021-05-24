@@ -67,3 +67,9 @@ export const sigmaBrake_63 = {
     '癸': '子丑'
   }
 }
+
+export const sigmaBrakeSet_11 = [
+  sigmaBrake_61,
+  sigmaBrake_62,
+  sigmaBrake_63
+];
