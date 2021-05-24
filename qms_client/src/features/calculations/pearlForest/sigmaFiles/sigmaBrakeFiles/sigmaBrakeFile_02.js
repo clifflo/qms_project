@@ -25,7 +25,9 @@ export const sigmaBrakeContext_07 = {
 	sigmaBrakeIndex: 7,
   sigmaBrakeName: '巳月德貴人',
   sigmaBrakeDescription: '凡有所占，轉凶為吉。',
-  sigmaBrakeTopics: [],
+  sigmaBrakeTopics: [
+    'sigma-topic-general'
+  ],
   sigmaBrakeSource: 'sigma-month-branch',
   sigmaBrakeTarget: 'sigma-cross-trunk',
   sigmaBrakeOriginalSentence: [

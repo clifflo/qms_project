@@ -3,8 +3,11 @@ import {
   sigmaBrakeContextPartialSetOfMonthBranch
 } from './sigmaFile_01';
 import {
-  checkNilWithString
-} from './_utilityHubByTau';
+  checkNilWithString,
+  checkNilWithUntypedObject,
+  checkNilWithArray,
+  throwFunctionalError
+} from './_utilityHubBySigma';
 
 const handleSigmaBoltOfMonthBranchToOriginal =
   sigmaBoltOfMonthBranch => {
@@ -19,7 +22,7 @@ const handleSigmaBoltOfMonthBranchToOriginal =
   const sigmaTargetNutOfMonthBranch =
     sigmaBoltOfMonthBranch[1];
 
-  checkNilByString(
+  checkNilWithString(
     sigmaTargetNutOfMonthBranch,
     'sigmaTargetNutOfMonthBranch');
 
@@ -35,34 +38,44 @@ const handleSigmaBoltOfMonthBranchToOriginal =
 const convertSigmaClutchContextOfMonthBranchToOriginal =
   sigmaBrakeContextOfMonthBranch => {
 
-  const sigmaBoltDictionaryOfMonthBranch =
-    sigmaBrakeContextOfMonthBranch
-    .sigmaBoltDictionary
+  try{
+    const sigmaBoltDictionaryOfMonthBranch =
+      sigmaBrakeContextOfMonthBranch
+      .sigmaBoltDictionary
 
-  checkNilWithUntypedObject(
-    sigmaBoltDictionaryOfMonthBranch,
-    'sigmaBoltDictionaryOfMonthBranch');
+    checkNilWithUntypedObject(
+      sigmaBoltDictionaryOfMonthBranch,
+      'sigmaBoltDictionaryOfMonthBranch');
 
-  const sigmaBoltPairsOfMonthBranch =
-    R.toPairs(sigmaBoltDictionary);
+    const sigmaBoltPairsOfMonthBranch =
+      R.toPairs(sigmaBoltDictionaryOfMonthBranch);
 
-  checkNilByArray(
-    sigmaBoltPairsOfMonthBranch,
-    'sigmaBoltPairsOfMonthBranch');
+    checkNilWithArray(
+      sigmaBoltPairsOfMonthBranch,
+      'sigmaBoltPairsOfMonthBranch');
 
-  const sigmaBoltContextSetOfMonthBranch =
-    R.map(
-      handleSigmaBoltOfMonthBranchToOriginal,
-      sigmaBoltPairsOfMonthBranch);
+    const sigmaBoltContextSetOfMonthBranch =
+      R.map(
+        handleSigmaBoltOfMonthBranchToOriginal,
+        sigmaBoltPairsOfMonthBranch);
 
-  checkNilByArray(
-    sigmaBoltContextSetOfMonthBranch,
-    'sigmaBoltContextSetOfMonthBranch');
+    checkNilWithArray(
+      sigmaBoltContextSetOfMonthBranch,
+      'sigmaBoltContextSetOfMonthBranch');
 
-  const sigmaClutchContextOfMonthBranch = {
-    sigmaBoltContextSetOfMonthBranch,
+    const sigmaClutchContextOfMonthBranch = {
+      sigmaBoltContextSetOfMonthBranch,
+      ...sigmaBrakeContextOfMonthBranch,
+      _type: 'SigmaClutchContextOfMonthBranch'
+    };
 
-  };
+    return sigmaClutchContextOfMonthBranch;
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throwFunctionalError(
+      'convertSigmaClutchContextOfMonthBranchToOriginal');
+  }
 }
 
 export const sigmaClutchContextOfMonthBranch =

@@ -14,7 +14,7 @@ const getSigmaBrakePartialSet =
   sigmaBrakeSource => {
 
   return filterItemByStringFromList(
-    sigmaBrakeSet,
+    sigmaBrakeTotalSet,
     sigmaBrakeSource,
     'sigmaBrakeSource');
 }
