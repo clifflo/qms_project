@@ -46,12 +46,11 @@ export const handleSigmaBoltOfMonthBranchToOriginal =
 
   if(sigmaBrakeTargetOfMonthBranch
     == 'sigma-brake-target-cross-branch'){
-
     const
     finalSigmaBoltContextOfMonthForCrossBranch =
     {
       ...rawSigmaBoltContextOfMonth,
-      sigmaTargetCrossBranchForMonthOriginal:
+      sigmaTargetCrossBranchNutForMonth:
       sigmaTargetNutOfMonthBranch
     };
 
@@ -63,7 +62,7 @@ export const handleSigmaBoltOfMonthBranchToOriginal =
     finalSigmaBoltContextOfMonthForCrossTrunk =
     {
       ...rawSigmaBoltContextOfMonth,
-      sigmaTargetCrossTrunkForMonthOriginal:
+      sigmaTargetCrossTrunkNutForMonth:
       sigmaTargetNutOfMonthBranch
     }
 
