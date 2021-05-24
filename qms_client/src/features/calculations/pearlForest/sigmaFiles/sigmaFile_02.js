@@ -8,16 +8,28 @@ import {
   checkNilWithArray,
   throwFunctionalError
 } from './_utilityHubBySigma';
+import {
+  getTauMonthOriginalChineseFromBranch
+} from './_tauHubBySigma';
 
-const handleSigmaBoltOfMonthBranchToOriginal =
-  sigmaBoltOfMonthBranch => {
+export const handleSigmaBoltOfMonthBranchToOriginal =
+  (sigmaBrakeTargetOfMonthBranch,
+  sigmaBoltOfMonthBranch) => {
 
   const sigmaSourceNutOfMonthBranch =
     sigmaBoltOfMonthBranch[0];
 
+  const sigmaSourceNutOfMonthOriginal =
+    getTauMonthOriginalChineseFromBranch(
+      sigmaSourceNutOfMonthBranch);
+
   checkNilWithString(
     sigmaSourceNutOfMonthBranch,
     'sigmaSourceNutOfMonthBranch');
+
+  checkNilWithString(
+    sigmaSourceNutOfMonthOriginal,
+    'sigmaSourceNutOfMonthOriginal');
 
   const sigmaTargetNutOfMonthBranch =
     sigmaBoltOfMonthBranch[1];
@@ -26,59 +38,44 @@ const handleSigmaBoltOfMonthBranchToOriginal =
     sigmaTargetNutOfMonthBranch,
     'sigmaTargetNutOfMonthBranch');
 
-  const sigmaBoltContextOfMonthBranch = {
+  const rawSigmaBoltContextOfMonthBranch = {
     _type: 'SigmaBoltContextOfMonthBranch',
     sigmaSourceNutOfMonthBranch,
-    sigmaTargetNutOfMonthBranch
+    sigmaSourceNutOfMonthOriginal
   };
+
+  if(sigmaBrakeTargetOfMonthBranch
+    == 'sigma-target-cross-branch'){
+
+    const
+    finalSigmaBoltContextOfMonthBranchForCrossBranch =
+    {
+      ...rawSigmaBoltContextOfMonthBranch,
+      sigmaTargetCrossBranchForMonthOriginal:
+      sigmaTargetNutOfMonthBranch
+    };
+
+    return
+    finalSigmaBoltContextOfMonthBranchForCrossBranch;
+  }
+  else if(sigmaBrakeTargetOfMonthBranch
+    == 'sigma-target-cross-trunk'){
+    const
+    finalSigmaBoltContextOfMonthBranchForCrossTrunk =
+    {
+      ...rawSigmaBoltContextOfMonthBranch,
+      sigmaTargetCrossTrunkForMonthOriginal:
+      sigmaTargetNutOfMonthBranch
+    }
+
+    return
+    finalSigmaBoltContextOfMonthBranchForCrossTrunk;
+  }
+  else{
+    throw new Error(
+      'The sigma target should be just '
+      + 'cross trunk or cross branch.');
+  }
 
   return sigmaBoltContextOfMonthBranch;
 }
-
-const convertSigmaClutchContextOfMonthBranchToOriginal =
-  sigmaBrakeContextOfMonthBranch => {
-
-  try{
-    const sigmaBoltDictionaryOfMonthBranch =
-      sigmaBrakeContextOfMonthBranch
-      .sigmaBoltDictionary
-
-    checkNilWithUntypedObject(
-      sigmaBoltDictionaryOfMonthBranch,
-      'sigmaBoltDictionaryOfMonthBranch');
-
-    const sigmaBoltPairsOfMonthBranch =
-      R.toPairs(sigmaBoltDictionaryOfMonthBranch);
-
-    checkNilWithArray(
-      sigmaBoltPairsOfMonthBranch,
-      'sigmaBoltPairsOfMonthBranch');
-
-    const sigmaBoltContextSetOfMonthBranch =
-      R.map(
-        handleSigmaBoltOfMonthBranchToOriginal,
-        sigmaBoltPairsOfMonthBranch);
-
-    checkNilWithArray(
-      sigmaBoltContextSetOfMonthBranch,
-      'sigmaBoltContextSetOfMonthBranch');
-
-    const sigmaClutchContextOfMonthBranch = {
-      sigmaBoltContextSetOfMonthBranch,
-      ...sigmaBrakeContextOfMonthBranch,
-      _type: 'SigmaClutchContextOfMonthBranch'
-    };
-
-    return sigmaClutchContextOfMonthBranch;
-  }
-  catch(errorMessage){
-    console.error(errorMessage);
-    throwFunctionalError(
-      'convertSigmaClutchContextOfMonthBranchToOriginal');
-  }
-}
-
-export const sigmaClutchContextOfMonthBranch =
-  R.map(
-    convertSigmaClutchContextOfMonthBranchToOriginal,
-    sigmaBrakeContextPartialSetOfMonthBranch);
