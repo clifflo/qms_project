@@ -35,20 +35,6 @@ const getCoatedBoltOfDayBranch =
     } = sigmaBoltContext;
 
     if(sigmaBrakeTarget ==
-      'sigma-brake-target-cross-trunk'){
-
-      const sigmaCoatedBoltForDayBranchToCrossTrunk = {
-        sigmaTargetCrossTrunkNutForDayBranch,
-        sigmaBrakeName,
-        sigmaBrakeTarget,
-        sigmaBrakeTopics,
-        _type: 'SigmaCoatedBoltForDayBranch',
-        _subType: 'SigmaCoatedBoltForDayBranchToCrossTrunk'
-      };
-
-      return sigmaCoatedBoltForDayBranchToCrossTrunk;
-    }
-    else if(sigmaBrakeTarget ==
       'sigma-brake-target-cross-branch'){
 
       const sigmaCoatedBoltForDayBranchToCrossBranch = {
@@ -60,6 +46,11 @@ const getCoatedBoltOfDayBranch =
         _subType: 'SigmaCoatedBoltForDayBranchToCrossBranch'
       }
       return sigmaCoatedBoltForDayBranchToCrossBranch;
+    }
+    else {
+      throw new Error(
+        'Sigma coated bolt for day branch can have '
+        + 'cross branch target only.');
     }
   }
   catch(errorMessage){
@@ -77,33 +68,15 @@ const getCoatedCrunchOfDayBranch =
     (getCoatedBoltOfDayBranch)
     (coatedSigmaSourceDayBranchNut);
 
-  const sigmaClutchContextCrossTrunkSubsetOfDayBranch =
-    filterItemByStringFromList(
-      sigmaClutchContextSetOfDayBranch,
-      'sigma-brake-target-cross-trunk',
-      'sigmaBrakeTarget');
-
-  const sigmaClutchContextCrossBranchSubsetOfDayBranch =
-    filterItemByStringFromList(
-      sigmaClutchContextSetOfDayBranch,
-      'sigma-brake-target-cross-branch',
-      'sigmaBrakeTarget');
-
-  const coatedBoltCrossTrunkSubsetOfDayBranch =
+  const coatedBoltCrossBranchSetOfDayBranch =
     R.map(
       loadedGetCoatedBoltOfDayBranch,
-      sigmaClutchContextCrossTrunkSubsetOfDayBranch);
-
-  const coatedBoltCrossBranchSubsetOfDayBranch =
-    R.map(
-      loadedGetCoatedBoltOfDayBranch,
-      sigmaClutchContextCrossBranchSubsetOfDayBranch);
+      sigmaClutchContextSetOfDayBranch);
 
   const coatedCrunchOfDayBranch = {
     _type: 'CoatedCrunchOfDayBranch',
     coatedSigmaSourceDayBranchNut,
-    coatedBoltCrossTrunkSubsetOfDayBranch,
-    coatedBoltCrossBranchSubsetOfDayBranch
+    coatedBoltCrossBranchSetOfDayBranch
   };
 
   return coatedCrunchOfDayBranch;
