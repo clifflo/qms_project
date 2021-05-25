@@ -1,10 +1,10 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  coatedCrunchSetOfMonth
+  sigmaBrakeContextPartialSetOfSeason
 } from '../calculations/calculationsHub';
 
 export default function RhoGui() {
   return <JSONTree
-    data={coatedCrunchSetOfMonth}/>
+    data={sigmaBrakeContextPartialSetOfSeason}/>
 }
