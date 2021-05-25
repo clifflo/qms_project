@@ -14,9 +14,30 @@ const mapFunctionOfCoatedBoltOfDayBranch =
   (coatedSigmaSourceDayTrunkNut,
   sigmaClutchContextOfDayBranch) => {
 
+  const {
+    sigmaBoltContextSetOfDayBranch,
+    sigmaBrakeName,
+    sigmaBrakeTarget,
+    sigmaBrakeTopics
+  } = sigmaClutchContextOfDayBranch;
+
+  const sigmaBoltContext =
+    findItemByStringFromList(
+      sigmaBoltContextSetOfDayBranch,
+      coatedSigmaSourceDayTrunkNut,
+      'sigmaSourceNutOfDayTrunk');
+
+  const {
+    sigmaTargetCrossBranchNutForDayTrunk
+  } = sigmaBoltContext;
+
+  const sigmaCoatedBolt = {
+    sigmaTargetCrossBranchNutForDayTrunk,
+
+  }
 }
 
-const getCoatedBoltSetOfDayBranch =
+const getCoatedClunchOfDayBranch =
   coatedSigmaSourceDayTrunkNut => {
 
   const loadedMapFunctionOfCoatedBoltOfDayBranch =
@@ -32,8 +53,7 @@ const getCoatedBoltSetOfDayBranch =
   return coatedBoltContextSetOfDayBranch;
 }
 
-export const getCoatedClunchOfDayBranch =
+export const getCoatedClunchSetOfDayBranch =
   R.map(
-    getCoatedBoltSetOfDayBranch,
-
-  )
+    getCoatedClunchOfDayBranch,
+    sigmaClutchContextSetOfDayBranch);

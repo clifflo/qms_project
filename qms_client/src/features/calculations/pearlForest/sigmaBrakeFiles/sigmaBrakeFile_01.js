@@ -2,7 +2,9 @@ export const sigmaBrakeContext_01 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 1,
   sigmaBrakeName: '巳天元祿',
-  sigmaBrakeDescription: '凡事遇之大吉。',
+  sigmaBrakeDescription: [
+    '凡事遇之大吉。'
+  ],
   sigmaBrakeSource: 'sigma-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
@@ -58,6 +60,9 @@ export const sigmaBrakeContext_03 = {
   sigmaBrakeName: '巳天乙貴人',
   sigmaBrakeSource: 'sigma-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeDescription: [
+    '凡事遇之吉。'
+  ],
   sigmaBrakeOriginalSentence: [
     '甲戊兼牛羊，乙己鼠猴鄉，丙丁豬雞位，',
     '壬癸兔蛇藏，庚辛逢馬虎，此是貴人方。'
@@ -80,7 +85,9 @@ export const sigmaBrakeContext_04 = {
   _type:'SigmaBrakeContext',
   sigmaBrakeIndex: 4,
   sigmaBrakeName: '巳福星貴人',
-  sigmaBrakeDescription: '求仕用之。',
+  sigmaBrakeDescription: [
+    '求仕用之。'
+  ],
   sigmaBrakeSource: 'sigma-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
@@ -105,8 +112,10 @@ export const sigmaBrakeContext_05 = {
   _type:'SigmaBrakeContext',
   sigmaBrakeIndex: 5,
   sigmaBrakeName: '巳天德貴人',
-  sigmaBrakeDescription:
-    '求仕用之。此處只取天干故加‘巳’字以標示之。',
+  sigmaBrakeDescription: [
+    '求仕用之。此處只取原‘天德貴人’之天干',
+    '故加‘巳’字以標示之。'
+  ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'sigma-brake-target-cross-trunk',
   sigmaBrakeOriginalSentence: [

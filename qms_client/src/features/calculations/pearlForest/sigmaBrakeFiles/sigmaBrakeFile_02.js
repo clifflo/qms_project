@@ -4,8 +4,10 @@ export const sigmaBrakeContext_06 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 6,
   sigmaBrakeName: '丁天德貴人',
-  sigmaBrakeDescription:
-    '求仕用之。此處只取福星貴人之天干故加‘丁’字以標示之。',
+  sigmaBrakeDescription: [
+    '求仕用之。此處只取原‘天德貴人’之地支',
+    '故加‘丁’字以標示之。'
+  ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
   sigmaBrakeOriginalSentence: [
