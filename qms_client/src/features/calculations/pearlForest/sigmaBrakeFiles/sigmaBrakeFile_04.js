@@ -2,8 +2,12 @@ export const sigmaBrakeContext_16 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 16,
   sigmaBrakeName: '巳皇恩大赦',
-  sigmaBrakeDescription:
-    '諸事遇之吉。',
+  sigmaBrakeDescription: [
+    '遇之訟獄可赦也。'
+  ],
+  sigmaBrakeTopics: [
+    'sigma-brake-topic-lawsuit'
+  ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'sigma-brake-target-cross-trunk',
   sigmaBrakeOriginalSentence: [
