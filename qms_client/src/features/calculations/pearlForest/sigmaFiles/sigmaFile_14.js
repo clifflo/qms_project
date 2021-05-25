@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 import {
-  findItemByStringFromList
+  findItemByStringFromList,
+  throwFunctionalError
 } from './_utilityHubBySigma';
 import {
   sigmaClutchContextSetOfDayTrunk
@@ -10,55 +11,62 @@ import {
   twigBranchChineseSet
 } from './_twigHubBySigma';
 
-const mapFunctionOfCoatedBoltOfDayTrunk =
+const getCoatedBoltOfDayTrunk =
   (coatedSigmaSourceDayTrunkNut,
   sigmaClutchContextOfDayTrunk) => {
 
-  const {
-    sigmaBoltContextSetOfDayTrunk,
-    sigmaBrakeName,
-    sigmaBrakeTarget,
-    sigmaBrakeTopics
-  } = sigmaClutchContextOfDayTrunk;
+  console.log('Get the coated bolt of day trunk then.');
 
-  const sigmaBoltContext =
-    findItemByStringFromList(
+  try{
+    const {
       sigmaBoltContextSetOfDayTrunk,
-      coatedSigmaSourceDayTrunkNut,
-      'sigmaSourceNutOfDayTrunk');
+      sigmaBrakeName,
+      sigmaBrakeTarget,
+      sigmaBrakeTopics
+    } = sigmaClutchContextOfDayTrunk;
 
-  const {
-    sigmaTargetCrossTrunkNutForDayTrunk,
-    sigmaTargetCrossBranchNutForDayTrunk
-  } = sigmaBoltContext;
+    const sigmaBoltContext =
+      findItemByStringFromList(
+        sigmaBoltContextSetOfDayTrunk,
+        coatedSigmaSourceDayTrunkNut,
+        'sigmaSourceNutOfDayTrunk');
 
-  const sigmaCoatedBoltForDayTrunk = {
-    sigmaTargetCrossBranchNutForDayTrunk,
-    sigmaTargetCrossBranchNutForDayTrunk,
-    sigmaBrakeName,
-    sigmaBrakeTarget,
-    sigmaBrakeTopics,
-    _type: 'SigmaCoatedBoltForDayTrunk'
+    const {
+      sigmaTargetCrossTrunkNutForDayTrunk,
+      sigmaTargetCrossBranchNutForDayTrunk
+    } = sigmaBoltContext;
+
+    const sigmaCoatedBoltForDayTrunk = {
+      sigmaTargetCrossBranchNutForDayTrunk,
+      sigmaBrakeName,
+      sigmaBrakeTarget,
+      sigmaBrakeTopics,
+      _type: 'SigmaCoatedBoltForDayTrunk'
+    }
+
+    return sigmaCoatedBoltForDayTrunk;
+  }
+  catch(errorMessage){
+    console.error(errorMessage);
+    throwFunctionalError(
+      'mapFunctionOfCoatedBoltOfDayTrunk');
   }
 }
 
-const getCoatedClunchOfDayTrunk =
-  coatedSigmaSourceDayTrunkNut => {
+const getCoatedCrunchSetOfDayTrunk = () => {
 
-  const loadedMapFunctionOfCoatedBoltOfDayTrunk =
-  R.curry
-  (mapFunctionOfCoatedBoltOfDayTrunk)
-  (coatedSigmaSourceDayTrunkNut);
+  const getCoatedCrunchOfDayTrunk =
+    R.map(
+      R.curry(getCoatedBoltOfDayTrunk),
+      twigTrunkChineseSet);
 
-  const coatedBoltSetOfDayTrunk =
-  R.map(
-    loadedMapFunctionOfCoatedBoltOfDayTrunk,
-    sigmaClutchContextSetOfDayTrunk);
+  const coatedCrunchSetOfDayTrunk =
+    R.map(
+      R.curry(getCoatedCrunchOfDayTrunk),
+      simgaClutchContextSetOfDayTrunk);
 
-  return coatedBoltContextSetOfDayTrunk;
+  return coatedCrunchSetOfDayTrunk;
 }
 
-export const getCoatedClunchSetOfDayTrunk =
-  R.map(
-    getCoatedClunchOfDayTrunk,
-    sigmaClutchContextSetOfDayTrunk);
+export const coatedCrunchSetOfDayTrunk =
+  getCoatedCrunchSetOfDayTrunk();
