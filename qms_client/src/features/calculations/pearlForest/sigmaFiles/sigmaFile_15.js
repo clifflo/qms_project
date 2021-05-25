@@ -24,16 +24,19 @@ const mapFunctionOfCoatedBoltOfDayBranch =
   const sigmaBoltContext =
     findItemByStringFromList(
       sigmaBoltContextSetOfDayBranch,
-      coatedSigmaSourceDayTrunkNut,
-      'sigmaSourceNutOfDayTrunk');
+      coatedSigmaSourceDayBranchNut,
+      'sigmaSourceNutOfDayBranch');
 
   const {
     sigmaTargetCrossBranchNutForDayTrunk
   } = sigmaBoltContext;
 
-  const sigmaCoatedBolt = {
+  const sigmaCoatedBoltForDayTrunk = {
     sigmaTargetCrossBranchNutForDayTrunk,
-
+    sigmaBrakeName,
+    sigmaBrakeTarget,
+    sigmaBrakeTopics,
+    _type: 'Si'
   }
 }
 
