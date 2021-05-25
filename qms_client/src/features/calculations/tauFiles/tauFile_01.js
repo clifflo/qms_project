@@ -2,6 +2,7 @@ import {
   findItemByStringFromList,
   checkNilWithString
 } from './_utilityHubByTau';
+import * as R from 'ramda';
 
 export const tauRawMonthContextSet = [
   {
@@ -89,3 +90,8 @@ export const tauRawMonthContextSet = [
     tauMonthBranchChinese: '丑月'
   }
 ];
+
+export const tauMonthOriginalChineseSet =
+  R.map(
+    R.prop('tauMonthOriginalChinese'),
+    tauRawMonthContextSet);

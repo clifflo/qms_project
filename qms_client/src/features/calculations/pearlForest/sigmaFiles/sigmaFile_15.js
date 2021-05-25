@@ -77,8 +77,6 @@ const getCoatedCrunchOfDayBranch =
     (getCoatedBoltOfDayBranch)
     (coatedSigmaSourceDayBranchNut);
 
-  console.log(sigmaClutchContextSetOfDayBranch);
-
   const sigmaClutchContextCrossTrunkSubsetOfDayBranch =
     filterItemByStringFromList(
       sigmaClutchContextSetOfDayBranch,

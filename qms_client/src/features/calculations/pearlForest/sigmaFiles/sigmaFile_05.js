@@ -8,11 +8,14 @@ import {
 } from './_utilityHubBySigma';
 import {
   sigmaBrakeContextPartialSetOfMonthOriginal,
-  sigmaClutchContextOfMonthBranch
-} from './sigmaMiniHub_01';
+} from './sigmaFile_01';
+import {
+  sigmaClutchContextSetOfMonthBranch
+} from './sigmaFile_03';
 import {
   handleSigmaBoltOfMonthOriginal
 } from './sigmaFile_04';
+
 
 export const
   getSigmaClutchContextOfMonthOriginal =
@@ -72,13 +75,13 @@ export const
   }
 }
 
-export const sigmaClutchContextOfMonthOriginal =
+export const sigmaClutchContextSetOfMonthOriginal =
   R.map(
     getSigmaClutchContextOfMonthOriginal,
     sigmaBrakeContextPartialSetOfMonthOriginal);
 
-export const sigmaClutchContextOfGenericMonth =
+export const sigmaClutchContextSetOfGenericMonth =
   RA.concatAll([
-    sigmaClutchContextOfMonthOriginal,
-    sigmaClutchContextOfMonthBranch
+    sigmaClutchContextSetOfMonthOriginal,
+    sigmaClutchContextSetOfMonthBranch
   ]);

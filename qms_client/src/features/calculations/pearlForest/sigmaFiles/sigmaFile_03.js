@@ -64,7 +64,7 @@ export const
   }
 }
 
-export const sigmaClutchContextOfMonthBranch =
+export const sigmaClutchContextSetOfMonthBranch =
   R.map(
     getSigmaClutchContextOfMonthBranch,
     sigmaBrakeContextPartialSetOfMonthBranch);
