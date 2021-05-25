@@ -66,7 +66,7 @@ export const sigmaBrakeContext_43 = {
     '占病大忌。'
   ],
   sigmaBrakeTopics: [
-    'Illness'
+    'sigma-brake-topic-illness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
@@ -89,7 +89,7 @@ export const sigmaBrakeContext_44 = {
     '人來占病無他斷，教君作急買棺材。'
   ],
   sigmaBrakeTopics: [
-    'Illness'
+    'sigma-brake-topic-illness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
@@ -112,7 +112,7 @@ export const sigmaBrakeContext_45 = {
     '沐浴殺難當。是殺動，病人亡。'
   ],
   sigmaBrakeTopics: [
-    'Illness'
+    'sigma-brake-topic-illness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',

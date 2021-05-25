@@ -66,6 +66,9 @@ export const sigmaBrakeContext_18 = {
   ],
   sigmaBrakeSource: 'sigma-brake-source-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTopics: [
+    'sigma-brake-topic-sigma-brake-topic-lawsuit'
+  ],
   sigmaBrakeOriginalSentence: [
     '甲己東方兔，乙庚亥上求，丙辛居酉位，',
     '丁壬未上流，戊癸蛇作伴，萬事不須憂。'

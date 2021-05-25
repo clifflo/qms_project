@@ -6,8 +6,8 @@ export const sigmaBrakeContext_26 = {
     '如值此煞官事散，病人無藥不須憂。'
   ],
   sigmaBrakeTopics: [
-    'Lawsuit',
-    'Illness'
+    'sigma-brake-topic-lawsuit',
+    'sigma-brake-topic-illness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
@@ -37,7 +37,7 @@ export const sigmaBrakeContext_27 = {
     '遇之官非消散。'
   ],
   sigmaBrakeTopics: [
-    'Lawsuit'
+    'sigma-brake-topic-lawsuit'
   ],
   sigmaBrakeSource: 'sigma-brake-source-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
@@ -67,7 +67,7 @@ export const sigmaBrakeContext_28 = {
     '若值此辰官事散。'
   ],
   sigmaBrakeTopics: [
-    'Lawsuit'
+    'sigma-brake-topic-lawsuit'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
@@ -99,8 +99,8 @@ export const sigmaBrakeContext_29 = {
     '如值此煞官訟消，病人不必生憂慮。'
   ],
   sigmaBrakeTopics: [
-    'Lawsuit',
-    'Illness'
+    'sigma-brake-topic-lawsuit',
+    'sigma-brake-topic-illness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
@@ -130,7 +130,7 @@ export const sigmaBrakeContext_30 = {
     '占訟若與日辰相合旺動主官事消散。'
   ],
   sigmaBrakeTopics: [
-    'Lawsuit'
+    'sigma-brake-topic-lawsuit'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',

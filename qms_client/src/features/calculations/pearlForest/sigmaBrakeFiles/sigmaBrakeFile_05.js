@@ -58,7 +58,7 @@ export const sigmaBrakeContext_23 = {
     '解神官事俱看之。'
   ],
   sigmaBrakeTopics: [
-    'Lawsuit'
+    'sigma-brake-topic-lawsuit'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
@@ -82,7 +82,7 @@ export const sigmaBrakeContext_24 = {
     '解神官事俱看之。'
   ],
   sigmaBrakeTopics: [
-    'Lawsuit'
+    'sigma-brake-topic-lawsuit'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
@@ -115,8 +115,8 @@ export const sigmaBrakeContext_25 = {
     '若值此辰官事散，縱然重病也離身。'
   ],
   sigmaBrakeTopics: [
-    'Lawsuit',
-    'Illness'
+    'sigma-brake-topic-lawsuit',
+    'sigma-brake-topic-illness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',

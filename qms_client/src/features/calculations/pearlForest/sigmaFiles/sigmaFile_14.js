@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 import {
   findItemByStringFromList,
+  filterItemByStringFromList,
   throwFunctionalError
 } from './_utilityHubBySigma';
 import {
@@ -34,15 +35,33 @@ const getCoatedBoltOfDayTrunk =
       sigmaTargetCrossBranchNutForDayTrunk
     } = sigmaBoltContext;
 
-    const sigmaCoatedBoltForDayTrunk = {
-      sigmaTargetCrossBranchNutForDayTrunk,
-      sigmaBrakeName,
-      sigmaBrakeTarget,
-      sigmaBrakeTopics,
-      _type: 'SigmaCoatedBoltForDayTrunk'
-    }
+    if(sigmaBrakeTarget ==
+      'sigma-brake-target-cross-trunk'){
 
-    return sigmaCoatedBoltForDayTrunk;
+      const sigmaCoatedBoltForDayTrunkToCrossTrunk = {
+        sigmaTargetCrossTrunkNutForDayTrunk,
+        sigmaBrakeName,
+        sigmaBrakeTarget,
+        sigmaBrakeTopics,
+        _type: 'SigmaCoatedBoltForDayTrunk',
+        _subType: 'SigmaCoatedBoltForDayTrunkToCrossTrunk'
+      };
+
+      return sigmaCoatedBoltForDayTrunkToCrossTrunk;
+    }
+    else if(sigmaBrakeTarget ==
+      'sigma-brake-target-cross-branch'){
+
+      const sigmaCoatedBoltForDayTrunkToCrossBranch = {
+        sigmaTargetCrossBranchNutForDayTrunk,
+        sigmaBrakeName,
+        sigmaBrakeTarget,
+        sigmaBrakeTopics,
+        _type: 'SigmaCoatedBoltForDayTrunk',
+        _subType: 'SigmaCoatedBoltForDayTrunkToCrossBranch'
+      }
+      return sigmaCoatedBoltForDayTrunkToCrossBranch;
+    }
   }
   catch(errorMessage){
     console.error(errorMessage);
@@ -59,16 +78,34 @@ const getCoatedCrunchOfDayTrunk =
     (getCoatedBoltOfDayTrunk)
     (coatedSigmaSourceDayTrunkNut);
 
-  const coatedBoltSetOfDayTrunk =
+  const sigmaClutchContextCrossTrunkSubsetOfDayTrunk =
+    filterItemByStringFromList(
+      sigmaClutchContextSetOfDayTrunk,
+      'sigma-brake-target-cross-trunk',
+      'sigmaBrakeTarget');
+
+  const sigmaClutchContextCrossBranchSubsetOfDayTrunk =
+    filterItemByStringFromList(
+      sigmaClutchContextSetOfDayTrunk,
+      'sigma-brake-target-cross-branch',
+      'sigmaBrakeTarget');
+
+  const coatedBoltCrossTrunkSubsetOfDayTrunk =
     R.map(
       loadedGetCoatedBoltOfDayTrunk,
-      sigmaClutchContextSetOfDayTrunk);
+      sigmaClutchContextCrossTrunkSubsetOfDayTrunk);
+
+  const coatedBoltCrossBranchSubsetOfDayTrunk =
+    R.map(
+      loadedGetCoatedBoltOfDayTrunk,
+      sigmaClutchContextCrossBranchSubsetOfDayTrunk);
 
   const coatedCrunchOfDayTrunk = {
     _type: 'CoatedCrunchOfDayTrunk',
     coatedSigmaSourceDayTrunkNut,
-    coatedBoltSetOfDayTrunk
-  }
+    coatedBoltCrossTrunkSubsetOfDayTrunk,
+    coatedBoltCrossBranchSubsetOfDayTrunk
+  };
 
   return coatedCrunchOfDayTrunk;
 }

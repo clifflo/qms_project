@@ -106,7 +106,7 @@ export const sigmaBrakeContext_14 = {
     '占病遇此爻，動雖凶有救。'
   ],
   sigmaBrakeTopics: [
-    'Illness'
+    'sigma-brake-topic-illness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'sigma-brake-target-cross-trunk',
@@ -140,7 +140,7 @@ export const sigmaBrakeContext_15 = {
     '改為‘巳月天赦’而‘十干天赦’則改為‘巳日天赦’。'
   ],
   sigmaBrakeTopics: [
-    'Lawsuit'
+    'sigma-brake-topic-lawsuit'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'sigma-brake-target-cross-trunk',

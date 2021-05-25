@@ -6,7 +6,7 @@ export const sigmaBrakeContext_31 = {
     '官事若發動，喝散不由人。'
   ],
   sigmaBrakeTopics: [
-    'Lawsuit'
+    'sigma-brake-topic-lawsuit'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
@@ -29,7 +29,7 @@ export const sigmaBrakeContext_32 = {
     '遇之婚姻忌，官司卻不成。'
   ],
   sigmaBrakeTopics: [
-    'Lawsuit',
+    'sigma-brake-topic-lawsuit',
     'Marriage'
   ],
   sigmaBrakeSource: 'sigma-brake-source-day-trunk',
@@ -60,7 +60,7 @@ export const sigmaBrakeContext_33 = {
     '卦中若得此爻動，長久囚人放出來。'
   ],
   sigmaBrakeTopics: [
-    'Lawsuit'
+    'sigma-brake-topic-lawsuit'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
@@ -83,7 +83,7 @@ export const sigmaBrakeContext_34 = {
     '孕婦胎動則產疾病，遇此辰發動則痊。'
   ],
   sigmaBrakeTopics: [
-    'Illness'
+    'sigma-brake-topic-illness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
@@ -116,7 +116,7 @@ export const sigmaBrakeContext_35 = {
     '孕婦胎動則產疾病，遇此辰發動則痊。'
   ],
   sigmaBrakeTopics: [
-    'Illness'
+    'sigma-brake-topic-illness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',

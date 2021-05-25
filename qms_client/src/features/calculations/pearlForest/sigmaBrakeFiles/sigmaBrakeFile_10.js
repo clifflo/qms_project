@@ -7,7 +7,7 @@ export const sigmaBrakeContext_46 = {
     '鎖殺是也。第一字為關殺第二字為鎖殺。'
   ],
   sigmaBrakeTopics: [
-    'Illness'
+    'sigma-brake-topic-illness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
@@ -32,7 +32,7 @@ export const sigmaBrakeContext_47 = {
     '鎖殺是也。第一字為關殺第二字為鎖殺。'
   ],
   sigmaBrakeTopics: [
-    'Illness'
+    'sigma-brake-topic-illness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
@@ -54,6 +54,7 @@ export const sigmaBrakeContext_48 = {
   sigmaBrakeName: '巳劫殺',
   sigmaBrakeSource: 'sigma-brake-source-day-branch',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTopics: null,
   sigmaBrakeDescription: [
     '凡事忌之。'
   ],
