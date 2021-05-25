@@ -4,7 +4,7 @@ export const sigmaBrakeContext_11 = {
   sigmaBrakeName: '巳天馬',
   sigmaBrakeDescription: '凡占仕宦，遇此必有陞遷之兆。',
   sigmaBrakeTopics: [
-    'Examination'
+    'sigma-brake-topic-examination'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-branch',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',

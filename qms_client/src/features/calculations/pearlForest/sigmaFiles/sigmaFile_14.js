@@ -15,8 +15,6 @@ const getCoatedBoltOfDayTrunk =
   (coatedSigmaSourceDayTrunkNut,
   sigmaClutchContextOfDayTrunk) => {
 
-  console.log('Get the coated bolt of day trunk then.');
-
   try{
     const {
       sigmaBoltContextSetOfDayTrunk,
@@ -53,20 +51,29 @@ const getCoatedBoltOfDayTrunk =
   }
 }
 
-const getCoatedCrunchSetOfDayTrunk = () => {
+const getCoatedCrunchOfDayTrunk =
+  (coatedSigmaSourceDayTrunkNut) => {
 
-  const getCoatedCrunchOfDayTrunk =
+  const loadedGetCoatedBoltOfDayTrunk =
+    R.curry
+    (getCoatedBoltOfDayTrunk)
+    (coatedSigmaSourceDayTrunkNut);
+
+  const coatedBoltSetOfDayTrunk =
     R.map(
-      R.curry(getCoatedBoltOfDayTrunk),
-      twigTrunkChineseSet);
+      loadedGetCoatedBoltOfDayTrunk,
+      sigmaClutchContextSetOfDayTrunk);
 
-  const coatedCrunchSetOfDayTrunk =
-    R.map(
-      R.curry(getCoatedCrunchOfDayTrunk),
-      simgaClutchContextSetOfDayTrunk);
+  const coatedCrunchOfDayTrunk = {
+    _type: 'CoatedCrunchOfDayTrunk',
+    coatedSigmaSourceDayTrunkNut,
+    coatedBoltSetOfDayTrunk
+  }
 
-  return coatedCrunchSetOfDayTrunk;
+  return coatedCrunchOfDayTrunk;
 }
 
 export const coatedCrunchSetOfDayTrunk =
-  getCoatedCrunchSetOfDayTrunk();
+  R.map(
+    getCoatedCrunchOfDayTrunk,
+    twigTrunkChineseSet);

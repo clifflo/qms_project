@@ -7,6 +7,7 @@ export const sigmaBrakeContext_01 = {
   ],
   sigmaBrakeSource: 'sigma-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTopics: null,
   sigmaBrakeOriginalSentence: [
     '甲祿在寅，乙祿在卯，丙戊祿在巳，丁己祿居午，',
     '庚祿居申，辛祿在酉，壬祿在亥，癸祿在子。'
@@ -34,6 +35,10 @@ export const sigmaBrakeContext_02 = {
   ],
   sigmaBrakeSource: 'sigma-day-branch',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTopics: [
+    'sigma-topic-trip',
+    'sigma-topic-find-person'
+  ],
   sigmaBrakeOriginalSentence: [
     '寅午戌馬居申，申子辰馬居寅，',
     '巳酉丑馬在亥，亥卯未馬在巳。'
@@ -60,6 +65,7 @@ export const sigmaBrakeContext_03 = {
   sigmaBrakeName: '巳天乙貴人',
   sigmaBrakeSource: 'sigma-day-trunk',
   sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTopics: null,
   sigmaBrakeDescription: [
     '凡事遇之吉。'
   ],
@@ -116,6 +122,7 @@ export const sigmaBrakeContext_05 = {
     '求仕用之。此處只取原‘天德貴人’之天干',
     '故加‘巳’字以標示之。'
   ],
+  sigmaBrakeTopics: null,
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'sigma-brake-target-cross-trunk',
   sigmaBrakeOriginalSentence: [
