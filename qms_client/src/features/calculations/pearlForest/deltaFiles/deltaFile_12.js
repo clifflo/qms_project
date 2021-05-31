@@ -29,8 +29,11 @@ export const getDeltaDualLongHooksContext_2 =
     const askingDayTrunkChinese =
       askingDayTwigFullComboChinese[0];
 
-    if(isValidTwigTrunkChinese(
-      askingDayTrunkChinese)){
+    const validAskingDayTrunkChinese =
+      isValidTwigTrunkChinese(
+        askingDayTrunkChinese);
+
+    if(!validAskingDayTrunkChinese){
       throw new Error(
         'Asking day trunk is not valid.');
     }
@@ -38,8 +41,11 @@ export const getDeltaDualLongHooksContext_2 =
     const askingDayBranchChinese =
       askingDayTwigFullComboChinese[1];
 
-    if(isValidTwigBranchChinese(
-      askingDayTrunkChinese)){
+    const validAskingDayBranchChinese =
+      isValidTwigBranchChinese(
+        askingDayBranchChinese);
+
+    if(!validAskingDayBranchChinese){
       throw new Error(
         'Asking day branch is not valid.');
     }

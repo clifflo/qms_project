@@ -75,12 +75,16 @@ export const isValidTwigTrunkChinese =
   twigTrunkChinese => {
 
   checkNilWithString(
-    twigTrunkChinese, 'Twig trunk Chinese');
-
-  return isItemExistByStringFromList(
-    twigTrunkContextSet,
     twigTrunkChinese,
     'twigTrunkChinese');
+
+  const _isValidTwigTrunkChinese =
+    isItemExistByStringFromList(
+      twigTrunkContextSet,
+      twigTrunkChinese,
+      'twigTrunkChinese');
+
+  return _isValidTwigTrunkChinese;
 }
 
 export const twigTrunkChineseSet =
