@@ -29,7 +29,7 @@ const buildEpsilonDualLongHooksContext_1 =
 
     checkNilWithNumber(
       wheatRhoJackAtDownwardIndex,
-      'Wheat rho jack at downward index');
+      'wheatRhoJackAtDownwardIndex');
 
     const wheatRhoQueenAtDownwardIndex =
       deltaWheatHookContext
@@ -37,7 +37,7 @@ const buildEpsilonDualLongHooksContext_1 =
 
     checkNilWithNumber(
       wheatRhoQueenAtDownwardIndex,
-      'Wheat rho queen at downward index');
+      'wheatRhoQueenAtDownwardIndex');
 
     const wheatRhoKingAtDownwardIndex =
       deltaWheatHookContext
@@ -45,7 +45,7 @@ const buildEpsilonDualLongHooksContext_1 =
 
     checkNilWithNumber(
       wheatRhoKingAtDownwardIndex,
-      'Wheat rho king at downward index');
+      'wheatRhoKingAtDownwardIndex');
 
     const rawEpsilonJackCrossContext =
       wheatCrossInHookContextSet_3
@@ -53,12 +53,12 @@ const buildEpsilonDualLongHooksContext_1 =
 
     checkNilWithTypedObject(
       rawEpsilonJackCrossContext,
-      'Raw epsilon jack cross context',
-      'Wheat cross in hook context 3');
+      'rawEpsilonJackCrossContext',
+      'WheatCrossInHookContext_3');
 
     const finalEpsilonJackCrossContext = {
       ...rawEpsilonJackCrossContext,
-      _type: 'Epsilon face cross context',
+      _type: 'EpsilonJackCrossContext',
       epsilonFaceType: 'Rho jack'
     };
 
@@ -68,13 +68,13 @@ const buildEpsilonDualLongHooksContext_1 =
 
     checkNilWithTypedObject(
       rawEpsilonQueenCrossContext,
-      'Raw epsilon queen cross context',
-      'Wheat cross in hook context 3');
+      'RawEpsilonQueenCrossContext',
+      'WheatCrossInHookContextSet_3');
 
     const finalEpsilonQueenCrossContext = {
       ...rawEpsilonQueenCrossContext,
-      _type: 'Epsilon face cross context',
-      epsilonFaceType: 'Rho queen'
+      _type: 'EpsilonQueenCrossContext',
+      epsilonFaceType: 'rho-queen'
     };
 
     const rawEpsilonKingCrossContext =

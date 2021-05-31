@@ -20,7 +20,7 @@ const
 
   checkNilWithString(
     rhoJackCrossBranchChinese,
-    'Rho jack cross branch Chinese');
+    'rhoJackCrossBranchChinese');
 
   const rhoJackCrossBranchIndex =
     getTwigBranchContextByChinese(
@@ -29,7 +29,7 @@ const
 
   checkNilWithNumber(
     rhoJackCrossBranchIndex,
-    'Rho jack cross branch index');
+    'rhoJackCrossBranchIndex');
 
   const rhoQueenAtDownwardIndex =
     5 - (rhoJackCrossBranchIndex % 6);
@@ -51,7 +51,7 @@ const deltaLongHookContextMapFunction_4 =
 
   checkNilWithNumber(
     rhoJackAtDownwardIndex,
-    'Rho jack at downward index');
+    'rhoJackAtDownwardIndex');
 
   checkNilWithArray(
     crossInHookContextSet_3,

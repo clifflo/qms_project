@@ -7,12 +7,13 @@ import {
   getTwigPauseOpponentOfChinese
 } from './_twigHubByDelta';
 import {
-  checkNilWithTypedObject
+  checkNilWithTypedObject,
+  checkNilWithString
 } from './_utilityHubByDelta'
 
 export const
   mapFunctionOfWheatCrossInHookContext_3 =
-  (askingDayTwigOpponentEnvelop,
+  (askingDayTwigReactionOpponentEnvelop,
   wheatCrossInHookContext_2) => {
 
   const crossInHookBranchChinese =
@@ -20,15 +21,15 @@ export const
     .crossInHookBranchChinese;
 
   checkNilWithTypedObject(
-    askingDayTwigOpponentEnvelop,
-    'Asking day twig opponent envelop');
+    askingDayTwigReactionOpponentEnvelop,
+    'AskingDayTwigReactionOpponentEnvelop');
 
   const {
     askingDayFlushOpponentChinese,
     askingDayHitOpponentChinese,
     askingDayPauseOpponentChinese,
     askingDaySmallAlloyOpponentChinese
-  } = askingDayTwigOpponentEnvelop;
+  } = askingDayTwigReactionOpponentEnvelop;
 
   const matchAskingDayFlushOpponent =
     askingDayFlushOpponentChinese ==
@@ -52,7 +53,7 @@ export const
     matchAskingDayHitOpponent,
     matchAskingDayPauseOpponent,
     matchAskingDaySmallAlloyOpponent,
-    _type: 'Wheat cross in hook context 3'
+    _type: 'WheatCrossInHookContext_3'
   };
 
   return wheatCrossInHookContext_3;
@@ -60,25 +61,42 @@ export const
 
 export const
   mapFunctionOfCheeseCrossInHookContext_3 =
-  (askingDayTwigOpponentEnvelop,
+  (askingDayTwigReactionOpponentEnvelop,
   cheeseCrossInHookContext_2) => {
 
   try{
-    
+
     const crossInHookBranchChinese =
       cheeseCrossInHookContext_2
       .crossInHookBranchChinese;
 
     checkNilWithTypedObject(
-      askingDayTwigOpponentEnvelop,
-      'Asking day twig opponent envelop');
+      askingDayTwigReactionOpponentEnvelop,
+      'askingDayTwigReactionOpponentEnvelop',
+      'AskingDayTwigReactionOpponentEnvelop');
 
     const {
       askingDayFlushOpponentChinese,
       askingDayHitOpponentChinese,
       askingDayPauseOpponentChinese,
       askingDaySmallAlloyOpponentChinese
-    } = askingDayTwigOpponentEnvelop;
+    } = askingDayTwigReactionOpponentEnvelop;
+
+    checkNilWithString(
+      askingDayFlushOpponentChinese,
+      'askingDayFlushOpponentChinese');
+
+    checkNilWithString(
+      askingDayHitOpponentChinese,
+      'askingDayHitOpponentChinese');
+
+    checkNilWithString(
+      askingDayPauseOpponentChinese,
+      'askingDayPauseOpponentChinese');
+
+    checkNilWithString(
+      askingDaySmallAlloyOpponentChinese,
+      'askingDaySmallAlloyOpponentChinese');
 
     const matchAskingDayFlushOpponent =
       askingDayFlushOpponentChinese ==
@@ -102,7 +120,7 @@ export const
       matchAskingDayHitOpponent,
       matchAskingDayPauseOpponent,
       matchAskingDaySmallAlloyOpponent,
-      _type: 'Cheese cross in hook context 3'
+      _type: 'CheeseCrossInHookContext_3'
     };
 
     return cheeseCrossInHookContext_3;

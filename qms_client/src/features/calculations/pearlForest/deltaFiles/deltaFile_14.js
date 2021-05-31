@@ -46,8 +46,8 @@ const buildDeltaDualLongHooksContext_3 =
       getTwigSmallAlloyOpponentOfChinese(
         askingDayBranchChinese);
 
-    const askingDayTwigOpponentEnvelop = {
-      _type: 'Asking day twig opponent envelop',
+    const askingDayTwigReactionOpponentEnvelop = {
+      _type: 'AskingDayTwigReactionOpponentEnvelop',
       askingDayFlushOpponentChinese,
       askingDayHitOpponentChinese,
       askingDayPauseOpponentChinese,
@@ -73,12 +73,12 @@ const buildDeltaDualLongHooksContext_3 =
     const
     loadedmapFunctionOfWheatCrossInHookContext_3 =
       R.curry(mapFunctionOfWheatCrossInHookContext_3)
-      (askingDayTwigOpponentEnvelop);
+      (askingDayTwigReactionOpponentEnvelop);
 
     const
     loadedmapFunctionOfCheeseCrossInHookContext_3 =
       R.curry(mapFunctionOfCheeseCrossInHookContext_3)
-      (askingDayTwigOpponentEnvelop);
+      (askingDayTwigReactionOpponentEnvelop);
 
     const wheatCrossInHookContextSet_3 =
       R.map(
@@ -100,8 +100,8 @@ const buildDeltaDualLongHooksContext_3 =
       ...rawDeltaDualLongHooksContext_3,
       wheatCrossInHookContextSet_3,
       cheeseCrossInHookContextSet_3,
-      askingDayTwigOpponentEnvelop,
-      _type: 'Delta dual long hooks context 3'
+      askingDayTwigReactionOpponentEnvelop,
+      _type: 'DeltaDualLongHooksContext_3'
     };
 
     return finalDeltaDualLongHooksContext_3;
