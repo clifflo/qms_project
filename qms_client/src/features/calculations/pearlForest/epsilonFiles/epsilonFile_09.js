@@ -63,7 +63,7 @@ const buildEpsilonDualLongHooksContext_5 =
   const epsilonDualLongHooksContext_5 = {
     ...epsilonDualLongHooksContext_4,
     epsilonIntraFacesEnvelop,
-    _type: 'Epsilon dual long hooks context 5'
+    _type: 'EpsilonDualLongHooksContext_5'
   };
 
   return epsilonDualLongHooksContext_5;

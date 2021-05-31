@@ -1,7 +1,9 @@
 import * as R from 'ramda';
 import * as RA from 'ramda-adjunct';
 import {
-  getTwigComboSetContextByTwigFullComboChinese
+  getTwigComboSetContextByTwigFullComboChinese,
+  isValidTwigTrunkChinese,
+  isValidTwigBranchChinese
 } from './_twigHubByDelta';
 import {
   getDeltaDualLongHooksContext_1
@@ -17,11 +19,30 @@ export const getDeltaDualLongHooksContext_2 =
   cheeseHookName) => {
 
   try{
+
+    if(askingDayTwigFullComboChinese.length != 2){
+      throw new Error(
+        'Asking day twig full combo Chinese '
+        + 'must have two characters.');
+    }
+
     const askingDayTrunkChinese =
       askingDayTwigFullComboChinese[0];
 
+    if(isValidTwigTrunkChinese(
+      askingDayTrunkChinese)){
+      throw new Error(
+        'Asking day trunk is not valid.');
+    }
+
     const askingDayBranchChinese =
       askingDayTwigFullComboChinese[1];
+
+    if(isValidTwigBranchChinese(
+      askingDayTrunkChinese)){
+      throw new Error(
+        'Asking day branch is not valid.');
+    }
 
     const deltaDualLongHooksContext_1 =
       getDeltaDualLongHooksContext_1(

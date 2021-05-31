@@ -1,10 +1,10 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  sigmaBrakeContextPartialSetOfSeason
+  getEpsilonDualLongHooksContext_5
 } from '../calculations/calculationsHub';
 
 export default function RhoGui() {
   return <JSONTree
-    data={sigmaBrakeContextPartialSetOfSeason}/>
+    data={getEpsilonDualLongHooksContext_5('丁', '隨', '歸妹')}/>
 }
