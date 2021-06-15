@@ -7,10 +7,10 @@ import {
 
 export const getCoatedCrossBranchNutOfMonth =
   (rhoCrossBranch,
-  askingMonth) => {
+  askingMonthOriginalChinese) => {
 
   const quenchedCrunchOfMonth =
-    getQuenchedCrunchOfMonth(askingMonth);
+    getQuenchedCrunchOfMonth(askingMonthOriginalChinese);
 
   const quenchedBoltCrossBranchNut =
     filterItemByStringFromList(
@@ -21,7 +21,7 @@ export const getCoatedCrossBranchNutOfMonth =
 
   const coatedCrossBranchNut = {
     quenchedBoltCrossBranchNut,
-    askingMonth
+    askingMonthOriginalChinese
   };
 
   return coatedCrossBranchNut;
@@ -29,10 +29,10 @@ export const getCoatedCrossBranchNutOfMonth =
 
 export const getCoatedCrossTrunkNutOfMonth =
   (rhoCrossTrunk,
-  askingMonth) => {
+  askingMonthOriginalChinese) => {
 
   const quenchedCrunchOfMonth =
-    getQuenchedCrunchOfMonth(askingMonth);
+    getQuenchedCrunchOfMonth(askingMonthOriginalChinese);
 
   const quenchedBoltCrossTrunkNut =
     filterItemByStringFromList(
@@ -43,15 +43,15 @@ export const getCoatedCrossTrunkNutOfMonth =
 
   const coatedCrossTrunkNut = {
     quenchedBoltCrossTrunkNut,
-    askingMonth
+    askingMonthOriginalChinese
   };
 
   return coatedCrossTrunkNut;
 }
 
-export const getCoatedCrossBoltOfMonth =
+export const getFermentedCrossInHookContext_1 =
   (wheatCrossInHookContextFinal,
-  askingMonth) => {
+  askingMonthOriginalChinese) => {
 
   const {
     crossInHookTrunkChinese,
@@ -61,12 +61,19 @@ export const getCoatedCrossBoltOfMonth =
   const coatedCrossTrunkNutOfMonth =
     getCoatedCrossTrunkNutOfMonth(
       crossInHookTrunkChinese,
-      askingMonth);
+      askingMonthOriginalChinese);
 
   const coatedCrossBranchNutOfMonth =
     getCoatedCrossBranchNutOfMonth(
       crossInHookBranchChinese,
-      askingMonth);
+      askingMonthOriginalChinese);
 
+  const fermentedCrossInContext_1 = {
+    ...wheatCrossInHookContextFinal,
+    _type: 'FermentedCrossInContext_1',
+    coatedCrossTrunkNutOfMonth,
+    coatedCrossBranchNutOfMonth
+  };
 
+  return fermentedCrossInContext_1;
 }
