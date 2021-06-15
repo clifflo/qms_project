@@ -55,7 +55,7 @@ const buildEpsilonDualLongHooksContext_1 =
     checkNilWithTypedObject(
       rawEpsilonJackCrossContext,
       'rawEpsilonJackCrossContext',
-      'WheatCrossInHookContext_3');
+      'WheatCrossInHookContextFinal');
 
     const finalEpsilonJackCrossContext = {
       ...rawEpsilonJackCrossContext,
@@ -70,7 +70,7 @@ const buildEpsilonDualLongHooksContext_1 =
     checkNilWithTypedObject(
       rawEpsilonQueenCrossContext,
       'rawEpsilonQueenCrossContext',
-      'WheatCrossInHookContext_3');
+      'WheatCrossInHookContextFinal');
 
     const finalEpsilonQueenCrossContext = {
       ...rawEpsilonQueenCrossContext,
@@ -85,7 +85,7 @@ const buildEpsilonDualLongHooksContext_1 =
     checkNilWithTypedObject(
       rawEpsilonKingCrossContext,
       'rawEpsilonKingCrossContext',
-      'WheatCrossInHookContext_3');
+      'WheatCrossInHookContextFinal');
 
     const finalEpsilonKingCrossContext = {
       ...rawEpsilonKingCrossContext,

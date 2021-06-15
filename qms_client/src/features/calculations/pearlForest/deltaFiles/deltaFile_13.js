@@ -12,7 +12,7 @@ import {
 } from './_utilityHubByDelta'
 
 export const
-  mapFunctionOfWheatCrossInHookContext_3 =
+  mapFunctionOfWheatCrossInHookContextFinal =
   (askingDayTwigReactionOpponentEnvelop,
   wheatCrossInHookContext_2) => {
 
@@ -53,14 +53,14 @@ export const
     matchAskingDayHitOpponent,
     matchAskingDayPauseOpponent,
     matchAskingDaySmallAlloyOpponent,
-    _type: 'WheatCrossInHookContext_3'
+    _type: 'WheatCrossInHookContextFinal'
   };
 
   return wheatCrossInHookContext_3;
 }
 
 export const
-  mapFunctionOfCheeseCrossInHookContext_3 =
+  mapFunctionOfCheeseCrossInHookContextFinal =
   (askingDayTwigReactionOpponentEnvelop,
   cheeseCrossInHookContext_2) => {
 
@@ -120,7 +120,7 @@ export const
       matchAskingDayHitOpponent,
       matchAskingDayPauseOpponent,
       matchAskingDaySmallAlloyOpponent,
-      _type: 'CheeseCrossInHookContext_3'
+      _type: 'CheeseCrossInHookContextFinal'
     };
 
     return cheeseCrossInHookContext_3;

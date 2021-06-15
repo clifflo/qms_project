@@ -3,8 +3,8 @@ import {
   getDeltaDualLongHooksContext_2
 } from './deltaFile_12';
 import {
-  mapFunctionOfWheatCrossInHookContext_3,
-  mapFunctionOfCheeseCrossInHookContext_3
+  mapFunctionOfWheatCrossInHookContextFinal,
+  mapFunctionOfCheeseCrossInHookContextFinal
 } from './deltaFile_13';
 import {
   getTwigFlushOpponentOfChinese,
@@ -71,23 +71,23 @@ const buildDeltaDualLongHooksContext_3 =
       'Cheese cross in hook context set 2');
 
     const
-    loadedmapFunctionOfWheatCrossInHookContext_3 =
-      R.curry(mapFunctionOfWheatCrossInHookContext_3)
+    loadedmapFunctionOfWheatCrossInHookContextFinal =
+      R.curry(mapFunctionOfWheatCrossInHookContextFinal)
       (askingDayTwigReactionOpponentEnvelop);
 
     const
-    loadedmapFunctionOfCheeseCrossInHookContext_3 =
-      R.curry(mapFunctionOfCheeseCrossInHookContext_3)
+    loadedmapFunctionOfCheeseCrossInHookContextFinal =
+      R.curry(mapFunctionOfCheeseCrossInHookContextFinal)
       (askingDayTwigReactionOpponentEnvelop);
 
     const wheatCrossInHookContextSetFinal =
       R.map(
-        loadedmapFunctionOfWheatCrossInHookContext_3,
+        loadedmapFunctionOfWheatCrossInHookContextFinal,
         wheatCrossInHookContextSet_2);
 
     const cheeseCrossInHookContextSetFinal =
       R.map(
-        loadedmapFunctionOfCheeseCrossInHookContext_3,
+        loadedmapFunctionOfCheeseCrossInHookContextFinal,
         cheeseCrossInHookContextSet_2);
 
     const rawDeltaDualLongHooksContext_3 =
