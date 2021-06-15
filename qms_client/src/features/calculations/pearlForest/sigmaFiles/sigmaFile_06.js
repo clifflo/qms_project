@@ -72,7 +72,7 @@ export const handleSigmaBoltOfSeason =
       return finalSigmaBoltContextOfSeasonForCrossTrunk;
     }
     else if(sigmaBrakeTargetOfSeason
-      == 'sigma-brake-target-cross-twig-combo'){
+      == 'SigmaBrakeTargetCrossTwigCombo'){
       const finalSigmaBoltContextOfSeasonForCrossTwigCombo =
       {
         ...rawSigmaBoltContextOfSeason,

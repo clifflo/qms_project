@@ -126,7 +126,7 @@ export const sigmaBrakeContext_10 = {
     '春': '戌',
     '夏': '丑',
     '秋': '辰',
-    '未': '亥'
+    '冬': '亥'
   }
 }
 

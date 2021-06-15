@@ -22,7 +22,7 @@ export const sigmaBrakeContext_31 = {
 }
 
 export const sigmaBrakeContext_32 = {
-  _type:'SigmaBrakeContext',
+  _type: 'SigmaBrakeContext',
 	sigmaBrakeIndex: 32,
   sigmaBrakeName: '巳日喝散',
   sigmaBrakeDescription: [
