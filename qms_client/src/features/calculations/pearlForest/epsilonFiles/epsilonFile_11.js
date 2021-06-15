@@ -7,7 +7,7 @@ import {
 import * as R from 'ramda';
 
 export const getEpsilonDualLongHooksContext_6 =
-  (askingMonthOriginalChinese,
+  (askingMonthBranchChinese,
   askingDayTwigFullComboChinese,
   wheatHookName,
   cheeseHookName) => {
@@ -24,7 +24,7 @@ export const getEpsilonDualLongHooksContext_6 =
 
   const loadedGetFermentedCrossInHookContext_1 =
     R.curry(getFermentedCrossInHookContext_1)
-    (askingMonthOriginalChinese);
+    (askingMonthBranchChinese);
 
   const fermentedCrossInHookContextSet_1 =
     R.map(
@@ -37,7 +37,8 @@ export const getEpsilonDualLongHooksContext_6 =
       {
         ...epsilonDualLongHooksContext_5,
         fermentedCrossInHookContextSet_1,
-        _type: 'EpsilonDualLongHooksContext_6'
+        _type: 'EpsilonDualLongHooksContext_6',
+        askingMonthBranchChinese
       }
     );
 
