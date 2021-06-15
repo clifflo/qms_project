@@ -5,25 +5,46 @@ import {
   filterItemByStringFromList
 } from './_utilityHubByEpsilon';
 
-export const getCoatedCrossBranch =
+export const getCoatedCrossBranchNut =
   (rhoCrossBranch,
   askingMonth) => {
 
   const quenchedCrunchOfMonth =
     getQuenchedCrunchOfMonth(askingMonth);
 
-  const quenchedBoltCrossBranch =
+  const quenchedBoltCrossBranchNut =
     filterItemByStringFromList(
       quenchedCrunchOfMonth
-      .quenchedBoltCrossBranchSubsetOfMonth,
+      .quenchedBoltCrossBranchNutSubsetOfMonth,
       rhoCrossBranch,
       'sigmaTargetCrossBranchNutForMonth');
 
-  const coatedCrossBranch = {
-    quenchedBoltCrossBranch,
+  const coatedCrossBranchNut = {
+    quenchedBoltCrossBranchNut,
     askingMonth
   };
 
-  return coatedCrossBranch;
+  return coatedCrossBranchNut;
+}
 
+export const getCoatedCrossTrunkNut =
+  (rhoCrossTrunk,
+  askingMonth) => {
+
+  const quenchedCrunchOfMonth =
+    getQuenchedCrunchOfMonth(askingMonth);
+
+  const quenchedBoltCrossTrunkNut =
+    filterItemByStringFromList(
+      quenchedCrunchOfMonth
+      .quenchedBoltCrossTrunkNutSubsetOfMonth,
+      rhoCrossTrunk,
+      'sigmaTargetCrossTrunkNutForMonth');
+
+  const coatedCrossTrunkNut = {
+    quenchedBoltCrossTrunkNut,
+    askingMonth
+  };
+
+  return coatedCrossTrunkNut;
 }

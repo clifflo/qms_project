@@ -38,14 +38,14 @@ export const getQuenchedCrunchOfMonth =
         'SigmaBrakeTargetCrossBranch',
         'sigmaBrakeTarget');
 
-    const quenchedBoltCrossTrunkSubsetOfMonth =
+    const quenchedBoltCrossTrunkNutSubsetOfMonth =
       R.reject(
         R.isNil,
         R.map(
           loadedGetQuenchedBoltOfMonth,
           sigmaClutchContextCrossTrunkSubsetOfMonth));
 
-    const quenchedBoltCrossBranchSubsetOfMonth =
+    const quenchedBoltCrossBranchNutSubsetOfMonth =
       R.reject(
         R.isNil,
         R.map(
@@ -64,8 +64,8 @@ export const getQuenchedCrunchOfMonth =
       _type: 'QuenchedCrunchOfMonth',
       quenchedSigmaSourceMonthBranchNut,
       quenchedSigmaSourceMonthOriginalNut,
-      quenchedBoltCrossTrunkSubsetOfMonth,
-      quenchedBoltCrossBranchSubsetOfMonth
+      quenchedBoltCrossTrunkNutSubsetOfMonth,
+      quenchedBoltCrossBranchNutSubsetOfMonth
     };
 
     return quenchedCrunchOfMonth;
