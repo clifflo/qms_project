@@ -11,20 +11,35 @@ import {
   sigmaClutchContextSetOfGenericMonth
 } from './sigmaMiniHub_01';
 import {
-  twigBranchChineseSet
+  twigBranchChineseSet,
+  isValidTwigBranchChinese
 } from './_twigHubBySigma';
 import {
   getTauMonthOriginalChineseFromBranch
 } from './_tauHubBySigma';
 
 export const getQuenchedCrunchOfMonth =
-  (quenchedSigmaSourceMonthBranchNut) => {
+  quenchedSigmaSourceMonthBranch => {
 
   try{
+
+    checkNilWithString(
+      quenchedSigmaSourceMonthBranch,
+      'quenchedSigmaSourceMonthBranch');
+
+    const validTwigBranchChinese =
+      isValidTwigBranchChinese(
+        quenchedSigmaSourceMonthBranch);
+
+    if(!validTwigBranchChinese){
+      throw new Error(
+        'Invalid quenched sigma source month branch.');
+    }
+
     const loadedGetQuenchedBoltOfMonth =
       R.curry
       (getQuenchedBoltOfMonth)
-      (quenchedSigmaSourceMonthBranchNut);
+      (quenchedSigmaSourceMonthBranch);
 
     const sigmaClutchContextCrossTrunkSubsetOfMonth =
       filterItemByStringFromList(
@@ -52,18 +67,18 @@ export const getQuenchedCrunchOfMonth =
           loadedGetQuenchedBoltOfMonth,
           sigmaClutchContextCrossBranchSubsetOfMonth));
 
-    const quenchedSigmaSourceMonthOriginalNut =
+    const quenchedSigmaSourceMonthOriginal =
       getTauMonthOriginalChineseFromBranch(
-        quenchedSigmaSourceMonthBranchNut + '月');
+        quenchedSigmaSourceMonthBranch + '月');
 
     checkNilWithString(
-      quenchedSigmaSourceMonthOriginalNut,
-      'quenchedSigmaSourceMonthOriginalNut');
+      quenchedSigmaSourceMonthOriginal,
+      'quenchedSigmaSourceMonthOriginal');
 
     const quenchedCrunchOfMonth = {
       _type: 'QuenchedCrunchOfMonth',
-      quenchedSigmaSourceMonthBranchNut,
-      quenchedSigmaSourceMonthOriginalNut,
+      quenchedSigmaSourceMonthBranch,
+      quenchedSigmaSourceMonthOriginal,
       quenchedBoltCrossTrunkNutSubsetOfMonth,
       quenchedBoltCrossBranchNutSubsetOfMonth
     };

@@ -7,10 +7,10 @@ import {
 
 export const getCoatedCrossBranchNutOfMonth =
   (rhoCrossBranch,
-  askingMonthOriginalChinese) => {
+  askingMonthBranchChinese) => {
 
   const quenchedCrunchOfMonth =
-    getQuenchedCrunchOfMonth(askingMonthOriginalChinese);
+    getQuenchedCrunchOfMonth(askingMonthBranchChinese);
 
   const quenchedBoltCrossBranchNut =
     filterItemByStringFromList(
@@ -21,7 +21,7 @@ export const getCoatedCrossBranchNutOfMonth =
 
   const coatedCrossBranchNut = {
     quenchedBoltCrossBranchNut,
-    askingMonthOriginalChinese
+    askingMonthBranchChinese
   };
 
   return coatedCrossBranchNut;
@@ -29,10 +29,10 @@ export const getCoatedCrossBranchNutOfMonth =
 
 export const getCoatedCrossTrunkNutOfMonth =
   (rhoCrossTrunk,
-  askingMonthOriginalChinese) => {
+  askingMonthBranchChinese) => {
 
   const quenchedCrunchOfMonth =
-    getQuenchedCrunchOfMonth(askingMonthOriginalChinese);
+    getQuenchedCrunchOfMonth(askingMonthBranchChinese);
 
   const quenchedBoltCrossTrunkNut =
     filterItemByStringFromList(
@@ -43,15 +43,15 @@ export const getCoatedCrossTrunkNutOfMonth =
 
   const coatedCrossTrunkNut = {
     quenchedBoltCrossTrunkNut,
-    askingMonthOriginalChinese
+    askingMonthBranchChinese
   };
 
   return coatedCrossTrunkNut;
 }
 
 export const getFermentedCrossInHookContext_1 =
-  (wheatCrossInHookContextFinal,
-  askingMonthOriginalChinese) => {
+  (askingMonthBranchChinese,
+  wheatCrossInHookContextFinal) => {
 
   const {
     crossInHookTrunkChinese,
@@ -61,12 +61,12 @@ export const getFermentedCrossInHookContext_1 =
   const coatedCrossTrunkNutOfMonth =
     getCoatedCrossTrunkNutOfMonth(
       crossInHookTrunkChinese,
-      askingMonthOriginalChinese);
+      askingMonthBranchChinese);
 
   const coatedCrossBranchNutOfMonth =
     getCoatedCrossBranchNutOfMonth(
       crossInHookBranchChinese,
-      askingMonthOriginalChinese);
+      askingMonthBranchChinese);
 
   const fermentedCrossInContext_1 = {
     ...wheatCrossInHookContextFinal,

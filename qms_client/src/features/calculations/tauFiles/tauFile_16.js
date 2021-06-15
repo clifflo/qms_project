@@ -13,6 +13,10 @@ export const
 
   try{
 
+    checkNilWithString(
+      tauMonthBranchChinese,
+      'tauMonthBranchChinese');
+
     const tauRawMonthContext =
       findItemByStringFromList(
         tauRawMonthContextSet,
