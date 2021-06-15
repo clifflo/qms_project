@@ -116,7 +116,7 @@ export const sigmaBrakeContext_25 = {
   ],
   sigmaBrakeTopics: [
     'sigma-brake-topic-lawsuit',
-    'sigma-brake-topic-illness'
+    'SigmaBrakeTopicIllness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',

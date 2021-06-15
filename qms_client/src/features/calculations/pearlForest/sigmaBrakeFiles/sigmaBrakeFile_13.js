@@ -6,7 +6,7 @@ export const sigmaBrakeContext_61 = {
     '占病忌之。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-illness'
+    'SigmaBrakeTopicIllness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',

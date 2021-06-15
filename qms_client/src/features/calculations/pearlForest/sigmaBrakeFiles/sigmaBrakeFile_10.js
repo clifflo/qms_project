@@ -7,7 +7,7 @@ export const sigmaBrakeContext_46 = {
     '鎖殺是也。第一字為關殺第二字為鎖殺。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-illness'
+    'SigmaBrakeTopicIllness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
@@ -32,7 +32,7 @@ export const sigmaBrakeContext_47 = {
     '鎖殺是也。第一字為關殺第二字為鎖殺。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-illness'
+    'SigmaBrakeTopicIllness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',

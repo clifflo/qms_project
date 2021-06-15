@@ -106,7 +106,7 @@ export const sigmaBrakeContext_14 = {
     '占病遇此爻，動雖凶有救。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-illness'
+    'SigmaBrakeTopicIllness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossTrunk',

@@ -83,7 +83,7 @@ export const sigmaBrakeContext_34 = {
     '孕婦胎動則產疾病，遇此辰發動則痊。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-illness'
+    'SigmaBrakeTopicIllness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
@@ -116,7 +116,7 @@ export const sigmaBrakeContext_35 = {
     '孕婦胎動則產疾病，遇此辰發動則痊。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-illness'
+    'SigmaBrakeTopicIllness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
