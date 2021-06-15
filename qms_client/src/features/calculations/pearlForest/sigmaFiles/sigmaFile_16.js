@@ -6,8 +6,8 @@ import {
   checkNilWithString
 } from './_utilityHubBySigma';
 
-export const getCoatedBoltOfMonth =
-  (coatedSigmaSourceMonthNut,
+export const getQuenchedBoltOfMonth =
+  (quenchedSigmaSourceMonthNut,
   sigmaClutchContextOfGenericMonth) => {
 
   try{
@@ -21,7 +21,7 @@ export const getCoatedBoltOfMonth =
     const sigmaBoltContext =
       findItemByStringFromList(
         sigmaBoltContextSetOfMonth,
-        coatedSigmaSourceMonthNut + '月',
+        quenchedSigmaSourceMonthNut + '月',
         'sigmaSourceNutOfMonthBranch');
 
     if(!R.isNil(sigmaBoltContext)){
@@ -33,29 +33,29 @@ export const getCoatedBoltOfMonth =
       if(sigmaBrakeTarget ==
         'SigmaBrakeTargetCrossTrunk'){
 
-        const sigmaCoatedBoltForMonthToCrossTrunk = {
+        const sigmaQuenchedBoltForMonthToCrossTrunk = {
           sigmaTargetCrossTrunkNutForMonth,
           sigmaBrakeName,
           sigmaBrakeTarget,
           sigmaBrakeTopics,
-          _type: 'SigmaCoatedBoltForMonth',
-          _subType: 'SigmaCoatedBoltForMonthToCrossTrunk'
+          _type: 'SigmaQuenchedBoltForMonth',
+          _subType: 'SigmaQuenchedBoltForMonthToCrossTrunk'
         };
 
-        return sigmaCoatedBoltForMonthToCrossTrunk;
+        return sigmaQuenchedBoltForMonthToCrossTrunk;
       }
       else if(sigmaBrakeTarget ==
         'SigmaBrakeTargetCrossBranch'){
 
-        const sigmaCoatedBoltForMonthToCrossBranch = {
+        const sigmaQuenchedBoltForMonthToCrossBranch = {
           sigmaTargetCrossBranchNutForMonth,
           sigmaBrakeName,
           sigmaBrakeTarget,
           sigmaBrakeTopics,
-          _type: 'SigmaCoatedBoltForMonth',
-          _subType: 'SigmaCoatedBoltForMonthToCrossBranch'
+          _type: 'SigmaQuenchedBoltForMonth',
+          _subType: 'SigmaQuenchedBoltForMonthToCrossBranch'
         }
-        return sigmaCoatedBoltForMonthToCrossBranch;
+        return sigmaQuenchedBoltForMonthToCrossBranch;
       }
     }
     else {
@@ -65,6 +65,6 @@ export const getCoatedBoltOfMonth =
   catch(errorMessage){
     console.error(errorMessage);
     throwFunctionalError(
-      'mapFunctionOfCoatedBoltOfMonth');
+      'mapFunctionOfQuenchedBoltOfMonth');
   }
 }

@@ -12,8 +12,8 @@ import {
   twigBranchChineseSet
 } from './_twigHubBySigma';
 
-const getCoatedBoltOfDayTrunk =
-  (coatedSigmaSourceDayTrunkNut,
+const getQuenchedBoltOfDayTrunk =
+  (quenchedSigmaSourceDayTrunkNut,
   sigmaClutchContextOfDayTrunk) => {
 
   try{
@@ -27,7 +27,7 @@ const getCoatedBoltOfDayTrunk =
     const sigmaBoltContext =
       findItemByStringFromList(
         sigmaBoltContextSetOfDayTrunk,
-        coatedSigmaSourceDayTrunkNut,
+        quenchedSigmaSourceDayTrunkNut,
         'sigmaSourceNutOfDayTrunk');
 
     const {
@@ -38,52 +38,52 @@ const getCoatedBoltOfDayTrunk =
     if(sigmaBrakeTarget ==
       'SigmaBrakeTargetCrossBranch'){
 
-      const sigmaCoatedBoltForDayTrunkToCrossBranch = {
+      const sigmaQuenchedBoltForDayTrunkToCrossBranch = {
         sigmaTargetCrossBranchNutForDayTrunk,
         sigmaBrakeName,
         sigmaBrakeTarget,
         sigmaBrakeTopics,
-        _type: 'SigmaCoatedBoltForDayTrunk',
-        _subType: 'SigmaCoatedBoltForDayTrunkToCrossBranch'
+        _type: 'SigmaQuenchedBoltForDayTrunk',
+        _subType: 'SigmaQuenchedBoltForDayTrunkToCrossBranch'
       }
-      return sigmaCoatedBoltForDayTrunkToCrossBranch;
+      return sigmaQuenchedBoltForDayTrunkToCrossBranch;
     }
     else {
       throw new Error(
-        'Sigma coated bolt for day trunk can have '
+        'Sigma quenched bolt for day trunk can have '
         + 'cross branch target only.');
     }
   }
   catch(errorMessage){
     console.error(errorMessage);
     throwFunctionalError(
-      'mapFunctionOfCoatedBoltOfDayTrunk');
+      'mapFunctionOfQuenchedBoltOfDayTrunk');
   }
 }
 
-const getCoatedCrunchOfDayTrunk =
-  (coatedSigmaSourceDayTrunkNut) => {
+const getQuenchedCrunchOfDayTrunk =
+  (quenchedSigmaSourceDayTrunkNut) => {
 
-  const loadedGetCoatedBoltOfDayTrunk =
+  const loadedGetQuenchedBoltOfDayTrunk =
     R.curry
-    (getCoatedBoltOfDayTrunk)
-    (coatedSigmaSourceDayTrunkNut);
+    (getQuenchedBoltOfDayTrunk)
+    (quenchedSigmaSourceDayTrunkNut);
 
-  const coatedBoltCrossBranchSetOfDayTrunk =
+  const quenchedBoltCrossBranchSetOfDayTrunk =
     R.map(
-      loadedGetCoatedBoltOfDayTrunk,
+      loadedGetQuenchedBoltOfDayTrunk,
       sigmaClutchContextSetOfDayTrunk);
 
-  const coatedCrunchOfDayTrunk = {
-    _type: 'CoatedCrunchOfDayTrunk',
-    coatedSigmaSourceDayTrunkNut,
-    coatedBoltCrossBranchSetOfDayTrunk
+  const quenchedCrunchOfDayTrunk = {
+    _type: 'QuenchedCrunchOfDayTrunk',
+    quenchedSigmaSourceDayTrunkNut,
+    quenchedBoltCrossBranchSetOfDayTrunk
   };
 
-  return coatedCrunchOfDayTrunk;
+  return quenchedCrunchOfDayTrunk;
 }
 
-export const coatedCrunchSetOfDayTrunk =
+export const quenchedCrunchSetOfDayTrunk =
   R.map(
-    getCoatedCrunchOfDayTrunk,
+    getQuenchedCrunchOfDayTrunk,
     twigTrunkChineseSet);

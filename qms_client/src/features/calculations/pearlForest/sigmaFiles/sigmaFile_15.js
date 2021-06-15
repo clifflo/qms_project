@@ -11,8 +11,8 @@ import {
   twigBranchChineseSet
 } from './_twigHubBySigma';
 
-const getCoatedBoltOfDayBranch =
-  (coatedSigmaSourceDayBranchNut,
+const getQuenchedBoltOfDayBranch =
+  (quenchedSigmaSourceDayBranchNut,
   sigmaClutchContextOfDayBranch) => {
 
   try{
@@ -26,7 +26,7 @@ const getCoatedBoltOfDayBranch =
     const sigmaBoltContext =
       findItemByStringFromList(
         sigmaBoltContextSetOfDayBranch,
-        coatedSigmaSourceDayBranchNut,
+        quenchedSigmaSourceDayBranchNut,
         'sigmaSourceNutOfDayBranch');
 
     const {
@@ -37,52 +37,52 @@ const getCoatedBoltOfDayBranch =
     if(sigmaBrakeTarget ==
       'SigmaBrakeTargetCrossBranch'){
 
-      const sigmaCoatedBoltForDayBranchToCrossBranch = {
+      const sigmaQuenchedBoltForDayBranchToCrossBranch = {
         sigmaTargetCrossBranchNutForDayBranch,
         sigmaBrakeName,
         sigmaBrakeTarget,
         sigmaBrakeTopics,
-        _type: 'SigmaCoatedBoltForDayBranch',
-        _subType: 'SigmaCoatedBoltForDayBranchToCrossBranch'
+        _type: 'SigmaQuenchedBoltForDayBranch',
+        _subType: 'SigmaQuenchedBoltForDayBranchToCrossBranch'
       }
-      return sigmaCoatedBoltForDayBranchToCrossBranch;
+      return sigmaQuenchedBoltForDayBranchToCrossBranch;
     }
     else {
       throw new Error(
-        'Sigma coated bolt for day branch can have '
+        'Sigma quenched bolt for day branch can have '
         + 'cross branch target only.');
     }
   }
   catch(errorMessage){
     console.error(errorMessage);
     throwFunctionalError(
-      'mapFunctionOfCoatedBoltOfDayBranch');
+      'mapFunctionOfQuenchedBoltOfDayBranch');
   }
 }
 
-const getCoatedCrunchOfDayBranch =
-  (coatedSigmaSourceDayBranchNut) => {
+const getQuenchedCrunchOfDayBranch =
+  (quenchedSigmaSourceDayBranchNut) => {
 
-  const loadedGetCoatedBoltOfDayBranch =
+  const loadedGetQuenchedBoltOfDayBranch =
     R.curry
-    (getCoatedBoltOfDayBranch)
-    (coatedSigmaSourceDayBranchNut);
+    (getQuenchedBoltOfDayBranch)
+    (quenchedSigmaSourceDayBranchNut);
 
-  const coatedBoltCrossBranchSetOfDayBranch =
+  const quenchedBoltCrossBranchSetOfDayBranch =
     R.map(
-      loadedGetCoatedBoltOfDayBranch,
+      loadedGetQuenchedBoltOfDayBranch,
       sigmaClutchContextSetOfDayBranch);
 
-  const coatedCrunchOfDayBranch = {
-    _type: 'CoatedCrunchOfDayBranch',
-    coatedSigmaSourceDayBranchNut,
-    coatedBoltCrossBranchSetOfDayBranch
+  const quenchedCrunchOfDayBranch = {
+    _type: 'QuenchedCrunchOfDayBranch',
+    quenchedSigmaSourceDayBranchNut,
+    quenchedBoltCrossBranchSetOfDayBranch
   };
 
-  return coatedCrunchOfDayBranch;
+  return quenchedCrunchOfDayBranch;
 }
 
-export const coatedCrunchSetOfDayBranch =
+export const quenchedCrunchSetOfDayBranch =
   R.map(
-    getCoatedCrunchOfDayBranch,
+    getQuenchedCrunchOfDayBranch,
     twigBranchChineseSet);

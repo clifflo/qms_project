@@ -1,10 +1,10 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  getCoatedCrunchOfMonth
+  getQuenchedCrunchOfMonth
 } from '../calculations/calculationsHub';
 
 export default function RhoGui() {
   return <JSONTree
-    data={getCoatedCrunchOfMonth('子')}/>
+    data={getQuenchedCrunchOfMonth('子')}/>
 }

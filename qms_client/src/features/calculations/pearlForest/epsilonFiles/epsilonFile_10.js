@@ -1,21 +1,21 @@
 import {
-  coatedCrunchSetOfMonth
+  quenchedCrunchSetOfMonth
 } from './_sigmaHubOfEpsilon';
 import {
   findItemByStringFromList
 } from './_utilityHubBySigma';
 
-export const getQuenchedCrossBranch =
+export const getCoatedCrossBranch =
   (rhoCrossBranch,
   askingMonth) => {
 
-  const coatedCrunchOfMonth =
-    getCoatedCrunchOfMonth(askingMonth);
+  const quenchedCrunchOfMonth =
+    getQuenchedCrunchOfMonth(askingMonth);
 
-  const coatedBoltCrossBranch =
+  const quenchedBoltCrossBranch =
     findItemByStringFromList(
-      coatedCrunchOfMonth
-      .coatedBoltCrossBranchSubsetOfMonth,
+      quenchedCrunchOfMonth
+      .quenchedBoltCrossBranchSubsetOfMonth,
       rhoCrossBranch,
       'sigmaTargetCrossBranchNutForMonth'
     )

@@ -5,7 +5,7 @@ import {
   checkNilWithString
 } from './_utilityHubBySigma';
 import {
-  getCoatedBoltOfMonth
+  getQuenchedBoltOfMonth
 } from './sigmaFile_16';
 import {
   sigmaClutchContextSetOfGenericMonth
@@ -17,14 +17,14 @@ import {
   getTauMonthOriginalChineseFromBranch
 } from './_tauHubBySigma';
 
-export const getCoatedCrunchOfMonth =
-  (coatedSigmaSourceMonthBranchNut) => {
+export const getQuenchedCrunchOfMonth =
+  (quenchedSigmaSourceMonthBranchNut) => {
 
   try{
-    const loadedGetCoatedBoltOfMonth =
+    const loadedGetQuenchedBoltOfMonth =
       R.curry
-      (getCoatedBoltOfMonth)
-      (coatedSigmaSourceMonthBranchNut);
+      (getQuenchedBoltOfMonth)
+      (quenchedSigmaSourceMonthBranchNut);
 
     const sigmaClutchContextCrossTrunkSubsetOfMonth =
       filterItemByStringFromList(
@@ -38,46 +38,46 @@ export const getCoatedCrunchOfMonth =
         'SigmaBrakeTargetCrossBranch',
         'sigmaBrakeTarget');
 
-    const coatedBoltCrossTrunkSubsetOfMonth =
+    const quenchedBoltCrossTrunkSubsetOfMonth =
       R.reject(
         R.isNil,
         R.map(
-          loadedGetCoatedBoltOfMonth,
+          loadedGetQuenchedBoltOfMonth,
           sigmaClutchContextCrossTrunkSubsetOfMonth));
 
-    const coatedBoltCrossBranchSubsetOfMonth =
+    const quenchedBoltCrossBranchSubsetOfMonth =
       R.reject(
         R.isNil,
         R.map(
-          loadedGetCoatedBoltOfMonth,
+          loadedGetQuenchedBoltOfMonth,
           sigmaClutchContextCrossBranchSubsetOfMonth));
 
-    const coatedSigmaSourceMonthOriginalNut =
+    const quenchedSigmaSourceMonthOriginalNut =
       getTauMonthOriginalChineseFromBranch(
-        coatedSigmaSourceMonthBranchNut + '月');
+        quenchedSigmaSourceMonthBranchNut + '月');
 
     checkNilWithString(
-      coatedSigmaSourceMonthOriginalNut,
-      'coatedSigmaSourceMonthOriginalNut');
+      quenchedSigmaSourceMonthOriginalNut,
+      'quenchedSigmaSourceMonthOriginalNut');
 
-    const coatedCrunchOfMonth = {
-      _type: 'CoatedCrunchOfMonth',
-      coatedSigmaSourceMonthBranchNut,
-      coatedSigmaSourceMonthOriginalNut,
-      coatedBoltCrossTrunkSubsetOfMonth,
-      coatedBoltCrossBranchSubsetOfMonth
+    const quenchedCrunchOfMonth = {
+      _type: 'QuenchedCrunchOfMonth',
+      quenchedSigmaSourceMonthBranchNut,
+      quenchedSigmaSourceMonthOriginalNut,
+      quenchedBoltCrossTrunkSubsetOfMonth,
+      quenchedBoltCrossBranchSubsetOfMonth
     };
 
-    return coatedCrunchOfMonth;
+    return quenchedCrunchOfMonth;
   }
   catch(errorMessage){
     console.error(errorMessage);
     throwFunctionalError(
-      'getCoatedCrunchOfMonth');
+      'getQuenchedCrunchOfMonth');
   }
 }
 
-export const coatedCrunchSetOfMonth =
+export const quenchedCrunchSetOfMonth =
   R.map(
-    getCoatedCrunchOfMonth,
+    getQuenchedCrunchOfMonth,
     twigBranchChineseSet);
