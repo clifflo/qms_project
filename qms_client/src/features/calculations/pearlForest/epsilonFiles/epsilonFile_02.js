@@ -17,9 +17,9 @@ const buildEpsilonDualLongHooksContext_2 =
 
   try{
 
-    const wheatCrossInHookContextSet_3 =
+    const wheatCrossInHookContextSetFinal =
       epsilonDualLongHooksContext_1
-      .wheatCrossInHookContextSet_3;
+      .wheatCrossInHookContextSetFinal;
 
     const getEpsilonFocusCrossContextSet =
       deltaFocusEnglish => {
@@ -37,7 +37,7 @@ const buildEpsilonDualLongHooksContext_2 =
 
       const rawEpsilonFocusCrossContextSet =
         filterItemByStringFromList(
-          wheatCrossInHookContextSet_3,
+          wheatCrossInHookContextSetFinal,
           deltaFocusEnglish,
           'deltaFocusEnglish');
 

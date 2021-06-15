@@ -20,9 +20,9 @@ const buildEpsilonDualLongHooksContext_1 =
       deltaDualLongHooksContext_3
       .deltaWheatHookContext;
 
-    const wheatCrossInHookContextSet_3 =
+    const wheatCrossInHookContextSetFinal =
       deltaDualLongHooksContext_3
-      .wheatCrossInHookContextSet_3;
+      .wheatCrossInHookContextSetFinal;
 
     const wheatRhoJackAtDownwardIndex =
       deltaWheatHookContext
@@ -49,7 +49,7 @@ const buildEpsilonDualLongHooksContext_1 =
       'wheatRhoKingAtDownwardIndex');
 
     const rawEpsilonJackCrossContext =
-      wheatCrossInHookContextSet_3
+      wheatCrossInHookContextSetFinal
       [wheatRhoJackAtDownwardIndex];
 
     checkNilWithTypedObject(
@@ -64,7 +64,7 @@ const buildEpsilonDualLongHooksContext_1 =
     };
 
     const rawEpsilonQueenCrossContext =
-      wheatCrossInHookContextSet_3
+      wheatCrossInHookContextSetFinal
       [wheatRhoQueenAtDownwardIndex];
 
     checkNilWithTypedObject(
@@ -79,7 +79,7 @@ const buildEpsilonDualLongHooksContext_1 =
     };
 
     const rawEpsilonKingCrossContext =
-      wheatCrossInHookContextSet_3
+      wheatCrossInHookContextSetFinal
       [wheatRhoKingAtDownwardIndex];
 
     checkNilWithTypedObject(

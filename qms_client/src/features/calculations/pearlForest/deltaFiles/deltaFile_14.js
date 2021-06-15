@@ -80,12 +80,12 @@ const buildDeltaDualLongHooksContext_3 =
       R.curry(mapFunctionOfCheeseCrossInHookContext_3)
       (askingDayTwigReactionOpponentEnvelop);
 
-    const wheatCrossInHookContextSet_3 =
+    const wheatCrossInHookContextSetFinal =
       R.map(
         loadedmapFunctionOfWheatCrossInHookContext_3,
         wheatCrossInHookContextSet_2);
 
-    const cheeseCrossInHookContextSet_3 =
+    const cheeseCrossInHookContextSetFinal =
       R.map(
         loadedmapFunctionOfCheeseCrossInHookContext_3,
         cheeseCrossInHookContextSet_2);
@@ -98,8 +98,8 @@ const buildDeltaDualLongHooksContext_3 =
 
     const finalDeltaDualLongHooksContext_3 = {
       ...rawDeltaDualLongHooksContext_3,
-      wheatCrossInHookContextSet_3,
-      cheeseCrossInHookContextSet_3,
+      wheatCrossInHookContextSetFinal,
+      cheeseCrossInHookContextSetFinal,
       askingDayTwigReactionOpponentEnvelop,
       _type: 'DeltaDualLongHooksContext_3'
     };
