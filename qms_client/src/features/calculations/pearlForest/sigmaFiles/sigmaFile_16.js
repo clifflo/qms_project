@@ -31,7 +31,7 @@ export const getCoatedBoltOfMonth =
       } = sigmaBoltContext;
 
       if(sigmaBrakeTarget ==
-        'sigma-brake-target-cross-trunk'){
+        'SigmaBrakeTargetCrossTrunk'){
 
         const sigmaCoatedBoltForMonthToCrossTrunk = {
           sigmaTargetCrossTrunkNutForMonth,
@@ -45,7 +45,7 @@ export const getCoatedBoltOfMonth =
         return sigmaCoatedBoltForMonthToCrossTrunk;
       }
       else if(sigmaBrakeTarget ==
-        'sigma-brake-target-cross-branch'){
+        'SigmaBrakeTargetCrossBranch'){
 
         const sigmaCoatedBoltForMonthToCrossBranch = {
           sigmaTargetCrossBranchNutForMonth,

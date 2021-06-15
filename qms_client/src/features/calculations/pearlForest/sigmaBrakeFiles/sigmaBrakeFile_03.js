@@ -7,7 +7,7 @@ export const sigmaBrakeContext_11 = {
     'sigma-brake-topic-examination'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-branch',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '寅申月在午，卯酉月在申，辰戌月在戊，',
     '巳亥月在子，子午月在寅，丑未月在辰。'
@@ -41,7 +41,7 @@ export const sigmaBrakeContext_12 = {
     'Examination'
   ],
   sigmaBrakeSource: 'sigma-brake-source-year-branch',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '寅申之年巳亥為，巳亥之年寅申覓，',
     '子午之年卯酉求，卯酉之年子午出，',
@@ -76,7 +76,7 @@ export const sigmaBrakeContext_13 = {
     'Examination'
   ],
   sigmaBrakeSource: 'sigma-brake-source-year-branch',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '寅申之年巳亥為，巳亥之年寅申覓，',
     '子午之年卯酉求，卯酉之年子午出，',
@@ -109,7 +109,7 @@ export const sigmaBrakeContext_14 = {
     'sigma-brake-topic-illness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-trunk',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossTrunk',
   sigmaBrakeOriginalSentence: [
     '天醫正卯、二豬臨，三月隨丑、四未尋，五蛇、六兔、',
     '七居亥，八丑、九羊、十巳存，十一再來尋卯上，',
@@ -143,7 +143,7 @@ export const sigmaBrakeContext_15 = {
     'sigma-brake-topic-lawsuit'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-trunk',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossTrunk',
   sigmaBrakeOriginalSentence: [
     '正五九月在戌方，二六十月到於羊，',
     '三七十一居龍位，四八十二在牛場，',

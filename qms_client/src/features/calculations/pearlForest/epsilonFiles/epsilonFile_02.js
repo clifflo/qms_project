@@ -59,26 +59,26 @@ const buildEpsilonDualLongHooksContext_2 =
 
     const epsilonParentFocusCrossContextSet =
       getEpsilonFocusCrossContextSet(
-        'Delta focus parent');
+        'DeltaFocusParent');
 
     const epsilonSonFocusCrossContextSet =
       getEpsilonFocusCrossContextSet(
-        'Delta focus son');
+        'DeltaFocusSon');
 
     const epsilonGhostFocusCrossContextSet =
       getEpsilonFocusCrossContextSet(
-        'Delta focus ghost');
+        'DeltaFocusGhost');
 
     const epsilonMoneyFocusCrossContextSet =
       getEpsilonFocusCrossContextSet(
-        'Delta focus money');
+        'DeltaFocusMoney');
 
     const epsilonBrotherFocusCrossContextSet =
       getEpsilonFocusCrossContextSet(
-        'Delta focus brother');
+        'DeltaFocusBrother');
 
     const epsilonFocusEnvelop = {
-      _type: 'Epsilon focus envelop',
+      _type: 'EpsilonFocusEnvelop',
       epsilonParentFocusCrossContextSet,
       epsilonSonFocusCrossContextSet,
       epsilonGhostFocusCrossContextSet,
@@ -89,7 +89,7 @@ const buildEpsilonDualLongHooksContext_2 =
     const epsilonDualLongHooksContext_2 = {
       ...epsilonDualLongHooksContext_1,
       epsilonFocusEnvelop,
-      _type: 'Epsilon dual long hooks context 2'
+      _type: 'EpsilonDualLongHooksContext_2'
     }
 
     return epsilonDualLongHooksContext_2;

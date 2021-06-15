@@ -9,7 +9,7 @@ export const sigmaBrakeContext_16 = {
     'sigma-brake-topic-lawsuit'
   ],
   sigmaBrakeSource: 'sigma-brake-source-month-original',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-trunk',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossTrunk',
   sigmaBrakeOriginalSentence: [
     '正月戌兮、二月丑，三月虎兮、四蛇走，',
     '五月酉兮、六卯位，七鼠、八馬各看守，',
@@ -38,7 +38,7 @@ export const sigmaBrakeContext_17 = {
   sigmaBrakeDescription:
     '諸事遇之吉。',
   sigmaBrakeSource: 'sigma-brake-source-month-original',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '正戌、二丑、三辰昌，四未、五酉、六卯強，',
     '七子、八午、九寅位，十月巳上大吉祥，',
@@ -69,7 +69,7 @@ export const sigmaBrakeContext_18 = {
     '改為‘巳日天赦’而‘天赦’則改為‘巳月天赦’。'
   ],
   sigmaBrakeSource: 'sigma-brake-source-day-trunk',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeTopics: [
     'sigma-brake-topic-sigma-brake-topic-lawsuit'
   ],
@@ -119,7 +119,7 @@ export const sigmaBrakeContext_20 = {
     '占尋人看之耳則有音信。'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '春天耳巳、目從亥，夏天耳寅、目居申，',
     '秋天耳亥、目從巳，冬天耳申、目居寅。'

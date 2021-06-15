@@ -47,7 +47,7 @@ export const handleSigmaBoltOfMonthOriginal =
     };
 
     if(sigmaBrakeTargetOfMonthOriginal
-      == 'sigma-brake-target-cross-branch'){
+      == 'SigmaBrakeTargetCrossBranch'){
       const
       finalSigmaBoltContextOfMonthForCrossBranch =
       {
@@ -59,7 +59,7 @@ export const handleSigmaBoltOfMonthOriginal =
       return finalSigmaBoltContextOfMonthForCrossBranch;
     }
     else if(sigmaBrakeTargetOfMonthOriginal
-      == 'sigma-brake-target-cross-trunk'){
+      == 'SigmaBrakeTargetCrossTrunk'){
       const
       finalSigmaBoltContextOfMonthForCrossTrunk =
       {

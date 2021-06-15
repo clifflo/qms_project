@@ -36,7 +36,7 @@ const getCoatedBoltOfDayTrunk =
     } = sigmaBoltContext;
 
     if(sigmaBrakeTarget ==
-      'sigma-brake-target-cross-branch'){
+      'SigmaBrakeTargetCrossBranch'){
 
       const sigmaCoatedBoltForDayTrunkToCrossBranch = {
         sigmaTargetCrossBranchNutForDayTrunk,

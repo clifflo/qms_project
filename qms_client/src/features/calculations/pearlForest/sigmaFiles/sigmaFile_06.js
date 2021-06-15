@@ -50,7 +50,7 @@ export const handleSigmaBoltOfSeason =
     };
 
     if(sigmaBrakeTargetOfSeason
-      == 'sigma-brake-target-cross-branch'){
+      == 'SigmaBrakeTargetCrossBranch'){
       const finalSigmaBoltContextOfSeasonForCrossBranch =
       {
         ...rawSigmaBoltContextOfSeason,
@@ -61,7 +61,7 @@ export const handleSigmaBoltOfSeason =
       return finalSigmaBoltContextOfSeasonForCrossBranch;
     }
     else if(sigmaBrakeTargetOfSeason
-      == 'sigma-brake-target-cross-trunk'){
+      == 'SigmaBrakeTargetCrossTrunk'){
       const finalSigmaBoltContextOfSeasonForCrossTrunk =
       {
         ...rawSigmaBoltContextOfSeason,

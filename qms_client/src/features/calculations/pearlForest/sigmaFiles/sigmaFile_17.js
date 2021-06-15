@@ -29,13 +29,13 @@ export const getCoatedCrunchOfMonth =
     const sigmaClutchContextCrossTrunkSubsetOfMonth =
       filterItemByStringFromList(
         sigmaClutchContextSetOfGenericMonth,
-        'sigma-brake-target-cross-trunk',
+        'SigmaBrakeTargetCrossTrunk',
         'sigmaBrakeTarget');
 
     const sigmaClutchContextCrossBranchSubsetOfMonth =
       filterItemByStringFromList(
         sigmaClutchContextSetOfGenericMonth,
-        'sigma-brake-target-cross-branch',
+        'SigmaBrakeTargetCrossBranch',
         'sigmaBrakeTarget');
 
     const coatedBoltCrossTrunkSubsetOfMonth =

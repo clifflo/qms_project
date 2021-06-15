@@ -9,35 +9,35 @@ export const deltaFocusContextSet = [
   {
     _type: 'Delta focus context',
     deltaFocusChinese: '丙官鬼',
-    deltaFocusEnglish: 'Delta focus ghost',
+    deltaFocusEnglish: 'DeltaFocusGhost',
     deltaFocusElementalRelationEnglish:
       'Twig elemental relation ghost'
   },
   {
     _type: 'Delta focus context',
     deltaFocusChinese: '丙父母',
-    deltaFocusEnglish: 'Delta focus parent',
+    deltaFocusEnglish: 'DeltaFocusParent',
     deltaFocusElementalRelationEnglish:
       'Twig elemental relation parent'
   },
   {
     _type: 'Delta focus context',
     deltaFocusChinese: '丙兄弟',
-    deltaFocusEnglish: 'Delta focus brother',
+    deltaFocusEnglish: 'DeltaFocusBrother',
     deltaFocusElementalRelationEnglish:
       'Twig elemental relation brother'
   },
   {
     _type: 'Delta focus context',
     deltaFocusChinese: '丙妻財',
-    deltaFocusEnglish: 'Delta focus money',
+    deltaFocusEnglish: 'DeltaFocusMoney',
     deltaFocusElementalRelationEnglish:
       'Twig elemental relation money'
   },
   {
     _type: 'Delta focus context',
     deltaFocusChinese: '丙子孫',
-    deltaFocusEnglish: 'Delta focus son',
+    deltaFocusEnglish: 'DeltaFocusSon',
     deltaFocusElementalRelationEnglish:
       'Twig elemental relation son'
   }

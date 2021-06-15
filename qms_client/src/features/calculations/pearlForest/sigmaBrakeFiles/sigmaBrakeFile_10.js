@@ -10,7 +10,7 @@ export const sigmaBrakeContext_46 = {
     'sigma-brake-topic-illness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '春關牛與蛇，夏月龍猴嗟，',
     '秋忌豬羊位，冬犬虎交加。'
@@ -35,7 +35,7 @@ export const sigmaBrakeContext_47 = {
     'sigma-brake-topic-illness'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '春關牛與蛇，夏月龍猴嗟，',
     '秋忌豬羊位，冬犬虎交加。'
@@ -53,7 +53,7 @@ export const sigmaBrakeContext_48 = {
 	sigmaBrakeIndex: 48,
   sigmaBrakeName: '巳劫殺',
   sigmaBrakeSource: 'sigma-brake-source-day-branch',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeTopics: null,
   sigmaBrakeDescription: [
     '凡事忌之。'
@@ -83,7 +83,7 @@ export const sigmaBrakeContext_49 = {
 	sigmaBrakeIndex: 49,
   sigmaBrakeName: '巳咸池殺',
   sigmaBrakeSource: 'sigma-brake-source-day-branch',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeDescription: [
     '占婚大忌主婦人淫亂。'
   ],
@@ -118,7 +118,7 @@ export const sigmaBrakeContext_50 = {
     'Marriage'
   ],
   sigmaBrakeSource: 'sigma-brake-source-season',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-branch',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '春牛不下田，夏龍飛上天，',
     '秋羊艸枯死，冬犬厭殘年。'

@@ -50,7 +50,7 @@ export const handleSigmaBoltOfDayTrunk =
     };
 
     if(sigmaBrakeTargetOfDayTrunk
-      == 'sigma-brake-target-cross-branch'){
+      == 'SigmaBrakeTargetCrossBranch'){
       const finalSigmaBoltContextOfDayTrunkForCrossBranch =
       {
         ...rawSigmaBoltContextOfDayTrunk,
@@ -61,7 +61,7 @@ export const handleSigmaBoltOfDayTrunk =
       return finalSigmaBoltContextOfDayTrunkForCrossBranch;
     }
     else if(sigmaBrakeTargetOfDayTrunk
-      == 'sigma-brake-target-cross-trunk'){
+      == 'SigmaBrakeTargetCrossTrunk'){
       const finalSigmaBoltContextOfDayTrunkForCrossTrunk =
       {
         ...rawSigmaBoltContextOfDayTrunk,

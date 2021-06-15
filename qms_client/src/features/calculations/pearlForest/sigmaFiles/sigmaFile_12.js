@@ -50,7 +50,7 @@ export const handleSigmaBoltOfYearBranch =
     };
 
     if(sigmaBrakeTargetOfYearBranch
-      == 'sigma-brake-target-cross-branch'){
+      == 'SigmaBrakeTargetCrossBranch'){
       const finalSigmaBoltContextOfYearBranchForCrossBranch =
       {
         ...rawSigmaBoltContextOfYearBranch,
@@ -61,7 +61,7 @@ export const handleSigmaBoltOfYearBranch =
       return finalSigmaBoltContextOfYearBranchForCrossBranch;
     }
     else if(sigmaBrakeTargetOfYearBranch
-      == 'sigma-brake-target-cross-trunk'){
+      == 'SigmaBrakeTargetCrossTrunk'){
       const finalSigmaBoltContextOfYearBranchForCrossTrunk =
       {
         ...rawSigmaBoltContextOfYearBranch,
