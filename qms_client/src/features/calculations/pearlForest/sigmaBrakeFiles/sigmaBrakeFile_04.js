@@ -6,7 +6,7 @@ export const sigmaBrakeContext_16 = {
     '遇之訟獄可赦也。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-lawsuit'
+    'SigmaBrakeTopicLawsuit'
   ],
   sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossTrunk',
@@ -35,8 +35,10 @@ export const sigmaBrakeContext_17 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 17,
   sigmaBrakeName: '巳赦文',
-  sigmaBrakeDescription:
-    '諸事遇之吉。',
+  sigmaBrakeDescription: [
+    '諸事遇之吉。'
+  ],
+  sigmaBrakeTopics: [],
   sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
@@ -71,7 +73,7 @@ export const sigmaBrakeContext_18 = {
   sigmaBrakeSource: 'SigmaBrakeSourceDayTrunk',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeTopics: [
-    'sigma-brake-topic-sigma-brake-topic-lawsuit'
+    'SigmaBrakeTopicLawsuit'
   ],
   sigmaBrakeOriginalSentence: [
     '甲己東方兔，乙庚亥上求，丙辛居酉位，',
@@ -95,11 +97,12 @@ export const sigmaBrakeContext_19 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 19,
   sigmaBrakeName: '巳四季天赦',
+  sigmaBrakeTopics: [],
   sigmaBrakeDescription: [
     '凡占百事凶中化吉'
   ],
   sigmaBrakeSource: 'SigmaBrakeSourceSeason',
-  sigmaBrakeTarget: 'sigma-brake-target-cross-twig-combo',
+  sigmaBrakeTarget: 'SigmaBrakeTargetCrossTwigCombo',
   sigmaBrakeOriginalSentence: [
     '春戊寅、夏甲午，秋戊申、冬甲子。'
   ],
@@ -115,6 +118,7 @@ export const sigmaBrakeContext_20 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 20,
   sigmaBrakeName: '巳天耳',
+  sigmaBrakeTopics: [],
   sigmaBrakeDescription: [
     '占尋人看之耳則有音信。'
   ],

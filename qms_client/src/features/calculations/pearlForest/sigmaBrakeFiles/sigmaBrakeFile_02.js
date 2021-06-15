@@ -8,7 +8,7 @@ export const sigmaBrakeContext_06 = {
     '求仕用之。此處只取原‘天德貴人’之地支',
     '故加‘丁’字以標示之。'
   ],
-  sigmaBrakeTopics: null,
+  sigmaBrakeTopics: [],
   sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
@@ -28,7 +28,7 @@ export const sigmaBrakeContext_07 = {
 	sigmaBrakeIndex: 7,
   sigmaBrakeName: '巳月德貴人',
   sigmaBrakeDescription: '凡有所占，轉凶為吉。',
-  sigmaBrakeTopics: null,
+  sigmaBrakeTopics: [],
   sigmaBrakeSource: 'SigmaBrakeSourceMonthBranch',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossTrunk',
   sigmaBrakeOriginalSentence: [
@@ -57,7 +57,7 @@ export const sigmaBrakeContext_08 = {
   sigmaBrakeDescription: '凡有所占，轉凶為吉。',
   sigmaBrakeSource: 'SigmaBrakeSourceMonthBranch',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossTrunk',
-  sigmaBrakeTopics: null,
+  sigmaBrakeTopics: [],
   sigmaBrakeOriginalSentence: [
     '寅午戌月辛，申子辰月丁，亥卯未月己，巳酉丑月乙。'
   ],
@@ -84,13 +84,10 @@ export const sigmaBrakeContext_09 = {
   sigmaBrakeSource: 'SigmaBrakeSourceDayTrunk',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeTopics: [
-    'sigma-brake-topic-life'
+    'SigmaBrakeTopicLife'
   ],
   sigmaBrakeDescription:
     '占身命遇之，一生福祿綿綿。',
-  sigmaBrakeTopics: [
-    'Life'
-  ],
   sigmaBrakeOriginalSentence: [
     '甲愛金雞、乙愛猴，丁豬、丙鼠、己寅頭，',
     '戊尋玉兔、庚壬馬，辛癸逢蛇福自優。'
@@ -113,10 +110,10 @@ export const sigmaBrakeContext_10 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 10,
   sigmaBrakeName: '巳天喜',
-  sigmaBrakeSource: 'Sigma seaon',
+  sigmaBrakeSource: 'SigmaBrakeSourceSeason',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeTopics: [
-    'Pregnant'
+    'SigmaBrakeTopicPregnancy'
   ],
   sigmaBrakeDescription:
     '百事有喜，占胎，尤要看之。',

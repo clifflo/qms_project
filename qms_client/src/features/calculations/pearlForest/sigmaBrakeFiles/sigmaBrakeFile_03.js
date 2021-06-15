@@ -4,7 +4,7 @@ export const sigmaBrakeContext_11 = {
   sigmaBrakeName: '巳天馬',
   sigmaBrakeDescription: '凡占仕宦，遇此必有陞遷之兆。',
   sigmaBrakeTopics: [
-    'sigma-brake-topic-examination'
+    'SigmaBrakeTopicExamination'
   ],
   sigmaBrakeSource: 'SigmaBrakeSourceMonthBranch',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
@@ -38,7 +38,7 @@ export const sigmaBrakeContext_12 = {
     '其地支則第一字則為唐符而第二字則為國印是也。'
   ],
   sigmaBrakeTopics: [
-    'Examination'
+    'SigmaBrakeTopicExamination'
   ],
   sigmaBrakeSource: 'SigmaBrakeSourceYearBranch',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
@@ -73,7 +73,7 @@ export const sigmaBrakeContext_13 = {
     '其地支則第一字則為唐符而第二字則為國印是也。',
   ],
   sigmaBrakeTopics: [
-    'Examination'
+    'SigmaBrakeTopicExamination'
   ],
   sigmaBrakeSource: 'SigmaBrakeSourceYearBranch',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
@@ -140,7 +140,7 @@ export const sigmaBrakeContext_15 = {
     '改為‘巳月天赦’而‘十干天赦’則改為‘巳日天赦’。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-lawsuit'
+    'SigmaBrakeTopicLawsuit'
   ],
   sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossTrunk',

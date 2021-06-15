@@ -72,7 +72,7 @@ export const sigmaBrakeContext_53 = {
     '依易隱所言主官訟猝至。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-lawsuit'
+    'SigmaBrakeTopicLawsuit'
   ],
   sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
@@ -105,7 +105,7 @@ export const sigmaBrakeContext_54 = {
     '占病及訟大忌。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-lawsuit',
+    'SigmaBrakeTopicLawsuit',
     'SigmaBrakeTopicIllness'
   ],
   sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
@@ -139,7 +139,7 @@ export const sigmaBrakeContext_55 = {
     '占病大忌。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-lawsuit',
+    'SigmaBrakeTopicLawsuit',
     'SigmaBrakeTopicIllness'
   ],
   sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',

@@ -38,7 +38,7 @@ export const sigmaBrakeContext_37 = {
     '占訟大忌。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-lawsuit'
+    'SigmaBrakeTopicLawsuit'
   ],
   sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',

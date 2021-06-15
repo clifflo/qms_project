@@ -4,6 +4,7 @@ export const sigmaBrakeContext_41 = {
   sigmaBrakeName: '巳日下大殺',
   sigmaBrakeSource: 'SigmaBrakeSourceDayTrunk',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
+  sigmaBrakeTopics: [],
   sigmaBrakeDescription: [
     '凡事忌之。'
   ],

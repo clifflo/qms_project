@@ -5,6 +5,9 @@ export const sigmaBrakeContext_21 = {
   sigmaBrakeDescription: [
     '占尋人看之目則見面。'
   ],
+  sigmaBrakeTopics: [
+    'SigmaBrakeTopicFindingPerson'
+  ],
   sigmaBrakeSource: 'SigmaBrakeSourceSeason',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
@@ -27,7 +30,7 @@ export const sigmaBrakeContext_22 = {
     '求官用之此首出天玄賦。'
   ],
   sigmaBrakeTopics: [
-    'Examination'
+    'SigmaBrakeTopicExamination'
   ],
   sigmaBrakeSource: 'SigmaBrakeSourceDayTrunk',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
@@ -58,7 +61,7 @@ export const sigmaBrakeContext_23 = {
     '解神官事俱看之。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-lawsuit'
+    'SigmaBrakeTopicLawsuit'
   ],
   sigmaBrakeSource: 'SigmaBrakeSourceSeason',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
@@ -82,7 +85,7 @@ export const sigmaBrakeContext_24 = {
     '解神官事俱看之。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-lawsuit'
+    'SigmaBrakeTopicLawsuit'
   ],
   sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
@@ -115,7 +118,7 @@ export const sigmaBrakeContext_25 = {
     '若值此辰官事散，縱然重病也離身。'
   ],
   sigmaBrakeTopics: [
-    'sigma-brake-topic-lawsuit',
+    'SigmaBrakeTopicLawsuit',
     'SigmaBrakeTopicIllness'
   ],
   sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
