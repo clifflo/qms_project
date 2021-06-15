@@ -5,7 +5,7 @@ import {
   filterItemByStringFromList
 } from './_utilityHubByEpsilon';
 
-export const getCoatedCrossBranchNut =
+export const getCoatedCrossBranchNutOfMonth =
   (rhoCrossBranch,
   askingMonth) => {
 
@@ -27,7 +27,7 @@ export const getCoatedCrossBranchNut =
   return coatedCrossBranchNut;
 }
 
-export const getCoatedCrossTrunkNut =
+export const getCoatedCrossTrunkNutOfMonth =
   (rhoCrossTrunk,
   askingMonth) => {
 
@@ -47,4 +47,26 @@ export const getCoatedCrossTrunkNut =
   };
 
   return coatedCrossTrunkNut;
+}
+
+export const getCoatedCrossBoltOfMonth =
+  (wheatCrossInHookContextFinal,
+  askingMonth) => {
+
+  const {
+    crossInHookTrunkChinese,
+    crossInHookBranchChinese
+  } = wheatCrossInHookContextFinal;
+
+  const coatedCrossTrunkNutOfMonth =
+    getCoatedCrossTrunkNutOfMonth(
+      crossInHookTrunkChinese,
+      askingMonth);
+
+  const coatedCrossBranchNutOfMonth =
+    getCoatedCrossBranchNutOfMonth(
+      crossInHookBranchChinese,
+      askingMonth);
+
+
 }

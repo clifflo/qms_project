@@ -80,31 +80,31 @@ export const twigChosenTypeOneRawEnvelopSet = [
   {
     _type: 'Twig chosen type one raw envelop',
     twigChosenBranchElementalEnglish:
-      'Twig elemental metal',
+      'TwigElementalMetal',
     twigChosenTypeOneEnvelopStartIndex: 7
   },
   {
     _type: 'Twig chosen type one raw envelop',
     twigChosenBranchElementalEnglish:
-      'Twig elemental wood',
+      'TwigElementalWood',
     twigChosenTypeOneEnvelopStartIndex: 1
   },
   {
     _type: 'Twig chosen type one raw envelop',
     twigChosenBranchElementalEnglish:
-      'Twig elemental water',
+      'TwigElementalWater',
     twigChosenTypeOneEnvelopStartIndex: 4
   },
   {
     _type: 'Twig chosen type one raw envelop',
     twigChosenBranchElementalEnglish:
-      'Twig elemental fire',
+      'TwigElementalFire',
     twigChosenTypeOneEnvelopStartIndex: 10
   },
   {
     _type: 'Twig chosen type one raw envelop',
     twigChosenBranchElementalEnglish:
-      'Twig elemental earth',
+      'TwigElementalEarth',
     twigChosenTypeOneEnvelopStartIndex: 10
   }
 ];
