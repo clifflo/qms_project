@@ -123,7 +123,7 @@ export const sigmaBrakeContext_05 = {
     '故加‘巳’字以標示之。'
   ],
   sigmaBrakeTopics: null,
-  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossTrunk',
   sigmaBrakeOriginalSentence: [
     '正丁、二申宮，三壬、四辛同，五亥、',

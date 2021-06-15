@@ -9,7 +9,7 @@ export const sigmaBrakeContext_06 = {
     '故加‘丁’字以標示之。'
   ],
   sigmaBrakeTopics: null,
-  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '正丁、二申宮，三壬、四辛同，五亥、',
@@ -29,7 +29,7 @@ export const sigmaBrakeContext_07 = {
   sigmaBrakeName: '巳月德貴人',
   sigmaBrakeDescription: '凡有所占，轉凶為吉。',
   sigmaBrakeTopics: null,
-  sigmaBrakeSource: 'sigma-brake-source-month-branch',
+  sigmaBrakeSource: 'SigmaBrakeSourceMonthBranch',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossTrunk',
   sigmaBrakeOriginalSentence: [
     '寅午戌月丙，申子辰月壬，亥卯未月甲，巳酉丑月庚。'
@@ -55,7 +55,7 @@ export const sigmaBrakeContext_08 = {
 	sigmaBrakeIndex: 8,
   sigmaBrakeName: '巳月德合',
   sigmaBrakeDescription: '凡有所占，轉凶為吉。',
-  sigmaBrakeSource: 'sigma-brake-source-month-branch',
+  sigmaBrakeSource: 'SigmaBrakeSourceMonthBranch',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossTrunk',
   sigmaBrakeTopics: null,
   sigmaBrakeOriginalSentence: [
@@ -81,7 +81,7 @@ export const sigmaBrakeContext_09 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 9,
   sigmaBrakeName: '巳天福貴人',
-  sigmaBrakeSource: 'sigma-brake-source-day-trunk',
+  sigmaBrakeSource: 'SigmaBrakeSourceDayTrunk',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeTopics: [
     'sigma-brake-topic-life'

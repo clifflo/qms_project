@@ -8,7 +8,7 @@ export const sigmaBrakeContext_56 = {
   sigmaBrakeTopics: [
     'General'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '正戌、二辰、三亥死，四巳、五子、',
@@ -41,7 +41,7 @@ export const sigmaBrakeContext_57 = {
   sigmaBrakeTopics: [
     'Loss property'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '正七從亥二八酉，三九羊頭四十蛇，',
@@ -74,7 +74,7 @@ export const sigmaBrakeContext_58 = {
     'Husbandry',
     'Farming'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '正申二酉三戌邊，四亥五子六牛聯，',
@@ -106,7 +106,7 @@ export const sigmaBrakeContext_59 = {
   sigmaBrakeTopics: [
     'Farming'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '正未、二申、三月酉，四戌、五亥、六子遊，',
@@ -132,7 +132,7 @@ export const sigmaBrakeContext_60 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 60,
   sigmaBrakeName: '巳寡宿',
-  sigmaBrakeSource: 'sigma-brake-source-day-branch',
+  sigmaBrakeSource: 'SigmaBrakeSourceDayBranch',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeDescription: [
     '占資財忌。'

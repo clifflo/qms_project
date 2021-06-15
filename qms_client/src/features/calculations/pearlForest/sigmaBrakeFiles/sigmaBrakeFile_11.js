@@ -2,7 +2,7 @@ export const sigmaBrakeContext_51 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 51,
   sigmaBrakeName: '巳孤辰',
-  sigmaBrakeSource: 'sigma-brake-source-day-branch',
+  sigmaBrakeSource: 'SigmaBrakeSourceDayBranch',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeDescription: [
     '此煞本名孤辰寡宿。其地支則第一字為孤辰而第',
@@ -35,7 +35,7 @@ export const sigmaBrakeContext_52 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 52,
   sigmaBrakeName: '巳寡宿',
-  sigmaBrakeSource: 'sigma-brake-source-day-branch',
+  sigmaBrakeSource: 'SigmaBrakeSourceDayBranch',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeDescription: [
     '此煞本名孤辰寡宿。其地支則第一字為孤辰而第',
@@ -74,7 +74,7 @@ export const sigmaBrakeContext_53 = {
   sigmaBrakeTopics: [
     'sigma-brake-topic-lawsuit'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '正七虎行村，二八鼠當門，三九居戌位，',
@@ -108,7 +108,7 @@ export const sigmaBrakeContext_54 = {
     'sigma-brake-topic-lawsuit',
     'SigmaBrakeTopicIllness'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '正辰、二卯、三月寅，四丑、五子、',
@@ -142,7 +142,7 @@ export const sigmaBrakeContext_55 = {
     'sigma-brake-topic-lawsuit',
     'SigmaBrakeTopicIllness'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '正申、二酉、三戌鄉，四亥、五子、',

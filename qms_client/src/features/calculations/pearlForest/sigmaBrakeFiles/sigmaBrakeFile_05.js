@@ -5,7 +5,7 @@ export const sigmaBrakeContext_21 = {
   sigmaBrakeDescription: [
     '占尋人看之目則見面。'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-season',
+  sigmaBrakeSource: 'SigmaBrakeSourceSeason',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '春天耳巳、目從亥，夏天耳寅、目居申，',
@@ -29,7 +29,7 @@ export const sigmaBrakeContext_22 = {
   sigmaBrakeTopics: [
     'Examination'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-day-trunk',
+  sigmaBrakeSource: 'SigmaBrakeSourceDayTrunk',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '甲丙相邀入虎鄉，更逢子穴最高強，',
@@ -60,7 +60,7 @@ export const sigmaBrakeContext_23 = {
   sigmaBrakeTopics: [
     'sigma-brake-topic-lawsuit'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-season',
+  sigmaBrakeSource: 'SigmaBrakeSourceSeason',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '春寅、夏巳、秋月申，三冬值亥天解神，',
@@ -84,7 +84,7 @@ export const sigmaBrakeContext_24 = {
   sigmaBrakeTopics: [
     'sigma-brake-topic-lawsuit'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '正未、二申、三月酉，四戌、五亥、六子尋，',
@@ -118,7 +118,7 @@ export const sigmaBrakeContext_25 = {
     'sigma-brake-topic-lawsuit',
     'SigmaBrakeTopicIllness'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '月解正二起于申，三四還從酉上輪，',

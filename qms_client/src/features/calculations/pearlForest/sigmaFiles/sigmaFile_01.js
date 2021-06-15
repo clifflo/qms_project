@@ -22,29 +22,29 @@ const getSigmaBrakePartialSet =
 export const
   sigmaBrakeContextPartialSetOfDayTrunk =
   getSigmaBrakePartialSet(
-    'sigma-brake-source-day-trunk');
+    'SigmaBrakeSourceDayTrunk');
 
 export const
   sigmaBrakeContextPartialSetOfDayBranch =
   getSigmaBrakePartialSet(
-    'sigma-brake-source-day-branch');
+    'SigmaBrakeSourceDayBranch');
 
 export const
   sigmaBrakeContextPartialSetOfMonthOriginal =
   getSigmaBrakePartialSet(
-    'sigma-brake-source-month-original');
+    'SigmaBrakeSourceMonthOriginal');
 
 export const
   sigmaBrakeContextPartialSetOfMonthBranch =
   getSigmaBrakePartialSet(
-    'sigma-brake-source-month-branch');
+    'SigmaBrakeSourceMonthBranch');
 
 export const
   sigmaBrakeContextPartialSetOfSeason =
   getSigmaBrakePartialSet(
-    'sigma-brake-source-season');
+    'SigmaBrakeSourceSeason');
 
 export const
   sigmaBrakeContextPartialSetOfYearBranch =
   getSigmaBrakePartialSet(
-    'sigma-brake-source-year-branch');
+    'SigmaBrakeSourceYearBranch');

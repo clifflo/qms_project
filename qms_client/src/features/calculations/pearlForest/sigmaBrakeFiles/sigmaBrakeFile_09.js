@@ -2,7 +2,7 @@ export const sigmaBrakeContext_41 = {
   _type:'SigmaBrakeContext',
 	sigmaBrakeIndex: 41,
   sigmaBrakeName: '巳日下大殺',
-  sigmaBrakeSource: 'sigma-brake-source-day-trunk',
+  sigmaBrakeSource: 'SigmaBrakeSourceDayTrunk',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeDescription: [
     '凡事忌之。'
@@ -35,7 +35,7 @@ export const sigmaBrakeContext_42 = {
   sigmaBrakeTopics: [
     'Any topic'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-month-original',
+  sigmaBrakeSource: 'SigmaBrakeSourceMonthOriginal',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '正卯、二申、三丑鄉，四午、五亥、',
@@ -68,7 +68,7 @@ export const sigmaBrakeContext_43 = {
   sigmaBrakeTopics: [
     'SigmaBrakeTopicIllness'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-season',
+  sigmaBrakeSource: 'SigmaBrakeSourceSeason',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '春丑、夏辰、秋即未，三冬逢戌。'
@@ -91,7 +91,7 @@ export const sigmaBrakeContext_44 = {
   sigmaBrakeTopics: [
     'SigmaBrakeTopicIllness'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-season',
+  sigmaBrakeSource: 'SigmaBrakeSourceSeason',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '喪車春雞夏鼠來，秋兔冬馬好安排。'
@@ -114,7 +114,7 @@ export const sigmaBrakeContext_45 = {
   sigmaBrakeTopics: [
     'SigmaBrakeTopicIllness'
   ],
-  sigmaBrakeSource: 'sigma-brake-source-season',
+  sigmaBrakeSource: 'SigmaBrakeSourceSeason',
   sigmaBrakeTarget: 'SigmaBrakeTargetCrossBranch',
   sigmaBrakeOriginalSentence: [
     '春辰、夏未殃，秋戌、冬丑。'
