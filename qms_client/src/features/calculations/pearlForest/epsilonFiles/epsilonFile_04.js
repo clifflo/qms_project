@@ -15,7 +15,7 @@ export const getEpsilonFocusToFaceRelationContextSubset =
   try{
     checkNilWithTypedObject(
       epsilonFaceCrossContext,
-      'Epsilon face cross context');
+      'EpsilonFaceCrossContext');
 
     const loadedGetEpsilonFocusToFaceContext =
       R.curry
@@ -29,8 +29,7 @@ export const getEpsilonFocusToFaceRelationContextSubset =
 
     checkNilWithArray(
       epsilonFocusFaceReactionContextSubset,
-      'Epsilon focus face reaction '
-      + 'context subset');
+      'epsilonFocusFaceReactionContextSubset');
 
     return epsilonFocusFaceReactionContextSubset;
 
@@ -65,11 +64,11 @@ const buildEpsilonDualLongHooksContext_3 =
 
   checkNilWithArray(
     epsilonFaceCrossContextSet,
-    'Epsilon face cross context set');
+    'epsilonFaceCrossContextSet');
 
   checkNilWithArray(
     epsilonFocusCrossContextSetList,
-    'Epsilon focus cross context set list');
+    'epsilonFocusCrossContextSetList');
 
   const loadedGetEpsilonFocusToFaceContextSubset =
     R.curry
@@ -90,7 +89,7 @@ const buildEpsilonDualLongHooksContext_3 =
   const epsilonDualLongHooksContext_3 = {
     ...epsilonDualLongHooksContext_2,
     epsilonFocusToFaceRelationContextSet,
-    _type: 'Epsilon dual long hooks context 3'
+    _type: 'EpsilonDualLongHooksContext_3'
   };
 
   return epsilonDualLongHooksContext_3;

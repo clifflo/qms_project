@@ -12,39 +12,39 @@ import {
 
 export const deltaPaladinContextSet = [
   {
-    _type: 'Delta paladin context',
+    _type: 'DeltaPaladinContext',
     deltaPaladinChinese: '丙玄武',
-    deltaPaladinEnglish: 'Delta paladin turtle',
+    deltaPaladinEnglish: 'DeltaPaladinTurtle',
     deltaPaladinIndex: 0
   },
   {
-    _type: 'Delta paladin context',
+    _type: 'DeltaPaladinContext',
     deltaPaladinChinese: '丙白虎',
-    deltaPaladinEnglish: 'Delta paladin tiger',
+    deltaPaladinEnglish: 'DeltaPaladinTiger',
     deltaPaladinIndex: 1
   },
   {
-    _type: 'Delta paladin context',
+    _type: 'DeltaPaladinContext',
     deltaPaladinChinese: '丙螣蛇',
-    deltaPaladinEnglish: 'Delta paladin cobra',
+    deltaPaladinEnglish: 'DeltaPaladinCobra',
     deltaPaladinIndex: 2
   },
   {
-    _type: 'Delta paladin context',
+    _type: 'DeltaPaladinContext',
     deltaPaladinChinese: '丙勾陳',
-    deltaPaladinEnglish: 'Delta paladin unicorn',
+    deltaPaladinEnglish: 'DeltaPaladinUnicorn',
     deltaPaladinIndex: 3
   },
   {
-    _type: 'Delta paladin context',
+    _type: 'DeltaPaladinContext',
     deltaPaladinChinese: '丙朱雀',
-    deltaPaladinEnglish: 'Delta paladin phoenix',
+    deltaPaladinEnglish: 'DeltaPaladinPhoenix',
     deltaPaladinIndex: 4
   },
   {
-    _type: 'Delta paladin context',
+    _type: 'DeltaPaladinContext',
     deltaPaladinChinese: '丙青龍',
-    deltaPaladinEnglish: 'Delta paladin dragon',
+    deltaPaladinEnglish: 'DeltaPaladinDragon',
     deltaPaladinIndex : 5
   }
 ]
@@ -60,7 +60,7 @@ export const
 
   checkNilWithNumber(
     askingDayTrunkIndex,
-    'Asking day trunk index');
+    'askingDayTrunkIndex');
 
   const deltaPilotPaladinIndex =
     6 - Math.floor(askingDayTrunkIndex / 2);
@@ -73,7 +73,7 @@ export const getDeltaPaladinContextByIndex =
 
   checkNilWithNumber(
     deltaPaladinIndex,
-    'Delta paladin index');
+    'deltaPaladinIndex');
 
   const deltaPaladinContext =
     getCyclicItemFromList(
@@ -83,7 +83,7 @@ export const getDeltaPaladinContextByIndex =
 
   checkNilWithTypedObject(
     deltaPaladinContext,
-    'Delta paladin context');
+    'DeltaPaladinContext');
 
   return deltaPaladinContext;
 

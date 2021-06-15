@@ -3,7 +3,8 @@ import {
   filterItemByStringFromList,
   checkNilWithTypedObject,
   checkNilWithString,
-  checkNilWithNumber
+  checkNilWithNumber,
+  throwFunctionalError
 } from './_utilityHubByEpsilon';
 import {
   isValidDeltaFocusEnglish,
@@ -58,8 +59,8 @@ const buildEpsilonDualLongHooksContext_1 =
 
     const finalEpsilonJackCrossContext = {
       ...rawEpsilonJackCrossContext,
-      _type: 'EpsilonJackCrossContext',
-      epsilonFaceType: 'Rho jack'
+      _type: 'EpsilonFaceCrossContext',
+      epsilonFaceType: 'rho-jack'
     };
 
     const rawEpsilonQueenCrossContext =
@@ -68,12 +69,12 @@ const buildEpsilonDualLongHooksContext_1 =
 
     checkNilWithTypedObject(
       rawEpsilonQueenCrossContext,
-      'RawEpsilonQueenCrossContext',
-      'WheatCrossInHookContextSet_3');
+      'rawEpsilonQueenCrossContext',
+      'WheatCrossInHookContext_3');
 
     const finalEpsilonQueenCrossContext = {
       ...rawEpsilonQueenCrossContext,
-      _type: 'EpsilonQueenCrossContext',
+      _type: 'EpsilonFaceCrossContext',
       epsilonFaceType: 'rho-queen'
     };
 
@@ -83,20 +84,17 @@ const buildEpsilonDualLongHooksContext_1 =
 
     checkNilWithTypedObject(
       rawEpsilonKingCrossContext,
-      'Raw epsilon king cross context',
-      'Wheat cross in hook context 3');
+      'rawEpsilonKingCrossContext',
+      'WheatCrossInHookContext_3');
 
     const finalEpsilonKingCrossContext = {
       ...rawEpsilonKingCrossContext,
-      _type: 'Epsilon face cross context',
-      epsilonFaceType: 'Rho king'
+      _type: 'EpsilonFaceCrossContext',
+      epsilonFaceType: 'rho-king'
     };
 
-    // Please be noted that I only consider
-    // shown wheat crosses. Hidden wheat cross
-    // are not considered.
     const epsilonFaceEnvelop = {
-      _type: 'Epsilon face envelop',
+      _type: 'EpsilonFaceEnvelop',
       epsilonJackCrossContext:
         finalEpsilonJackCrossContext,
       epsilonQueenCrossContext:
@@ -105,18 +103,18 @@ const buildEpsilonDualLongHooksContext_1 =
         finalEpsilonKingCrossContext,
     }
 
-    const epsilonLongHookContext_1 = {
+    const epsilonDualLongHooksContext_1 = {
       ...deltaDualLongHooksContext_3,
       epsilonFaceEnvelop,
-      _type: 'Epsilon dual long hooks context 1'
+      _type: 'EpsilonDualLongHooksContext_1'
     }
 
-    return epsilonLongHookContext_1;
+    return epsilonDualLongHooksContext_1;
   }
   catch(errorMessage){
     console.error(errorMessage);
-    throw new Error(
-      'Cannot get epsilon long hook context 1.');
+    throwFunctionalError(
+      'buildEpsilonDualLongHooksContext_1');
   }
 
 }
