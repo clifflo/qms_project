@@ -7,7 +7,7 @@ import {
 } from './_utilityHubBySigma';
 
 export const getQuenchedBoltOfMonth =
-  (quenchedSigmaSourceMonthNut,
+  (quenchedSigmaSourceMonth,
   sigmaClutchContextOfGenericMonth) => {
 
   try{
@@ -21,7 +21,7 @@ export const getQuenchedBoltOfMonth =
     const sigmaBoltContext =
       findItemByStringFromList(
         sigmaBoltContextSetOfMonth,
-        quenchedSigmaSourceMonthNut + '月',
+        quenchedSigmaSourceMonth + '月',
         'sigmaSourceNutOfMonthBranch');
 
     if(!R.isNil(sigmaBoltContext)){

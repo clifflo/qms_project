@@ -70,7 +70,7 @@ const getSigmaClutchContextOfSeason =
   }
 }
 
-export const sigmaClutchContextOfSeason =
+export const sigmaClutchContextSetOfSeason =
   R.map(
     getSigmaClutchContextOfSeason,
     sigmaBrakeContextPartialSetOfSeason);

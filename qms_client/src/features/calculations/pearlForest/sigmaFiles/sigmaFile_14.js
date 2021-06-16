@@ -13,7 +13,7 @@ import {
 } from './_twigHubBySigma';
 
 const getQuenchedBoltOfDayTrunk =
-  (quenchedSigmaSourceDayTrunkNut,
+  (quenchedSigmaSourceDayTrunk,
   sigmaClutchContextOfDayTrunk) => {
 
   try{
@@ -27,7 +27,7 @@ const getQuenchedBoltOfDayTrunk =
     const sigmaBoltContext =
       findItemByStringFromList(
         sigmaBoltContextSetOfDayTrunk,
-        quenchedSigmaSourceDayTrunkNut,
+        quenchedSigmaSourceDayTrunk,
         'sigmaSourceNutOfDayTrunk');
 
     const {
@@ -62,12 +62,12 @@ const getQuenchedBoltOfDayTrunk =
 }
 
 const getQuenchedCrunchOfDayTrunk =
-  (quenchedSigmaSourceDayTrunkNut) => {
+  (quenchedSigmaSourceDayTrunk) => {
 
   const loadedGetQuenchedBoltOfDayTrunk =
     R.curry
     (getQuenchedBoltOfDayTrunk)
-    (quenchedSigmaSourceDayTrunkNut);
+    (quenchedSigmaSourceDayTrunk);
 
   const quenchedBoltCrossBranchSetOfDayTrunk =
     R.map(
@@ -76,7 +76,7 @@ const getQuenchedCrunchOfDayTrunk =
 
   const quenchedCrunchOfDayTrunk = {
     _type: 'QuenchedCrunchOfDayTrunk',
-    quenchedSigmaSourceDayTrunkNut,
+    quenchedSigmaSourceDayTrunk,
     quenchedBoltCrossBranchSetOfDayTrunk
   };
 
