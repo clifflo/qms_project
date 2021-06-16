@@ -1,11 +1,11 @@
 import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
-  sigmaClutchContextSetOfSeason
+  quenchedClutchSetOfSeason
 } from '../calculations/calculationsHub';
 
 const result =
-sigmaClutchContextSetOfSeason
+quenchedClutchSetOfSeason
 
 export default function RhoGui() {
   return <JSONTree

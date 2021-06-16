@@ -1,6 +1,10 @@
 import {
   findItemByStringFromList
 } from './_utilityHubBySigma';
+import {
+  sigmaClutchContextSetOfSeason
+} from './sigmaMiniHub_02';
+import * as R from 'ramda';
 
 const getQuenchedBoltOfSeason =
   (askingSeasonChinese,
@@ -22,7 +26,7 @@ const getQuenchedBoltOfSeason =
   const quenchedBoltOfSeason = {
     sigmaBrakeName,
     sigmaBrakeTopics,
-    sigmaBrakeDescription
+    sigmaBrakeDescription,
     quenchedNutOfSeason,
     askingSeasonChinese,
     _type: 'QuenchedBoltOfSeason'
