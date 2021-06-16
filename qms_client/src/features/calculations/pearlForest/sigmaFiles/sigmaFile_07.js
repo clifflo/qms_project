@@ -55,11 +55,15 @@ const getSigmaClutchContextOfSeason =
       sigmaBoltContextSetOfSeason,
       'sigmaBoltContextSetOfSeason');
 
-    const sigmaClutchContextOfSeason = {
-      sigmaBoltContextSetOfSeason,
-      ...sigmaBrakeContextOfSeason,
-      _type: 'SigmaClutchContextOfSeason'
-    };
+    const sigmaClutchContextOfSeason =
+      R.dissoc(
+        'sigmaBoltDictionary',
+        {
+          sigmaBoltContextSetOfSeason,
+          ...sigmaBrakeContextOfSeason,
+          _type: 'SigmaClutchContextOfSeason'
+        }
+      );
 
     return sigmaClutchContextOfSeason;
   }
