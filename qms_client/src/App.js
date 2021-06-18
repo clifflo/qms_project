@@ -6,6 +6,9 @@ import {
   Link
 } from "react-router-dom";
 import * as R from 'ramda';
+import {
+  Foxy
+} from './features/logos/bigCave/bigCaveGui';
 
 function App() {
 
@@ -23,6 +26,9 @@ function App() {
            <li>
              <Link to="/users">Users</Link>
            </li>
+           <li>
+             <Link to="/foxy">Foxy</Link>
+           </li>
          </ul>
        </nav>
 
@@ -34,6 +40,9 @@ function App() {
          </Route>
          <Route path="/users">
            <Users />
+         </Route>
+         <Route path="/foxy">
+           <Foxy />
          </Route>
          <Route path="/">
            <Home />
