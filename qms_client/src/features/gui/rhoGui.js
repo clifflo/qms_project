@@ -2,7 +2,7 @@ import JSONTree from 'react-json-tree';
 import * as R from 'ramda';
 import {
   quenchedClutchSetOfSeason
-} from '../calculations/calculationsHub';
+} from '../urim/calculationsHub';
 
 const result =
 quenchedClutchSetOfSeason
