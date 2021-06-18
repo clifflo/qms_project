@@ -8,7 +8,7 @@ import {
 import * as R from 'ramda';
 import {
   Foxy
-} from './features/logos/bigCave/bigCaveGui';
+} from './features/logos/bigHole/bigHoleGui';
 
 function App() {
 
