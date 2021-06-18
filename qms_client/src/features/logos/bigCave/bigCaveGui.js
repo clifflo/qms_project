@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,31 +23,27 @@ export function Foxy() {
 
   return (
     <Container>
-    <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>xs=12</Paper>
-        </Grid>
-        <Grid item xs={6}>
-          <Paper className={classes.paper}>xs=6</Paper>
-        </Grid>
-        <Grid item xs={6}>
-          <Paper className={classes.paper}>xs=6</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-      </Grid>
-    </div>
+    <TextField
+     id="standard-full-width"
+     label="Label"
+     style={{ margin: 8 }}
+     placeholder="Placeholder"
+     helperText="Title"
+     fullWidth
+     margin="normal"
+     InputLabelProps={{
+       shrink: true,
+     }}
+     />
+    <TextField
+     id="filled-multiline-flexible"
+     label="Multiline"
+     multiline
+     fullWidth
+     rows={4}
+     rowsMax={4}
+     variant="outlined"
+     />
     </Container>
 
   );
