@@ -45,22 +45,22 @@ export const getTwigFullComboChineseByIndex =
 export const twigSeasonContextSet = [
   {
     twigSeasonChinese: '春',
-    twigSeasonEnglish: 'Twig season spring',
+    twigSeasonEnglish: 'TwigSeasonSpring',
     twigSeasonIndex: 0
   },
   {
     twigSeasonChinese: '夏',
-    twigSeasonEnglish: 'Twig season summer',
+    twigSeasonEnglish: 'TwigSeasonSummer',
     twigSeasonIndex: 1
   },
   {
     twigSeasonChinese: '秋',
-    twigSeasonEnglish: 'Twig season autumn',
+    twigSeasonEnglish: 'TwigSeasonAutumn',
     twigSeasonIndex: 2
   },
   {
     twigSeasonChinese: '冬',
-    twigSeasonEnglish: 'Twig season winter',
+    twigSeasonEnglish: 'TwigSeasonWinter',
     twigSeasonIndex: 3
   },
 ]
