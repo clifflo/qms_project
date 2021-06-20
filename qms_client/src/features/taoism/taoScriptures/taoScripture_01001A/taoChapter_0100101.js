@@ -1,6 +1,6 @@
 export const taoismChapter_010101 = {
-  chapterId: '01-01-01',
-  scriptureId: '01-01',
+  chapterId: 'T01-001-01',
+  scriptureId: 'T01-001',
   title: '高上虛皇君道經第一',
   field_01: '太微小童章',
   field_02: [
