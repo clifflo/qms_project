@@ -5,21 +5,24 @@ export const buddhaChapter_0100101 = {
     {
       buddhaChapterTaskOrder: 1,
       buddhaChapterTaskType: 'Mudra',
-      buddhaChapterTaskContent: [
+      buddhaMudraContent: [
         '用右手無名指。搵取香水塗二手掌。表敬仰故。'
-      ]
+      ],
+      buddhaMudraName: '不空羂索母王淨手真言'
     },
     {
       buddhaChapterTaskOrder: 2,
       buddhaChapterTaskType: 'MudraAndDharani',
-      buddhaChapterTaskMudraContent: [
+      buddhaMudraContent: [
         '用右手無名指。搵取香水塗二手掌。表敬仰故。'
       ],
-      buddhaChapterTaskDharaniContent: [
+      buddhaDharaniContent: [
         'oM amogha / jala-bima-le /',
         'suru suru svAhA'
       ],
-      buddhaChapterTaskDharaniExplanations: [
+      buddhaDharaniPage: '16-223',
+      buddhaDharaniCode: 'M-9861',
+      buddhaDharaniExplanations: [
         {
           buddhaDharaniWord: 'amogha',
           buddhaDharaniWordMeaning: [
@@ -69,7 +72,21 @@ export const buddhaChapter_0100101 = {
         '不空啊，水的形像給啜飲者（指諸金剛），',
         '祝福賢者成就。'
       ]
-
+    },
+    {
+      buddhaChapterTaskOrder: 3,
+      buddhaChapterTaskType: 'MudraAndDharani',
+      buddhaMudraContent: [
+        '二手內相叉。直竪二頭指相並。',
+        '以二中指纏二頭指初節前。各頭相拄。',
+        '二大指並伸直。結印當心誦呪。'
+      ],
+      buddhaDharaniName: '滿檀波羅密明咒',
+      buddhaDharaniContent: [
+        'namaH sarvabuddha bodhistavanAM /',
+        'sarvatha utgati spharahemaM /',
+        'gaganakhaM svAhA'
+      ]
     }
   ]
 
