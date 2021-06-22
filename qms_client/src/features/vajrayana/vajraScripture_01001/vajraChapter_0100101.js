@@ -1,6 +1,6 @@
 export const vajraChapter_0100101 = {
-  vajraChapterId: 'B01-001-01',
-  vajraSciptureId: 'B01-001',
+  vajraChapterId: 'V01-001-01',
+  vajraSciptureId: 'V01-001',
   vajraChapterTasks: [
     {
       vajraChapterTaskOrder: 1,
@@ -120,7 +120,7 @@ export const vajraChapter_0100101 = {
         {
           dharaniOriginalWord: 'nAM',
           dharaniSuggestedWord: 'nam',
-          dharaniOriginalWordOrder: 1,
+          dharaniOriginalWordOrder: 4,
           siddhamWordPage: 762,
           dharaniOriginalWordMeaning: [
             '向...行禮'
@@ -140,7 +140,7 @@ export const vajraChapter_0100101 = {
           dharaniSuggestedWordTwo: 'utkhAtin',
           firstSiddhamWordPage: 1355,
           secondSiddhamWordPage: 1355,
-          firstDharaniWordMeaing: [
+          firstDharaniWordMeaning: [
             '被挖掘的，被破壞的。'
           ],
           secondDharaniWordMeaning: [
@@ -185,11 +185,64 @@ export const vajraChapter_0100101 = {
       vajraChapterTaskType: 'MudraAndDharani',
       dharaniName: '金剛手菩薩甘露秘密真言',
       dharaniOriginalContent: [
-        'oM bajra jvali / hana hana /',
-        'sarva bhutana hUM phaT'
+        'oM bajra ayuSe / sara sarAs min'
       ],
       dharaniExplanations: [
-
+        {
+          dharaniOriginalWordOrder: 1,
+          dharaniOriginalWord: 'oM',
+          firstDharaniWordMeaning: ['唵！'],
+          firstDharaniWordPage: 819
+        },
+        {
+          dharaniOriginalWordOrder: 2,
+          dharaniOriginalWord: 'bajra',
+          onlyDharaniSuggestedWord: 'baijika',
+          onlyDharaniWordPage: 239,
+          onlyDharaniWordMeaning: [
+            '與種子有關的，出自精液的，',
+            '繼承自父親的罪，與賣淫有關的。'
+          ]
+        },
+        {
+          dharaniOriginalWordOrder: 3,
+          dharaniOriginalWord: 'ayuSe',
+          onlyDharaniSuggestedWord: 'Ayu-SrI',
+          onlyDharaniWordMeaning: [
+            '壽命長久。'
+          ],
+          onlyDharaniWordPage: 231
+        },
+        {
+          dharaniOriginalWordOrder: 4,
+          dharaniOriginalWord: 'sara',
+          onlyDharaniSuggestedWord: 'sAra',
+          onlyDharaniWordMeaning: [
+            '驅逐，破壞。',
+            '進行，移動。'
+          ],
+          onlyDharaniWordPage: 1132
+        },
+        {
+          dharaniOriginalWordOrder: 5,
+          dharaniOriginalWord: 'sarAs',
+          onlyDharaniSuggestedWord: 'saras',
+          onlyDharaniWordMeaning: [
+            '池塘。在金剛光明經則可視為',
+            '蓮花池也。亦可解作水槽或水桶。'
+          ],
+          onlyDharaniWordPage: 1132
+        },
+        {
+          dharaniOriginalWordOrder: 6,
+          dharaniOriginalWord: 'min',
+          onlyDharaniSuggestedWord: 'min~j',
+          onlyDharaniWordMeaning: [
+            '身體部份，尤指手臂而言向後面',
+            '彎曲的，曲折的，收縮的。'
+          ],
+          onlyDharaniWordPage: 729
+        }
       ]
     }
   ]
