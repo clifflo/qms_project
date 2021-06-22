@@ -1,10 +1,10 @@
-export const buddhismChapter_0100101 = {
-  buddhismChapterId: 'B01-001-01',
-  buddhismSciptureId: 'B01-001',
-  buddhismChapterTasks: [
+export const vajraChapter_0100101 = {
+  vajraChapterId: 'B01-001-01',
+  vajraSciptureId: 'B01-001',
+  vajraChapterTasks: [
     {
-      buddhismChapterTaskOrder: 1,
-      buddhismChapterTaskType: 'MudraAndDharani',
+      vajraChapterTaskOrder: 1,
+      vajraChapterTaskType: 'MudraAndDharani',
       dharaniName: '不空羂索母王淨手真言',
       mudraContent: [
         '用右手無名指。搵取香水塗二手掌。表敬仰故。'
@@ -17,46 +17,46 @@ export const buddhismChapter_0100101 = {
       dharaniCode: 'M-9861',
       dharaniExplanations: [
         {
-          dharaniWord: 'amogha',
-          dharaniWordMeaning: [
+          dharaniOriginalWord: 'amogha',
+          dharaniOriginalWordMeaning: [
             '不空的'
           ]
         },
         {
-          dharaniWord: 'bima',
+          dharaniOriginalWord: 'bima',
           dharaniSuggestedWord: 'bimba',
           siddhamWordPage: 287,
-          dharaniWordMeaning: [
+          dharaniOriginalWordMeaning: [
             '表面，球等等。在經文則可解作‘形像’。'
           ]
         },
         {
-          dharaniWord: 'le',
+          dharaniOriginalWord: 'le',
           dharaniSuggestedWord: 'leha',
           siddhamWordPage: 656,
-          dharaniWordMeaning: [
+          dharaniOriginalWordMeaning: [
             '啜飲者。'
           ]
         },
         {
-          dharaniWord: 'jala',
+          dharaniOriginalWord: 'jala',
           siddhamWordPage: 517,
-          dharaniWordMeaning: [
+          dharaniOriginalWordMeaning: [
             '水或液體。'
           ]
         },
         {
-          dharaniWord: 'suru',
+          dharaniOriginalWord: 'suru',
           dharaniSuggestedWord: 'suri',
           siddhamWordPage: 1241,
-          dharaniWordMeaning: [
+          dharaniOriginalWordMeaning: [
             '祭主或解作賢者。'
           ]
         },
         {
-          dharaniWord: 'svAhA',
+          dharaniOriginalWord: 'svAhA',
           siddhamWordPage: 1253,
-          dharaniWordMeaning: [
+          dharaniOriginalWordMeaning: [
             '可解作安定或者祝福。'
           ]
         }
@@ -67,14 +67,16 @@ export const buddhismChapter_0100101 = {
       ]
     },
     {
-      buddhismChapterTaskOrder: 3,
-      buddhismChapterTaskType: 'MudraAndDharani',
+      vajraChapterTaskOrder: 3,
+      vajraChapterTaskType: 'MudraAndDharani',
       mudraContent: [
         '二手內相叉。直竪二頭指相並。',
         '以二中指纏二頭指初節前。各頭相拄。',
         '二大指並伸直。結印當心誦呪。'
       ],
       dharaniName: '滿檀波羅密明咒',
+      dharaniBookPage: '16-224',
+      dharaniBookReferredPage: '',
       dharaniOriginalContent: [
         'namaH sarva-buddha bodhistava nAM /',
         'sarvatha utgati sphara hemaM /',
@@ -92,39 +94,43 @@ export const buddhismChapter_0100101 = {
       ],
       dharaniExplanations: [
         {
-          dharaniWord: 'namaH',
-          dharaniWordMeaning: [
+          dharaniOriginalWord: 'namaH',
+          dharaniOriginalWordOrder: 1,
+          dharaniOriginalWordMeaning: [
             '敬禮'
           ]
         },
         {
-          dharaniWord: 'sarva-buddha',
-          dharaniWordMeaning: [
+          dharaniOriginalWord: 'sarva-buddha',
+          dharaniOriginalWordOrder: 2,
+          dharaniOriginalWordMeaning: [
             '一切諸佛'
           ],
           siddhamWordPage: 1139
         },
         {
-          dharaniWord: 'bodhistava',
+          dharaniOriginalWord: 'bodhistava',
           dharaniSuggestedWord: 'bodhi-sattva',
-          dharaniWordMeaning: [
+          dharaniOriginalWordOrder: 3,
+          dharaniOriginalWordMeaning: [
             '菩薩'
           ],
           siddhamWordPage: 290
         },
         {
-          dharaniWord: 'nAM',
+          dharaniOriginalWord: 'nAM',
           dharaniSuggestedWord: 'nam',
+          dharaniOriginalWordOrder: 1,
           siddhamWordPage: 762,
-          dharaniWordMeaning: [
+          dharaniOriginalWordMeaning: [
             '向...行禮'
           ]
         },
         {
-          dharaniWord: 'sarvatha',
+          dharaniOriginalWord: 'sarvatha',
           dharaniSuggestedWord: 'sarvathA',
           siddhamWordPage: 1144,
-          dharaniWordMeaning: [
+          dharaniOriginalWordMeaning: [
             '於所有點上，無論如何。'
           ]
         },
@@ -172,6 +178,18 @@ export const buddhismChapter_0100101 = {
           ],
           firstDharaniWordPage: 591
         }
+      ]
+    },
+    {
+      vajraChapterTaskOrder: 3,
+      vajraChapterTaskType: 'MudraAndDharani',
+      dharaniName: '金剛手菩薩甘露秘密真言',
+      dharaniOriginalContent: [
+        'oM bajra jvali / hana hana /',
+        'sarva bhutana hUM phaT'
+      ],
+      dharaniExplanations: [
+
       ]
     }
   ]
