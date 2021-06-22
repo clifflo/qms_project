@@ -4,15 +4,8 @@ export const buddhismChapter_0100101 = {
   buddhismChapterTasks: [
     {
       buddhismChapterTaskOrder: 1,
-      buddhismChapterTaskType: 'Mudra',
-      mudraContent: [
-        '用右手無名指。搵取香水塗二手掌。表敬仰故。'
-      ],
-      mudraName: '不空羂索母王淨手真言'
-    },
-    {
-      buddhismChapterTaskOrder: 2,
       buddhismChapterTaskType: 'MudraAndDharani',
+      dharaniName: '不空羂索母王淨手真言',
       mudraContent: [
         '用右手無名指。搵取香水塗二手掌。表敬仰故。'
       ],
@@ -85,11 +78,17 @@ export const buddhismChapter_0100101 = {
       dharaniOriginalContent: [
         'namaH sarva-buddha bodhistava nAM /',
         'sarvatha utgati sphara hemaM /',
-        'gaganakhaM svAhA'
+        'gagana khaM svAhA'
       ],
       dharaniSuggestedContent: [
         'namaH sarva-buddha bodhi-sattva nam /',
-        'sarvathA'
+        'sarvathA utkhAta sphAra hema /',
+        'ganana khan svAhA'
+      ],
+      dharaniWholeTranslations: [
+        '向一切諸佛菩薩敬禮，',
+        '無論如何，廣泛地被挖掘而成崎嶇的，',
+        '以楞伽經而挖出而成空性，莎婆訶。'
       ],
       dharaniExplanations: [
         {
@@ -148,8 +147,30 @@ export const buddhismChapter_0100101 = {
           firstDharaniWordMeaning: [
             '偉大的，廣泛的。'
           ],
-          firstDharaniWordPage: 1191,
-          
+          firstDharaniWordPage: 1191
+        },
+        {
+          dharaniOriginalWord: 'hemaM',
+          dharaniSuggestedWordOne: 'hema',
+          firstDharaniWordMeaning: [
+            '楞伽經'
+          ],
+          firstDharaniWordPage: 489
+        },
+        {
+          dharaniOriginalWord: 'gagana',
+          firstDharaniWordMeaning: [
+            '天空，虛空。'
+          ],
+          firstDharaniWordPage: 439
+        },
+        {
+          dharaniOriginalWord: 'khaM',
+          firstDharaniSuggestedWord: 'khan',
+          firstDharaniWordMeaning: [
+            '挖出，貫穿。'
+          ],
+          firstDharaniWordPage: 591
         }
       ]
     }
