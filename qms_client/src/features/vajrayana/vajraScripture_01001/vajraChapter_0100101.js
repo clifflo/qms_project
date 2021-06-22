@@ -243,6 +243,10 @@ export const vajraChapter_0100101 = {
           ],
           onlyDharaniWordPage: 729
         }
+      ],
+      dharaniWholeTranslations: [
+        '唵！出自精液的者（之眾生）能成就',
+        '壽命長久。曲折水流則可移動蓮花池。'
       ]
     }
   ]
