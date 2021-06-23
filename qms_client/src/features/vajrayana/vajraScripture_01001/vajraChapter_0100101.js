@@ -247,6 +247,18 @@ export const vajraChapter_0100101 = {
       dharaniWholeTranslations: [
         '唵！出自精液的者（之眾生）能成就',
         '壽命長久。曲折水流則可移動蓮花池。'
+      ],
+      dhraraniSuggestedContent: [
+        'oM baijika Ayu-SrI /',
+        'sara saras min~j'
+      ],
+      mudraName: '',
+      mudraContent: [
+        '誦之七遍。其手印相，兩手相叉合掌，',
+        '以右壓左置於頂上。'
+      ],
+      kalpanaContent: [
+        '運心供養。'
       ]
     }
   ]

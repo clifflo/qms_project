@@ -1,45 +1,72 @@
-export const taoChapter_010104 = {
+export const orthodoxiChapter_010104 = {
   title: '上皇先生紫晨君道經第四',
-  chapterId: 'C01-01-04',
-  scriptureId: 'S01-01',
-  bookPage: 'B01-012',
-  field_01: '左無英公子章',
-  field_02: [
-    '謹請左無英公子玄充叔，字合符子，',
-    '常守兆左腋之下，肝之後戶死炁之門，',
-    '使左腋之下常有玉光，',
-    '引神明上入兩眼睛之中。'
-  ],
-  field_03: [
-    '真思左無英公子玄充叔真炁，',
-    '玉光之色，罩於頂上。'
-  ],
-  field_04: [
-    '無英神真生紫黃，三炁混合成宮商，',
-    '招引真炁鎮膀胱，通流三丹會洞房，',
-    '為我致仙變丹容，飛昇雲館入金墉。'
-  ],
-  field_05: [
-    '次思玉光從兆泥丸中入，兆乃口吸神雲，',
-    '咽津三過，結作三神，一神狀如秀士，',
-    '青錦袍，玉束帶，二神侍立，',
-    '下入右乳，穿絳官，入左膀胱，',
-    '却入右膀胱，上穿絳官，入左乳內，',
-    '過肝之後戶，順時吐息。'
-  ],
-  field_06: '誦玉經。',
-  field_07: [
-    '太冥絕九玄，洞景寄神通，',
-    '玉帝乘朱霄，綠霞煥金墉，',
-    '上館雲珠內，仰投無刅峰，',
-    '靈關太漠下，靄沫鏡中空，',
-    '冥化混離子，玄玄叔火王，',
-    '瑋寂高同生，無極保谷童，',
-    '圓塗無凝滯，綺合有九重，',
-    '南披七祖根，西解累業凶，',
-    '體嬌萬津波，神生攝十方，',
-    '大歸反胎轅，三合乘天龍。'
-  ],
+  orthodoxiChapterId: 'C01-01-04',
+  orthodoxiScriptureId: 'S01-01',
+  orthodoxiBookPage: 'B01-012',
+  orthodoxiDataFields: [
+    {
+      orthodoxiDataFieldCode: 1,
+      orthodoxiDataFieldContent: [
+        '左無英公子章'
+      ]
+    },
+    {
+      orthodoxiDataFieldCode: 2,
+      orthodoxiDataFieldContent: [
+        '謹請左無英公子玄充叔，字合符子，',
+        '常守兆左腋之下，肝之後戶死炁之門，',
+        '使左腋之下常有玉光，',
+        '引神明上入兩眼睛之中。'
+      ]
+    },
+    {
+      orthodoxiDataFieldCode: 3,
+      orthodoxiDataFieldContent: [
+        '真思左無英公子玄充叔真炁，',
+        '玉光之色，罩於頂上。'
+      ]
+    },
+    {
+      orthodoxiDataFieldCode: 4,
+      orthodoxiDataFieldContent: [
+        '無英神真生紫黃，三炁混合成宮商，',
+        '招引真炁鎮膀胱，通流三丹會洞房，',
+        '為我致仙變丹容，飛昇雲館入金墉。'
+      ]
+    },
+    {
+      orthodoxiDataFieldCode: 5,
+      orthodoxiDataFieldContent: [
+        '次思玉光從兆泥丸中入，兆乃口吸神雲，',
+        '咽津三過，結作三神，一神狀如秀士，',
+        '青錦袍，玉束帶，二神侍立，',
+        '下入右乳，穿絳官，入左膀胱，',
+        '却入右膀胱，上穿絳官，入左乳內，',
+        '過肝之後戶，順時吐息。'
+      ]
+    },
+    {
+      orthodoxiDataFieldCode: 6,
+      orthodoxiDataFieldContent: [
+        '誦玉經。'
+      ]
+    },
+    {
+      orthodoxiDataFieldCode: 7,
+      orthodoxiDataFieldContent: [
+        '太冥絕九玄，洞景寄神通，',
+        '玉帝乘朱霄，綠霞煥金墉，',
+        '上館雲珠內，仰投無刅峰，',
+        '靈關太漠下，靄沫鏡中空，',
+        '冥化混離子，玄玄叔火王，',
+        '瑋寂高同生，無極保谷童，',
+        '圓塗無凝滯，綺合有九重，',
+        '南披七祖根，西解累業凶，',
+        '體嬌萬津波，神生攝十方，',
+        '大歸反胎轅，三合乘天龍。'
+      ]
+    }
+  ]
   field_10: '玉清上皇中極寶景王',
   field_11: [
     '神安炁洞，上與天通，越出地戶，',
