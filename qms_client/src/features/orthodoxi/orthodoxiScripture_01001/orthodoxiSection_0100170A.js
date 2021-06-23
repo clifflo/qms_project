@@ -1,6 +1,7 @@
-export const orthodoxiSection_0100170 = {
-  orthodoxiChapterId: 'TC-01-001-70',
-  orthodoxiSectionId: 'TS-01-001-70',
+export const orthodoxiSection_0100170A = {
+  orthodoxiSectionId: '01-001-70A',
+  orthodoxiChapterId: '01-001-70',
+  orthodoxiChapterName: '',
   orthodoxiSteps: [
     {
       orthodoxiStepCode: 1,
@@ -109,12 +110,91 @@ export const orthodoxiSection_0100170 = {
       kalpanaContent: [
         '畢，又四拜，長跪啟之。'
       ],
+      onlyBowingTimes: 4,
+      bodyPosture: 'Kneel',
       charmContent: [
         '臣某至心上啟中央黃老元素道君，',
         '臣今入室焚香披詠《上清大洞真經三十九章》，',
         '願臣靖室之內，芝英自生，',
         '玉華寶曜，三光洞明，臣昇上清，',
         '合同帝靈，使七祖罪解，克獲長生。'
+      ]
+    },
+    {
+      orthodoxiStepCode: 9,
+      kalpanaContent: [
+        '畢，又四拜，三叩齒，長跪啟之。'
+      ],
+      onlyBuckleTimes: 3,
+      onlyBowingTimes: 4,
+      faceDirection: 'North',
+      bodyPosture: 'Kneel',
+      charmContent: [
+        '臣某至心上啟上清總仙大司馬，',
+        '長生法師王三天君栢成上真。'
+      ]
+    },
+    {
+      orthodoxiStepCode: 10,
+      orthodoxiBookPage: 'OB-01-004-C',
+      kalpanaContent: [
+        '四拜，三叩齒，長跪啟之。'
+      ],
+      faceDirection: 'North',
+      bodyPosture: 'Kneel',
+      charmContent: [
+        '臣某至心上啟降授大洞真經祖師，',
+        '上真聖母紫微元君王夫人。'
+      ]
+    },
+    {
+      orthodoxiStepCode: 11,
+      orthodoxiBookPage: 'OB-01-004-C',
+      kalpanaContent: [
+        '四拜，三叩齒，長跪啟之。'
+      ],
+      onlyBuckleTimes: 3,
+      onlyBowingTimes: 4,
+      faceDirection: 'North',
+      charmContent: [
+        '臣某至心上啟降授徊風大混合師，',
+        '上真聖母中候元君王夫人，',
+        '臣今入室焚香，',
+        '諷讀《上清大洞真經三十九章》',
+        '伏願調和三魂，制鍊七魄，',
+        '尸蟲沉落，腑藏光華，百病不生，',
+        '災害消滅，色返嬰孩，白日騰翥，',
+        '願七祖罪解，上生福堂。'
+      ],
+      charmPronuciations: [
+        {
+          pronouncedCharacter: '翥',
+          cantonesePronucation: '煮',
+          chineseMeaning: [
+            '解作鳥向上飛也。'
+          ]
+        }
+      ]
+    },
+    {
+      orthodoxiStepCode: 12,
+      orthodoxiBookPage: 'OB-01-004-C',
+      faceDirection: 'North',
+      kalpanaContent: [
+        '東向四拜，燒香，叩齒三十六通，',
+        '存東華六門，治東壟山，周回三千里，',
+        '門內有三官，羅列分明。',
+        '第一宮方諸青宮，上相青童君所治。',
+        '第二宮玉保青宮，',
+        '玉保王上相大司馬高晨師所治。',
+        '第三宮玉華青宮，東海青華小童所治。',
+        '次存念六門名，及門郎姓字：',
+        '東青華門，門郎丘伯淵。',
+        '南神華玉門，門郎王祖思。',
+        '西玉洞門，門郎庾尚節。',
+        '北玉陰門，門郎史少華。',
+        '東南天關門，門郎文五車。',
+        '東北寒水門，門郎童林都。'
       ]
     }
   ]
