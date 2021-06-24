@@ -1,7 +1,7 @@
-export const orthodoxiSection_0100170A = {
-  orthodoxiSectionId: '01-001-70A',
-  orthodoxiChapterId: '01-001-70',
-  orthodoxiChapterName: '',
+export const orthodoxiSection_0100101A = {
+  orthodoxiSectionId: 'T01-001-01A',
+  orthodoxiChapterId: 'T01-001-01',
+  orthodoxiChapterName: '誦經玉訣',
   orthodoxiSteps: [
     {
       orthodoxiStepCode: 1,
@@ -20,32 +20,40 @@ export const orthodoxiSection_0100170A = {
     },
     {
       orthodoxiStepCode: 2,
+      orthodoxiStepId: 'T01-001-01A-02',
       kalpanaContent: [
-        '畢，先進右足入戶，三捻香，扣齒三通，祝。'
+        '先進右足入戶，三捻香，扣齒三通，祝。'
       ],
       chantContent: [
         '玉華散景，九炁含烟，香雲密羅，',
         '徑衝九天，侍香金童，傳言玉女，',
         '上聞帝前，令臣長生，世為仙真，',
         '隨心所願，莫不如言。'
+      ],
+      prayerActions: [
+        {
+          prayerActionId: 'T01-001-01A-02-1',
+          prayerActionOrder: 1,
+          prayerActionType: 'step_into_mandala',
+          prayerActionValue: 'right_leg'
+        },
+        {
+          prayerActionId: 'T01-001-01A-02-2',
+          prayerActionOrder: 2,
+          prayerActionType: 'bowing_times',
+          prayerActionValue: 3
+        },
+        {
+          prayerActionId: 'T01-001-01A-02-3',
+          prayerActionOrder: 3,
+          prayerActionType: 'mouth_buckle_times',
+          prayerActionValue: 3
+        }
       ]
     },
     {
       orthodoxiStepCode: 3,
-      onlyBuckleTimes: 3,
-      bowingTimes: 3,
-      kalpanaContent: [
-        '畢，先進右足入戶，三捻香，扣齒三通，祝。'
-      ],
-      chantContent: [
-        '玉華散景，九炁含烟，香雲密羅，',
-        '徑衝九天，侍香金童，傳言玉女，',
-        '上聞帝前，令臣長生，世為仙真，',
-        '隨心所願，莫不如言。'
-      ]
-    },
-    {
-      orthodoxiStepCode: 4,
+      orthodoxiStepId: 'T01-001-01A-03',
       faceDirection: 'North',
       kalpanaContent: [
         '面向北方，帝一對兆面前，',
@@ -58,14 +66,27 @@ export const orthodoxiSection_0100170A = {
         '左右侍經真，玉女及玉童，',
         '身濟不死津，解羅順靈風，',
         '七祖返胎生，世為神仙宗。'
+      ],
+      prayerActions: [
+        {
+          prayerActionId: 'T01-001-01A-03-1',
+          prayerActionOrder: 1,
+          prayerActionType: 'face_direction',
+          prayerActionValue: 'face_to_north'
+        },
+        {
+          prayerActionId: 'T01-001-01A-03-2',
+          prayerActionOrder: 2,
+          prayerActionType: 'mini_kalpana',
+          prayerActionValue: 'kalpana_as_baby'
+        }
       ]
     },
     {
-      orthodoxiStepCode: 5,
-      onlyBuckleTimes: 36,
-      faceDirection: 'North',
+      orthodoxiStepCode: 4,
+      orthodoxiStepId: 'T01-001-01A-04',
       kalpanaContent: [
-        '畢，北向叩齒三十六通，',
+        '北向叩齒三十六通，',
         '冥目內視，俯心祝之。'
       ],
       chantContent: [
@@ -74,11 +95,33 @@ export const orthodoxiSection_0100170A = {
         '誦詠《上清大洞真經三十九章》，',
         '伏願驅除魔試，辟却鬼病，',
         '臣及七祖罪解福生。'
+      ],
+      prayerActions: [
+        {
+          prayerActionId: 'T01-001-01A-04-1',
+          prayerActionOrder: 1,
+          prayerActionType: 'face_direction',
+          prayerActionValue: 'face_to_north'
+        },
+        {
+          prayerActionId: 'T01-001-01A-04-2',
+          prayerActionOrder: 2,
+          prayerActionType: 'month_buckle_times',
+          prayerActionValue: 36
+        },
+        {
+          prayerActionId: 'T01-001-01A-04-3',
+          prayerActionOrder: 3,
+          prayerActionType: 'mini_kalpana',
+          prayerActionValue: 'kalpana_as_internal'
+        }
       ]
     },
     {
-      orthodoxiStepCode: 6,
-      kalpanaContent: ['次祝之。'],
+      orthodoxiStepCode: 5,
+      kalpanaContent: [
+        '次祝之。'
+      ],
       chantContent: [
         '六天大魔王，受制幽寥無，',
         '白距玃獸，赤甲毒龍，鎮守四維，',
