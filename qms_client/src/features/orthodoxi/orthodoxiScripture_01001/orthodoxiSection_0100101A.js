@@ -119,6 +119,7 @@ export const orthodoxiSection_0100101A = {
     },
     {
       orthodoxiStepCode: 5,
+      orthodoxiStepId: 'T01-001-01A-05',
       kalpanaContent: [
         '次祝之。'
       ],
@@ -239,6 +240,18 @@ export const orthodoxiSection_0100101A = {
         '東南天關門，門郎文五車。',
         '東北寒水門，門郎童林都。'
       ]
+    },
+    {
+      orthodoxiStepCode: 13,
+      orthodoxiBookPage: 'OB-01-005-A',
+      faceDirection: 'North',
+      kalpanaContent: [
+        '叩齒三通，仰祝之。'
+      ],
+      charmContent: [
+        ''
+      ],
+      prayerActions: []
     }
   ]
 }
