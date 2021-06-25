@@ -5,6 +5,7 @@ export const orthodoxiSection_0100101A = {
   orthodoxiSteps: [
     {
       orthodoxiStepCode: 1,
+      orthodoxiBookPage: 'OB-01-003-B',
       kalpanaContent: [
         '先於室外秉簡當心，臨目扣齒三通，',
         '存室內有紫雲之炁遍滿，又鬱鬱來冠兆身。',
@@ -16,13 +17,28 @@ export const orthodoxiSection_0100101A = {
         '五芝寶生，玄雲紫蓋，來映我身，',
         '仙童玉女，為我致靈，九炁齊景，',
         '三光同軿，上乘紫蓋，升入帝庭。'
+      ],
+      prayerActions: [
+        {
+          prayerActionOrder: 1,
+          prayerActionId: 'T01-001-01-1',
+          prayerActionType: 'mouth_buckle_times',
+          prayerActionValue: 3
+        },
+        {
+          prayerActionOrder: 2,
+          prayerActionId: 'T01-001-01-2',
+          prayerActionType: 'mouth_buckle_times',
+          prayerActionValue: 3
+        }
       ]
     },
     {
       orthodoxiStepCode: 2,
-      orthodoxiStepId: 'T01-001-01A-02',
+      orthodoxiStepId: 'OS:01-001-01A-02',
+      orthodoxiBookPage: 'OB:01-003-B',
       kalpanaContent: [
-        '先進右足入戶，三捻香，扣齒三通，祝。'
+        '先進右足入戶，三捻香，扣齒三通，祝之。'
       ],
       chantContent: [
         '玉華散景，九炁含烟，香雲密羅，',
@@ -32,19 +48,19 @@ export const orthodoxiSection_0100101A = {
       ],
       prayerActions: [
         {
-          prayerActionId: 'T01-001-01A-02-1',
+          prayerActionId: 'OP:01-001-01A-02-1',
           prayerActionOrder: 1,
           prayerActionType: 'step_into_mandala',
           prayerActionValue: 'right_leg'
         },
         {
-          prayerActionId: 'T01-001-01A-02-2',
+          prayerActionId: 'OP:01-001-01A-02-2',
           prayerActionOrder: 2,
           prayerActionType: 'bowing_times',
           prayerActionValue: 3
         },
         {
-          prayerActionId: 'T01-001-01A-02-3',
+          prayerActionId: 'OP:01-001-01A-02-3',
           prayerActionOrder: 3,
           prayerActionType: 'mouth_buckle_times',
           prayerActionValue: 3
@@ -53,8 +69,9 @@ export const orthodoxiSection_0100101A = {
     },
     {
       orthodoxiStepCode: 3,
-      orthodoxiStepId: 'T01-001-01A-03',
-      faceDirection: 'North',
+      orthodoxiStepId: 'OS:01-001-01A-03',
+      orthodoxiBookPage: 'OB:01-004-B',
+      faceDirection: 'north',
       kalpanaContent: [
         '面向北方，帝一對兆面前，',
         '尊君狀如嬰兒。'
@@ -69,15 +86,15 @@ export const orthodoxiSection_0100101A = {
       ],
       prayerActions: [
         {
-          prayerActionId: 'T01-001-01A-03-1',
+          prayerActionId: 'OP:01-001-01A-03-1',
           prayerActionOrder: 1,
           prayerActionType: 'face_direction',
           prayerActionValue: 'face_to_north'
         },
         {
-          prayerActionId: 'T01-001-01A-03-2',
+          prayerActionId: 'OP:01-001-01A-03-2',
           prayerActionOrder: 2,
-          prayerActionType: 'mini_kalpana',
+          prayerActionType: 'rough_kalpana',
           prayerActionValue: 'kalpana_as_baby'
         }
       ]
@@ -98,22 +115,16 @@ export const orthodoxiSection_0100101A = {
       ],
       prayerActions: [
         {
-          prayerActionId: 'T01-001-01A-04-1',
+          prayerActionId: 'OP:01-001-01A-04-1',
           prayerActionOrder: 1,
           prayerActionType: 'face_direction',
           prayerActionValue: 'face_to_north'
         },
         {
-          prayerActionId: 'T01-001-01A-04-2',
+          prayerActionId: 'OP:01-001-01A-04-2',
           prayerActionOrder: 2,
           prayerActionType: 'month_buckle_times',
           prayerActionValue: 36
-        },
-        {
-          prayerActionId: 'T01-001-01A-04-3',
-          prayerActionOrder: 3,
-          prayerActionType: 'mini_kalpana',
-          prayerActionValue: 'kalpana_as_internal'
         }
       ]
     },
@@ -132,7 +143,7 @@ export const orthodoxiSection_0100101A = {
       ]
     },
     {
-      orthodoxiStepCode: 7,
+      orthodoxiStepCode: 6,
       faceDirection: 'North',
       firstBuckleTimes: 3,
       secondBuckleTimes: 4,
@@ -147,6 +158,26 @@ export const orthodoxiSection_0100101A = {
         '誦詠《上清大洞真經三十九章》，',
         '鍊神保藏，乞胃管華榮，聳身乘虛，',
         '上拜帝庭，臣七祖罪釋，上生福堂。'
+      ],
+      prayerActions: [
+        {
+          prayerActionOrder: 1,
+          prayerActionId: 'T01-001-01A-06-1',
+          prayerActionType: 'face_direction',
+          prayerActionValue: 'north'
+        },
+        {
+          prayerActionOrder: 2,
+          prayerActionId: 'T01-001-01A-06-2',
+          prayerActionType: 'bowing_times',
+          prayerActionValue: 4
+        },
+        {
+          prayerActionOrder: 2,
+          prayerActionId: 'T01-001-01A-06-2',
+          prayerActionType: 'bowing_times',
+          prayerActionValue: 4
+        }
       ]
     },
     {
@@ -176,6 +207,12 @@ export const orthodoxiSection_0100101A = {
       charmContent: [
         '臣某至心上啟上清總仙大司馬，',
         '長生法師王三天君栢成上真。'
+      ],
+      prayerActions: [
+        {
+          prayerActionOrder: 1,
+          prayerActionId: ''
+        }
       ]
     },
     {
@@ -199,7 +236,7 @@ export const orthodoxiSection_0100101A = {
       ],
       onlyBuckleTimes: 3,
       onlyBowingTimes: 4,
-      faceDirection: 'North',
+      faceDirection: 'north',
       charmContent: [
         '臣某至心上啟降授徊風大混合師，',
         '上真聖母中候元君王夫人，',
@@ -223,7 +260,7 @@ export const orthodoxiSection_0100101A = {
     {
       orthodoxiStepCode: 12,
       orthodoxiBookPage: 'OB-01-004-C',
-      faceDirection: 'North',
+      faceDirection: 'north',
       kalpanaContent: [
         '東向四拜，燒香，叩齒三十六通，',
         '存東華六門，治東壟山，周回三千里，',
@@ -249,9 +286,25 @@ export const orthodoxiSection_0100101A = {
         '叩齒三通，仰祝之。'
       ],
       charmContent: [
-        ''
+        '上清玄晨，三宮六門，典我玉名，',
+        '降我神真，龍裙羽章，以給我身，',
+        '誦詠洞章，朗徹九天，上升玉清，',
+        '東華投篇，名刻金格，長為帝賓。'
       ],
-      prayerActions: []
+      prayerActions: [
+        {
+          prayerActionId: 'T01-001-01A-13-1',
+          prayerActionOrder: 1,
+          prayerActionType: 'mouth_buckle_times',
+          prayerActionValue: 3
+        },
+        {
+          prayerActionId: 'T01-001-01A-13-2',
+          prayerActionOrder: 2,
+          prayerActionType: 'body_posture',
+          prayerActionValue: 'look_upward'
+        }
+      ]
     }
   ]
 }
