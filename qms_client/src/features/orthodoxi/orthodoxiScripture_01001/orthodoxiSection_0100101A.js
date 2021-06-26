@@ -101,7 +101,7 @@ export const orthodoxiSection_0100101A = {
     },
     {
       orthodoxiStepCode: 4,
-      orthodoxiStepId: 'T01-001-01A-04',
+      orthodoxiStepId: 'OS:01-001-01A-04',
       kalpanaContent: [
         '北向叩齒三十六通，',
         '冥目內視，俯心祝之。'
@@ -130,7 +130,7 @@ export const orthodoxiSection_0100101A = {
     },
     {
       orthodoxiStepCode: 5,
-      orthodoxiStepId: 'T01-001-01A-05',
+      orthodoxiStepId: 'OS:01-001-01A-05',
       kalpanaContent: [
         '次祝之。'
       ],
@@ -144,9 +144,7 @@ export const orthodoxiSection_0100101A = {
     },
     {
       orthodoxiStepCode: 6,
-      faceDirection: 'North',
-      firstBuckleTimes: 3,
-      secondBuckleTimes: 4,
+      orthodoxiStepId: 'OS:01-001-01A-06',
       kalpanaContent: [
         '畢，北向四拜，三叩齒，長跪臨目，',
         '叩齒二十四通，啟之。'
@@ -162,48 +160,57 @@ export const orthodoxiSection_0100101A = {
       prayerActions: [
         {
           prayerActionOrder: 1,
-          prayerActionId: 'T01-001-01A-06-1',
+          prayerActionId: 'OP:01-001-01A-06-1',
           prayerActionType: 'face_direction',
           prayerActionValue: 'north'
         },
         {
           prayerActionOrder: 2,
-          prayerActionId: 'T01-001-01A-06-2',
+          prayerActionId: 'OP:01-001-01A-06-2',
           prayerActionType: 'bowing_times',
           prayerActionValue: 4
         },
         {
-          prayerActionOrder: 2,
-          prayerActionId: 'T01-001-01A-06-2',
-          prayerActionType: 'bowing_times',
-          prayerActionValue: 4
+          prayerActionOrder: 3,
+          prayerActionId: 'OP:01-001-01A-06-3',
+          prayerActionType: 'mouth_buckle_times',
+          prayerActionValue: 24
         }
       ]
     },
     {
-      orthodoxiStepCode: 8,
+      orthodoxiStepCode: 7,
+      orthodoxiStepId: 'OS:01-001-01A-07',
       kalpanaContent: [
-        '畢，又四拜，長跪啟之。'
+        '四拜，長跪啟之。'
       ],
-      onlyBowingTimes: 4,
-      bodyPosture: 'Kneel',
       charmContent: [
         '臣某至心上啟中央黃老元素道君，',
         '臣今入室焚香披詠《上清大洞真經三十九章》，',
         '願臣靖室之內，芝英自生，',
         '玉華寶曜，三光洞明，臣昇上清，',
         '合同帝靈，使七祖罪解，克獲長生。'
+      ],
+      prayerActions: [
+        {
+          prayerActionOrder: 1,
+          prayerActionId: 'OP:01-001-01A-07-1',
+          prayerActionType: 'bowing_times',
+          prayerActionValue: 4
+        },
+        {
+          prayerActionOrder: 2,
+          prayerActionId: 'OP:01-001-01A-07-2',
+          prayerActionType: 'body_posture',
+          prayerActionValue: 'kneel'
+        }
       ]
     },
     {
-      orthodoxiStepCode: 9,
+      orthodoxiStepCode: 8,
       kalpanaContent: [
-        '畢，又四拜，三叩齒，長跪啟之。'
+        '四拜，三叩齒，長跪啟之。'
       ],
-      onlyBuckleTimes: 3,
-      onlyBowingTimes: 4,
-      faceDirection: 'North',
-      bodyPosture: 'Kneel',
       charmContent: [
         '臣某至心上啟上清總仙大司馬，',
         '長生法師王三天君栢成上真。'
@@ -211,12 +218,20 @@ export const orthodoxiSection_0100101A = {
       prayerActions: [
         {
           prayerActionOrder: 1,
-          prayerActionId: ''
+          prayerActionId: 'OP:01-001-01A-08-1',
+          prayerActionType: 'bowing_times',
+          prayerActionValue: 4
+        },
+        {
+          prayerActionOrder: 1,
+          prayerActionId: 'OP:01-001-01A-08-2',
+          prayerActionType: 'mouth_buckle_times',
+          prayerActionValue: 3
         }
       ]
     },
     {
-      orthodoxiStepCode: 10,
+      orthodoxiStepCode: 9,
       orthodoxiBookPage: 'OB-01-004-C',
       kalpanaContent: [
         '四拜，三叩齒，長跪啟之。'
