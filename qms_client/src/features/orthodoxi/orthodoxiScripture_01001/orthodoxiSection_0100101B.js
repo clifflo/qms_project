@@ -6,7 +6,7 @@ export const orthodoxiSection_0100101B = {
       orthodoxiStepId: 'OS:01-001-01B-01',
       orthodoxiStepCode: 1,
       orthodoxiBookPage: 'OB:01-005-A4',
-      kalpanaContent: [
+      prayerContent: [
         '咽炁九過，東向燒香，四拜，',
         '三叩齒，長跪啟之。'
       ],
@@ -58,7 +58,7 @@ export const orthodoxiSection_0100101B = {
       orthodoxiStepId: 'OS:01-001-01B-02',
       orthodoxiStepCode: 2,
       orthodoxiBookPage: 'OB:01-005-B1',
-      kalpanaContent: [
+      prayerContent: [
         '燒香，四拜，三叩齒，長跪啟之。'
       ],
       charmContent: [
@@ -96,7 +96,7 @@ export const orthodoxiSection_0100101B = {
       orthodoxiStepId: 'OS:01-001-01B-03',
       orthodoxiStepCode: 3,
       orthodoxiBookPage: 'OB:01-005-B-04',
-      kalpanaContent: [
+      prayerContent: [
         '燒香，四拜，三叩齒，長跪啟之。'
       ],
       charmContent: [
@@ -112,7 +112,7 @@ export const orthodoxiSection_0100101B = {
       orthodoxiStepId: 'OS:01-001-01B-04',
       orthodoxiStepCode: 4,
       orthodoxiBookPage: 'OB:01-005-B-12',
-      kalpanaContent: [
+      prayerContent: [
         '燒香，心拜經前，微叩齒二七通，祝之。'
       ],
       charmContent: [
@@ -156,6 +156,80 @@ export const orthodoxiSection_0100101B = {
           prayerActionId: 'OP:01-001-01B-05-1',
           prayerActionType: 'mouth_buckle_times',
           prayerActionValue: 14
+        }
+      ]
+    },
+    {
+      orthodoxiStepId: 'OS:01-001-01B-06',
+      orthodoxiStepCode: 6,
+      orthodoxiBookPage: 'OB:01-005-B-22',
+      prayerContent: [
+        '叩齒二十通，心再拜。次三捻上香，',
+        '登座，平坐，正視北向，叩齒三十二通，',
+        '咽液三十二過，閉目存帝一尊君。'
+      ],
+      kalpanaContent: [
+        '次思兆頭正青，如碧玉，兩首如丹，',
+        '兩腳如雪，身著九色羽衣，',
+        '披龍文之帔頭建玉晨之冠，',
+        '手執九色之節，青龍侍左，',
+        '白虎衛右，頭蔭華蓋，下坐獅子，',
+        '仙童侍香，玉女散花，紫雲蓊鬱，',
+        '滿於室中，五色玄黃，羅列前後，',
+        '內外分明，皆使映朗。'
+      ],
+      prayerActions: [
+        {
+          prayerActionOrder: 1,
+          prayerActionId: 'OP:01-001-01B-06-1',
+          prayerActionType: 'mouth_buckle_times',
+          prayerActionValue: 20
+        },
+        {
+          prayerActionOrder: 2,
+          prayerActionId: 'OP:01-001-01B-06-2',
+          prayerActionType: 'bowing_times',
+          prayerActionValue: 3
+        },
+        {
+          prayerActionOrder: 3,
+          prayerActionId: 'OP:01-001-01B-06-3',
+          prayerActionType: 'sit_on_chair',
+          prayerActionValue: 'sit_on_chair'
+        },
+        {
+          prayerActionOrder: 4,
+          prayerActionId: 'OP:01-001-01B-06-4',
+          prayerActionType: 'face_direction',
+          prayerActionValue: 'north'
+        },
+        {
+          prayerActionOrder: 5,
+          prayerActionId: 'OP:01-001-01B-06-5',
+          prayerActionType: 'mouth_buckle_times',
+          prayerActionValue: 32
+        },
+        {
+          prayerActionOrder: 6,
+          prayerActionId: 'OP:01-001-01B-06-6',
+          prayerActionType: 'swallowing_saliva_times',
+          prayerActionValue: 32
+        }
+      ]
+    },
+    {
+      orthodoxiStepId: 'OS:01-001-01B-07',
+      orthodoxiStepCode: 7,
+      orthodoxiBookPage: 'OB:01-006-A-03',
+      prayerContent: [
+        '叩齒三十六通，微誦三天滅魔呪。'
+      ],
+      prayerActions: [
+        {
+          prayerActionOrder: 1,
+          prayerActionId: 'OP:01-001-01B-07-1',
+          prayerActionType: 'mouth_buckle_times',
+          prayerActionValue: 36
         }
       ]
     },
