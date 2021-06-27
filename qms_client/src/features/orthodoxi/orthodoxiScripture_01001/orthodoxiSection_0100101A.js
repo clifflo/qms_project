@@ -1,11 +1,12 @@
 export const orthodoxiSection_0100101A = {
-  orthodoxiSectionId: 'T01-001-01A',
-  orthodoxiChapterId: 'T01-001-01',
+  orthodoxiSectionId: 'OE:01-001-01A',
+  orthodoxiChapterId: 'OC:01-001-01',
   orthodoxiChapterName: '誦經玉訣',
   orthodoxiSteps: [
     {
       orthodoxiStepCode: 1,
-      orthodoxiBookPage: 'OB-01-003-B',
+      orthodoxiStepId: 'OS:01-001-01A-01',
+      orthodoxiBookPage: 'OB:01-003-B',
       kalpanaContent: [
         '先於室外秉簡當心，臨目扣齒三通，',
         '存室內有紫雲之炁遍滿，又鬱鬱來冠兆身。',
@@ -233,6 +234,7 @@ export const orthodoxiSection_0100101A = {
     },
     {
       orthodoxiStepCode: 9,
+      orthodoxiStepId: 'OS:01-001-01A-09',
       orthodoxiBookPage: 'OB-01-004-C',
       kalpanaContent: [
         '四拜，三叩齒，長跪啟之。'
@@ -264,6 +266,7 @@ export const orthodoxiSection_0100101A = {
     },
     {
       orthodoxiStepCode: 10,
+      orthodoxiStepId: 'OS:01-001-01A-10',
       orthodoxiBookPage: 'OB:01-004-C2',
       kalpanaContent: [
         '四拜，三叩齒，長跪啟之。'
@@ -303,9 +306,9 @@ export const orthodoxiSection_0100101A = {
       ]
     },
     {
-      orthodoxiStepCode: 12,
+      orthodoxiStepCode: 11,
+      orthodoxiStepId: 'OS:01-001-01A-11',
       orthodoxiBookPage: 'OB:01-004-C4',
-      faceDirection: 'north',
       kalpanaContent: [
         '東向四拜，燒香，叩齒三十六通，',
         '存東華六門，治東壟山，周回三千里，',
@@ -321,12 +324,26 @@ export const orthodoxiSection_0100101A = {
         '北玉陰門，門郎史少華。',
         '東南天關門，門郎文五車。',
         '東北寒水門，門郎童林都。'
+      ],
+      prayerActions: [
+        {
+          prayerActionOrder: 1,
+          prayerActionId: 'OP:01-001-01A-11-1',
+          prayerActionType: 'face_direction',
+          prayerActionValue: 'north'
+        },
+        {
+          prayerActionOrder: 2,
+          prayerActionId: 'OP:01-001-01A-11-2',
+          prayerActionType: 'month_buckle_times',
+          prayerActionValue: 3
+        }
       ]
     },
     {
-      orthodoxiStepCode: 13,
+      orthodoxiStepCode: 12,
       orthodoxiBookPage: 'OB:01-005-A3',
-      faceDirection: 'North',
+      orthodoxiStepId: 'OS:01-001-01A-12',
       kalpanaContent: [
         '叩齒三通，仰祝之。'
       ],
@@ -344,7 +361,7 @@ export const orthodoxiSection_0100101A = {
           prayerActionValue: 3
         },
         {
-          prayerActionId: 'T01-001-01A-13-2',
+          prayerActionId: 'OP:01-001-01A-13-2',
           prayerActionOrder: 2,
           prayerActionType: 'body_posture',
           prayerActionValue: 'look_upward'
