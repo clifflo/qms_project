@@ -208,6 +208,7 @@ export const orthodoxiSection_0100101A = {
     },
     {
       orthodoxiStepCode: 8,
+      orthodoxiStepId: 'OS:01-001-01A-08',
       kalpanaContent: [
         '四拜，三叩齒，長跪啟之。'
       ],
@@ -236,22 +237,37 @@ export const orthodoxiSection_0100101A = {
       kalpanaContent: [
         '四拜，三叩齒，長跪啟之。'
       ],
-      faceDirection: 'North',
-      bodyPosture: 'Kneel',
       charmContent: [
         '臣某至心上啟降授大洞真經祖師，',
         '上真聖母紫微元君王夫人。'
+      ],
+      prayerActions: [
+        {
+          prayerActionOrder: 1,
+          prayerActionId: 'OP:01-001-01A-09-1',
+          prayerActionType: 'bowing_times',
+          prayerActionValue: 4
+        },
+        {
+          prayerActionOrder: 2,
+          prayerActionId: 'OP:01-001-01A-09-2',
+          prayerActionType: 'mouth_buckle_times',
+          prayerActionValue: 3
+        },
+        {
+          prayerActionOrder: 3,
+          prayerActionId: 'OP:01-001-01A-09-3',
+          prayerActionType: 'body_posture',
+          prayerActionValue: 'kneel'
+        }
       ]
     },
     {
-      orthodoxiStepCode: 11,
-      orthodoxiBookPage: 'OB-01-004-C',
+      orthodoxiStepCode: 10,
+      orthodoxiBookPage: 'OB:01-004-C2',
       kalpanaContent: [
         '四拜，三叩齒，長跪啟之。'
       ],
-      onlyBuckleTimes: 3,
-      onlyBowingTimes: 4,
-      faceDirection: 'north',
       charmContent: [
         '臣某至心上啟降授徊風大混合師，',
         '上真聖母中候元君王夫人，',
@@ -270,11 +286,25 @@ export const orthodoxiSection_0100101A = {
             '解作鳥向上飛也。'
           ]
         }
+      ],
+      prayerActions: [
+        {
+          prayerActionOrder: 1,
+          prayerActionId: 'OP:01-001-01A-10-1',
+          prayerActionType: 'bowing_times',
+          prayerActionValue: 4
+        },
+        {
+          prayerActionOrder: 2,
+          prayerActionId: 'OP:01-001-01A-10-2',
+          prayerActionType: 'month_buckle_times',
+          prayerActionValue: 3
+        }
       ]
     },
     {
       orthodoxiStepCode: 12,
-      orthodoxiBookPage: 'OB-01-004-C',
+      orthodoxiBookPage: 'OB:01-004-C4',
       faceDirection: 'north',
       kalpanaContent: [
         '東向四拜，燒香，叩齒三十六通，',
@@ -295,7 +325,7 @@ export const orthodoxiSection_0100101A = {
     },
     {
       orthodoxiStepCode: 13,
-      orthodoxiBookPage: 'OB-01-005-A',
+      orthodoxiBookPage: 'OB:01-005-A3',
       faceDirection: 'North',
       kalpanaContent: [
         '叩齒三通，仰祝之。'
@@ -308,7 +338,7 @@ export const orthodoxiSection_0100101A = {
       ],
       prayerActions: [
         {
-          prayerActionId: 'T01-001-01A-13-1',
+          prayerActionId: 'OP:01-001-01A-10-1',
           prayerActionOrder: 1,
           prayerActionType: 'mouth_buckle_times',
           prayerActionValue: 3
