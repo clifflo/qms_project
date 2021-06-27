@@ -246,7 +246,7 @@ export const orthodoxiSection_0100101B = {
     {
       orthodoxiStepId: 'OS:01-001-01B-08',
       orthodoxiStepCode: 8,
-      orthodoxiBookPage: 'OB:01-006-A-11',
+      orthodoxiBookPage: 'OB:01-006-A11',
       chantName: '大洞滅魔神慧玉清隱書',
       prayerContent: [
         '叩齒三十六通，次誦《大洞滅魔神慧玉清隱書》。'

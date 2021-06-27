@@ -5,7 +5,7 @@ export const orthodoxiSection_0100101C = {
     {
       orthodoxiStepId: 'OS:01-001-01C-01',
       orthodoxiStepCode: 1,
-      orthodoxiBookPage: 'OB:01-006-C9',
+      orthodoxiBookPage: 'OB:01-006-C09',
       kalpanaContent: [
         '閉目默念，次心拜四方，',
         '真思兆身坐五色雲中，雲氣覆蓋頭上，',
@@ -46,7 +46,7 @@ export const orthodoxiSection_0100101C = {
     {
       orthodoxiStepId: 'OS:01-001-01C-02',
       orthodoxiStepCode: 2,
-      orthodoxiBookPage: 'OB:01-007-A6',
+      orthodoxiBookPage: 'OB:01-007-A06',
       prayerContent: [
         '口引東方青陽之精青炁。',
         '用鼻先取，以口極咽喉吸之。',
@@ -69,7 +69,94 @@ export const orthodoxiSection_0100101C = {
           prayerActionValue: 'east'
         },
         {
-          prayerAction
+          prayerActionOrder: 3,
+          prayerActionId: 'OP:01-001-01C-01-3',
+          prayerActionType: 'swallowing_air_times',
+          prayerActionValue: 9
+        },
+        {
+          prayerActionOrder: 4,
+          prayerActionId: 'OP:01-001-01C-01-4',
+          prayerActionType: 'swallowing_air_goal',
+          prayerActionValue: 'liver'
+        },
+        {
+          prayerActionOrder: 5,
+          prayerActionId: 'OP:01-001-01C-01-5',
+          prayerActionType:
+          'number_of_solidified_angels',
+          prayerActionValue: 9
+        },
+        {
+          prayerActionOrder: 6,
+          prayerActionId: 'OP:01-001-01C-01-6',
+          prayerActionType:
+          'clothing_color_of_solidified_angels',
+          prayerActionValue: 'green'
+        },
+        {
+          prayerActionOrder: 7,
+          prayerActionId: 'OP:01-001-01C-01-7',
+          prayerActionType:
+          'style_of_solidified_angels',
+          prayerActionValue: 'juniper'
+        }
+      ]
+    },
+    {
+      orthodoxiStepId: 'OS:01-001-01C-03',
+      orthodoxiStepCode: 3,
+      orthodoxiBookPage: 'OB:01-007-A21',
+      prayerContent: [
+        '就座，仰首南向，冥目，',
+        '叩齒三通，陰誦天帝君素語內呪。'
+      ],
+      chantName: '天帝君素語內呪',
+      chantContent: [
+        '赤庭絳宮，上有高真，三氣歸心，',
+        '是我母心，騰我淨躬，逕奏以聞，',
+        '心固神靜，九靈閉關，金真內映，',
+        '紫烟結雲，太微綠字，書名神仙，',
+        '飛行上清，朝謁帝尊。'
+      ],
+      prayerActions: [
+        {
+          prayerActionOrder: 1,
+          prayerActionId: 'OP:01-001-01C-03-1',
+          prayerActionType: 'face_direction',
+          prayerActionValue: 'south'
+        },
+        {
+          prayerActionOrder: 2,
+          prayerActionId: 'OP:01-001-01C-03-2',
+          prayerActionType: 'closing_eyes',
+          prayerActionValue: 'closing_eyes'
+        },
+        {
+          prayerActionOrder: 2,
+          prayerActionId: 'OP:01-001-01C-03-3',
+          prayerActionType: 'mouth_buckle_times',
+          prayerActionValue: 3
+        }
+      ]
+    },
+    {
+      orthodoxiStepId: 'OS:01-001-01C-04',
+      orthodoxiStepCode: 4,
+      orthodoxiBookPage: 'OB:01-007-B05',
+      prayerContent: [
+        '口吸南方丹靈之精赤炁。',
+        '因閉炁三息，咽津三過，',
+        '使充布心腑之中，結作八神，',
+        '赤衣冠，狀如火星，下布心內，',
+        '神面相向坐，順時吐息。'
+      ],
+      prayerActions: [
+        {
+          prayerActionOrder: 1,
+          prayerActionId: 'OP:01-001-01C-04-1',
+          prayerActionType: 'swallowing_air_color',
+          prayerActionValue: 'red'
         }
       ]
     }
