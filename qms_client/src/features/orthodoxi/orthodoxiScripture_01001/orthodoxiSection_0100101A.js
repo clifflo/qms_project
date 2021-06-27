@@ -281,15 +281,6 @@ export const orthodoxiSection_0100101A = {
         '災害消滅，色返嬰孩，白日騰翥，',
         '願七祖罪解，上生福堂。'
       ],
-      charmPronuciations: [
-        {
-          pronouncedCharacter: '翥',
-          cantonesePronucation: '煮',
-          chineseMeaning: [
-            '解作鳥向上飛也。'
-          ]
-        }
-      ],
       prayerActions: [
         {
           prayerActionOrder: 1,
