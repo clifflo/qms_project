@@ -71,32 +71,38 @@ export const orthodoxiSection_0100101C = {
         {
           prayerActionOrder: 3,
           prayerActionId: 'OP:01-001-01C-01-3',
-          prayerActionType: 'swallowing_air_times',
+          prayerActionType: 'hold_breath_twice_second',
           prayerActionValue: 9
         },
         {
           prayerActionOrder: 4,
           prayerActionId: 'OP:01-001-01C-01-4',
-          prayerActionType: 'swallowing_air_goal',
-          prayerActionValue: 'liver'
+          prayerActionType: 'swallowing_air_times',
+          prayerActionValue: 9
         },
         {
           prayerActionOrder: 5,
           prayerActionId: 'OP:01-001-01C-01-5',
-          prayerActionType:
-          'number_of_solidified_angels',
-          prayerActionValue: 9
+          prayerActionType: 'swallowing_air_goal',
+          prayerActionValue: 'liver'
         },
         {
           prayerActionOrder: 6,
           prayerActionId: 'OP:01-001-01C-01-6',
           prayerActionType:
-          'clothing_color_of_solidified_angels',
-          prayerActionValue: 'green'
+          'number_of_solidified_angels',
+          prayerActionValue: 9
         },
         {
           prayerActionOrder: 7,
           prayerActionId: 'OP:01-001-01C-01-7',
+          prayerActionType:
+          'clothing_color_of_solidified_angels',
+          prayerActionValue: 'green'
+        },
+        {
+          prayerActionOrder: 8,
+          prayerActionId: 'OP:01-001-01C-01-9',
           prayerActionType:
           'style_of_solidified_angels',
           prayerActionValue: 'juniper'
@@ -143,7 +149,7 @@ export const orthodoxiSection_0100101C = {
     {
       orthodoxiStepId: 'OS:01-001-01C-04',
       orthodoxiStepCode: 4,
-      orthodoxiBookPage: 'OB:01-007-B05',
+      orthodoxiBookPage: 'OB:01-007-B-05',
       prayerContent: [
         '口吸南方丹靈之精赤炁。',
         '因閉炁三息，咽津三過，',
@@ -157,6 +163,33 @@ export const orthodoxiSection_0100101C = {
           prayerActionId: 'OP:01-001-01C-04-1',
           prayerActionType: 'swallowing_air_color',
           prayerActionValue: 'red'
+        },
+        {
+          prayerActionOrder: 2,
+          prayerActionId: 'OP:01-001-01C-04-2',
+          prayerActionType: 'swallowing_air_direction',
+          prayerActionValue: 'south'
+        },
+        {
+          prayerActionOrder: 2,
+          prayerActionId: 'OP:01-001-01C-04-3',
+          prayerActionType: 'swallowing_air_times',
+          prayerActionValue: 3
+        }
+      ]
+    },
+    {
+      orthodoxiStepId: 'OS:01-001-01C-04',
+      orthodoxiStepCode: 4,
+      orthodoxiBookPage: 'OB:01-007-B-09',
+      ctextCode: 'CTC:969877-066',
+      prayerContent: [
+        '就座，左顧西向，冥目，',
+        '叩齒七通，陰誦南極上元君素語內呪。'
+      ],
+      prayerActions: [
+        {
+
         }
       ]
     }
