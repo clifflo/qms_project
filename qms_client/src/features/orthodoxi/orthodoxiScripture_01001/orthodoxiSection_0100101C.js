@@ -171,25 +171,43 @@ export const orthodoxiSection_0100101C = {
           prayerActionValue: 'south'
         },
         {
-          prayerActionOrder: 2,
+          prayerActionOrder: 3,
           prayerActionId: 'OP:01-001-01C-04-3',
+          prayerActionType: 'hold_breath_twice_second',
+          prayerActionValue: 3
+        },
+        {
+          prayerActionOrder: 4,
+          prayerActionId: 'OP:01-001-01C-04-4',
           prayerActionType: 'swallowing_air_times',
           prayerActionValue: 3
-        }
-      ]
-    },
-    {
-      orthodoxiStepId: 'OS:01-001-01C-04',
-      orthodoxiStepCode: 4,
-      orthodoxiBookPage: 'OB:01-007-B-09',
-      ctextCode: 'CTC:969877-066',
-      prayerContent: [
-        '就座，左顧西向，冥目，',
-        '叩齒七通，陰誦南極上元君素語內呪。'
-      ],
-      prayerActions: [
+        },
         {
-
+          prayerActionOrder: 5,
+          prayerActionId: 'OP:01-001-01C-04-5',
+          prayerActionType: 'swallowing_air_goal',
+          prayerActionValue: 'heart'
+        },
+        {
+          prayerActionOrder: 6,
+          prayerActionId: 'OP:01-001-01C-04-6',
+          prayerActionType:
+          'number_of_solidified_angels',
+          prayerActionValue: 8
+        },
+        {
+          prayerActionOrder: 7,
+          prayerActionId: 'OP:01-001-01C-04-7',
+          prayerActionType:
+          'clothing_color_of_solidified_angels',
+          prayerActionValue: 'red'
+        },
+        {
+          prayerActionOrder: 8,
+          prayerActionId: 'OP:01-001-01C-04-8',
+          prayerActionType:
+          'style_of_solidified_angels',
+          prayerActionValue: 'mars'
         }
       ]
     }
