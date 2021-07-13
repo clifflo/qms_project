@@ -3,15 +3,15 @@ import * as RA from 'ramda-adjunct';
 
 export const shortHookContextSet = [
   {
-    _type: 'Short hook context',
+    _type: 'ShortHookContext',
     genericShortHookIndex: 0,
     genericShortHookAlternative: '卦象地',
     genericShortHookComplexOriginal: '短卦坤',
-    genericShortHookEnglish: 'Short hook earth',
+    genericShortHookEnglish: 'ShortHookEarth',
     genericShortHookSimpleOriginal: '坤'
   },
   {
-    _type: 'Short hook context',
+    _type: 'ShortHookContext',
     genericShortHookIndex: 1,
     genericShortHookAlternative: '卦象雷',
     genericShortHookComplexOriginal: '短卦震',
@@ -19,7 +19,7 @@ export const shortHookContextSet = [
     genericShortHookSimpleOriginal: '震'
   },
   {
-    _type: 'Short hook context',
+    _type: 'ShortHookContext',
     genericShortHookIndex: 2,
     genericShortHookAlternative: '卦象水',
     genericShortHookComplexOriginal: '短卦坎',
@@ -27,7 +27,7 @@ export const shortHookContextSet = [
     genericShortHookSimpleOriginal: '坎'
   },
   {
-    _type: 'Short hook context',
+    _type: 'ShortHookContext',
     genericShortHookIndex: 3,
     genericShortHookAlternative: '卦象澤',
     genericShortHookComplexOriginal: '短卦兌',
@@ -35,7 +35,7 @@ export const shortHookContextSet = [
     genericShortHookSimpleOriginal: '兌'
   },
   {
-    _type: 'Short hook context',
+    _type: 'ShortHookContext',
     genericShortHookIndex: 4,
     genericShortHookAlternative: '卦象山',
     genericShortHookComplexOriginal: '短卦艮',
@@ -43,7 +43,7 @@ export const shortHookContextSet = [
     genericShortHookSimpleOriginal: '艮'
   },
   {
-    _type: 'Short hook context',
+    _type: 'ShortHookContext',
     genericShortHookIndex: 5,
     genericShortHookAlternative: '卦象火',
     genericShortHookComplexOriginal: '短卦離',
@@ -51,7 +51,7 @@ export const shortHookContextSet = [
     genericShortHookSimpleOriginal: '離'
   },
   {
-    _type: 'Short hook context',
+    _type: 'ShortHookContext',
     genericShortHookIndex: 6,
     genericShortHookAlternative: '卦象風',
     genericShortHookComplexOriginal: '短卦巽',
@@ -59,7 +59,7 @@ export const shortHookContextSet = [
     genericShortHookSimpleOriginal: '巽'
   },
   {
-    _type: 'Short hook context',
+    _type: 'ShortHookContext',
     genericShortHookIndex: 7,
     genericShortHookAlternative: '卦象天',
     genericShortHookComplexOriginal: '短卦乾',
